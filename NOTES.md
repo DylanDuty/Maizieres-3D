@@ -1,3 +1,49 @@
+# Notes V1.9 — référentiel ferroviaire et splines Unreal, 24 septembre 2026
+
+Branche `opus/v1.9-rail`, à partir de `52f3984`. Ni rendu, ni rails 3D, ni traverses, ni caténaire, ni signalisation, ni import Unreal.
+
+## Audit
+
+- **OSM (projet)** :
+  - 25 voies `railway=rail`, une par voie physique : ligne 1000 voies 1 et 2 avec références SNCF Réseau, communication J1357, voies de garage 1 à 3, voie 4, embranchements ;
+  - 1 `railway=abandoned` ;
+  - 4 `landuse=railway` ;
+  - aucun nœud (l’instantané ne garde que les *ways*).
+- **BD TOPO** :
+  - 40 tronçons (6 principaux à 2 voies, 34 de service), tous « En service », non électrifiés, dont 1 pont ;
+  - 4 PN ;
+  - « Aire de triage » ;
+  - « Arrêt de Fret de Châtres » (hors commune).
+- **BIBLE_01 et BIBLE_03** :
+  - ligne Paris–Bâle / Paris–Troyes (1848) ;
+  - PN de la rue du Général-Leclerc (SNCF Réseau 2025) ;
+  - ancienne gare (1857-1859, bâtiment voyageurs détruit), TIPRY ;
+  - pont de la rue de l’Orme reconstruit pour l’électrification (fin 2025) ;
+  - « La Station » : lieu-dit d’adressage sans lien prouvé avec la gare.
+- **Services refusés** : Overpass, API OSM, SNCF open data.
+
+## Choix
+
+- **Deux niveaux** : l’axe documentaire officiel (BD TOPO, jamais dédoublé) et la voie physique (OSM, validée par la BD TOPO). Deux axes BD TOPO décalés sont rattachés, après contrôle orthophoto, aux voies OSM qui suivent les rails visibles.
+- **Statut** : uniquement d’après les sources (BD TOPO « En service » + OSM `railway=rail`). L’orthophoto confirme seulement l’existence (confiance B). La zone floutée donne `unknown`.
+- **Profils** : MNT lissé. Ouvrages franchis en ligne droite entre appuis. Raccords aux aiguillages alignés. Rail calé sur la route aux PN.
+- **Historique** : ancienne emprise OSM, gare et TIPRY sont dans une couche séparée, sans géométrie inventée.
+- **Emprise** : seulement les polygones déclarés (OSM, BD TOPO), dans `rail-land.geojson`, sans estimation.
+
+## Nouveaux fichiers et commandes
+
+| Élément | Rôle |
+|---|---|
+| `scripts/fetch-rail.mjs` (`npm run data:rail-fetch`) | couches BD TOPO complémentaires |
+| `scripts/build-rail.mjs` (`npm run data:rail`) | référentiel, topologie, profils, PN, ouvrages, splines, rapport |
+| `scripts/check-rail.mjs` (`npm run check:rail`) | contrôle, inclus dans `check:all` |
+| `data-sources/rail/rail-review-v1.9.json` | revue orthophoto (existence, axes BD TOPO décalés, croisements) |
+| `public/data/rail.geojson`, `rail-land.geojson`, `rail-diagnostic.json` | référentiel, emprise, données du mode `?diagnostic=rail` |
+| `unreal/rail/rail-splines.json` | splines Unreal |
+| `data-sources/rail/rail-report.json` | rapport machine |
+
+---
+
 # Notes V1.8 — référentiel voirie et splines Unreal, 24 septembre 2026
 
 Branche `opus/v1.8-roads`, à partir de `2081b47`. Ni graphisme, ni matériau, ni végétation, ni voie ferrée détaillée, ni génération Unreal.

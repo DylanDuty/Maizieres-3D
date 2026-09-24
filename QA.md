@@ -1,3 +1,47 @@
+# Vérification V1.9 — référentiel ferroviaire et splines Unreal, 24 septembre 2026
+
+Branche `opus/v1.9-rail`, à partir de `52f3984`. Le bâti, le terrain, la voirie et l’origine Unreal sont inchangés (vérifié par SHA-256). Détail complet : `docs/referentiel-ferroviaire.md`.
+
+| Mesure | Valeur |
+|---|---|
+| Voies physiques (segments) | **25** (splines Unreal : 25, 1 639 points) ; 40 axes officiels BD TOPO |
+| Longueur ferroviaire (voies physiques) | **24,9 km**, dont **15,1 km dans la commune** (axes BD TOPO : 18,6 km) |
+| Voies principales | 2 voies (V1, V2, ligne 1000 Paris-Est – Mulhouse) et 1 communication : 12,5 km, dont 7,6 km dans la commune |
+| Voies de service | 22 (4 voies de garage, 18 embranchements) : 12,4 km, dont 7,5 km dans la commune |
+| Voies inactives ou déposées | aucune documentée ; 1 ancienne emprise sans voie (OSM, 3,7 km) en couche historique séparée |
+| Statut | active 3, service 19, unknown 3 ; **statut connu sur 96,5 % des km** |
+| Aiguillages (embranchements topologiques) | 28, dont 14 dans la commune ; 16 heurtoirs probables ; 4 limites d’emprise |
+| Intersections topologiques | 48 nœuds ; 3 croisements sans connexion (à vérifier) ; 0 doublon |
+| Passages à niveau | 4 : n° 70, 71, 73 (rue du Général-Leclerc), 74 ; rail et route au même Z |
+| Ponts ferroviaires | 1 (18,5 m sur un écoulement boisé, tablier de 75,9 à 76,0 m) |
+| Autres ouvrages | 1 passage supérieur (pont routier de la rue de l’Orme) ; 21 croisements de niveau route × voies de service |
+| Segments orphelins | 1 fragment (2 voies, 0,83 km, zone floutée) |
+| Altitude fiable | **99,6 %** de la longueur ; 0,3 % portée par ouvrage ; aucune pente aberrante (max 4 ‰ ligne principale, 14 ‰ service) |
+| Incohérences ouvertes | **8** : 3 statuts inconnus, 1 orphelin, 1 voie presque connectée, 3 croisements sans connexion |
+
+## Contrôles
+
+- `npm run check:all` : **9 contrôles OK**. Ce sont `check`, `check:enrichment`, `check:presentation`, `check:interaction`, `check:bible`, `check:buildings`, `check:terrain`, `check:roads` et `check:rail`.
+- `check:rail` vérifie :
+  - SHA-256 du bâti (2 494 bâtiments, dont 2 265 dans la commune), des fichiers du terrain V1.7, de la voirie V1.8 (`roads.geojson`, `road-splines.json`, rapport) ;
+  - `UNREAL_ORIGIN` ;
+  - 40 axes BD TOPO à l’identique ;
+  - chaque voie à moins de 10 cm de sa source ;
+  - toute voie OSM `railway=rail` présente, aucun élément historique dans le réseau ;
+  - conversion Unreal exacte, 25 m au plus entre points ;
+  - profil à moins de 1 m du MNT hors ouvrage, pentes plausibles ;
+  - PN complets et au niveau de la route ;
+  - tablier de pont à plus de 1 m au-dessus du terrain sous l’ouvrage.
+- `pnpm build` réussi. Dans Chromium, les modes normal, `validation`, `terrain`, `roads` et `rail` chargent **2 494 bâtiments, sans rejet**. Le rendu normal est inchangé (18 appels de dessin, 559 942 triangles). **Console sans erreur ni avertissement.**
+
+## Limites
+
+- API OSM et SNCF Réseau open data refusées par le proxy : pas de nœuds OSM (aiguillages, heurtoirs), pas de classement des PN ni de profil en long officiel.
+- Embranchements sud de La Station en zone floutée par l’IGN.
+- Ballast, plateforme et caténaire non documentés.
+
+---
+
 # Vérification V1.8 — référentiel voirie et splines Unreal, 24 septembre 2026
 
 Branche `opus/v1.8-roads`, à partir de `2081b47`. Le bâti, le terrain et l’origine Unreal ne sont pas modifiés. Détail complet : `docs/referentiel-voirie.md`.

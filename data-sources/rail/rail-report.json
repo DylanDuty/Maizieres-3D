@@ -1,0 +1,1126 @@
+{
+ "generatedAt": "2026-09-24T19:29:42.336Z",
+ "frozen": {
+  "buildingsSha256": "809f3af371719e2d3adfaa6e55a9d56235e4618e28e8a36595c85d501a4f3095",
+  "terrainGeoTiffSha256": "3e08e2a6e98b1764730f364f3d80fe8cb1df49b4eb967920ac995e213bf1eaef",
+  "roadsSha256": "e14c17b94cbe7a126516351add558b5860773c3e2803c04012a0221fe740194e",
+  "roadSplinesSha256": "0e461f899067eb4912964035bbd564070ab66fe415122ae5d2324dfe6414aadc",
+  "unrealOrigin": {
+   "crs": "EPSG:2154",
+   "E": 758278,
+   "N": 6823571,
+   "H": 0,
+   "verticalDatum": "NGF-IGN69",
+   "sourceLonLat": [
+    3.7890245,
+    48.5097657
+   ]
+  }
+ },
+ "sources": {
+  "bdtopoAxes": 40,
+  "osmTracks": 25,
+  "osmHistoric": 1,
+  "unavailable": [
+   "API Overpass et api.openstreetmap.org : refusées par le proxy (aucun nœud OSM : aiguillages, heurtoirs, PN non disponibles)",
+   "data.sncf.com / ressources.data.sncf.com (SNCF Réseau open data) : refusés par le proxy"
+  ]
+ },
+ "totals": {
+  "tracks": 25,
+  "axes": 40,
+  "splines": 25,
+  "splinePoints": 1639,
+  "lengthKm": 24.866,
+  "inCommuneKm": 15.124,
+  "axisLengthKm": 18.587,
+  "byKind": {
+   "main": {
+    "count": 2,
+    "km": 12.26,
+    "inCommuneKm": 7.616
+   },
+   "crossover": {
+    "count": 1,
+    "km": 0.209,
+    "inCommuneKm": 0
+   },
+   "siding": {
+    "count": 4,
+    "km": 2.223,
+    "inCommuneKm": 1.974
+   },
+   "spur": {
+    "count": 18,
+    "km": 10.174,
+    "inCommuneKm": 5.534
+   },
+   "service": {
+    "count": 0,
+    "km": 0,
+    "inCommuneKm": 0
+   }
+  },
+  "byNetwork": {
+   "principal": {
+    "count": 3,
+    "km": 12.469,
+    "inCommuneKm": 7.616
+   },
+   "service": {
+    "count": 22,
+    "km": 12.398,
+    "inCommuneKm": 7.508
+   }
+  },
+  "byStatus": {
+   "service": 19,
+   "unknown": 3,
+   "active": 3
+  },
+  "statusKnownShareKm": 0.965,
+  "byProvenance": {
+   "osm+bdtopo": 18,
+   "osm": 7
+  },
+  "zReliableShare": 0.996,
+  "zStructureShare": 0.003,
+  "inactiveOrRemoved": 0,
+  "historic": 3
+ },
+ "validation": {
+  "osmVsBdtopo": [
+   {
+    "id": "way/174931203",
+    "kind": "spur",
+    "medianM": 0.4,
+    "maxM": 1.09,
+    "shareWithin": 1
+   },
+   {
+    "id": "way/174931204",
+    "kind": "spur",
+    "medianM": 0.41,
+    "maxM": 1.98,
+    "shareWithin": 1
+   },
+   {
+    "id": "way/174931206",
+    "kind": "spur",
+    "medianM": 0.27,
+    "maxM": 0.92,
+    "shareWithin": 1
+   },
+   {
+    "id": "way/174931207",
+    "kind": "spur",
+    "medianM": 1.81,
+    "maxM": 4.38,
+    "shareWithin": 0.8
+   },
+   {
+    "id": "way/174931208",
+    "kind": "spur",
+    "medianM": 20.21,
+    "maxM": 43.91,
+    "shareWithin": 0
+   },
+   {
+    "id": "way/174931209",
+    "kind": "spur",
+    "medianM": 31.96,
+    "maxM": 32.24,
+    "shareWithin": 0
+   },
+   {
+    "id": "way/174931210",
+    "kind": "spur",
+    "medianM": 5.14,
+    "maxM": 5.74,
+    "shareWithin": 0.24
+   },
+   {
+    "id": "way/174931211",
+    "kind": "spur",
+    "medianM": 1.47,
+    "maxM": 3.44,
+    "shareWithin": 0.92
+   },
+   {
+    "id": "way/174931212",
+    "kind": "spur",
+    "medianM": 4.51,
+    "maxM": 5.02,
+    "shareWithin": 0.08
+   },
+   {
+    "id": "way/174931213",
+    "kind": "siding",
+    "medianM": 0.74,
+    "maxM": 1.55,
+    "shareWithin": 1
+   },
+   {
+    "id": "way/174931214",
+    "kind": "siding",
+    "medianM": 0.73,
+    "maxM": 1.32,
+    "shareWithin": 1
+   },
+   {
+    "id": "way/174931216",
+    "kind": "siding",
+    "medianM": 0.78,
+    "maxM": 1.15,
+    "shareWithin": 1
+   },
+   {
+    "id": "way/174931217",
+    "kind": "spur",
+    "medianM": 0.54,
+    "maxM": 1.66,
+    "shareWithin": 1
+   },
+   {
+    "id": "way/233599039",
+    "kind": "spur",
+    "medianM": 0.94,
+    "maxM": 4.84,
+    "shareWithin": 0.98
+   },
+   {
+    "id": "way/233599042",
+    "kind": "spur",
+    "medianM": 3.17,
+    "maxM": 3.72,
+    "shareWithin": 0.49
+   },
+   {
+    "id": "way/233599043",
+    "kind": "spur",
+    "medianM": 0.64,
+    "maxM": 1.35,
+    "shareWithin": 1
+   },
+   {
+    "id": "way/233599046",
+    "kind": "spur",
+    "medianM": 0.96,
+    "maxM": 2.89,
+    "shareWithin": 1
+   },
+   {
+    "id": "way/233599048",
+    "kind": "spur",
+    "medianM": 2.95,
+    "maxM": 5.37,
+    "shareWithin": 0.54
+   },
+   {
+    "id": "way/233599049",
+    "kind": "spur",
+    "medianM": 1.04,
+    "maxM": 11.14,
+    "shareWithin": 0.96
+   },
+   {
+    "id": "way/233599051",
+    "kind": "spur",
+    "medianM": 0.71,
+    "maxM": 6.11,
+    "shareWithin": 0.79
+   },
+   {
+    "id": "way/233599052",
+    "kind": "spur",
+    "medianM": 0.63,
+    "maxM": 2.98,
+    "shareWithin": 1
+   },
+   {
+    "id": "way/612311100",
+    "kind": "crossover",
+    "medianM": 0.9,
+    "maxM": 1.92,
+    "shareWithin": 1
+   },
+   {
+    "id": "way/721610237",
+    "kind": "main",
+    "medianM": 1.11,
+    "maxM": 2.71,
+    "shareWithin": 1
+   },
+   {
+    "id": "way/721610239",
+    "kind": "main",
+    "medianM": 2.58,
+    "maxM": 4.38,
+    "shareWithin": 0.85
+   },
+   {
+    "id": "way/1239452991",
+    "kind": "siding",
+    "medianM": 0.51,
+    "maxM": 2.16,
+    "shareWithin": 1
+   }
+  ],
+  "bdtopoOnlyTracks": [],
+  "mainTrackSpacingM": {
+   "min": 3.5,
+   "median": 3.73,
+   "max": 4.09
+  }
+ },
+ "topology": {
+  "nodes": 48,
+  "switches": 28,
+  "switchesInCommune": 14,
+  "bufferStops": 16,
+  "borderEnds": 4,
+  "components": 2,
+  "orphans": [
+   {
+    "tracks": [
+     "way/174931208",
+     "way/174931209"
+    ],
+    "lengthM": 830,
+    "border": false,
+    "kinds": [
+     "spur"
+    ]
+   }
+  ],
+  "orphansCutByBorder": 0,
+  "inferredJoins": [],
+  "nearMisses": [
+   {
+    "track": "way/174931209",
+    "end": "B",
+    "near": "way/174931210",
+    "gapM": 2.95,
+    "L93": [
+     760755.51,
+     6822709.64
+    ]
+   }
+  ],
+  "duplicates": [],
+  "crossingsWithoutConnection": [
+   {
+    "a": "way/233599039",
+    "b": "way/233599046",
+    "L93": [
+     758640.52,
+     6822965.93
+    ],
+    "sameLevel": true,
+    "review": {
+     "observation": "croisement de deux voies de service du faisceau ouest sans nœud OSM : aiguillage probable non cartographié",
+     "open": true
+    }
+   },
+   {
+    "a": "way/233599046",
+    "b": "way/233599052",
+    "L93": [
+     758877.41,
+     6822931.46
+    ],
+    "sameLevel": true,
+    "review": {
+     "observation": "croisement de deux voies de service du faisceau ouest sans nœud OSM : aiguillage probable non cartographié",
+     "open": true
+    }
+   },
+   {
+    "a": "way/612311100",
+    "b": "way/721610239",
+    "L93": [
+     760754.03,
+     6822748.5
+    ],
+    "sameLevel": true,
+    "review": {
+     "observation": "la communication J1357 relie la voie 1 au faisceau sud en traversant la voie 2 sans nœud commun dans OSM : traversée ou aiguillages non cartographiés ; à vérifier (données SNCF Réseau inaccessibles)",
+     "open": true
+    }
+   }
+  ]
+ },
+ "levelCrossings": [
+  {
+   "id": "PN70",
+   "number": 70,
+   "name": "Passage à Niveau Numéro 70",
+   "bdtopo": "PT_RESEA0000000354298825",
+   "L93Bdtopo": [
+    756174,
+    6823242.7
+   ],
+   "L93": [
+    756174.07,
+    6823242.44
+   ],
+   "offsetBdtopoM": 0.27,
+   "road": {
+    "ids": [
+     "TRONROUT0000000009481834",
+     "TRONROUT0000000009481835"
+    ],
+    "name": "La Voie de la Garenne",
+    "category": "voie_locale"
+   },
+   "tracks": [
+    "way/721610237",
+    "way/721610239"
+   ],
+   "trackKinds": [
+    "main"
+   ],
+   "zTerrain": 75.9,
+   "inCommune": false,
+   "type": "inconnu (classement SNCF non accessible ; barrières et signalisation non modélisées)",
+   "confidence": "A (BD TOPO + voirie V1.8 + orthophoto)",
+   "sources": [
+    "BD TOPO point_du_reseau PT_RESEA0000000354298825 (précision 5 m, confirmé 2025-06-26)",
+    "voirie V1.8 (roads.geojson)",
+    "BD ORTHO IGN avril 2025"
+   ],
+   "v18": "Chemin Rural Dit Fin Maizieres",
+   "unrealCm": [
+    -210393,
+    32856,
+    7590
+   ],
+   "railZ": [
+    {
+     "track": "way/721610237",
+     "z": 75.9
+    },
+    {
+     "track": "way/721610239",
+     "z": 75.9
+    }
+   ],
+   "roadNames": [
+    "La Voie de la Garenne",
+    "Chemin Rural Dit Fin Maizieres"
+   ],
+   "railMinusRoadM": 0
+  },
+  {
+   "id": "PN71",
+   "number": 71,
+   "name": "Passage à Niveau Numéro 71",
+   "bdtopo": "PT_RESEA0000000354298826",
+   "L93Bdtopo": [
+    756711.5,
+    6823185.4
+   ],
+   "L93": [
+    756711.46,
+    6823184.24
+   ],
+   "offsetBdtopoM": 1.16,
+   "road": {
+    "ids": [
+     "TRONROUT0000000244696585"
+    ],
+    "name": "Rue du Pot Bancelin",
+    "category": "voie_locale"
+   },
+   "tracks": [
+    "way/721610237",
+    "way/721610239"
+   ],
+   "trackKinds": [
+    "main"
+   ],
+   "zTerrain": 76.18,
+   "inCommune": true,
+   "type": "inconnu (classement SNCF non accessible ; barrières et signalisation non modélisées)",
+   "confidence": "A (BD TOPO + voirie V1.8 + orthophoto)",
+   "sources": [
+    "BD TOPO point_du_reseau PT_RESEA0000000354298826 (précision 5 m, confirmé 2025-06-26)",
+    "voirie V1.8 (roads.geojson)",
+    "BD ORTHO IGN avril 2025"
+   ],
+   "v18": "Rue du Pot Bancelin",
+   "unrealCm": [
+    -156655,
+    38676,
+    7618
+   ],
+   "railZ": [
+    {
+     "track": "way/721610237",
+     "z": 76.18
+    },
+    {
+     "track": "way/721610239",
+     "z": 76.18
+    }
+   ],
+   "roadNames": [
+    "Rue du Pot Bancelin"
+   ],
+   "railMinusRoadM": 0
+  },
+  {
+   "id": "PN73",
+   "number": 73,
+   "name": "Passage à Niveau Numéro 73",
+   "bdtopo": "PT_RESEA0000000354298827",
+   "L93Bdtopo": [
+    758048.4,
+    6823041.7
+   ],
+   "L93": [
+    758048.28,
+    6823040.85
+   ],
+   "offsetBdtopoM": 0.86,
+   "road": {
+    "ids": [
+     "TRONROUT0000000009483697"
+    ],
+    "name": "Rue du General Leclerc",
+    "category": "route_secondaire"
+   },
+   "tracks": [
+    "way/721610237",
+    "way/721610239"
+   ],
+   "trackKinds": [
+    "main"
+   ],
+   "zTerrain": 78.09,
+   "inCommune": true,
+   "type": "inconnu (classement SNCF non accessible ; barrières et signalisation non modélisées)",
+   "confidence": "A (BD TOPO + voirie V1.8 + orthophoto + BIBLE_01)",
+   "sources": [
+    "BD TOPO point_du_reseau PT_RESEA0000000354298827 (précision 5 m, confirmé 2025-06-26)",
+    "voirie V1.8 (roads.geojson)",
+    "BD ORTHO IGN avril 2025",
+    "BIBLE_01 § 12.2 : passage à niveau de la Rue du Général-Leclerc identifié par SNCF Réseau (2025) ; § 12.1 : ancienne gare « près du passage à niveau »"
+   ],
+   "v18": "Rue du General Leclerc",
+   "unrealCm": [
+    -22972,
+    53015,
+    7809
+   ],
+   "railZ": [
+    {
+     "track": "way/721610237",
+     "z": 78.09
+    },
+    {
+     "track": "way/721610239",
+     "z": 78.09
+    }
+   ],
+   "roadNames": [
+    "Rue du General Leclerc"
+   ],
+   "railMinusRoadM": 0
+  },
+  {
+   "id": "PN74",
+   "number": 74,
+   "name": "Passage à Niveau Numéro 74",
+   "bdtopo": "PT_RESEA0000000354298828",
+   "L93Bdtopo": [
+    758523.7,
+    6822989.7
+   ],
+   "L93": [
+    758523.72,
+    6822989.84
+   ],
+   "offsetBdtopoM": 0.14,
+   "road": {
+    "ids": [
+     "TRONROUT0000000009483676"
+    ],
+    "name": null,
+    "category": "chemin_carrossable"
+   },
+   "tracks": [
+    "way/721610237",
+    "way/721610239"
+   ],
+   "trackKinds": [
+    "main"
+   ],
+   "zTerrain": 79.51,
+   "inCommune": true,
+   "type": "inconnu (classement SNCF non accessible ; barrières et signalisation non modélisées)",
+   "confidence": "A (BD TOPO + voirie V1.8 + orthophoto)",
+   "sources": [
+    "BD TOPO point_du_reseau PT_RESEA0000000354298828 (précision 5 m, confirmé 2025-06-26)",
+    "voirie V1.8 (roads.geojson)",
+    "BD ORTHO IGN avril 2025"
+   ],
+   "v18": null,
+   "unrealCm": [
+    24572,
+    58116,
+    7951
+   ],
+   "railZ": [
+    {
+     "track": "way/721610237",
+     "z": 79.51
+    },
+    {
+     "track": "way/721610239",
+     "z": 79.51
+    }
+   ],
+   "roadNames": [],
+   "railMinusRoadM": 0
+  }
+ ],
+ "structures": {
+  "bridges": [
+   {
+    "id": "ouvrage:TRONFERR0000000009310482",
+    "kind": "pont ferroviaire",
+    "bdtopo": "TRONFERR0000000009310482",
+    "startL93": [
+     757035.3,
+     6823151.8
+    ],
+    "endL93": [
+     757016.9,
+     6823153.9
+    ],
+    "lengthM": 18.52,
+    "crosses": [
+     "Ecoulement naturel"
+    ],
+    "confidence": "A (BD TOPO position au-dessus du sol)",
+    "tracks": [
+     "way/721610237",
+     "way/721610239"
+    ],
+    "deck": [
+     {
+      "track": "way/721610237",
+      "zStart": 75.98,
+      "zEnd": 76,
+      "minTerrainBelow": 74.03,
+      "clearanceMaxM": 1.97
+     },
+     {
+      "track": "way/721610239",
+      "zStart": 75.94,
+      "zEnd": 75.94,
+      "minTerrainBelow": 74.03,
+      "clearanceMaxM": 1.91
+     }
+    ],
+    "relationToTerrain": "tablier au niveau des remblais d’accès ; terrain jusqu’à 1.97 m plus bas sous l’ouvrage",
+    "unrealCm": [
+     -125130,
+     41820,
+     7598
+    ]
+   }
+  ],
+  "hydraulic": [],
+  "overpasses": [
+   {
+    "road": "TRONROUT0000000009483634",
+    "roadName": "Rue de l'Orme",
+    "roadCategory": "route_secondaire",
+    "track": "way/721610237",
+    "trackKind": "main",
+    "L93": [
+     759372.07,
+     6822900.55
+    ]
+   },
+   {
+    "road": "TRONROUT0000000009483634",
+    "roadName": "Rue de l'Orme",
+    "roadCategory": "route_secondaire",
+    "track": "way/721610239",
+    "trackKind": "main",
+    "L93": [
+     759371.79,
+     6822896.77
+    ]
+   }
+  ],
+  "roadLevelCrossingsOfServiceTracks": 21
+ },
+ "profile": {
+  "aberrantGrades": [],
+  "deviations": [],
+  "pinnedAtSwitches": [
+   {
+    "id": "way/174931204",
+    "pinned": [
+     {
+      "end": "B",
+      "to": "way/174931206",
+      "deltaM": 0.03
+     }
+    ]
+   },
+   {
+    "id": "way/174931207",
+    "pinned": [
+     {
+      "end": "B",
+      "to": "way/174931217",
+      "deltaM": 0.05
+     }
+    ]
+   },
+   {
+    "id": "way/174931208",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/174931209",
+      "deltaM": -0.01
+     }
+    ]
+   },
+   {
+    "id": "way/174931210",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/174931206",
+      "deltaM": 0.04
+     }
+    ]
+   },
+   {
+    "id": "way/174931211",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/174931207",
+      "deltaM": 0.02
+     }
+    ]
+   },
+   {
+    "id": "way/174931212",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/174931210",
+      "deltaM": 0.06
+     }
+    ]
+   },
+   {
+    "id": "way/174931213",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/233599049",
+      "deltaM": 0.12
+     },
+     {
+      "end": "B",
+      "to": "way/233599049",
+      "deltaM": 0.02
+     }
+    ]
+   },
+   {
+    "id": "way/174931214",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/233599049",
+      "deltaM": 0
+     },
+     {
+      "end": "B",
+      "to": "way/233599049",
+      "deltaM": 0.02
+     }
+    ]
+   },
+   {
+    "id": "way/174931216",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/174931213",
+      "deltaM": 0
+     },
+     {
+      "end": "B",
+      "to": "way/174931213",
+      "deltaM": 0.05
+     }
+    ]
+   },
+   {
+    "id": "way/174931217",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/233599049",
+      "deltaM": 0
+     }
+    ]
+   },
+   {
+    "id": "way/233599042",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/233599046",
+      "deltaM": -0.17
+     },
+     {
+      "end": "B",
+      "to": "way/233599039",
+      "deltaM": -0.02
+     }
+    ]
+   },
+   {
+    "id": "way/233599043",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/174931204",
+      "deltaM": -0.03
+     }
+    ]
+   },
+   {
+    "id": "way/233599046",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/721610239",
+      "deltaM": -0.01
+     }
+    ]
+   },
+   {
+    "id": "way/233599048",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/174931203",
+      "deltaM": 0.01
+     },
+     {
+      "end": "B",
+      "to": "way/174931210",
+      "deltaM": 0.03
+     }
+    ]
+   },
+   {
+    "id": "way/233599049",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/612311100",
+      "deltaM": 0.13
+     }
+    ]
+   },
+   {
+    "id": "way/233599052",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/233599042",
+      "deltaM": -0.01
+     },
+     {
+      "end": "B",
+      "to": "way/233599051",
+      "deltaM": 0
+     }
+    ]
+   },
+   {
+    "id": "way/612311100",
+    "pinned": [
+     {
+      "end": "B",
+      "to": "way/721610237",
+      "deltaM": 0.01
+     }
+    ]
+   },
+   {
+    "id": "way/721610237",
+    "pinned": [
+     {
+      "levelCrossing": "PN70",
+      "deltaM": 0.12
+     },
+     {
+      "levelCrossing": "PN71",
+      "deltaM": 0.16
+     },
+     {
+      "levelCrossing": "PN73",
+      "deltaM": 0.15
+     },
+     {
+      "levelCrossing": "PN74",
+      "deltaM": 0.15
+     }
+    ]
+   },
+   {
+    "id": "way/721610239",
+    "pinned": [
+     {
+      "levelCrossing": "PN70",
+      "deltaM": 0.08
+     },
+     {
+      "levelCrossing": "PN71",
+      "deltaM": 0.15
+     },
+     {
+      "levelCrossing": "PN73",
+      "deltaM": 0.15
+     },
+     {
+      "levelCrossing": "PN74",
+      "deltaM": 0.11
+     }
+    ]
+   },
+   {
+    "id": "way/1239452991",
+    "pinned": [
+     {
+      "end": "A",
+      "to": "way/233599049",
+      "deltaM": 0.14
+     },
+     {
+      "end": "B",
+      "to": "way/721610239",
+      "deltaM": -0.06
+     }
+    ]
+   }
+  ]
+ },
+ "historic": [
+  {
+   "id": "way/775992125",
+   "kind": "ancienne emprise ferroviaire sans voie",
+   "status": "former_alignment",
+   "source": "OSM railway=abandoned (cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2011)",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      3.7696607,
+      48.5410604
+     ],
+     [
+      3.7679132,
+      48.5379887
+     ],
+     [
+      3.7634748,
+      48.5302178
+     ],
+     [
+      3.7633804,
+      48.5300525
+     ],
+     [
+      3.7561264,
+      48.5172902
+     ],
+     [
+      3.7553785,
+      48.5161013
+     ],
+     [
+      3.7543565,
+      48.5149123
+     ],
+     [
+      3.7534425,
+      48.5141038
+     ],
+     [
+      3.7526898,
+      48.5135573
+     ],
+     [
+      3.7507382,
+      48.512524
+     ],
+     [
+      3.7495952,
+      48.5120885
+     ],
+     [
+      3.7484615,
+      48.5116937
+     ]
+    ]
+   },
+   "lengthM": 3691.4,
+   "note": "tracé ancien documenté par OSM ; aucune voie actuelle ; hors réseau Unreal actuel"
+  },
+  {
+   "id": "bible:gare-maizieres",
+   "kind": "gare (bâtiment voyageurs et quais)",
+   "status": "disparu",
+   "geometry": null,
+   "nearReference": "PN73 (rue du Général-Leclerc)",
+   "source": "BIBLE_03 § 6 (AD Aube S 362, 1857-1859 ; « Fermée — BV détruit ») ; BIBLE_01 § 12.1 (« près du passage à niveau »)",
+   "note": "aucune géométrie source : pas de position inventée"
+  },
+  {
+   "id": "bible:tipry",
+   "kind": "ancien réseau TIPRY (tramway / chemin de fer secondaire)",
+   "status": "disparu",
+   "geometry": null,
+   "source": "BIBLE_01 § 12.3 : « Église → Passage à niveau → De Gaulle »",
+   "note": "itinéraire historique, aucune géométrie"
+  }
+ ],
+ "land": {
+  "osmLanduse": 4,
+  "bdtopoEquipment": [
+   {
+    "id": "EQ_RESEA0000000009311221",
+    "kind": "Aire de triage",
+    "source": "BD TOPO equipement_de_transport",
+    "official": true,
+    "fictif": false,
+    "inCommune": true
+   },
+   {
+    "id": "EQ_RESEA0000000312835745",
+    "kind": "Gare fret uniquement — Arrêt de Fret de Châtres",
+    "source": "BD TOPO equipement_de_transport",
+    "official": true,
+    "fictif": true,
+    "inCommune": false
+   }
+  ]
+ },
+ "notes": [
+  "Pont ferroviaire BD TOPO (TRONFERR0000000009310482, 18,5 m) sur un écoulement naturel boisé : explique la rupture du profil ferroviaire relevée en V1.7 ; aucune route dessous (V1.8).",
+  "Pont de la rue de l’Orme (passage supérieur routier) : reconstruit pour l’électrification, fin des travaux annoncée le 10 décembre 2025 (BIBLE_03 § 6) ; le LiDAR (2025) peut être antérieur à la reconstruction.",
+  "« La Station » est un lieu-dit d’adressage (BAN) des voies de desserte au sud du faisceau ; BIBLE_01 § 19.3 : rien ne prouve un lien avec l’ancienne gare. Le nom est conservé comme simple localisation.",
+  "Électrification : BD TOPO « non électrifiée » ; OSM « construction:electrified=contact_line, 25 kV 50 Hz » (travaux Paris–Troyes, BIBLE_01 § 7.7 et 12.6)."
+ ],
+ "openIssues": {
+  "unknownStatus": [
+   {
+    "id": "way/174931208",
+    "kind": "spur",
+    "lengthM": 351.62,
+    "review": "zone floutée (diffusion restreinte) ; aucune connexion au reste du réseau dans OSM"
+   },
+   {
+    "id": "way/174931209",
+    "kind": "spur",
+    "lengthM": 478.86,
+    "review": "zone floutée (diffusion restreinte) ; extrémité à 2,95 m de la voie way/174931210 sans nœud commun"
+   },
+   {
+    "id": "way/233599048",
+    "kind": "spur",
+    "lengthM": 47.1,
+    "review": "zone floutée (diffusion restreinte)"
+   }
+  ],
+  "orphans": [
+   {
+    "tracks": [
+     "way/174931208",
+     "way/174931209"
+    ],
+    "lengthM": 830,
+    "border": false,
+    "kinds": [
+     "spur"
+    ]
+   }
+  ],
+  "nearMisses": [
+   {
+    "track": "way/174931209",
+    "end": "B",
+    "near": "way/174931210",
+    "gapM": 2.95,
+    "L93": [
+     760755.51,
+     6822709.64
+    ]
+   }
+  ],
+  "duplicates": [],
+  "crossingsWithoutConnection": [
+   {
+    "a": "way/233599039",
+    "b": "way/233599046",
+    "L93": [
+     758640.52,
+     6822965.93
+    ],
+    "sameLevel": true,
+    "review": {
+     "observation": "croisement de deux voies de service du faisceau ouest sans nœud OSM : aiguillage probable non cartographié",
+     "open": true
+    }
+   },
+   {
+    "a": "way/233599046",
+    "b": "way/233599052",
+    "L93": [
+     758877.41,
+     6822931.46
+    ],
+    "sameLevel": true,
+    "review": {
+     "observation": "croisement de deux voies de service du faisceau ouest sans nœud OSM : aiguillage probable non cartographié",
+     "open": true
+    }
+   },
+   {
+    "a": "way/612311100",
+    "b": "way/721610239",
+    "L93": [
+     760754.03,
+     6822748.5
+    ],
+    "sameLevel": true,
+    "review": {
+     "observation": "la communication J1357 relie la voie 1 au faisceau sud en traversant la voie 2 sans nœud commun dans OSM : traversée ou aiguillages non cartographiés ; à vérifier (données SNCF Réseau inaccessibles)",
+     "open": true
+    }
+   }
+  ],
+  "aberrantGrades": [],
+  "largeDeviations": [],
+  "inferredJoins": [],
+  "unmatchedLevelCrossings": [],
+  "count": 8
+ }
+}

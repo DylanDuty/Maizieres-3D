@@ -1,0 +1,27 @@
+{
+ "note": "Revue V1.9 sur la BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : constat d’existence et de connexion seulement ; aucune voie n’est tracée d’après l’image. Une grande partie de La Station (sud du faisceau) est floutée par l’IGN (zone à diffusion restreinte) et ne peut pas être contrôlée.",
+ "tracks": {
+  "way/174931210": {"verdict": "visible", "observation": "rails visibles sur la partie est ; reste du tracé en zone floutée"},
+  "way/174931212": {"verdict": "visible", "observation": "rails visibles sur la partie est ; reste du tracé en zone floutée"},
+  "way/233599042": {"verdict": "visible", "observation": "voie de service visible, parallèle à la voie BD TOPO voisine"},
+  "way/233599051": {"verdict": "visible", "observation": "voie de service visible au sud du faisceau ouest"},
+  "way/233599048": {"verdict": "non vérifiable", "observation": "zone floutée (diffusion restreinte)"},
+  "way/174931208": {"verdict": "non vérifiable", "observation": "zone floutée (diffusion restreinte) ; aucune connexion au reste du réseau dans OSM"},
+  "way/174931209": {"verdict": "non vérifiable", "observation": "zone floutée (diffusion restreinte) ; extrémité à 2,95 m de la voie way/174931210 sans nœud commun"}
+ },
+ "bdtopoAxes": {
+  "TRONFERR0000000009310459": {"representedBy": ["way/174931207"], "observation": "tracé BD TOPO décalé et en biais ; les rails visibles suivent la voie OSM way/174931207"},
+  "TRONFERR0000000009310465": {"representedBy": ["way/174931211"], "observation": "tracé BD TOPO décalé ; les rails visibles suivent la voie OSM way/174931211"}
+ },
+ "crossings": {
+  "way/612311100|way/721610239": {"observation": "la communication J1357 relie la voie 1 au faisceau sud en traversant la voie 2 sans nœud commun dans OSM : traversée ou aiguillages non cartographiés ; à vérifier (données SNCF Réseau inaccessibles)", "open": true},
+  "way/233599039|way/233599046": {"observation": "croisement de deux voies de service du faisceau ouest sans nœud OSM : aiguillage probable non cartographié", "open": true},
+  "way/233599046|way/233599052": {"observation": "croisement de deux voies de service du faisceau ouest sans nœud OSM : aiguillage probable non cartographié", "open": true}
+ },
+ "notes": [
+  "Pont ferroviaire BD TOPO (TRONFERR0000000009310482, 18,5 m) sur un écoulement naturel boisé : explique la rupture du profil ferroviaire relevée en V1.7 ; aucune route dessous (V1.8).",
+  "Pont de la rue de l’Orme (passage supérieur routier) : reconstruit pour l’électrification, fin des travaux annoncée le 10 décembre 2025 (BIBLE_03 § 6) ; le LiDAR (2025) peut être antérieur à la reconstruction.",
+  "« La Station » est un lieu-dit d’adressage (BAN) des voies de desserte au sud du faisceau ; BIBLE_01 § 19.3 : rien ne prouve un lien avec l’ancienne gare. Le nom est conservé comme simple localisation.",
+  "Électrification : BD TOPO « non électrifiée » ; OSM « construction:electrified=contact_line, 25 kV 50 Hz » (travaux Paris–Troyes, BIBLE_01 § 7.7 et 12.6)."
+ ]
+}
