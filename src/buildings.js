@@ -13,7 +13,7 @@ export const diagnosticKey=(item,mode)=>mode==='validation'?(item.provenance==='
 export function buildBuildings(scene,items,enrichment={buildings:{}},options={}){
  const walls=new Batch(material()),roofs=new Batch(material()),windows=new Batch(material({roughness:.65})),details=new Batch(material());
  const batches=[walls,roofs,windows,details],ranges=batches.map(()=>[]),pickMeshes=[];
- let count=0;const rejected=[],info=new Map(),landmarks=[],stats={ignWallHeights:0,ignRoofHeights:0,knownFloors:0,knownRoofMaterials:0,roofHeightClamps:0,categories:{}};
+ let count=0;const lifts=[],rejected=[],info=new Map(),landmarks=[],stats={ignWallHeights:0,ignRoofHeights:0,knownFloors:0,knownRoofMaterials:0,roofHeightClamps:0,categories:{}};
  for(const item of items){const {poly,t,id}=item;if(area(poly[0])>100000){rejected.push({id,reason:'surface > 100 000 m²'});continue;}const extra=item.extra||enrichment.buildings[id]||{},p=buildingProfile(t,poly,extra,id);if(!p){rejected.push({id,reason:'profil impossible'});continue;}
   if(options.diagnostic){p.wallColor=(options.diagnostic==='validation'?VALIDATION_COLORS:PROVENANCE_COLORS)[diagnosticKey(item,options.diagnostic)]||'#999';p.roofColor=new THREE.Color(p.wallColor).multiplyScalar(.8).getStyle();p.shade=0;}
   const starts=batches.map(b=>b.p.length/9);
@@ -45,10 +45,13 @@ export function buildBuildings(scene,items,enrichment={buildings:{}},options={})
    const rings=shapeRings(poly),flat=rings.flat();for(const tri of THREE.ShapeUtils.triangulateShape(rings[0],rings.slice(1))){const points=tri.map(i=>[flat[i].x,flat[i].y]);for(const side of [-1,1]){const polygon=split(points,axis.axis,mid,side);for(let i=1;i<polygon.length-1;i++)roofs.tri(...[polygon[0],polygon[i],polygon[i+1]].map(q=>[q[0],top(q),q[1]]),roofColor);}}
   }
   batches.forEach((b,i)=>{const end=b.p.length/9;if(end>starts[i])ranges[i].push({start:starts[i],end,id});});
+  // V1.7 ?diagnostic=terrain: the whole building is lifted to its terrain base altitude (footprint unchanged).
+  const dy=options.elevation?.(item)||0;if(dy)lifts.push({starts,ends:batches.map(b=>b.p.length/9),dy});
   info.set(id,{validation:item.validation||null,source:item.source||'OpenStreetMap',provenance:item.provenance||null,rnb:item.rnb||null,osmIds:t['@osm']||[id],kind:p.kind,knownUsage:p.knownUsage,usage:extra.usage&&extra.usage!=='Indifférencié'?extra.usage:null,floors:extra.floors||Number.parseInt(t['building:levels'])||null,wallHeight:p.wallHeight,heightSource:p.heightSource,maxHeight,light:t.wall==='no'||extra.lightConstruction===true,ign:!!extra.ignId,poly});
-  if(p.kind==='church'||p.kind==='public'){const name=extra.landmark?.name||t.name||(t.amenity==='townhall'?'Mairie':t.amenity==='school'?'École primaire':null);if(name)landmarks.push({name,position:[(bb.minX+bb.maxX)/2,maxHeight+4,(bb.minZ+bb.maxZ)/2],id});}
+  if(p.kind==='church'||p.kind==='public'){const name=extra.landmark?.name||t.name||(t.amenity==='townhall'?'Mairie':t.amenity==='school'?'École primaire':null);if(name)landmarks.push({name,position:[(bb.minX+bb.maxX)/2,maxHeight+4+dy,(bb.minZ+bb.maxZ)/2],id});}
   if(p.heightSource==='IGN BD TOPO')stats.ignWallHeights++;if(p.roofHeightSource==='IGN statistical roof maximum')stats.ignRoofHeights++;if(p.roofHeightClamped)stats.roofHeightClamps++;if(extra.floors)stats.knownFloors++;if(p.materialSource==='IGN cadastral declaration')stats.knownRoofMaterials++;stats.categories[p.kind]=(stats.categories[p.kind]||0)+1;count++;
  }
  for(let i=0;i<walls.p.length;i+=3)if(walls.p[i+1]<.5){walls.c[i]*=.82;walls.c[i+1]*=.82;walls.c[i+2]*=.82;}
+ for(const {starts,ends,dy} of lifts)batches.forEach((b,i)=>{for(let k=starts[i]*9+1;k<ends[i]*9;k+=3)b.p[k]+=dy;});
  for(const [i,batch] of batches.entries()){const mesh=batch.mesh(scene,i!==2);if(mesh){mesh.receiveShadow=false;mesh.userData.featureRanges=ranges[i];pickMeshes.push(mesh);}}return {count,landmarks,stats:{...stats,rejected:rejected.length},rejected,pickMeshes,info};
 }

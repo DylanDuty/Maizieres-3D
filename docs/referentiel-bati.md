@@ -80,6 +80,10 @@ Les verdicts sont dans `data-sources/building-review-v1.6.2.json` et `validate-b
   - les 3 bâtiments à `geometryEnrichment` peuvent être séparés en volume BD TOPO (`ignGeometry`) et en annexe plus basse ;
   - ignorer ou traiter à part les classes C et les bâtiments B à contour différent si une précision de tracé est exigée.
 
+## Altitude du terrain (V1.7)
+
+Le référentiel bâti reste gelé : son fichier n’est pas modifié. L’altitude du terrain IGN LiDAR HD sous chaque bâtiment (socle recommandé `baseZ`, médiane, min, max, dénivelé, position Unreal) est dans le fichier dérivé `public/data/building-terrain-elevation.json`, indexé par `id`. Voir `docs/referentiel-terrain.md`.
+
 ## Contrôles
 
 - `npm run check:buildings` : chaque bâtiment IGN de la zone est présent une seule fois avec sa géométrie d’origine ; chaque empreinte OSM seule (< 10 %) est présente et aucune autre ; pas d’identifiant dupliqué ; SHA-256 des sources identiques à ceux des métadonnées.

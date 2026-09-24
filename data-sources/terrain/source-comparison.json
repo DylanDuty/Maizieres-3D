@@ -1,0 +1,72 @@
+{
+ "generatedAt": "2026-09-24T18:36:19.700Z",
+ "compared": "RGE ALTI 1 m (WMS-R ELEVATION.ELEVATIONGRIDCOVERAGE.HIGHRES, x-bil float32) − LiDAR HD MNT (nœuds 1 m du référentiel)",
+ "note": "rgeRepeatedNeighbourShare : part des pixels RGE ALTI égaux à leur voisin de gauche ; proche de 0,5 ou plus, la résolution effective du RGE ALTI est plus grossière que 1 m (source rééchantillonnée).",
+ "windows": [
+  {
+   "window": "centre-bourg",
+   "centreL93": [
+    758278,
+    6823571
+   ],
+   "sizeM": 400,
+   "samples": 160000,
+   "meanRgeMinusLidar": -0.12,
+   "rmse": 0.236,
+   "maxAbs": 2.099,
+   "rgeRepeatedNeighbourShare": 0.68
+  },
+  {
+   "window": "Les Granges",
+   "centreL93": [
+    757623,
+    6822786
+   ],
+   "sizeM": 400,
+   "samples": 160000,
+   "meanRgeMinusLidar": -0.139,
+   "rmse": 0.228,
+   "maxAbs": 3.022,
+   "rgeRepeatedNeighbourShare": 0.68
+  },
+  {
+   "window": "Poussey",
+   "centreL93": [
+    758867,
+    6824123
+   ],
+   "sizeM": 400,
+   "samples": 160000,
+   "meanRgeMinusLidar": -0.095,
+   "rmse": 0.234,
+   "maxAbs": 2.724,
+   "rgeRepeatedNeighbourShare": 0.68
+  },
+  {
+   "window": "ZI la Glacière",
+   "centreL93": [
+    759109,
+    6822760
+   ],
+   "sizeM": 400,
+   "samples": 160000,
+   "meanRgeMinusLidar": -0.061,
+   "rmse": 0.246,
+   "maxAbs": 3.362,
+   "rgeRepeatedNeighbourShare": 0.68
+  },
+  {
+   "window": "vallée de la Seine (Pont de Seine)",
+   "centreL93": [
+    756365,
+    6825509
+   ],
+   "sizeM": 400,
+   "samples": 160000,
+   "meanRgeMinusLidar": 0.081,
+   "rmse": 0.322,
+   "maxAbs": 4.036,
+   "rgeRepeatedNeighbourShare": 0.68
+  }
+ ]
+}

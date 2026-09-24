@@ -1,0 +1,2974 @@
+{
+ "retrievedAt": "2026-09-24T18:30:38.823Z",
+ "request": "https://data.geopf.fr/wfs/ows GetFeature IGNF_LIDAR-HD_METADONNEE:metadata BBOX 755380,6819504,761496,6826382 EPSG:2154",
+ "features": [
+  {
+   "type": "Feature",
+   "id": "metadata.495388",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.75759061,
+       48.46884775
+      ],
+      [
+       3.75772043,
+       48.47784344
+      ],
+      [
+       3.74419051,
+       48.477929
+      ],
+      [
+       3.74406302,
+       48.46893329
+      ],
+      [
+       3.75759061,
+       48.46884775
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6820_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6819000.25,755999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6820_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6820_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6819000.25,755999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6820_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6820_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6819000.25,755999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6820_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0755_6820_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0755-6820\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-14\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0755-6820",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-14Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495116",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.75772043,
+       48.47784344
+      ],
+      [
+       3.75785028,
+       48.48683907
+      ],
+      [
+       3.74431805,
+       48.48692464
+      ],
+      [
+       3.74419051,
+       48.477929
+      ],
+      [
+       3.75772043,
+       48.47784344
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6821_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6820000.25,755999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6821_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6821_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6820000.25,755999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6821_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6821_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6820000.25,755999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6821_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0755_6821_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0755-6821\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-14\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0755-6821",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-14Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.498383",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.75785028,
+       48.48683907
+      ],
+      [
+       3.75798019,
+       48.49583463
+      ],
+      [
+       3.74444564,
+       48.49592021
+      ],
+      [
+       3.74431805,
+       48.48692464
+      ],
+      [
+       3.75785028,
+       48.48683907
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6822_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6821000.25,755999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6822_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6822_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6821000.25,755999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6822_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6822_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6821000.25,755999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6822_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0755_6822_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0755-6822\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0755-6822",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.497367",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.75798019,
+       48.49583463
+      ],
+      [
+       3.75811014,
+       48.50483013
+      ],
+      [
+       3.74457326,
+       48.50491573
+      ],
+      [
+       3.74444564,
+       48.49592021
+      ],
+      [
+       3.75798019,
+       48.49583463
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6823_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6822000.25,755999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6823_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6822000.25,755999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6823_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6823_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6822000.25,755999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6823_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0755_6823_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0755-6823\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0755-6823",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496658",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.75811014,
+       48.50483013
+      ],
+      [
+       3.75824013,
+       48.51382557
+      ],
+      [
+       3.74470094,
+       48.51391118
+      ],
+      [
+       3.74457326,
+       48.50491573
+      ],
+      [
+       3.75811014,
+       48.50483013
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6824_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6823000.25,755999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6824_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6823000.25,755999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6824_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6824_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6823000.25,755999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6824_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0755_6824_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0755-6824\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0755-6824",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495522",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.75824013,
+       48.51382557
+      ],
+      [
+       3.75837016,
+       48.52282094
+      ],
+      [
+       3.74482865,
+       48.52290656
+      ],
+      [
+       3.74470094,
+       48.51391118
+      ],
+      [
+       3.75824013,
+       48.51382557
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6825_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6824000.25,755999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6825_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6825_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6824000.25,755999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6825_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6825_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6824000.25,755999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6825_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0755_6825_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0755-6825\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0755-6825",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.497849",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.75837016,
+       48.52282094
+      ],
+      [
+       3.75850025,
+       48.53181625
+      ],
+      [
+       3.74495641,
+       48.53190188
+      ],
+      [
+       3.74482865,
+       48.52290656
+      ],
+      [
+       3.75837016,
+       48.52282094
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6826_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6825000.25,755999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6826_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6826_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6825000.25,755999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6826_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6826_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6825000.25,755999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6826_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0755_6826_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0755-6826\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0755-6826",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496738",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.75850025,
+       48.53181625
+      ],
+      [
+       3.75863037,
+       48.54081149
+      ],
+      [
+       3.74508421,
+       48.54089714
+      ],
+      [
+       3.74495641,
+       48.53190188
+      ],
+      [
+       3.75850025,
+       48.53181625
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6827_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6826000.25,755999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6827_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6827_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6826000.25,755999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6827_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6827_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6826000.25,755999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6827_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0755_6827_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0755-6827\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0755-6827",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495454",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.77111816,
+       48.46876067
+      ],
+      [
+       3.77125029,
+       48.47775635
+      ],
+      [
+       3.75772043,
+       48.47784344
+      ],
+      [
+       3.75759061,
+       48.46884775
+      ],
+      [
+       3.77111816,
+       48.46876067
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6820_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6819000.25,756999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6820_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6820_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6819000.25,756999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6820_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6820_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6819000.25,756999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6820_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0756_6820_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0756-6820\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-14\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0756-6820",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-14Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496863",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.77125029,
+       48.47775635
+      ],
+      [
+       3.77138247,
+       48.48675196
+      ],
+      [
+       3.75785028,
+       48.48683907
+      ],
+      [
+       3.75772043,
+       48.47784344
+      ],
+      [
+       3.77125029,
+       48.47775635
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6821_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6820000.25,756999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6821_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6821_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6820000.25,756999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6821_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6821_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6820000.25,756999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6821_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0756_6821_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0756-6821\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-14\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0756-6821",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-14Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.498179",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.77138247,
+       48.48675196
+      ],
+      [
+       3.77151469,
+       48.49574751
+      ],
+      [
+       3.75798019,
+       48.49583463
+      ],
+      [
+       3.75785028,
+       48.48683907
+      ],
+      [
+       3.77138247,
+       48.48675196
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6822_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6821000.25,756999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6822_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6822_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6821000.25,756999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6822_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6822_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6821000.25,756999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6822_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0756_6822_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0756-6822\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0756-6822",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496727",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.77151469,
+       48.49574751
+      ],
+      [
+       3.77164696,
+       48.50474299
+      ],
+      [
+       3.75811014,
+       48.50483013
+      ],
+      [
+       3.75798019,
+       48.49583463
+      ],
+      [
+       3.77151469,
+       48.49574751
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6823_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6822000.25,756999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6823_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6822000.25,756999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6823_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6823_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6822000.25,756999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6823_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0756_6823_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0756-6823\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0756-6823",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.497693",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.77164696,
+       48.50474299
+      ],
+      [
+       3.77177927,
+       48.51373842
+      ],
+      [
+       3.75824013,
+       48.51382557
+      ],
+      [
+       3.75811014,
+       48.50483013
+      ],
+      [
+       3.77164696,
+       48.50474299
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6824_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6823000.25,756999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6824_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6823000.25,756999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6824_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6824_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6823000.25,756999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6824_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0756_6824_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0756-6824\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0756-6824",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495321",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.77177927,
+       48.51373842
+      ],
+      [
+       3.77191163,
+       48.52273377
+      ],
+      [
+       3.75837016,
+       48.52282094
+      ],
+      [
+       3.75824013,
+       48.51382557
+      ],
+      [
+       3.77177927,
+       48.51373842
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6825_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6824000.25,756999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6825_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6825_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6824000.25,756999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6825_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6825_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6824000.25,756999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6825_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0756_6825_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0756-6825\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0756-6825",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495762",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.77191163,
+       48.52273377
+      ],
+      [
+       3.77204404,
+       48.53172906
+      ],
+      [
+       3.75850025,
+       48.53181625
+      ],
+      [
+       3.75837016,
+       48.52282094
+      ],
+      [
+       3.77191163,
+       48.52273377
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6826_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6825000.25,756999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6826_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6826_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6825000.25,756999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6826_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6826_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6825000.25,756999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6826_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0756_6826_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0756-6826\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0756-6826",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495091",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.77204404,
+       48.53172906
+      ],
+      [
+       3.77217649,
+       48.54072429
+      ],
+      [
+       3.75863037,
+       48.54081149
+      ],
+      [
+       3.75850025,
+       48.53181625
+      ],
+      [
+       3.77204404,
+       48.53172906
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6827_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6826000.25,756999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6827_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6827_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6826000.25,756999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6827_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6827_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6826000.25,756999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6827_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0756_6827_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0756-6827\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0756-6827",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496162",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.78464567,
+       48.46867205
+      ],
+      [
+       3.78478012,
+       48.47766771
+      ],
+      [
+       3.77125029,
+       48.47775635
+      ],
+      [
+       3.77111816,
+       48.46876067
+      ],
+      [
+       3.78464567,
+       48.46867205
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6820_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6819000.25,757999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6820_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6820_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6819000.25,757999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6820_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6820_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6819000.25,757999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6820_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0757_6820_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0757-6820\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-14\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0757-6820",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-14Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496651",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.78478012,
+       48.47766771
+      ],
+      [
+       3.78491461,
+       48.48666331
+      ],
+      [
+       3.77138247,
+       48.48675196
+      ],
+      [
+       3.77125029,
+       48.47775635
+      ],
+      [
+       3.78478012,
+       48.47766771
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6821_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6820000.25,757999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6821_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6821_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6820000.25,757999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6821_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6821_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6820000.25,757999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6821_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0757_6821_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0757-6821\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-14\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0757-6821",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-14Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.498376",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.78491461,
+       48.48666331
+      ],
+      [
+       3.78504916,
+       48.49565884
+      ],
+      [
+       3.77151469,
+       48.49574751
+      ],
+      [
+       3.77138247,
+       48.48675196
+      ],
+      [
+       3.78491461,
+       48.48666331
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6822_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6821000.25,757999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6822_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6822_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6821000.25,757999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6822_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6822_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6821000.25,757999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6822_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0757_6822_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0757-6822\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0757-6822",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.497545",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.78504916,
+       48.49565884
+      ],
+      [
+       3.78518374,
+       48.50465431
+      ],
+      [
+       3.77164696,
+       48.50474299
+      ],
+      [
+       3.77151469,
+       48.49574751
+      ],
+      [
+       3.78504916,
+       48.49565884
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6823_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6822000.25,757999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6823_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6822000.25,757999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6823_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6823_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6822000.25,757999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6823_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0757_6823_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0757-6823\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0757-6823",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496927",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.78518374,
+       48.50465431
+      ],
+      [
+       3.78531838,
+       48.51364972
+      ],
+      [
+       3.77177927,
+       48.51373842
+      ],
+      [
+       3.77164696,
+       48.50474299
+      ],
+      [
+       3.78518374,
+       48.50465431
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6824_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6823000.25,757999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6824_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6823000.25,757999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6824_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6824_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6823000.25,757999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6824_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0757_6824_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0757-6824\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0757-6824",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495202",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.78531838,
+       48.51364972
+      ],
+      [
+       3.78545306,
+       48.52264506
+      ],
+      [
+       3.77191163,
+       48.52273377
+      ],
+      [
+       3.77177927,
+       48.51373842
+      ],
+      [
+       3.78531838,
+       48.51364972
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6825_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6824000.25,757999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6825_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6825_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6824000.25,757999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6825_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6825_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6824000.25,757999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6825_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0757_6825_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0757-6825\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0757-6825",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495556",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.78545306,
+       48.52264506
+      ],
+      [
+       3.78558778,
+       48.53164034
+      ],
+      [
+       3.77204404,
+       48.53172906
+      ],
+      [
+       3.77191163,
+       48.52273377
+      ],
+      [
+       3.78545306,
+       48.52264506
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6826_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6825000.25,757999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6826_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6826_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6825000.25,757999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6826_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6826_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6825000.25,757999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6826_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0757_6826_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0757-6826\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0757-6826",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495893",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.78558778,
+       48.53164034
+      ],
+      [
+       3.78572256,
+       48.54063555
+      ],
+      [
+       3.77217649,
+       48.54072429
+      ],
+      [
+       3.77204404,
+       48.53172906
+      ],
+      [
+       3.78558778,
+       48.53164034
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6827_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6826000.25,757999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6827_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6827_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6826000.25,757999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6827_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6827_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6826000.25,757999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6827_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0757_6827_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0757-6827\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0757-6827",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.497569",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.79817313,
+       48.46858189
+      ],
+      [
+       3.7983099,
+       48.47757753
+      ],
+      [
+       3.78478012,
+       48.47766771
+      ],
+      [
+       3.78464567,
+       48.46867205
+      ],
+      [
+       3.79817313,
+       48.46858189
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6820_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6819000.25,758999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6820_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6820_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6819000.25,758999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6820_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6820_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6819000.25,758999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6820_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0758_6820_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0758-6820\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-14\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0758-6820",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-14Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495848",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7983099,
+       48.47757753
+      ],
+      [
+       3.79844671,
+       48.48657312
+      ],
+      [
+       3.78491461,
+       48.48666331
+      ],
+      [
+       3.78478012,
+       48.47766771
+      ],
+      [
+       3.7983099,
+       48.47757753
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6821_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6820000.25,758999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6821_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6821_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6820000.25,758999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6821_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6821_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6820000.25,758999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6821_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0758_6821_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0758-6821\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-14\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0758-6821",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-14Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496963",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.79844671,
+       48.48657312
+      ],
+      [
+       3.79858357,
+       48.49556864
+      ],
+      [
+       3.78504916,
+       48.49565884
+      ],
+      [
+       3.78491461,
+       48.48666331
+      ],
+      [
+       3.79844671,
+       48.48657312
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6822_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6821000.25,758999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6822_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6822_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6821000.25,758999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6822_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6822_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6821000.25,758999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6822_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0758_6822_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0758-6822\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0758-6822",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.497018",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.79858357,
+       48.49556864
+      ],
+      [
+       3.79872048,
+       48.50456409
+      ],
+      [
+       3.78518374,
+       48.50465431
+      ],
+      [
+       3.78504916,
+       48.49565884
+      ],
+      [
+       3.79858357,
+       48.49556864
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "Optech ALTM Galaxy T2000:5060485",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6823_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6822000.25,758999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6823_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6822000.25,758999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6823_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6823_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6822000.25,758999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6823_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0758_6823_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"Optech ALTM Galaxy T2000:5060485\", \"code_mission\": \"25LHDZIRomilly\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0758-6823\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"IGN\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-10-18\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-10-18\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "25LHDZIRomilly",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0758-6823",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "IGN",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-10-18Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-10-18Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.498269",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.79872048,
+       48.50456409
+      ],
+      [
+       3.79885743,
+       48.51355948
+      ],
+      [
+       3.78531838,
+       48.51364972
+      ],
+      [
+       3.78518374,
+       48.50465431
+      ],
+      [
+       3.79872048,
+       48.50456409
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "Optech ALTM Galaxy T2000:5060485",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6824_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6823000.25,758999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6824_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6823000.25,758999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6824_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6824_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6823000.25,758999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6824_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0758_6824_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"Optech ALTM Galaxy T2000:5060485\", \"code_mission\": \"25LHDZIRomilly\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0758-6824\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"IGN\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-10-18\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-10-18\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "25LHDZIRomilly",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0758-6824",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "IGN",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-10-18Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-10-18Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495776",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.79885743,
+       48.51355948
+      ],
+      [
+       3.79899443,
+       48.52255481
+      ],
+      [
+       3.78545306,
+       48.52264506
+      ],
+      [
+       3.78531838,
+       48.51364972
+      ],
+      [
+       3.79885743,
+       48.51355948
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6825_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6824000.25,758999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6825_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6825_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6824000.25,758999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6825_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6825_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6824000.25,758999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6825_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0758_6825_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0758-6825\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0758-6825",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496852",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.79899443,
+       48.52255481
+      ],
+      [
+       3.79913148,
+       48.53155007
+      ],
+      [
+       3.78558778,
+       48.53164034
+      ],
+      [
+       3.78545306,
+       48.52264506
+      ],
+      [
+       3.79899443,
+       48.52255481
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6826_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6825000.25,758999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6826_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6826_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6825000.25,758999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6826_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6826_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6825000.25,758999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6826_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0758_6826_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0758-6826\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0758-6826",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.498227",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.79913148,
+       48.53155007
+      ],
+      [
+       3.79926858,
+       48.54054527
+      ],
+      [
+       3.78572256,
+       48.54063555
+      ],
+      [
+       3.78558778,
+       48.53164034
+      ],
+      [
+       3.79913148,
+       48.53155007
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6827_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6826000.25,758999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6827_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6827_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6826000.25,758999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6827_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6827_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6826000.25,758999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6827_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0758_6827_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0758-6827\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0758-6827",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.497008",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.81170054,
+       48.46849018
+      ],
+      [
+       3.81183963,
+       48.47748581
+      ],
+      [
+       3.7983099,
+       48.47757753
+      ],
+      [
+       3.79817313,
+       48.46858189
+      ],
+      [
+       3.81170054,
+       48.46849018
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6820_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6819000.25,759999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6820_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6820_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6819000.25,759999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6820_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6820_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6819000.25,759999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6820_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0759_6820_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0759-6820\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-14\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0759-6820",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-14Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496365",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.81183963,
+       48.47748581
+      ],
+      [
+       3.81197876,
+       48.48648138
+      ],
+      [
+       3.79844671,
+       48.48657312
+      ],
+      [
+       3.7983099,
+       48.47757753
+      ],
+      [
+       3.81183963,
+       48.47748581
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "Optech ALTM Galaxy T2000:5060485",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6821_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6820000.25,759999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6821_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6821_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6820000.25,759999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6821_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6821_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6820000.25,759999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6821_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0759_6821_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"Optech ALTM Galaxy T2000:5060485\", \"code_mission\": \"25LHDZIRomilly\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0759-6821\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"IGN\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-10-18\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-10-18\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "25LHDZIRomilly",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0759-6821",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "IGN",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-10-18Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-10-18Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.498088",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.81197876,
+       48.48648138
+      ],
+      [
+       3.81211794,
+       48.49547689
+      ],
+      [
+       3.79858357,
+       48.49556864
+      ],
+      [
+       3.79844671,
+       48.48657312
+      ],
+      [
+       3.81197876,
+       48.48648138
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "Optech ALTM Galaxy T2000:5060485",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6822_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6821000.25,759999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6822_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6822_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6821000.25,759999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6822_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6822_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6821000.25,759999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6822_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0759_6822_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"Optech ALTM Galaxy T2000:5060485\", \"code_mission\": \"25LHDZIRomilly\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0759-6822\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"IGN\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-10-18\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-10-18\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "25LHDZIRomilly",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0759-6822",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "IGN",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-10-18Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-10-18Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.498098",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.81211794,
+       48.49547689
+      ],
+      [
+       3.81225717,
+       48.50447233
+      ],
+      [
+       3.79872048,
+       48.50456409
+      ],
+      [
+       3.79858357,
+       48.49556864
+      ],
+      [
+       3.81211794,
+       48.49547689
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "Optech ALTM Galaxy T2000:5060485",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6823_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6822000.25,759999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6823_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6822000.25,759999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6823_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6823_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6822000.25,759999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6823_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0759_6823_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"Optech ALTM Galaxy T2000:5060485\", \"code_mission\": \"25LHDZIRomilly\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0759-6823\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"IGN\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-10-18\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-10-18\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "25LHDZIRomilly",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0759-6823",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "IGN",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-10-18Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-10-18Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.497094",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.81225717,
+       48.50447233
+      ],
+      [
+       3.81239644,
+       48.5134677
+      ],
+      [
+       3.79885743,
+       48.51355948
+      ],
+      [
+       3.79872048,
+       48.50456409
+      ],
+      [
+       3.81225717,
+       48.50447233
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "Optech ALTM Galaxy T2000:5060485",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6824_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6823000.25,759999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6824_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6823000.25,759999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6824_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6824_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6823000.25,759999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6824_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0759_6824_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"Optech ALTM Galaxy T2000:5060485\", \"code_mission\": \"25LHDZIRomilly\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0759-6824\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"IGN\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-10-18\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-10-18\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "25LHDZIRomilly",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0759-6824",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "IGN",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-10-18Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-10-18Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.497757",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.81239644,
+       48.5134677
+      ],
+      [
+       3.81253576,
+       48.52246302
+      ],
+      [
+       3.79899443,
+       48.52255481
+      ],
+      [
+       3.79885743,
+       48.51355948
+      ],
+      [
+       3.81239644,
+       48.5134677
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6825_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6824000.25,759999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6825_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6825_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6824000.25,759999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6825_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6825_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6824000.25,759999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6825_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0759_6825_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0759-6825\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0759-6825",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495425",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.81253576,
+       48.52246302
+      ],
+      [
+       3.81267514,
+       48.53145826
+      ],
+      [
+       3.79913148,
+       48.53155007
+      ],
+      [
+       3.79899443,
+       48.52255481
+      ],
+      [
+       3.81253576,
+       48.52246302
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6826_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6825000.25,759999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6826_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6826_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6825000.25,759999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6826_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6826_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6825000.25,759999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6826_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0759_6826_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0759-6826\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0759-6826",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495920",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.81267514,
+       48.53145826
+      ],
+      [
+       3.81281455,
+       48.54045345
+      ],
+      [
+       3.79926858,
+       48.54054527
+      ],
+      [
+       3.79913148,
+       48.53155007
+      ],
+      [
+       3.81267514,
+       48.53145826
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6827_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6826000.25,759999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6827_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6827_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6826000.25,759999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6827_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6827_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6826000.25,759999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6827_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0759_6827_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0759-6827\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0759-6827",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496705",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.82522791,
+       48.46839694
+      ],
+      [
+       3.82536931,
+       48.47739255
+      ],
+      [
+       3.81183963,
+       48.47748581
+      ],
+      [
+       3.81170054,
+       48.46849018
+      ],
+      [
+       3.82522791,
+       48.46839694
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6820_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6819000.25,760999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6820_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6820_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6819000.25,760999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6820_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6820_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6819000.25,760999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6820_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0760_6820_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0760-6820\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-14\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0760-6820",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-14Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495638",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.82536931,
+       48.47739255
+      ],
+      [
+       3.82551076,
+       48.48638811
+      ],
+      [
+       3.81197876,
+       48.48648138
+      ],
+      [
+       3.81183963,
+       48.47748581
+      ],
+      [
+       3.82536931,
+       48.47739255
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "Optech ALTM Galaxy T2000:5060485",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6821_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6820000.25,760999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6821_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6821_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6820000.25,760999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6821_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6821_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6820000.25,760999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6821_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0760_6821_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"Optech ALTM Galaxy T2000:5060485\", \"code_mission\": \"25LHDZIRomilly\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0760-6821\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"IGN\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-10-18\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-10-18\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "25LHDZIRomilly",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0760-6821",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "IGN",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-10-18Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-10-18Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495671",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.82551076,
+       48.48638811
+      ],
+      [
+       3.82565226,
+       48.49538359
+      ],
+      [
+       3.81211794,
+       48.49547689
+      ],
+      [
+       3.81197876,
+       48.48648138
+      ],
+      [
+       3.82551076,
+       48.48638811
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "Optech ALTM Galaxy T2000:5060485",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6822_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6821000.25,760999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6822_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6822_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6821000.25,760999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6822_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6822_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6821000.25,760999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6822_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0760_6822_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"Optech ALTM Galaxy T2000:5060485\", \"code_mission\": \"25LHDZIRomilly\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0760-6822\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"IGN\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-10-18\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-10-18\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "25LHDZIRomilly",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0760-6822",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "IGN",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-10-18Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-10-18Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496961",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.82565226,
+       48.49538359
+      ],
+      [
+       3.82579381,
+       48.50437902
+      ],
+      [
+       3.81225717,
+       48.50447233
+      ],
+      [
+       3.81211794,
+       48.49547689
+      ],
+      [
+       3.82565226,
+       48.49538359
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "Optech ALTM Galaxy T2000:5060485",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6823_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6822000.25,760999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6823_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6822000.25,760999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6823_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6823_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6822000.25,760999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6823_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0760_6823_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"Optech ALTM Galaxy T2000:5060485\", \"code_mission\": \"25LHDZIRomilly\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0760-6823\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"IGN\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-10-18\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-10-18\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "25LHDZIRomilly",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0760-6823",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "IGN",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-10-18Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-10-18Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496469",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.82579381,
+       48.50437902
+      ],
+      [
+       3.8259354,
+       48.51337438
+      ],
+      [
+       3.81239644,
+       48.5134677
+      ],
+      [
+       3.81225717,
+       48.50447233
+      ],
+      [
+       3.82579381,
+       48.50437902
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "Optech ALTM Galaxy T2000:5060485",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6824_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6823000.25,760999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6824_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6823000.25,760999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6824_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6824_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6823000.25,760999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6824_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0760_6824_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"Optech ALTM Galaxy T2000:5060485\", \"code_mission\": \"25LHDZIRomilly\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0760-6824\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"IGN\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-10-18\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-10-18\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "25LHDZIRomilly",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0760-6824",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "IGN",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-10-18Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-10-18Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496597",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.8259354,
+       48.51337438
+      ],
+      [
+       3.82607705,
+       48.52236968
+      ],
+      [
+       3.81253576,
+       48.52246302
+      ],
+      [
+       3.81239644,
+       48.5134677
+      ],
+      [
+       3.8259354,
+       48.51337438
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6825_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6824000.25,760999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6825_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6825_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6824000.25,760999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6825_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6825_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6824000.25,760999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6825_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0760_6825_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0760-6825\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0760-6825",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.497982",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.82607705,
+       48.52236968
+      ],
+      [
+       3.82621874,
+       48.53136491
+      ],
+      [
+       3.81267514,
+       48.53145826
+      ],
+      [
+       3.81253576,
+       48.52246302
+      ],
+      [
+       3.82607705,
+       48.52236968
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6826_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6825000.25,760999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6826_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6826_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6825000.25,760999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6826_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6826_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6825000.25,760999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6826_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0760_6826_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0760-6826\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0760-6826",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.497901",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.82621874,
+       48.53136491
+      ],
+      [
+       3.82636048,
+       48.54036008
+      ],
+      [
+       3.81281455,
+       48.54045345
+      ],
+      [
+       3.81267514,
+       48.53145826
+      ],
+      [
+       3.82621874,
+       48.53136491
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6827_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6826000.25,760999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6827_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6827_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6826000.25,760999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6827_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6827_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6826000.25,760999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6827_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0760_6827_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0760-6827\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0760-6827",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.497210",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.83875522,
+       48.46830215
+      ],
+      [
+       3.83889894,
+       48.47729775
+      ],
+      [
+       3.82536931,
+       48.47739255
+      ],
+      [
+       3.82522791,
+       48.46839694
+      ],
+      [
+       3.83875522,
+       48.46830215
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6820_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6819000.25,761999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6820_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6820_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6819000.25,761999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6820_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6820_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6819000.25,761999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6820_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0761_6820_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0761-6820\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-14\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-14\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0761-6820",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-14Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-14Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.497277",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.83889894,
+       48.47729775
+      ],
+      [
+       3.83904271,
+       48.48629329
+      ],
+      [
+       3.82551076,
+       48.48638811
+      ],
+      [
+       3.82536931,
+       48.47739255
+      ],
+      [
+       3.83889894,
+       48.47729775
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "Optech ALTM Galaxy T2000:5060485",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6821_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6820000.25,761999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6821_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6821_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6820000.25,761999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6821_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6821_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6820000.25,761999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6821_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0761_6821_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"Optech ALTM Galaxy T2000:5060485\", \"code_mission\": \"25LHDZIRomilly\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0761-6821\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"IGN\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-10-18\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-10-18\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "25LHDZIRomilly",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0761-6821",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "IGN",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-10-18Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-10-18Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.498279",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.83904271,
+       48.48629329
+      ],
+      [
+       3.83918653,
+       48.49528876
+      ],
+      [
+       3.82565226,
+       48.49538359
+      ],
+      [
+       3.82551076,
+       48.48638811
+      ],
+      [
+       3.83904271,
+       48.48629329
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "Optech ALTM Galaxy T2000:5060485",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6822_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6821000.25,761999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6822_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6822_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6821000.25,761999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6822_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6822_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6821000.25,761999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6822_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0761_6822_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"Optech ALTM Galaxy T2000:5060485\", \"code_mission\": \"25LHDZIRomilly\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0761-6822\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"IGN\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-10-18\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-10-18\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "25LHDZIRomilly",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0761-6822",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "IGN",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-10-18Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-10-18Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.498267",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.83918653,
+       48.49528876
+      ],
+      [
+       3.8393304,
+       48.50428417
+      ],
+      [
+       3.82579381,
+       48.50437902
+      ],
+      [
+       3.82565226,
+       48.49538359
+      ],
+      [
+       3.83918653,
+       48.49528876
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "Optech ALTM Galaxy T2000:5060485",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6823_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6822000.25,761999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6823_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6822000.25,761999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6823_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6823_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6822000.25,761999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6823_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0761_6823_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"Optech ALTM Galaxy T2000:5060485\", \"code_mission\": \"25LHDZIRomilly\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0761-6823\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"IGN\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-10-18\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-10-18\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "25LHDZIRomilly",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0761-6823",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "IGN",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-10-18Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-10-18Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496985",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.8393304,
+       48.50428417
+      ],
+      [
+       3.83947432,
+       48.51327952
+      ],
+      [
+       3.8259354,
+       48.51337438
+      ],
+      [
+       3.82579381,
+       48.50437902
+      ],
+      [
+       3.8393304,
+       48.50428417
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "Optech ALTM Galaxy T2000:5060485",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6824_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6823000.25,761999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6824_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6823000.25,761999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6824_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6824_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6823000.25,761999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6824_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0761_6824_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"Optech ALTM Galaxy T2000:5060485\", \"code_mission\": \"25LHDZIRomilly\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0761-6824\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"IGN\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-10-18\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-10-18\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "25LHDZIRomilly",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0761-6824",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "IGN",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-10-18Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-10-18Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.495994",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.83947432,
+       48.51327952
+      ],
+      [
+       3.83961828,
+       48.5222748
+      ],
+      [
+       3.82607705,
+       48.52236968
+      ],
+      [
+       3.8259354,
+       48.51337438
+      ],
+      [
+       3.83947432,
+       48.51327952
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6825_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6824000.25,761999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6825_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6825_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6824000.25,761999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6825_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6825_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6824000.25,761999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6825_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0761_6825_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0761-6825\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0761-6825",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.496457",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.83961828,
+       48.5222748
+      ],
+      [
+       3.8397623,
+       48.53127002
+      ],
+      [
+       3.82621874,
+       48.53136491
+      ],
+      [
+       3.82607705,
+       48.52236968
+      ],
+      [
+       3.83961828,
+       48.5222748
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6826_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6825000.25,761999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6826_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6826_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6825000.25,761999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6826_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6826_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6825000.25,761999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6826_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0761_6826_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0761-6826\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0761-6826",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "metadata.497876",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.8397623,
+       48.53127002
+      ],
+      [
+       3.83990636,
+       48.54026517
+      ],
+      [
+       3.82636048,
+       48.54036008
+      ],
+      [
+       3.82621874,
+       48.53136491
+      ],
+      [
+       3.8397623,
+       48.53127002
+      ]
+     ]
+    ]
+   },
+   "geometry_name": "geom",
+   "properties": {
+    "capteur": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+    "url_mnh": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6827_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6826000.25,761999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6827_MNH_0M50_LAMB93_IGN69.tif",
+    "url_mns": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6827_MNS_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNS_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6826000.25,761999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6827_MNS_0M50_LAMB93_IGN69.tif",
+    "url_mnt": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6827_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6826000.25,761999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6827_MNT_0M50_LAMB93_IGN69.tif",
+    "url_npl": "https://data.geopf.fr/telechargement/download/LiDARHD-NUALID/NUALHD_1-0__LAZ_LAMB93_MF_2026-05-19/LHD_FXX_0761_6827_PTS_LAMB93_IGN69.copc.laz",
+    "metadata": "{\"capteur\": \"RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888\", \"code_mission\": \"24LHDMF\", \"date_edition\": \"2026-05-19\", \"nombre_points\": 0, \"coordonnees_NW\": \"0761-6827\", \"moa_acquisition\": \"IGN\", \"moe_acquisition\": \"Sintegra\", \"procede_classement\": \"IGN_AUTO_V5\", \"date_fin_acquisition\": \"2025-02-19\", \"systeme_altimetrique\": \"IGN69\", \"moe_classement_manuel\": \"\", \"systeme_planimetrique\": \"LAMB93\", \"date_debut_acquisition\": \"2025-02-19\", \"moe_classement_automatique\": \"IGN\"}",
+    "code_mission": "24LHDMF",
+    "date_edition": "2026-05-19Z",
+    "nombre_points": 0,
+    "coordonnees_nw": "0761-6827",
+    "moa_acquisition": "IGN",
+    "moe_acquisition": "Sintegra",
+    "procede_classement": "IGN_AUTO_V5",
+    "date_fin_acquisition": "2025-02-19Z",
+    "systeme_altimetrique": "IGN69",
+    "moe_classement_manuel": "",
+    "systeme_planimetrique": "LAMB93",
+    "date_debut_acquisition": "2025-02-19Z",
+    "moe_classement_automatique": "IGN"
+   }
+  }
+ ]
+}

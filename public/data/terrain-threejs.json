@@ -1,0 +1,19 @@
+{
+ "source": "IGN LiDAR HD MNT (grille 1 m du référentiel V1.7), rééchantillonnage bilinéaire",
+ "frame": "repère local Three.js de src/geo.js (x est, z sud, mètres), origine 3.7890245, 48.5097657",
+ "x0": -2530,
+ "z0": -2420,
+ "step": 10,
+ "cols": 537,
+ "rows": 610,
+ "encoding": "Uint16 little-endian, ligne par ligne (z croissant) : altitude_NGF = zBase + valeur / 100 ; 65535 = NoData",
+ "zBase": 71,
+ "noData": 0,
+ "yReference": 77.2,
+ "yReferenceNote": "Dans le mode ?diagnostic=terrain, y Three.js = altitude NGF − yReference (altitude du terrain à l’origine commune)",
+ "vsGrid1m": {
+  "rmse": 0.108,
+  "max": 1.76,
+  "samples": 200000
+ }
+}

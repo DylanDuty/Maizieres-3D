@@ -10,6 +10,7 @@ import {createCatalogue} from './cartography.js';
 import {installSelection} from './selection.js';
 import {buildingItems} from './building-source.js';
 import {palette} from './art.js';
+import {loadTerrain,buildTerrainDiagnostic} from './terrain.js';
 const loading=document.querySelector('#loading');
 async function start(){
   const t0=performance.now();
@@ -28,16 +29,21 @@ async function start(){
   // Give the browser a frame to paint loading feedback before building static batches.
   await new Promise(resolve=>requestAnimationFrame(resolve));
   // V1.5: building footprints come from the unified reference (IGN BD TOPO first, OSM complement).
-  const reference=buildingItems(buildingReference,project,extent),diagnostic=['provenance','validation'].find(m=>m===new URLSearchParams(location.search).get('diagnostic'))||null;
+  const reference=buildingItems(buildingReference,project,extent),diagnostic=['provenance','validation','terrain'].find(m=>m===new URLSearchParams(location.search).get('diagnostic'))||null;
+  // V1.7 ?diagnostic=terrain: real LiDAR HD relief; the flat stylised landscape is hidden, buildings sit on their base altitude.
+  const relief=diagnostic==='terrain'?await loadTerrain(import.meta.env.BASE_URL):null,flatLayers=new Set(scene.children);
   const terrain=buildLandscape(scene,data,project,extent,ignLandscape,reference.items);
+  let reliefMesh=null;if(relief){for(const o of scene.children)if(!flatLayers.has(o)&&!o.isLight)o.visible=false;reliefMesh=buildTerrainDiagnostic(scene,relief);}
   for(const f of data.features)if(f.geometry.type==='Point'&&['school','townhall','community_centre'].includes(f.properties.amenity)){const p=project(f.geometry.coordinates);const building=terrain.buildings.find(b=>insidePoly(p,b.poly));if(building){building.t={...building.t,amenity:f.properties.amenity,name:f.properties.name};}}
-  const buildings=buildBuildings(scene,terrain.buildings,enrichment,{diagnostic});
-  if(diagnostic){const legend=document.createElement('div');legend.id='diagnostic-legend';
+  const buildings=buildBuildings(scene,terrain.buildings,enrichment,{diagnostic:relief?null:diagnostic,elevation:relief?item=>relief.elevation.buildings[item.featureId].baseZ-relief.meta.yReference:null});
+  if(relief){const legend=document.createElement('div');legend.id='diagnostic-legend';const s=reliefMesh.stats;
+   legend.innerHTML=[`Terrain IGN LiDAR HD (MNT) · grille ${s.step} m · ${s.vertices.toLocaleString('fr')} sommets`,`Altitude ${s.min} à ${s.max} m NGF-IGN69 · échelle verticale 1:1`,`y = altitude − ${s.yReference} m · quadrillage 100 m · courbes 5 m`,`NoData : ${s.noData}${s.noData?' (magenta)':''} · ${buildings.count} bâtiments posés à leur socle`].map(v=>`<span>${v}</span>`).join('');document.body.appendChild(legend);}
+  else if(diagnostic){const legend=document.createElement('div');legend.id='diagnostic-legend';
    const entries=diagnostic==='validation'?{A:'A · IGN confirmé par le cadastre',B:'B · source officielle unique','B-contour':'B · contour différent du cadastre actuel',C:'C · OSM seul non confirmé',cadastre:'Ajouté depuis le cadastre actuel (B ou C)'}:{'ign+osm':'IGN et OSM','ign+osm-partiel':'IGN, OSM partiel','ign':'IGN seul','osm':'OSM seul','cadastre':'Cadastre'};
    const colors=diagnostic==='validation'?VALIDATION_COLORS:PROVENANCE_COLORS;
    legend.innerHTML=Object.entries(entries).map(([k,v])=>`<span><i style="background:${colors[k]}"></i>${v} · ${reference.items.filter(i=>diagnosticKey(i,diagnostic)===k).length}</span>`).join('');document.body.appendChild(legend);}
   // A fine administrative line distinguishes the real commune from the context rectangle.
-  for(const poly of boundaryPolys){const pts=poly[0].map(([x,z])=>new THREE.Vector3(x,.4,z));const geo=new THREE.BufferGeometry().setFromPoints(pts);const line=new THREE.Line(geo,new THREE.LineDashedMaterial({color:'#e0d9bb',dashSize:9,gapSize:7,transparent:true,opacity:.65}));line.computeLineDistances();scene.add(line);}
+  for(const poly of boundaryPolys){const pts=poly[0].map(([x,z])=>new THREE.Vector3(x,relief?(relief.sample(x,z)-relief.meta.yReference||0)+1:.4,z));const geo=new THREE.BufferGeometry().setFromPoints(pts);const line=new THREE.Line(geo,new THREE.LineDashedMaterial({color:'#e0d9bb',dashSize:9,gapSize:7,transparent:true,opacity:.65}));line.computeLineDistances();scene.add(line);}
   const catalogue=createCatalogue(data,enrichment,project,extent,terrain.buildings,namedZones,bible);
   const selection=installSelection({scene,camera,canvas:renderer.domElement,catalogue,meshes:buildings.pickMeshes,buildingInfo:buildings.info,invalidate,target:()=>controls.target});
   const labelItems=[];for(const l of [...buildings.landmarks,...terrain.landmarks])if(!labelItems.some(o=>o.name===l.name&&Math.hypot(o.position[0]-l.position[0],o.position[2]-l.position[2])<80))labelItems.push(l);
@@ -79,7 +85,7 @@ async function start(){
   controls.addEventListener('change',invalidate);
   addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);invalidate();});
   renderer.domElement.addEventListener('webglcontextlost',event=>{event.preventDefault();loading.hidden=false;loading.style.display='flex';loading.replaceChildren(Object.assign(document.createElement('strong'),{textContent:'Affichage 3D interrompu. Rechargez la page.'}));});
-  renderer.domElement.dataset.stats=JSON.stringify({...terrain.stats,buildings:buildings.count,enrichment:buildings.stats,clickable:catalogue.stats,loadMs:Math.round(performance.now()-t0)});reset();draw();renderer.shadowMap.autoUpdate=false;loading.remove();
+  renderer.domElement.dataset.stats=JSON.stringify({...terrain.stats,relief:reliefMesh?.stats||null,buildings:buildings.count,enrichment:buildings.stats,clickable:catalogue.stats,loadMs:Math.round(performance.now()-t0)});reset();draw();renderer.shadowMap.autoUpdate=false;loading.remove();
   const snapshot=data.metadata.osmTimestamp?.slice(0,10)||data.metadata.retrievedAt.slice(0,10);document.querySelector('#data-date').textContent=`Relevé OSM · ${new Date(snapshot).toLocaleDateString('fr-FR')}`;
   // Read-only diagnostics for reproducible QA, without adding a performance dashboard.
   window.__MAIZIERES__={stats:{...terrain.stats,buildings:buildings.count,features:data.features.length,buildingReference:{...reference.stats,rendered:buildings.count,rejected:buildings.rejected},loadMs:Math.round(performance.now()-t0),origin:data.metadata.origin,extent},inspect:()=>({camera:camera.position.toArray(),target:controls.target.toArray(),drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,namesVisible}),breakdown:()=>{const out=[];scene.traverse(o=>{if(!o.isMesh)return;const g=o.geometry,tri=(g.index?g.index.count:g.getAttribute('position').count)/3;out.push({type:o.isInstancedMesh?'instanced':'mesh',instances:o.isInstancedMesh?o.count:1,triangles:tri*(o.isInstancedMesh?o.count:1),shadow:o.castShadow});});return out;},screen:(x,y,z)=>{const v=new THREE.Vector3(x,y,z).project(camera);return [(v.x*.5+.5)*innerWidth,(-v.y*.5+.5)*innerHeight];},view:(position,target)=>{controls.enableDamping=false;controls.target.set(...target);camera.position.set(...position);controls.update();controls.enableDamping=true;draw();}};

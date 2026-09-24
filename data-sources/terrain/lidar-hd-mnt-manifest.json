@@ -1,0 +1,1480 @@
+{
+ "product": "IGN LiDAR HD — MNT (modèle numérique de terrain, sol nu), 0,5 m",
+ "service": "Géoplateforme IGN : index WFS IGNF_LIDAR-HD_METADONNEE:metadata, dalles WMS-R IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93 (GeoTIFF float32)",
+ "license": "Licence Ouverte Etalab 2.0 — © IGN",
+ "crs": "EPSG:2154 (RGF93 v1 / Lambert-93)",
+ "vertical": "NGF-IGN69 (EPSG:5720), mètres",
+ "noData": -9999,
+ "pixel": 0.5,
+ "metadataRetrievedAt": "2026-09-24T18:30:38.833Z",
+ "grid": {
+  "crs": "EPSG:2154",
+  "vertical": "NGF-IGN69 (EPSG:5720)",
+  "west": 755390,
+  "north": 6826372,
+  "step": 1,
+  "cols": 6097,
+  "rows": 6859,
+  "east": 761486,
+  "south": 6819514
+ },
+ "note": "Dalles brutes conservées octet pour octet dans data-sources/terrain/lidar-hd-mnt (hors Git : 56 × 16 Mo). SHA-256 ci-dessous : toute différence arrête le pipeline.",
+ "tiles": [
+  {
+   "name": "LHD_FXX_0755_6827_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0755-6827",
+   "x": 755,
+   "y": 6827,
+   "bboxL93": [
+    754999.75,
+    6826000.25,
+    755999.75,
+    6827000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "d194a7335aa532a03a490f167add00fea12b56b856582dee572c085c44702e9b",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6827_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6826000.25,755999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6827_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:24:29.657Z"
+  },
+  {
+   "name": "LHD_FXX_0756_6827_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0756-6827",
+   "x": 756,
+   "y": 6827,
+   "bboxL93": [
+    755999.75,
+    6826000.25,
+    756999.75,
+    6827000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "a9f64ac237acb598de6d974424e467f897724b545ca4bf5e036d633232b9edfb",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6827_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6826000.25,756999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6827_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:24:38.645Z"
+  },
+  {
+   "name": "LHD_FXX_0757_6827_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0757-6827",
+   "x": 757,
+   "y": 6827,
+   "bboxL93": [
+    756999.75,
+    6826000.25,
+    757999.75,
+    6827000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "75950cc1b9f1ecbea756aae980881a79b90e00a850fd263e1c3e16377c600bd3",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6827_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6826000.25,757999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6827_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:24:54.778Z"
+  },
+  {
+   "name": "LHD_FXX_0758_6827_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0758-6827",
+   "x": 758,
+   "y": 6827,
+   "bboxL93": [
+    757999.75,
+    6826000.25,
+    758999.75,
+    6827000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "530cc24485f2f8c654c4d28285414adfd75d199ef978777aac745c423e68f32f",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6827_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6826000.25,758999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6827_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:25:22.282Z"
+  },
+  {
+   "name": "LHD_FXX_0759_6827_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0759-6827",
+   "x": 759,
+   "y": 6827,
+   "bboxL93": [
+    758999.75,
+    6826000.25,
+    759999.75,
+    6827000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "845479c659ad54fa7ef6d7a684ce8daf653458e06ef08a3674fbd8b8b6a8a6fd",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6827_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6826000.25,759999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6827_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:25:27.301Z"
+  },
+  {
+   "name": "LHD_FXX_0760_6827_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0760-6827",
+   "x": 760,
+   "y": 6827,
+   "bboxL93": [
+    759999.75,
+    6826000.25,
+    760999.75,
+    6827000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "a619abcbf62b8a574adb64446a112c66510f5d38eda713e7ace7c62bc65a0a2e",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6827_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6826000.25,760999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6827_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:25:44.886Z"
+  },
+  {
+   "name": "LHD_FXX_0761_6827_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0761-6827",
+   "x": 761,
+   "y": 6827,
+   "bboxL93": [
+    760999.75,
+    6826000.25,
+    761999.75,
+    6827000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "1e402fc72c5b64316cad42a85fe35368e46c173aa7f728338c7a5e3a725e1fd3",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6827_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6826000.25,761999.75,6827000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6827_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:25:49.554Z"
+  },
+  {
+   "name": "LHD_FXX_0755_6826_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0755-6826",
+   "x": 755,
+   "y": 6826,
+   "bboxL93": [
+    754999.75,
+    6825000.25,
+    755999.75,
+    6826000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "4b340cbc6e894bb0a2a0a74e029e7174e79e3c33549d6c24c7bb766b4ec780a2",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6826_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6825000.25,755999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6826_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:26:34.703Z"
+  },
+  {
+   "name": "LHD_FXX_0756_6826_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0756-6826",
+   "x": 756,
+   "y": 6826,
+   "bboxL93": [
+    755999.75,
+    6825000.25,
+    756999.75,
+    6826000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "81587c50abc310a20dceb621e4c0067a23c8ce9934fae38f5f818aa85b9ecdf4",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6826_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6825000.25,756999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6826_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:26:48.199Z"
+  },
+  {
+   "name": "LHD_FXX_0757_6826_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0757-6826",
+   "x": 757,
+   "y": 6826,
+   "bboxL93": [
+    756999.75,
+    6825000.25,
+    757999.75,
+    6826000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "f1d2443075558c772083c2f94156d19ec9e8b223569cc64a761370a6305d06f3",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6826_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6825000.25,757999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6826_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:26:51.871Z"
+  },
+  {
+   "name": "LHD_FXX_0758_6826_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0758-6826",
+   "x": 758,
+   "y": 6826,
+   "bboxL93": [
+    757999.75,
+    6825000.25,
+    758999.75,
+    6826000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "f657348ed56594599da1bb41b6f0b1e6aa13c55c2a3ae4d9c4a8cc15516c171e",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6826_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6825000.25,758999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6826_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:27:11.616Z"
+  },
+  {
+   "name": "LHD_FXX_0759_6826_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0759-6826",
+   "x": 759,
+   "y": 6826,
+   "bboxL93": [
+    758999.75,
+    6825000.25,
+    759999.75,
+    6826000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "029a589f97283df7f54eb6910fc0e13d52ba25838df927ada351488edef4e0b9",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6826_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6825000.25,759999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6826_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:27:36.152Z"
+  },
+  {
+   "name": "LHD_FXX_0760_6826_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0760-6826",
+   "x": 760,
+   "y": 6826,
+   "bboxL93": [
+    759999.75,
+    6825000.25,
+    760999.75,
+    6826000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "73d7869d59b90acade93f001ec854cd1788c8d99b169ee2d06307bccf2c95310",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6826_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6825000.25,760999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6826_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:27:48.482Z"
+  },
+  {
+   "name": "LHD_FXX_0761_6826_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0761-6826",
+   "x": 761,
+   "y": 6826,
+   "bboxL93": [
+    760999.75,
+    6825000.25,
+    761999.75,
+    6826000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "368827d8d4fde97fea796eea6e1b83e97b6e2dbc2f5044298d1558244aebef7f",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6826_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6825000.25,761999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6826_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:27:52.863Z"
+  },
+  {
+   "name": "LHD_FXX_0755_6825_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0755-6825",
+   "x": 755,
+   "y": 6825,
+   "bboxL93": [
+    754999.75,
+    6824000.25,
+    755999.75,
+    6825000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "3da73b393fa2ca2d78dc09f0f070ac366a2a3dd5a0c08d0c7a4aa13822fe19f0",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6825_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6824000.25,755999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6825_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:28:00.949Z"
+  },
+  {
+   "name": "LHD_FXX_0756_6825_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0756-6825",
+   "x": 756,
+   "y": 6825,
+   "bboxL93": [
+    755999.75,
+    6824000.25,
+    756999.75,
+    6825000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "e5d8f581e546c64306f2da2fa39dd0b6eda32900a7a9b336f1a6c7cdc06d0cc1",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6825_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6824000.25,756999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6825_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:28:04.639Z"
+  },
+  {
+   "name": "LHD_FXX_0757_6825_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0757-6825",
+   "x": 757,
+   "y": 6825,
+   "bboxL93": [
+    756999.75,
+    6824000.25,
+    757999.75,
+    6825000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "e339c86a524fd1ef055c9a6ee01b8a18cc69f420d66aa365c90df0182ba80e69",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6825_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6824000.25,757999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6825_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:28:29.961Z"
+  },
+  {
+   "name": "LHD_FXX_0758_6825_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0758-6825",
+   "x": 758,
+   "y": 6825,
+   "bboxL93": [
+    757999.75,
+    6824000.25,
+    758999.75,
+    6825000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "6b998ca8747032a5dca44a3a022c1c6740d1163a9c19a92e57ba34d9df4ea893",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6825_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6824000.25,758999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6825_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:28:53.945Z"
+  },
+  {
+   "name": "LHD_FXX_0759_6825_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0759-6825",
+   "x": 759,
+   "y": 6825,
+   "bboxL93": [
+    758999.75,
+    6824000.25,
+    759999.75,
+    6825000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "bc407ae1f7836cc518becdaf7f9268499b12fd7ecb596e74a7e3e7e765951778",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6825_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6824000.25,759999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6825_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:29:04.700Z"
+  },
+  {
+   "name": "LHD_FXX_0760_6825_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0760-6825",
+   "x": 760,
+   "y": 6825,
+   "bboxL93": [
+    759999.75,
+    6824000.25,
+    760999.75,
+    6825000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "75740750a0415541cd5e1ae5044d8940e822fa6dea387d5120036048f6ece6c8",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6825_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6824000.25,760999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6825_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:29:08.721Z"
+  },
+  {
+   "name": "LHD_FXX_0761_6825_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0761-6825",
+   "x": 761,
+   "y": 6825,
+   "bboxL93": [
+    760999.75,
+    6824000.25,
+    761999.75,
+    6825000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "96425dd5d6ccd749ef4adab9672c1ec51f6ade361a6d8534aa8ae4f8b68952f0",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6825_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6824000.25,761999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6825_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:29:11.437Z"
+  },
+  {
+   "name": "LHD_FXX_0755_6824_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0755-6824",
+   "x": 755,
+   "y": 6824,
+   "bboxL93": [
+    754999.75,
+    6823000.25,
+    755999.75,
+    6824000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "f006ffee273402a9b87f0321c1af1e4bb147db72f3ee0d41e2d96f3fe251baa2",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6824_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6823000.25,755999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6824_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:29:15.536Z"
+  },
+  {
+   "name": "LHD_FXX_0756_6824_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0756-6824",
+   "x": 756,
+   "y": 6824,
+   "bboxL93": [
+    755999.75,
+    6823000.25,
+    756999.75,
+    6824000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "5a44922de5aadc592b1a3ddfa6994672031a544e41d23e15af073cc031d4c31b",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6824_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6823000.25,756999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6824_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:29:26.128Z"
+  },
+  {
+   "name": "LHD_FXX_0757_6824_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0757-6824",
+   "x": 757,
+   "y": 6824,
+   "bboxL93": [
+    756999.75,
+    6823000.25,
+    757999.75,
+    6824000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "9ab453c39c242ef90e58e1a1bc8b5908c8d5036d61fb39d120bd4213c9200998",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6824_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6823000.25,757999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6824_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:29:33.851Z"
+  },
+  {
+   "name": "LHD_FXX_0758_6824_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0758-6824",
+   "x": 758,
+   "y": 6824,
+   "bboxL93": [
+    757999.75,
+    6823000.25,
+    758999.75,
+    6824000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "a46f1c965e16eab32598784592ddba883b21729cda8d6674afc06a1decc36b04",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6824_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6823000.25,758999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6824_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "25LHDZIRomilly",
+   "acquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "Optech ALTM Galaxy T2000:5060485",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:29:44.479Z"
+  },
+  {
+   "name": "LHD_FXX_0759_6824_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0759-6824",
+   "x": 759,
+   "y": 6824,
+   "bboxL93": [
+    758999.75,
+    6823000.25,
+    759999.75,
+    6824000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "788828e320cfce30479c2ae7e2f5d1763c3e4286129ee47863a8c0c5d72ab91e",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6824_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6823000.25,759999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6824_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "25LHDZIRomilly",
+   "acquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "Optech ALTM Galaxy T2000:5060485",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:10.044Z"
+  },
+  {
+   "name": "LHD_FXX_0760_6824_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0760-6824",
+   "x": 760,
+   "y": 6824,
+   "bboxL93": [
+    759999.75,
+    6823000.25,
+    760999.75,
+    6824000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "2209f288983570e35bda3e85af80c4f71daee65091a63d5fe59cc84dffec41a2",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6824_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6823000.25,760999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6824_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "25LHDZIRomilly",
+   "acquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "Optech ALTM Galaxy T2000:5060485",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:10.070Z"
+  },
+  {
+   "name": "LHD_FXX_0761_6824_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0761-6824",
+   "x": 761,
+   "y": 6824,
+   "bboxL93": [
+    760999.75,
+    6823000.25,
+    761999.75,
+    6824000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "b20fe4be611f3ac3e01d5898e09f06994444a554dd0b8e8703d8e7a7b3a0d41f",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6824_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6823000.25,761999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6824_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "25LHDZIRomilly",
+   "acquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "Optech ALTM Galaxy T2000:5060485",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:10.095Z"
+  },
+  {
+   "name": "LHD_FXX_0755_6823_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0755-6823",
+   "x": 755,
+   "y": 6823,
+   "bboxL93": [
+    754999.75,
+    6822000.25,
+    755999.75,
+    6823000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "e84c7536b9823fe851661da857b5983c78ad81673933ea6067e9fbc42d16dec3",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6823_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6822000.25,755999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6823_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.088Z"
+  },
+  {
+   "name": "LHD_FXX_0756_6823_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0756-6823",
+   "x": 756,
+   "y": 6823,
+   "bboxL93": [
+    755999.75,
+    6822000.25,
+    756999.75,
+    6823000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "143fd4c9f1b78bcce51848d390422a93019bbcea5c8f528e0c083b573c181677",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6823_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6822000.25,756999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6823_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.110Z"
+  },
+  {
+   "name": "LHD_FXX_0757_6823_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0757-6823",
+   "x": 757,
+   "y": 6823,
+   "bboxL93": [
+    756999.75,
+    6822000.25,
+    757999.75,
+    6823000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "d9a7f3968ba93776f8257c6c006578cbac43d80f489a623a1e2cc7c8f7071c90",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6823_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6822000.25,757999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6823_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.128Z"
+  },
+  {
+   "name": "LHD_FXX_0758_6823_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0758-6823",
+   "x": 758,
+   "y": 6823,
+   "bboxL93": [
+    757999.75,
+    6822000.25,
+    758999.75,
+    6823000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "bf970a49d23f4040e1f34f07385fc1aa90c5cd0abcef9ff00118e2a19d21d00a",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6823_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6822000.25,758999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6823_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "25LHDZIRomilly",
+   "acquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "Optech ALTM Galaxy T2000:5060485",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.152Z"
+  },
+  {
+   "name": "LHD_FXX_0759_6823_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0759-6823",
+   "x": 759,
+   "y": 6823,
+   "bboxL93": [
+    758999.75,
+    6822000.25,
+    759999.75,
+    6823000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "cc452cc8d9abe035f01eb55311d819d647437b5ad434d35567730d90324f991f",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6823_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6822000.25,759999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6823_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "25LHDZIRomilly",
+   "acquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "Optech ALTM Galaxy T2000:5060485",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.169Z"
+  },
+  {
+   "name": "LHD_FXX_0760_6823_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0760-6823",
+   "x": 760,
+   "y": 6823,
+   "bboxL93": [
+    759999.75,
+    6822000.25,
+    760999.75,
+    6823000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "6b079349abfcf4cc4a3fac0349f46a5ed5e72899d595a7844f6070ca3256148b",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6823_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6822000.25,760999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6823_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "25LHDZIRomilly",
+   "acquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "Optech ALTM Galaxy T2000:5060485",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.195Z"
+  },
+  {
+   "name": "LHD_FXX_0761_6823_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0761-6823",
+   "x": 761,
+   "y": 6823,
+   "bboxL93": [
+    760999.75,
+    6822000.25,
+    761999.75,
+    6823000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "e678b01ad21c1638f055fcc9fcc3889bf2493a050b8c11616b7fa22e8115535c",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6823_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6822000.25,761999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6823_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "25LHDZIRomilly",
+   "acquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "Optech ALTM Galaxy T2000:5060485",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.213Z"
+  },
+  {
+   "name": "LHD_FXX_0755_6822_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0755-6822",
+   "x": 755,
+   "y": 6822,
+   "bboxL93": [
+    754999.75,
+    6821000.25,
+    755999.75,
+    6822000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "c78cbb80e5ed99269a91701c849dbb470377de9718feee67c245fae039b6b85e",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6822_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6821000.25,755999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6822_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.267Z"
+  },
+  {
+   "name": "LHD_FXX_0756_6822_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0756-6822",
+   "x": 756,
+   "y": 6822,
+   "bboxL93": [
+    755999.75,
+    6821000.25,
+    756999.75,
+    6822000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "b0094ab94709da90be11ee841f5147dd60541c30e45d34b1dc567c72e15cbf33",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6822_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6821000.25,756999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6822_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.350Z"
+  },
+  {
+   "name": "LHD_FXX_0757_6822_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0757-6822",
+   "x": 757,
+   "y": 6822,
+   "bboxL93": [
+    756999.75,
+    6821000.25,
+    757999.75,
+    6822000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "551342dc9bcac6defa46819e847ea0e89fd12d86a2c55287c58b6b539105d7e7",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6822_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6821000.25,757999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6822_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.431Z"
+  },
+  {
+   "name": "LHD_FXX_0758_6822_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0758-6822",
+   "x": 758,
+   "y": 6822,
+   "bboxL93": [
+    757999.75,
+    6821000.25,
+    758999.75,
+    6822000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "2ea6337ed6399cc97dd6428ef88dad1085169e406e732843c7f6bd4593727738",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6822_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6821000.25,758999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6822_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-19"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.448Z"
+  },
+  {
+   "name": "LHD_FXX_0759_6822_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0759-6822",
+   "x": 759,
+   "y": 6822,
+   "bboxL93": [
+    758999.75,
+    6821000.25,
+    759999.75,
+    6822000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "e08c84f7101a51e200d7bddaec3057fff9326190c813163456da47b9054c665e",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6822_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6821000.25,759999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6822_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "25LHDZIRomilly",
+   "acquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "Optech ALTM Galaxy T2000:5060485",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.465Z"
+  },
+  {
+   "name": "LHD_FXX_0760_6822_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0760-6822",
+   "x": 760,
+   "y": 6822,
+   "bboxL93": [
+    759999.75,
+    6821000.25,
+    760999.75,
+    6822000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "b215ee5cefe266bc332e9909f7b57af58564c5a2a2175712c7011c2f6aa66dae",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6822_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6821000.25,760999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6822_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "25LHDZIRomilly",
+   "acquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "Optech ALTM Galaxy T2000:5060485",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.481Z"
+  },
+  {
+   "name": "LHD_FXX_0761_6822_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0761-6822",
+   "x": 761,
+   "y": 6822,
+   "bboxL93": [
+    760999.75,
+    6821000.25,
+    761999.75,
+    6822000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "3768b221ef6cee7c8040d4f80f7551d7763b15acef37206c5ee63749f1a27347",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6822_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6821000.25,761999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6822_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "25LHDZIRomilly",
+   "acquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "Optech ALTM Galaxy T2000:5060485",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.498Z"
+  },
+  {
+   "name": "LHD_FXX_0755_6821_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0755-6821",
+   "x": 755,
+   "y": 6821,
+   "bboxL93": [
+    754999.75,
+    6820000.25,
+    755999.75,
+    6821000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "966700cff013c44bfc65d63eaa08bf4ff99f4a71a072aaf35efe7f6a4e435503",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6821_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6820000.25,755999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6821_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-14"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.514Z"
+  },
+  {
+   "name": "LHD_FXX_0756_6821_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0756-6821",
+   "x": 756,
+   "y": 6821,
+   "bboxL93": [
+    755999.75,
+    6820000.25,
+    756999.75,
+    6821000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "85a0716c597c106c7baf225632113a48c5b0b2c002a9ed080f1263cf0da0d63e",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6821_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6820000.25,756999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6821_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-14"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.533Z"
+  },
+  {
+   "name": "LHD_FXX_0757_6821_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0757-6821",
+   "x": 757,
+   "y": 6821,
+   "bboxL93": [
+    756999.75,
+    6820000.25,
+    757999.75,
+    6821000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "2e84f4be581f60683a2a456ff1021ad3dd7c23ee7156947bbb4bafbc595e935f",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6821_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6820000.25,757999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6821_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-14"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.551Z"
+  },
+  {
+   "name": "LHD_FXX_0758_6821_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0758-6821",
+   "x": 758,
+   "y": 6821,
+   "bboxL93": [
+    757999.75,
+    6820000.25,
+    758999.75,
+    6821000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "60d4e391665d1fa57e56ba9fcb23f030a21fc5493bd9b2691c9654b5d5acd060",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6821_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6820000.25,758999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6821_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-14"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.592Z"
+  },
+  {
+   "name": "LHD_FXX_0759_6821_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0759-6821",
+   "x": 759,
+   "y": 6821,
+   "bboxL93": [
+    758999.75,
+    6820000.25,
+    759999.75,
+    6821000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "a5426c9dabb1fbc41f2d7356da2f171446d42b4df77ad73a1b79941010e23227",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6821_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6820000.25,759999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6821_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "25LHDZIRomilly",
+   "acquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "Optech ALTM Galaxy T2000:5060485",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.670Z"
+  },
+  {
+   "name": "LHD_FXX_0760_6821_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0760-6821",
+   "x": 760,
+   "y": 6821,
+   "bboxL93": [
+    759999.75,
+    6820000.25,
+    760999.75,
+    6821000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "76644e8c6da639082797c75168e0d3a559229892252f5eebebfe37a00dc80df7",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6821_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6820000.25,760999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6821_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "25LHDZIRomilly",
+   "acquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "Optech ALTM Galaxy T2000:5060485",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.686Z"
+  },
+  {
+   "name": "LHD_FXX_0761_6821_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0761-6821",
+   "x": 761,
+   "y": 6821,
+   "bboxL93": [
+    760999.75,
+    6820000.25,
+    761999.75,
+    6821000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "3bd1db25fbba77c3353a41e0d9a5db4cec6456e4607b4dd7176841ffbd2e6b90",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6821_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6820000.25,761999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6821_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "25LHDZIRomilly",
+   "acquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "Optech ALTM Galaxy T2000:5060485",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.704Z"
+  },
+  {
+   "name": "LHD_FXX_0755_6820_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0755-6820",
+   "x": 755,
+   "y": 6820,
+   "bboxL93": [
+    754999.75,
+    6819000.25,
+    755999.75,
+    6820000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "7475ba2e3bc42347f1d1b58dfbadc50b78d5b52c156dd1dcf94319eda486c582",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6820_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6819000.25,755999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6820_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-14"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.721Z"
+  },
+  {
+   "name": "LHD_FXX_0756_6820_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0756-6820",
+   "x": 756,
+   "y": 6820,
+   "bboxL93": [
+    755999.75,
+    6819000.25,
+    756999.75,
+    6820000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "2b0eb573b198f06459306419fb2108d6a372fdbd0195183a7601bde19e010e8d",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6820_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6819000.25,756999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6820_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-14"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.738Z"
+  },
+  {
+   "name": "LHD_FXX_0757_6820_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0757-6820",
+   "x": 757,
+   "y": 6820,
+   "bboxL93": [
+    756999.75,
+    6819000.25,
+    757999.75,
+    6820000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "dfcbb361c35a7aee6de6017c6bf9e914cc2990487d439be62f055e924c0aa5e5",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6820_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6819000.25,757999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6820_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-14"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.754Z"
+  },
+  {
+   "name": "LHD_FXX_0758_6820_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0758-6820",
+   "x": 758,
+   "y": 6820,
+   "bboxL93": [
+    757999.75,
+    6819000.25,
+    758999.75,
+    6820000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "11ed16f20ceb45a2a52f230d049f5d98044ed3e10bfec0d2683448169689b6c9",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6820_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6819000.25,758999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6820_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-14"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.771Z"
+  },
+  {
+   "name": "LHD_FXX_0759_6820_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0759-6820",
+   "x": 759,
+   "y": 6820,
+   "bboxL93": [
+    758999.75,
+    6819000.25,
+    759999.75,
+    6820000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "c0f1bda08f30b3049aa767e400a6e6e68d24948deda487fc946e531ff54e6ba2",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6820_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6819000.25,759999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6820_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-14"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.788Z"
+  },
+  {
+   "name": "LHD_FXX_0760_6820_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0760-6820",
+   "x": 760,
+   "y": 6820,
+   "bboxL93": [
+    759999.75,
+    6819000.25,
+    760999.75,
+    6820000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "15697383cabeb588f9c260cd29bc779a8e4eaeb3b0832ae8d8658fb6a89d40aa",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6820_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6819000.25,760999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6820_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-14"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.804Z"
+  },
+  {
+   "name": "LHD_FXX_0761_6820_MNT_0M50_LAMB93_IGN69.tif",
+   "nw": "0761-6820",
+   "x": 761,
+   "y": 6820,
+   "bboxL93": [
+    760999.75,
+    6819000.25,
+    761999.75,
+    6820000.25
+   ],
+   "bytes": 16000513,
+   "sha256": "c088c7725fec0a5c100fa43cd3dab8078c365f6130ed7334680dc8439564529a",
+   "url": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6820_MNT_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNT_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6819000.25,761999.75,6820000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6820_MNT_0M50_LAMB93_IGN69.tif",
+   "mission": "24LHDMF",
+   "acquisition": [
+    "2025-02-14",
+    "2025-02-14"
+   ],
+   "edition": "2026-05-19",
+   "classification": "IGN_AUTO_V5",
+   "sensor": "RIEGL VQ-780 II-S:H2227189,RIEGL VQ-780 II-S:H2223888",
+   "altimetry": "IGN69",
+   "planimetry": "LAMB93",
+   "retrievedAt": "2026-09-24T18:30:38.823Z"
+  }
+ ]
+}

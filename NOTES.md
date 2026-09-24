@@ -1,3 +1,32 @@
+# Notes V1.7 — référentiel terrain et heightmap Unreal, 24 septembre 2026
+
+Branche `opus/v1.7-terrain`, à partir de `b1d4c27`. Mission limitée au relief et à l’altimétrie : ni routes, ni végétation, ni graphisme, ni niveau Unreal.
+
+## Choix
+
+- **Source.** Le LiDAR HD MNT 0,5 m (2025) est la donnée IGN la plus précise et la plus récente, et elle couvre toute la zone. Le RGE ALTI 1 m s’en écarte de 0,23 à 0,32 m en écart quadratique moyen, et sa résolution effective est plus grossière que 1 m (68 % de pixels répétés). Le MNS et le MNH sont exclus, car ils incluent le sursol.
+- **Stockage.** Les dalles officielles (896 Mo) restent hors Git. Le manifeste versionné garde l’URL et le SHA-256 de chaque dalle ; le téléchargement est reproductible (octets identiques) et toute différence arrête le pipeline. Le GeoTIFF 1 m versionné conserve à l’identique les échantillons utilisés.
+- **Emprise.** La commune plus au moins 500 m de marge, dimensionnée à 254 × k + 1 nœuds. Le Landscape Unreal tombe ainsi à exactement 1 m, sans rééchantillonnage : 6 097 × 6 859.
+- **Grille 1 m.** Un échantillon source sur deux dans chaque direction, sur les mètres entiers de Lambert-93. Aucune moyenne, aucune interpolation.
+- **Repère.** Lambert-93 et NGF-IGN69. Une seule transformation (proj4, CRS84 → EPSG:2154), dans `scripts/terrain-frame.mjs`.
+- **Origine commune Unreal.** `UNREAL_ORIGIN` (E 758 278, N 6 823 571, H 0) est l’origine historique du projet projetée et arrondie au mètre. Elle vaudra pour toutes les couches futures.
+- **Encodage des hauteurs Unreal.** Échelle Z = 100 : 1 m réel = 1 m Unreal. Hauteur de référence 87 m, 128 pas par mètre, position de l’acteur Z = 8 700 cm.
+- **Bâtiments.** Fichier dérivé séparé ; `buildings.geojson` n’est pas touché. Le socle recommandé est le minimum du terrain sous l’emprise et le long du contour.
+- **Three.js.** Relief visible uniquement avec `?diagnostic=terrain`. `buildBuildings` accepte une option `elevation` qui relève chaque bâtiment d’un bloc, sans toucher son empreinte. Le rendu normal est inchangé.
+
+## Nouveaux scripts
+
+| Commande | Rôle |
+|---|---|
+| `npm run data:terrain-fetch` | index WFS, téléchargement et vérification SHA-256 des dalles |
+| `npm run data:terrain` | fetch, puis `build-terrain.mjs` : mosaïque, grille, contrôles, GeoTIFF, PNG et RAW 16 bits, grille Three.js, altitudes des bâtiments, `terrain-reference.json` |
+| `npm run check:terrain` | contrôle des sorties, inclus dans `check:all` |
+| `npm run audit:terrain-sources` | comparaison avec le RGE ALTI (réseau) |
+
+Modules : `scripts/terrain-frame.mjs` (emprise, origine, transformations) et `scripts/raster-io.mjs` (GeoTIFF deflate avec prédicteur, PNG 16 bits). Dépendances ajoutées : `geotiff`, `proj4`.
+
+---
+
 # Notes V1.6.2 — gel du référentiel bâti pour Unreal, 24 septembre 2026
 
 Branche `opus/v1.6-building-validation`, à partir de `0402261` (V1.6.1). Dernière passe de validation du bâti avant le gel pour Unreal Engine. Aucun graphisme modifié.

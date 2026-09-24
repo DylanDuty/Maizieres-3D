@@ -1,3 +1,63 @@
+# Vérification V1.7 — référentiel terrain et heightmap Unreal, 24 septembre 2026
+
+Branche `opus/v1.7-terrain`, à partir de `b1d4c27` (bâti gelé). Aucune empreinte de bâtiment n’a été modifiée. Détail complet : `docs/referentiel-terrain.md`.
+
+| Mesure | Valeur |
+|---|---|
+| Source IGN retenue | LiDAR HD **MNT** (sol nu), 56 dalles. Vols de février et octobre 2025, édition du 19/05/2026. Téléchargées le 24/09/2026 depuis `data.geopf.fr` |
+| Résolution native | 0,5 m |
+| Résolution de travail | 1 m pour Unreal et le GeoTIFF (échantillons source exacts) ; 10 m pour le contrôle Three.js |
+| Système | EPSG:2154 Lambert-93, altitudes NGF-IGN69 (EPSG:5720) |
+| Superficie couverte | 41,81 km² : la commune plus 529 à 553 m de marge |
+| Dimensions X / Y | 6 096 m × 6 858 m (E 755 390–761 486, N 6 819 514–6 826 372) |
+| Altitude min / max | **71,10 m / 103,65 m** ; amplitude 32,54 m |
+| Nombre de cellules | 41 819 323 nœuds à 1 m ; 167 251 381 cellules source à 0,5 m |
+| Cellules NoData | **0** (source et grille) ; aucune valeur aberrante |
+| Origine locale Unreal | `UNREAL_ORIGIN` = E 758 278, N 6 823 571, H 0 NGF-IGN69 ; Unreal X = (E − E0) × 100, Y = −(N − N0) × 100, Z = H × 100 (cm) |
+| Heightmap Unreal | PNG 16 bits, **6 097 × 6 859** : 24 × 27 composants de 2 × 2 sections de 127 quads, échelle 100 / 100 / 100 |
+| Perte 0,5 m → 1 m | écart quadratique moyen 2,2 cm ; 99 % sous 8,5 cm ; maximum 3,65 m (vanne du bras mort) |
+| Quantification 16 bits | 7,8 mm par pas ; erreur maximale 3,9 mm |
+| Grille Three.js 10 m | écart quadratique moyen 10,8 cm par rapport au 1 m ; maximum 1,76 m |
+
+Fichiers produits :
+- `unreal/terrain/maizieres-mnt-lidarhd-1m-lamb93-ign69.tif` (83,5 Mo) ;
+- `unreal/terrain/maizieres-heightmap-6097x6859.png` (29,4 Mo) ;
+- `.r16` (83,6 Mo, régénéré, hors Git) ;
+- `unreal/terrain/terrain-reference.json` ;
+- `public/data/terrain-threejs.bin` + `.json` (0,7 Mo) ;
+- `public/data/building-terrain-elevation.json` (0,7 Mo) ;
+- dalles sources (896 Mo) hors Git, avec leur manifeste SHA-256 versionné.
+
+## Contrôles
+
+- `npm run check:all` réussit, soit **sept contrôles** : les six existants et `check:terrain`.
+- `check:terrain` :
+  - fichiers conformes à leur SHA-256 ;
+  - 56 dalles sur 56 vérifiées ;
+  - GeoTIFF et heightmap relus (erreur maximale 3,9 mm) ;
+  - origine et transformations exactes ;
+  - `buildings.geojson` identique au gel V1.6.2 ;
+  - 2 494 bâtiments, chacun avec une altitude de socle.
+- GDAL 3.10 (rasterio) relit le GeoTIFF : EPSG:2154, emprise exacte, échantillons identiques aux dalles source. Le PNG est lu en 16 bits.
+- Raccords de dalles et de missions : sans marche (rapport au plus 1,27). 66 anomalies locales de plus de 1 m, toutes des ouvrages ou talus réels.
+- Contrôle visuel sur l’ombrage :
+  - voie ferrée OSM exactement sur son remblai ;
+  - bâtiments sur leurs emprises ;
+  - limite communale le long des anciens méandres de la Seine ;
+  - aucun décalage de projection.
+- `pnpm build` réussi. Dans Chromium :
+  - rendu normal et `?diagnostic=validation` : **2 494 bâtiments, aucun rejet**, 18 appels de dessin, 559 942 triangles, exactement comme en V1.6.2 ;
+  - `?diagnostic=terrain` : 2 494 bâtiments posés à leur socle, relief de 327 570 sommets, 0 NoData ;
+  - **console sans erreur ni avertissement** dans les trois modes.
+
+## Zones douteuses
+
+- **Ponts** : absents du MNT sol nu. La voie ferrée présente 4 ruptures, et la rue du Pont de Clairvaux une pente de 58 %. Ils sont à modéliser à part dans Unreal.
+- **167 bâtiments de la commune** ont plus de 1,5 m de dénivelé sous leur emprise (rampes, talus, cours en contrebas). Le socle recommandé est le minimum, pour qu’aucun côté ne flotte.
+- **Plans d’eau** (Seine, bras morts) : surface interpolée par l’IGN, pas une bathymétrie.
+
+---
+
 # Vérification V1.6.2 — gel du référentiel bâti pour Unreal, 24 septembre 2026
 
 ## Accès
