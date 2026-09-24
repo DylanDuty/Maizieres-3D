@@ -1,4 +1,4 @@
-# Référentiel bâti — format intermédiaire (V1.5, validé en V1.6)
+# Référentiel bâti — format intermédiaire (V1.5, validation officielle V1.6.1)
 
 Fichier : `public/data/buildings.geojson`, produit par `npm run data:buildings` (`scripts/build-buildings.mjs`) à partir des instantanés locaux. Il est la **source de vérité des bâtiments** de la carte Three.js et le point de départ prévu pour un export Unreal : aucune recherche documentaire n’est à refaire pour générer les volumes.
 
@@ -31,23 +31,35 @@ Fichier : `public/data/buildings.geojson`, produit par `npm run data:buildings` 
 
 Les champs absents valent `null`. **Un bâtiment sans attribut reste présent.** Les formes de toit, orientations de faîtage, couleurs et détails de façade ne figurent pas dans ce fichier : ce sont des choix de rendu (voir `src/building-profile.js`), à refaire dans Unreal.
 
-## Validation (V1.6)
+## Validation officielle (V1.6.1)
 
-`npm run data:buildings` enchaîne `build-buildings.mjs` puis `validate-buildings.mjs`. Ce second script ajoute à chaque bâtiment un bloc `validation`, sans toucher à la géométrie :
+`npm run data:validation-sources` télécharge les sources de contrôle :
+- **cadastre actuel** : l’export Etalab, ou à défaut le **Parcellaire Express (PCI DGFiP)** de la Géoplateforme IGN, dans `data-sources/cadastre/` ;
+- **RNB** : tous les bâtiments de la commune, plus une vérification individuelle des identifiants du référentiel, dans `data-sources/rnb/`.
+
+`npm run data:buildings` reconstruit puis valide. Sans ces sources, la validation s’arrête : aucun substitut historique n’est utilisé.
+
+Effets sur le référentiel :
+- **Ajouts** `provenance: cadastre` : empreintes du cadastre actuel absentes de la BD TOPO et d’OSM, hors jumeaux décalés. `source` vaut le nom de la diffusion cadastrale, `cadastre.type` indique en dur, construction légère ou FI.
+- **Suppressions** : empreintes OSM seules absentes de la BD TOPO, du cadastre actuel et du RNB, retirées et journalisées avec leur géométrie dans `data-sources/building-removed.json`.
+- **RNB** : `rnb` ne contient plus que les identifiants vérifiés par l’API (existants, actifs, construits, spatialement cohérents) ; `rnbSource` garde l’original de la BD TOPO.
+
+Bloc `validation` de chaque bâtiment :
 
 | Champ | Contenu |
 |---|---|
-| `confidence` | `A` : IGN confirmé par le cadastre (couverture ≥ 50 %) ; `B` : une source officielle, ou contour divergent ; `C` : OSM ou cadastre ancien absent de la BD TOPO |
-| `status` | Statut lisible (validé, source unique, construction légère absente de la BD TOPO, contour divergent…) |
-| `cadastre` | Référence utilisée (cadastre Etalab, ou substitut OSM 2013–2018), correspondance, IoU, couverture |
-| `rnb` | Identifiants RNB et, quand l’API a été consultée, leur statut |
-| `apparitionYear`, `recent` | Année d’apparition des fichiers fonciers (BD TOPO) ; indicateur de construction probablement récente |
-| `evidence` | Preuves textuelles (origine IGN, dates, appariement fichiers fonciers…) |
+| `confidence` | `A` : BD TOPO et cadastre actuel concordent sans contradiction ; `B` : une source officielle, contour différent, contradiction, ou ajout cadastre + RNB ; `C` : non confirmé par une seconde source officielle |
+| `status` | Statut lisible |
+| `cadastre` | Référence, correspondance (`présent`, `partiel`, `absent`, `décalé`), IoU, couverture |
+| `rnb` | `ids` vérifiés, `original`, `checks` par identifiant (verdict, statut, point dans l’empreinte, recouvrement, lien BD TOPO), `added`, `corrected` |
+| `previousConfidence` | Classe V1.6 provisoire |
+| `evidence` | Preuves (cadastre, RNB, dates IGN, jumeau décalé…) |
 
-Sources de contrôle : `npm run data:validation-sources` télécharge le cadastre Etalab et le RNB (INSEE 10220) dans `data-sources/cadastre/` et `data-sources/rnb/`. Présents, ils remplacent automatiquement le substitut cadastral et les bâtiments cadastraux absents sont ajoutés (`provenance: cadastre`). Au 24 septembre 2026, le réseau de l’environnement refusait ces hôtes : la validation utilise donc le substitut, signalé dans `metadata.validation`.
+Rapports : `data-sources/building-validation.json` (détail : réexamen V1.6, historique des classes, empreintes partielles, ajouts, suppressions, jumeaux, RNB sans empreinte) et `officialValidation` dans `data-sources/building-reference-report.json`.
 
 ## Contrôles
 
 - `npm run check:buildings` : chaque bâtiment IGN de la zone est présent une seule fois avec sa géométrie d’origine ; chaque empreinte OSM seule (< 10 %) est présente et aucune autre ; pas d’identifiant dupliqué ; SHA-256 des sources identiques à ceux des métadonnées.
-- `npm run check:enrichment` : les 2 491 bâtiments sont rendus, aucun rejet.
+- `npm run check:enrichment` : tous les bâtiments du référentiel (2 543 en V1.6.1) sont rendus, aucun rejet.
+- `npm run check:buildings` vérifie aussi les suppressions (journal et preuves obligatoires) et l’absence de doublon des ajouts cadastraux.
 - Rapport chiffré : `data-sources/building-reference-report.json`. Audit de l’état V1.4 : `data-sources/building-audit.json` (`npm run audit:buildings`). Densité par rue : `data-sources/street-density.json`.

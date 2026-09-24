@@ -13,7 +13,7 @@ export function buildingItems(fc,project,extent){
    const poly=raw.map(r=>clipRing(r,extent)).filter(r=>r.length>=3);if(!poly.length){stats.emptyAfterClip++;return;}
    // OSM tags (semantics only) keep the renderer's historical vocabulary; '@' keys are provenance helpers.
    const t={...(p.osm?.tags||{}),'@osm':p.osm?.ids||[],'@donor':p.osm?.donor||null,'@names':p.osm?.names||[]};
-   const extra=p.derived?{...p.derived,ignId:p.ign.cleabs,landmark:p.landmark}:p.landmark?{landmark:p.landmark}:{};
+   const extra=p.derived?{...p.derived,ignId:p.ign?.cleabs||null,landmark:p.landmark}:p.landmark?{landmark:p.landmark}:{};
    items.push({poly,t,id:parts.length>1?`${p.id}#${k+1}`:p.id,featureId:p.id,provenance:p.provenance,source:p.source,validation:p.validation||null,rnb:p.rnb,inCommune:p.inCommune,extra});
   });
  }

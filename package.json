@@ -23,7 +23,7 @@
     "audit:buildings": "node scripts/audit-buildings.mjs",
     "check:buildings": "node scripts/check-buildings.mjs",
     "audit:density": "node scripts/check-density.mjs",
-    "data:validation-sources": "node scripts/fetch-validation-sources.mjs",
+    "data:validation-sources": "NODE_USE_ENV_PROXY=1 node scripts/fetch-validation-sources.mjs",
     "audit:validation": "node scripts/validate-buildings.mjs"
   },
   "dependencies": {

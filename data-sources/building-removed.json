@@ -1,0 +1,1547 @@
+{
+ "note": "Bâtiments retirés du référentiel en V1.6.1, avec géométrie et preuves.",
+ "features": [
+  {
+   "type": "Feature",
+   "id": "way/228576472",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7608917,
+       48.5086213
+      ],
+      [
+       3.7608889,
+       48.5086338
+      ],
+      [
+       3.7607079,
+       48.5086165
+      ],
+      [
+       3.7607107,
+       48.508604
+      ],
+      [
+       3.7608917,
+       48.5086213
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/228576472",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": false,
+    "areaM2": 18.93,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/228576472"
+     ],
+     "donor": "way/228576472",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2013"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/228576619",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7666124,
+       48.5058227
+      ],
+      [
+       3.7666034,
+       48.5057981
+      ],
+      [
+       3.7666661,
+       48.5057887
+      ],
+      [
+       3.7666752,
+       48.5058132
+      ],
+      [
+       3.7666124,
+       48.5058227
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/228576619",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": false,
+    "areaM2": 13.32,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/228576619"
+     ],
+     "donor": "way/228576619",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2013"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/228577467",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7649465,
+       48.5054739
+      ],
+      [
+       3.764915,
+       48.5054786
+      ],
+      [
+       3.7649029,
+       48.505443
+      ],
+      [
+       3.7649343,
+       48.5054383
+      ],
+      [
+       3.7649465,
+       48.5054739
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/228577467",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": false,
+    "areaM2": 9.64,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/228577467"
+     ],
+     "donor": "way/228577467",
+     "coverage": 0,
+     "tags": {
+      "building": "roof"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2013"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/228578366",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7652589,
+       48.5055992
+      ],
+      [
+       3.7652898,
+       48.5055942
+      ],
+      [
+       3.7653021,
+       48.5056279
+      ],
+      [
+       3.7652713,
+       48.5056329
+      ],
+      [
+       3.7652589,
+       48.5055992
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/228578366",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": false,
+    "areaM2": 9.02,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/228578366"
+     ],
+     "donor": "way/228578366",
+     "coverage": 0,
+     "tags": {
+      "building": "roof",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2013"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/228579332",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7650296,
+       48.5057927
+      ],
+      [
+       3.7650637,
+       48.5057873
+      ],
+      [
+       3.7650758,
+       48.5058203
+      ],
+      [
+       3.7650416,
+       48.5058257
+      ],
+      [
+       3.7650296,
+       48.5057927
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/228579332",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": false,
+    "areaM2": 9.76,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/228579332"
+     ],
+     "donor": "way/228579332",
+     "coverage": 0,
+     "tags": {
+      "building": "roof",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2013"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 4 %, IoU 0.02)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/228580394",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7652589,
+       48.5055992
+      ],
+      [
+       3.7652469,
+       48.5055666
+      ],
+      [
+       3.7652778,
+       48.5055616
+      ],
+      [
+       3.7652898,
+       48.5055942
+      ],
+      [
+       3.7652589,
+       48.5055992
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/228580394",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": false,
+    "areaM2": 8.74,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/228580394"
+     ],
+     "donor": "way/228580394",
+     "coverage": 0,
+     "tags": {
+      "building": "roof",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2013"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/549959545",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.8268692,
+       48.5013639
+      ],
+      [
+       3.8268809,
+       48.5013266
+      ],
+      [
+       3.8269146,
+       48.5013312
+      ],
+      [
+       3.8269024,
+       48.5013674
+      ],
+      [
+       3.8268692,
+       48.5013639
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/549959545",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": false,
+    "areaM2": 10.47,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/549959545"
+     ],
+     "donor": "way/549959545",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2017"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588789260",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.8159224,
+       48.5001396
+      ],
+      [
+       3.81596,
+       48.5000632
+      ],
+      [
+       3.8160249,
+       48.5000772
+      ],
+      [
+       3.8159874,
+       48.5001536
+      ],
+      [
+       3.8159224,
+       48.5001396
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588789260",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 44.95,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588789260"
+     ],
+     "donor": "way/588789260",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": null
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588789271",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.8167351,
+       48.5014095
+      ],
+      [
+       3.8168424,
+       48.5014308
+      ],
+      [
+       3.8168252,
+       48.5014688
+      ],
+      [
+       3.8167179,
+       48.5014475
+      ],
+      [
+       3.8167351,
+       48.5014095
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588789271",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 36.4,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588789271"
+     ],
+     "donor": "way/588789271",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": null
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588789411",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.8123363,
+       48.5005866
+      ],
+      [
+       3.8124145,
+       48.5005835
+      ],
+      [
+       3.8124198,
+       48.5006421
+      ],
+      [
+       3.8123417,
+       48.5006453
+      ],
+      [
+       3.8123363,
+       48.5005866
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588789411",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 37.68,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588789411"
+     ],
+     "donor": "way/588789411",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": null
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588789451",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.8072991,
+       48.5004764
+      ],
+      [
+       3.8074091,
+       48.5004658
+      ],
+      [
+       3.8074184,
+       48.500508
+      ],
+      [
+       3.8073085,
+       48.5005187
+      ],
+      [
+       3.8072991,
+       48.5004764
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588789451",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 38.87,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588789451"
+     ],
+     "donor": "way/588789451",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": null
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588791515",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7861889,
+       48.505395
+      ],
+      [
+       3.7861525,
+       48.5053947
+      ],
+      [
+       3.7861533,
+       48.505363
+      ],
+      [
+       3.7861899,
+       48.505364
+      ],
+      [
+       3.7861889,
+       48.505395
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588791515",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 9.38,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588791515"
+     ],
+     "donor": "way/588791515",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588791687",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7896756,
+       48.5060328
+      ],
+      [
+       3.7896977,
+       48.5060162
+      ],
+      [
+       3.7897277,
+       48.5060335
+      ],
+      [
+       3.7897063,
+       48.50605
+      ],
+      [
+       3.7896756,
+       48.5060328
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588791687",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 7.19,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588791687"
+     ],
+     "donor": "way/588791687",
+     "coverage": 0.088,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588791911",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7800641,
+       48.5026276
+      ],
+      [
+       3.7800417,
+       48.502607
+      ],
+      [
+       3.7800727,
+       48.5025918
+      ],
+      [
+       3.7800944,
+       48.5026121
+      ],
+      [
+       3.7800641,
+       48.5026276
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588791911",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 7.91,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588791911"
+     ],
+     "donor": "way/588791911",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792057",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7817674,
+       48.5037284
+      ],
+      [
+       3.7817604,
+       48.503702
+      ],
+      [
+       3.7818301,
+       48.5036953
+      ],
+      [
+       3.7818358,
+       48.503722
+      ],
+      [
+       3.7817674,
+       48.5037284
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792057",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 15.36,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792057"
+     ],
+     "donor": "way/588792057",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792172",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.761609,
+       48.4931775
+      ],
+      [
+       3.7616359,
+       48.4931998
+      ],
+      [
+       3.7616058,
+       48.4932157
+      ],
+      [
+       3.761579,
+       48.4931935
+      ],
+      [
+       3.761609,
+       48.4931775
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792172",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 8.98,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792172"
+     ],
+     "donor": "way/588792172",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": null
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792666",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7793697,
+       48.5010394
+      ],
+      [
+       3.7793825,
+       48.5010902
+      ],
+      [
+       3.7793162,
+       48.5010976
+      ],
+      [
+       3.7793029,
+       48.5010433
+      ],
+      [
+       3.7793697,
+       48.5010394
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792666",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 29.25,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792666"
+     ],
+     "donor": "way/588792666",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792716",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.8052076,
+       48.5106387
+      ],
+      [
+       3.8052062,
+       48.5106255
+      ],
+      [
+       3.8052111,
+       48.5106189
+      ],
+      [
+       3.8052408,
+       48.5106158
+      ],
+      [
+       3.805249,
+       48.5106198
+      ],
+      [
+       3.8052523,
+       48.5106338
+      ],
+      [
+       3.8052076,
+       48.5106387
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792716",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 6.61,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792716"
+     ],
+     "donor": "way/588792716",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792877",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7812106,
+       48.50517
+      ],
+      [
+       3.7812522,
+       48.5051282
+      ],
+      [
+       3.7812929,
+       48.505146
+      ],
+      [
+       3.7812513,
+       48.5051878
+      ],
+      [
+       3.7812106,
+       48.50517
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792877",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 20,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792877"
+     ],
+     "donor": "way/588792877",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": null
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792955",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7682354,
+       48.506182
+      ],
+      [
+       3.7682293,
+       48.5061442
+      ],
+      [
+       3.7682834,
+       48.5061403
+      ],
+      [
+       3.7682896,
+       48.5061782
+      ],
+      [
+       3.7682354,
+       48.506182
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792955",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 16.98,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792955"
+     ],
+     "donor": "way/588792955",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": null
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588793079",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7889354,
+       48.5065703
+      ],
+      [
+       3.7889609,
+       48.5065374
+      ],
+      [
+       3.7889939,
+       48.5065487
+      ],
+      [
+       3.7889684,
+       48.5065816
+      ],
+      [
+       3.7889354,
+       48.5065703
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588793079",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 11.25,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588793079"
+     ],
+     "donor": "way/588793079",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": null
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588793377",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7790431,
+       48.5000483
+      ],
+      [
+       3.7790269,
+       48.500009
+      ],
+      [
+       3.779074,
+       48.4999997
+      ],
+      [
+       3.7790903,
+       48.5000393
+      ],
+      [
+       3.7790431,
+       48.5000483
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588793377",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 16.45,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588793377"
+     ],
+     "donor": "way/588793377",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/935473873",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7706538,
+       48.5017657
+      ],
+      [
+       3.7706372,
+       48.5017007
+      ],
+      [
+       3.7707135,
+       48.5016922
+      ],
+      [
+       3.7707301,
+       48.5017571
+      ],
+      [
+       3.7706538,
+       48.5017657
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/935473873",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 41.76,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/935473873"
+     ],
+     "donor": "way/935473873",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": null
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/1303286702",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.8065582,
+       48.5109237
+      ],
+      [
+       3.8065499,
+       48.5108998
+      ],
+      [
+       3.8065762,
+       48.5108958
+      ],
+      [
+       3.8065845,
+       48.5109197
+      ],
+      [
+       3.8065582,
+       48.5109237
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/1303286702",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 5.42,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/1303286702"
+     ],
+     "donor": "way/1303286702",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "ORTHO Express IGN 2025"
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM ORTHO Express IGN 2025"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/1433821870",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7868589,
+       48.5045537
+      ],
+      [
+       3.7868503,
+       48.504504
+      ],
+      [
+       3.7868979,
+       48.5045004
+      ],
+      [
+       3.7869065,
+       48.5045501
+      ],
+      [
+       3.7868589,
+       48.5045537
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/1433821870",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 19.63,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/1433821870"
+     ],
+     "donor": "way/1433821870",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": null
+    },
+    "derived": null,
+    "removal": {
+     "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  }
+ ]
+}

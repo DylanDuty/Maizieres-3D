@@ -84,7 +84,7 @@ export function installSelection({scene,camera,canvas,catalogue,meshes,buildingI
   if(road&&road.distance<(hitId?5:road.tolerance))return done(road.record);
   if(point&&point.distance<(hitId?12:24))return done(point.record);
   if(hitId&&buildingInfo.has(hitId)){const info=buildingInfo.get(hitId),b=bounds(info.poly[0]);const light=info.light&&info.kind!=='canopy';
-   return done({id:hitId,type:'building',generic:true,info,name:light?KIND_LABELS.light:info.knownUsage?KIND_LABELS[info.kind]||'Bâtiment':'Bâtiment',kind:'Bâtiment sans nom connu',polys:[info.poly],position:[(b.minX+b.maxX)/2,0,(b.minZ+b.maxZ)/2],source:info.source==='IGN BD TOPO'?'Empreinte IGN BD TOPO'+(info.osmIds.length?' · sémantique OpenStreetMap':''):'Empreinte OpenStreetMap seule (absente de la BD TOPO)'});}
+   return done({id:hitId,type:'building',generic:true,info,name:light?KIND_LABELS.light:info.knownUsage?KIND_LABELS[info.kind]||'Bâtiment':'Bâtiment',kind:'Bâtiment sans nom connu',polys:[info.poly],position:[(b.minX+b.maxX)/2,0,(b.minZ+b.maxZ)/2],source:info.source==='IGN BD TOPO'?'Empreinte IGN BD TOPO'+(info.osmIds.length?' · sémantique OpenStreetMap':''):info.provenance==='cadastre'?'Empreinte du cadastre actuel ('+info.source+')':'Empreinte OpenStreetMap seule (absente de la BD TOPO)'});}
   if(raycaster.ray.intersectPlane(plane,ground)){const candidates=catalogue.records.filter(r=>r.type==='zone'&&r.polys.some(poly=>insidePoly([ground.x,ground.z],poly)));candidates.sort((a,b)=>area(a.polys[0][0])-area(b.polys[0][0]));if(candidates[0])return done(candidates[0]);}
   done(null);
  }

@@ -33,7 +33,7 @@ async function start(){
   for(const f of data.features)if(f.geometry.type==='Point'&&['school','townhall','community_centre'].includes(f.properties.amenity)){const p=project(f.geometry.coordinates);const building=terrain.buildings.find(b=>insidePoly(p,b.poly));if(building){building.t={...building.t,amenity:f.properties.amenity,name:f.properties.name};}}
   const buildings=buildBuildings(scene,terrain.buildings,enrichment,{diagnostic});
   if(diagnostic){const legend=document.createElement('div');legend.id='diagnostic-legend';
-   const entries=diagnostic==='validation'?{A:'A · IGN confirmé par le cadastre',B:'B · source officielle unique','B-contour':'B · contour divergent du cadastre',C:'C · OSM seul, litigieux ou plausible',cadastre:'Ajouté depuis le cadastre'}:{'ign+osm':'IGN et OSM','ign+osm-partiel':'IGN, OSM partiel','ign':'IGN seul','osm':'OSM seul','cadastre':'Cadastre'};
+   const entries=diagnostic==='validation'?{A:'A · IGN confirmé par le cadastre',B:'B · source officielle unique','B-contour':'B · contour différent du cadastre actuel',C:'C · OSM seul non confirmé',cadastre:'Ajouté depuis le cadastre actuel (B ou C)'}:{'ign+osm':'IGN et OSM','ign+osm-partiel':'IGN, OSM partiel','ign':'IGN seul','osm':'OSM seul','cadastre':'Cadastre'};
    const colors=diagnostic==='validation'?VALIDATION_COLORS:PROVENANCE_COLORS;
    legend.innerHTML=Object.entries(entries).map(([k,v])=>`<span><i style="background:${colors[k]}"></i>${v} · ${reference.items.filter(i=>diagnosticKey(i,diagnostic)===k).length}</span>`).join('');document.body.appendChild(legend);}
   // A fine administrative line distinguishes the real commune from the context rectangle.

@@ -9,7 +9,7 @@ function split(points,axis,mid,side){const out=[];for(let i=0;i<points.length;i+
 export const PROVENANCE_COLORS={'ign+osm':'#b9bfc6','ign+osm-partiel':'#e9a23b','ign':'#e0301e','osm':'#2f6fe0','cadastre':'#1f9e5a'};
 // ?diagnostic=validation: V1.6 confidence levels and unresolved contours.
 export const VALIDATION_COLORS={A:'#b9bfc6',B:'#e9a23b','B-contour':'#9b4fd1',C:'#2f6fe0',cadastre:'#1f9e5a'};
-export const diagnosticKey=(item,mode)=>mode==='validation'?(item.source?.startsWith('Cadastre')?'cadastre':item.validation?.confidence==='B'&&/contour divergent/.test(item.validation.status)?'B-contour':item.validation?.confidence||'C'):item.provenance;
+export const diagnosticKey=(item,mode)=>mode==='validation'?(item.provenance==='cadastre'?'cadastre':item.validation?.confidence==='B'&&/contour divergent|contour différent|extension cadastrale/.test(item.validation.status)?'B-contour':item.validation?.confidence||'C'):item.provenance;
 export function buildBuildings(scene,items,enrichment={buildings:{}},options={}){
  const walls=new Batch(material()),roofs=new Batch(material()),windows=new Batch(material({roughness:.65})),details=new Batch(material());
  const batches=[walls,roofs,windows,details],ranges=batches.map(()=>[]),pickMeshes=[];

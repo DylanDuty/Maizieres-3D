@@ -1,3 +1,59 @@
+# Vérification V1.6.1 — validation officielle, 24 septembre 2026
+
+## Accès
+
+`data.geopf.fr` et `rnb-api.beta.gouv.fr` : accessibles. `cadastre.data.gouv.fr` : accessible par intermittence, mais le fichier Etalab est servi par `cadastre.s3.rbx.io.cloud.ovh.net`, **refusé (403)**. Le cadastre actuel utilisé est donc le Parcellaire Express (PCI DGFiP) de la Géoplateforme IGN.
+
+## V1.6 provisoire → V1.6.1 officielle
+
+| Indicateur | V1.6 provisoire | V1.6.1 officielle |
+|---|---:|---:|
+| Bâtiments affichés | 2 491 | **2 543** |
+| Dans la commune | 2 259 | **2 299** |
+| Référence cadastrale | OSM 2013–2018 (substitut) | PCI Express actuel : 2 070 dans la zone, 1 844 dans la commune |
+| Ajoutés depuis le cadastre actuel | 0 | 77 (58 dans la commune ; 2 avec RNB actif) |
+| Jumeaux décalés cadastre ↔ référentiel (ni ajoutés, ni supprimés) | — | 25 |
+| Supprimés (absents BD TOPO + cadastre actuel + RNB) | 0 | 25 (18 dans la commune), journalisés |
+| Géométries corrigées | 0 | 0 |
+| Listes RNB corrigées | 0 | 268 |
+| Changements de classe documentés | — | 335 (C→B 119, B→A 104, A→B 112) |
+| Confiance A / B / C | 1 992 / 337 / 162 | **1 984 / 466 / 93** |
+| Dans la commune A / B / C | 1 853 / 275 / 131 | 1 849 / 384 / 66 |
+| Incertains (C + contours différents) | 128 | 237 (179 dans la commune) : 93 C et 144 B à contour différent du cadastre |
+
+## RNB vérifié par l’API
+
+| Mesure | Valeur |
+|---|---:|
+| Identifiants vérifiés | 2 316 (2 027 valides, 158 inactifs, 130 spatialement incohérents, 1 démoli) |
+| Identifiants ajoutés par lien exact RNB → BD TOPO | 22 |
+| Bâtiments avec au moins un RNB valide | 2 016 / 2 543 (79,3 %) |
+| Dans la commune | 1 839 / 2 299 (80,0 %) |
+| Bâtiments à plusieurs RNB valides | 32 (49 avant vérification) |
+| Bâtiments RNB actifs de la commune hors de toute empreinte | 19 |
+
+Le taux RNB baisse par rapport à la V1.6 (2 260 identifiants fournis par l’IGN), car les identifiants retirés ou attribués à un voisin sont maintenant écartés.
+
+## Contrôles
+
+- `npm run check:all` réussit (six contrôles).
+- `check:buildings` : les 2 329 bâtiments IGN sont toujours présents avec leur géométrie d’origine. Chaque OSM seul absent est justifié dans le journal de suppression. Aucun ajout cadastral ne recouvre à plus de 10 % un bâtiment existant. Le fichier est complet pour un import sans Three.js.
+- `pnpm build` réussi. Build servi dans Chromium : **2 543 bâtiments générés, exactement le nombre du référentiel**, aucun rejet, 18 appels de dessin, 562 823 triangles. `?diagnostic=validation` affiche A 1 984, B 320, B à contour différent 144, C OSM 18, ajouts cadastraux 77. **Console sans erreur ni avertissement.**
+
+## Secteurs restant douteux
+
+- Classes C et contours différents :
+  - avenue du Général-de-Gaulle (14) ;
+  - rue de la Chefferie (14) ;
+  - rue Joliot-Curie (12) ;
+  - rue du Général-Leclerc (8) ;
+  - rue Jean-Monnet (7) ;
+  - 6 chacun : rues Georges-Clemenceau, Achille-Flaubert, de l’Essy, Jules-Ferry, du Stade, des Lombards, Basse-de-Poussey.
+- Chemin La Fin de Maizière : l’extension de l’abri n’est qu’en partie cadastrée (54 m² sur 554).
+- 19 bâtiments RNB sans empreinte : `rnbOnly` dans `data-sources/building-validation.json`.
+
+---
+
 # Vérification V1.6 — validation du bâti, 24 septembre 2026
 
 Branche `opus/v1.6-building-validation`. Rapport complet : `data-sources/building-validation.json`.

@@ -15,7 +15,7 @@ assert.equal(qualitySettings('high',{dpr:2}).pixelRatio,1.5);
 // V1.5: the journal follows the unified building reference actually rendered.
 const data=read('public/data/maizieres.geojson'),project=projection(data.metadata.origin),adjustments=[];
 for(const f of read('public/data/buildings.geojson').features)for(const poly of polygons(f,project)){
- const pr=f.properties,e=pr.derived?{...pr.derived,ignId:pr.ign.cleabs}:{},t=pr.osm?.tags||{},p=buildingProfile(t,poly,e,pr.id);assert(p,'Profil impossible : '+pr.id);
+ const pr=f.properties,e=pr.derived?{...pr.derived,ignId:pr.ign?.cleabs||null}:{},t=pr.osm?.tags||{},p=buildingProfile(t,poly,e,pr.id);assert(p,'Profil impossible : '+pr.id);
  if(e.wallHeight&&!t.height)assert.equal(p.wallHeight,e.wallHeight,'Hauteur IGN de mur modifiée');
  if(p.roofHeightClamped)adjustments.push({id:pr.id,osmId:pr.osm?.donor||null,widthM:+(p.axis.max-p.axis.min).toFixed(2),sourceRoofHeight:p.sourceRoofHeight,renderedRoofHeight:+p.roofHeight.toFixed(2),floors:e.floors,wallHeight:p.wallHeight});
 }

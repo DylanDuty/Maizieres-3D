@@ -1013,5 +1013,137 @@
    ]
   }
  ],
- "rejected": []
+ "rejected": [],
+ "officialValidation": {
+  "version": "1.6.1",
+  "detail": "data-sources/building-validation.json",
+  "previous": {
+   "total": 2491,
+   "inCommune": 2259,
+   "byConfidence": {
+    "A": 1992,
+    "B": 337,
+    "C": 162
+   },
+   "note": "V1.6 provisoire (substitut cadastral OSM 2013–2018)"
+  },
+  "sources": {
+   "ign": {
+    "inExtent": 2329,
+    "inCommune": 2128
+   },
+   "osm": {
+    "inExtent": 2022,
+    "inCommune": 1817
+   },
+   "cadastre": {
+    "name": "Parcellaire Express (PCI DGFiP, IGN)",
+    "inExtent": 2070,
+    "inCommune": 1844,
+    "byType": {
+     "Construction légère": 541,
+     "Bâtiment en dur": 1489,
+     "Bâtiment FI": 40
+    },
+    "coveredByReference": 1840,
+    "partial": 128,
+    "absentFromReference": 102,
+    "probableOffsetTwins": 25,
+    "addedAsMissing": 77
+   },
+   "rnb": {
+    "communeBuildings": 1895,
+    "individualLookups": 333
+   }
+  },
+  "final": {
+   "total": 2543,
+   "inCommune": 2299,
+   "byConfidence": {
+    "A": 1984,
+    "B": 466,
+    "C": 93
+   },
+   "inCommuneByConfidence": {
+    "B": 384,
+    "A": 1849,
+    "C": 66
+   },
+   "byProvenance": {
+    "ign": 160,
+    "ign+osm": 2044,
+    "ign+osm-partiel": 125,
+    "osm": 137,
+    "cadastre": 77
+   }
+  },
+  "addedFromCadastre": {
+   "total": 77,
+   "inCommune": 58,
+   "withRnb": 2
+  },
+  "removed": {
+   "total": 25,
+   "inCommune": 18
+  },
+  "corrected": {
+   "rnbIdentifiers": 268,
+   "confidenceChanges": 335,
+   "geometries": 0
+  },
+  "rnb": {
+   "withVerifiedId": 2016,
+   "withVerifiedIdInCommune": 1839,
+   "checks": {
+    "valide": 2027,
+    "incohérent spatialement": 130,
+    "inactif (identifiant retiré)": 158,
+    "statut demolished": 1
+   },
+   "multipleIdsBefore": 49,
+   "multipleIdsAfter": 32,
+   "idsAddedFromExactBdtopoLink": 22,
+   "rnbOnlyActiveInCommune": 19
+  },
+  "uncertain": {
+   "C": 93,
+   "B": 466,
+   "partialOsm": 96,
+   "partialExtensionsConfirmed": 22
+  },
+  "appearedSinceHistoricCadastre": 154,
+  "confidenceChanges": {
+   "A→B": 112,
+   "B→A": 104,
+   "C→B": 119
+  },
+  "v16Review": {
+   "osmOnlyDisputed": {
+    "count": 101,
+    "outcome": {
+     "B — confirmé par le cadastre actuel (absent de la BD TOPO)": 74,
+     "C — partiellement au cadastre actuel, absent de la BD TOPO": 7,
+     "supprimé (absent BD TOPO, cadastre actuel, RNB)": 15,
+     "C — absent de la BD TOPO": 3,
+     "C — absent du cadastre actuel et de la BD TOPO, mais point RNB actif": 2
+    }
+   },
+   "ignAbsentFromCadastre2018InCommune": {
+    "count": 173,
+    "outcome": {
+     "B — absent du cadastre actuel": 66,
+     "A — validé : BD TOPO et cadastre actuel concordent": 73,
+     "B — absent du cadastre actuel (BD TOPO seule)": 23,
+     "B — contour différent du cadastre actuel": 11
+    }
+   },
+   "partialOver25": {
+    "count": 26,
+    "verdicts": {
+     "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO": 22,
+     "cadastre actuel proche de l’empreinte IGN : partie OSM non confirmée": 4
+    }
+   }
+  }
+ }
 }

@@ -1,3 +1,71 @@
+# Notes V1.6.1 — validation officielle cadastre et RNB, 24 septembre 2026
+
+Branche `opus/v1.6-building-validation`, à partir de `0543e8f` (V1.6 provisoire). Aucun travail graphique, sauf la légende du mode diagnostic.
+
+## Accès réseau constaté
+
+| Service | Résultat |
+|---|---|
+| `data.geopf.fr` | accessible (WFS Géoplateforme) |
+| `rnb-api.beta.gouv.fr` | accessible |
+| `cadastre.data.gouv.fr` | répond, avec des coupures intermittentes. Le fichier Etalab redirige vers `cadastre.s3.rbx.io.cloud.ovh.net` (millésime 2026-06-01), **refusé (403)** par la politique réseau |
+
+Le cadastre Etalab n’a donc pas pu être téléchargé. Le **cadastre actuel** vient d’une autre diffusion officielle du même plan cadastral DGFiP : le **Parcellaire Express (PCI)** publié par l’IGN sur `data.geopf.fr` (couche `CADASTRALPARCELS.PARCELLAIRE_EXPRESS:batiment`). Ce n’est pas un substitut historique. Aucun substitut OSM 2013–2018 n’est plus utilisé : sans cadastre actuel ni RNB, `validate-buildings.mjs` s’arrête.
+
+Instantanés conservés, avec requêtes et date du 24/09/2026 :
+- `data-sources/cadastre/pci-express-batiment.geojson` : 2 070 bâtiments dans la zone affichée, dont 1 844 dans la commune ;
+- `data-sources/rnb/rnb-10220.json` : 1 895 bâtiments RNB de la commune et 333 identifiants du référentiel vérifiés un par un.
+
+Pipeline : `npm run data:validation-sources` (Node passe par le proxy grâce à `NODE_USE_ENV_PROXY=1` ; repli PCI si Etalab est inaccessible), puis `npm run data:buildings`.
+
+## Règles de décision
+
+- **Métriques** : intersection exacte, couverture dans les deux sens, IoU, surface, distance entre centres. Aucune fusion de géométries.
+- **Jumeaux décalés** : une empreinte cadastrale sans recouvrement, mais avec à proximité un bâtiment du référentiel de surface voisine (rapport 0,6–1,67, distance ≤ max(6 m ; 1,5 × √surface)) qui n’a pas lui-même d’équivalent cadastral, est considérée comme le même objet numérisé ailleurs. Cela concerne 25 cas : ils ne sont ni ajoutés ni supprimés.
+- **Ajout** : empreinte du cadastre actuel qui recouvre moins de 10 % du référentiel et n’a pas de jumeau décalé. Confiance B si un point RNB actif est dans l’empreinte, C sinon.
+- **Suppression** : empreinte OSM seule, absente de la BD TOPO, du cadastre actuel (ni recouvrement, ni jumeau décalé) et sans point RNB actif. Trois sources officielles concordent sur l’absence. Chaque cas est journalisé avec sa géométrie et ses preuves dans `data-sources/building-removed.json`.
+- **RNB** : pour chaque identifiant, l’existence, l’état (actif, statut) et la cohérence spatiale (point dans l’empreinte ou recouvrement de forme ≥ 50 %). Seuls les identifiants valides sont gardés dans `rnb` ; l’original de la BD TOPO reste dans `rnbSource`. Un identifiant n’est ajouté que si un bâtiment RNB actif cite exactement l’objet BD TOPO dans ses `ext_ids` et reste spatialement cohérent. Aucune association par simple proximité.
+- **Confiance** :
+  - A : BD TOPO et cadastre actuel concordent (couverture ≥ 50 %), sans contradiction. Un statut RNB « démoli » ou une extension cadastrale absente de la BD TOPO empêche le A.
+  - B : une seule source officielle, un contour différent, une contradiction, ou un ajout cadastral confirmé par le RNB.
+  - C : empreinte non confirmée par une seconde source officielle.
+- Classes V1.6 provisoires conservées dans `data-sources/building-validation-v1.6.json`. Chaque changement de classe est tracé avec sa raison (`confidenceHistory`).
+
+## Résultats
+
+- Référentiel : **2 491 → 2 543** bâtiments (+77 ajoutés depuis le cadastre, −25 supprimés) ; dans la commune, **2 259 → 2 299** (+58, −18).
+- Ajouts (commune) : 32 de moins de 20 m², 15 de 20 à 40 m², 11 de plus de 40 m², dont 7 « Bâtiment FI ». Seuls 2 sont confirmés par le RNB.
+- Suppressions (commune) : 18 empreintes OSM de 5 à 45 m², issues du cadastre 2013–2018 et absentes des trois sources actuelles.
+- Confiance finale : A 1 984, B 466, C 93 ; dans la commune, A 1 849, B 384, C 66.
+- Changements de classe : 119 C→B (OSM seuls confirmés par le cadastre actuel), 104 B→A, 112 A→B (contour différent du cadastre actuel ou extension cadastrale manquante).
+- RNB : 2 316 identifiants vérifiés.
+  - 2 027 valides, 158 inactifs (identifiants retirés), 130 spatialement incohérents (identifiant d’un bâtiment voisin attribué par l’IGN à de petites annexes), 1 démoli.
+  - 22 identifiants ajoutés par lien exact BD TOPO.
+  - 268 bâtiments ont une liste RNB corrigée.
+  - 2 016 bâtiments portent au moins un identifiant vérifié (79,3 %), dont 1 839 sur 2 299 dans la commune (80,0 %).
+  - Plusieurs identifiants valides : 32 bâtiments, contre 49 avant vérification. Ce sont des empreintes IGN englobant plusieurs bâtiments RNB, conservées telles quelles.
+- Réexamen V1.6 :
+  - 101 OSM seuls litigieux : 74 confirmés par le cadastre actuel (B), 12 restent C, 15 supprimés ;
+  - 173 IGN de la commune absents du cadastre 2018 : 73 validés A (présents au cadastre actuel), 11 contours différents, 89 absents du cadastre actuel mais présents à la BD TOPO (B) ;
+  - 26 empreintes avec plus de 25 m² non couverts : 22 dont l’emprise supplémentaire figure au cadastre actuel (extension absente de la BD TOPO, **géométrie non résolue** : la BD TOPO reste la géométrie de référence), 4 sans confirmation cadastrale.
+- 154 bâtiments IGN présents au cadastre actuel n’avaient pas d’équivalent dans le cadastre 2013–2018 importé dans OSM : ce sont probablement des constructions apparues depuis.
+
+## Restent douteux
+
+- 19 bâtiments RNB actifs de la commune sans empreinte dans le référentiel (point et forme hors de tout bâtiment) : listés dans `rnbOnly`, non ajoutés faute de géométrie officielle concordante.
+- 22 extensions cadastrales absentes de la géométrie BD TOPO. Au chemin La Fin de Maizière, seuls 54 des 554 m² de l’abri OSM figurent au cadastre actuel.
+- Secteurs les plus concernés par les classes C et les contours différents :
+  - avenue du Général-de-Gaulle (14) ;
+  - rue de la Chefferie (14) ;
+  - rue Joliot-Curie (12) ;
+  - rue du Général-Leclerc (8) ;
+  - rue Jean-Monnet (7) ;
+  - 6 chacun : rues Georges-Clemenceau, Achille-Flaubert, de l’Essy, Jules-Ferry, du Stade, des Lombards, Basse-de-Poussey.
+
+Les huit grands bâtiments OSM seuls signalés en V1.6 (rue de l’Essy, Joliot-Curie, Château, Lavoir, Docteur-Sollier) figurent tous au cadastre actuel : ils passent en B.
+
+---
+
 # Notes V1.6 — validation du bâti, 24 septembre 2026
 
 Branche `opus/v1.6-building-validation`, issue de `opus/v1.5-buildings` (`cbdcd97`). Aucun travail esthétique.
