@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.cache/
+*.log
+
+# Caches et fichiers temporaires
+.vite/
+*.tmp
+*.swp
+*~
+.DS_Store
+Thumbs.db
+__MACOSX/
+.env
+.env.local

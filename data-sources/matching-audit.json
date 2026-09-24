@@ -1,0 +1,4040 @@
+{
+  "stats": {
+    "sourceBuildings": 2488,
+    "osmBuildings": 2022,
+    "matched": 1217,
+    "wallHeights": 977,
+    "roofHeights": 615,
+    "floors": 662,
+    "roofMaterials": 522,
+    "usage": 797,
+    "ambiguous": 0
+  },
+  "unmatched": [
+    {
+      "osm": "way/228573761",
+      "status": "unmatched",
+      "bestIou": 0.42867572784765795
+    },
+    {
+      "osm": "way/228573762",
+      "status": "unmatched",
+      "bestIou": 0.3652842064420935
+    },
+    {
+      "osm": "way/228574854",
+      "status": "unmatched",
+      "bestIou": 0.48321226251523747
+    },
+    {
+      "osm": "way/228575138",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228575143",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228575197",
+      "status": "unmatched",
+      "bestIou": 0.0004389549568014763
+    },
+    {
+      "osm": "way/228575294",
+      "status": "unmatched",
+      "bestIou": 0.30059589727933245
+    },
+    {
+      "osm": "way/228575356",
+      "status": "unmatched",
+      "bestIou": 0.40273998436007763
+    },
+    {
+      "osm": "way/228575383",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228575506",
+      "status": "unmatched",
+      "bestIou": 0.46901783401276487
+    },
+    {
+      "osm": "way/228575732",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228576260",
+      "status": "unmatched",
+      "bestIou": 0.25077129371032486
+    },
+    {
+      "osm": "way/228576472",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228576512",
+      "status": "unmatched",
+      "bestIou": 0.1892453207065741
+    },
+    {
+      "osm": "way/228576619",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228576743",
+      "status": "unmatched",
+      "bestIou": 0.30228649773570326
+    },
+    {
+      "osm": "way/228576751",
+      "status": "unmatched",
+      "bestIou": 0.11751864925045404
+    },
+    {
+      "osm": "way/228576829",
+      "status": "unmatched",
+      "bestIou": 0.04768288629410951
+    },
+    {
+      "osm": "way/228577059",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228577119",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228577154",
+      "status": "unmatched",
+      "bestIou": 0.27240400437942797
+    },
+    {
+      "osm": "way/228577467",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228577647",
+      "status": "unmatched",
+      "bestIou": 0.4741248744603419
+    },
+    {
+      "osm": "way/228577753",
+      "status": "unmatched",
+      "bestIou": 0.3504231958465063
+    },
+    {
+      "osm": "way/228577754",
+      "status": "unmatched",
+      "bestIou": 0.3158032002627137
+    },
+    {
+      "osm": "way/228578205",
+      "status": "unmatched",
+      "bestIou": 0.11795411019842142
+    },
+    {
+      "osm": "way/228578366",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228578494",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228578604",
+      "status": "unmatched",
+      "bestIou": 0.32945659787112724
+    },
+    {
+      "osm": "way/228578651",
+      "status": "unmatched",
+      "bestIou": 0.2838843835796469
+    },
+    {
+      "osm": "way/228578743",
+      "status": "unmatched",
+      "bestIou": 0.36623365334855484
+    },
+    {
+      "osm": "way/228578944",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228579174",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228579332",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228579592",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228579593",
+      "status": "unmatched",
+      "bestIou": 0.3636929452769949
+    },
+    {
+      "osm": "way/228580044",
+      "status": "unmatched",
+      "bestIou": 0.3812796330003249
+    },
+    {
+      "osm": "way/228580154",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228580394",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228580457",
+      "status": "unmatched",
+      "bestIou": 0.452056333552873
+    },
+    {
+      "osm": "way/228580629",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228581037",
+      "status": "unmatched",
+      "bestIou": 0.36806572414596817
+    },
+    {
+      "osm": "way/228581095",
+      "status": "unmatched",
+      "bestIou": 0.3815076948296662
+    },
+    {
+      "osm": "way/228581265",
+      "status": "unmatched",
+      "bestIou": 0.25605333963248844
+    },
+    {
+      "osm": "way/228581293",
+      "status": "unmatched",
+      "bestIou": 0.16406340641090544
+    },
+    {
+      "osm": "way/228581373",
+      "status": "unmatched",
+      "bestIou": 0.4137905132853366
+    },
+    {
+      "osm": "way/228581666",
+      "status": "unmatched",
+      "bestIou": 0.397880288689947
+    },
+    {
+      "osm": "way/228581715",
+      "status": "unmatched",
+      "bestIou": 0.007120133909006192
+    },
+    {
+      "osm": "way/228582020",
+      "status": "unmatched",
+      "bestIou": 0.2926400380100834
+    },
+    {
+      "osm": "way/228582330",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/228582899",
+      "status": "unmatched",
+      "bestIou": 0.00031460764205694874
+    },
+    {
+      "osm": "way/228582934",
+      "status": "unmatched",
+      "bestIou": 0.20427620473396926
+    },
+    {
+      "osm": "way/228583396",
+      "status": "unmatched",
+      "bestIou": 0.22994887337603948
+    },
+    {
+      "osm": "way/228587065",
+      "status": "unmatched",
+      "bestIou": 0.31523782984334703
+    },
+    {
+      "osm": "way/228587814",
+      "status": "unmatched",
+      "bestIou": 0.45645359695196397
+    },
+    {
+      "osm": "way/366040710",
+      "status": "unmatched",
+      "bestIou": 0.1306388277445004
+    },
+    {
+      "osm": "way/549958870",
+      "status": "unmatched",
+      "bestIou": 0.2351386209275494
+    },
+    {
+      "osm": "way/549958871",
+      "status": "unmatched",
+      "bestIou": 0.2973807834768645
+    },
+    {
+      "osm": "way/549958872",
+      "status": "unmatched",
+      "bestIou": 0.30684093276007446
+    },
+    {
+      "osm": "way/549958884",
+      "status": "unmatched",
+      "bestIou": 0.30911826474798837
+    },
+    {
+      "osm": "way/549958892",
+      "status": "unmatched",
+      "bestIou": 0.28772557727152337
+    },
+    {
+      "osm": "way/549958904",
+      "status": "unmatched",
+      "bestIou": 0.07128120969984288
+    },
+    {
+      "osm": "way/549958905",
+      "status": "unmatched",
+      "bestIou": 0.33048470011499836
+    },
+    {
+      "osm": "way/549958906",
+      "status": "unmatched",
+      "bestIou": 0.2687048361915234
+    },
+    {
+      "osm": "way/549958924",
+      "status": "unmatched",
+      "bestIou": 0.2803363834750311
+    },
+    {
+      "osm": "way/549958928",
+      "status": "unmatched",
+      "bestIou": 0.2619616741659776
+    },
+    {
+      "osm": "way/549958938",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/549958941",
+      "status": "unmatched",
+      "bestIou": 0.07129410666907109
+    },
+    {
+      "osm": "way/549958971",
+      "status": "unmatched",
+      "bestIou": 0.3392208700354414
+    },
+    {
+      "osm": "way/549958990",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/549959033",
+      "status": "unmatched",
+      "bestIou": 0.3484156046907201
+    },
+    {
+      "osm": "way/549959038",
+      "status": "unmatched",
+      "bestIou": 0.17680852008871017
+    },
+    {
+      "osm": "way/549959081",
+      "status": "unmatched",
+      "bestIou": 0.330119111403593
+    },
+    {
+      "osm": "way/549959091",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/549959115",
+      "status": "unmatched",
+      "bestIou": 0.5097328217588327
+    },
+    {
+      "osm": "way/549959129",
+      "status": "unmatched",
+      "bestIou": 0.2845150704522157
+    },
+    {
+      "osm": "way/549959162",
+      "status": "unmatched",
+      "bestIou": 0.3874763094879372
+    },
+    {
+      "osm": "way/549959180",
+      "status": "unmatched",
+      "bestIou": 0.33705014970013975
+    },
+    {
+      "osm": "way/549959182",
+      "status": "unmatched",
+      "bestIou": 0.35173556349194873
+    },
+    {
+      "osm": "way/549959187",
+      "status": "unmatched",
+      "bestIou": 0.3276265131535227
+    },
+    {
+      "osm": "way/549959191",
+      "status": "unmatched",
+      "bestIou": 0.3055253115600235
+    },
+    {
+      "osm": "way/549959196",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/549959209",
+      "status": "unmatched",
+      "bestIou": 0.3434351578175074
+    },
+    {
+      "osm": "way/549959219",
+      "status": "unmatched",
+      "bestIou": 0.07993815327802108
+    },
+    {
+      "osm": "way/549959224",
+      "status": "unmatched",
+      "bestIou": 0.35588921734049694
+    },
+    {
+      "osm": "way/549959231",
+      "status": "unmatched",
+      "bestIou": 0.6149609552058743
+    },
+    {
+      "osm": "way/549959237",
+      "status": "unmatched",
+      "bestIou": 0.29338914316238146
+    },
+    {
+      "osm": "way/549959238",
+      "status": "unmatched",
+      "bestIou": 0.3016902701772898
+    },
+    {
+      "osm": "way/549959241",
+      "status": "unmatched",
+      "bestIou": 0.3554655219497996
+    },
+    {
+      "osm": "way/549959262",
+      "status": "unmatched",
+      "bestIou": 0.4432010374391282
+    },
+    {
+      "osm": "way/549959268",
+      "status": "unmatched",
+      "bestIou": 0.15724756868143716
+    },
+    {
+      "osm": "way/549959288",
+      "status": "unmatched",
+      "bestIou": 0.3227219800544605
+    },
+    {
+      "osm": "way/549959336",
+      "status": "unmatched",
+      "bestIou": 0.31187716435338647
+    },
+    {
+      "osm": "way/549959428",
+      "status": "unmatched",
+      "bestIou": 0.2841553388934249
+    },
+    {
+      "osm": "way/549959432",
+      "status": "unmatched",
+      "bestIou": 0.32575384135296
+    },
+    {
+      "osm": "way/549959434",
+      "status": "unmatched",
+      "bestIou": 0.06382563602752415
+    },
+    {
+      "osm": "way/549959435",
+      "status": "unmatched",
+      "bestIou": 0.33536200771146435
+    },
+    {
+      "osm": "way/549959440",
+      "status": "unmatched",
+      "bestIou": 0.06607038591904436
+    },
+    {
+      "osm": "way/549959444",
+      "status": "unmatched",
+      "bestIou": 0.25581533018633107
+    },
+    {
+      "osm": "way/549959484",
+      "status": "unmatched",
+      "bestIou": 0.3283812925155173
+    },
+    {
+      "osm": "way/549959519",
+      "status": "unmatched",
+      "bestIou": 0.2323284023806768
+    },
+    {
+      "osm": "way/549959524",
+      "status": "unmatched",
+      "bestIou": 0.06387053866539429
+    },
+    {
+      "osm": "way/549959545",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/549959548",
+      "status": "unmatched",
+      "bestIou": 0.454724963672678
+    },
+    {
+      "osm": "way/549959557",
+      "status": "unmatched",
+      "bestIou": 0.28545554770263437
+    },
+    {
+      "osm": "way/549959598",
+      "status": "unmatched",
+      "bestIou": 0.35641768153819836
+    },
+    {
+      "osm": "way/549959610",
+      "status": "unmatched",
+      "bestIou": 0.2945832062463546
+    },
+    {
+      "osm": "way/549959613",
+      "status": "unmatched",
+      "bestIou": 0.33718294107474406
+    },
+    {
+      "osm": "way/549959646",
+      "status": "unmatched",
+      "bestIou": 0.31426085062923487
+    },
+    {
+      "osm": "way/549959648",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/549959652",
+      "status": "unmatched",
+      "bestIou": 0.13852167405573645
+    },
+    {
+      "osm": "way/549959657",
+      "status": "unmatched",
+      "bestIou": 0.3380069730056585
+    },
+    {
+      "osm": "way/549959686",
+      "status": "unmatched",
+      "bestIou": 0.2624956327948699
+    },
+    {
+      "osm": "way/549959695",
+      "status": "unmatched",
+      "bestIou": 0.18339153426739335
+    },
+    {
+      "osm": "way/549959700",
+      "status": "unmatched",
+      "bestIou": 0.2933495569589922
+    },
+    {
+      "osm": "way/549959709",
+      "status": "unmatched",
+      "bestIou": 0.28738794135076495
+    },
+    {
+      "osm": "way/549959715",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/549959717",
+      "status": "unmatched",
+      "bestIou": 0.0007933453953013923
+    },
+    {
+      "osm": "way/549959730",
+      "status": "unmatched",
+      "bestIou": 0.3470902278348829
+    },
+    {
+      "osm": "way/549959733",
+      "status": "unmatched",
+      "bestIou": 0.3207392887826693
+    },
+    {
+      "osm": "way/549959743",
+      "status": "unmatched",
+      "bestIou": 0.23654437369408585
+    },
+    {
+      "osm": "way/549959744",
+      "status": "unmatched",
+      "bestIou": 0.29804306726534324
+    },
+    {
+      "osm": "way/549959753",
+      "status": "unmatched",
+      "bestIou": 0.34769762180869956
+    },
+    {
+      "osm": "way/549959764",
+      "status": "unmatched",
+      "bestIou": 0.31596631035581346
+    },
+    {
+      "osm": "way/549959789",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/549959794",
+      "status": "unmatched",
+      "bestIou": 0.31100340700469203
+    },
+    {
+      "osm": "way/549959797",
+      "status": "unmatched",
+      "bestIou": 0.2918550220452984
+    },
+    {
+      "osm": "way/549959801",
+      "status": "unmatched",
+      "bestIou": 0.33617428735396676
+    },
+    {
+      "osm": "way/549959803",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/549959812",
+      "status": "unmatched",
+      "bestIou": 0.38206319657321547
+    },
+    {
+      "osm": "way/549959861",
+      "status": "unmatched",
+      "bestIou": 0.3390807290801164
+    },
+    {
+      "osm": "way/549959869",
+      "status": "unmatched",
+      "bestIou": 0.07809193041673819
+    },
+    {
+      "osm": "way/549959884",
+      "status": "unmatched",
+      "bestIou": 0.2743441197824858
+    },
+    {
+      "osm": "way/549959896",
+      "status": "unmatched",
+      "bestIou": 0.3459454429251413
+    },
+    {
+      "osm": "way/549959900",
+      "status": "unmatched",
+      "bestIou": 0.296832113832531
+    },
+    {
+      "osm": "way/549959919",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789260",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789271",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789277",
+      "status": "unmatched",
+      "bestIou": 0.09690103761296485
+    },
+    {
+      "osm": "way/588789370",
+      "status": "unmatched",
+      "bestIou": 0.41535636561766415
+    },
+    {
+      "osm": "way/588789411",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789440",
+      "status": "unmatched",
+      "bestIou": 0.4376425763410859
+    },
+    {
+      "osm": "way/588789443",
+      "status": "unmatched",
+      "bestIou": 0.44177370113307474
+    },
+    {
+      "osm": "way/588789451",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789538",
+      "status": "unmatched",
+      "bestIou": 0.5022415875018265
+    },
+    {
+      "osm": "way/588789539",
+      "status": "unmatched",
+      "bestIou": 0.20536026435771074
+    },
+    {
+      "osm": "way/588789541",
+      "status": "unmatched",
+      "bestIou": 0.011419301269707693
+    },
+    {
+      "osm": "way/588789543",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789566",
+      "status": "unmatched",
+      "bestIou": 0.45885529677761494
+    },
+    {
+      "osm": "way/588789575",
+      "status": "unmatched",
+      "bestIou": 0.04358074073968754
+    },
+    {
+      "osm": "way/588789580",
+      "status": "unmatched",
+      "bestIou": 0.2419028089723589
+    },
+    {
+      "osm": "way/588789581",
+      "status": "unmatched",
+      "bestIou": 0.5337549504324103
+    },
+    {
+      "osm": "way/588789583",
+      "status": "unmatched",
+      "bestIou": 0.14788332389067232
+    },
+    {
+      "osm": "way/588789588",
+      "status": "unmatched",
+      "bestIou": 0.37680879489799995
+    },
+    {
+      "osm": "way/588789590",
+      "status": "unmatched",
+      "bestIou": 0.3990353260135094
+    },
+    {
+      "osm": "way/588789595",
+      "status": "unmatched",
+      "bestIou": 0.29373633154317424
+    },
+    {
+      "osm": "way/588789601",
+      "status": "unmatched",
+      "bestIou": 0.3330791525893923
+    },
+    {
+      "osm": "way/588789602",
+      "status": "unmatched",
+      "bestIou": 0.4369350685009849
+    },
+    {
+      "osm": "way/588789604",
+      "status": "unmatched",
+      "bestIou": 0.44780788683134976
+    },
+    {
+      "osm": "way/588789608",
+      "status": "unmatched",
+      "bestIou": 0.14963266333588054
+    },
+    {
+      "osm": "way/588789609",
+      "status": "unmatched",
+      "bestIou": 0.5060699455222218
+    },
+    {
+      "osm": "way/588789626",
+      "status": "unmatched",
+      "bestIou": 0.46969644485094186
+    },
+    {
+      "osm": "way/588789629",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789643",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789644",
+      "status": "unmatched",
+      "bestIou": 0.16611914211032228
+    },
+    {
+      "osm": "way/588789649",
+      "status": "unmatched",
+      "bestIou": 0.19041124476657056
+    },
+    {
+      "osm": "way/588789651",
+      "status": "unmatched",
+      "bestIou": 0.09952449930705913
+    },
+    {
+      "osm": "way/588789654",
+      "status": "unmatched",
+      "bestIou": 0.6351577103868794
+    },
+    {
+      "osm": "way/588789655",
+      "status": "unmatched",
+      "bestIou": 0.4574032599196971
+    },
+    {
+      "osm": "way/588789656",
+      "status": "unmatched",
+      "bestIou": 0.5213705360946168
+    },
+    {
+      "osm": "way/588789657",
+      "status": "unmatched",
+      "bestIou": 0.4283054749100864
+    },
+    {
+      "osm": "way/588789659",
+      "status": "unmatched",
+      "bestIou": 0.24515666557464325
+    },
+    {
+      "osm": "way/588789660",
+      "status": "unmatched",
+      "bestIou": 0.11694391039366511
+    },
+    {
+      "osm": "way/588789661",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789662",
+      "status": "unmatched",
+      "bestIou": 0.39983426574208125
+    },
+    {
+      "osm": "way/588789664",
+      "status": "unmatched",
+      "bestIou": 0.47273277679598175
+    },
+    {
+      "osm": "way/588789665",
+      "status": "unmatched",
+      "bestIou": 0.16612096994302922
+    },
+    {
+      "osm": "way/588789667",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789668",
+      "status": "unmatched",
+      "bestIou": 0.495567599240909
+    },
+    {
+      "osm": "way/588789669",
+      "status": "unmatched",
+      "bestIou": 0.14185136757418426
+    },
+    {
+      "osm": "way/588789670",
+      "status": "unmatched",
+      "bestIou": 0.15892974463199766
+    },
+    {
+      "osm": "way/588789674",
+      "status": "unmatched",
+      "bestIou": 0.46930373770883765
+    },
+    {
+      "osm": "way/588789676",
+      "status": "unmatched",
+      "bestIou": 0.26927148736903755
+    },
+    {
+      "osm": "way/588789678",
+      "status": "unmatched",
+      "bestIou": 0.08549790667744664
+    },
+    {
+      "osm": "way/588789679",
+      "status": "unmatched",
+      "bestIou": 0.45941023503962636
+    },
+    {
+      "osm": "way/588789680",
+      "status": "unmatched",
+      "bestIou": 0.580383519977474
+    },
+    {
+      "osm": "way/588789681",
+      "status": "unmatched",
+      "bestIou": 0.008849484761896856
+    },
+    {
+      "osm": "way/588789683",
+      "status": "unmatched",
+      "bestIou": 0.022206347062154956
+    },
+    {
+      "osm": "way/588789693",
+      "status": "unmatched",
+      "bestIou": 0.3468599514053336
+    },
+    {
+      "osm": "way/588789695",
+      "status": "unmatched",
+      "bestIou": 0.3899266841199499
+    },
+    {
+      "osm": "way/588789698",
+      "status": "unmatched",
+      "bestIou": 0.4064682247874333
+    },
+    {
+      "osm": "way/588789701",
+      "status": "unmatched",
+      "bestIou": 0.47888043975375744
+    },
+    {
+      "osm": "way/588789707",
+      "status": "unmatched",
+      "bestIou": 0.06045499794121044
+    },
+    {
+      "osm": "way/588789709",
+      "status": "unmatched",
+      "bestIou": 0.237850892608339
+    },
+    {
+      "osm": "way/588789710",
+      "status": "unmatched",
+      "bestIou": 0.5428020939469662
+    },
+    {
+      "osm": "way/588789711",
+      "status": "unmatched",
+      "bestIou": 0.4751497624203822
+    },
+    {
+      "osm": "way/588789715",
+      "status": "unmatched",
+      "bestIou": 0.18722673324673156
+    },
+    {
+      "osm": "way/588789716",
+      "status": "unmatched",
+      "bestIou": 0.3746797295643865
+    },
+    {
+      "osm": "way/588789717",
+      "status": "unmatched",
+      "bestIou": 0.41669895550565794
+    },
+    {
+      "osm": "way/588789722",
+      "status": "unmatched",
+      "bestIou": 0.3702549775169031
+    },
+    {
+      "osm": "way/588789726",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789728",
+      "status": "unmatched",
+      "bestIou": 0.4008627908668868
+    },
+    {
+      "osm": "way/588789731",
+      "status": "unmatched",
+      "bestIou": 0.4558316475603628
+    },
+    {
+      "osm": "way/588789733",
+      "status": "unmatched",
+      "bestIou": 0.4643603759170184
+    },
+    {
+      "osm": "way/588789737",
+      "status": "unmatched",
+      "bestIou": 0.4483436327207465
+    },
+    {
+      "osm": "way/588789738",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789739",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789743",
+      "status": "unmatched",
+      "bestIou": 0.3403276345076638
+    },
+    {
+      "osm": "way/588789744",
+      "status": "unmatched",
+      "bestIou": 0.44743211760376816
+    },
+    {
+      "osm": "way/588789746",
+      "status": "unmatched",
+      "bestIou": 0.4829810563200608
+    },
+    {
+      "osm": "way/588789748",
+      "status": "unmatched",
+      "bestIou": 0.3954959719906086
+    },
+    {
+      "osm": "way/588789752",
+      "status": "unmatched",
+      "bestIou": 0.3385835862417077
+    },
+    {
+      "osm": "way/588789753",
+      "status": "unmatched",
+      "bestIou": 0.21580382779997914
+    },
+    {
+      "osm": "way/588789754",
+      "status": "unmatched",
+      "bestIou": 0.5204954579260458
+    },
+    {
+      "osm": "way/588789757",
+      "status": "unmatched",
+      "bestIou": 0.0972350873190063
+    },
+    {
+      "osm": "way/588789758",
+      "status": "unmatched",
+      "bestIou": 0.5109054265293151
+    },
+    {
+      "osm": "way/588789761",
+      "status": "unmatched",
+      "bestIou": 0.4106958201017304
+    },
+    {
+      "osm": "way/588789762",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789765",
+      "status": "unmatched",
+      "bestIou": 0.45424955008872187
+    },
+    {
+      "osm": "way/588789767",
+      "status": "unmatched",
+      "bestIou": 0.20978130312042473
+    },
+    {
+      "osm": "way/588789770",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789771",
+      "status": "unmatched",
+      "bestIou": 0.24385861623500404
+    },
+    {
+      "osm": "way/588789773",
+      "status": "unmatched",
+      "bestIou": 0.10143581150246096
+    },
+    {
+      "osm": "way/588789776",
+      "status": "unmatched",
+      "bestIou": 0.04068859651912114
+    },
+    {
+      "osm": "way/588789777",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789778",
+      "status": "unmatched",
+      "bestIou": 0.3650651181232491
+    },
+    {
+      "osm": "way/588789780",
+      "status": "unmatched",
+      "bestIou": 0.30508093974916234
+    },
+    {
+      "osm": "way/588789783",
+      "status": "unmatched",
+      "bestIou": 0.4470499634035612
+    },
+    {
+      "osm": "way/588789784",
+      "status": "unmatched",
+      "bestIou": 0.3463103342792408
+    },
+    {
+      "osm": "way/588789786",
+      "status": "unmatched",
+      "bestIou": 0.0035429842393855685
+    },
+    {
+      "osm": "way/588789789",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789793",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789794",
+      "status": "unmatched",
+      "bestIou": 0.3456961814080416
+    },
+    {
+      "osm": "way/588789797",
+      "status": "unmatched",
+      "bestIou": 0.025373964993677015
+    },
+    {
+      "osm": "way/588789798",
+      "status": "unmatched",
+      "bestIou": 0.6161814746749672
+    },
+    {
+      "osm": "way/588789801",
+      "status": "unmatched",
+      "bestIou": 0.4206475032197903
+    },
+    {
+      "osm": "way/588789810",
+      "status": "unmatched",
+      "bestIou": 0.5030305528854566
+    },
+    {
+      "osm": "way/588789822",
+      "status": "unmatched",
+      "bestIou": 0.008454842068373828
+    },
+    {
+      "osm": "way/588789849",
+      "status": "unmatched",
+      "bestIou": 0.43329633593742783
+    },
+    {
+      "osm": "way/588789877",
+      "status": "unmatched",
+      "bestIou": 0.45154288864210573
+    },
+    {
+      "osm": "way/588789891",
+      "status": "unmatched",
+      "bestIou": 0.09035527381941391
+    },
+    {
+      "osm": "way/588789892",
+      "status": "unmatched",
+      "bestIou": 0.3364845285488269
+    },
+    {
+      "osm": "way/588789895",
+      "status": "unmatched",
+      "bestIou": 0.05135914106307294
+    },
+    {
+      "osm": "way/588789899",
+      "status": "unmatched",
+      "bestIou": 0.4473110240034414
+    },
+    {
+      "osm": "way/588789901",
+      "status": "unmatched",
+      "bestIou": 0.3853159722981356
+    },
+    {
+      "osm": "way/588789903",
+      "status": "unmatched",
+      "bestIou": 0.01351909613489191
+    },
+    {
+      "osm": "way/588789909",
+      "status": "unmatched",
+      "bestIou": 0.45721179912930815
+    },
+    {
+      "osm": "way/588789917",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789918",
+      "status": "unmatched",
+      "bestIou": 0.3672479850238578
+    },
+    {
+      "osm": "way/588789921",
+      "status": "unmatched",
+      "bestIou": 0.2987553979852227
+    },
+    {
+      "osm": "way/588789923",
+      "status": "unmatched",
+      "bestIou": 0.4682550794720066
+    },
+    {
+      "osm": "way/588789925",
+      "status": "unmatched",
+      "bestIou": 0.5734500759717712
+    },
+    {
+      "osm": "way/588789941",
+      "status": "unmatched",
+      "bestIou": 0.012896602716164376
+    },
+    {
+      "osm": "way/588789945",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588789960",
+      "status": "unmatched",
+      "bestIou": 0.41128450407360023
+    },
+    {
+      "osm": "way/588789963",
+      "status": "unmatched",
+      "bestIou": 0.009792637216101527
+    },
+    {
+      "osm": "way/588789974",
+      "status": "unmatched",
+      "bestIou": 0.07728325867988518
+    },
+    {
+      "osm": "way/588789980",
+      "status": "unmatched",
+      "bestIou": 0.3430278169404175
+    },
+    {
+      "osm": "way/588790005",
+      "status": "unmatched",
+      "bestIou": 0.03464569797450615
+    },
+    {
+      "osm": "way/588790032",
+      "status": "unmatched",
+      "bestIou": 0.4826533125371513
+    },
+    {
+      "osm": "way/588790040",
+      "status": "unmatched",
+      "bestIou": 0.33842434052764014
+    },
+    {
+      "osm": "way/588790047",
+      "status": "unmatched",
+      "bestIou": 0.30785927156217163
+    },
+    {
+      "osm": "way/588790054",
+      "status": "unmatched",
+      "bestIou": 0.3653289724879156
+    },
+    {
+      "osm": "way/588790057",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588790061",
+      "status": "unmatched",
+      "bestIou": 0.4850257219297896
+    },
+    {
+      "osm": "way/588790081",
+      "status": "unmatched",
+      "bestIou": 0.2558134214912534
+    },
+    {
+      "osm": "way/588790085",
+      "status": "unmatched",
+      "bestIou": 0.4837183906052692
+    },
+    {
+      "osm": "way/588791329",
+      "status": "unmatched",
+      "bestIou": 0.4711883602702238
+    },
+    {
+      "osm": "way/588791330",
+      "status": "unmatched",
+      "bestIou": 0.45479845446850214
+    },
+    {
+      "osm": "way/588791334",
+      "status": "unmatched",
+      "bestIou": 0.1483415323602237
+    },
+    {
+      "osm": "way/588791340",
+      "status": "unmatched",
+      "bestIou": 0.4243462577308289
+    },
+    {
+      "osm": "way/588791341",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791346",
+      "status": "unmatched",
+      "bestIou": 0.11557097646676508
+    },
+    {
+      "osm": "way/588791349",
+      "status": "unmatched",
+      "bestIou": 0.056848226090178776
+    },
+    {
+      "osm": "way/588791353",
+      "status": "unmatched",
+      "bestIou": 0.36149882277387874
+    },
+    {
+      "osm": "way/588791361",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791377",
+      "status": "unmatched",
+      "bestIou": 0.0956165384604285
+    },
+    {
+      "osm": "way/588791378",
+      "status": "unmatched",
+      "bestIou": 0.26457017730279553
+    },
+    {
+      "osm": "way/588791386",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791397",
+      "status": "unmatched",
+      "bestIou": 0.01507927589228011
+    },
+    {
+      "osm": "way/588791418",
+      "status": "unmatched",
+      "bestIou": 0.4355945822935426
+    },
+    {
+      "osm": "way/588791425",
+      "status": "unmatched",
+      "bestIou": 0.03054941970954108
+    },
+    {
+      "osm": "way/588791446",
+      "status": "unmatched",
+      "bestIou": 0.41933678087340054
+    },
+    {
+      "osm": "way/588791462",
+      "status": "unmatched",
+      "bestIou": 0.4536065427299703
+    },
+    {
+      "osm": "way/588791487",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791491",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791494",
+      "status": "unmatched",
+      "bestIou": 0.25107455244967464
+    },
+    {
+      "osm": "way/588791502",
+      "status": "unmatched",
+      "bestIou": 0.47528837486564385
+    },
+    {
+      "osm": "way/588791515",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791518",
+      "status": "unmatched",
+      "bestIou": 0.4074287923257152
+    },
+    {
+      "osm": "way/588791521",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791522",
+      "status": "unmatched",
+      "bestIou": 0.3233571546717202
+    },
+    {
+      "osm": "way/588791527",
+      "status": "unmatched",
+      "bestIou": 0.0001959689298823436
+    },
+    {
+      "osm": "way/588791530",
+      "status": "unmatched",
+      "bestIou": 0.4074548398166405
+    },
+    {
+      "osm": "way/588791533",
+      "status": "unmatched",
+      "bestIou": 0.005304155218923501
+    },
+    {
+      "osm": "way/588791535",
+      "status": "unmatched",
+      "bestIou": 0.4795760873686812
+    },
+    {
+      "osm": "way/588791536",
+      "status": "unmatched",
+      "bestIou": 0.18975457424668316
+    },
+    {
+      "osm": "way/588791555",
+      "status": "unmatched",
+      "bestIou": 0.2837120835571433
+    },
+    {
+      "osm": "way/588791565",
+      "status": "unmatched",
+      "bestIou": 0.37273760781794807
+    },
+    {
+      "osm": "way/588791576",
+      "status": "unmatched",
+      "bestIou": 0.2784356013506388
+    },
+    {
+      "osm": "way/588791617",
+      "status": "unmatched",
+      "bestIou": 0.006096620029809645
+    },
+    {
+      "osm": "way/588791633",
+      "status": "unmatched",
+      "bestIou": 0.04602952181917829
+    },
+    {
+      "osm": "way/588791637",
+      "status": "unmatched",
+      "bestIou": 0.5252431336535902
+    },
+    {
+      "osm": "way/588791641",
+      "status": "unmatched",
+      "bestIou": 0.41814281751085375
+    },
+    {
+      "osm": "way/588791643",
+      "status": "unmatched",
+      "bestIou": 0.2509146103578607
+    },
+    {
+      "osm": "way/588791647",
+      "status": "unmatched",
+      "bestIou": 0.4624713039007267
+    },
+    {
+      "osm": "way/588791648",
+      "status": "unmatched",
+      "bestIou": 0.1329200509915431
+    },
+    {
+      "osm": "way/588791650",
+      "status": "unmatched",
+      "bestIou": 0.34825287739837485
+    },
+    {
+      "osm": "way/588791658",
+      "status": "unmatched",
+      "bestIou": 0.033809224543473446
+    },
+    {
+      "osm": "way/588791659",
+      "status": "unmatched",
+      "bestIou": 0.11520119664710424
+    },
+    {
+      "osm": "way/588791663",
+      "status": "unmatched",
+      "bestIou": 0.21118503326745772
+    },
+    {
+      "osm": "way/588791664",
+      "status": "unmatched",
+      "bestIou": 0.24997567200292675
+    },
+    {
+      "osm": "way/588791671",
+      "status": "unmatched",
+      "bestIou": 0.48450575929855627
+    },
+    {
+      "osm": "way/588791678",
+      "status": "unmatched",
+      "bestIou": 0.49327112008758006
+    },
+    {
+      "osm": "way/588791687",
+      "status": "unmatched",
+      "bestIou": 0.004243682513604352
+    },
+    {
+      "osm": "way/588791690",
+      "status": "unmatched",
+      "bestIou": 0.41479380477938405
+    },
+    {
+      "osm": "way/588791697",
+      "status": "unmatched",
+      "bestIou": 0.46719772897410794
+    },
+    {
+      "osm": "way/588791700",
+      "status": "unmatched",
+      "bestIou": 0.36958429886382566
+    },
+    {
+      "osm": "way/588791702",
+      "status": "unmatched",
+      "bestIou": 0.4223739414890849
+    },
+    {
+      "osm": "way/588791705",
+      "status": "unmatched",
+      "bestIou": 0.2224554932807002
+    },
+    {
+      "osm": "way/588791707",
+      "status": "unmatched",
+      "bestIou": 0.31339101364894273
+    },
+    {
+      "osm": "way/588791709",
+      "status": "unmatched",
+      "bestIou": 0.4564320059750578
+    },
+    {
+      "osm": "way/588791715",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791717",
+      "status": "unmatched",
+      "bestIou": 0.5834406868023742
+    },
+    {
+      "osm": "way/588791719",
+      "status": "unmatched",
+      "bestIou": 0.4632726303290663
+    },
+    {
+      "osm": "way/588791721",
+      "status": "unmatched",
+      "bestIou": 0.4481248886845985
+    },
+    {
+      "osm": "way/588791722",
+      "status": "unmatched",
+      "bestIou": 0.01785937684023364
+    },
+    {
+      "osm": "way/588791725",
+      "status": "unmatched",
+      "bestIou": 0.01564147994743871
+    },
+    {
+      "osm": "way/588791727",
+      "status": "unmatched",
+      "bestIou": 0.46817456182818634
+    },
+    {
+      "osm": "way/588791731",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791732",
+      "status": "unmatched",
+      "bestIou": 0.44806043239199356
+    },
+    {
+      "osm": "way/588791739",
+      "status": "unmatched",
+      "bestIou": 0.6207840048793056
+    },
+    {
+      "osm": "way/588791744",
+      "status": "unmatched",
+      "bestIou": 0.27358243057703924
+    },
+    {
+      "osm": "way/588791746",
+      "status": "unmatched",
+      "bestIou": 0.46006861649206304
+    },
+    {
+      "osm": "way/588791748",
+      "status": "unmatched",
+      "bestIou": 0.5037432124250611
+    },
+    {
+      "osm": "way/588791749",
+      "status": "unmatched",
+      "bestIou": 0.36704924308563464
+    },
+    {
+      "osm": "way/588791751",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791753",
+      "status": "unmatched",
+      "bestIou": 0.09425058800037246
+    },
+    {
+      "osm": "way/588791756",
+      "status": "unmatched",
+      "bestIou": 0.3622224339796214
+    },
+    {
+      "osm": "way/588791757",
+      "status": "unmatched",
+      "bestIou": 0.4441532064337948
+    },
+    {
+      "osm": "way/588791760",
+      "status": "unmatched",
+      "bestIou": 0.23655569368283413
+    },
+    {
+      "osm": "way/588791761",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791762",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791763",
+      "status": "unmatched",
+      "bestIou": 0.4301950785703332
+    },
+    {
+      "osm": "way/588791764",
+      "status": "unmatched",
+      "bestIou": 0.3478963316855027
+    },
+    {
+      "osm": "way/588791767",
+      "status": "unmatched",
+      "bestIou": 0.43134255293925094
+    },
+    {
+      "osm": "way/588791768",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791777",
+      "status": "unmatched",
+      "bestIou": 0.0005161058964195058
+    },
+    {
+      "osm": "way/588791783",
+      "status": "unmatched",
+      "bestIou": 0.2317653971011324
+    },
+    {
+      "osm": "way/588791784",
+      "status": "unmatched",
+      "bestIou": 0.5054524582675074
+    },
+    {
+      "osm": "way/588791789",
+      "status": "unmatched",
+      "bestIou": 0.26193669104428174
+    },
+    {
+      "osm": "way/588791791",
+      "status": "unmatched",
+      "bestIou": 0.5503308231738121
+    },
+    {
+      "osm": "way/588791792",
+      "status": "unmatched",
+      "bestIou": 0.4299850778664882
+    },
+    {
+      "osm": "way/588791795",
+      "status": "unmatched",
+      "bestIou": 0.402113214121817
+    },
+    {
+      "osm": "way/588791797",
+      "status": "unmatched",
+      "bestIou": 0.36165115553774885
+    },
+    {
+      "osm": "way/588791804",
+      "status": "unmatched",
+      "bestIou": 0.3093516430081501
+    },
+    {
+      "osm": "way/588791805",
+      "status": "unmatched",
+      "bestIou": 0.29685162895053363
+    },
+    {
+      "osm": "way/588791809",
+      "status": "unmatched",
+      "bestIou": 0.47773434402038684
+    },
+    {
+      "osm": "way/588791810",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791815",
+      "status": "unmatched",
+      "bestIou": 0.1959678999506467
+    },
+    {
+      "osm": "way/588791818",
+      "status": "unmatched",
+      "bestIou": 0.4693232367697672
+    },
+    {
+      "osm": "way/588791819",
+      "status": "unmatched",
+      "bestIou": 0.5902428470546411
+    },
+    {
+      "osm": "way/588791829",
+      "status": "unmatched",
+      "bestIou": 0.40075175138165725
+    },
+    {
+      "osm": "way/588791830",
+      "status": "unmatched",
+      "bestIou": 0.30623351032698365
+    },
+    {
+      "osm": "way/588791832",
+      "status": "unmatched",
+      "bestIou": 0.3468174319501785
+    },
+    {
+      "osm": "way/588791838",
+      "status": "unmatched",
+      "bestIou": 0.2077263365231245
+    },
+    {
+      "osm": "way/588791839",
+      "status": "unmatched",
+      "bestIou": 0.039464310022691365
+    },
+    {
+      "osm": "way/588791840",
+      "status": "unmatched",
+      "bestIou": 0.03281043955742775
+    },
+    {
+      "osm": "way/588791844",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791850",
+      "status": "unmatched",
+      "bestIou": 0.4116356238267505
+    },
+    {
+      "osm": "way/588791854",
+      "status": "unmatched",
+      "bestIou": 0.10414149910303101
+    },
+    {
+      "osm": "way/588791857",
+      "status": "unmatched",
+      "bestIou": 0.45258616343082786
+    },
+    {
+      "osm": "way/588791858",
+      "status": "unmatched",
+      "bestIou": 0.3030041534882089
+    },
+    {
+      "osm": "way/588791859",
+      "status": "unmatched",
+      "bestIou": 0.4849208610584517
+    },
+    {
+      "osm": "way/588791861",
+      "status": "unmatched",
+      "bestIou": 0.23966546340608333
+    },
+    {
+      "osm": "way/588791866",
+      "status": "unmatched",
+      "bestIou": 0.23605317923600908
+    },
+    {
+      "osm": "way/588791867",
+      "status": "unmatched",
+      "bestIou": 0.2701622000272779
+    },
+    {
+      "osm": "way/588791870",
+      "status": "unmatched",
+      "bestIou": 0.3056248480371145
+    },
+    {
+      "osm": "way/588791874",
+      "status": "unmatched",
+      "bestIou": 0.44604901841988454
+    },
+    {
+      "osm": "way/588791875",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791877",
+      "status": "unmatched",
+      "bestIou": 0.04264916585687779
+    },
+    {
+      "osm": "way/588791879",
+      "status": "unmatched",
+      "bestIou": 0.44913613822060017
+    },
+    {
+      "osm": "way/588791882",
+      "status": "unmatched",
+      "bestIou": 0.4096533554186318
+    },
+    {
+      "osm": "way/588791883",
+      "status": "unmatched",
+      "bestIou": 0.3600176622817526
+    },
+    {
+      "osm": "way/588791888",
+      "status": "unmatched",
+      "bestIou": 0.2581449644136151
+    },
+    {
+      "osm": "way/588791904",
+      "status": "unmatched",
+      "bestIou": 0.47243191929595946
+    },
+    {
+      "osm": "way/588791909",
+      "status": "unmatched",
+      "bestIou": 0.07797319468526451
+    },
+    {
+      "osm": "way/588791911",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791912",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791915",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791920",
+      "status": "unmatched",
+      "bestIou": 0.4606325029031169
+    },
+    {
+      "osm": "way/588791932",
+      "status": "unmatched",
+      "bestIou": 0.4227014238578027
+    },
+    {
+      "osm": "way/588791936",
+      "status": "unmatched",
+      "bestIou": 0.3086114254793188
+    },
+    {
+      "osm": "way/588791938",
+      "status": "unmatched",
+      "bestIou": 0.4553698584180614
+    },
+    {
+      "osm": "way/588791943",
+      "status": "unmatched",
+      "bestIou": 0.452074823004232
+    },
+    {
+      "osm": "way/588791944",
+      "status": "unmatched",
+      "bestIou": 0.43743555564101105
+    },
+    {
+      "osm": "way/588791945",
+      "status": "unmatched",
+      "bestIou": 0.034420178837703874
+    },
+    {
+      "osm": "way/588791946",
+      "status": "unmatched",
+      "bestIou": 0.516007120171899
+    },
+    {
+      "osm": "way/588791947",
+      "status": "unmatched",
+      "bestIou": 0.0650205446673542
+    },
+    {
+      "osm": "way/588791948",
+      "status": "unmatched",
+      "bestIou": 0.01632977081386625
+    },
+    {
+      "osm": "way/588791949",
+      "status": "unmatched",
+      "bestIou": 0.421827950255618
+    },
+    {
+      "osm": "way/588791952",
+      "status": "unmatched",
+      "bestIou": 0.43986482618405115
+    },
+    {
+      "osm": "way/588791953",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791957",
+      "status": "unmatched",
+      "bestIou": 0.36608898855428373
+    },
+    {
+      "osm": "way/588791966",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791968",
+      "status": "unmatched",
+      "bestIou": 0.40050123880508476
+    },
+    {
+      "osm": "way/588791972",
+      "status": "unmatched",
+      "bestIou": 0.4537317068844676
+    },
+    {
+      "osm": "way/588791975",
+      "status": "unmatched",
+      "bestIou": 0.570114832007517
+    },
+    {
+      "osm": "way/588791976",
+      "status": "unmatched",
+      "bestIou": 0.5838251427467284
+    },
+    {
+      "osm": "way/588791977",
+      "status": "unmatched",
+      "bestIou": 0.18517618345681727
+    },
+    {
+      "osm": "way/588791978",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588791985",
+      "status": "unmatched",
+      "bestIou": 0.6194824208714601
+    },
+    {
+      "osm": "way/588791987",
+      "status": "unmatched",
+      "bestIou": 0.34121100776327534
+    },
+    {
+      "osm": "way/588791989",
+      "status": "unmatched",
+      "bestIou": 0.14364769937439126
+    },
+    {
+      "osm": "way/588791992",
+      "status": "unmatched",
+      "bestIou": 0.4404784492735899
+    },
+    {
+      "osm": "way/588791997",
+      "status": "unmatched",
+      "bestIou": 0.4337897282111077
+    },
+    {
+      "osm": "way/588792009",
+      "status": "unmatched",
+      "bestIou": 0.3231114993066744
+    },
+    {
+      "osm": "way/588792020",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792028",
+      "status": "unmatched",
+      "bestIou": 0.49530974732128896
+    },
+    {
+      "osm": "way/588792029",
+      "status": "unmatched",
+      "bestIou": 0.5132954773220705
+    },
+    {
+      "osm": "way/588792037",
+      "status": "unmatched",
+      "bestIou": 0.31372809487739545
+    },
+    {
+      "osm": "way/588792038",
+      "status": "unmatched",
+      "bestIou": 0.30526409844484204
+    },
+    {
+      "osm": "way/588792041",
+      "status": "unmatched",
+      "bestIou": 0.43324642697633675
+    },
+    {
+      "osm": "way/588792043",
+      "status": "unmatched",
+      "bestIou": 0.2978689130846572
+    },
+    {
+      "osm": "way/588792044",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792045",
+      "status": "unmatched",
+      "bestIou": 0.4385363782271646
+    },
+    {
+      "osm": "way/588792048",
+      "status": "unmatched",
+      "bestIou": 0.5072976937605255
+    },
+    {
+      "osm": "way/588792049",
+      "status": "unmatched",
+      "bestIou": 0.5016631884348284
+    },
+    {
+      "osm": "way/588792057",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792058",
+      "status": "unmatched",
+      "bestIou": 0.026979679126969663
+    },
+    {
+      "osm": "way/588792061",
+      "status": "unmatched",
+      "bestIou": 0.3418587221867669
+    },
+    {
+      "osm": "way/588792062",
+      "status": "unmatched",
+      "bestIou": 0.4554934190414852
+    },
+    {
+      "osm": "way/588792063",
+      "status": "unmatched",
+      "bestIou": 0.36166718254937097
+    },
+    {
+      "osm": "way/588792064",
+      "status": "unmatched",
+      "bestIou": 0.4534457557103117
+    },
+    {
+      "osm": "way/588792066",
+      "status": "unmatched",
+      "bestIou": 0.439700986637064
+    },
+    {
+      "osm": "way/588792067",
+      "status": "unmatched",
+      "bestIou": 0.5001175882113094
+    },
+    {
+      "osm": "way/588792070",
+      "status": "unmatched",
+      "bestIou": 0.2636446373515701
+    },
+    {
+      "osm": "way/588792071",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792073",
+      "status": "unmatched",
+      "bestIou": 0.0029997077703971062
+    },
+    {
+      "osm": "way/588792077",
+      "status": "unmatched",
+      "bestIou": 0.0507130575735767
+    },
+    {
+      "osm": "way/588792079",
+      "status": "unmatched",
+      "bestIou": 0.2466748885336618
+    },
+    {
+      "osm": "way/588792080",
+      "status": "unmatched",
+      "bestIou": 0.39655570447204025
+    },
+    {
+      "osm": "way/588792083",
+      "status": "unmatched",
+      "bestIou": 0.37151285813398915
+    },
+    {
+      "osm": "way/588792084",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792087",
+      "status": "unmatched",
+      "bestIou": 0.5625154327914552
+    },
+    {
+      "osm": "way/588792090",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792101",
+      "status": "unmatched",
+      "bestIou": 0.46358650580644484
+    },
+    {
+      "osm": "way/588792110",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792113",
+      "status": "unmatched",
+      "bestIou": 0.38492098707224837
+    },
+    {
+      "osm": "way/588792118",
+      "status": "unmatched",
+      "bestIou": 0.02886575129175422
+    },
+    {
+      "osm": "way/588792136",
+      "status": "unmatched",
+      "bestIou": 0.023437728435612058
+    },
+    {
+      "osm": "way/588792137",
+      "status": "unmatched",
+      "bestIou": 0.30313542589577425
+    },
+    {
+      "osm": "way/588792138",
+      "status": "unmatched",
+      "bestIou": 0.4134431496816398
+    },
+    {
+      "osm": "way/588792142",
+      "status": "unmatched",
+      "bestIou": 0.34675819878563513
+    },
+    {
+      "osm": "way/588792145",
+      "status": "unmatched",
+      "bestIou": 0.03490962332020193
+    },
+    {
+      "osm": "way/588792148",
+      "status": "unmatched",
+      "bestIou": 0.30917614169588076
+    },
+    {
+      "osm": "way/588792149",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792150",
+      "status": "unmatched",
+      "bestIou": 0.2166779860422136
+    },
+    {
+      "osm": "way/588792151",
+      "status": "unmatched",
+      "bestIou": 0.5852282768137959
+    },
+    {
+      "osm": "way/588792159",
+      "status": "unmatched",
+      "bestIou": 0.5299794942347117
+    },
+    {
+      "osm": "way/588792161",
+      "status": "unmatched",
+      "bestIou": 0.4344714220470062
+    },
+    {
+      "osm": "way/588792162",
+      "status": "unmatched",
+      "bestIou": 0.4921006917511044
+    },
+    {
+      "osm": "way/588792164",
+      "status": "unmatched",
+      "bestIou": 0.052941468521449125
+    },
+    {
+      "osm": "way/588792165",
+      "status": "unmatched",
+      "bestIou": 0.43674374761211826
+    },
+    {
+      "osm": "way/588792167",
+      "status": "unmatched",
+      "bestIou": 0.45570094761638413
+    },
+    {
+      "osm": "way/588792168",
+      "status": "unmatched",
+      "bestIou": 0.2928744251133379
+    },
+    {
+      "osm": "way/588792169",
+      "status": "unmatched",
+      "bestIou": 0.39153845751240735
+    },
+    {
+      "osm": "way/588792172",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792173",
+      "status": "unmatched",
+      "bestIou": 0.3715123197522055
+    },
+    {
+      "osm": "way/588792175",
+      "status": "unmatched",
+      "bestIou": 0.30859437825780706
+    },
+    {
+      "osm": "way/588792177",
+      "status": "unmatched",
+      "bestIou": 0.27413902833811515
+    },
+    {
+      "osm": "way/588792190",
+      "status": "unmatched",
+      "bestIou": 0.2599025923038641
+    },
+    {
+      "osm": "way/588792193",
+      "status": "unmatched",
+      "bestIou": 0.004399395773709552
+    },
+    {
+      "osm": "way/588792197",
+      "status": "unmatched",
+      "bestIou": 0.008961388481432206
+    },
+    {
+      "osm": "way/588792198",
+      "status": "unmatched",
+      "bestIou": 0.15686310642730036
+    },
+    {
+      "osm": "way/588792199",
+      "status": "unmatched",
+      "bestIou": 0.42227551431311466
+    },
+    {
+      "osm": "way/588792200",
+      "status": "unmatched",
+      "bestIou": 0.5545899968983569
+    },
+    {
+      "osm": "way/588792202",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792206",
+      "status": "unmatched",
+      "bestIou": 0.10219260122235743
+    },
+    {
+      "osm": "way/588792227",
+      "status": "unmatched",
+      "bestIou": 0.3862176411429145
+    },
+    {
+      "osm": "way/588792230",
+      "status": "unmatched",
+      "bestIou": 0.3173057109908151
+    },
+    {
+      "osm": "way/588792232",
+      "status": "unmatched",
+      "bestIou": 0.08331927353860999
+    },
+    {
+      "osm": "way/588792236",
+      "status": "unmatched",
+      "bestIou": 0.018517802154727724
+    },
+    {
+      "osm": "way/588792242",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792243",
+      "status": "unmatched",
+      "bestIou": 0.5534165366839319
+    },
+    {
+      "osm": "way/588792244",
+      "status": "unmatched",
+      "bestIou": 0.5699081735286553
+    },
+    {
+      "osm": "way/588792248",
+      "status": "unmatched",
+      "bestIou": 0.38278241155519604
+    },
+    {
+      "osm": "way/588792256",
+      "status": "unmatched",
+      "bestIou": 0.40704999704084516
+    },
+    {
+      "osm": "way/588792257",
+      "status": "unmatched",
+      "bestIou": 0.40335817024756854
+    },
+    {
+      "osm": "way/588792258",
+      "status": "unmatched",
+      "bestIou": 0.4762022420060269
+    },
+    {
+      "osm": "way/588792259",
+      "status": "unmatched",
+      "bestIou": 0.10791264063618275
+    },
+    {
+      "osm": "way/588792260",
+      "status": "unmatched",
+      "bestIou": 0.12249918708957312
+    },
+    {
+      "osm": "way/588792262",
+      "status": "unmatched",
+      "bestIou": 0.18467295593477892
+    },
+    {
+      "osm": "way/588792265",
+      "status": "unmatched",
+      "bestIou": 0.21653761028362722
+    },
+    {
+      "osm": "way/588792273",
+      "status": "unmatched",
+      "bestIou": 0.39224924691541047
+    },
+    {
+      "osm": "way/588792274",
+      "status": "unmatched",
+      "bestIou": 0.5097965016095458
+    },
+    {
+      "osm": "way/588792275",
+      "status": "unmatched",
+      "bestIou": 0.534635188670815
+    },
+    {
+      "osm": "way/588792276",
+      "status": "unmatched",
+      "bestIou": 0.5191245515990929
+    },
+    {
+      "osm": "way/588792277",
+      "status": "unmatched",
+      "bestIou": 0.4499517932914127
+    },
+    {
+      "osm": "way/588792278",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792279",
+      "status": "unmatched",
+      "bestIou": 0.2176581898018354
+    },
+    {
+      "osm": "way/588792280",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792284",
+      "status": "unmatched",
+      "bestIou": 0.4602155052821756
+    },
+    {
+      "osm": "way/588792285",
+      "status": "unmatched",
+      "bestIou": 0.02541225958883469
+    },
+    {
+      "osm": "way/588792287",
+      "status": "unmatched",
+      "bestIou": 0.25258164167896135
+    },
+    {
+      "osm": "way/588792290",
+      "status": "unmatched",
+      "bestIou": 0.35366723642934733
+    },
+    {
+      "osm": "way/588792293",
+      "status": "unmatched",
+      "bestIou": 0.2353418616141864
+    },
+    {
+      "osm": "way/588792303",
+      "status": "unmatched",
+      "bestIou": 0.26477730146683903
+    },
+    {
+      "osm": "way/588792311",
+      "status": "unmatched",
+      "bestIou": 0.622069982707627
+    },
+    {
+      "osm": "way/588792321",
+      "status": "unmatched",
+      "bestIou": 0.03257769437514483
+    },
+    {
+      "osm": "way/588792343",
+      "status": "unmatched",
+      "bestIou": 0.013947524815219717
+    },
+    {
+      "osm": "way/588792354",
+      "status": "unmatched",
+      "bestIou": 0.35217149628701383
+    },
+    {
+      "osm": "way/588792355",
+      "status": "unmatched",
+      "bestIou": 0.19596183570645007
+    },
+    {
+      "osm": "way/588792356",
+      "status": "unmatched",
+      "bestIou": 0.05519249751995827
+    },
+    {
+      "osm": "way/588792368",
+      "status": "unmatched",
+      "bestIou": 0.2921234682186072
+    },
+    {
+      "osm": "way/588792369",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792377",
+      "status": "unmatched",
+      "bestIou": 0.5166897126877227
+    },
+    {
+      "osm": "way/588792378",
+      "status": "unmatched",
+      "bestIou": 0.013220637145566289
+    },
+    {
+      "osm": "way/588792407",
+      "status": "unmatched",
+      "bestIou": 0.1769432553146363
+    },
+    {
+      "osm": "way/588792415",
+      "status": "unmatched",
+      "bestIou": 0.4032117725298518
+    },
+    {
+      "osm": "way/588792431",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792441",
+      "status": "unmatched",
+      "bestIou": 0.029840601269344343
+    },
+    {
+      "osm": "way/588792463",
+      "status": "unmatched",
+      "bestIou": 0.3343183399889458
+    },
+    {
+      "osm": "way/588792470",
+      "status": "unmatched",
+      "bestIou": 0.4363440919828728
+    },
+    {
+      "osm": "way/588792472",
+      "status": "unmatched",
+      "bestIou": 0.02734692633623687
+    },
+    {
+      "osm": "way/588792473",
+      "status": "unmatched",
+      "bestIou": 0.17646545449347603
+    },
+    {
+      "osm": "way/588792476",
+      "status": "unmatched",
+      "bestIou": 0.4294992452525619
+    },
+    {
+      "osm": "way/588792480",
+      "status": "unmatched",
+      "bestIou": 0.07774328885835226
+    },
+    {
+      "osm": "way/588792482",
+      "status": "unmatched",
+      "bestIou": 0.3570489550441447
+    },
+    {
+      "osm": "way/588792491",
+      "status": "unmatched",
+      "bestIou": 0.3427502443738385
+    },
+    {
+      "osm": "way/588792495",
+      "status": "unmatched",
+      "bestIou": 0.36918216173541996
+    },
+    {
+      "osm": "way/588792498",
+      "status": "unmatched",
+      "bestIou": 0.10554328071741835
+    },
+    {
+      "osm": "way/588792500",
+      "status": "unmatched",
+      "bestIou": 0.3141480236812132
+    },
+    {
+      "osm": "way/588792503",
+      "status": "unmatched",
+      "bestIou": 0.45763459167691467
+    },
+    {
+      "osm": "way/588792505",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792513",
+      "status": "unmatched",
+      "bestIou": 0.46730944685156955
+    },
+    {
+      "osm": "way/588792515",
+      "status": "unmatched",
+      "bestIou": 0.011672450882480782
+    },
+    {
+      "osm": "way/588792517",
+      "status": "unmatched",
+      "bestIou": 0.3947808968301552
+    },
+    {
+      "osm": "way/588792535",
+      "status": "unmatched",
+      "bestIou": 0.3844533419940847
+    },
+    {
+      "osm": "way/588792538",
+      "status": "unmatched",
+      "bestIou": 0.2852015184434886
+    },
+    {
+      "osm": "way/588792540",
+      "status": "unmatched",
+      "bestIou": 0.2630639162764506
+    },
+    {
+      "osm": "way/588792543",
+      "status": "unmatched",
+      "bestIou": 0.11719158073031712
+    },
+    {
+      "osm": "way/588792545",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792549",
+      "status": "unmatched",
+      "bestIou": 0.29810859047354954
+    },
+    {
+      "osm": "way/588792553",
+      "status": "unmatched",
+      "bestIou": 0.3151535416538283
+    },
+    {
+      "osm": "way/588792554",
+      "status": "unmatched",
+      "bestIou": 0.009614758184531181
+    },
+    {
+      "osm": "way/588792559",
+      "status": "unmatched",
+      "bestIou": 0.4827633711125379
+    },
+    {
+      "osm": "way/588792563",
+      "status": "unmatched",
+      "bestIou": 0.45093853180782956
+    },
+    {
+      "osm": "way/588792567",
+      "status": "unmatched",
+      "bestIou": 0.5038013972994231
+    },
+    {
+      "osm": "way/588792571",
+      "status": "unmatched",
+      "bestIou": 0.33171108002535177
+    },
+    {
+      "osm": "way/588792573",
+      "status": "unmatched",
+      "bestIou": 0.456534918023542
+    },
+    {
+      "osm": "way/588792574",
+      "status": "unmatched",
+      "bestIou": 0.3082102464731417
+    },
+    {
+      "osm": "way/588792579",
+      "status": "unmatched",
+      "bestIou": 0.004217535209831115
+    },
+    {
+      "osm": "way/588792580",
+      "status": "unmatched",
+      "bestIou": 0.42724684421217674
+    },
+    {
+      "osm": "way/588792582",
+      "status": "unmatched",
+      "bestIou": 0.1043572900594536
+    },
+    {
+      "osm": "way/588792584",
+      "status": "unmatched",
+      "bestIou": 0.45276690285250504
+    },
+    {
+      "osm": "way/588792588",
+      "status": "unmatched",
+      "bestIou": 0.39439652152935933
+    },
+    {
+      "osm": "way/588792589",
+      "status": "unmatched",
+      "bestIou": 0.038034780092084906
+    },
+    {
+      "osm": "way/588792595",
+      "status": "unmatched",
+      "bestIou": 0.3011452214651882
+    },
+    {
+      "osm": "way/588792599",
+      "status": "unmatched",
+      "bestIou": 0.29409808589702996
+    },
+    {
+      "osm": "way/588792600",
+      "status": "unmatched",
+      "bestIou": 0.14319112761850186
+    },
+    {
+      "osm": "way/588792603",
+      "status": "unmatched",
+      "bestIou": 0.47208857291339773
+    },
+    {
+      "osm": "way/588792606",
+      "status": "unmatched",
+      "bestIou": 0.39213303509116754
+    },
+    {
+      "osm": "way/588792612",
+      "status": "unmatched",
+      "bestIou": 0.04427633934651732
+    },
+    {
+      "osm": "way/588792618",
+      "status": "unmatched",
+      "bestIou": 0.41280054046238385
+    },
+    {
+      "osm": "way/588792622",
+      "status": "unmatched",
+      "bestIou": 0.562431066258711
+    },
+    {
+      "osm": "way/588792623",
+      "status": "unmatched",
+      "bestIou": 0.4049007304720369
+    },
+    {
+      "osm": "way/588792630",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792634",
+      "status": "unmatched",
+      "bestIou": 0.31093939841784246
+    },
+    {
+      "osm": "way/588792643",
+      "status": "unmatched",
+      "bestIou": 0.02926039961653617
+    },
+    {
+      "osm": "way/588792649",
+      "status": "unmatched",
+      "bestIou": 0.33235599171341357
+    },
+    {
+      "osm": "way/588792655",
+      "status": "unmatched",
+      "bestIou": 0.02096906830861814
+    },
+    {
+      "osm": "way/588792657",
+      "status": "unmatched",
+      "bestIou": 0.010999899499905166
+    },
+    {
+      "osm": "way/588792666",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792684",
+      "status": "unmatched",
+      "bestIou": 0.2554046580666277
+    },
+    {
+      "osm": "way/588792694",
+      "status": "unmatched",
+      "bestIou": 0.06480783490823441
+    },
+    {
+      "osm": "way/588792705",
+      "status": "unmatched",
+      "bestIou": 0.45707919220019677
+    },
+    {
+      "osm": "way/588792716",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792726",
+      "status": "unmatched",
+      "bestIou": 0.040888792001726564
+    },
+    {
+      "osm": "way/588792728",
+      "status": "unmatched",
+      "bestIou": 0.29739968759851415
+    },
+    {
+      "osm": "way/588792732",
+      "status": "unmatched",
+      "bestIou": 0.41162134797832217
+    },
+    {
+      "osm": "way/588792740",
+      "status": "unmatched",
+      "bestIou": 0.39814437704884376
+    },
+    {
+      "osm": "way/588792745",
+      "status": "unmatched",
+      "bestIou": 0.15078487295446388
+    },
+    {
+      "osm": "way/588792746",
+      "status": "unmatched",
+      "bestIou": 0.44730013795498863
+    },
+    {
+      "osm": "way/588792749",
+      "status": "unmatched",
+      "bestIou": 0.48112277532806647
+    },
+    {
+      "osm": "way/588792750",
+      "status": "unmatched",
+      "bestIou": 0.47546848619928567
+    },
+    {
+      "osm": "way/588792753",
+      "status": "unmatched",
+      "bestIou": 0.4650235307643632
+    },
+    {
+      "osm": "way/588792755",
+      "status": "unmatched",
+      "bestIou": 0.4101399031951315
+    },
+    {
+      "osm": "way/588792758",
+      "status": "unmatched",
+      "bestIou": 0.02464313533243393
+    },
+    {
+      "osm": "way/588792760",
+      "status": "unmatched",
+      "bestIou": 0.31887041392748805
+    },
+    {
+      "osm": "way/588792767",
+      "status": "unmatched",
+      "bestIou": 0.47084197602085226
+    },
+    {
+      "osm": "way/588792768",
+      "status": "unmatched",
+      "bestIou": 0.5278885439031639
+    },
+    {
+      "osm": "way/588792770",
+      "status": "unmatched",
+      "bestIou": 0.3920597731320414
+    },
+    {
+      "osm": "way/588792773",
+      "status": "unmatched",
+      "bestIou": 0.4689134745859049
+    },
+    {
+      "osm": "way/588792777",
+      "status": "unmatched",
+      "bestIou": 0.4955206544683696
+    },
+    {
+      "osm": "way/588792782",
+      "status": "unmatched",
+      "bestIou": 0.395370349573462
+    },
+    {
+      "osm": "way/588792784",
+      "status": "unmatched",
+      "bestIou": 0.47523051240522096
+    },
+    {
+      "osm": "way/588792785",
+      "status": "unmatched",
+      "bestIou": 0.21662974214279201
+    },
+    {
+      "osm": "way/588792786",
+      "status": "unmatched",
+      "bestIou": 0.43488387165058423
+    },
+    {
+      "osm": "way/588792789",
+      "status": "unmatched",
+      "bestIou": 0.2691065313167681
+    },
+    {
+      "osm": "way/588792796",
+      "status": "unmatched",
+      "bestIou": 0.4439230298053376
+    },
+    {
+      "osm": "way/588792798",
+      "status": "unmatched",
+      "bestIou": 0.42402625493570056
+    },
+    {
+      "osm": "way/588792801",
+      "status": "unmatched",
+      "bestIou": 0.5606282376867971
+    },
+    {
+      "osm": "way/588792824",
+      "status": "unmatched",
+      "bestIou": 0.3207354815128545
+    },
+    {
+      "osm": "way/588792826",
+      "status": "unmatched",
+      "bestIou": 0.5287763103974213
+    },
+    {
+      "osm": "way/588792827",
+      "status": "unmatched",
+      "bestIou": 0.1599719592954779
+    },
+    {
+      "osm": "way/588792828",
+      "status": "unmatched",
+      "bestIou": 0.3119376791748277
+    },
+    {
+      "osm": "way/588792830",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792839",
+      "status": "unmatched",
+      "bestIou": 0.34469313295816195
+    },
+    {
+      "osm": "way/588792860",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792869",
+      "status": "unmatched",
+      "bestIou": 0.5965681399114435
+    },
+    {
+      "osm": "way/588792877",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792905",
+      "status": "unmatched",
+      "bestIou": 0.4903975304144067
+    },
+    {
+      "osm": "way/588792909",
+      "status": "unmatched",
+      "bestIou": 0.054016159506784005
+    },
+    {
+      "osm": "way/588792910",
+      "status": "unmatched",
+      "bestIou": 0.3372544112800927
+    },
+    {
+      "osm": "way/588792911",
+      "status": "unmatched",
+      "bestIou": 0.5542289198164343
+    },
+    {
+      "osm": "way/588792914",
+      "status": "unmatched",
+      "bestIou": 0.564695042535293
+    },
+    {
+      "osm": "way/588792916",
+      "status": "unmatched",
+      "bestIou": 0.34959122952691185
+    },
+    {
+      "osm": "way/588792925",
+      "status": "unmatched",
+      "bestIou": 0.2732123679867914
+    },
+    {
+      "osm": "way/588792948",
+      "status": "unmatched",
+      "bestIou": 0.36069064298781206
+    },
+    {
+      "osm": "way/588792952",
+      "status": "unmatched",
+      "bestIou": 0.5097212243817782
+    },
+    {
+      "osm": "way/588792955",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792958",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792959",
+      "status": "unmatched",
+      "bestIou": 0.037805532068481085
+    },
+    {
+      "osm": "way/588792961",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792964",
+      "status": "unmatched",
+      "bestIou": 0.5646083954946758
+    },
+    {
+      "osm": "way/588792973",
+      "status": "unmatched",
+      "bestIou": 0.013248387694833946
+    },
+    {
+      "osm": "way/588792978",
+      "status": "unmatched",
+      "bestIou": 0.06010081045396524
+    },
+    {
+      "osm": "way/588792979",
+      "status": "unmatched",
+      "bestIou": 0.5842027417831881
+    },
+    {
+      "osm": "way/588792983",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792987",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588792998",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793002",
+      "status": "unmatched",
+      "bestIou": 0.011419505245818723
+    },
+    {
+      "osm": "way/588793016",
+      "status": "unmatched",
+      "bestIou": 0.335271483347709
+    },
+    {
+      "osm": "way/588793019",
+      "status": "unmatched",
+      "bestIou": 0.17508628206030963
+    },
+    {
+      "osm": "way/588793020",
+      "status": "unmatched",
+      "bestIou": 0.4802987520971231
+    },
+    {
+      "osm": "way/588793027",
+      "status": "unmatched",
+      "bestIou": 0.3888514956845668
+    },
+    {
+      "osm": "way/588793041",
+      "status": "unmatched",
+      "bestIou": 0.345428849677923
+    },
+    {
+      "osm": "way/588793048",
+      "status": "unmatched",
+      "bestIou": 0.4211350204728487
+    },
+    {
+      "osm": "way/588793050",
+      "status": "unmatched",
+      "bestIou": 0.4564934558819996
+    },
+    {
+      "osm": "way/588793051",
+      "status": "unmatched",
+      "bestIou": 0.33840391124609087
+    },
+    {
+      "osm": "way/588793052",
+      "status": "unmatched",
+      "bestIou": 0.3846534122103212
+    },
+    {
+      "osm": "way/588793056",
+      "status": "unmatched",
+      "bestIou": 0.43727135014189866
+    },
+    {
+      "osm": "way/588793058",
+      "status": "unmatched",
+      "bestIou": 0.35394094140137
+    },
+    {
+      "osm": "way/588793061",
+      "status": "unmatched",
+      "bestIou": 0.5920518957465369
+    },
+    {
+      "osm": "way/588793079",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793087",
+      "status": "unmatched",
+      "bestIou": 0.4723936771524959
+    },
+    {
+      "osm": "way/588793089",
+      "status": "unmatched",
+      "bestIou": 0.0024526583107622804
+    },
+    {
+      "osm": "way/588793090",
+      "status": "unmatched",
+      "bestIou": 0.41948457917416565
+    },
+    {
+      "osm": "way/588793092",
+      "status": "unmatched",
+      "bestIou": 0.5842886928152603
+    },
+    {
+      "osm": "way/588793094",
+      "status": "unmatched",
+      "bestIou": 0.33886127613858635
+    },
+    {
+      "osm": "way/588793096",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793099",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793106",
+      "status": "unmatched",
+      "bestIou": 0.23112446590459979
+    },
+    {
+      "osm": "way/588793118",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793123",
+      "status": "unmatched",
+      "bestIou": 0.29401278841060596
+    },
+    {
+      "osm": "way/588793140",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793144",
+      "status": "unmatched",
+      "bestIou": 0.01793881112944115
+    },
+    {
+      "osm": "way/588793149",
+      "status": "unmatched",
+      "bestIou": 0.49707253222481107
+    },
+    {
+      "osm": "way/588793152",
+      "status": "unmatched",
+      "bestIou": 0.4874691435313054
+    },
+    {
+      "osm": "way/588793155",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793157",
+      "status": "unmatched",
+      "bestIou": 0.400119889161168
+    },
+    {
+      "osm": "way/588793158",
+      "status": "unmatched",
+      "bestIou": 0.5561745447261144
+    },
+    {
+      "osm": "way/588793162",
+      "status": "unmatched",
+      "bestIou": 0.5784788894420183
+    },
+    {
+      "osm": "way/588793165",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793167",
+      "status": "unmatched",
+      "bestIou": 0.4577274900668378
+    },
+    {
+      "osm": "way/588793169",
+      "status": "unmatched",
+      "bestIou": 0.4665344288779714
+    },
+    {
+      "osm": "way/588793171",
+      "status": "unmatched",
+      "bestIou": 0.4850440307036407
+    },
+    {
+      "osm": "way/588793175",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793179",
+      "status": "unmatched",
+      "bestIou": 0.01304881327411746
+    },
+    {
+      "osm": "way/588793181",
+      "status": "unmatched",
+      "bestIou": 0.3342653131127937
+    },
+    {
+      "osm": "way/588793185",
+      "status": "unmatched",
+      "bestIou": 0.5512677021015819
+    },
+    {
+      "osm": "way/588793190",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793196",
+      "status": "unmatched",
+      "bestIou": 0.49298705935321707
+    },
+    {
+      "osm": "way/588793197",
+      "status": "unmatched",
+      "bestIou": 0.1915448376072485
+    },
+    {
+      "osm": "way/588793198",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793208",
+      "status": "unmatched",
+      "bestIou": 0.017984019762879288
+    },
+    {
+      "osm": "way/588793209",
+      "status": "unmatched",
+      "bestIou": 0.07359748834017608
+    },
+    {
+      "osm": "way/588793216",
+      "status": "unmatched",
+      "bestIou": 0.28184134420418144
+    },
+    {
+      "osm": "way/588793218",
+      "status": "unmatched",
+      "bestIou": 0.5160126744309814
+    },
+    {
+      "osm": "way/588793237",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793238",
+      "status": "unmatched",
+      "bestIou": 0.4800613006470172
+    },
+    {
+      "osm": "way/588793246",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793247",
+      "status": "unmatched",
+      "bestIou": 0.01711298756787405
+    },
+    {
+      "osm": "way/588793249",
+      "status": "unmatched",
+      "bestIou": 0.5241169250860936
+    },
+    {
+      "osm": "way/588793288",
+      "status": "unmatched",
+      "bestIou": 0.1915380673275365
+    },
+    {
+      "osm": "way/588793289",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793290",
+      "status": "unmatched",
+      "bestIou": 0.06900057211464608
+    },
+    {
+      "osm": "way/588793294",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793299",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793300",
+      "status": "unmatched",
+      "bestIou": 0.0031711105729778067
+    },
+    {
+      "osm": "way/588793302",
+      "status": "unmatched",
+      "bestIou": 0.303708696602451
+    },
+    {
+      "osm": "way/588793304",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793306",
+      "status": "unmatched",
+      "bestIou": 0.4251095876081784
+    },
+    {
+      "osm": "way/588793308",
+      "status": "unmatched",
+      "bestIou": 0.03622385142122113
+    },
+    {
+      "osm": "way/588793316",
+      "status": "unmatched",
+      "bestIou": 0.437230552534726
+    },
+    {
+      "osm": "way/588793318",
+      "status": "unmatched",
+      "bestIou": 0.2390515024611151
+    },
+    {
+      "osm": "way/588793319",
+      "status": "unmatched",
+      "bestIou": 0.409594805337853
+    },
+    {
+      "osm": "way/588793323",
+      "status": "unmatched",
+      "bestIou": 0.4337049338412435
+    },
+    {
+      "osm": "way/588793325",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793333",
+      "status": "unmatched",
+      "bestIou": 0.4111756740357481
+    },
+    {
+      "osm": "way/588793335",
+      "status": "unmatched",
+      "bestIou": 0.04702943675841119
+    },
+    {
+      "osm": "way/588793340",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793344",
+      "status": "unmatched",
+      "bestIou": 0.35340369616119
+    },
+    {
+      "osm": "way/588793361",
+      "status": "unmatched",
+      "bestIou": 0.2466589798126407
+    },
+    {
+      "osm": "way/588793367",
+      "status": "unmatched",
+      "bestIou": 0.04526111444382999
+    },
+    {
+      "osm": "way/588793371",
+      "status": "unmatched",
+      "bestIou": 0.48643497768980365
+    },
+    {
+      "osm": "way/588793377",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793383",
+      "status": "unmatched",
+      "bestIou": 0.11326500040305389
+    },
+    {
+      "osm": "way/588793384",
+      "status": "unmatched",
+      "bestIou": 0.2707151356594976
+    },
+    {
+      "osm": "way/588793388",
+      "status": "unmatched",
+      "bestIou": 0.5357876225561123
+    },
+    {
+      "osm": "way/588793391",
+      "status": "unmatched",
+      "bestIou": 0.4556101422562543
+    },
+    {
+      "osm": "way/588793393",
+      "status": "unmatched",
+      "bestIou": 0.05077559268178392
+    },
+    {
+      "osm": "way/588793396",
+      "status": "unmatched",
+      "bestIou": 0.04577601600871327
+    },
+    {
+      "osm": "way/588793409",
+      "status": "unmatched",
+      "bestIou": 0.019500688837018516
+    },
+    {
+      "osm": "way/588793413",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793420",
+      "status": "unmatched",
+      "bestIou": 0.15017176235157478
+    },
+    {
+      "osm": "way/588793427",
+      "status": "unmatched",
+      "bestIou": 0.042122876980980495
+    },
+    {
+      "osm": "way/588793444",
+      "status": "unmatched",
+      "bestIou": 0.561046557052973
+    },
+    {
+      "osm": "way/588793456",
+      "status": "unmatched",
+      "bestIou": 0.38926199950172247
+    },
+    {
+      "osm": "way/588793459",
+      "status": "unmatched",
+      "bestIou": 0.4182422650704134
+    },
+    {
+      "osm": "way/588793460",
+      "status": "unmatched",
+      "bestIou": 0.000878619299602292
+    },
+    {
+      "osm": "way/588793462",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793464",
+      "status": "unmatched",
+      "bestIou": 0.4889196268785822
+    },
+    {
+      "osm": "way/588793478",
+      "status": "unmatched",
+      "bestIou": 0.41494269898734853
+    },
+    {
+      "osm": "way/588793480",
+      "status": "unmatched",
+      "bestIou": 0.3097220967042083
+    },
+    {
+      "osm": "way/588793483",
+      "status": "unmatched",
+      "bestIou": 0.2588907994943698
+    },
+    {
+      "osm": "way/588793506",
+      "status": "unmatched",
+      "bestIou": 0.34533008326058623
+    },
+    {
+      "osm": "way/588793514",
+      "status": "unmatched",
+      "bestIou": 0.3577824153647887
+    },
+    {
+      "osm": "way/588793523",
+      "status": "unmatched",
+      "bestIou": 0.30602067479309286
+    },
+    {
+      "osm": "way/588793552",
+      "status": "unmatched",
+      "bestIou": 0.4850689017327894
+    },
+    {
+      "osm": "way/588793553",
+      "status": "unmatched",
+      "bestIou": 0.5149522460568848
+    },
+    {
+      "osm": "way/588793555",
+      "status": "unmatched",
+      "bestIou": 0.2490548200041536
+    },
+    {
+      "osm": "way/588793556",
+      "status": "unmatched",
+      "bestIou": 0.048423511365913344
+    },
+    {
+      "osm": "way/588793558",
+      "status": "unmatched",
+      "bestIou": 0.3770152166283763
+    },
+    {
+      "osm": "way/588793560",
+      "status": "unmatched",
+      "bestIou": 0.48435167132003615
+    },
+    {
+      "osm": "way/588793562",
+      "status": "unmatched",
+      "bestIou": 0.3775072423720322
+    },
+    {
+      "osm": "way/588793576",
+      "status": "unmatched",
+      "bestIou": 0.4291685408017456
+    },
+    {
+      "osm": "way/588793583",
+      "status": "unmatched",
+      "bestIou": 0.48137273277341613
+    },
+    {
+      "osm": "way/588793590",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793605",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793609",
+      "status": "unmatched",
+      "bestIou": 0.4824066447066979
+    },
+    {
+      "osm": "way/588793613",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793619",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793625",
+      "status": "unmatched",
+      "bestIou": 0.4409386580439105
+    },
+    {
+      "osm": "way/588793629",
+      "status": "unmatched",
+      "bestIou": 0.4316033753375641
+    },
+    {
+      "osm": "way/588793634",
+      "status": "unmatched",
+      "bestIou": 0.40360113421710203
+    },
+    {
+      "osm": "way/588793635",
+      "status": "unmatched",
+      "bestIou": 0.5790563961190216
+    },
+    {
+      "osm": "way/588793639",
+      "status": "unmatched",
+      "bestIou": 0.23362879740580847
+    },
+    {
+      "osm": "way/588793641",
+      "status": "unmatched",
+      "bestIou": 0.3776828200842743
+    },
+    {
+      "osm": "way/588793656",
+      "status": "unmatched",
+      "bestIou": 0.07526563702459373
+    },
+    {
+      "osm": "way/588793657",
+      "status": "unmatched",
+      "bestIou": 0.02140789192541134
+    },
+    {
+      "osm": "way/588793660",
+      "status": "unmatched",
+      "bestIou": 0.0039245008720158805
+    },
+    {
+      "osm": "way/588793664",
+      "status": "unmatched",
+      "bestIou": 0.4346619555507092
+    },
+    {
+      "osm": "way/588793666",
+      "status": "unmatched",
+      "bestIou": 0.5036928147048464
+    },
+    {
+      "osm": "way/588793667",
+      "status": "unmatched",
+      "bestIou": 0.24605004575359884
+    },
+    {
+      "osm": "way/588793672",
+      "status": "unmatched",
+      "bestIou": 0.3722784421469906
+    },
+    {
+      "osm": "way/588793673",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/588793675",
+      "status": "unmatched",
+      "bestIou": 0.007823607569577366
+    },
+    {
+      "osm": "way/588793677",
+      "status": "unmatched",
+      "bestIou": 0.4130737706862141
+    },
+    {
+      "osm": "way/588793678",
+      "status": "unmatched",
+      "bestIou": 0.29560934380661535
+    },
+    {
+      "osm": "way/588793679",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/935473872",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/935473873",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/939084839",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/1037079283",
+      "status": "unmatched",
+      "bestIou": 0.06460240120031327
+    },
+    {
+      "osm": "way/1157275225",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/1171488513",
+      "status": "unmatched",
+      "bestIou": 0.31874561159677656
+    },
+    {
+      "osm": "way/1171488514",
+      "status": "unmatched",
+      "bestIou": 0.015876869305989433
+    },
+    {
+      "osm": "way/1237884903",
+      "status": "unmatched",
+      "bestIou": 0.15415048687554342
+    },
+    {
+      "osm": "way/1303286647",
+      "status": "unmatched",
+      "bestIou": 0.04691461423111995
+    },
+    {
+      "osm": "way/1303286648",
+      "status": "unmatched",
+      "bestIou": 0.3186156134067881
+    },
+    {
+      "osm": "way/1303286649",
+      "status": "unmatched",
+      "bestIou": 0.04836534941774861
+    },
+    {
+      "osm": "way/1303286650",
+      "status": "unmatched",
+      "bestIou": 0.498144489213378
+    },
+    {
+      "osm": "way/1303286651",
+      "status": "unmatched",
+      "bestIou": 0.44773233836494336
+    },
+    {
+      "osm": "way/1303286652",
+      "status": "unmatched",
+      "bestIou": 0.4535923360069338
+    },
+    {
+      "osm": "way/1303286653",
+      "status": "unmatched",
+      "bestIou": 0.3998970144526143
+    },
+    {
+      "osm": "way/1303286654",
+      "status": "unmatched",
+      "bestIou": 0.07249540171695427
+    },
+    {
+      "osm": "way/1303286655",
+      "status": "unmatched",
+      "bestIou": 0.04861620565813657
+    },
+    {
+      "osm": "way/1303286656",
+      "status": "unmatched",
+      "bestIou": 0.4131555496343481
+    },
+    {
+      "osm": "way/1303286657",
+      "status": "unmatched",
+      "bestIou": 0.04112919022175834
+    },
+    {
+      "osm": "way/1303286658",
+      "status": "unmatched",
+      "bestIou": 0.2529799707521071
+    },
+    {
+      "osm": "way/1303286661",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/1303286663",
+      "status": "unmatched",
+      "bestIou": 0.059739078169155996
+    },
+    {
+      "osm": "way/1303286665",
+      "status": "unmatched",
+      "bestIou": 0.0767683928318711
+    },
+    {
+      "osm": "way/1303286666",
+      "status": "unmatched",
+      "bestIou": 0.020349212977352187
+    },
+    {
+      "osm": "way/1303286669",
+      "status": "unmatched",
+      "bestIou": 0.03133547239490638
+    },
+    {
+      "osm": "way/1303286672",
+      "status": "unmatched",
+      "bestIou": 0.015799660117308007
+    },
+    {
+      "osm": "way/1303286673",
+      "status": "unmatched",
+      "bestIou": 0.015770257973965626
+    },
+    {
+      "osm": "way/1303286676",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/1303286677",
+      "status": "unmatched",
+      "bestIou": 0.009084390733836814
+    },
+    {
+      "osm": "way/1303286678",
+      "status": "unmatched",
+      "bestIou": 0.19158404649951877
+    },
+    {
+      "osm": "way/1303286684",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/1303286685",
+      "status": "unmatched",
+      "bestIou": 0.010673785846962358
+    },
+    {
+      "osm": "way/1303286688",
+      "status": "unmatched",
+      "bestIou": 0.028362385843284203
+    },
+    {
+      "osm": "way/1303286690",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/1303286692",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/1303286693",
+      "status": "unmatched",
+      "bestIou": 0.012733487057173254
+    },
+    {
+      "osm": "way/1303286694",
+      "status": "unmatched",
+      "bestIou": 0.06370464542758716
+    },
+    {
+      "osm": "way/1303286699",
+      "status": "unmatched",
+      "bestIou": 0.0496042013399293
+    },
+    {
+      "osm": "way/1303286700",
+      "status": "unmatched",
+      "bestIou": 0.006763885423415714
+    },
+    {
+      "osm": "way/1303286702",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/1303286703",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/1303286704",
+      "status": "unmatched",
+      "bestIou": 0
+    },
+    {
+      "osm": "way/1433821870",
+      "status": "unmatched",
+      "bestIou": 0
+    }
+  ]
+}

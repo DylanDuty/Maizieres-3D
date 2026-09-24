@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#edf0e8" />
+  <meta name="description" content="Maizières-la-Grande-Paroisse en 3D : une maquette navigable issue des empreintes et tracés OpenStreetMap." />
+  <title>Maizières-la-Grande-Paroisse · Maquette 3D</title>
+</head>
+<body>
+  <main id="map" aria-label="Maquette 3D de Maizières-la-Grande-Paroisse"></main>
+  <header><div class="eyebrow">AUBE · GRAND EST <span>MAQUETTE 3D</span></div><h1>Maizières<span>-la-Grande-Paroisse</span></h1></header>
+  <nav aria-label="Commandes de la carte">
+    <button id="quality" aria-pressed="false" title="Alterner entre Fluide et Élevée">Qualité : Fluide</button>
+    <button id="labels" aria-pressed="true">Noms des lieux</button>
+    <button id="reset" title="Revenir à la vue initiale">⌖ <span>Recentrer la vue</span></button>
+  </nav>
+  <aside id="selection" aria-label="Lieu sélectionné" hidden><button id="selection-close" aria-label="Fermer la sélection">×</button><p id="selection-kind"></p><h2 id="selection-title"></h2><p id="selection-note"></p></aside>
+  <div id="labels-layer"></div>
+  <div id="loading" role="status"><div class="spinner"></div><strong>Le village prend forme</strong><span>Chargement de la maquette locale…</span></div>
+  <div class="compass" title="Orientation du nord"><span>N</span><div id="north">↑</div></div>
+  <footer><span class="help">Cliquer : découvrir <i>·</i> Glisser : tourner <i>·</i> Molette : zoomer</span><span class="credit"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap</a> · <a href="https://geoservices.ign.fr/bdtopo" target="_blank" rel="noreferrer">IGN BD TOPO</a> <i>·</i> <span id="data-date">Données locales</span></span></footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

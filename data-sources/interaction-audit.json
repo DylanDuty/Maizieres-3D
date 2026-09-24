@@ -1,0 +1,37 @@
+{
+  "result": "OK",
+  "stats": {
+    "namedRoads": 81,
+    "namedRoadSegments": 144,
+    "unnamedRoadSegments": 387,
+    "buildings": 26,
+    "zones": 10,
+    "points": 124
+  },
+  "batchedPickingMeshes": 4,
+  "churchRaycast": "OK",
+  "faceRanges": "complete, without gaps",
+  "names": "source names or refs only; existing equipment types retained",
+  "namedZones": [
+    {
+      "id": "SURFACTI0000000009307504",
+      "name": "Mairie de Maizières-la-Grande-Paroisse"
+    },
+    {
+      "id": "SURFACTI0000000117790866",
+      "name": "Seveal - Maizières-la-Grande-Paroisse"
+    },
+    {
+      "id": "SURFACTI0000000316172819",
+      "name": "Église Saint-Denis"
+    },
+    {
+      "id": "SURFACTI0000000358044861",
+      "name": "Stade de Maizières-la-Grande-Paroisse"
+    },
+    {
+      "id": "SURFACTI0000002480229986",
+      "name": "Zone Industrielle la Glacière"
+    }
+  ]
+}

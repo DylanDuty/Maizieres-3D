@@ -1,0 +1,25 @@
+{
+  "version": "1.3.0",
+  "date": "2026-09-24",
+  "triangles": 513337,
+  "calls": 15,
+  "trees": 3200,
+  "benchmark": {
+    "frames": 89,
+    "meanMs": 168.11,
+    "fps": 5.9,
+    "medianMs": 166.4,
+    "p95Ms": 199.2,
+    "viewport": [
+      639,
+      686
+    ],
+    "drawingBuffer": [
+      639,
+      686
+    ],
+    "visibility": "visible"
+  },
+  "renderer": "ANGLE / Microsoft Basic Render Driver",
+  "note": "Software renderer; requestAnimationFrame timing includes browser scheduling. Not a hardware GPU or 30–60 FPS validation."
+}
