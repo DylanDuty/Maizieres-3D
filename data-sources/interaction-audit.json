@@ -1,12 +1,24 @@
 {
   "result": "OK",
+  "genericBuildings": 1942,
+  "bibleLandmark": {
+    "id": "bible01:gue-de-la-chapelle",
+    "position": [
+      -739.8,
+      8,
+      937.1
+    ]
+  },
   "stats": {
+    "bibleAnnotated": 114,
+    "bibleLandmarks": 1,
+    "skippedBibleLandmarks": 0,
     "namedRoads": 81,
     "namedRoadSegments": 144,
     "unnamedRoadSegments": 387,
     "buildings": 26,
     "zones": 10,
-    "points": 124
+    "points": 125
   },
   "batchedPickingMeshes": 4,
   "churchRaycast": "OK",

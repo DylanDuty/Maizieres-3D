@@ -13,3 +13,28 @@
 #selection{position:fixed;left:28px;bottom:90px;max-width:340px;width:calc(100vw - 56px);background:#fffdf4f5;border:1px solid #dacba8;border-left:4px solid #d8ae5c;border-radius:12px;padding:18px 42px 18px 20px;box-shadow:0 8px 32px #243c3420;z-index:5}
 #selection[hidden]{display:none}#selection-kind{margin:0 0 7px;color:#6b785f;font-size:12px;letter-spacing:.08em}#selection-title{font-family:Georgia,serif;font-weight:400;font-size:22px;line-height:1.2;margin:0;color:#344c40}#selection-note{font-size:12px;color:#718174;margin:10px 0 0}#selection-close{position:absolute;right:7px;top:7px;min-height:30px;padding:0 9px;font-size:22px;background:transparent;box-shadow:none;border:0}
 @media(max-width:850px){#selection{bottom:140px;left:16px;width:calc(100vw - 32px);max-width:340px}}
+
+/* V1.4 — painted sky behind a transparent canvas; the fog colour matches the horizon band. */
+#map{background:linear-gradient(180deg,#86bfe2 0%,#b3d7ea 30%,#d7e8e6 52%,#e4ecdf 64%,#e4ecdf 100%)}
+
+/* V1.4 — selection card: a small illustrated-book caption rather than a data panel. */
+#selection{left:24px;bottom:84px;max-width:360px;background:#fffaf0f7;border:1px solid #ead9b4;border-left:0;border-radius:16px;padding:16px 42px 14px 20px;box-shadow:0 14px 40px #3a2f1a26,0 2px 0 #fff inset;max-height:calc(100vh - 220px);overflow:auto}
+#selection:before{content:'';position:absolute;left:0;top:14px;bottom:14px;width:4px;border-radius:0 4px 4px 0;background:linear-gradient(#f2b24b,#e98f4a)}
+#selection-kind{margin:0 0 5px;color:#9a7a45;font-size:11px;font-weight:650;letter-spacing:.12em;text-transform:uppercase}
+#selection-title{font-family:Georgia,'Times New Roman',serif;font-size:23px;color:#2f4637}
+#selection-facts{margin:10px 0 0;padding:0;list-style:none;font-size:13px;line-height:1.4;color:#40574a}
+#selection-facts li{position:relative;padding-left:14px;margin:4px 0}#selection-facts li:before{content:'';position:absolute;left:2px;top:.55em;width:5px;height:5px;border-radius:50%;background:#e4a547}
+#selection-facts[hidden],#selection-quotes[hidden]{display:none}
+#selection-quotes blockquote{margin:10px 0 0;padding:8px 10px;background:#f6eedb;border-radius:9px;font:italic 13px/1.4 Georgia,serif;color:#4c4a3a}
+#selection-quotes cite{display:block;margin-top:3px;font:normal 11px Segoe UI,Arial,sans-serif;color:#8d7d5c}
+#selection-note{margin:11px 0 0;font-size:11px;color:#8a8f80;letter-spacing:.02em}
+@media(max-width:850px){#selection{bottom:136px;left:12px;width:calc(100vw - 24px);max-height:42vh}}
+
+/* V1.4 — labels: painted-map toponyms for lieux-dits, soft pills for equipment, no GIS boxes. */
+.map-label{background:#fffaf0ee;border:1px solid #ead9b4;border-radius:999px;padding:4px 11px;font-size:12px;color:#3c4d40;box-shadow:0 3px 10px #3a2f1a1f}
+.map-label:after{border-left-color:#b89a63}
+.map-label.place{background:none;border:0;box-shadow:none;border-radius:6px;min-height:0;padding:2px 5px;font:italic 13px/1.2 Georgia,'Times New Roman',serif;color:#4d5e3f;text-shadow:0 0 2px #fffdf3,0 0 7px #fffdf3,0 1px 0 #fff}
+.map-label.place:after{display:none}
+.map-label.place:hover,.map-label.place[aria-pressed=true]{background:#fff6dccc;color:#2f3f2c}
+.map-label.heritage{background:#fff3d6f2;border-color:#d9b26a;font-family:Georgia,serif;font-style:italic;color:#5a4526}
+.map-label.major{font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:400;letter-spacing:.06em;color:#2c4636;text-shadow:0 0 3px #fffdf3,0 0 10px #fffdf3,0 1px 0 #fff}

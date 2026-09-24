@@ -2,10 +2,11 @@
 
 Prototype local Three.js de la commune de l’Aube, code INSEE **10220**. Empreintes, voirie, voies ferrées et occupation du sol proviennent d’OpenStreetMap. Le contour communal provient de l’API Découpage administratif française.
 
-**Version 1.3** : ombrage toon à quatre paliers, arbres aux couronnes arrondies et lobées, champs graphiques, liserés de toiture et lumière chaude. Exploration par clic des rues, bâtiments identifiés, zones et lieux-dits. Les coordonnées, empreintes et enrichissements IGN sont conservés.
+**Version 1.4** : direction artistique « village dans un film d’animation ». Mosaïque de champs peinte, ciel et horizon brumeux, maisons aux volets colorés, constructions légères rendues comme des abris fermés, arbres en nuage, ombres claires qui suivent la vue. Toutes les rues nommées sont cliquables avec une zone de clic élargie, et tous les bâtiments ont une fiche (sans nom inventé). Extraits des Bibles documentaires 01 et 03 dans les fiches, repère du Gué de la Chapelle. Coordonnées, empreintes et enrichissements IGN inchangés.
 
-Le bouton **Qualité** alterne entre **Fluide** (défaut : ratio de pixels limité à 1–1,25 et ombres 1024) et **Élevée** (ratio 1,25–1,5 et ombres 2048 filtrées). Les deux modes conservent les mêmes données et 3 200 arbres. La cible 30–60 FPS reste à vérifier avec un GPU accéléré ; les mesures du navigateur de contrôle ne la certifient pas.
+Le bouton **Qualité** alterne entre **Fluide** (défaut : ratio de pixels limité à 1–1,25 et ombres 1024) et **Élevée** (ratio 1,25–1,5 et ombres 2048 filtrées). Les deux modes conservent les mêmes données et 2 900 arbres. La cible 30–60 FPS reste à vérifier sur un GPU accéléré.
 
+Ce qui est réel et ce qui est artistique est détaillé dans `NOTES.md` ; mesures et limites dans `QA.md`. Les Bibles sont archivées, avec leurs SHA-256, dans `docs/bibles/`.
 
 **Données héritées de la V1.1** : 1 217 bâtiments associés à la BD TOPO IGN pour enrichir hauteurs, étages, usages et matériaux, sans modifier les empreintes. Haies et bois IGN ajoutés, silhouette spécifique de Saint-Denis. Les toitures ordinaires et leurs orientations restent estimées : voir `NOTES.md` pour la provenance et `QA.md` pour les contrôles.
 
@@ -22,7 +23,7 @@ npm run dev
 
 Ouvrir **http://127.0.0.1:5173/**. Le serveur utilise un port fixe : arrêter l’autre application si ce port est déjà occupé. Le projet fonctionne aussi avec pnpm ; son fichier de verrouillage est fourni.
 
-- Cliquer sur une rue, un bâtiment identifié, une zone ou une étiquette : nom, source et surbrillance.
+- Cliquer sur une rue, un bâtiment, une zone ou une étiquette : fiche avec nom (s’il existe dans les sources), faits, extraits des Bibles et provenance. La zone de clic d’une rue est plus large que la chaussée.
 - Cliquer dans un espace vide, fermer le panneau ou appuyer sur `Échap` : désélection.
 - Les voies sans nom ni référence restent sans nom ; aucun nom fictif n’est ajouté.
 - Glisser avec le bouton gauche : rotation.
@@ -57,8 +58,10 @@ Les limites et approximations sont décrites dans `NOTES.md`.
 
 Pour recalculer l’enrichissement depuis les sources IGN incluses : `npm run data:enrich`, puis `npm run check:enrichment`. `npm run data:ign` télécharge les sources manquantes sans remplacer les instantanés présents. Aucun de ces traitements n’est nécessaire au lancement normal.
 
-L’archive `maizieres-3d-v1.3.zip` inclut le code, les sources de données, les notes, la référence et le build `dist/`, sans `node_modules` ni cache de travail. Le site compilé peut être servi directement par un serveur HTTP statique.
+Le dépôt Git exclut `dist/`, `node_modules` et les caches : lancer `npm run build` pour produire le site statique.
 
 Contrôle complémentaire : `npm run check:presentation`. Les corrections de toiture appliquées au rendu sont détaillées dans `data-sources/roof-render-adjustments.json` ; les données sources restent intactes.
+
+Contrôles V1.4 : `npm run check:all` enchaîne les cinq contrôles. `npm run data:bible` régénère les annotations depuis les Bibles, qui ne sont jamais modifiées ; `npm run check:bible` vérifie leurs SHA-256 et chaque citation affichée.
 
 Contrôle de l’interactivité : `npm run check:interaction`. Reconstruction des cinq zones nommées depuis les sources IGN locales : `npm run data:places`. Ces zones servent uniquement à la sélection ; elles ne remplacent aucune empreinte. Les lieux-dits décrits par un point restent des repères ponctuels, sans contour inventé.

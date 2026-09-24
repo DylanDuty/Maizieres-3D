@@ -1,0 +1,1316 @@
+{
+ "metadata": {
+  "note": "Annotations documentaires. Chaque texte affiché est une citation exacte d'une Bible ; aucune géométrie source n'est modifiée.",
+  "sources": {
+   "01": {
+    "path": "docs/bibles/BIBLE_01_CARTOGRAPHIE/source/MAIZIERES_LA_GRANDE_UCHRONIE_BIBLE_01_CARTOGRAPHIE_FINAL_V1.1.md",
+    "sha256": "049252e30276ede27a2e047910c88e33cf08e314c89a8e6c23c6391927af3b55"
+   },
+   "03": {
+    "path": "docs/bibles/BIBLE_03_PATRIMOINE/source/MAIZIERES_LA_GRANDE_UCHRONIE_BIBLE_03_PATRIMOINE_V1.0.md",
+    "sha256": "99d812d0d1b5c7d71198da9e44130d4bbe22cc40c8864940e3aae4e0d4fc0d95"
+   }
+  }
+ },
+ "streets": {
+  "Rue Pasteur": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Pasteur"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "7.13",
+     "quote": "**Rue Pasteur** croise le corridor D116 au nord du noyau central"
+    }
+   ]
+  },
+  "Rue de la Paix": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue de la Paix"
+   }
+  },
+  "Avenue du Général de Gaulle": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Avenue du Général-de-Gaulle"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "20",
+     "quote": "L'actuel correspondant principal est la **D619 / Avenue du Général-de-Gaulle** dans le tissu bâti."
+    }
+   ]
+  },
+  "Boulevard Antoine de Saint-Exupéry": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Boulevard Antoine-de-Saint-Exupéry"
+   }
+  },
+  "Avenue Philippe Séguin": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Avenue Philippe-Seguin"
+   }
+  },
+  "Rue Joliot Curie": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Joliot-Curie"
+   },
+   "sector": {
+    "name": "Poussey",
+    "bible": "01",
+    "section": "7.13",
+    "quote": "Le contrôle visuel permet de lire Poussey comme un réseau cohérent organisé autour de la D20 / Rue Joliot-Curie"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "7.3",
+     "quote": "La D20 constitue ainsi la **colonne vertébrale est-ouest de Poussey**"
+    }
+   ]
+  },
+  "Rue du Docteur Calmette": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue du Docteur-Calmette"
+   },
+   "sector": {
+    "name": "Poussey",
+    "bible": "01",
+    "section": "7.13",
+    "quote": "Le contrôle visuel permet de lire Poussey comme un réseau cohérent organisé autour de la D20 / Rue Joliot-Curie"
+   }
+  },
+  "Rue des Billouts": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue des Billouts"
+   },
+   "sector": {
+    "name": "Poussey",
+    "bible": "01",
+    "section": "7.13",
+    "quote": "Le contrôle visuel permet de lire Poussey comme un réseau cohérent organisé autour de la D20 / Rue Joliot-Curie"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "4.2",
+     "quote": "La forme `Billiouts` existe dans plusieurs annuaires privés et doit être conservée comme alias de recherche."
+    }
+   ]
+  },
+  "Rue des Jacquets": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue des Jacquets"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "7.5",
+     "quote": "Prolongée de **74 m** en 2023"
+    }
+   ]
+  },
+  "Rue des Lombards": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue des Lombards"
+   },
+   "sector": {
+    "name": "Poussey",
+    "bible": "01",
+    "section": "7.13",
+    "quote": "Le contrôle visuel permet de lire Poussey comme un réseau cohérent organisé autour de la D20 / Rue Joliot-Curie"
+   }
+  },
+  "Rue du Château": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue du Château"
+   },
+   "sector": {
+    "name": "Poussey",
+    "bible": "01",
+    "section": "7.13",
+    "quote": "Le contrôle visuel permet de lire Poussey comme un réseau cohérent organisé autour de la D20 / Rue Joliot-Curie"
+   }
+  },
+  "Rue du Craon": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue du Craon"
+   }
+  },
+  "Rue du Lavoir": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue du Lavoir"
+   },
+   "sector": {
+    "name": "Poussey",
+    "bible": "01",
+    "section": "7.13",
+    "quote": "Le contrôle visuel permet de lire Poussey comme un réseau cohérent organisé autour de la D20 / Rue Joliot-Curie"
+   }
+  },
+  "Rue du Pont de Clairvaux": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue du Pont-de-Clairvaux"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "14.4",
+     "quote": "immersion dans la rivière du Moulin vers le Pont de Clairvaux"
+    },
+    {
+     "bible": "01",
+     "section": "17.1",
+     "quote": "Pierré — repère au Pont de Clairvaux"
+    }
+   ]
+  },
+  "Rue Louis Joly": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Louis-Joly"
+   },
+   "sector": {
+    "name": "Poussey",
+    "bible": "01",
+    "section": "7.13",
+    "quote": "Le contrôle visuel permet de lire Poussey comme un réseau cohérent organisé autour de la D20 / Rue Joliot-Curie"
+   }
+  },
+  "Rue des Bédouins": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue des Bédouins"
+   },
+   "sector": {
+    "name": "Poussey",
+    "bible": "01",
+    "section": "7.13",
+    "quote": "Le contrôle visuel permet de lire Poussey comme un réseau cohérent organisé autour de la D20 / Rue Joliot-Curie"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "14.4",
+     "quote": "ancien café Joly / Café des Bédouins"
+    },
+    {
+     "bible": "01",
+     "section": "14.4",
+     "quote": "fermeture en 2000."
+    }
+   ]
+  },
+  "Rue des Tabellions": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue des Tabellions"
+   },
+   "sector": {
+    "name": "Poussey",
+    "bible": "01",
+    "section": "7.13",
+    "quote": "Le contrôle visuel permet de lire Poussey comme un réseau cohérent organisé autour de la D20 / Rue Joliot-Curie"
+   }
+  },
+  "Rue du Moulin": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue du Moulin"
+   }
+  },
+  "Voie aux Vaches": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Voie aux Vaches"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "7.10",
+     "quote": "Vestiaires / stade documentés à l'angle :"
+    }
+   ]
+  },
+  "Rue du Maréchal de Lattre de Tassigny": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue du Maréchal-de-Lattre-de-Tassigny"
+   }
+  },
+  "Placette Léopoldine Deschamps": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Placette Léopoldine-Deschamps"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "4.1",
+     "quote": "**Placette Léopoldine-Deschamps** — forme municipale privilégiée ; « Place » existe dans certaines bases"
+    }
+   ]
+  },
+  "Rue Jean Monnet": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Jean-Monnet"
+   }
+  },
+  "Rue Jules Ferry": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Jules-Ferry"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "11.1",
+     "quote": "Maison / Salle des Associations : **2 rue Jules-Ferry**"
+    },
+    {
+     "bible": "01",
+     "section": "11.1",
+     "quote": "Accueil de loisirs Les Galopins : **1 rue Jules-Ferry**"
+    }
+   ]
+  },
+  "Rue Maurice Renault": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Maurice-Renault"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "9.1",
+     "quote": "forte correspondance spatiale avec la boucle de la rue Maurice-Renault."
+    },
+    {
+     "bible": "01",
+     "section": "9.1",
+     "quote": "surnommé par Michel Bourcier le **« rond des tricoteuses »**"
+    }
+   ]
+  },
+  "Rue du Stade": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue du Stade"
+   }
+  },
+  "Rue Albert Benoist": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Albert-Benoist"
+   }
+  },
+  "Rue Ambroise Paré": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Ambroise-Paré"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "12.4",
+     "quote": "**Correction importante : Rue Ambroise-Paré ≠ ancienne Rue de la Gare dans son ensemble.**"
+    }
+   ]
+  },
+  "Rue Jean-Baptiste de Lesseps": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Jean-Baptiste-de-Lesseps"
+   }
+  },
+  "Rue de l'Essy": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue de l'Essy"
+   }
+  },
+  "Place Saint-Denis": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Place Saint-Denis"
+   }
+  },
+  "Rue de la Libération": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue de la Libération"
+   }
+  },
+  "Rue de la République": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue de la République"
+   }
+  },
+  "Rue des Praillons": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue des Praillons"
+   }
+  },
+  "Rue des Écoles": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue des Écoles"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "11.1",
+     "quote": "Mairie : **6 rue des Écoles**"
+    },
+    {
+     "bible": "01",
+     "section": "11.1",
+     "quote": "Salle polyvalente : **3 rue des Écoles**"
+    }
+   ]
+  },
+  "Rue de la Contrée du Pont": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue de la Contrée-du-Pont"
+   }
+  },
+  "Rue du Presbytère": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue du Presbytère"
+   }
+  },
+  "Le Chemin de la Guide": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Chemin de la Guide"
+   }
+  },
+  "Chemin de la Pie": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Chemin de la Pie"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "4.1",
+     "quote": "**Chemin de la Pie** — confirmé visuellement dans le secteur des Granges ; statut administratif fin à recouper"
+    }
+   ]
+  },
+  "Rue Achille Flaubert": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Achille-Flaubert"
+   },
+   "sector": {
+    "name": "Les Granges",
+    "bible": "01",
+    "section": "7.13",
+    "quote": "**Rue Achille-Flaubert**, **Rue des Aulnes** et **Rue des Baudets** structurent la partie nord-ouest du tissu des Granges"
+   }
+  },
+  "Rue Georges Clemenceau": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Georges-Clémenceau"
+   }
+  },
+  "Rue des Aulnes": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue des Aulnes"
+   },
+   "sector": {
+    "name": "Les Granges",
+    "bible": "01",
+    "section": "7.13",
+    "quote": "**Rue Achille-Flaubert**, **Rue des Aulnes** et **Rue des Baudets** structurent la partie nord-ouest du tissu des Granges"
+   }
+  },
+  "Ruelle des Granges": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Ruelle des Granges"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "4.1",
+     "quote": "**Ruelle des Granges** — confirmée visuellement entre l'avenue du Général-de-Gaulle et le réseau de chemins des Granges"
+    }
+   ]
+  },
+  "Impasse de la Noue": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Impasse de la Noue"
+   }
+  },
+  "Rue Victor Hugo": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Victor-Hugo"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "7.8",
+     "quote": "**Avenue du Général-de-Gaulle ↔ Rue Victor-Hugo**."
+    }
+   ]
+  },
+  "Rue de la Chapelle": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue de la Chapelle"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "7.13",
+     "quote": "**Rue de la Chapelle** descend du cœur des Granges vers la D619"
+    },
+    {
+     "bible": "01",
+     "section": "14.1",
+     "quote": "chapelle située à proximité de l'actuel n°6 Rue de la Chapelle"
+    }
+   ]
+  },
+  "Rue des Baudets": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue des Baudets"
+   },
+   "sector": {
+    "name": "Les Granges",
+    "bible": "01",
+    "section": "7.13",
+    "quote": "**Rue Achille-Flaubert**, **Rue des Aulnes** et **Rue des Baudets** structurent la partie nord-ouest du tissu des Granges"
+   }
+  },
+  "Rue des Carreaux": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue des Carreaux"
+   }
+  },
+  "Rue du Docteur Sollier": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue du Docteur-Sollier"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "7.13",
+     "quote": "**Rue du Docteur-Sollier** longe le nord des Granges, au sud immédiat de la voie ferrée"
+    }
+   ]
+  },
+  "Rue du Calvaire": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue du Calvaire"
+   },
+   "sector": {
+    "name": "Poussey",
+    "bible": "01",
+    "section": "7.13",
+    "quote": "Le contrôle visuel permet de lire Poussey comme un réseau cohérent organisé autour de la D20 / Rue Joliot-Curie"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "7.4",
+     "quote": "classé au domaine public et dénommé Rue du Calvaire en 2023"
+    }
+   ]
+  },
+  "Rue de l'Orme": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue de l'Orme"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "7.7",
+     "quote": "Axe entre la RD619 et le secteur du pont ferroviaire"
+    }
+   ]
+  },
+  "Rue des Prés de Poussey": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue des Prés-de-Poussey"
+   }
+  },
+  "Rue du Général Leclerc": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue du Général-Leclerc"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "12.3",
+     "quote": "La géographie converge fortement vers l'ancien corridor de la Gare correspondant aujourd'hui **principalement au corridor de la Rue du Général-Leclerc**"
+    },
+    {
+     "bible": "01",
+     "section": "12.3",
+     "quote": "La délibération officielle de changement de nom n'a pas été retrouvée"
+    }
+   ]
+  },
+  "Rue Georges Pompidou": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Georges-Pompidou"
+   }
+  },
+  "Rue de la Chefferie": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue de la Chefferie"
+   }
+  },
+  "Rue des Sages": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue des Sages"
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "9.4",
+     "quote": "implanté sur l'ancien terrain de football"
+    }
+   ]
+  },
+  "Ruelle des Écoles": {
+   "listed": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Ruelle des Écoles"
+   }
+  },
+  "Rue Basse de Poussay": {
+   "variant": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Basse-de-Poussey"
+   },
+   "sector": {
+    "name": "Poussey",
+    "bible": "01",
+    "section": "7.13",
+    "quote": "Le contrôle visuel permet de lire Poussey comme un réseau cohérent organisé autour de la D20 / Rue Joliot-Curie"
+   }
+  },
+  "Rue des Cotterets": {
+   "variant": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue des Cottrets"
+   }
+  },
+  "Rue Patris": {
+   "variant": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue Patris-de-Breuil"
+   }
+  },
+  "Rue du Pont Bancelin": {
+   "variant": {
+    "bible": "01",
+    "section": "4.1",
+    "quote": "Rue du Pot-Bancelin"
+   }
+  },
+  "Place Adrien Quinet": {
+   "notes": [
+    {
+     "bible": "01",
+     "section": "4.1",
+     "quote": "Place / Placette Adrien-Quinet — forme exacte à harmoniser"
+    }
+   ]
+  },
+  "Ruelle à Rosez": {
+   "notes": [
+    {
+     "bible": "01",
+     "section": "6",
+     "quote": "**Ruelle à Rosez** — **B+ comme libellé cartographique localisé**"
+    }
+   ]
+  }
+ },
+ "places": {
+  "Poussey": {
+   "bibleName": "Poussey",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Poussey | hameau historique + secteur | A |"
+   },
+   "typeText": "hameau historique + secteur",
+   "confidence": "A",
+   "notes": [
+    {
+     "bible": "01",
+     "section": "8.3",
+     "quote": "ancienne baronnie ;"
+    },
+    {
+     "bible": "01",
+     "section": "8.3",
+     "quote": "secteur bas et humide ;"
+    }
+   ]
+  },
+  "Les Granges": {
+   "bibleName": "Les Granges",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Les Granges | hameau historique + secteur | A |"
+   },
+   "typeText": "hameau historique + secteur",
+   "confidence": "A",
+   "notes": [
+    {
+     "bible": "01",
+     "section": "8.2",
+     "quote": "hameau historique au sud-ouest ;"
+    },
+    {
+     "bible": "01",
+     "section": "8.2",
+     "quote": "traversé par la grande route Paris–Belfort / RN19 ;"
+    },
+    {
+     "bible": "01",
+     "section": "8.2",
+     "quote": "ancien relais de Poste aux Chevaux à partir de 1740 ;"
+    }
+   ]
+  },
+  "Les Grandes Pâtures": {
+   "bibleName": "Les Grandes Pâtures",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Les Grandes Pâtures | lieu-dit / ancien secteur | A |"
+   },
+   "typeText": "lieu-dit / ancien secteur",
+   "confidence": "A"
+  },
+  "La Lechere": {
+   "bibleName": "La Lechère",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| La Lechère | lieu-dit + secteur archéologique | A |"
+   },
+   "typeText": "lieu-dit + secteur archéologique",
+   "confidence": "A"
+  },
+  "La Grande Lechere": {
+   "bibleName": "La Grande Lechère",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| La Grande Lechère | lieu-dit | A |"
+   },
+   "typeText": "lieu-dit",
+   "confidence": "A"
+  },
+  "Le Grand Haut": {
+   "bibleName": "Le Grand Haut",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Le Grand Haut | lieu-dit + secteur naturel humide | A |"
+   },
+   "typeText": "lieu-dit + secteur naturel humide",
+   "confidence": "A"
+  },
+  "Les Bois de Poussey": {
+   "bibleName": "Les Bois de Poussey",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Les Bois de Poussey | bois / zone naturelle inondable, au nord de Poussey | A |"
+   },
+   "typeText": "bois / zone naturelle inondable, au nord de Poussey",
+   "confidence": "A"
+  },
+  "Les Bois de Poussey Ouest": {
+   "bibleName": "Les Bois de Poussey Ouest",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Les Bois de Poussey Ouest | bois au nord-ouest de Poussey, position visuellement confirmée | A |"
+   },
+   "typeText": "bois au nord-ouest de Poussey, position visuellement confirmée",
+   "confidence": "A"
+  },
+  "Le Bois des Granges": {
+   "bibleName": "Bois des Granges",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Bois des Granges | bois immédiatement au nord-ouest des Granges, au sud de la voie ferrée | A |"
+   },
+   "typeText": "bois immédiatement au nord-ouest des Granges, au sud de la voie ferrée",
+   "confidence": "A"
+  },
+  "Les Terres Boyaux": {
+   "bibleName": "Les Terres Boyaux",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Les Terres Boyaux | secteur près de La Chefferie | A |"
+   },
+   "typeText": "secteur près de La Chefferie",
+   "confidence": "A"
+  },
+  "Les Carreaux": {
+   "bibleName": "Les Carreaux",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Les Carreaux | secteur La Belle Idée / aérodrome | A |"
+   },
+   "typeText": "secteur La Belle Idée / aérodrome",
+   "confidence": "A"
+  },
+  "La Contrée du Pont": {
+   "bibleName": "La Contrée du Pont",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| La Contrée du Pont | lieu-dit / secteur | A |"
+   },
+   "typeText": "lieu-dit / secteur",
+   "confidence": "A"
+  },
+  "Le Gué de Terre Blanche": {
+   "bibleName": "Gué de Terre Blanche",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Gué de Terre Blanche | lieu-dit sur la Seine | A |"
+   },
+   "typeText": "lieu-dit sur la Seine",
+   "confidence": "A"
+  },
+  "La Chapelle d'Origny": {
+   "bibleName": "La Chapelle d'Origny",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| La Chapelle d'Origny | lieu-dit cadastral | A |"
+   },
+   "typeText": "lieu-dit cadastral",
+   "confidence": "A"
+  },
+  "Le Tout Grain": {
+   "bibleName": "Le Tout Grain",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Le Tout Grain | lieu-dit cadastral | A |"
+   },
+   "typeText": "lieu-dit cadastral",
+   "confidence": "A"
+  },
+  "La Grosse Noue": {
+   "bibleName": "La Grosse Noue",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| La Grosse Noue | lieu-dit humide | A |"
+   },
+   "typeText": "lieu-dit humide",
+   "confidence": "A"
+  },
+  "Le Village": {
+   "bibleName": "Le Village",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Le Village | lieu-dit cadastral | A/B |"
+   },
+   "typeText": "lieu-dit cadastral",
+   "confidence": "A/B",
+   "notes": [
+    {
+     "bible": "01",
+     "section": "7.13",
+     "quote": "le lieu-dit **Le Village** occupe le cœur du tissu central au nord des écoles."
+    }
+   ]
+  },
+  "Le Rougemont": {
+   "bibleName": "Le Rougemont",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Le Rougemont | grand secteur au sud / sud-est de Poussey, position visuellement confirmée | A/B+ |"
+   },
+   "typeText": "grand secteur au sud / sud-est de Poussey, position visuellement confirmée",
+   "confidence": "A/B+"
+  },
+  "Rougemont": {
+   "bibleName": "Le Rougemont",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Le Rougemont | grand secteur au sud / sud-est de Poussey, position visuellement confirmée | A/B+ |"
+   },
+   "typeText": "grand secteur au sud / sud-est de Poussey, position visuellement confirmée",
+   "confidence": "A/B+"
+  },
+  "La Dime du Saint": {
+   "bibleName": "La Dîme du Saint",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| La Dîme du Saint | lieu-dit rural | A/B |"
+   },
+   "typeText": "lieu-dit rural",
+   "confidence": "A/B"
+  },
+  "La Noue Boulate Sud": {
+   "bibleName": "La Noue Boulate Sud",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| La Noue Boulate Sud | lieu-dit au nord du centre, position visuellement confirmée | B+ |"
+   },
+   "typeText": "lieu-dit au nord du centre, position visuellement confirmée",
+   "confidence": "B+"
+  },
+  "Les Converts": {
+   "bibleName": "Les Converts",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Les Converts | lieu-dit cadastral | B |"
+   },
+   "typeText": "lieu-dit cadastral",
+   "confidence": "B"
+  },
+  "La Fondriere Ouest": {
+   "bibleName": "La Fondrière Ouest",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| La Fondrière Ouest | lieu-dit | B |"
+   },
+   "typeText": "lieu-dit",
+   "confidence": "B"
+  },
+  "Le Trou des Corvées": {
+   "bibleName": "Le Trou des Corvées",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Le Trou des Corvées | lieu-dit | B |"
+   },
+   "typeText": "lieu-dit",
+   "confidence": "B"
+  },
+  "Le Noyer Machault": {
+   "bibleName": "Le Noyer Machault",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Le Noyer Machault | lieu-dit / secteur rural | B |"
+   },
+   "typeText": "lieu-dit / secteur rural",
+   "confidence": "B"
+  },
+  "Le Bois des Noues": {
+   "bibleName": "Le Bois des Noues",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Le Bois des Noues | secteur de l'ancien aérodrome | B |"
+   },
+   "typeText": "secteur de l'ancien aérodrome",
+   "confidence": "B"
+  },
+  "Les Pâtures du Moulin": {
+   "bibleName": "Les Pâtures du Moulin",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Les Pâtures du Moulin | secteur humide au nord-ouest de Poussey, le long de la Rivière du Moulin | A/B+ |"
+   },
+   "typeText": "secteur humide au nord-ouest de Poussey, le long de la Rivière du Moulin",
+   "confidence": "A/B+"
+  },
+  "Le Beaumont": {
+   "bibleName": "Le Beaumont",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| Le Beaumont | lieu-dit actuel / foncier | B+ |"
+   },
+   "typeText": "lieu-dit actuel / foncier",
+   "confidence": "B+"
+  },
+  "Le Croc Joly": {
+   "bibleName": "Le Croc Joly",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| **Le Croc Joly** | secteur à l'ouest des Praillons, position visuellement confirmée | B+ |"
+   },
+   "typeText": "secteur à l'ouest des Praillons, position visuellement confirmée",
+   "confidence": "B+"
+  },
+  "La Noue Boulatte-Nord": {
+   "bibleName": "La Noue Boulatte Nord",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| **La Noue Boulatte Nord** | secteur au nord de La Noue Boulate Sud ; graphie avec double « t » telle qu'affichée sur la carte fournie | B+ |"
+   },
+   "typeText": "secteur au nord de La Noue Boulate Sud ; graphie avec double « t » telle qu'affichée sur la carte fournie",
+   "confidence": "B+"
+  },
+  "Les Pres de Poussey Est": {
+   "bibleName": "Les Prés de Poussey Est",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| **Les Prés de Poussey Est** | secteur au nord-est de Poussey | B+ |"
+   },
+   "typeText": "secteur au nord-est de Poussey",
+   "confidence": "B+"
+  },
+  "Le Grand Jonchery": {
+   "bibleName": "Le Grand Jonchery",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| **Le Grand Jonchery** | secteur au nord-est de Poussey, entre vallée humide et bois | B+ |"
+   },
+   "typeText": "secteur au nord-est de Poussey, entre vallée humide et bois",
+   "confidence": "B+"
+  },
+  "Les Pres Tortu": {
+   "bibleName": "Les Prés Tortu",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| **Les Prés Tortu** | secteur boisé / humide au nord-est de Poussey | B+ |"
+   },
+   "typeText": "secteur boisé / humide au nord-est de Poussey",
+   "confidence": "B+"
+  },
+  "Le Grand Gué": {
+   "bibleName": "Le Grand Gué",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| **Le Grand Gué** | secteur à l'est / nord-est de Poussey, désormais positionné visuellement | B+ |"
+   },
+   "typeText": "secteur à l'est / nord-est de Poussey, désormais positionné visuellement",
+   "confidence": "B+"
+  },
+  "La Station": {
+   "bibleName": "La Station",
+   "type": {
+    "bible": "01",
+    "section": "16",
+    "quote": "| La Station | lieu-dit d'adressage, signification inconnue | B |"
+   },
+   "typeText": "lieu-dit d'adressage, signification inconnue",
+   "confidence": "B",
+   "notes": [
+    {
+     "bible": "01",
+     "section": "19.3",
+     "quote": "`La Station` existe comme lieu-dit dans des bases d'adressage, mais rien ne prouve aujourd'hui qu'il s'agisse :"
+    }
+   ]
+  },
+  "La Cave": {
+   "notes": [
+    {
+     "bible": "01",
+     "section": "15",
+     "quote": "**F — La Cave**"
+    }
+   ]
+  },
+  "La Belle Idee": {
+   "notes": [
+    {
+     "bible": "01",
+     "section": "10.2",
+     "quote": "centre commercial ouvert en **2005** ;"
+    },
+    {
+     "bible": "01",
+     "section": "10.2",
+     "quote": "implanté sur le secteur de l'ancienne base militaire / ancien aérodrome ;"
+    }
+   ]
+  }
+ },
+ "named": {
+  "Église Saint-Denis": {
+   "notes": [
+    {
+     "bible": "03",
+     "section": "3",
+     "quote": "localisation : **Place Saint-Denis**, centre ancien de Maizières ;"
+    },
+    {
+     "bible": "03",
+     "section": "3",
+     "quote": "de la **fin du XIe siècle et du début du XIIe siècle**."
+    },
+    {
+     "bible": "03",
+     "section": "3",
+     "quote": "statut 2026 : `EXISTANT — EN RESTAURATION`."
+    }
+   ]
+  },
+  "Mairie de Maizières-la-Grande-Paroisse": {
+   "notes": [
+    {
+     "bible": "03",
+     "section": "5",
+     "quote": "**6 rue des Écoles**."
+    },
+    {
+     "bible": "03",
+     "section": "5",
+     "quote": "façade en brique et pierre ;"
+    },
+    {
+     "bible": "03",
+     "section": "5",
+     "quote": "balcon central ;"
+    }
+   ]
+  },
+  "Mairie": {
+   "notes": [
+    {
+     "bible": "03",
+     "section": "5",
+     "quote": "**6 rue des Écoles**."
+    },
+    {
+     "bible": "03",
+     "section": "5",
+     "quote": "façade en brique et pierre ;"
+    }
+   ]
+  },
+  "Salle polyvalente": {
+   "notes": [
+    {
+     "bible": "01",
+     "section": "11.1",
+     "quote": "Salle polyvalente : **3 rue des Écoles**"
+    }
+   ]
+  },
+  "Salle Polyvalente": {
+   "notes": [
+    {
+     "bible": "01",
+     "section": "11.1",
+     "quote": "Salle polyvalente : **3 rue des Écoles**"
+    }
+   ]
+  },
+  "Institut Médico-Éducatif Verger Fleuri": {
+   "notes": [
+    {
+     "bible": "01",
+     "section": "11.2",
+     "quote": "IME Le Verger Fleuri : **21 bis rue Achille-Flaubert**."
+    }
+   ]
+  },
+  "Zone Industrielle la Glacière": {
+   "notes": [
+    {
+     "bible": "01",
+     "section": "10.1",
+     "quote": "Zone Industrielle créée en **1970** ;"
+    },
+    {
+     "bible": "01",
+     "section": "10.1",
+     "quote": "distincte de La Belle Idée et du Parc de l'Aérodrome ;"
+    }
+   ]
+  },
+  "Parc de l'Aérodrome": {
+   "notes": [
+    {
+     "bible": "01",
+     "section": "10.3",
+     "quote": "créé en **2012** ;"
+    },
+    {
+     "bible": "01",
+     "section": "10.3",
+     "quote": "face à La Belle Idée ;"
+    }
+   ]
+  },
+  "Stade de Maizières-la-Grande-Paroisse": {
+   "notes": [
+    {
+     "bible": "01",
+     "section": "7.10",
+     "quote": "Vestiaires / stade documentés à l'angle :"
+    }
+   ]
+  },
+  "École Élémentaire Publique Maizières-la-Grande-Paroisse": {
+   "notes": [
+    {
+     "bible": "03",
+     "section": "5",
+     "quote": "L'école primaire actuelle est officiellement située :"
+    }
+   ]
+  },
+  "École primaire": {
+   "notes": [
+    {
+     "bible": "03",
+     "section": "5",
+     "quote": "L'école primaire actuelle est officiellement située :"
+    }
+   ]
+  }
+ },
+ "landmarks": [
+  {
+   "id": "bible01:gue-de-la-chapelle",
+   "name": "Gué de la Chapelle",
+   "kind": "Site historique transformé",
+   "junction": [
+    "Avenue du Général de Gaulle",
+    "Rue de la Chapelle"
+   ],
+   "location": {
+    "bible": "01",
+    "section": "14.1",
+    "quote": "Localisation : **angle RD619 / D160 vers Pars-lès-Romilly**."
+   },
+   "notes": [
+    {
+     "bible": "01",
+     "section": "14.1",
+     "quote": "ancienne mare / abreuvoir surnommée « Mare aux Canards » ;"
+    },
+    {
+     "bible": "01",
+     "section": "14.1",
+     "quote": "ancienne chapelle fondée en 1356 ;"
+    },
+    {
+     "bible": "01",
+     "section": "14.1",
+     "quote": "ancien relais de Poste aux Chevaux à moins de 100 m ;"
+    }
+   ],
+   "method": "Point calculé à l'intersection des tracés OSM de l'avenue du Général-de-Gaulle (D 619) et de la rue de la Chapelle, carrefour où la D 160 (rue Victor-Hugo) part vers le sud."
+  }
+ ]
+}

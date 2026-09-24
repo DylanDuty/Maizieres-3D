@@ -1,4 +1,103 @@
-# Vérification V1.3 — 24 septembre 2026
+# Vérification V1.4 — 24 septembre 2026
+
+Branche `opus/v1.4`, partie de `main` (V1.3, `676a312`) avec le commit documentaire des Bibles repris par cherry-pick.
+
+## Audit visuel de la V1.3 (avant développement)
+
+V1.3 lancée dans Chromium et parcourue : vue globale, centre, Saint-Denis, Poussey, Les Granges, rue proche, zone industrielle, campagne, voie ferrée, clics.
+
+| Gravité | Défaut observé | Traitement V1.4 |
+|---|---|---|
+| CRITIQUE | 462 bâtiments `wall=no` rendus comme des toits flottants sur poteaux, très visibles près du bourg | Abris légers fermés ou hangars (voir NOTES) |
+| CRITIQUE | Campagne : immenses aplats agricoles (polygones Corine Land Cover) à bandes identiques, sans parcelles | Mosaïque de parcelles décorative |
+| CRITIQUE | Clic sur une maison sans nom : désélection silencieuse ; la carte n’invite pas à explorer | Fiche pour tout bâtiment, sans nom inventé |
+| IMPORTANT | Surbrillance sans test de profondeur : un voile jaune recouvre les maisons | Coques et contours testés en profondeur |
+| IMPORTANT | Ombres vert-noir, en blocs de plus de 4 m par texel de près | Ombres claires, recadrées sur la vue |
+| IMPORTANT | Rues : bande de 10 px seulement ; un repère proche capte le clic | Tolérance selon la largeur visible ; priorité à la rue |
+| IMPORTANT | Maisons identiques (même beige, toits orange uniformes) ; aspect extrusion OSM | Palettes par famille, volets, portes, cheminées |
+| IMPORTANT | Bois : sphères éparses sur un aplat vert | Sol de canopée, arbres de bois plus grands |
+| SECONDAIRE | Étiquettes en boîtes blanches partout (aspect SIG) | Toponymes peints, pastilles |
+| SECONDAIRE | Bord de maquette en boîte, ciel uni | Horizon brumeux, ciel dégradé |
+| SECONDAIRE | Zone industrielle grise et plate | Bardages et toitures nuancés |
+
+## Contrôles automatiques
+
+`npm run check:all` réussit : `check`, `check:enrichment`, `check:presentation`, `check:interaction` et le nouveau `check:bible`. Build Vite réussi : JavaScript applicatif 52,20 Ko, Three.js 530,05 Ko, CSS 7,12 Ko avant compression (avertissement habituel sur la taille du lot Three.js). Aucune dépendance ajoutée.
+
+- Les quatre fichiers de données V1.1 et `named-zones.geojson` sont inchangés (SHA-256). Toujours 1 968 bâtiments, 533 portions routières, 25 ferroviaires, 332 haies IGN et 10 460 traverses. 976 hauteurs de murs IGN, 662 étages, 510 matériaux, 75 toitures bornées dans le rendu (journal inchangé). 615 hausses de toiture IGN utilisées au lieu de 614 : un ancien abri plat redevient un toit à deux pans.
+- `check:bible` : SHA-256 des six Bibles identiques au tableau de `docs/bibles/README.md`, 172 citations retrouvées mot pour mot, rues et lieux annotés présents dans OSM.
+- `check:interaction` (étendu) : noms de voies conformes aux sources, aucune voie anonyme nommée, 1 942 bâtiments sans nom décrits seulement par un type, repère du Gué de la Chapelle posé sur les deux tracés OSM, écart de graphie Bible signalé sans renommer la rue OSM.
+
+## Objets cliquables et noms
+
+| Catégorie | V1.3 | V1.4 |
+|---|---:|---:|
+| Groupes de voies nommées (nom ou référence) | 81 | 81 (144 tronçons sources) |
+| Voies sans nom ni référence, non nommées | 387 | 387 |
+| Bâtiments nommés | 26 | 26 |
+| Bâtiments cliquables sans nom (fiche type + provenance) | 0 | 1 942 |
+| Zones nommées | 10 | 10 |
+| Repères ponctuels | 124 | 125 (+ Gué de la Chapelle, Bible 01) |
+| Objets avec extraits des Bibles | 0 | 114 |
+
+Couverture des noms de rues : les 73 noms OSM de voies sont affichés. 56 figurent aussi dans le référentiel de la Bible 01 (§4.1) et quatre y ont une graphie différente, signalée sans être tranchée. Les autres (Rue Jacqueline Auriol, Rue Robert Galley, Rue Thierry Moussin, Rue Pierre Sémard, Avenue Georges Pompidou…) restent sous leur seul nom OSM. Les noms de la Bible sans tracé OSM ne sont pas placés.
+
+Essais de clic dans le navigateur (build servi) :
+
+| Cas | Résultat |
+|---|---|
+| Rue Pasteur, vue proche, 14 px à côté de l’axe | Rue Pasteur |
+| Avenue du Général-de-Gaulle, vue de toute la commune, 8 px | Avenue du Général de Gaulle |
+| Rue Joliot-Curie et rue du Lavoir (Poussey), 9–10 px | rue correcte |
+| Rue Maurice-Renault, 12 px | Rue Maurice Renault |
+| Rue Pasteur, vue moyenne, 10 px sur une maison riveraine | Maison (bâtiment visible prioritaire, comportement voulu) |
+| Saint-Denis (volume), mairie, Gué de la Chapelle | nom, extraits des Bibles, provenance |
+| Maison ordinaire | « Maison », usage, niveaux et hauteur IGN, « Bâtiment sans nom connu » |
+| Clic dans un champ, Échap, bouton × | désélection et suppression de la surbrillance |
+
+## Vérifications manuelles
+
+Build servi par `vite preview` et observé dans Chromium : vue globale, centre-bourg, Saint-Denis, Poussey, Les Granges, voie ferrée, zone industrielle, campagne, rues nommées, bâtiments nommés et génériques, zones, lieux-dits. Recentrer, Noms des lieux (masquer / afficher), zoom et déplacement au clavier, `R`. Mode Élevée (ratio 1,25, ombres 2048 PCF) puis retour en Fluide. Redimensionnement en format portrait 420 × 820 puis retour. **Aucune erreur ni aucun avertissement en console.** Le premier rendu après passage en Élevée prend environ 0,3 s (compilation des matériaux et nouvelle carte d’ombres).
+
+Aucune régression géographique constatée : positions, empreintes, tracés, haies et bois se superposent à la V1.3 dans les mêmes vues.
+
+## Performances et réglages
+
+| Mesure (vue initiale, 1280 × 800, Fluide, ratio 1) | V1.3 | V1.4 |
+|---|---:|---:|
+| Triangles | 513 337 | 532 717 (+3,8 %) |
+| Appels de dessin sans sélection | 15 | 18 |
+| Triangles des bâtiments | 118 585 | 162 509 |
+| Arbres (instanciés, sans ombre) | 3 200 | 2 900 |
+| Parcours benchmark, moyenne / image (3 essais) | 411,0 · 408,6 · 406,7 ms | 409,5 · 401,7 · 412,9 ms |
+| Médiane / P95 | 383 / 800 ms | 383 / 784–817 ms |
+
+Mesures alternées V1.3 / V1.4 (moyennes 408,8 et 408,0 ms, écart dans le bruit de mesure), même session, même parcours `?benchmark=1` (89 intervalles), sans autre charge. Navigateur : ANGLE / SwiftShader, rendu logiciel, 4 cœurs déclarés. Ces chiffres comparent les deux versions dans le même environnement ; ils ne mesurent pas un GPU. **La cible 30–60 FPS sur un PC avec accélération graphique n’est pas certifiée ici.** Une première version V1.4 à 3 200 arbres et trois quads par fenêtre coûtait environ 5 % de plus : les volets ont été fusionnés en un seul quad derrière la vitre, le nombre d’arbres ramené à 2 900 (le sol de canopée compense visuellement) et les disques de carrefour réduits à huit côtés.
+
+Trois appels de dessin supplémentaires : sol des bois (shader de canopée), peupliers instanciés, sol d’horizon. Une sélection ajoute un à trois appels, libérés à la désélection. Le rendu reste à la demande. Les ombres ne sont recalculées que lorsque la vue change nettement ; seuls les bâtiments projettent une ombre. Fluide reste le mode par défaut, sans MSAA ni post-traitement.
+
+Chargement observé du build : environ 1,0 s dans cet environnement.
+
+## Réel et artistique
+
+**Réel (sources inchangées)** : coordonnées, empreintes, hauteurs et étages IGN, usages, matériaux déclarés, voirie, rail, cours d’eau, haies et bois IGN, noms OSM et IGN, extraits des Bibles.
+
+**Artistique** : parcelles, couleurs et sillons des champs ; marbrure des prés et canopée des bois ; couleurs des façades et des toits (sauf la teinte brique et pierre de la mairie, décrite par la Bible 03) ; volets, portes, cheminées ; position et forme des arbres procéduraux ; sol d’horizon hors emprise ; ciel. Formes et orientations des toits ordinaires restent estimées comme en V1.3.
+
+## Limites restantes
+
+- Performance non validée sur GPU grand public : essai à faire sur la machine cible (`?benchmark=1`).
+- Reconnaissance par un habitant et ressenti « dessin animé » non vérifiés par un essai utilisateur.
+- Les champs décoratifs peuvent suggérer à tort des cultures ou un parcellaire : c’est documenté ici et dans NOTES, mais pas dans l’interface.
+- Au-delà de l’emprise des données, le sol brumeux marque une coupure franche, adoucie seulement par la brume.
+- « Salle Polyvalente » (point OSM) et « Salle polyvalente » (zone IGN) restent deux repères distincts, non réconciliés.
+- Les constructions légères fermées peuvent être en réalité des hangars ouverts : la donnée ne le dit pas.
+- Pas de relief ; ponts et passages dénivelés non reconstruits.
+- Aucun survol (pas de raycast au mouvement), pour préserver la fluidité : la découverte se fait au clic.
+
+---
+
+# Vérification V1.3 — 24 septembre 2026 (historique)
 
 ## Contrôles et conservation
 

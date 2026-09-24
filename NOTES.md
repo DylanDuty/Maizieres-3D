@@ -1,4 +1,45 @@
-# Notes V1.3 — 24 septembre 2026
+# Notes V1.4 — 24 septembre 2026
+
+La V1.4 part de la V1.3 (`main`, commit `676a312`) et des six Bibles documentaires (`docs/bibles/`). Aucun fichier géographique source n’est modifié : OSM, contour communal, enrichissement IGN, végétation IGN et zones nommées gardent leurs SHA-256. Projection, origine, empreintes, voirie, rail, haies, bois, hauteurs, étages, usages, matériaux et modèle de Saint-Denis sont conservés.
+
+## Direction artistique « Maizières dans un dessin animé »
+
+Tout ce qui suit relève du rendu, pas de la donnée.
+
+- **Lumière** : rampe toon à quatre paliers plus doux, soleil chaud, ciel bleu et sol doré pour l’éclairage ambiant. Les ombres sont plus claires (`shadow.intensity` 0,62) et leur cadrage suit la zone regardée : nettes de près, toute la commune de loin. La carte d’ombres n’est recalculée que lorsque la vue change nettement, jamais à chaque image.
+- **Ciel et horizon** : dégradé CSS derrière un canevas transparent, brume à la couleur de l’horizon. Au-delà de l’emprise des données, un sol brumeux uni remplace le bord de boîte. Ce sol n’est pas un relevé : il est volontairement neutre, sans parcelles.
+- **Champs** : dans les polygones agricoles OSM, un shader dessine une mosaïque de parcelles (blés, pailles, verts, terres), des lisières plus sombres et des sillons qui s’estompent au loin. **Ces parcelles, leurs couleurs et leurs sillons sont décoratifs** : ils ne décrivent ni les cultures réelles ni le parcellaire cadastral.
+- **Sol** : prés et pelouses légèrement marbrés par un bruit à très basse fréquence. Les bois OSM et IGN reçoivent un sol de canopée tacheté, qui évoque des houppiers vus d’en haut. Ce motif ne positionne aucun arbre réel.
+- **Bâtiments** : palettes déterministes par famille (maisons crème, blanc cassé, pierre, beige, pêche pâle ; commerces blancs ; industrie gris clair ; fermes pierre ; constructions légères bois). Tuiles en sept teintes de terre cuite, ardoise, bac acier pour les hangars. Les maisons ont des volets peints, une porte et une cheminée près du faîtage. Ces détails sont artistiques : couleurs, volets, portes et cheminées ne sont pas relevés. La façade de la mairie prend une teinte brique et pierre, comme la décrit la Bible 03 (§5).
+- **Constructions légères** : en V1.3, les 482 bâtiments OSM `wall=no` étaient rendus comme des toits sur poteaux. Dans l’import cadastral français, ce tag signale une construction légère. La BD TOPO le confirme pour la plupart des cas associés (`construction_legere`). Ces bâtiments sont désormais des abris fermés et bas, en bois, ou des hangars au-delà de 160 m² ou quand l’usage est agricole ou industriel. Seuls `building=roof`, `carport` et la station-service restent des abris ouverts. Une hausse de toiture IGN supplémentaire est utilisée (615 au lieu de 614), car un ancien abri plat redevient un toit à deux pans.
+- **Végétation** : houppiers arrondis à bosses (icosaèdre de 80 triangles, normales lissées, ombrage sombre à la base) et silhouette colonnaire pour les peupliers. Six verts accordés au lieu de teintes disparates. Les arbres des bois sont plus grands pour fermer la canopée. 2 900 arbres au maximum au lieu de 3 200 : le sol de canopée compense et le coût revient au niveau de la V1.3. Arbres instanciés, sans ombres ; les points d’arbres OSM restent prioritaires.
+- **Routes et rail** : chaussée gris bleuté, accotement crème, marquage plus clair sur les axes principaux, chemins couleur terre. Ballast en deux tons. Tracés inchangés.
+- **Étiquettes** : les lieux-dits ressemblent à des toponymes de carte peinte (italique, sans cadre) ; les équipements sont des pastilles discrètes ; le repère Bible est doré.
+
+## Exploration
+
+- **Rues** : la tolérance de clic s’élargit avec la largeur visible de la voie (au moins 16 px, sinon demi-largeur à l’écran + 8 px). Un point n’est prioritaire que s’il est cliqué presque exactement (10 px). Sinon la rue proche l’emporte. La surbrillance suit tous les tronçons du même nom, avec une épaisseur adaptée à la distance.
+- **Tous les bâtiments** sont cliquables. Un bâtiment nommé affiche son nom. Un bâtiment sans nom affiche seulement un type (« Maison », « Construction légère », « Bâtiment »…), marqué « type estimé » s’il est déduit de l’empreinte, avec usage, niveaux et hauteur des murs et leur provenance. **Aucun nom n’est attribué.**
+- **Surbrillance** testée en profondeur : coque dorée autour des triangles du bâtiment choisi, contours de zone, halo de repère. Elle ne traverse plus les maisons. Clic dans le vide, bouton de fermeture ou Échap : désélection.
+- **Fiche** : type, nom source, faits courts, extraits des Bibles entre guillemets avec référence de section, provenance.
+
+## Bibles documentaires
+
+`npm run data:bible` produit `public/data/bible-annotations.json` à partir des Bibles 01 et 03, sans les modifier. Chaque texte affiché est une **citation exacte** ; `npm run check:bible` vérifie les SHA-256 des six Bibles et la présence mot pour mot des 172 citations.
+
+- 56 des 73 noms de voies OSM figurent dans le référentiel des voies de la Bible 01 (§4.1). Quatre écarts de graphie sont affichés sans être tranchés : Rue Basse de Poussay / Rue Basse-de-Poussey, Rue des Cotterets / Rue des Cottrets, Rue Patris / Rue Patris-de-Breuil, Rue du Pont Bancelin / Rue du Pot-Bancelin. Le nom OSM reste le titre.
+- Secteurs Poussey et Les Granges (§7.13), notes de voirie (§7, §9, §11, §12, §14, §20) et 37 lieux-dits OSM rapprochés du tableau §16 par normalisation du nom (accents, tirets, articles), avec type et niveau de confiance.
+- Onze équipements nommés reçoivent le contexte des Bibles 01 et 03 : Saint-Denis, mairie, salles, IME, Glacière, Parc de l’Aérodrome, stade, écoles.
+- **Gué de la Chapelle** : seul repère ajouté. La Bible 01 (§14.1) le situe à « l’angle RD619 / D160 vers Pars-lès-Romilly ». Le point est calculé à l’unique intersection des tracés OSM de l’avenue du Général-de-Gaulle et de la rue de la Chapelle, où part la rue Victor-Hugo (D 160). Il est présenté comme un site historique transformé : mare et chapelle ont disparu.
+- Non placés, faute de géométrie fiable : noms de la Bible sans tracé OSM (Chemin du Bout des Ruelles, Rue de la Zone-Industrielle…), adresses (Hôtel des Granges, presbytère), croix, moulin, ancienne gare et passage à niveau (la rue du Général-Leclerc ne touche pas la voie ferrée dans l’instantané OSM).
+
+## Portabilité future
+
+Géométrie source, métadonnées et rendu restent séparés. Les données sont dans `public/data/`, le catalogue cliquable et ses annotations dans `cartography.js` et `bible-annotations.json`, les effets Three.js (shaders, palettes) dans `art.js`. Les identifiants stables (ways OSM, `cleabs` IGN, `bible01:…`) sont conservés. Aucun effet graphique ne porte d’information géographique.
+
+---
+
+# Notes V1.3 — 24 septembre 2026 (historique)
 
 Cette passe continue directement la V1.2. Aucun changement des coordonnées sources, de la projection, des empreintes OSM, de la voirie, du rail, du contour communal ou des enrichissements IGN. Les quatre fichiers de référence sont vérifiés par SHA-256.
 

@@ -15,7 +15,7 @@
     <button id="labels" aria-pressed="true">Noms des lieux</button>
     <button id="reset" title="Revenir à la vue initiale">⌖ <span>Recentrer la vue</span></button>
   </nav>
-  <aside id="selection" aria-label="Lieu sélectionné" hidden><button id="selection-close" aria-label="Fermer la sélection">×</button><p id="selection-kind"></p><h2 id="selection-title"></h2><p id="selection-note"></p></aside>
+  <aside id="selection" aria-label="Lieu sélectionné" aria-live="polite" hidden><button id="selection-close" aria-label="Fermer la sélection">×</button><p id="selection-kind"></p><h2 id="selection-title"></h2><ul id="selection-facts"></ul><div id="selection-quotes"></div><p id="selection-note"></p></aside>
   <div id="labels-layer"></div>
   <div id="loading" role="status"><div class="spinner"></div><strong>Le village prend forme</strong><span>Chargement de la maquette locale…</span></div>
   <div class="compass" title="Orientation du nord"><span>N</span><div id="north">↑</div></div>
