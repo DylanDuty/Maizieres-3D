@@ -2,679 +2,1165 @@
   "note": "Limites de plausibilité appliquées au rendu uniquement ; valeurs IGN sources inchangées.",
   "adjustments": [
     {
-      "osmId": "way/228578699",
-      "ignId": "BATIMENT0000000300132092",
-      "widthM": 4.47,
-      "sourceRoofHeight": 4.1,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.5
+      "id": "BATIMENT0000000065310426",
+      "osmId": null,
+      "widthM": 5.59,
+      "sourceRoofHeight": 8.7,
+      "renderedRoofHeight": 4.75,
+      "floors": null,
+      "wallHeight": 4.6
     },
     {
-      "osmId": "way/499690359",
-      "ignId": "BATIMENT0000002006956398",
-      "widthM": 26.09,
-      "sourceRoofHeight": 4.2,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 4.2
-    },
-    {
-      "osmId": "way/549959320",
-      "ignId": "BATIMENT0000000301150899",
-      "widthM": 41.27,
-      "sourceRoofHeight": 4.4,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 13
-    },
-    {
-      "osmId": "way/588789596",
-      "ignId": "BATIMENT0000000301148914",
-      "widthM": 8.57,
+      "id": "BATIMENT0000000238874567",
+      "osmId": null,
+      "widthM": 14.74,
       "sourceRoofHeight": 5.1,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.2
-    },
-    {
-      "osmId": "way/588789614",
-      "ignId": "BATIMENT0000000301148613",
-      "widthM": 15.75,
-      "sourceRoofHeight": 5.1,
-      "renderedRoofHeight": 4.3,
-      "floors": 2,
-      "wallHeight": 3.3
-    },
-    {
-      "osmId": "way/588789618",
-      "ignId": "BATIMENT0000000301148572",
-      "widthM": 9.44,
-      "sourceRoofHeight": 4.3,
-      "renderedRoofHeight": 3.2,
-      "floors": 1,
-      "wallHeight": 1.9
-    },
-    {
-      "osmId": "way/588789642",
-      "ignId": "BATIMENT0000000301148575",
-      "widthM": 9.43,
-      "sourceRoofHeight": 4.8,
-      "renderedRoofHeight": 3.6,
-      "floors": 2,
-      "wallHeight": 2.6
-    },
-    {
-      "osmId": "way/588789645",
-      "ignId": "BATIMENT0000000301148546",
-      "widthM": 2.73,
-      "sourceRoofHeight": 4.6,
-      "renderedRoofHeight": 2.32,
-      "floors": null,
-      "wallHeight": 2.6
-    },
-    {
-      "osmId": "way/588789697",
-      "ignId": "BATIMENT0000000301151944",
-      "widthM": 9.16,
-      "sourceRoofHeight": 3.7,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.5
-    },
-    {
-      "osmId": "way/588789718",
-      "ignId": "BATIMENT0000000301151982",
-      "widthM": 10.97,
-      "sourceRoofHeight": 4.4,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 2.7
-    },
-    {
-      "osmId": "way/588789730",
-      "ignId": "BATIMENT0000000301150005",
-      "widthM": 12.57,
-      "sourceRoofHeight": 4.2,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 4.3
-    },
-    {
-      "osmId": "way/588789734",
-      "ignId": "BATIMENT0000000301149512",
-      "widthM": 16.2,
-      "sourceRoofHeight": 6.5,
-      "renderedRoofHeight": 3.2,
-      "floors": null,
-      "wallHeight": 2.2
-    },
-    {
-      "osmId": "way/588789788",
-      "ignId": "BATIMENT0000000301148808",
-      "widthM": 8.59,
-      "sourceRoofHeight": 3.7,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.1
-    },
-    {
-      "osmId": "way/588789894",
-      "ignId": "BATIMENT0000000301149074",
-      "widthM": 10.21,
-      "sourceRoofHeight": 3.9,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 4.5
-    },
-    {
-      "osmId": "way/588789910",
-      "ignId": "BATIMENT0000000301149953",
-      "widthM": 8.93,
-      "sourceRoofHeight": 4.2,
-      "renderedRoofHeight": 4,
-      "floors": 2,
-      "wallHeight": 3
-    },
-    {
-      "osmId": "way/588789994",
-      "ignId": "BATIMENT0000000301149356",
-      "widthM": 15.11,
-      "sourceRoofHeight": 5,
-      "renderedRoofHeight": 3.2,
-      "floors": null,
-      "wallHeight": 2.1
-    },
-    {
-      "osmId": "way/588790014",
-      "ignId": "BATIMENT0000000301148660",
-      "widthM": 10.49,
-      "sourceRoofHeight": 4.2,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.8
-    },
-    {
-      "osmId": "way/588790029",
-      "ignId": "BATIMENT0000000301151947",
-      "widthM": 10.83,
-      "sourceRoofHeight": 4.7,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.9
-    },
-    {
-      "osmId": "way/588791328",
-      "ignId": "BATIMENT0000000301151777",
-      "widthM": 15.7,
-      "sourceRoofHeight": 4,
-      "renderedRoofHeight": 3.2,
-      "floors": null,
-      "wallHeight": 2
-    },
-    {
-      "osmId": "way/588791331",
-      "ignId": "BATIMENT0000000301149585",
-      "widthM": 14.35,
-      "sourceRoofHeight": 4.1,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.5
-    },
-    {
-      "osmId": "way/588791344",
-      "ignId": "BATIMENT0000002006956382",
-      "widthM": 15.63,
-      "sourceRoofHeight": 3.7,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 2.7
-    },
-    {
-      "osmId": "way/588791475",
-      "ignId": "BATIMENT0000000301149469",
-      "widthM": 6.51,
-      "sourceRoofHeight": 3.8,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.6
-    },
-    {
-      "osmId": "way/588791622",
-      "ignId": "BATIMENT0000000301149142",
-      "widthM": 9.85,
-      "sourceRoofHeight": 4.4,
-      "renderedRoofHeight": 4.3,
-      "floors": 2,
-      "wallHeight": 3.3
-    },
-    {
-      "osmId": "way/588791625",
-      "ignId": "BATIMENT0000000301149919",
-      "widthM": 8.26,
-      "sourceRoofHeight": 4.2,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 5.3
-    },
-    {
-      "osmId": "way/588791635",
-      "ignId": "BATIMENT0000000325110384",
-      "widthM": 8.73,
-      "sourceRoofHeight": 4.7,
-      "renderedRoofHeight": 4.2,
-      "floors": 2,
-      "wallHeight": 3.2
-    },
-    {
-      "osmId": "way/588791649",
-      "ignId": "BATIMENT0000000009358948",
-      "widthM": 13.96,
-      "sourceRoofHeight": 5.9,
-      "renderedRoofHeight": 5,
-      "floors": null,
-      "wallHeight": 4
-    },
-    {
-      "osmId": "way/588791680",
-      "ignId": "BATIMENT0000000301148587",
-      "widthM": 16.41,
-      "sourceRoofHeight": 4.4,
-      "renderedRoofHeight": 3.2,
-      "floors": 1,
-      "wallHeight": 2
-    },
-    {
-      "osmId": "way/588791685",
-      "ignId": "BATIMENT0000000301149533",
-      "widthM": 11.79,
-      "sourceRoofHeight": 4,
-      "renderedRoofHeight": 3.6,
-      "floors": 1,
-      "wallHeight": 2.6
-    },
-    {
-      "osmId": "way/588791703",
-      "ignId": "BATIMENT0000000292129073",
-      "widthM": 12.75,
-      "sourceRoofHeight": 4,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 2.9
-    },
-    {
-      "osmId": "way/588791794",
-      "ignId": "BATIMENT0000000301148820",
-      "widthM": 11.93,
-      "sourceRoofHeight": 3.8,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 4.2
-    },
-    {
-      "osmId": "way/588791813",
-      "ignId": "BATIMENT0000000301148573",
-      "widthM": 13.13,
-      "sourceRoofHeight": 4.6,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.4
-    },
-    {
-      "osmId": "way/588791822",
-      "ignId": "BATIMENT0000000301149127",
-      "widthM": 9.03,
-      "sourceRoofHeight": 3.9,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 6.3
-    },
-    {
-      "osmId": "way/588791845",
-      "ignId": "BATIMENT0000000301151758",
-      "widthM": 9.04,
-      "sourceRoofHeight": 4.6,
-      "renderedRoofHeight": 3.6,
-      "floors": 1,
-      "wallHeight": 2.6
-    },
-    {
-      "osmId": "way/588791864",
-      "ignId": "BATIMENT0000000301149926",
-      "widthM": 26,
-      "sourceRoofHeight": 6.4,
-      "renderedRoofHeight": 4.8,
-      "floors": 3,
-      "wallHeight": 3.8
-    },
-    {
-      "osmId": "way/588791868",
-      "ignId": "BATIMENT0000000325110286",
-      "widthM": 16.43,
-      "sourceRoofHeight": 3.8,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.8
-    },
-    {
-      "osmId": "way/588791873",
-      "ignId": "BATIMENT0000000301149921",
-      "widthM": 11.62,
-      "sourceRoofHeight": 3.8,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 4.4
-    },
-    {
-      "osmId": "way/588792025",
-      "ignId": "BATIMENT0000000301148562",
-      "widthM": 10.19,
-      "sourceRoofHeight": 3.5,
-      "renderedRoofHeight": 3.4,
-      "floors": 1,
-      "wallHeight": 2.4
-    },
-    {
-      "osmId": "way/588792040",
-      "ignId": "BATIMENT0000000301148729",
-      "widthM": 7.52,
-      "sourceRoofHeight": 3.7,
-      "renderedRoofHeight": 3.3,
-      "floors": 1,
-      "wallHeight": 2.3
-    },
-    {
-      "osmId": "way/588792144",
-      "ignId": "BATIMENT0000000301149322",
-      "widthM": 8.08,
-      "sourceRoofHeight": 5.3,
-      "renderedRoofHeight": 5.2,
-      "floors": 2,
-      "wallHeight": 4.2
-    },
-    {
-      "osmId": "way/588792147",
-      "ignId": "BATIMENT0000000301148690",
-      "widthM": 15.25,
-      "sourceRoofHeight": 3.7,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.6
-    },
-    {
-      "osmId": "way/588792166",
-      "ignId": "BATIMENT0000000301148806",
-      "widthM": 6.54,
-      "sourceRoofHeight": 3.9,
       "renderedRoofHeight": 3.5,
-      "floors": 1,
+      "floors": null,
       "wallHeight": 2.5
     },
     {
-      "osmId": "way/588792235",
-      "ignId": "BATIMENT0000000301148953",
-      "widthM": 21.09,
-      "sourceRoofHeight": 4.3,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.6
-    },
-    {
-      "osmId": "way/588792246",
-      "ignId": "BATIMENT0000000301150017",
-      "widthM": 16.1,
-      "sourceRoofHeight": 4.1,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 2.8
-    },
-    {
-      "osmId": "way/588792333",
-      "ignId": "BATIMENT0000000325110377",
-      "widthM": 8.95,
-      "sourceRoofHeight": 4.3,
-      "renderedRoofHeight": 4.2,
-      "floors": 2,
-      "wallHeight": 3.2
-    },
-    {
-      "osmId": "way/588792479",
-      "ignId": "BATIMENT0000000301148863",
-      "widthM": 21.91,
-      "sourceRoofHeight": 3.8,
+      "id": "BATIMENT0000000292129072",
+      "osmId": null,
+      "widthM": 8.12,
+      "sourceRoofHeight": 7.3,
       "renderedRoofHeight": 3.6,
       "floors": null,
       "wallHeight": 2.6
     },
     {
-      "osmId": "way/588792511",
-      "ignId": "BATIMENT0000000325110374",
-      "widthM": 9.02,
-      "sourceRoofHeight": 4.4,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 2.8
-    },
-    {
-      "osmId": "way/588792536",
-      "ignId": "BATIMENT0000000301149986",
-      "widthM": 8.64,
+      "id": "BATIMENT0000000292129073",
+      "osmId": "way/588791703",
+      "widthM": 13.38,
       "sourceRoofHeight": 4,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.2
-    },
-    {
-      "osmId": "way/588792566",
-      "ignId": "BATIMENT0000000301149590",
-      "widthM": 9.6,
-      "sourceRoofHeight": 4.2,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.9
-    },
-    {
-      "osmId": "way/588792575",
-      "ignId": "BATIMENT0000000301149773",
-      "widthM": 15.65,
-      "sourceRoofHeight": 3.7,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 4
-    },
-    {
-      "osmId": "way/588792712",
-      "ignId": "BATIMENT0000000301148553",
-      "widthM": 13.35,
-      "sourceRoofHeight": 3.7,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.4
-    },
-    {
-      "osmId": "way/588792733",
-      "ignId": "BATIMENT0000000301149952",
-      "widthM": 7.43,
-      "sourceRoofHeight": 4.8,
-      "renderedRoofHeight": 3.6,
-      "floors": 1,
-      "wallHeight": 2.6
-    },
-    {
-      "osmId": "way/588792762",
-      "ignId": "BATIMENT0000000301151773",
-      "widthM": 14.43,
-      "sourceRoofHeight": 4.1,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.5
-    },
-    {
-      "osmId": "way/588792843",
-      "ignId": "BATIMENT0000000301149087",
-      "widthM": 21.82,
-      "sourceRoofHeight": 5.6,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 5.3
-    },
-    {
-      "osmId": "way/588792949",
-      "ignId": "BATIMENT0000000301148949",
-      "widthM": 10.02,
-      "sourceRoofHeight": 4.1,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 3.6
-    },
-    {
-      "osmId": "way/588792957",
-      "ignId": "BATIMENT0000000301148861",
-      "widthM": 4.38,
-      "sourceRoofHeight": 4.5,
       "renderedRoofHeight": 3.65,
       "floors": 1,
       "wallHeight": 2.9
     },
     {
-      "osmId": "way/588792972",
-      "ignId": "BATIMENT0000000301149082",
-      "widthM": 8.35,
-      "sourceRoofHeight": 4.4,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 4.3
+      "id": "BATIMENT0000000292129075",
+      "osmId": null,
+      "widthM": 6.41,
+      "sourceRoofHeight": 5.3,
+      "renderedRoofHeight": 4.2,
+      "floors": null,
+      "wallHeight": 3.2
     },
     {
-      "osmId": "way/588792991",
-      "ignId": "BATIMENT0000000301149650",
-      "widthM": 11.33,
-      "sourceRoofHeight": 4.1,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 4.4
-    },
-    {
-      "osmId": "way/588793023",
-      "ignId": "BATIMENT0000000301149345",
-      "widthM": 12.09,
-      "sourceRoofHeight": 3.8,
+      "id": "BATIMENT0000000292129101",
+      "osmId": "way/1303286651",
+      "widthM": 12.32,
+      "sourceRoofHeight": 4.2,
       "renderedRoofHeight": 3.6,
-      "floors": 1,
+      "floors": null,
       "wallHeight": 2.6
     },
     {
-      "osmId": "way/588793047",
-      "ignId": "BATIMENT0000000301148869",
-      "widthM": 14.77,
-      "sourceRoofHeight": 4.4,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 4.1
+      "id": "BATIMENT0000000292129102",
+      "osmId": "way/588792407",
+      "widthM": 18.16,
+      "sourceRoofHeight": 3.4,
+      "renderedRoofHeight": 3.2,
+      "floors": null,
+      "wallHeight": 1.6
     },
     {
-      "osmId": "way/588793084",
-      "ignId": "BATIMENT0000000301148709",
-      "widthM": 18.23,
-      "sourceRoofHeight": 5,
-      "renderedRoofHeight": 4.3,
-      "floors": 3,
-      "wallHeight": 3.3
+      "id": "BATIMENT0000000292129106",
+      "osmId": "way/1303286650",
+      "widthM": 11.42,
+      "sourceRoofHeight": 3.7,
+      "renderedRoofHeight": 3.3,
+      "floors": null,
+      "wallHeight": 2.3
     },
     {
-      "osmId": "way/588793130",
-      "ignId": "BATIMENT0000000301148829",
-      "widthM": 28.2,
-      "sourceRoofHeight": 8.1,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 5.6
+      "id": "BATIMENT0000000292129107",
+      "osmId": "way/588791719",
+      "widthM": 11.98,
+      "sourceRoofHeight": 3.5,
+      "renderedRoofHeight": 3.3,
+      "floors": null,
+      "wallHeight": 2.3
     },
     {
+      "id": "BATIMENT0000000292129117",
       "osmId": "way/588793142",
-      "ignId": "BATIMENT0000000292129117",
-      "widthM": 9.65,
+      "widthM": 13.28,
       "sourceRoofHeight": 5.3,
       "renderedRoofHeight": 3.3,
       "floors": 1,
       "wallHeight": 2.3
     },
     {
-      "osmId": "way/588793151",
-      "ignId": "BATIMENT0000000301149789",
-      "widthM": 10.03,
-      "sourceRoofHeight": 3.9,
+      "id": "BATIMENT0000000292129144",
+      "osmId": "way/588792258",
+      "widthM": 19.09,
+      "sourceRoofHeight": 5.7,
       "renderedRoofHeight": 3.65,
       "floors": 1,
-      "wallHeight": 3.6
+      "wallHeight": 3.5
     },
     {
-      "osmId": "way/588793174",
-      "ignId": "BATIMENT0000000301149783",
-      "widthM": 9.22,
-      "sourceRoofHeight": 4.5,
-      "renderedRoofHeight": 4.4,
-      "floors": 2,
-      "wallHeight": 3.4
-    },
-    {
-      "osmId": "way/588793176",
-      "ignId": "BATIMENT0000000301149618",
-      "widthM": 9.3,
-      "sourceRoofHeight": 3.9,
+      "id": "BATIMENT0000000300132092",
+      "osmId": "way/228578699",
+      "widthM": 4.51,
+      "sourceRoofHeight": 4.1,
       "renderedRoofHeight": 3.65,
       "floors": 1,
-      "wallHeight": 4
+      "wallHeight": 3.5
     },
     {
-      "osmId": "way/588793199",
-      "ignId": "BATIMENT0000000301149769",
-      "widthM": 6.8,
-      "sourceRoofHeight": 4.7,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 2.7
-    },
-    {
-      "osmId": "way/588793210",
-      "ignId": "BATIMENT0000000301149424",
-      "widthM": 14.57,
-      "sourceRoofHeight": 5,
-      "renderedRoofHeight": 3.6,
+      "id": "BATIMENT0000000301148546",
+      "osmId": "way/588789645",
+      "widthM": 2.44,
+      "sourceRoofHeight": 4.6,
+      "renderedRoofHeight": 2.08,
       "floors": null,
       "wallHeight": 2.6
     },
     {
-      "osmId": "way/588793213",
-      "ignId": "BATIMENT0000000301149651",
-      "widthM": 6.71,
-      "sourceRoofHeight": 4,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 7.2
-    },
-    {
-      "osmId": "way/588793235",
-      "ignId": "BATIMENT0000000301149974",
-      "widthM": 7.67,
-      "sourceRoofHeight": 4.1,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 2.8
-    },
-    {
-      "osmId": "way/588793291",
-      "ignId": "BATIMENT0000000301149478",
-      "widthM": 9.4,
-      "sourceRoofHeight": 3.7,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 4.4
-    },
-    {
-      "osmId": "way/588793347",
-      "ignId": "BATIMENT0000000301149957",
-      "widthM": 11.45,
-      "sourceRoofHeight": 5.1,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 2.8
-    },
-    {
-      "osmId": "way/588793355",
-      "ignId": "BATIMENT0000000325110369",
-      "widthM": 9.75,
-      "sourceRoofHeight": 5.2,
-      "renderedRoofHeight": 4.1,
-      "floors": 2,
-      "wallHeight": 3.1
-    },
-    {
-      "osmId": "way/588793544",
-      "ignId": "BATIMENT0000000301148683",
-      "widthM": 10.44,
-      "sourceRoofHeight": 4,
-      "renderedRoofHeight": 3.65,
-      "floors": 1,
-      "wallHeight": 4.7
-    },
-    {
+      "id": "BATIMENT0000000301148551",
       "osmId": "way/588793649",
-      "ignId": "BATIMENT0000000301148551",
-      "widthM": 12.74,
+      "widthM": 12.97,
       "sourceRoofHeight": 7.8,
       "renderedRoofHeight": 4.6,
       "floors": null,
       "wallHeight": 3.6
     },
     {
+      "id": "BATIMENT0000000301148553",
+      "osmId": "way/588792712",
+      "widthM": 13.2,
+      "sourceRoofHeight": 3.7,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.4
+    },
+    {
+      "id": "BATIMENT0000000301148562",
+      "osmId": "way/588792025",
+      "widthM": 10.27,
+      "sourceRoofHeight": 3.5,
+      "renderedRoofHeight": 3.4,
+      "floors": 1,
+      "wallHeight": 2.4
+    },
+    {
+      "id": "BATIMENT0000000301148572",
+      "osmId": "way/588789618",
+      "widthM": 9.98,
+      "sourceRoofHeight": 4.3,
+      "renderedRoofHeight": 3.2,
+      "floors": 1,
+      "wallHeight": 1.9
+    },
+    {
+      "id": "BATIMENT0000000301148573",
+      "osmId": "way/588791813",
+      "widthM": 13.11,
+      "sourceRoofHeight": 4.6,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.4
+    },
+    {
+      "id": "BATIMENT0000000301148575",
+      "osmId": "way/588789642",
+      "widthM": 9.25,
+      "sourceRoofHeight": 4.8,
+      "renderedRoofHeight": 3.6,
+      "floors": 2,
+      "wallHeight": 2.6
+    },
+    {
+      "id": "BATIMENT0000000301148587",
+      "osmId": "way/588791680",
+      "widthM": 16.23,
+      "sourceRoofHeight": 4.4,
+      "renderedRoofHeight": 3.2,
+      "floors": 1,
+      "wallHeight": 2
+    },
+    {
+      "id": "BATIMENT0000000301148613",
+      "osmId": "way/588789614",
+      "widthM": 15.72,
+      "sourceRoofHeight": 5.1,
+      "renderedRoofHeight": 4.3,
+      "floors": 2,
+      "wallHeight": 3.3
+    },
+    {
+      "id": "BATIMENT0000000301148627",
+      "osmId": "way/588792377",
+      "widthM": 6.33,
+      "sourceRoofHeight": 3.7,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.2
+    },
+    {
+      "id": "BATIMENT0000000301148660",
+      "osmId": "way/588790014",
+      "widthM": 10.08,
+      "sourceRoofHeight": 4.2,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.8
+    },
+    {
+      "id": "BATIMENT0000000301148683",
+      "osmId": "way/588793544",
+      "widthM": 9.88,
+      "sourceRoofHeight": 4,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.7
+    },
+    {
+      "id": "BATIMENT0000000301148690",
+      "osmId": "way/588792147",
+      "widthM": 15.28,
+      "sourceRoofHeight": 3.7,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.6
+    },
+    {
+      "id": "BATIMENT0000000301148709",
+      "osmId": "way/588793084",
+      "widthM": 18.37,
+      "sourceRoofHeight": 5,
+      "renderedRoofHeight": 4.3,
+      "floors": 3,
+      "wallHeight": 3.3
+    },
+    {
+      "id": "BATIMENT0000000301148729",
+      "osmId": "way/588792040",
+      "widthM": 7.45,
+      "sourceRoofHeight": 3.7,
+      "renderedRoofHeight": 3.3,
+      "floors": 1,
+      "wallHeight": 2.3
+    },
+    {
+      "id": "BATIMENT0000000301148767",
+      "osmId": "way/588793026",
+      "widthM": 4.99,
+      "sourceRoofHeight": 3.9,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.4
+    },
+    {
+      "id": "BATIMENT0000000301148793",
+      "osmId": "way/588792782",
+      "widthM": 9.66,
+      "sourceRoofHeight": 4,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.5
+    },
+    {
+      "id": "BATIMENT0000000301148794",
+      "osmId": "way/588792782",
+      "widthM": 6.56,
+      "sourceRoofHeight": 4.2,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.4
+    },
+    {
+      "id": "BATIMENT0000000301148797",
+      "osmId": "way/588792782",
+      "widthM": 4.07,
+      "sourceRoofHeight": 3.6,
+      "renderedRoofHeight": 3.46,
+      "floors": null,
+      "wallHeight": 3.3
+    },
+    {
+      "id": "BATIMENT0000000301148806",
+      "osmId": "way/588792166",
+      "widthM": 6.4,
+      "sourceRoofHeight": 3.9,
+      "renderedRoofHeight": 3.5,
+      "floors": 1,
+      "wallHeight": 2.5
+    },
+    {
+      "id": "BATIMENT0000000301148808",
+      "osmId": "way/588789788",
+      "widthM": 8.31,
+      "sourceRoofHeight": 3.7,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.1
+    },
+    {
+      "id": "BATIMENT0000000301148820",
+      "osmId": "way/588791794",
+      "widthM": 9.61,
+      "sourceRoofHeight": 3.8,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.2
+    },
+    {
+      "id": "BATIMENT0000000301148829",
+      "osmId": "way/588793130",
+      "widthM": 28.3,
+      "sourceRoofHeight": 8.1,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 5.6
+    },
+    {
+      "id": "BATIMENT0000000301148832",
+      "osmId": "way/588789604",
+      "widthM": 8.06,
+      "sourceRoofHeight": 4.5,
+      "renderedRoofHeight": 4.4,
+      "floors": 2,
+      "wallHeight": 3.4
+    },
+    {
+      "id": "BATIMENT0000000301148861",
+      "osmId": "way/588792957",
+      "widthM": 4.2,
+      "sourceRoofHeight": 4.5,
+      "renderedRoofHeight": 3.57,
+      "floors": 1,
+      "wallHeight": 2.9
+    },
+    {
+      "id": "BATIMENT0000000301148863",
+      "osmId": "way/588792479",
+      "widthM": 21.9,
+      "sourceRoofHeight": 3.8,
+      "renderedRoofHeight": 3.6,
+      "floors": null,
+      "wallHeight": 2.6
+    },
+    {
+      "id": "BATIMENT0000000301148869",
+      "osmId": "way/588793047",
+      "widthM": 14.69,
+      "sourceRoofHeight": 4.4,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.1
+    },
+    {
+      "id": "BATIMENT0000000301148914",
+      "osmId": "way/588789596",
+      "widthM": 8.66,
+      "sourceRoofHeight": 5.1,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.2
+    },
+    {
+      "id": "BATIMENT0000000301148929",
+      "osmId": "way/588792905",
+      "widthM": 13.99,
+      "sourceRoofHeight": 5.5,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.6
+    },
+    {
+      "id": "BATIMENT0000000301148949",
+      "osmId": "way/588792949",
+      "widthM": 10.06,
+      "sourceRoofHeight": 4.1,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.6
+    },
+    {
+      "id": "BATIMENT0000000301148953",
+      "osmId": "way/588792235",
+      "widthM": 23.38,
+      "sourceRoofHeight": 4.3,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.6
+    },
+    {
+      "id": "BATIMENT0000000301148954",
+      "osmId": null,
+      "widthM": 4.9,
+      "sourceRoofHeight": 6.5,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.2
+    },
+    {
+      "id": "BATIMENT0000000301148956",
+      "osmId": "way/588791746",
+      "widthM": 2.83,
+      "sourceRoofHeight": 3.6,
+      "renderedRoofHeight": 2.4,
+      "floors": null,
+      "wallHeight": 2.9
+    },
+    {
+      "id": "BATIMENT0000000301149074",
+      "osmId": "way/588789894",
+      "widthM": 9.62,
+      "sourceRoofHeight": 3.9,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.5
+    },
+    {
+      "id": "BATIMENT0000000301149082",
+      "osmId": "way/588792972",
+      "widthM": 8.39,
+      "sourceRoofHeight": 4.4,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.3
+    },
+    {
+      "id": "BATIMENT0000000301149087",
+      "osmId": "way/588792843",
+      "widthM": 21.49,
+      "sourceRoofHeight": 5.6,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 5.3
+    },
+    {
+      "id": "BATIMENT0000000301149127",
+      "osmId": "way/588791822",
+      "widthM": 8.92,
+      "sourceRoofHeight": 3.9,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 6.3
+    },
+    {
+      "id": "BATIMENT0000000301149142",
+      "osmId": "way/588791622",
+      "widthM": 9.93,
+      "sourceRoofHeight": 4.4,
+      "renderedRoofHeight": 4.3,
+      "floors": 2,
+      "wallHeight": 3.3
+    },
+    {
+      "id": "BATIMENT0000000301149239",
+      "osmId": "way/588793523",
+      "widthM": 17.54,
+      "sourceRoofHeight": 3.9,
+      "renderedRoofHeight": 3.8,
+      "floors": null,
+      "wallHeight": 2.8
+    },
+    {
+      "id": "BATIMENT0000000301149245",
+      "osmId": "way/588789877",
+      "widthM": 19.96,
+      "sourceRoofHeight": 5,
+      "renderedRoofHeight": 4.5,
+      "floors": 2,
+      "wallHeight": 3.5
+    },
+    {
+      "id": "BATIMENT0000000301149294",
+      "osmId": "way/588789588",
+      "widthM": 8.03,
+      "sourceRoofHeight": 5.7,
+      "renderedRoofHeight": 3.2,
+      "floors": 1,
+      "wallHeight": 2
+    },
+    {
+      "id": "BATIMENT0000000301149322",
+      "osmId": "way/588792144",
+      "widthM": 8.23,
+      "sourceRoofHeight": 5.3,
+      "renderedRoofHeight": 5.2,
+      "floors": 2,
+      "wallHeight": 4.2
+    },
+    {
+      "id": "BATIMENT0000000301149338",
+      "osmId": "way/588792275",
+      "widthM": 13.17,
+      "sourceRoofHeight": 3.8,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.6
+    },
+    {
+      "id": "BATIMENT0000000301149339",
+      "osmId": "way/588792275",
+      "widthM": 10.72,
+      "sourceRoofHeight": 4,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.2
+    },
+    {
+      "id": "BATIMENT0000000301149345",
+      "osmId": "way/588793023",
+      "widthM": 11.76,
+      "sourceRoofHeight": 3.8,
+      "renderedRoofHeight": 3.6,
+      "floors": 1,
+      "wallHeight": 2.6
+    },
+    {
+      "id": "BATIMENT0000000301149356",
+      "osmId": "way/588789994",
+      "widthM": 14.93,
+      "sourceRoofHeight": 5,
+      "renderedRoofHeight": 3.2,
+      "floors": null,
+      "wallHeight": 2.1
+    },
+    {
+      "id": "BATIMENT0000000301149368",
+      "osmId": "way/588792048",
+      "widthM": 4.68,
+      "sourceRoofHeight": 4.3,
+      "renderedRoofHeight": 3.97,
+      "floors": null,
+      "wallHeight": 4.4
+    },
+    {
+      "id": "BATIMENT0000000301149382",
+      "osmId": "way/588792495",
+      "widthM": 13.48,
+      "sourceRoofHeight": 4.8,
+      "renderedRoofHeight": 4.2,
+      "floors": 2,
+      "wallHeight": 3.2
+    },
+    {
+      "id": "BATIMENT0000000301149424",
+      "osmId": "way/588793210",
+      "widthM": 14.43,
+      "sourceRoofHeight": 5,
+      "renderedRoofHeight": 3.6,
+      "floors": null,
+      "wallHeight": 2.6
+    },
+    {
+      "id": "BATIMENT0000000301149469",
+      "osmId": "way/588791475",
+      "widthM": 6.48,
+      "sourceRoofHeight": 3.8,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.6
+    },
+    {
+      "id": "BATIMENT0000000301149478",
+      "osmId": "way/588793291",
+      "widthM": 9.48,
+      "sourceRoofHeight": 3.7,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.4
+    },
+    {
+      "id": "BATIMENT0000000301149512",
+      "osmId": "way/588789734",
+      "widthM": 16,
+      "sourceRoofHeight": 6.5,
+      "renderedRoofHeight": 3.2,
+      "floors": null,
+      "wallHeight": 2.2
+    },
+    {
+      "id": "BATIMENT0000000301149533",
+      "osmId": "way/588791685",
+      "widthM": 11.56,
+      "sourceRoofHeight": 4,
+      "renderedRoofHeight": 3.6,
+      "floors": 1,
+      "wallHeight": 2.6
+    },
+    {
+      "id": "BATIMENT0000000301149556",
+      "osmId": "way/588790081",
+      "widthM": 8.66,
+      "sourceRoofHeight": 3.9,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.6
+    },
+    {
+      "id": "BATIMENT0000000301149561",
+      "osmId": "way/588791985",
+      "widthM": 12.32,
+      "sourceRoofHeight": 4.6,
+      "renderedRoofHeight": 4.5,
+      "floors": null,
+      "wallHeight": 3.5
+    },
+    {
+      "id": "BATIMENT0000000301149562",
+      "osmId": "way/588791985",
+      "widthM": 9.07,
+      "sourceRoofHeight": 3.7,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.4
+    },
+    {
+      "id": "BATIMENT0000000301149568",
+      "osmId": "way/588793553",
+      "widthM": 7.63,
+      "sourceRoofHeight": 4,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.4
+    },
+    {
+      "id": "BATIMENT0000000301149585",
+      "osmId": "way/588791331",
+      "widthM": 14.06,
+      "sourceRoofHeight": 4.1,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.5
+    },
+    {
+      "id": "BATIMENT0000000301149590",
+      "osmId": "way/588792566",
+      "widthM": 9.5,
+      "sourceRoofHeight": 4.2,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.9
+    },
+    {
+      "id": "BATIMENT0000000301149618",
+      "osmId": "way/588793176",
+      "widthM": 9.26,
+      "sourceRoofHeight": 3.9,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4
+    },
+    {
+      "id": "BATIMENT0000000301149621",
+      "osmId": "way/588789923",
+      "widthM": 7.89,
+      "sourceRoofHeight": 4,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 6.5
+    },
+    {
+      "id": "BATIMENT0000000301149650",
+      "osmId": "way/588792991",
+      "widthM": 10.66,
+      "sourceRoofHeight": 4.1,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.4
+    },
+    {
+      "id": "BATIMENT0000000301149651",
+      "osmId": "way/588793213",
+      "widthM": 6.4,
+      "sourceRoofHeight": 4,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 7.2
+    },
+    {
+      "id": "BATIMENT0000000301149704",
+      "osmId": "way/588792916",
+      "widthM": 10.92,
+      "sourceRoofHeight": 4.2,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 2.8
+    },
+    {
+      "id": "BATIMENT0000000301149705",
+      "osmId": "way/588792916",
+      "widthM": 4.19,
+      "sourceRoofHeight": 5.8,
+      "renderedRoofHeight": 3.56,
+      "floors": 2,
+      "wallHeight": 2.7
+    },
+    {
+      "id": "BATIMENT0000000301149769",
+      "osmId": "way/588793199",
+      "widthM": 6.81,
+      "sourceRoofHeight": 4.7,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 2.7
+    },
+    {
+      "id": "BATIMENT0000000301149773",
+      "osmId": "way/588792575",
+      "widthM": 15.6,
+      "sourceRoofHeight": 3.7,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4
+    },
+    {
+      "id": "BATIMENT0000000301149783",
+      "osmId": "way/588793174",
+      "widthM": 9.27,
+      "sourceRoofHeight": 4.5,
+      "renderedRoofHeight": 4.4,
+      "floors": 2,
+      "wallHeight": 3.4
+    },
+    {
+      "id": "BATIMENT0000000301149789",
+      "osmId": "way/588793151",
+      "widthM": 9.96,
+      "sourceRoofHeight": 3.9,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.6
+    },
+    {
+      "id": "BATIMENT0000000301149876",
+      "osmId": "way/588792037",
+      "widthM": 8.02,
+      "sourceRoofHeight": 3.8,
+      "renderedRoofHeight": 3.6,
+      "floors": 1,
+      "wallHeight": 2.6
+    },
+    {
+      "id": "BATIMENT0000000301149900",
+      "osmId": "way/588791462",
+      "widthM": 12.26,
+      "sourceRoofHeight": 4.9,
+      "renderedRoofHeight": 4.5,
+      "floors": null,
+      "wallHeight": 3.5
+    },
+    {
+      "id": "BATIMENT0000000301149919",
+      "osmId": "way/588791625",
+      "widthM": 8.39,
+      "sourceRoofHeight": 4.2,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 5.3
+    },
+    {
+      "id": "BATIMENT0000000301149921",
+      "osmId": "way/588791873",
+      "widthM": 11.56,
+      "sourceRoofHeight": 3.8,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.4
+    },
+    {
+      "id": "BATIMENT0000000301149926",
+      "osmId": "way/588791864",
+      "widthM": 25.92,
+      "sourceRoofHeight": 6.4,
+      "renderedRoofHeight": 4.8,
+      "floors": 3,
+      "wallHeight": 3.8
+    },
+    {
+      "id": "BATIMENT0000000301149952",
+      "osmId": "way/588792733",
+      "widthM": 7.15,
+      "sourceRoofHeight": 4.8,
+      "renderedRoofHeight": 3.6,
+      "floors": 1,
+      "wallHeight": 2.6
+    },
+    {
+      "id": "BATIMENT0000000301149953",
+      "osmId": "way/588789910",
+      "widthM": 8.11,
+      "sourceRoofHeight": 4.2,
+      "renderedRoofHeight": 4,
+      "floors": 2,
+      "wallHeight": 3
+    },
+    {
+      "id": "BATIMENT0000000301149957",
+      "osmId": "way/588793347",
+      "widthM": 11.4,
+      "sourceRoofHeight": 5.1,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 2.8
+    },
+    {
+      "id": "BATIMENT0000000301149962",
+      "osmId": "way/588789710",
+      "widthM": 11.65,
+      "sourceRoofHeight": 4,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 2.9
+    },
+    {
+      "id": "BATIMENT0000000301149968",
+      "osmId": "way/588792768",
+      "widthM": 6.65,
+      "sourceRoofHeight": 4.5,
+      "renderedRoofHeight": 3.5,
+      "floors": null,
+      "wallHeight": 2.5
+    },
+    {
+      "id": "BATIMENT0000000301149969",
+      "osmId": "way/588792768",
+      "widthM": 10.19,
+      "sourceRoofHeight": 4.4,
+      "renderedRoofHeight": 3.5,
+      "floors": 1,
+      "wallHeight": 2.5
+    },
+    {
+      "id": "BATIMENT0000000301149974",
+      "osmId": "way/588793235",
+      "widthM": 7.68,
+      "sourceRoofHeight": 4.1,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 2.8
+    },
+    {
+      "id": "BATIMENT0000000301149986",
+      "osmId": "way/588792536",
+      "widthM": 8.75,
+      "sourceRoofHeight": 4,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.2
+    },
+    {
+      "id": "BATIMENT0000000301150005",
+      "osmId": "way/588789730",
+      "widthM": 12.56,
+      "sourceRoofHeight": 4.2,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.3
+    },
+    {
+      "id": "BATIMENT0000000301150017",
+      "osmId": "way/588792246",
+      "widthM": 16.05,
+      "sourceRoofHeight": 4.1,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 2.8
+    },
+    {
+      "id": "BATIMENT0000000301150048",
+      "osmId": "way/588792199",
+      "widthM": 7.53,
+      "sourceRoofHeight": 3.9,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.3
+    },
+    {
+      "id": "BATIMENT0000000301150899",
+      "osmId": "way/549959320",
+      "widthM": 41.46,
+      "sourceRoofHeight": 4.4,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 13
+    },
+    {
+      "id": "BATIMENT0000000301151758",
+      "osmId": "way/588791845",
+      "widthM": 8.61,
+      "sourceRoofHeight": 4.6,
+      "renderedRoofHeight": 3.6,
+      "floors": 1,
+      "wallHeight": 2.6
+    },
+    {
+      "id": "BATIMENT0000000301151760",
+      "osmId": "way/588793027",
+      "widthM": 11.01,
+      "sourceRoofHeight": 3.8,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.5
+    },
+    {
+      "id": "BATIMENT0000000301151773",
+      "osmId": "way/588792762",
+      "widthM": 9.06,
+      "sourceRoofHeight": 4.1,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.5
+    },
+    {
+      "id": "BATIMENT0000000301151777",
+      "osmId": "way/588791328",
+      "widthM": 15.39,
+      "sourceRoofHeight": 4,
+      "renderedRoofHeight": 3.2,
+      "floors": null,
+      "wallHeight": 2
+    },
+    {
+      "id": "BATIMENT0000000301151792",
+      "osmId": "way/588791756",
+      "widthM": 7.17,
+      "sourceRoofHeight": 3.7,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.1
+    },
+    {
+      "id": "BATIMENT0000000301151852",
+      "osmId": null,
+      "widthM": 5.64,
+      "sourceRoofHeight": 4.1,
+      "renderedRoofHeight": 3.2,
+      "floors": null,
+      "wallHeight": 2
+    },
+    {
+      "id": "BATIMENT0000000301151854",
+      "osmId": "way/588792137",
+      "widthM": 4.2,
+      "sourceRoofHeight": 4.4,
+      "renderedRoofHeight": 3.2,
+      "floors": null,
+      "wallHeight": 2
+    },
+    {
+      "id": "BATIMENT0000000301151888",
+      "osmId": "way/588791763",
+      "widthM": 9.27,
+      "sourceRoofHeight": 4.6,
+      "renderedRoofHeight": 3.8,
+      "floors": null,
+      "wallHeight": 2.8
+    },
+    {
+      "id": "BATIMENT0000000301151903",
+      "osmId": "way/588789921",
+      "widthM": 4.11,
+      "sourceRoofHeight": 3.3,
+      "renderedRoofHeight": 3.2,
+      "floors": null,
+      "wallHeight": 2.1
+    },
+    {
+      "id": "BATIMENT0000000301151944",
+      "osmId": "way/588789697",
+      "widthM": 9.04,
+      "sourceRoofHeight": 3.7,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.5
+    },
+    {
+      "id": "BATIMENT0000000301151947",
+      "osmId": "way/588790029",
+      "widthM": 10.87,
+      "sourceRoofHeight": 4.7,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.9
+    },
+    {
+      "id": "BATIMENT0000000301151982",
+      "osmId": "way/588789718",
+      "widthM": 10.95,
+      "sourceRoofHeight": 4.4,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 2.7
+    },
+    {
+      "id": "BATIMENT0000000325110286",
+      "osmId": "way/588791868",
+      "widthM": 16.76,
+      "sourceRoofHeight": 3.8,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 3.8
+    },
+    {
+      "id": "BATIMENT0000000325110369",
+      "osmId": "way/588793355",
+      "widthM": 10.29,
+      "sourceRoofHeight": 5.2,
+      "renderedRoofHeight": 4.1,
+      "floors": 2,
+      "wallHeight": 3.1
+    },
+    {
+      "id": "BATIMENT0000000325110374",
+      "osmId": "way/588792511",
+      "widthM": 9.22,
+      "sourceRoofHeight": 4.4,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 2.8
+    },
+    {
+      "id": "BATIMENT0000000325110377",
+      "osmId": "way/588792333",
+      "widthM": 9.33,
+      "sourceRoofHeight": 4.3,
+      "renderedRoofHeight": 4.2,
+      "floors": 2,
+      "wallHeight": 3.2
+    },
+    {
+      "id": "BATIMENT0000000325110384",
+      "osmId": "way/588791635",
+      "widthM": 9.86,
+      "sourceRoofHeight": 4.7,
+      "renderedRoofHeight": 4.2,
+      "floors": 2,
+      "wallHeight": 3.2
+    },
+    {
+      "id": "BATIMENT0000002006956382",
+      "osmId": "way/588791344",
+      "widthM": 15.75,
+      "sourceRoofHeight": 3.7,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 2.7
+    },
+    {
+      "id": "BATIMENT0000002006956398",
+      "osmId": "way/499690359",
+      "widthM": 23.8,
+      "sourceRoofHeight": 4.2,
+      "renderedRoofHeight": 3.65,
+      "floors": 1,
+      "wallHeight": 4.2
+    },
+    {
+      "id": "BATIMENT0000002207413362",
+      "osmId": null,
+      "widthM": 5.11,
+      "sourceRoofHeight": 4.6,
+      "renderedRoofHeight": 3.8,
+      "floors": null,
+      "wallHeight": 2.8
+    },
+    {
+      "id": "BATIMENT0000002220709449",
+      "osmId": null,
+      "widthM": 12.34,
+      "sourceRoofHeight": 6.7,
+      "renderedRoofHeight": 4.3,
+      "floors": null,
+      "wallHeight": 3.3
+    },
+    {
+      "id": "BATIMENT0000002223913204",
+      "osmId": null,
+      "widthM": 9.02,
+      "sourceRoofHeight": 6.5,
+      "renderedRoofHeight": 6.3,
+      "floors": null,
+      "wallHeight": 5.3
+    },
+    {
+      "id": "BATIMENT0000002292842881",
       "osmId": "way/1303286668",
-      "ignId": "BATIMENT0000002292842881",
-      "widthM": 15.84,
+      "widthM": 16.1,
       "sourceRoofHeight": 8.1,
       "renderedRoofHeight": 6.8,
       "floors": null,
       "wallHeight": 5.8
+    },
+    {
+      "id": "BATIMENT0000002330331436",
+      "osmId": null,
+      "widthM": 6.08,
+      "sourceRoofHeight": 6.1,
+      "renderedRoofHeight": 3.5,
+      "floors": null,
+      "wallHeight": 2.5
+    },
+    {
+      "id": "BATIMENT0000000009350368",
+      "osmId": null,
+      "widthM": 5.79,
+      "sourceRoofHeight": 8.3,
+      "renderedRoofHeight": 4,
+      "floors": null,
+      "wallHeight": 3
+    },
+    {
+      "id": "BATIMENT0000000009355138",
+      "osmId": null,
+      "widthM": 6.84,
+      "sourceRoofHeight": 5.5,
+      "renderedRoofHeight": 3.5,
+      "floors": null,
+      "wallHeight": 2.5
+    },
+    {
+      "id": "BATIMENT0000000009355208",
+      "osmId": null,
+      "widthM": 6.66,
+      "sourceRoofHeight": 8.7,
+      "renderedRoofHeight": 3.9,
+      "floors": null,
+      "wallHeight": 2.9
+    },
+    {
+      "id": "BATIMENT0000000009355325",
+      "osmId": null,
+      "widthM": 3.99,
+      "sourceRoofHeight": 3.5,
+      "renderedRoofHeight": 3.39,
+      "floors": null,
+      "wallHeight": 2.7
+    },
+    {
+      "id": "BATIMENT0000000009355510",
+      "osmId": "way/588791522",
+      "widthM": 11.51,
+      "sourceRoofHeight": 3.7,
+      "renderedRoofHeight": 3.2,
+      "floors": 1,
+      "wallHeight": 1.9
+    },
+    {
+      "id": "BATIMENT0000000009355568",
+      "osmId": null,
+      "widthM": 4.6,
+      "sourceRoofHeight": 8.9,
+      "renderedRoofHeight": 3.8,
+      "floors": null,
+      "wallHeight": 2.8
+    },
+    {
+      "id": "BATIMENT0000000009358948",
+      "osmId": "way/588791649",
+      "widthM": 16.45,
+      "sourceRoofHeight": 5.9,
+      "renderedRoofHeight": 5,
+      "floors": null,
+      "wallHeight": 4
     }
   ]
 }

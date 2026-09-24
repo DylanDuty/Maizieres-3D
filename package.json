@@ -1,6 +1,6 @@
 {
   "name": "maizieres-3d",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -18,7 +18,11 @@
     "check:interaction": "node scripts/check-interaction.mjs",
     "data:bible": "node scripts/prepare-bible.mjs",
     "check:bible": "node scripts/check-bible.mjs",
-    "check:all": "npm run check && npm run check:enrichment && npm run check:presentation && npm run check:interaction && npm run check:bible"
+    "check:all": "npm run check && npm run check:enrichment && npm run check:presentation && npm run check:interaction && npm run check:bible && npm run check:buildings",
+    "data:buildings": "node scripts/build-buildings.mjs",
+    "audit:buildings": "node scripts/audit-buildings.mjs",
+    "check:buildings": "node scripts/check-buildings.mjs",
+    "audit:density": "node scripts/check-density.mjs"
   },
   "dependencies": {
     "three": "0.180.0"

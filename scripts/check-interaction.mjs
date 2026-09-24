@@ -6,10 +6,11 @@ import {clipRing} from '../src/geometry.js';
 import {buildBuildings} from '../src/buildings.js';
 import {createCatalogue,featureAtFace,segmentDistance} from '../src/cartography.js';
 import {describe,KIND_LABELS} from '../src/selection.js';
+import {buildingItems} from '../src/building-source.js';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const data=read('public/data/maizieres.geojson'),enrichment=read('public/data/building-enrichment.json'),zones=read('public/data/named-zones.geojson'),bible=read('public/data/bible-annotations.json'),project=projection(data.metadata.origin),b=bounds(polygons(read('public/data/commune.geojson'),project).flat(2));
 const extent={minX:b.minX-150,maxX:b.maxX+150,minZ:b.minZ-150,maxZ:b.maxZ+150},items=[];
-for(const f of data.features.filter(f=>f.properties.building))for(const raw of polygons(f,project)){const bb=bounds(raw[0]),x=(bb.minX+bb.maxX)/2,z=(bb.minZ+bb.maxZ)/2;if(x<extent.minX||x>extent.maxX||z<extent.minZ||z>extent.maxZ)continue;const poly=raw.map(r=>clipRing(r,extent)).filter(r=>r.length>=3);if(poly.length)items.push({poly,t:f.properties,id:f.id});}
+items.push(...buildingItems(read('public/data/buildings.geojson'),project,extent).items);
 for(const f of data.features)if(f.geometry.type==='Point'&&['school','townhall','community_centre'].includes(f.properties.amenity)){const p=project(f.geometry.coordinates),building=items.find(b=>insidePoly(p,b.poly));if(building)building.t={...building.t,amenity:f.properties.amenity,name:f.properties.name};}
 const catalog=createCatalogue(data,enrichment,project,extent,items,zones,bible);
 for(const name of ['Rue Pasteur','Poussey','Église Saint-Denis','Zone Industrielle la Glacière'])assert(catalog.records.some(r=>r.name===name),name);
@@ -19,7 +20,7 @@ for(const r of catalog.records.filter(r=>r.type==='line'))for(const id of r.sour
 assert.equal(segmentDistance([5,4],[0,0],[10,0]),4);assert.equal(segmentDistance([3,4],[0,0],[0,0]),5);
 const scene=new THREE.Scene(),built=buildBuildings(scene,items,enrichment);scene.updateMatrixWorld(true);
 for(const mesh of built.pickMeshes){const ranges=mesh.userData.featureRanges;let end=0;for(const r of ranges){assert.equal(r.start,end);assert.equal(featureAtFace(ranges,r.start),r.id);assert.equal(featureAtFace(ranges,r.end-1),r.id);end=r.end;}assert.equal(end,mesh.geometry.getAttribute('position').count/3);assert.equal(featureAtFace(ranges,end),null);}
-const church=catalog.byId.get('way/588791993');assert(church&&church.type==='building');
+const church=catalog.records.find(r=>r.type==='building'&&r.name==='Église Saint-Denis');assert(church&&church.type==='building');
 const ray=new THREE.Raycaster(new THREE.Vector3(church.position[0],100,church.position[2]),new THREE.Vector3(0,-1,0));const hit=ray.intersectObjects(built.pickMeshes,false)[0];assert(hit);assert.equal(featureAtFace(hit.object.userData.featureRanges,hit.faceIndex),church.id);
 // V1.4: every building can be described, but an unnamed one only gets a type label, never a name.
 const osmNames=new Set([...data.features.map(f=>f.properties.name).filter(Boolean),'Mairie','École primaire','Salle communale']),labels=new Set(['Bâtiment',...Object.values(KIND_LABELS)]);

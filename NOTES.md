@@ -1,3 +1,51 @@
+# Notes V1.5 — exhaustivité du bâti, 24 septembre 2026
+
+Branche `opus/v1.5-buildings`, issue de `opus/v1.4`. Changement de priorité : la carte Three.js devient une référence géographique fidèle et exhaustive. Le rendu final sera fait dans Unreal Engine. Aucun travail graphique dans cette passe.
+
+## Diagnostic : d’où venaient les maisons manquantes
+
+Jusqu’à la V1.4, les empreintes venaient uniquement d’OSM. La BD TOPO ne servait qu’à enrichir les hauteurs d’environ 1 200 bâtiments OSM rapprochés. L’audit (`npm run audit:buildings`, `data-sources/building-audit.json`) montre quatre causes, par ordre d’importance :
+
+1. **Source** : l’instantané OSM repose surtout sur l’import cadastral (étiquettes `source` « cadastre-dgi-fr »). Dans la commune, il compte 1 817 bâtiments, contre 2 128 pour la BD TOPO. **134 bâtiments IGN n’ont aucun équivalent OSM** (moins de 10 % de leur surface recouverte), soit 10 560 m². Parmi eux, 61 entre 40 et 200 m² : des maisons, et 13 grands bâtiments. D’après leur date de saisie IGN, 43 datent de 2012, 37 de 2006 et 40 de 2019 à 2025, dont le bâtiment sportif de 2024 près du stade. Ils sont dispersés dans tout le bourg, aux Granges et à Poussey : 29 à plus de 60 m d’une rue nommée, 8 le long de l’avenue du Général-de-Gaulle, 7 rue du Général-Leclerc, 5 rue Georges-Clemenceau…
+2. **Segmentation** : dans 236 cas, un seul polygone OSM recouvre plusieurs bâtiments IGN. Ce sont surtout des maisons mitoyennes dessinées d’un seul bloc, rendues avec un seul toit : des « maisons » manquaient visuellement dans les rangées. L’inverse (plusieurs OSM pour un IGN) concerne 72 cas.
+3. **Traitement V1.4** : 54 empreintes OSM de la zone affichée disparaissaient sans être comptées. 23 mesuraient moins de 3 m² (filtre de surface). 31 étaient rondes ou très finement dessinées (silos, cuves) : `roofAxis` ignorait les côtés de moins de 1 m et le bâtiment était abandonné.
+4. **Rendu** : aucune perte. Tout bâtiment accepté par le traitement était dessiné. Le catalogue de clic excluait lui aussi les moins de 3 m².
+
+Filtres géographiques : l’emprise IGN (bbox 3,75–3,83 / 48,476–48,533, 2 489 objets pour une limite de requête de 5 000) couvre toute la zone affichée. Aucune perte par clipping, par MultiPolygon (tous les objets IGN ont une seule partie) ni par trou (un seul trou, correctement triangulé). Aucune géométrie invalide.
+
+## Nouvelle source de vérité
+
+**`public/data/buildings.geojson`**, décrit dans `docs/referentiel-bati.md` :
+
+- **IGN BD TOPO = géométrie principale** : les 2 329 bâtiments de la zone affichée (dont 2 128 dans la commune), géométrie inchangée, sans filtre ;
+- **OSM = complément et sémantique** : 162 empreintes absentes de la BD TOPO ajoutées (131 dans la commune, surtout de petits abris de moins de 20 m²). Noms, enseignes et types OSM sont rattachés à 2 027 bâtiments IGN ;
+- **2 491 bâtiments au total, dont 2 259 dans la commune**, tous rendus, aucun rejet. 2 260 ont un identifiant RNB, 1 829 une hauteur IGN utilisable.
+
+Cadastre : non disponible localement, et son téléchargement ainsi que ceux de la Géoplateforme IGN et du RNB sont refusés par la politique réseau de l’environnement. Le contrôle croisé cadastral reste à faire. `npm run data:ign` puis `npm run data:buildings` suffiront à rafraîchir le référentiel quand l’accès sera ouvert.
+
+## Changements de traitement
+
+- Plus aucun filtre de surface minimale. Le seul garde-fou (surface supérieure à 100 000 m²) est compté comme rejet ; il n’en existe aucun.
+- `roofAxis` retente avec tous les côtés quand aucun ne dépasse 1 m : les silos et cuves ronds sont rendus.
+- Toutes les parties d’un MultiPolygon deviennent des objets distincts (`id#n`). Anneaux intérieurs conservés.
+- Les rejets éventuels sont listés : `buildBuildings().rejected` et `buildingReference.rejected` dans `data-stats`.
+- L’église Saint-Denis est reconnue par sa correspondance OSM (`way/588791993` → `BATIMENT0000000301149566`, nature « Eglise » à l’IGN). Son modèle spécifique est conservé.
+- Un nom OSM porté par plusieurs empreintes IGN reste une seule fiche, avec toutes ses parties en surbrillance. Plusieurs enseignes dans un même bâtiment IGN sont toutes affichées (« Gémo · Gitem »).
+- La fiche d’un bâtiment indique la géométrie (« Empreinte IGN BD TOPO » ou « Empreinte OpenStreetMap seule ») et l’identifiant RNB.
+
+## Mode diagnostic
+
+`?diagnostic=provenance` colore les bâtiments par provenance, avec une légende : gris IGN et OSM, orange IGN avec OSM partiel, rouge IGN seul, bleu OSM seul. Mode destiné au développement.
+
+## Restent à vérifier
+
+- **96 empreintes OSM partiellement couvertes par l’IGN** (10–50 %), dont 26 avec plus de 25 m² non couverts (3 027 m² au total), listées avec leur position dans `osmPartialReview`. Il peut s’agir d’extensions absentes de la BD TOPO, de démolitions ou de tracés divergents.
+- Les **131 bâtiments OSM seuls** de la commune (88 de moins de 20 m²) peuvent être démolis depuis l’import cadastral : ils sont gardés et signalés en bleu.
+- Les bâtiments construits après la dernière saisie IGN et absents d’OSM ne peuvent pas être détectés sans cadastre ni imagerie récente.
+- Densité par rue (`npm run audit:density`, `data-sources/street-density.json`) : le Parc de l’Aérodrome (boulevard Antoine-de-Saint-Exupéry, avenue Philippe-Séguin) et le chemin de la Guide sont les secteurs les moins bâtis. C’est plausible (zone d’activités créée en 2012, chemin rural), mais à confirmer sur imagerie.
+
+---
+
 # Notes V1.4 — 24 septembre 2026
 
 La V1.4 part de la V1.3 (`main`, commit `676a312`) et des six Bibles documentaires (`docs/bibles/`). Aucun fichier géographique source n’est modifié : OSM, contour communal, enrichissement IGN, végétation IGN et zones nommées gardent leurs SHA-256. Projection, origine, empreintes, voirie, rail, haies, bois, hauteurs, étages, usages, matériaux et modèle de Saint-Denis sont conservés.

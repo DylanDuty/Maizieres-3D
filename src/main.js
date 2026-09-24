@@ -2,19 +2,20 @@ import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {projection,polygons,bounds,insidePoly} from './geo.js';
 import {buildLandscape} from './landscape.js';
-import {buildBuildings} from './buildings.js';
+import {buildBuildings,PROVENANCE_COLORS} from './buildings.js';
 import './style.css';
 import {benchmark} from './benchmark.js';
 import {qualitySettings} from './quality.js';
 import {createCatalogue} from './cartography.js';
 import {installSelection} from './selection.js';
+import {buildingItems} from './building-source.js';
 import {palette} from './art.js';
 const loading=document.querySelector('#loading');
 async function start(){
   const t0=performance.now();
-  const responses=await Promise.all(['maizieres.geojson','commune.geojson','building-enrichment.json','ign-landscape.geojson','named-zones.geojson','bible-annotations.json'].map(name=>fetch(`${import.meta.env.BASE_URL}data/${name}`)));
+  const responses=await Promise.all(['maizieres.geojson','commune.geojson','building-enrichment.json','ign-landscape.geojson','named-zones.geojson','bible-annotations.json','buildings.geojson'].map(name=>fetch(`${import.meta.env.BASE_URL}data/${name}`)));
   if(responses.some(r=>!r.ok))throw Error('Les données locales sont introuvables.');
-  const [data,boundary,enrichment,ignLandscape,namedZones,bible]=await Promise.all(responses.map(r=>r.json()));
+  const [data,boundary,enrichment,ignLandscape,namedZones,bible,buildingReference]=await Promise.all(responses.map(r=>r.json()));
   const project=projection(data.metadata.origin),boundaryPolys=polygons(boundary,project),b=bounds(boundaryPolys.flat(2));
   const extent={minX:b.minX-150,maxX:b.maxX+150,minZ:b.minZ-150,maxZ:b.maxZ+150};
   const scene=new THREE.Scene();scene.fog=new THREE.Fog(palette.horizon,5600,19000);
@@ -26,14 +27,17 @@ async function start(){
   const sun=new THREE.DirectionalLight(palette.sun,1.95);sun.position.set(-1300,2200,-900);sun.castShadow=true;sun.shadow.mapSize.set(quality.shadowSize,quality.shadowSize);Object.assign(sun.shadow.camera,{left:-2200,right:2200,top:2200,bottom:-2200,near:50,far:6000});sun.shadow.bias=-.00012;sun.shadow.normalBias=1.2;sun.shadow.intensity=.62;scene.add(sun.target);scene.add(sun,new THREE.HemisphereLight(palette.skyLight,palette.groundLight,.95));
   // Give the browser a frame to paint loading feedback before building static batches.
   await new Promise(resolve=>requestAnimationFrame(resolve));
-  const terrain=buildLandscape(scene,data,project,extent,ignLandscape);
+  // V1.5: building footprints come from the unified reference (IGN BD TOPO first, OSM complement).
+  const reference=buildingItems(buildingReference,project,extent),diagnostic=new URLSearchParams(location.search).get('diagnostic')==='provenance';
+  const terrain=buildLandscape(scene,data,project,extent,ignLandscape,reference.items);
   for(const f of data.features)if(f.geometry.type==='Point'&&['school','townhall','community_centre'].includes(f.properties.amenity)){const p=project(f.geometry.coordinates);const building=terrain.buildings.find(b=>insidePoly(p,b.poly));if(building){building.t={...building.t,amenity:f.properties.amenity,name:f.properties.name};}}
-  const buildings=buildBuildings(scene,terrain.buildings,enrichment);
+  const buildings=buildBuildings(scene,terrain.buildings,enrichment,{diagnostic});
+  if(diagnostic){const legend=document.createElement('div');legend.id='diagnostic-legend';legend.innerHTML=Object.entries({'ign+osm':'IGN et OSM','ign+osm-partiel':'IGN, OSM partiel','ign':'IGN seul','osm':'OSM seul'}).map(([k,v])=>`<span><i style="background:${PROVENANCE_COLORS[k]}"></i>${v} · ${reference.items.filter(i=>i.provenance===k).length}</span>`).join('');document.body.appendChild(legend);}
   // A fine administrative line distinguishes the real commune from the context rectangle.
   for(const poly of boundaryPolys){const pts=poly[0].map(([x,z])=>new THREE.Vector3(x,.4,z));const geo=new THREE.BufferGeometry().setFromPoints(pts);const line=new THREE.Line(geo,new THREE.LineDashedMaterial({color:'#e0d9bb',dashSize:9,gapSize:7,transparent:true,opacity:.65}));line.computeLineDistances();scene.add(line);}
   const catalogue=createCatalogue(data,enrichment,project,extent,terrain.buildings,namedZones,bible);
   const selection=installSelection({scene,camera,canvas:renderer.domElement,catalogue,meshes:buildings.pickMeshes,buildingInfo:buildings.info,invalidate,target:()=>controls.target});
-  const labelItems=[...buildings.landmarks,...terrain.landmarks];
+  const labelItems=[];for(const l of [...buildings.landmarks,...terrain.landmarks])if(!labelItems.some(o=>o.name===l.name&&Math.hypot(o.position[0]-l.position[0],o.position[2]-l.position[2])<80))labelItems.push(l);
   for(const r of catalogue.records.filter(r=>r.type==='point'&&(r.kind==='Lieu-dit / secteur'||r.id.startsWith('bible'))))if(!labelItems.some(l=>l.name===r.name))labelItems.push({id:r.id,name:r.name,position:r.position,major:r.major,local:!r.major,style:r.id.startsWith('bible')?'heritage':r.major?'':'place'});
   for(const l of enrichment.landmarks){if(!labelItems.some(p=>Math.hypot(p.position[0]-l.position[0],p.position[2]-l.position[2])<45))labelItems.push(l);}
   for(const f of data.features){const t=f.properties;if(f.geometry.type!=='Point')continue;
@@ -75,7 +79,7 @@ async function start(){
   renderer.domElement.dataset.stats=JSON.stringify({...terrain.stats,buildings:buildings.count,enrichment:buildings.stats,clickable:catalogue.stats,loadMs:Math.round(performance.now()-t0)});reset();draw();renderer.shadowMap.autoUpdate=false;loading.remove();
   const snapshot=data.metadata.osmTimestamp?.slice(0,10)||data.metadata.retrievedAt.slice(0,10);document.querySelector('#data-date').textContent=`Relevé OSM · ${new Date(snapshot).toLocaleDateString('fr-FR')}`;
   // Read-only diagnostics for reproducible QA, without adding a performance dashboard.
-  window.__MAIZIERES__={stats:{...terrain.stats,buildings:buildings.count,features:data.features.length,loadMs:Math.round(performance.now()-t0),origin:data.metadata.origin,extent},inspect:()=>({camera:camera.position.toArray(),target:controls.target.toArray(),drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,namesVisible}),breakdown:()=>{const out=[];scene.traverse(o=>{if(!o.isMesh)return;const g=o.geometry,tri=(g.index?g.index.count:g.getAttribute('position').count)/3;out.push({type:o.isInstancedMesh?'instanced':'mesh',instances:o.isInstancedMesh?o.count:1,triangles:tri*(o.isInstancedMesh?o.count:1),shadow:o.castShadow});});return out;},screen:(x,y,z)=>{const v=new THREE.Vector3(x,y,z).project(camera);return [(v.x*.5+.5)*innerWidth,(-v.y*.5+.5)*innerHeight];},view:(position,target)=>{controls.enableDamping=false;controls.target.set(...target);camera.position.set(...position);controls.update();controls.enableDamping=true;draw();}};
+  window.__MAIZIERES__={stats:{...terrain.stats,buildings:buildings.count,features:data.features.length,buildingReference:{...reference.stats,rendered:buildings.count,rejected:buildings.rejected},loadMs:Math.round(performance.now()-t0),origin:data.metadata.origin,extent},inspect:()=>({camera:camera.position.toArray(),target:controls.target.toArray(),drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,namesVisible}),breakdown:()=>{const out=[];scene.traverse(o=>{if(!o.isMesh)return;const g=o.geometry,tri=(g.index?g.index.count:g.getAttribute('position').count)/3;out.push({type:o.isInstancedMesh?'instanced':'mesh',instances:o.isInstancedMesh?o.count:1,triangles:tri*(o.isInstancedMesh?o.count:1),shadow:o.castShadow});});return out;},screen:(x,y,z)=>{const v=new THREE.Vector3(x,y,z).project(camera);return [(v.x*.5+.5)*innerWidth,(-v.y*.5+.5)*innerHeight];},view:(position,target)=>{controls.enableDamping=false;controls.target.set(...target);camera.position.set(...position);controls.update();controls.enableDamping=true;draw();}};
   const gl=renderer.getContext(),debug=gl.getExtension('WEBGL_debug_renderer_info');
   renderer.domElement.dataset.graphics=JSON.stringify({renderer:debug?gl.getParameter(debug.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER),antialias:gl.getContextAttributes().antialias,device,version:'1.4.0'});
   if(new URLSearchParams(location.search).get('quality')==='high')applyQuality('high');

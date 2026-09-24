@@ -23,6 +23,7 @@ export function describe(r){
   if(i.usage)facts.push(`Usage : ${i.usage.toLowerCase()} (IGN BD TOPO)`);
   if(i.light)facts.push('Construction légère (cadastre / IGN)');
   if(i.floors)facts.push(`${i.floors} niveau${i.floors>1?'x':''} (IGN BD TOPO)`);
+  if(i.rnb)facts.push(`Identifiant RNB : ${i.rnb}`);
   facts.push(`Hauteur des murs : ${metres(i.wallHeight)} (${i.heightSource==='IGN BD TOPO'?'IGN BD TOPO':i.heightSource==='OSM'?'OpenStreetMap':'estimée'})`);
  }
  if(r.bible&&!r.source.startsWith('Bible'))sources.push('Bibles documentaires');
@@ -59,7 +60,7 @@ export function installSelection({scene,camera,canvas,catalogue,meshes,buildingI
   // Highlight thickness follows the viewing distance so a street stays visible from the whole-commune view.
   const scale=Math.max(1,camera.position.distanceTo(target())/260);
   if(r.type==='line'){const batch=new Batch(lineMaterial);for(const line of r.lines)strip(batch,line,Math.max(4.5,r.width+2.2)*Math.min(scale,5),.4,'#ffffff');batch.mesh(group);}
-  else if(r.type==='building'){buildingShell(group,r.id);if(!group.children.length)for(const poly of r.polys)outline(group,poly,.45,1.4);}
+  else if(r.type==='building'){for(const id of r.memberIds||[r.id])buildingShell(group,id);if(!group.children.length)for(const poly of r.polys)outline(group,poly,.45,1.4);}
   else if(r.polys){const batch=new Batch(fillMaterial);for(const poly of r.polys){batch.polygon(poly,.6,'#ffffff');outline(group,poly,.7,2.4);}batch.mesh(group);}
   else{const p=r.position,ring=[];for(let i=0;i<=40;i++)ring.push([p[0]+Math.cos(i*Math.PI/20)*24*Math.min(scale,4),p[2]+Math.sin(i*Math.PI/20)*24*Math.min(scale,4)]);const batch=new Batch(lineMaterial);strip(batch,ring,3.2*Math.min(scale,4),1,'#ffffff');batch.mesh(group);const fill=new Batch(fillMaterial);fill.polygon([ring.slice(0,-1)],.9,'#ffffff');fill.mesh(group);}
   group.traverse(o=>{if(o.isMesh){o.receiveShadow=false;o.castShadow=false;o.renderOrder=10;}});
@@ -82,7 +83,7 @@ export function installSelection({scene,camera,canvas,catalogue,meshes,buildingI
   if(road&&road.distance<(hitId?5:road.tolerance))return done(road.record);
   if(point&&point.distance<(hitId?12:24))return done(point.record);
   if(hitId&&buildingInfo.has(hitId)){const info=buildingInfo.get(hitId),b=bounds(info.poly[0]);const light=info.light&&info.kind!=='canopy';
-   return done({id:hitId,type:'building',generic:true,info,name:light?KIND_LABELS.light:info.knownUsage?KIND_LABELS[info.kind]||'Bâtiment':'Bâtiment',kind:'Bâtiment sans nom connu',polys:[info.poly],position:[(b.minX+b.maxX)/2,0,(b.minZ+b.maxZ)/2],source:'Empreinte OpenStreetMap'+(info.ign?' · attributs IGN BD TOPO':'')});}
+   return done({id:hitId,type:'building',generic:true,info,name:light?KIND_LABELS.light:info.knownUsage?KIND_LABELS[info.kind]||'Bâtiment':'Bâtiment',kind:'Bâtiment sans nom connu',polys:[info.poly],position:[(b.minX+b.maxX)/2,0,(b.minZ+b.maxZ)/2],source:info.source==='IGN BD TOPO'?'Empreinte IGN BD TOPO'+(info.osmIds.length?' · sémantique OpenStreetMap':''):'Empreinte OpenStreetMap seule (absente de la BD TOPO)'});}
   if(raycaster.ray.intersectPlane(plane,ground)){const candidates=catalogue.records.filter(r=>r.type==='zone'&&r.polys.some(poly=>insidePoly([ground.x,ground.z],poly)));candidates.sort((a,b)=>area(a.polys[0][0])-area(b.polys[0][0]));if(candidates[0])return done(candidates[0]);}
   done(null);
  }

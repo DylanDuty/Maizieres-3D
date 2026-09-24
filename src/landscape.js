@@ -3,7 +3,7 @@ import {toon,paintedGround,fieldMosaic,canopyGround,crownGeometry,palette as P} 
 import {Batch,material,strip,sampleLine,clipRing,clipLine} from './geometry.js';
 import {polygons,lines,insidePoly,roadWidth,bounds,random} from './geo.js';
 export const TREE_LIMIT=2900;
-export function buildLandscape(scene,data,project,extent,ignLandscape={features:[]}){
+export function buildLandscape(scene,data,project,extent,ignLandscape={features:[]},buildingItems=[]){
   const rng=random(),surfaces=new Batch(paintedGround({vertexColors:true,side:THREE.DoubleSide})),fields=new Batch(fieldMosaic()),roads=new Batch(material()),markings=new Batch(material()),rail=new Batch(material()),water=new Batch(material()),woods=new Batch(canopyGround());
   const width=extent.maxX-extent.minX,depth=extent.maxZ-extent.minZ,cx=(extent.minX+extent.maxX)/2,cz=(extent.minZ+extent.maxZ)/2;
   // Ground of the mapped extent, plus a hazy apron beyond it so the horizon is not a cut box edge.
@@ -18,7 +18,7 @@ export function buildLandscape(scene,data,project,extent,ignLandscape={features:
   const clipped=poly=>poly.map(r=>clipRing(r,extent)).filter(r=>r.length>=3);
   for(const f of data.features){const t=f.properties;for(const raw of polygons(f,project)){
     const poly=clipped(raw);if(!poly.length)continue;
-    const b=bounds(raw[0]);if(t.building){const cx=(b.minX+b.maxX)/2,cz=(b.minZ+b.maxZ)/2;if(cx<extent.minX||cx>extent.maxX||cz<extent.minZ||cz>extent.maxZ)continue;buildings.push({poly,t,id:f.id});maskPoly(poly);continue;}
+    const b=bounds(raw[0]);if(t.building)continue; // Building footprints come from the unified reference (buildings.geojson).
     const kind=t.landuse||t.natural||t.leisure;
     if(t.natural==='water'||t.waterway==='riverbank'||t.landuse==='reservoir'||t.landuse==='basin'||t.leisure==='swimming_pool'){water.polygon(poly,.10,P.water);maskPoly(poly);}
     else if(['forest','wood','scrub'].includes(kind)){woods.polygon(poly,.025,kind==='scrub'?P.scrub:P.wood);wooded.push({poly,scrub:kind==='scrub'});}
@@ -32,6 +32,7 @@ export function buildLandscape(scene,data,project,extent,ignLandscape={features:
     if(t.name&&['sports_centre','stadium'].includes(t.leisure)){landmarks.push({name:t.name,position:[(b.minX+b.maxX)/2,5,(b.minZ+b.maxZ)/2]});}
   }
   }
+  for(const b of buildingItems){buildings.push(b);maskPoly(b.poly);}
   for(const f of data.features){const t=f.properties;for(const raw of lines(f,project))for(const pts of clipLine(raw,extent)){
     if(t.highway&&!['proposed','construction'].includes(t.highway)){
       const w=Math.min(20,Math.max(1,roadWidth(t))),path=['path','footway','track','cycleway','steps','bridleway'].includes(t.highway),main=['primary','secondary','tertiary','trunk'].includes(t.highway);

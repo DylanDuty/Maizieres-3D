@@ -21,9 +21,14 @@ export function createCatalogue(data,enrichment,project,extent,buildingItems,nam
   else if(name){const polys=polygons(f,project).map(p=>p.map(r=>clipRing(r,extent))).filter(p=>p[0]?.length>=3);if(polys.length)add({id:f.id,name,kind:'Zone / lieu',type:'zone',polys,position:center(polys[0]),source:'OpenStreetMap'});}
  }
  for(const f of namedZones.features){const polys=polygons(f,project).map(p=>p.map(r=>clipRing(r,extent))).filter(p=>p[0]?.length>=3);if(polys.length)add({id:f.id,name:f.properties.name,kind:f.properties.nature||'Zone / lieu',type:'zone',polys,position:center(polys[0]),source:'IGN BD TOPO'});}
- for(const {id,poly,t} of buildingItems){if(area(poly[0])<3)continue;const e=enrichment.buildings[id]||{};
-  const name=t.name||e.landmark?.name||({townhall:'Mairie',school:'École primaire',community_centre:'Salle communale'}[t.amenity]);
-  if(name)add({id,name,type:'building',kind:'Bâtiment / équipement',polys:[poly],position:center(poly),source:t.name?'OpenStreetMap':e.landmark?'IGN BD TOPO':'Type d’équipement OpenStreetMap'});
+ // A named OSM building split into several IGN footprints stays one clickable record (all parts highlighted).
+ const byDonor=new Map();
+ for(const item of buildingItems){const {id,poly,t}=item,e=item.extra||enrichment.buildings[id]||{};
+  // Several named OSM shops inside one IGN footprint: every source name is kept, none is invented.
+  const name=(t['@names']?.length>1?t['@names'].join(' · '):t.name)||e.landmark?.name||({townhall:'Mairie',school:'École primaire',community_centre:'Salle communale'}[t.amenity]);if(!name)continue;
+  const key=t.name&&t['@donor']?t['@donor']+'|'+name:null,existing=key&&byDonor.get(key);
+  if(existing){existing.polys.push(poly);existing.memberIds.push(id);byId.set(id,existing);continue;}
+  const r=add({id,name,type:'building',kind:'Bâtiment / équipement',polys:[poly],memberIds:[id],position:center(poly),source:t.name?'OpenStreetMap':e.landmark?'IGN BD TOPO':'Type d’équipement OpenStreetMap'});if(key)byDonor.set(key,r);
  }
  // Named OSM points located in an existing building also make that building clickable.
  for(const r of records.filter(r=>r.type==='point'&&!r.kind.startsWith('Lieu-dit'))){const matches=buildingItems.filter(b=>insidePoly([r.position[0],r.position[2]],b.poly));if(matches.length===1&&!byId.has(matches[0].id)){const b=matches[0];add({id:b.id,name:r.name,type:'building',kind:'Bâtiment / équipement',polys:[b.poly],position:center(b.poly),source:r.source});}}

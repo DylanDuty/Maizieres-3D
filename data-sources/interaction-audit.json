@@ -1,6 +1,6 @@
 {
   "result": "OK",
-  "genericBuildings": 1942,
+  "genericBuildings": 2465,
   "bibleLandmark": {
     "id": "bible01:gue-de-la-chapelle",
     "position": [
@@ -16,7 +16,7 @@
     "namedRoads": 81,
     "namedRoadSegments": 144,
     "unnamedRoadSegments": 387,
-    "buildings": 26,
+    "buildings": 23,
     "zones": 10,
     "points": 125
   },

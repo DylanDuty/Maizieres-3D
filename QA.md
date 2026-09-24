@@ -1,3 +1,81 @@
+# Vérification V1.5 — exhaustivité du bâti, 24 septembre 2026
+
+Branche `opus/v1.5-buildings`, partie de `opus/v1.4`. Source de vérité des bâtiments : `public/data/buildings.geojson` (voir `docs/referentiel-bati.md`).
+
+## Couverture par source (commune = centre d’emprise dans le contour communal)
+
+| Mesure | Commune | Zone affichée (commune + 150 m) |
+|---|---:|---:|
+| Bâtiments OSM (instantané du 31/05/2026) | 1 817 | 2 022 |
+| Bâtiments IGN BD TOPO (instantané du 10/09/2026) | 2 128 | 2 329 |
+| Bâtiments cadastre | non disponible (réseau refusé) | — |
+| Correspondances OSM ↔ IGN un pour un (IoU ≥ 50 %) | 754 | 799 |
+| IGN couverts ≥ 50 % par OSM | 1 900 | 2 044 |
+| IGN couverts 10–50 % par OSM | 94 | 125 |
+| **IGN sans équivalent OSM** (< 10 %) | **134** (10 560 m²) | 160 |
+| OSM couverts ≥ 50 % par IGN | 1 606 | 1 764 |
+| OSM couverts 10–50 % par IGN | 80 | 96 |
+| **OSM sans équivalent IGN** (< 10 %) | **131** (3 975 m²) | 162 |
+| Un OSM recouvrant plusieurs IGN (mitoyens dessinés d’un bloc) | 236 | 245 |
+| Un IGN recouvrant plusieurs OSM | 72 | 81 |
+
+## Avant / après
+
+| Étape | V1.4 | V1.5 |
+|---|---:|---:|
+| Bâtiments rendus, zone affichée | 1 968 | **2 491** |
+| Bâtiments rendus, commune | 1 793 | **2 259** |
+| Après fusion (référentiel) | — | 2 491 = 2 329 IGN + 162 OSM seuls |
+| Rejetés au traitement | 54, non comptés | 0 |
+| Rejetés au rendu | 0 | 0 |
+| Géométries invalides | non contrôlé | 0 |
+
+Rejets V1.4 (reconstitués par `npm run audit:buildings`) :
+- 23 empreintes OSM de moins de 3 m² (filtre de surface). En V1.5, 12 sont représentées par un bâtiment IGN, 6 sont gardées comme bâtiments OSM seuls, et 5 ne sont pas reprises : ce sont des fragments recouverts à 10–50 % par un bâtiment IGN ;
+- 31 contours ronds ou très finement dessinés (silos, cuves), écartés par le calcul d’axe de toit. 30 sont hors commune, dans la zone de contexte ; 13 sont représentés par l’IGN, 1 gardé côté OSM, 17 recouverts partiellement par l’IGN.
+
+Ce qui n’entre pas dans le référentiel, sans être rejeté :
+- 160 bâtiments IGN dont le centre est hors de la zone affichée ;
+- 1 860 empreintes OSM déjà représentées par l’IGN : 1 764 à au moins 50 %, 96 à 10–50 %.
+
+Référentiel V1.5 : 2 260 identifiants RNB, 1 829 hauteurs IGN utilisables, 2 027 bâtiments IGN enrichis par la sémantique OSM, 4 repères IGN rattachés. Aucun bâtiment en plusieurs parties, 1 anneau intérieur.
+
+## Contrôles
+
+`npm run check:all` réussit (six contrôles : `check`, `check:enrichment`, `check:presentation`, `check:interaction`, `check:bible` et le nouveau `check:buildings`).
+
+- `check:buildings` : les 2 329 bâtiments IGN de la zone sont présents une seule fois, avec leur géométrie d’origine octet pour octet. Les 162 OSM seuls sont présents, sans doublon sur un bâtiment IGN. Les SHA-256 des sources correspondent.
+- `check:enrichment` : 2 491 bâtiments rendus sur 2 491, 0 rejet ; les SHA-256 des fichiers OSM et contour communal sont inchangés.
+- `check:interaction` : église retrouvée par lancer de rayon, 2 465 bâtiments sans nom décrits sans nom inventé, 23 fiches de bâtiments nommés, contre 26 en V1.4. Les 14 noms de bâtiments OSM restent tous affichés : un bâtiment OSM découpé en plusieurs empreintes IGN forme une seule fiche (centre E.Leclerc, Sport E. Leclerc), et les enseignes partageant une même empreinte IGN sont affichées ensemble (« Gémo · Gitem », « La Grande Récré · GiFi »).
+- `check:presentation` : 129 hausses de toiture bornées dans le rendu (journal `data-sources/roof-render-adjustments.json`), hauteurs IGN de murs inchangées.
+
+Build `pnpm build` réussi : application 54,53 Ko, Three.js 530,05 Ko, CSS 7,44 Ko. Données chargées : +3,2 Mo avec `buildings.geojson`.
+
+## Vérification dans le navigateur
+
+Carte lancée (dev, puis build servi) : vue globale, centre, Saint-Denis, Poussey, Les Granges, rue des Sages et stade, Belle Idée, zone industrielle. Captures en mode normal et `?diagnostic=provenance`. Les bâtiments IGN seuls (rouge) sont dispersés : aucun quartier entier ne manquait dans les deux sources. Les rangées mitoyennes apparaissent maintenant maison par maison. Bâtiment récupéré cliqué (équipement sportif IGN de 2024 près du stade) : fiche « Empreinte IGN BD TOPO », usage sportif. Modes Fluide et Élevée, masquage des noms, format portrait, clavier et Échap vérifiés. **Aucune erreur ni avertissement en console.**
+
+## Performances
+
+| Vue initiale, Fluide, 1280 × 800 | V1.4 | V1.5 |
+|---|---:|---:|
+| Bâtiments | 1 968 | 2 491 |
+| Triangles | 532 717 | 560 099 (+5,1 %) |
+| Triangles des bâtiments | 162 509 | 189 901 |
+| Appels de dessin | 18 | 18 |
+| Parcours benchmark, moyenne par image (SwiftShader) | ≈ 408 ms | 399,6 ms |
+
+Pas de nouveau matériau ni d’appel de dessin : les bâtiments restent regroupés en quatre lots, seules les ombres des murs et toits sont calculées. Chargement du build observé : 1,9 s.
+
+## Zones et points encore douteux
+
+- **Bâtiments OSM seuls de plus de 80 m² (8 dans la commune)**, rendus en bleu : quatre sont à Poussey (deux rue Joliot-Curie, un rue du Lavoir, un rue du Château), un rue du Docteur-Sollier et trois vers la rue de l’Essy (à environ 300 m). La plupart sont des constructions légères (`wall=no`). À vérifier : démolis ou absents de la BD TOPO ?
+- **Empreintes OSM partiellement couvertes** : 26 ont plus de 25 m² non couverts, surtout vers le chemin La Fin de Maizière (jusqu’à 554 m²), rue Joliot-Curie, rue Georges-Clemenceau et avenue du Général-de-Gaulle.
+- **Parc de l’Aérodrome et chemin de la Guide** : les moins bâtis le long des rues (0,2 à 0,7 bâtiment principal par 100 m). Plausible, à confirmer sur imagerie.
+- **Constructions récentes** absentes des deux sources : impossibles à détecter sans cadastre ni imagerie récente.
+
+---
+
 # Vérification V1.4 — 24 septembre 2026
 
 Branche `opus/v1.4`, partie de `main` (V1.3, `676a312`) avec le commit documentaire des Bibles repris par cherry-pick.

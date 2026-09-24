@@ -1,0 +1,425 @@
+{
+ "note": "Bâtiments principaux (≥ 40 m², hors constructions légères) à moins de 35 m de l’axe, référentiel V1.5. Indicateur de revue, pas une preuve de manque.",
+ "streets": [
+  {
+   "street": "Boulevard Antoine de Saint-Exupéry",
+   "lengthM": 519,
+   "mainBuildings": 1,
+   "per100m": 0.19,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Le Chemin de la Guide",
+   "lengthM": 536,
+   "mainBuildings": 3,
+   "per100m": 0.56,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Avenue Philippe Séguin",
+   "lengthM": 274,
+   "mainBuildings": 2,
+   "per100m": 0.73,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue du Pont Bancelin",
+   "lengthM": 221,
+   "mainBuildings": 6,
+   "per100m": 2.71,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue Louis Joly",
+   "lengthM": 110,
+   "mainBuildings": 3,
+   "per100m": 2.72,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue des Sages",
+   "lengthM": 179,
+   "mainBuildings": 5,
+   "per100m": 2.79,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue Georges Pompidou",
+   "lengthM": 300,
+   "mainBuildings": 9,
+   "per100m": 3,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue de l'Essy",
+   "lengthM": 558,
+   "mainBuildings": 17,
+   "per100m": 3.04,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Ruelle des Granges",
+   "lengthM": 327,
+   "mainBuildings": 10,
+   "per100m": 3.06,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue du Château",
+   "lengthM": 302,
+   "mainBuildings": 10,
+   "per100m": 3.31,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue Patris",
+   "lengthM": 229,
+   "mainBuildings": 9,
+   "per100m": 3.93,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue Albert Benoist",
+   "lengthM": 286,
+   "mainBuildings": 12,
+   "per100m": 4.2,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue de la Chefferie",
+   "lengthM": 252,
+   "mainBuildings": 11,
+   "per100m": 4.37,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue de la Paix",
+   "lengthM": 274,
+   "mainBuildings": 12,
+   "per100m": 4.38,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue des Praillons",
+   "lengthM": 409,
+   "mainBuildings": 18,
+   "per100m": 4.4,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue Jules Ferry",
+   "lengthM": 302,
+   "mainBuildings": 14,
+   "per100m": 4.63,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue du Stade",
+   "lengthM": 341,
+   "mainBuildings": 16,
+   "per100m": 4.69,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Avenue du Général de Gaulle",
+   "lengthM": 1769,
+   "mainBuildings": 85,
+   "per100m": 4.81,
+   "recoveredInV15": 2
+  },
+  {
+   "street": "Rue du Pont de Clairvaux",
+   "lengthM": 164,
+   "mainBuildings": 8,
+   "per100m": 4.88,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue de la Contrée du Pont",
+   "lengthM": 141,
+   "mainBuildings": 8,
+   "per100m": 5.66,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue du Docteur Calmette",
+   "lengthM": 724,
+   "mainBuildings": 43,
+   "per100m": 5.94,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue de l'Orme",
+   "lengthM": 249,
+   "mainBuildings": 15,
+   "per100m": 6.02,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue Victor Hugo",
+   "lengthM": 297,
+   "mainBuildings": 18,
+   "per100m": 6.06,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue des Billouts",
+   "lengthM": 242,
+   "mainBuildings": 15,
+   "per100m": 6.19,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue du Docteur Sollier",
+   "lengthM": 527,
+   "mainBuildings": 33,
+   "per100m": 6.27,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue du Craon",
+   "lengthM": 125,
+   "mainBuildings": 8,
+   "per100m": 6.42,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue Joliot Curie",
+   "lengthM": 1326,
+   "mainBuildings": 93,
+   "per100m": 7.02,
+   "recoveredInV15": 2
+  },
+  {
+   "street": "Ruelle à Rosez",
+   "lengthM": 128,
+   "mainBuildings": 9,
+   "per100m": 7.04,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue du Général Leclerc",
+   "lengthM": 369,
+   "mainBuildings": 26,
+   "per100m": 7.04,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue Maurice Renault",
+   "lengthM": 477,
+   "mainBuildings": 34,
+   "per100m": 7.13,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue des Baudets",
+   "lengthM": 222,
+   "mainBuildings": 16,
+   "per100m": 7.2,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue des Lombards",
+   "lengthM": 416,
+   "mainBuildings": 30,
+   "per100m": 7.21,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue Ambroise Paré",
+   "lengthM": 180,
+   "mainBuildings": 13,
+   "per100m": 7.24,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue des Prés de Poussey",
+   "lengthM": 219,
+   "mainBuildings": 16,
+   "per100m": 7.29,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue Basse de Poussay",
+   "lengthM": 344,
+   "mainBuildings": 26,
+   "per100m": 7.55,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue Jean-Baptiste de Lesseps",
+   "lengthM": 303,
+   "mainBuildings": 24,
+   "per100m": 7.91,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue du Maréchal de Lattre de Tassigny",
+   "lengthM": 447,
+   "mainBuildings": 37,
+   "per100m": 8.27,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue de la Chapelle",
+   "lengthM": 188,
+   "mainBuildings": 16,
+   "per100m": 8.52,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue Jean Monnet",
+   "lengthM": 316,
+   "mainBuildings": 27,
+   "per100m": 8.55,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Avenue du Maréchal de Lattre de Tassigny",
+   "lengthM": 162,
+   "mainBuildings": 14,
+   "per100m": 8.66,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue Georges Clemenceau",
+   "lengthM": 531,
+   "mainBuildings": 48,
+   "per100m": 9.04,
+   "recoveredInV15": 3
+  },
+  {
+   "street": "Rue Achille Flaubert",
+   "lengthM": 571,
+   "mainBuildings": 52,
+   "per100m": 9.11,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue des Aulnes",
+   "lengthM": 107,
+   "mainBuildings": 10,
+   "per100m": 9.32,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue des Jacquets",
+   "lengthM": 94,
+   "mainBuildings": 9,
+   "per100m": 9.56,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue des Écoles",
+   "lengthM": 446,
+   "mainBuildings": 43,
+   "per100m": 9.65,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue des Cotterets",
+   "lengthM": 213,
+   "mainBuildings": 21,
+   "per100m": 9.85,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue des Bédouins",
+   "lengthM": 209,
+   "mainBuildings": 22,
+   "per100m": 10.54,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Chemin de la Pie",
+   "lengthM": 121,
+   "mainBuildings": 13,
+   "per100m": 10.75,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue des Tabellions",
+   "lengthM": 166,
+   "mainBuildings": 18,
+   "per100m": 10.83,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue Pasteur",
+   "lengthM": 681,
+   "mainBuildings": 74,
+   "per100m": 10.86,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue de la Libération",
+   "lengthM": 152,
+   "mainBuildings": 17,
+   "per100m": 11.19,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue du Lavoir",
+   "lengthM": 268,
+   "mainBuildings": 32,
+   "per100m": 11.95,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue des Carreaux",
+   "lengthM": 134,
+   "mainBuildings": 16,
+   "per100m": 11.96,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue de la République",
+   "lengthM": 314,
+   "mainBuildings": 38,
+   "per100m": 12.11,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Placette Léopoldine Deschamps",
+   "lengthM": 73,
+   "mainBuildings": 9,
+   "per100m": 12.3,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Place Adrien Quinet",
+   "lengthM": 72,
+   "mainBuildings": 10,
+   "per100m": 13.95,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Rue du Moulin",
+   "lengthM": 200,
+   "mainBuildings": 28,
+   "per100m": 13.98,
+   "recoveredInV15": 2
+  },
+  {
+   "street": "Impasse de la Noue",
+   "lengthM": 66,
+   "mainBuildings": 11,
+   "per100m": 16.63,
+   "recoveredInV15": 0
+  },
+  {
+   "street": "Place Saint-Denis",
+   "lengthM": 140,
+   "mainBuildings": 25,
+   "per100m": 17.9,
+   "recoveredInV15": 1
+  },
+  {
+   "street": "Rue du Presbytère",
+   "lengthM": 64,
+   "mainBuildings": 13,
+   "per100m": 20.24,
+   "recoveredInV15": 1
+  }
+ ]
+}
