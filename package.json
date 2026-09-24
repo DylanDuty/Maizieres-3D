@@ -1,6 +1,6 @@
 {
   "name": "maizieres-3d",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -18,7 +18,7 @@
     "check:interaction": "node scripts/check-interaction.mjs",
     "data:bible": "node scripts/prepare-bible.mjs",
     "check:bible": "node scripts/check-bible.mjs",
-    "check:all": "npm run check && npm run check:enrichment && npm run check:presentation && npm run check:interaction && npm run check:bible && npm run check:buildings && npm run check:terrain",
+    "check:all": "npm run check && npm run check:enrichment && npm run check:presentation && npm run check:interaction && npm run check:bible && npm run check:buildings && npm run check:terrain && npm run check:roads",
     "data:buildings": "node scripts/build-buildings.mjs && node scripts/validate-buildings.mjs",
     "audit:buildings": "node scripts/audit-buildings.mjs",
     "check:buildings": "node scripts/check-buildings.mjs",
@@ -28,7 +28,11 @@
     "data:terrain-fetch": "NODE_USE_ENV_PROXY=1 node scripts/fetch-terrain.mjs",
     "data:terrain": "npm run data:terrain-fetch && node --max-old-space-size=6144 scripts/build-terrain.mjs",
     "check:terrain": "node --max-old-space-size=4096 scripts/check-terrain.mjs",
-    "audit:terrain-sources": "NODE_USE_ENV_PROXY=1 node scripts/compare-terrain-sources.mjs"
+    "audit:terrain-sources": "NODE_USE_ENV_PROXY=1 node scripts/compare-terrain-sources.mjs",
+    "data:roads-fetch": "NODE_USE_ENV_PROXY=1 node scripts/fetch-roads.mjs",
+    "data:roads": "node --max-old-space-size=4096 scripts/build-roads.mjs",
+    "data:roads-review": "node scripts/roads-review-v1.8.mjs",
+    "check:roads": "node --max-old-space-size=4096 scripts/check-roads.mjs"
   },
   "dependencies": {
     "three": "0.180.0"

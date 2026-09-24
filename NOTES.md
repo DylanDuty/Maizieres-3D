@@ -1,3 +1,42 @@
+# Notes V1.8 — référentiel voirie et splines Unreal, 24 septembre 2026
+
+Branche `opus/v1.8-roads`, à partir de `2081b47`. Ni graphisme, ni matériau, ni végétation, ni voie ferrée détaillée, ni génération Unreal.
+
+## Audit des données présentes
+
+| Source | Constat |
+|---|---|
+| OSM (projet) | 531 voies, dont 107 nommées. Aucune largeur, aucun trottoir. Revêtement sur 88 voies, sens sur 71, 10 ponts |
+| BD TOPO (bâti, landscape V1.5) | aucune couche routière jusque-là. `troncon_de_route` téléchargée : 1 550 tronçons, largeur de chaussée sur 800 |
+| BIBLE_01 | 65 voies (§ 4.1), 18 libellés d’adressage (§ 5), 20 noms anciens (§ 6), connexions confirmées (§ 7), gare et passage à niveau (§ 12) |
+| Services | Géoplateforme accessible (WFS BD TOPO, WMS orthophoto). API Overpass refusée par le proxy : non nécessaire |
+
+## Choix
+
+- **Géométrie.** BD TOPO d’abord : officielle, topologique, attributs de largeur, de sens et de pont. OSM sert à la sémantique, et à compléter seulement là où la BD TOPO n’a rien à moins de 8 m. Les compléments sont surtout des allées de parking, des cours d’activité et des chemins.
+- **Largeur.** `widthSource` distingue `official`, `osm`, `inferred` et `measured`. Les estimations par catégorie ne remplacent jamais une valeur documentée et restent identifiées comme telles.
+- **Chemins.** Les catégories `chemin_carrossable`, `chemin_rural` et `sentier` correspondent à des `unrealType` non goudronnés (`gravel-track`, `dirt-track`, `footpath`).
+- **Altitude.**
+  - Terrain V1.7, sauf sur les ponts (tablier entre culées, un seul tablier par pont multi-tronçons).
+  - Sauf aussi sur les ouvrages non répertoriés confirmés sur l’orthophoto (corde entre appuis, `zOverride`).
+  - Les ruptures relevées en V1.7 sont expliquées : pont ferroviaire sur un fossé boisé ; pont de la rue du Pont de Clairvaux sur la rivière du Moulin.
+- **Origine.** `UNREAL_ORIGIN` gelée, sans autre origine.
+- **Orthophoto.** Utilisée comme preuve uniquement. Elle a permis d’exclure 2 doublons décalés et de confirmer 89 compléments et 5 ouvrages. Aucun tracé n’en est tiré.
+- **Trottoirs.** Aucun n’est fabriqué. Les secteurs à déterminer sont marqués.
+
+## Nouveaux scripts
+
+| Commande | Rôle |
+|---|---|
+| `npm run data:roads-fetch` | instantanés BD TOPO (tronçons, voies ferrées, points du réseau, ouvrages, voies nommées) |
+| `npm run data:roads` | `build-roads.mjs` : référentiel, topologie, altitude, splines, rapport |
+| `npm run data:roads-review` | régénère le fichier de revue orthophoto |
+| `npm run check:roads` | contrôle, inclus dans `check:all` |
+
+Mode de contrôle `?diagnostic=roads` : `src/roads-diagnostic.js`.
+
+---
+
 # Notes V1.7 — référentiel terrain et heightmap Unreal, 24 septembre 2026
 
 Branche `opus/v1.7-terrain`, à partir de `b1d4c27`. Mission limitée au relief et à l’altimétrie : ni routes, ni végétation, ni graphisme, ni niveau Unreal.

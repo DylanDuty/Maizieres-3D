@@ -1,3 +1,79 @@
+# Vérification V1.8 — référentiel voirie et splines Unreal, 24 septembre 2026
+
+Branche `opus/v1.8-roads`, à partir de `2081b47`. Le bâti, le terrain et l’origine Unreal ne sont pas modifiés. Détail complet : `docs/referentiel-voirie.md`.
+
+## Statistiques
+
+Deux périmètres : l’emprise du terrain V1.7 (commune + environ 530 m de marge) et la commune seule.
+
+| Mesure | Emprise terrain | Commune |
+|---|---:|---:|
+| Tronçons actifs | 1 656 (BD TOPO 1 549, dont 1 049 enrichis par OSM ; compléments OSM 107) | 776 |
+| Splines Unreal | 1 585 (51 003 points) | — |
+| Longueur totale | **250,4 km** | **107,6 km** |
+| Route principale | 8,9 km | 4,7 km |
+| Route secondaire | 22,9 km | 13,2 km |
+| Voie locale / résidentielle | 35,4 km | 17,2 km |
+| Voie de desserte / accès | 15,9 km | 8,2 km |
+| Voie piétonne | 0,2 km | 0 km |
+| Chemin carrossable (empierré) | 52,8 km | 23,1 km |
+| Chemin rural (terre) | 91,7 km | 33,9 km |
+| Sentier | 22,5 km | 7,3 km |
+| Voies nommées | 535 tronçons, 51,9 km, 128 noms | 312 tronçons, 31,3 km, 88 noms |
+| Voies non nommées | 1 121 tronçons, 198,5 km | 464 tronçons, 76,4 km |
+| Largeur connue (BD TOPO) | 800 tronçons (48 %), 77,8 km (31 %) ; **93 % des km revêtus** | 41,5 km sur 43,3 km revêtus |
+| Largeur estimée par catégorie | 856 tronçons (52 %), 172,6 km : surtout chemins et sentiers | — |
+| Largeur mesurée | 0 | 0 |
+| Chemins (carrossables et ruraux) | 554, 144,6 km | 217, 57,0 km |
+| À ne pas goudronner dans Unreal (chemins et sentiers) | 167,1 km | — |
+| Intersections (carrefours et embranchements) | 958 (144 carrefours, 814 embranchements, 55 nœuds de giratoire) | 448 |
+| Impasses | 164 | 82 |
+| Fragments orphelins | 1 (0,35 km, parking de La Belle Idée, hors commune) | 0 |
+| Voies presque connectées / doublons / croisements sans nœud | 0 / 0 / 0 (21 croisements d’allées de parking reçoivent un nœud) | — |
+
+**Ponts et ouvrages à traiter à part dans Unreal :**
+- 30 tabliers de pont (32 tronçons BD TOPO), dont 10 dans la commune ;
+- 3 ouvrages hydrauliques non répertoriés, repérés par le profil et confirmés sur l’orthophoto ;
+- 4 passages à niveau (n° 70, 71, 73 rue du Général-Leclerc, 74) ;
+- 15 croisements avec des voies de service ferroviaires (La Station) ;
+- 1 pont routier au-dessus de la voie ferrée (rue de l’Orme).
+
+**Trottoirs** : aucune donnée fiable, donc aucun trottoir créé. 54,2 km de voies urbaines sont marqués « à déterminer ».
+
+## Incohérences restant ouvertes : 23
+
+- 1 fragment orphelin : boucle de parking d’un restaurant de La Belle Idée, dont le raccord à la voirie n’existe ni dans OSM ni dans la BD TOPO.
+- 2 sites d’anomalie de profil à vérifier sur place (4 détections) :
+  - creux sous le chemin de la Croix des Fourches, près d’une éolienne ;
+  - bosse de 1,3 m sur un chemin de la centrale photovoltaïque.
+- 18 compléments OSM impossibles à confirmer :
+  - 16 non vérifiables (couvert forestier, peupleraie, orthophoto floutée) ;
+  - 2 douteux.
+- 1 désaccord de structure : un tronçon est un pont dans OSM mais pas dans la BD TOPO (passerelle piétonne probable). Les 10 autres désaccords sont des ponts BD TOPO dont la voie OSM principale ne porte pas l’étiquette de pont : sans conséquence.
+- BIBLE_01 : « Chemin à Leroy » et « Chemin Noir » sont absents des données. Deux graphies diffèrent de la Bible (Bout des Ruelles, Pot Bancelin).
+
+## Contrôles
+
+- `npm run check:all` réussit, soit **huit contrôles** : les six du bâti, `check:terrain` et `check:roads`.
+- `check:roads` vérifie :
+  - bâti gelé intact (SHA-256, 2 494 bâtiments dont 2 265 dans la commune) et terrain V1.7 intact ;
+  - `UNREAL_ORIGIN` inchangée ;
+  - chaque tronçon BD TOPO présent avec sa géométrie exacte, et ses largeurs officielles et ponts reportés ;
+  - compléments OSM à moins de 10 cm de leur voie source ;
+  - chaque nom issu d’une source ;
+  - aucun chemin présenté comme route revêtue ;
+  - `inferred` égal à la table de la catégorie ;
+  - chaque tronçon actif dans une seule spline ;
+  - points à 5 m au plus d’intervalle, conversion Unreal exacte ;
+  - Z des points au sol égal au terrain V1.7 à 1 cm près, sauf les `zOverride` documentés ;
+  - exclusions justifiées.
+- `pnpm build` réussi. Dans Chromium :
+  - rendu normal, `?diagnostic=validation`, `?diagnostic=terrain` et `?diagnostic=roads` : **2 494 bâtiments, aucun rejet** ;
+  - rendu normal inchangé (18 appels de dessin, 559 942 triangles) ;
+  - **console sans erreur ni avertissement**.
+
+---
+
 # Vérification V1.7 — référentiel terrain et heightmap Unreal, 24 septembre 2026
 
 Branche `opus/v1.7-terrain`, à partir de `b1d4c27` (bâti gelé). Aucune empreinte de bâtiment n’a été modifiée. Détail complet : `docs/referentiel-terrain.md`.

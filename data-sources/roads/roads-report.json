@@ -1,0 +1,3805 @@
+{
+ "generatedAt": "2026-09-24T19:10:48.453Z",
+ "frozen": {
+  "buildingsSha256": "809f3af371719e2d3adfaa6e55a9d56235e4618e28e8a36595c85d501a4f3095",
+  "terrainGeoTiffSha256": "3e08e2a6e98b1764730f364f3d80fe8cb1df49b4eb967920ac995e213bf1eaef",
+  "unrealOrigin": {
+   "crs": "EPSG:2154",
+   "E": 758278,
+   "N": 6823571,
+   "H": 0,
+   "verticalDatum": "NGF-IGN69",
+   "sourceLonLat": [
+    3.7890245,
+    48.5097657
+   ]
+  }
+ },
+ "totals": {
+  "troncons": 1656,
+  "splines": 1585,
+  "lengthKm": 250.37,
+  "inCommuneKm": 107.64,
+  "excludedAfterReview": 2,
+  "inProject": 1,
+  "byProvenance": {
+   "bdtopo+osm": 1049,
+   "bdtopo": 500,
+   "osm": 107
+  },
+  "kmByCategory": {
+   "route_principale": 8.89,
+   "route_secondaire": 22.89,
+   "voie_locale": 35.39,
+   "voie_de_desserte": 15.91,
+   "voie_pietonne": 0.23,
+   "chemin_carrossable": 52.84,
+   "chemin_rural": 91.73,
+   "sentier": 22.49
+  },
+  "countByCategory": {
+   "route_principale": 69,
+   "route_secondaire": 154,
+   "voie_locale": 436,
+   "voie_de_desserte": 228,
+   "voie_pietonne": 3,
+   "chemin_carrossable": 241,
+   "chemin_rural": 313,
+   "sentier": 212
+  },
+  "kmBySector": {
+   "hors commune": 142.73,
+   "reste de la commune": 76.7,
+   "Poussey": 4.93,
+   "centre-bourg": 13.73,
+   "Les Granges": 9.08,
+   "zone industrielle": 3.2
+  },
+  "named": {
+   "troncons": 535,
+   "km": 51.92,
+   "distinctNames": 128
+  },
+  "unnamed": {
+   "troncons": 1121,
+   "km": 198.45
+  },
+  "width": {
+   "official": 800,
+   "osm": 0,
+   "inferred": 856,
+   "officialKm": 77.77,
+   "inferredKm": 172.61,
+   "measured": 0,
+   "officialShareOfVehicleKm": 0.34
+  },
+  "surfaces": {
+   "pavedKm": 83.1,
+   "notToPaveKm": 167.06
+  },
+  "chemins": {
+   "count": 554,
+   "km": 144.57
+  },
+  "sentiers": {
+   "count": 212,
+   "km": 22.49
+  },
+  "osmComplementsReview": {
+   "visible": 89,
+   "non vérifiable": 16,
+   "doublon décalé": 2,
+   "douteux": 2
+  }
+ },
+ "topology": {
+  "nodes": 1420,
+  "nodeTypes": {
+   "carrefour": 144,
+   "embranchement": 814,
+   "continuité": 189,
+   "limite d’emprise": 77,
+   "impasse": 164,
+   "extrémité de sentier": 24,
+   "changement de nom": 8
+  },
+  "intersections": 958,
+  "impasses": 164,
+  "roundaboutNodes": 55,
+  "osmSnaps": 179,
+  "components": 9,
+  "cutByExtentBorder": 7,
+  "orphans": {
+   "count": 1,
+   "km": 0.35,
+   "list": [
+    {
+     "roads": [
+      "way/1068921271",
+      "way/1421553668",
+      "way/1421553671",
+      "way/1421553672"
+     ],
+     "lengthM": 346,
+     "categories": [
+      "voie_de_desserte"
+     ],
+     "names": [],
+     "provenance": [
+      "osm"
+     ],
+     "inCommune": false,
+     "centreL93": [
+      756285,
+      6822995
+     ]
+    }
+   ]
+  },
+  "nearMisses": [],
+  "duplicates": [],
+  "crossingsWithoutNode": [],
+  "crossingNodesAdded": [
+   {
+    "L93": [
+     756482.58,
+     6823035.87
+    ],
+    "roads": [
+     "way/103925799#1",
+     "way/1068920927#2"
+    ]
+   },
+   {
+    "L93": [
+     756440.9,
+     6823103.04
+    ],
+    "roads": [
+     "way/377317550#2",
+     "way/499690352#1"
+    ]
+   },
+   {
+    "L93": [
+     756171.6,
+     6822810.01
+    ],
+    "roads": [
+     "way/499681302#1",
+     "way/499681306#1"
+    ]
+   },
+   {
+    "L93": [
+     756161.48,
+     6822762.47
+    ],
+    "roads": [
+     "way/499681302#1",
+     "way/499681303#1"
+    ]
+   },
+   {
+    "L93": [
+     756164.74,
+     6822777.78
+    ],
+    "roads": [
+     "way/499681302#1",
+     "way/499681304#1"
+    ]
+   },
+   {
+    "L93": [
+     756168.23,
+     6822794.15
+    ],
+    "roads": [
+     "way/499681302#1",
+     "way/499681305#1"
+    ]
+   },
+   {
+    "L93": [
+     756503.16,
+     6823120.49
+    ],
+    "roads": [
+     "way/1068920927#1",
+     "way/377317550#2"
+    ]
+   },
+   {
+    "L93": [
+     756495.81,
+     6823089.54
+    ],
+    "roads": [
+     "way/1068920927#1",
+     "way/499690352#1"
+    ]
+   },
+   {
+    "L93": [
+     756499.83,
+     6823106.01
+    ],
+    "roads": [
+     "way/1068920927#1",
+     "way/499690353#1"
+    ]
+   },
+   {
+    "L93": [
+     756487.42,
+     6823055.02
+    ],
+    "roads": [
+     "way/1068920927#2",
+     "way/499690350#1"
+    ]
+   },
+   {
+    "L93": [
+     756491.25,
+     6823071
+    ],
+    "roads": [
+     "way/1068920927#2",
+     "way/499690351#1"
+    ]
+   },
+   {
+    "L93": [
+     756478.58,
+     6823021.22
+    ],
+    "roads": [
+     "way/1068920927#2",
+     "way/499690354#1"
+    ]
+   },
+   {
+    "L93": [
+     756470.9,
+     6822989.45
+    ],
+    "roads": [
+     "way/1068920927#2",
+     "way/499690357#1"
+    ]
+   },
+   {
+    "L93": [
+     756474.95,
+     6823005.53
+    ],
+    "roads": [
+     "way/1068920927#2",
+     "way/499690358#1"
+    ]
+   },
+   {
+    "L93": [
+     756467.19,
+     6822973.47
+    ],
+    "roads": [
+     "way/1068920927#2",
+     "way/499690356#1"
+    ]
+   },
+   {
+    "L93": [
+     756435.24,
+     6823136.83
+    ],
+    "roads": [
+     "way/1421553665",
+     "way/1421553667#1"
+    ]
+   },
+   {
+    "L93": [
+     755908.41,
+     6822944.01
+    ],
+    "roads": [
+     "way/1423527177",
+     "way/1423527178"
+    ]
+   },
+   {
+    "L93": [
+     756663.27,
+     6823088.93
+    ],
+    "roads": [
+     "way/1442983064#1",
+     "way/1442983071#1"
+    ]
+   },
+   {
+    "L93": [
+     756584.5,
+     6823109.72
+    ],
+    "roads": [
+     "way/1442983066#1",
+     "way/1442983071#1"
+    ]
+   },
+   {
+    "L93": [
+     756599.1,
+     6823105.86
+    ],
+    "roads": [
+     "way/1442983067#1",
+     "way/1442983071#1"
+    ]
+   },
+   {
+    "L93": [
+     756615.03,
+     6823101.66
+    ],
+    "roads": [
+     "way/1442983068#1",
+     "way/1442983071#1"
+    ]
+   }
+  ],
+  "gradeSeparatedCrossings": 1
+ },
+ "structures": {
+  "bridges": [
+   {
+    "road": "TRONROUT0000000009478796",
+    "name": null,
+    "category": "route_secondaire",
+    "deckMembers": [
+     "TRONROUT0000000009478796"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000009332894",
+    "crosses": [],
+    "deckZStart": 77.21,
+    "deckZEnd": 77.44,
+    "maxClearanceOverTerrainM": 0.06,
+    "lengthM": 8.8,
+    "L93": [
+     758173.1,
+     6825206.7
+    ]
+   },
+   {
+    "road": "TRONROUT0000000009478798",
+    "name": null,
+    "category": "route_secondaire",
+    "deckMembers": [
+     "TRONROUT0000000009478798"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000009332895",
+    "crosses": [
+     "La Seine"
+    ],
+    "deckZStart": 77.94,
+    "deckZEnd": 77.92,
+    "maxClearanceOverTerrainM": 4.02,
+    "lengthM": 41.8,
+    "L93": [
+     758167.4,
+     6825147.45
+    ]
+   },
+   {
+    "road": "TRONROUT0000000009478799",
+    "name": null,
+    "category": "route_secondaire",
+    "deckMembers": [
+     "TRONROUT0000000009478799"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000009332893",
+    "crosses": [
+     "Rivière du Moulin"
+    ],
+    "deckZStart": 77.33,
+    "deckZEnd": 77.34,
+    "maxClearanceOverTerrainM": 3.46,
+    "lengthM": 21.6,
+    "L93": [
+     758115.4,
+     6824864
+    ]
+   },
+   {
+    "road": "TRONROUT0000000009479959",
+    "name": null,
+    "category": "chemin_carrossable",
+    "deckMembers": [
+     "TRONROUT0000000009479959"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000009332949",
+    "crosses": [],
+    "deckZStart": 76.87,
+    "deckZEnd": 76.97,
+    "maxClearanceOverTerrainM": 1.86,
+    "lengthM": 11.8,
+    "L93": [
+     759343.1,
+     6824381.7
+    ]
+   },
+   {
+    "road": "TRONROUT0000000009479965",
+    "name": "Rue du Pont de Clairvaux",
+    "category": "voie_locale",
+    "deckMembers": [
+     "TRONROUT0000000009479965"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000009332950",
+    "crosses": [
+     "Rivière du Moulin"
+    ],
+    "deckZStart": 77.28,
+    "deckZEnd": 77.46,
+    "maxClearanceOverTerrainM": 2.59,
+    "lengthM": 21.7,
+    "L93": [
+     759155.23,
+     6824102.37
+    ]
+   },
+   {
+    "road": "TRONROUT0000000009479988",
+    "name": null,
+    "category": "route_secondaire",
+    "deckMembers": [
+     "TRONROUT0000000009479988"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000009332951",
+    "crosses": [],
+    "deckZStart": 76.98,
+    "deckZEnd": 76.95,
+    "maxClearanceOverTerrainM": 2.66,
+    "lengthM": 13.1,
+    "L93": [
+     758022.1,
+     6824464.37
+    ]
+   },
+   {
+    "road": "TRONROUT0000000009479989",
+    "name": null,
+    "category": "route_secondaire",
+    "deckMembers": [
+     "TRONROUT0000000009479989"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000009332952",
+    "crosses": [],
+    "deckZStart": 76.73,
+    "deckZEnd": 76.72,
+    "maxClearanceOverTerrainM": 2.2,
+    "lengthM": 7.5,
+    "L93": [
+     757999.6,
+     6824151.8
+    ]
+   },
+   {
+    "road": "TRONROUT0000000009480016",
+    "name": null,
+    "category": "chemin_carrossable",
+    "deckMembers": [
+     "TRONROUT0000000009480016"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000009332954",
+    "crosses": [],
+    "deckZStart": 75.85,
+    "deckZEnd": 75.89,
+    "maxClearanceOverTerrainM": 3.14,
+    "lengthM": 8.5,
+    "L93": [
+     755748.8,
+     6824175.3
+    ]
+   },
+   {
+    "road": "TRONROUT0000000009480018",
+    "name": null,
+    "category": "chemin_carrossable",
+    "deckMembers": [
+     "TRONROUT0000000009480018"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000009332953",
+    "crosses": [],
+    "deckZStart": 75.56,
+    "deckZEnd": 75.58,
+    "maxClearanceOverTerrainM": 2.9,
+    "lengthM": 10.1,
+    "L93": [
+     755958.3,
+     6824703.3
+    ]
+   },
+   {
+    "road": "TRONROUT0000000009481873",
+    "name": null,
+    "category": "chemin_carrossable",
+    "deckMembers": [
+     "TRONROUT0000000009481873"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000009333031",
+    "crosses": [],
+    "deckZStart": 75.15,
+    "deckZEnd": 75.12,
+    "maxClearanceOverTerrainM": 0.09,
+    "lengthM": 17,
+    "L93": [
+     755442.7,
+     6823847.1
+    ]
+   },
+   {
+    "road": "TRONROUT0000000009483634",
+    "name": "Rue de l'Orme",
+    "category": "route_secondaire",
+    "deckMembers": [
+     "TRONROUT0000000009483634"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000009333108",
+    "crosses": [
+     "voie ferrée"
+    ],
+    "deckZStart": 86.27,
+    "deckZEnd": 86.36,
+    "maxClearanceOverTerrainM": 5.33,
+    "lengthM": 25.8,
+    "L93": [
+     759371.9,
+     6822898.7
+    ]
+   },
+   {
+    "road": "TRONROUT0000000065477174",
+    "name": null,
+    "category": "sentier",
+    "deckMembers": [
+     "TRONROUT0000000065477174"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000065141844",
+    "crosses": [],
+    "deckZStart": 76.83,
+    "deckZEnd": 76.82,
+    "maxClearanceOverTerrainM": 1.33,
+    "lengthM": 7.5,
+    "L93": [
+     760683.3,
+     6826114.3
+    ]
+   },
+   {
+    "road": "TRONROUT0000000065477175",
+    "name": null,
+    "category": "sentier",
+    "deckMembers": [
+     "TRONROUT0000000065477175"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000065141843",
+    "crosses": [],
+    "deckZStart": 77.13,
+    "deckZEnd": 77.16,
+    "maxClearanceOverTerrainM": 0.09,
+    "lengthM": 7.9,
+    "L93": [
+     760627.2,
+     6826013.9
+    ]
+   },
+   {
+    "road": "TRONROUT0000000065477220",
+    "name": null,
+    "category": "route_secondaire",
+    "deckMembers": [
+     "TRONROUT0000000065477220"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000065141846",
+    "crosses": [],
+    "deckZStart": 77.6,
+    "deckZEnd": 77.72,
+    "maxClearanceOverTerrainM": 2.5,
+    "lengthM": 16.8,
+    "L93": [
+     760432.2,
+     6826270.9
+    ]
+   },
+   {
+    "road": "TRONROUT0000000065477221",
+    "name": null,
+    "category": "route_secondaire",
+    "deckMembers": [
+     "TRONROUT0000000065477221"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000065141845",
+    "crosses": [],
+    "deckZStart": 77.68,
+    "deckZEnd": 77.65,
+    "maxClearanceOverTerrainM": 2.4,
+    "lengthM": 20.5,
+    "L93": [
+     760235.53,
+     6826108.9
+    ]
+   },
+   {
+    "road": "TRONROUT0000000065477222",
+    "name": null,
+    "category": "route_secondaire",
+    "deckMembers": [
+     "TRONROUT0000000065477222"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000065141847",
+    "crosses": [],
+    "deckZStart": 77.33,
+    "deckZEnd": 77.46,
+    "maxClearanceOverTerrainM": 2.04,
+    "lengthM": 15,
+    "L93": [
+     760173,
+     6826031.7
+    ]
+   },
+   {
+    "road": "TRONROUT0000000065477245",
+    "name": null,
+    "category": "route_secondaire",
+    "deckMembers": [
+     "TRONROUT0000000065477245"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000065141848",
+    "crosses": [
+     "La Petite Rivière de Sauvage"
+    ],
+    "deckZStart": 75.72,
+    "deckZEnd": 75.75,
+    "maxClearanceOverTerrainM": 2.32,
+    "lengthM": 13.9,
+    "L93": [
+     757242,
+     6826237.8
+    ]
+   },
+   {
+    "road": "TRONROUT0000000065477248",
+    "name": null,
+    "category": "chemin_carrossable",
+    "deckMembers": [
+     "TRONROUT0000000065477248"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000065141849",
+    "crosses": [],
+    "deckZStart": 75.37,
+    "deckZEnd": 75.38,
+    "maxClearanceOverTerrainM": 2.63,
+    "lengthM": 7.7,
+    "L93": [
+     756495.7,
+     6826159
+    ]
+   },
+   {
+    "road": "TRONROUT0000000065477372",
+    "name": null,
+    "category": "sentier",
+    "deckMembers": [
+     "TRONROUT0000000065477372"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000065141855",
+    "crosses": [],
+    "deckZStart": 77.03,
+    "deckZEnd": 76.97,
+    "maxClearanceOverTerrainM": 0.07,
+    "lengthM": 13,
+    "L93": [
+     760485.5,
+     6825795.3
+    ]
+   },
+   {
+    "road": "TRONROUT0000000065477374",
+    "name": null,
+    "category": "voie_locale",
+    "deckMembers": [
+     "TRONROUT0000000065477374"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000065141857",
+    "crosses": [
+     "La Seine"
+    ],
+    "deckZStart": 79.11,
+    "deckZEnd": 79.21,
+    "maxClearanceOverTerrainM": 1.88,
+    "lengthM": 26.7,
+    "L93": [
+     761176.6,
+     6825065.87
+    ]
+   },
+   {
+    "road": "TRONROUT0000000065477379",
+    "name": null,
+    "category": "chemin_carrossable",
+    "deckMembers": [
+     "TRONROUT0000000065477379"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000065141858",
+    "crosses": [
+     "canal"
+    ],
+    "deckZStart": 77.58,
+    "deckZEnd": 76.76,
+    "maxClearanceOverTerrainM": 0.33,
+    "lengthM": 17.3,
+    "L93": [
+     760335.6,
+     6825557.1
+    ]
+   },
+   {
+    "road": "TRONROUT0000000065477386",
+    "name": null,
+    "category": "route_secondaire",
+    "deckMembers": [
+     "TRONROUT0000000065477386"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000065141860",
+    "crosses": [
+     "La Seine"
+    ],
+    "deckZStart": 77.95,
+    "deckZEnd": 77.94,
+    "maxClearanceOverTerrainM": 2.75,
+    "lengthM": 26.5,
+    "L93": [
+     759835.4,
+     6825653.23
+    ]
+   },
+   {
+    "road": "TRONROUT0000000065477423",
+    "name": null,
+    "category": "chemin_carrossable",
+    "deckMembers": [
+     "TRONROUT0000000065477423"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000065141862",
+    "crosses": [
+     "La Noue des Fourches"
+    ],
+    "deckZStart": 78.89,
+    "deckZEnd": 78.8,
+    "maxClearanceOverTerrainM": 1.98,
+    "lengthM": 13,
+    "L93": [
+     760839.65,
+     6824996.4
+    ]
+   },
+   {
+    "road": "TRONROUT0000000099212500",
+    "name": null,
+    "category": "route_secondaire",
+    "deckMembers": [
+     "TRONROUT0000000099212500",
+     "TRONROUT0000000099212501"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000099212503",
+    "crosses": [
+     "La Petite Rivière de Sauvage"
+    ],
+    "deckZStart": 76.6,
+    "deckZEnd": 76.59,
+    "maxClearanceOverTerrainM": 2.66,
+    "lengthM": 6.4,
+    "L93": [
+     757956.3,
+     6825498.5
+    ]
+   },
+   {
+    "road": "TRONROUT0000000099212501",
+    "name": null,
+    "category": "route_secondaire",
+    "deckMembers": [
+     "TRONROUT0000000099212500",
+     "TRONROUT0000000099212501"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000002203222884",
+    "crosses": [
+     "La Petite Rivière de Sauvage"
+    ],
+    "deckZStart": 76.57,
+    "deckZEnd": 76.59,
+    "maxClearanceOverTerrainM": 2.66,
+    "lengthM": 8.9,
+    "L93": [
+     757961.6,
+     6825493
+    ]
+   },
+   {
+    "road": "TRONROUT0000000224198285",
+    "name": null,
+    "category": "sentier",
+    "deckMembers": [
+     "TRONROUT0000000224198285"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000258591870",
+    "crosses": [
+     "La Seine",
+     "dam"
+    ],
+    "deckZStart": 74.55,
+    "deckZEnd": 74.63,
+    "maxClearanceOverTerrainM": 3.25,
+    "lengthM": 7.3,
+    "L93": [
+     756211.25,
+     6825570.05
+    ]
+   },
+   {
+    "road": "TRONROUT0000000224198287",
+    "name": null,
+    "category": "sentier",
+    "deckMembers": [
+     "TRONROUT0000000224198287"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000258591871",
+    "crosses": [
+     "dam"
+    ],
+    "deckZStart": 74.37,
+    "deckZEnd": 74.55,
+    "maxClearanceOverTerrainM": 2.1,
+    "lengthM": 10.8,
+    "L93": [
+     756205.73,
+     6825551.4
+    ]
+   },
+   {
+    "road": "TRONROUT0000000328328305",
+    "name": null,
+    "category": "chemin_rural",
+    "deckMembers": [
+     "TRONROUT0000000328328305"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000000328328323",
+    "crosses": [],
+    "deckZStart": 75.33,
+    "deckZEnd": 76.44,
+    "maxClearanceOverTerrainM": 0.45,
+    "lengthM": 25.3,
+    "L93": [
+     757946.7,
+     6826119.5
+    ]
+   },
+   {
+    "road": "TRONROUT0000002203222902",
+    "name": null,
+    "category": "sentier",
+    "deckMembers": [
+     "TRONROUT0000002203222902"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000002203222886",
+    "crosses": [],
+    "deckZStart": 76.23,
+    "deckZEnd": 76.29,
+    "maxClearanceOverTerrainM": 1.72,
+    "lengthM": 25.2,
+    "L93": [
+     756262.95,
+     6822905.7
+    ]
+   },
+   {
+    "road": "TRONROUT0000002203222909",
+    "name": null,
+    "category": "sentier",
+    "deckMembers": [
+     "TRONROUT0000002203222909"
+    ],
+    "ouvrageBdtopo": "CONSLINE0000002203222885",
+    "crosses": [],
+    "deckZStart": 75.86,
+    "deckZEnd": 75.64,
+    "maxClearanceOverTerrainM": 1.1,
+    "lengthM": 25.3,
+    "L93": [
+     756371.35,
+     6822871.5
+    ]
+   }
+  ],
+  "bridgesCount": 30,
+  "osmBridgeDisagreements": [
+   {
+    "id": "TRONROUT0000000009477686",
+    "name": "Route du Passage",
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/395351635"
+   },
+   {
+    "id": "TRONROUT0000000009478796",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/132006394"
+   },
+   {
+    "id": "TRONROUT0000000009479959",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/150927801"
+   },
+   {
+    "id": "TRONROUT0000000009479988",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/150933048"
+   },
+   {
+    "id": "TRONROUT0000000009479989",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/150933048"
+   },
+   {
+    "id": "TRONROUT0000000065477220",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/132360748"
+   },
+   {
+    "id": "TRONROUT0000000065477221",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/132360748"
+   },
+   {
+    "id": "TRONROUT0000000065477222",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/132360748"
+   },
+   {
+    "id": "TRONROUT0000000065477248",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/1456565866"
+   },
+   {
+    "id": "TRONROUT0000000065477379",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/1442615668"
+   },
+   {
+    "id": "TRONROUT0000002203222908",
+    "name": null,
+    "bdtopo": "sol",
+    "osmBridgeTag": true,
+    "osmWay": "way/366040721"
+   }
+  ],
+  "railCrossings": [
+   {
+    "road": "TRONROUT0000000009481835",
+    "name": "Chemin Rural Dit Fin Maizieres",
+    "category": "voie_locale",
+    "rail": "TRONFERR0000000009310471",
+    "railNature": "Voie ferrée principale",
+    "L93": [
+     756174,
+     6823242.7
+    ],
+    "type": "passage à niveau",
+    "levelCrossing": "Passage à Niveau Numéro 70"
+   },
+   {
+    "road": "TRONROUT0000000009483604",
+    "name": null,
+    "category": "voie_locale",
+    "rail": "TRONFERR0000000009310426",
+    "railNature": "Voie de service",
+    "L93": [
+     760261.29,
+     6822632.7
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000000009483604",
+    "name": null,
+    "category": "voie_locale",
+    "rail": "TRONFERR0000000009310437",
+    "railNature": "Voie de service",
+    "L93": [
+     760271.65,
+     6822569.79
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000000009483619",
+    "name": null,
+    "category": "voie_de_desserte",
+    "rail": "TRONFERR0000000009310437",
+    "railNature": "Voie de service",
+    "L93": [
+     760197.13,
+     6822568.52
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000000009483620",
+    "name": null,
+    "category": "voie_de_desserte",
+    "rail": "TRONFERR0000000009310426",
+    "railNature": "Voie de service",
+    "L93": [
+     760202.36,
+     6822618.43
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000000009483626",
+    "name": null,
+    "category": "voie_locale",
+    "rail": "TRONFERR0000000009310426",
+    "railNature": "Voie de service",
+    "L93": [
+     760287.02,
+     6822640.96
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000000009483634",
+    "name": "Rue de l'Orme",
+    "category": "route_secondaire",
+    "rail": "TRONFERR0000000009310468",
+    "railNature": "Voie ferrée principale",
+    "L93": [
+     759371.9,
+     6822898.7
+    ],
+    "type": "pont routier au-dessus de la voie ferrée",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000000009483643",
+    "name": "La Station",
+    "category": "voie_locale",
+    "rail": "TRONFERR0000002007077896",
+    "railNature": "Voie de service",
+    "L93": [
+     760171.5,
+     6822720.4
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000000009483643",
+    "name": "La Station",
+    "category": "voie_locale",
+    "rail": "TRONFERR0000002007077896",
+    "railNature": "Voie de service",
+    "L93": [
+     760163,
+     6822719.7
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000000009483643",
+    "name": "La Station",
+    "category": "voie_locale",
+    "rail": "TRONFERR0000002007077896",
+    "railNature": "Voie de service",
+    "L93": [
+     760150.79,
+     6822716.67
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000000009483643",
+    "name": "La Station",
+    "category": "voie_locale",
+    "rail": "TRONFERR0000002007077896",
+    "railNature": "Voie de service",
+    "L93": [
+     760104.8,
+     6822702
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000000009483643",
+    "name": "La Station",
+    "category": "voie_locale",
+    "rail": "TRONFERR0000002007077896",
+    "railNature": "Voie de service",
+    "L93": [
+     760077.89,
+     6822699.11
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000000009483643",
+    "name": "La Station",
+    "category": "voie_locale",
+    "rail": "TRONFERR0000002007077896",
+    "railNature": "Voie de service",
+    "L93": [
+     760086.9,
+     6822699.4
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000000009483643",
+    "name": "La Station",
+    "category": "voie_locale",
+    "rail": "TRONFERR0000000009310426",
+    "railNature": "Voie de service",
+    "L93": [
+     760047.39,
+     6822637.19
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000000009483654",
+    "name": null,
+    "category": "voie_locale",
+    "rail": "TRONFERR0000000009310437",
+    "railNature": "Voie de service",
+    "L93": [
+     760081.83,
+     6822592.33
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000000009483676",
+    "name": null,
+    "category": "chemin_carrossable",
+    "rail": "TRONFERR0000000009310467",
+    "railNature": "Voie ferrée principale",
+    "L93": [
+     758523.7,
+     6822989.7
+    ],
+    "type": "passage à niveau",
+    "levelCrossing": "Passage à Niveau Numéro 74"
+   },
+   {
+    "road": "TRONROUT0000000009483697",
+    "name": "Rue du General Leclerc",
+    "category": "route_secondaire",
+    "rail": "TRONFERR0000000009310467",
+    "railNature": "Voie ferrée principale",
+    "L93": [
+     758048.4,
+     6823041.7
+    ],
+    "type": "passage à niveau",
+    "levelCrossing": "Passage à Niveau Numéro 73"
+   },
+   {
+    "road": "TRONROUT0000000244696585",
+    "name": "Rue du Pot Bancelin",
+    "category": "voie_locale",
+    "rail": "TRONFERR0000000009310471",
+    "railNature": "Voie ferrée principale",
+    "L93": [
+     756711.5,
+     6823185.4
+    ],
+    "type": "passage à niveau",
+    "levelCrossing": "Passage à Niveau Numéro 71"
+   },
+   {
+    "road": "TRONROUT0000002007077887",
+    "name": null,
+    "category": "chemin_rural",
+    "rail": "TRONFERR0000000009310437",
+    "railNature": "Voie de service",
+    "L93": [
+     760655.5,
+     6822692.7
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   },
+   {
+    "road": "TRONROUT0000002007077887",
+    "name": null,
+    "category": "chemin_rural",
+    "rail": "TRONFERR0000000009310464",
+    "railNature": "Voie de service",
+    "L93": [
+     760593.55,
+     6822724.89
+    ],
+    "type": "croisement de niveau d’une voie de service ferroviaire (embranchement industriel)",
+    "levelCrossing": null
+   }
+  ],
+  "levelCrossings": [
+   {
+    "id": "PT_RESEA0000000354298825",
+    "name": "Passage à Niveau Numéro 70",
+    "L93": [
+     756174,
+     6823242.7
+    ],
+    "road": "Chemin Rural Dit Fin Maizieres",
+    "matched": true
+   },
+   {
+    "id": "PT_RESEA0000000354298826",
+    "name": "Passage à Niveau Numéro 71",
+    "L93": [
+     756711.5,
+     6823185.4
+    ],
+    "road": "Rue du Pot Bancelin",
+    "matched": true
+   },
+   {
+    "id": "PT_RESEA0000000354298827",
+    "name": "Passage à Niveau Numéro 73",
+    "L93": [
+     758048.4,
+     6823041.7
+    ],
+    "road": "Rue du General Leclerc",
+    "matched": true
+   },
+   {
+    "id": "PT_RESEA0000000354298828",
+    "name": "Passage à Niveau Numéro 74",
+    "L93": [
+     758523.7,
+     6822989.7
+    ],
+    "road": null,
+    "matched": true
+   }
+  ],
+  "profileAnomalies": [
+   {
+    "road": "TRONROUT0000000009478797",
+    "name": null,
+    "category": "route_secondaire",
+    "L93": [
+     758173.54,
+     6825220.93
+    ],
+    "deviationM": -2.89,
+    "lengthM": 1,
+    "near": null,
+    "kind": "ouvrage hydraulique non répertorié",
+    "review": {
+     "kind": "ouvrage hydraulique non répertorié",
+     "observation": "parapets visibles : l’ouvrage se prolonge au-delà du tronçon pont BD TOPO voisin (8,8 m)",
+     "open": false,
+     "structure": true
+    }
+   },
+   {
+    "road": "TRONROUT0000000009480017",
+    "name": null,
+    "category": "chemin_carrossable",
+    "L93": [
+     755741.56,
+     6824162.98
+    ],
+    "deviationM": 1.23,
+    "lengthM": 1,
+    "near": null,
+    "kind": "ouvrage hydraulique non répertorié",
+    "review": {
+     "kind": "ouvrage hydraulique non répertorié",
+     "observation": "le chemin franchit un ruisseau boisé : ponceau probable",
+     "open": false,
+     "structure": true
+    }
+   },
+   {
+    "road": "TRONROUT0000000009481869",
+    "name": null,
+    "category": "chemin_carrossable",
+    "L93": [
+     755477.03,
+     6823871.61
+    ],
+    "deviationM": 1.28,
+    "lengthM": 4,
+    "near": null,
+    "kind": "ouvrage hydraulique non répertorié",
+    "review": {
+     "kind": "ouvrage hydraulique non répertorié",
+     "observation": "exutoire d’étang sous le chemin : ponceau",
+     "open": false,
+     "structure": true
+    }
+   },
+   {
+    "road": "TRONROUT0000000009481869",
+    "name": null,
+    "category": "chemin_carrossable",
+    "L93": [
+     755468.99,
+     6823865.78
+    ],
+    "deviationM": -2.5,
+    "lengthM": 6,
+    "near": null,
+    "kind": "ouvrage hydraulique non répertorié",
+    "review": {
+     "kind": "ouvrage hydraulique non répertorié",
+     "observation": "exutoire d’étang sous le chemin : ponceau",
+     "open": false,
+     "structure": true
+    }
+   },
+   {
+    "road": "TRONROUT0000000009481869",
+    "name": null,
+    "category": "chemin_carrossable",
+    "L93": [
+     755460.95,
+     6823859.96
+    ],
+    "deviationM": 1.32,
+    "lengthM": 5,
+    "near": null,
+    "kind": "ouvrage hydraulique non répertorié",
+    "review": {
+     "kind": "ouvrage hydraulique non répertorié",
+     "observation": "exutoire d’étang sous le chemin : ponceau",
+     "open": false,
+     "structure": true
+    }
+   },
+   {
+    "road": "TRONROUT0000000328328303",
+    "name": null,
+    "category": "chemin_rural",
+    "L93": [
+     757950.17,
+     6826148.21
+    ],
+    "deviationM": 1.27,
+    "lengthM": 2,
+    "near": null,
+    "kind": "relief réel",
+    "review": {
+     "kind": "relief réel",
+     "observation": "piste de motocross / carrière : buttes réelles",
+     "open": false
+    }
+   },
+   {
+    "road": "TRONROUT0000000328328306",
+    "name": null,
+    "category": "chemin_rural",
+    "L93": [
+     758111.89,
+     6826073.02
+    ],
+    "deviationM": 1.75,
+    "lengthM": 7,
+    "near": null,
+    "kind": "relief réel",
+    "review": {
+     "kind": "relief réel",
+     "observation": "piste de motocross / carrière : buttes réelles",
+     "open": false
+    }
+   },
+   {
+    "road": "TRONROUT0000000348956755",
+    "name": "La Croix des Fourches",
+    "category": "chemin_carrossable",
+    "L93": [
+     759961.32,
+     6820664.24
+    ],
+    "deviationM": 1.28,
+    "lengthM": 1,
+    "near": null,
+    "kind": "à vérifier",
+    "review": {
+     "kind": "à vérifier",
+     "observation": "creux étroit sous le chemin de la Croix des Fourches près d’une éolienne : fossé, tranchée ou buse ?",
+     "open": true
+    }
+   },
+   {
+    "road": "TRONROUT0000000348956755",
+    "name": "La Croix des Fourches",
+    "category": "chemin_carrossable",
+    "L93": [
+     759958.1,
+     6820655.15
+    ],
+    "deviationM": -2.54,
+    "lengthM": 5,
+    "near": null,
+    "kind": "à vérifier",
+    "review": {
+     "kind": "à vérifier",
+     "observation": "creux étroit sous le chemin de la Croix des Fourches près d’une éolienne : fossé, tranchée ou buse ?",
+     "open": true
+    }
+   },
+   {
+    "road": "TRONROUT0000000348956755",
+    "name": "La Croix des Fourches",
+    "category": "chemin_carrossable",
+    "L93": [
+     759954.79,
+     6820646.08
+    ],
+    "deviationM": 1.27,
+    "lengthM": 1,
+    "near": null,
+    "kind": "à vérifier",
+    "review": {
+     "kind": "à vérifier",
+     "observation": "creux étroit sous le chemin de la Croix des Fourches près d’une éolienne : fossé, tranchée ou buse ?",
+     "open": true
+    }
+   },
+   {
+    "road": "TRONROUT0000002206426516",
+    "name": null,
+    "category": "chemin_rural",
+    "L93": [
+     757997.01,
+     6826070.49
+    ],
+    "deviationM": 1.2,
+    "lengthM": 1,
+    "near": null,
+    "kind": "relief réel",
+    "review": {
+     "kind": "relief réel",
+     "observation": "piste de motocross : buttes réelles",
+     "open": false
+    }
+   },
+   {
+    "road": "TRONROUT0000002206426516",
+    "name": null,
+    "category": "chemin_rural",
+    "L93": [
+     757978.17,
+     6826074.96
+    ],
+    "deviationM": 1.7,
+    "lengthM": 7,
+    "near": null,
+    "kind": "relief réel",
+    "review": {
+     "kind": "relief réel",
+     "observation": "piste de motocross : buttes réelles",
+     "open": false
+    }
+   },
+   {
+    "road": "TRONROUT0000002206426523",
+    "name": null,
+    "category": "chemin_rural",
+    "L93": [
+     757899.3,
+     6826107.87
+    ],
+    "deviationM": 1.55,
+    "lengthM": 8,
+    "near": null,
+    "kind": "relief réel",
+    "review": {
+     "kind": "relief réel",
+     "observation": "piste de motocross : buttes réelles",
+     "open": false
+    }
+   },
+   {
+    "road": "TRONROUT0000002206584849",
+    "name": null,
+    "category": "chemin_rural",
+    "L93": [
+     758055.92,
+     6826066.14
+    ],
+    "deviationM": 1.43,
+    "lengthM": 2,
+    "near": null,
+    "kind": "relief réel",
+    "review": {
+     "kind": "relief réel",
+     "observation": "piste de motocross : buttes réelles",
+     "open": false
+    }
+   },
+   {
+    "road": "TRONROUT0000002206986541",
+    "name": null,
+    "category": "chemin_rural",
+    "L93": [
+     760846.5,
+     6824678.1
+    ],
+    "deviationM": 1.23,
+    "lengthM": 1,
+    "near": null,
+    "kind": "relief réel",
+    "review": {
+     "kind": "relief réel",
+     "observation": "berge de la Seine",
+     "open": false
+    }
+   },
+   {
+    "road": "TRONROUT0000002344919067",
+    "name": null,
+    "category": "chemin_carrossable",
+    "L93": [
+     756564.56,
+     6822418.06
+    ],
+    "deviationM": 1.31,
+    "lengthM": 1,
+    "near": null,
+    "kind": "à vérifier",
+    "review": {
+     "kind": "à vérifier",
+     "observation": "bosse de 1,3 m sur un chemin de la centrale photovoltaïque, rien de visible",
+     "open": true
+    }
+   }
+  ],
+  "hiddenStructures": [
+   {
+    "road": "TRONROUT0000000009478797",
+    "name": null,
+    "category": "route_secondaire",
+    "sites": [
+     {
+      "L93": [
+       758173.54,
+       6825220.93
+      ],
+      "observation": "parapets visibles : l’ouvrage se prolonge au-delà du tronçon pont BD TOPO voisin (8,8 m)"
+     }
+    ]
+   },
+   {
+    "road": "TRONROUT0000000009480017",
+    "name": null,
+    "category": "chemin_carrossable",
+    "sites": [
+     {
+      "L93": [
+       755741.56,
+       6824162.98
+      ],
+      "observation": "le chemin franchit un ruisseau boisé : ponceau probable"
+     }
+    ]
+   },
+   {
+    "road": "TRONROUT0000000009481869",
+    "name": null,
+    "category": "chemin_carrossable",
+    "sites": [
+     {
+      "L93": [
+       755477.03,
+       6823871.61
+      ],
+      "observation": "exutoire d’étang sous le chemin : ponceau"
+     },
+     {
+      "L93": [
+       755468.99,
+       6823865.78
+      ],
+      "observation": "exutoire d’étang sous le chemin : ponceau"
+     },
+     {
+      "L93": [
+       755460.95,
+       6823859.96
+      ],
+      "observation": "exutoire d’étang sous le chemin : ponceau"
+     }
+    ]
+   }
+  ],
+  "profileAnomaliesByKind": {
+   "ouvrage hydraulique non répertorié": 5,
+   "relief réel": 7,
+   "à vérifier": 4
+  }
+ },
+ "altitude": {
+  "source": "terrain V1.7 (MNT LiDAR HD 1 m)",
+  "bdtopoZMinusTerrain": {
+   "vertices": 7965,
+   "meanM": -0.25,
+   "rmseM": 0.72
+  }
+ },
+ "osm": {
+  "ways": 531,
+  "transferredToBdtopo": 1049,
+  "complements": 109,
+  "partiallyOverlapping": [
+   {
+    "id": "way/103925799",
+    "highway": "pedestrian",
+    "name": null,
+    "bdCoverage": 0.22,
+    "keptRuns": 1,
+    "keptM": 76
+   },
+   {
+    "id": "way/103925801",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.25,
+    "keptRuns": 1,
+    "keptM": 50
+   },
+   {
+    "id": "way/103925816",
+    "highway": "unclassified",
+    "name": null,
+    "bdCoverage": 0.93,
+    "keptRuns": 1,
+    "keptM": 29
+   },
+   {
+    "id": "way/103925830",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.42,
+    "keptRuns": 1,
+    "keptM": 60
+   },
+   {
+    "id": "way/132008281",
+    "highway": "track",
+    "name": null,
+    "bdCoverage": 0.92,
+    "keptRuns": 1,
+    "keptM": 34
+   },
+   {
+    "id": "way/132008286",
+    "highway": "track",
+    "name": null,
+    "bdCoverage": 0.57,
+    "keptRuns": 1,
+    "keptM": 337
+   },
+   {
+    "id": "way/132360758",
+    "highway": "track",
+    "name": null,
+    "bdCoverage": 0.85,
+    "keptRuns": 2,
+    "keptM": 195
+   },
+   {
+    "id": "way/132363788",
+    "highway": "track",
+    "name": null,
+    "bdCoverage": 0.94,
+    "keptRuns": 2,
+    "keptM": 94
+   },
+   {
+    "id": "way/150926819",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.45,
+    "keptRuns": 1,
+    "keptM": 24
+   },
+   {
+    "id": "way/150926821",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.36,
+    "keptRuns": 1,
+    "keptM": 29
+   },
+   {
+    "id": "way/150926827",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.33,
+    "keptRuns": 1,
+    "keptM": 35
+   },
+   {
+    "id": "way/150930761",
+    "highway": "track",
+    "name": null,
+    "bdCoverage": 0.17,
+    "keptRuns": 1,
+    "keptM": 144
+   },
+   {
+    "id": "way/150930763",
+    "highway": "track",
+    "name": null,
+    "bdCoverage": 0.95,
+    "keptRuns": 1,
+    "keptM": 52
+   },
+   {
+    "id": "way/150930765",
+    "highway": "track",
+    "name": null,
+    "bdCoverage": 0.66,
+    "keptRuns": 3,
+    "keptM": 244
+   },
+   {
+    "id": "way/150930766",
+    "highway": "track",
+    "name": null,
+    "bdCoverage": 0.95,
+    "keptRuns": 1,
+    "keptM": 18
+   },
+   {
+    "id": "way/150933055",
+    "highway": "track",
+    "name": null,
+    "bdCoverage": 0.99,
+    "keptRuns": 1,
+    "keptM": 21
+   },
+   {
+    "id": "way/150936929",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.15,
+    "keptRuns": 1,
+    "keptM": 53
+   },
+   {
+    "id": "way/150938010",
+    "highway": "residential",
+    "name": "Rue Albert Benoist",
+    "bdCoverage": 0.89,
+    "keptRuns": 1,
+    "keptM": 21
+   },
+   {
+    "id": "way/150938019",
+    "highway": "residential",
+    "name": "Rue Albert Benoist",
+    "bdCoverage": 0.64,
+    "keptRuns": 1,
+    "keptM": 20
+   },
+   {
+    "id": "way/150938389",
+    "highway": "unclassified",
+    "name": null,
+    "bdCoverage": 0.78,
+    "keptRuns": 1,
+    "keptM": 197
+   },
+   {
+    "id": "way/151049935",
+    "highway": "residential",
+    "name": "Rue des Aulnes",
+    "bdCoverage": 0.84,
+    "keptRuns": 1,
+    "keptM": 17
+   },
+   {
+    "id": "way/234826898",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.79,
+    "keptRuns": 1,
+    "keptM": 49
+   },
+   {
+    "id": "way/348422458",
+    "highway": "track",
+    "name": null,
+    "bdCoverage": 0.89,
+    "keptRuns": 2,
+    "keptM": 65
+   },
+   {
+    "id": "way/377317549",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.3,
+    "keptRuns": 1,
+    "keptM": 41
+   },
+   {
+    "id": "way/377317550",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.18,
+    "keptRuns": 2,
+    "keptM": 155
+   },
+   {
+    "id": "way/395351636",
+    "highway": "track",
+    "name": "Chemin d'Outre Seine",
+    "bdCoverage": 0.31,
+    "keptRuns": 1,
+    "keptM": 86
+   },
+   {
+    "id": "way/449143017",
+    "highway": "footway",
+    "name": null,
+    "bdCoverage": 0.97,
+    "keptRuns": 1,
+    "keptM": 15
+   },
+   {
+    "id": "way/499681300",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.4,
+    "keptRuns": 1,
+    "keptM": 82
+   },
+   {
+    "id": "way/499681302",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.21,
+    "keptRuns": 1,
+    "keptM": 65
+   },
+   {
+    "id": "way/499681303",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.17,
+    "keptRuns": 1,
+    "keptM": 97
+   },
+   {
+    "id": "way/499681304",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.21,
+    "keptRuns": 1,
+    "keptM": 75
+   },
+   {
+    "id": "way/499681305",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.3,
+    "keptRuns": 1,
+    "keptM": 51
+   },
+   {
+    "id": "way/499681306",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.2,
+    "keptRuns": 1,
+    "keptM": 32
+   },
+   {
+    "id": "way/499681307",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.36,
+    "keptRuns": 1,
+    "keptM": 30
+   },
+   {
+    "id": "way/499681317",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.31,
+    "keptRuns": 1,
+    "keptM": 42
+   },
+   {
+    "id": "way/499681318",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.3,
+    "keptRuns": 1,
+    "keptM": 43
+   },
+   {
+    "id": "way/499690351",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.3,
+    "keptRuns": 1,
+    "keptM": 73
+   },
+   {
+    "id": "way/499690354",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.16,
+    "keptRuns": 1,
+    "keptM": 86
+   },
+   {
+    "id": "way/499690356",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.16,
+    "keptRuns": 1,
+    "keptM": 95
+   },
+   {
+    "id": "way/499690357",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.16,
+    "keptRuns": 1,
+    "keptM": 92
+   },
+   {
+    "id": "way/499690358",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.17,
+    "keptRuns": 1,
+    "keptM": 89
+   },
+   {
+    "id": "way/499690361",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.25,
+    "keptRuns": 1,
+    "keptM": 56
+   },
+   {
+    "id": "way/533882030",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.42,
+    "keptRuns": 1,
+    "keptM": 23
+   },
+   {
+    "id": "way/533882036",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.19,
+    "keptRuns": 1,
+    "keptM": 21
+   },
+   {
+    "id": "way/533882040",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.51,
+    "keptRuns": 1,
+    "keptM": 19
+   },
+   {
+    "id": "way/588789530",
+    "highway": "track",
+    "name": null,
+    "bdCoverage": 0.72,
+    "keptRuns": 1,
+    "keptM": 244
+   },
+   {
+    "id": "way/602208310",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.63,
+    "keptRuns": 1,
+    "keptM": 37
+   },
+   {
+    "id": "way/602208311",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.18,
+    "keptRuns": 2,
+    "keptM": 110
+   },
+   {
+    "id": "way/1023896294",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.2,
+    "keptRuns": 1,
+    "keptM": 31
+   },
+   {
+    "id": "way/1037079276",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.35,
+    "keptRuns": 1,
+    "keptM": 17
+   },
+   {
+    "id": "way/1037080964",
+    "highway": "footway",
+    "name": null,
+    "bdCoverage": 0.58,
+    "keptRuns": 2,
+    "keptM": 45
+   },
+   {
+    "id": "way/1068920927",
+    "highway": "pedestrian",
+    "name": null,
+    "bdCoverage": 0.17,
+    "keptRuns": 2,
+    "keptM": 157
+   },
+   {
+    "id": "way/1068920928",
+    "highway": "residential",
+    "name": null,
+    "bdCoverage": 0.25,
+    "keptRuns": 1,
+    "keptM": 48
+   },
+   {
+    "id": "way/1068920929",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.24,
+    "keptRuns": 1,
+    "keptM": 54
+   },
+   {
+    "id": "way/1068920930",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.31,
+    "keptRuns": 2,
+    "keptM": 74
+   },
+   {
+    "id": "way/1068920931",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.58,
+    "keptRuns": 2,
+    "keptM": 77
+   },
+   {
+    "id": "way/1227619265",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.38,
+    "keptRuns": 1,
+    "keptM": 28
+   },
+   {
+    "id": "way/1421553666",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.36,
+    "keptRuns": 1,
+    "keptM": 20
+   },
+   {
+    "id": "way/1421553667",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.31,
+    "keptRuns": 1,
+    "keptM": 19
+   },
+   {
+    "id": "way/1423527168",
+    "highway": "footway",
+    "name": null,
+    "bdCoverage": 0.15,
+    "keptRuns": 1,
+    "keptM": 304
+   },
+   {
+    "id": "way/1423527175",
+    "highway": "footway",
+    "name": null,
+    "bdCoverage": 0.18,
+    "keptRuns": 1,
+    "keptM": 92
+   },
+   {
+    "id": "way/1442206466",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.4,
+    "keptRuns": 1,
+    "keptM": 104
+   },
+   {
+    "id": "way/1442206467",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.91,
+    "keptRuns": 1,
+    "keptM": 31
+   },
+   {
+    "id": "way/1442206468",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.87,
+    "keptRuns": 1,
+    "keptM": 47
+   },
+   {
+    "id": "way/1442625861",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.86,
+    "keptRuns": 2,
+    "keptM": 125
+   },
+   {
+    "id": "way/1442983064",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.18,
+    "keptRuns": 1,
+    "keptM": 50
+   },
+   {
+    "id": "way/1442983065",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.13,
+    "keptRuns": 1,
+    "keptM": 51
+   },
+   {
+    "id": "way/1442983066",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.13,
+    "keptRuns": 1,
+    "keptM": 52
+   },
+   {
+    "id": "way/1442983067",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.13,
+    "keptRuns": 1,
+    "keptM": 52
+   },
+   {
+    "id": "way/1442983068",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.13,
+    "keptRuns": 1,
+    "keptM": 52
+   },
+   {
+    "id": "way/1442983069",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.15,
+    "keptRuns": 1,
+    "keptM": 52
+   },
+   {
+    "id": "way/1442983070",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.15,
+    "keptRuns": 1,
+    "keptM": 52
+   },
+   {
+    "id": "way/1442983071",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.12,
+    "keptRuns": 1,
+    "keptM": 147
+   },
+   {
+    "id": "way/1456564152",
+    "highway": "footway",
+    "name": null,
+    "bdCoverage": 0.18,
+    "keptRuns": 1,
+    "keptM": 74
+   },
+   {
+    "id": "way/1513669510",
+    "highway": "service",
+    "name": null,
+    "bdCoverage": 0.16,
+    "keptRuns": 1,
+    "keptM": 65
+   }
+  ]
+ },
+ "sidewalks": {
+  "source": "aucune donnée fiable (OSM : aucun trottoir cartographié, seulement 14 passages piétons)",
+  "toDetermineKm": 54.21,
+  "toDetermineBySector": {
+   "hors commune": 22.69,
+   "reste de la commune": 12.94,
+   "Poussey": 2.13,
+   "centre-bourg": 8.81,
+   "Les Granges": 5.09,
+   "zone industrielle": 2.56
+  }
+ },
+ "openIssues": {
+  "orphans": [
+   {
+    "roads": [
+     "way/1068921271",
+     "way/1421553668",
+     "way/1421553671",
+     "way/1421553672"
+    ],
+    "lengthM": 346,
+    "categories": [
+     "voie_de_desserte"
+    ],
+    "names": [],
+    "provenance": [
+     "osm"
+    ],
+    "inCommune": false,
+    "centreL93": [
+     756285,
+     6822995
+    ],
+    "review": {
+     "observation": "boucle de parking d’un restaurant de La Belle Idée : raccord réel à la voirie visible mais absent d’OSM et de la BD TOPO",
+     "open": true
+    }
+   }
+  ],
+  "crossingsWithoutNode": [],
+  "nearMisses": [],
+  "duplicates": [],
+  "anomaliesToCheck": [
+   {
+    "road": "TRONROUT0000000348956755",
+    "name": "La Croix des Fourches",
+    "category": "chemin_carrossable",
+    "L93": [
+     759961.32,
+     6820664.24
+    ],
+    "deviationM": 1.28,
+    "lengthM": 1,
+    "near": null,
+    "kind": "à vérifier",
+    "review": {
+     "kind": "à vérifier",
+     "observation": "creux étroit sous le chemin de la Croix des Fourches près d’une éolienne : fossé, tranchée ou buse ?",
+     "open": true
+    }
+   },
+   {
+    "road": "TRONROUT0000000348956755",
+    "name": "La Croix des Fourches",
+    "category": "chemin_carrossable",
+    "L93": [
+     759958.1,
+     6820655.15
+    ],
+    "deviationM": -2.54,
+    "lengthM": 5,
+    "near": null,
+    "kind": "à vérifier",
+    "review": {
+     "kind": "à vérifier",
+     "observation": "creux étroit sous le chemin de la Croix des Fourches près d’une éolienne : fossé, tranchée ou buse ?",
+     "open": true
+    }
+   },
+   {
+    "road": "TRONROUT0000000348956755",
+    "name": "La Croix des Fourches",
+    "category": "chemin_carrossable",
+    "L93": [
+     759954.79,
+     6820646.08
+    ],
+    "deviationM": 1.27,
+    "lengthM": 1,
+    "near": null,
+    "kind": "à vérifier",
+    "review": {
+     "kind": "à vérifier",
+     "observation": "creux étroit sous le chemin de la Croix des Fourches près d’une éolienne : fossé, tranchée ou buse ?",
+     "open": true
+    }
+   },
+   {
+    "road": "TRONROUT0000002344919067",
+    "name": null,
+    "category": "chemin_carrossable",
+    "L93": [
+     756564.56,
+     6822418.06
+    ],
+    "deviationM": 1.31,
+    "lengthM": 1,
+    "near": null,
+    "kind": "à vérifier",
+    "review": {
+     "kind": "à vérifier",
+     "observation": "bosse de 1,3 m sur un chemin de la centrale photovoltaïque, rien de visible",
+     "open": true
+    }
+   }
+  ],
+  "osmComplementsUnverifiable": [
+   {
+    "id": "way/132008281#1",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "trace à peine perceptible dans une prairie"
+   },
+   {
+    "id": "way/132360758#1",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "sous couvert forestier"
+   },
+   {
+    "id": "way/132360758#2",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "sous couvert forestier"
+   },
+   {
+    "id": "way/150930761#1",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "sous couvert forestier"
+   },
+   {
+    "id": "way/150930763#1",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "peupleraie, aucune trace nette"
+   },
+   {
+    "id": "way/150930765#1",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "sous couvert forestier, le long d’un bras d’eau"
+   },
+   {
+    "id": "way/150930765#2",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "peupleraie, aucune trace nette"
+   },
+   {
+    "id": "way/150930765#3",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "sous couvert forestier"
+   },
+   {
+    "id": "way/150933055#1",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "sous couvert forestier, parallèle à un chemin BD TOPO"
+   },
+   {
+    "id": "way/234826898#1",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "sous couvert forestier"
+   },
+   {
+    "id": "way/348422458#1",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "lisière boisée au bord d’un cours d’eau"
+   },
+   {
+    "id": "way/348422458#2",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "lisière boisée au bord d’un cours d’eau"
+   },
+   {
+    "id": "way/395351636#1",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "Chemin d’Outre Seine sous couvert forestier"
+   },
+   {
+    "id": "way/602208310#1",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "orthophoto floutée (zone à diffusion restreinte)"
+   },
+   {
+    "id": "way/602208311#1",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "orthophoto floutée (zone à diffusion restreinte)"
+   },
+   {
+    "id": "way/602208311#2",
+    "verdict": "non vérifiable",
+    "action": "conserver",
+    "observation": "orthophoto floutée (zone à diffusion restreinte)"
+   },
+   {
+    "id": "way/1442206467#1",
+    "verdict": "douteux",
+    "action": "conserver",
+    "observation": "trace herbeuse entre voies ferrées, usage non établi"
+   },
+   {
+    "id": "way/1442625861#1",
+    "verdict": "douteux",
+    "action": "conserver",
+    "observation": "tracé posé sur la toiture d’un hangar : quai couvert ou décalage"
+   }
+  ],
+  "osmBridgeDisagreements": [
+   {
+    "id": "TRONROUT0000000009477686",
+    "name": "Route du Passage",
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/395351635"
+   },
+   {
+    "id": "TRONROUT0000000009478796",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/132006394"
+   },
+   {
+    "id": "TRONROUT0000000009479959",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/150927801"
+   },
+   {
+    "id": "TRONROUT0000000009479988",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/150933048"
+   },
+   {
+    "id": "TRONROUT0000000009479989",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/150933048"
+   },
+   {
+    "id": "TRONROUT0000000065477220",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/132360748"
+   },
+   {
+    "id": "TRONROUT0000000065477221",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/132360748"
+   },
+   {
+    "id": "TRONROUT0000000065477222",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/132360748"
+   },
+   {
+    "id": "TRONROUT0000000065477248",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/1456565866"
+   },
+   {
+    "id": "TRONROUT0000000065477379",
+    "name": null,
+    "bdtopo": "pont",
+    "osmBridgeTag": false,
+    "osmWay": "way/1442615668"
+   },
+   {
+    "id": "TRONROUT0000002203222908",
+    "name": null,
+    "bdtopo": "sol",
+    "osmBridgeTag": true,
+    "osmWay": "way/366040721"
+   }
+  ],
+  "levelCrossingsUnmatched": [],
+  "notes": [
+   "Pont ferroviaire BD TOPO de 19 m (757 017–757 035 / 6 823 152) : aucune route dessous ; franchissement boisé d’un fossé. Il explique la rupture du profil ferroviaire signalée en V1.7 ; la voirie n’est pas concernée.",
+   "Rue du Pont de Clairvaux : pont BD TOPO de 21,7 m sur la rivière du Moulin (TRONROUT0000000009479965) ; la pente de 58 % relevée en V1.7 sur le MNT est le creux du lit sous le pont. Le tablier est interpolé (77,28 → 77,46 m).",
+   "Rue de l’Orme : pont routier de 25,8 m au-dessus de la voie ferrée (BIBLE_01 § 12.6), tablier 86,3 m, 5,3 m au-dessus du MNT.",
+   "Tronçon BD TOPO TRONROUT0000002203222908 : OSM le marque comme pont, la BD TOPO non ; passerelle piétonne sur un fossé visible, à confirmer."
+  ],
+  "count": 23
+ },
+ "bible": {
+  "checked": 107,
+  "found": 85,
+  "missing": [
+   {
+    "name": "Chemin du Bout des Ruelles",
+    "section": "4.1",
+    "found": false,
+    "sources": [],
+    "closest": "rue du bout des ruelles"
+   },
+   {
+    "name": "Rue du Pont",
+    "section": "4.1",
+    "found": false,
+    "sources": [],
+    "closest": "rue du pont de clairvaux"
+   },
+   {
+    "name": "Rue Voie de la Garenne",
+    "section": "5",
+    "found": false,
+    "sources": [],
+    "closest": "la voie de la garenne"
+   },
+   {
+    "name": "Ruelle Apitache",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Ruelle du Cimetière",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Route Nationale 19",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue de la Gare",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Avenue de la Gare",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Place du Tartel",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue Bel-Air",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue Chapeline",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue de la Bretonnière",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": "la bretonniere"
+   },
+   {
+    "name": "Rue de la Ferme",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": "ferme des charmes"
+   },
+   {
+    "name": "Rue de la Franconnée",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue de la Liberté",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue de la Mairie",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue de l'Église",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": "eglise saint denis"
+   },
+   {
+    "name": "Chemin Latéral",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Avenue Jules-Rozé",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Chemin du Pot Bancelin",
+    "section": "5.1 / 7.11 / 7.12",
+    "found": false,
+    "sources": [],
+    "closest": "rue du pot bancelin"
+   },
+   {
+    "name": "Chemin à Leroy",
+    "section": "5.1 / 7.11 / 7.12",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Chemin Noir",
+    "section": "5.1 / 7.11 / 7.12",
+    "found": false,
+    "sources": [],
+    "closest": null
+   }
+  ],
+  "all": [
+   {
+    "name": "Avenue du Général-de-Gaulle",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Avenue Philippe-Seguin",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Boulevard Antoine-de-Saint-Exupéry",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "OSM voie"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Chemin de la Garenne",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Chemin de la Guide",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN (forme « le chemin de la guide »)",
+     "BD TOPO collaboratif (forme « le chemin de la guide »)",
+     "OSM voie (forme « le chemin de la guide »)",
+     "OSM lieu (forme « le chemin de la guide »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Chemin de la Pie",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "OSM voie"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Chemin du Bout des Ruelles",
+    "section": "4.1",
+    "found": false,
+    "sources": [],
+    "closest": "rue du bout des ruelles"
+   },
+   {
+    "name": "Impasse de la Noue",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Place / Placette Adrien-Quinet",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Placette Léopoldine-Deschamps",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BD TOPO collaboratif",
+     "OSM voie"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Place Saint-Denis",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Achille-Flaubert",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r achille flaubert »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Albert-Benoist",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r albert benoist »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Ambroise-Paré",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r ambroise pare »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Basse-de-Poussey",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif (forme « r basse de poussey »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue de l'Essy",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r de l essy »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue de l'Orme",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r de l orme »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue de la Chapelle",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r de la chapelle »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue de la Chefferie",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r de la chefferie »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue de la Contrée-du-Pont",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r de la contree du pont »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue de la Libération",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r de la liberation »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue de la Paix",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r de la paix »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue de la République",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r de la republique »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue de la Zone-Industrielle",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue des Aulnes",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r des aulnes »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue des Baudets",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r des baudets »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue des Bédouins",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r des bedouins »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue des Billouts",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue des Carreaux",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r des carreaux »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue des Cottrets",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif (forme « r des cottrets »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue des Écoles",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r des ecoles »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue des Jacquets",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r des jacquets »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue des Lombards",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r des lombards »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue des Praillons",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r des praillons »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue des Prés-de-Poussey",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r des pres de poussey »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue des Sages",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r des sages »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue des Tabellions",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r des tabellions »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue du Calvaire",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif",
+     "OSM voie"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue du Château",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r du chateau »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue du Craon",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r du craon »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue du Docteur-Calmette",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r du docteur calmette »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue du Docteur-Sollier",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r du docteur sollier »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue du Général-Leclerc",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r du general leclerc »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue du Lavoir",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r du lavoir »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue du Maréchal-de-Lattre-de-Tassigny",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r du marechal de lattre de tassigny »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue du Moulin",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r du moulin »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue du Pont-de-Clairvaux",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r du pont de clairvaux »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue du Pont",
+    "section": "4.1",
+    "found": false,
+    "sources": [],
+    "closest": "rue du pont de clairvaux"
+   },
+   {
+    "name": "Rue du Pot-Bancelin",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif (forme « r du pot bancelin »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue du Presbytère",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r du presbytere »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue du Stade",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r du stade »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Georges-Clémenceau",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r georges clemenceau »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Georges-Pompidou",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif (forme « r georges pompidou »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Jean-Baptiste-de-Lesseps",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r jean baptiste de lesseps »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Jean-Monnet",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r jean monnet »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Joliot-Curie",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r joliot curie »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Jules-Ferry",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r jules ferry »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Louis-Joly",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r louis joly »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Maurice-Renault",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "OSM voie",
+     "BAN",
+     "BD TOPO collaboratif (forme « r maurice renault »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Pasteur",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r pasteur »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Ruelle des Granges",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "OSM voie"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Patris-de-Breuil",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif (forme « r patris de breuil »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Victor-Hugo",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie",
+     "BD TOPO collaboratif (forme « r victor hugo »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Ruelle des Écoles",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM voie"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Voie aux Vaches",
+    "section": "4.1",
+    "found": true,
+    "sources": [
+     "OSM voie",
+     "BAN",
+     "OSM lieu (forme « la voie aux vaches »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Ferme des Charmes",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "La Belle Idée",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif",
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "La Chefferie",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "La Glacière",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "BAN",
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "La Noue Boulate Sud",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "La Ruelle des Bois",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif",
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "La Station",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif",
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "La Voie de la Garenne",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif",
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Le Rougemont",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Le Tout Grain",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif",
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Le Village",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Les Granges",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif",
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Les Praillons",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Les Terres Boyaux",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Poussey",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Prés de Poussey",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "OSM lieu"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Rue Voie de la Garenne",
+    "section": "5",
+    "found": false,
+    "sources": [],
+    "closest": "la voie de la garenne"
+   },
+   {
+    "name": "Zone Industrielle La Glacière",
+    "section": "5",
+    "found": true,
+    "sources": [
+     "BAN"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Impasse des Sages",
+    "section": "6",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Ruelle à Rosez",
+    "section": "6",
+    "found": true,
+    "sources": [
+     "OSM voie"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Ruelle Apitache",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Ruelle du Cimetière",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue Jean-Baptiste-Petel",
+    "section": "6",
+    "found": true,
+    "sources": [
+     "BD TOPO collaboratif (forme « r jean baptiste petel »)"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Route Nationale 19",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue de la Gare",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Avenue de la Gare",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Grande Rue",
+    "section": "6",
+    "found": true,
+    "sources": [
+     "BAN",
+     "BD TOPO collaboratif"
+    ],
+    "closest": null
+   },
+   {
+    "name": "Place du Tartel",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue Bel-Air",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue Chapeline",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue de la Bretonnière",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": "la bretonniere"
+   },
+   {
+    "name": "Rue de la Ferme",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": "ferme des charmes"
+   },
+   {
+    "name": "Rue de la Franconnée",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue de la Liberté",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue de la Mairie",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Rue de l'Église",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": "eglise saint denis"
+   },
+   {
+    "name": "Chemin Latéral",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Avenue Jules-Rozé",
+    "section": "6",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Chemin du Pot Bancelin",
+    "section": "5.1 / 7.11 / 7.12",
+    "found": false,
+    "sources": [],
+    "closest": "rue du pot bancelin"
+   },
+   {
+    "name": "Chemin à Leroy",
+    "section": "5.1 / 7.11 / 7.12",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Chemin Noir",
+    "section": "5.1 / 7.11 / 7.12",
+    "found": false,
+    "sources": [],
+    "closest": null
+   },
+   {
+    "name": "Voie de la Garenne",
+    "section": "5.1 / 7.11 / 7.12",
+    "found": true,
+    "sources": [
+     "BAN (forme « la voie de la garenne »)",
+     "BD TOPO collaboratif (forme « la voie de la garenne »)",
+     "OSM lieu (forme « la voie de la garenne »)"
+    ],
+    "closest": null
+   }
+  ]
+ }
+}

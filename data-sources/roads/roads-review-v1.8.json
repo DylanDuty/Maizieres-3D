@@ -1,0 +1,649 @@
+{
+ "note": "Revue V1.8 sur la BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : l’orthophoto ne sert qu’à constater l’existence, le type ou l’anomalie ; aucune géométrie n’en est tirée.",
+ "osmComplements": {
+  "way/103925799#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "cheminement piéton revêtu visible"
+  },
+  "way/103925801#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/103925809": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/103925816#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "voie revêtue visible"
+  },
+  "way/103925830#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/132008281#1": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "trace à peine perceptible dans une prairie"
+  },
+  "way/132008284#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "chemin visible"
+  },
+  "way/132008286#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "chemin visible"
+  },
+  "way/132360758#1": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert forestier"
+  },
+  "way/132360758#2": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert forestier"
+  },
+  "way/132363788#1": {
+   "verdict": "doublon décalé",
+   "action": "exclure",
+   "observation": "parallèle à 5–10 m d’un chemin BD TOPO visible ; aucun second chemin sur l’orthophoto"
+  },
+  "way/132363788#2": {
+   "verdict": "doublon décalé",
+   "action": "exclure",
+   "observation": "parallèle à 5–10 m d’un chemin BD TOPO visible ; aucun second chemin sur l’orthophoto"
+  },
+  "way/150926819#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/150926821#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/150926827#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/150926831#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "voie revêtue longeant la zone commerciale"
+  },
+  "way/150930761#1": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert forestier"
+  },
+  "way/150930763#1": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "peupleraie, aucune trace nette"
+  },
+  "way/150930765#1": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert forestier, le long d’un bras d’eau"
+  },
+  "way/150930765#2": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "peupleraie, aucune trace nette"
+  },
+  "way/150930765#3": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert forestier"
+  },
+  "way/150930766#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "chemin visible"
+  },
+  "way/150933055#1": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert forestier, parallèle à un chemin BD TOPO"
+  },
+  "way/150936929#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/150938010#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "voie revêtue visible"
+  },
+  "way/150938019#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "voie revêtue visible"
+  },
+  "way/150938389#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "voie d’accès revêtue de la zone d’activité"
+  },
+  "way/151049935#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "voie revêtue visible"
+  },
+  "way/234826898#1": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert forestier"
+  },
+  "way/348422458#1": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "lisière boisée au bord d’un cours d’eau"
+  },
+  "way/348422458#2": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "lisière boisée au bord d’un cours d’eau"
+  },
+  "way/377317549#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/377317550#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/377317550#2": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/395351636#1": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "Chemin d’Outre Seine sous couvert forestier"
+  },
+  "way/449143017#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "cheminement piéton visible (parvis, parc de La Belle Idée)"
+  },
+  "way/499681300#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499681302#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499681303#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499681304#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499681305#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499681306#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499681307#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499681317#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499681318#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499690349": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499690350#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499690351#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499690352#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499690353#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499690354#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499690356#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499690357#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499690358#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/499690361#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/533882030#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/533882034#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/533882036#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/533882040#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/533882042#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/588789530#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "bande enherbée circulable entre deux parcelles"
+  },
+  "way/602208310#1": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "orthophoto floutée (zone à diffusion restreinte)"
+  },
+  "way/602208311#1": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "orthophoto floutée (zone à diffusion restreinte)"
+  },
+  "way/602208311#2": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "orthophoto floutée (zone à diffusion restreinte)"
+  },
+  "way/1023896294#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1037079276#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1037080964#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "cheminement piéton visible (parvis, parc de La Belle Idée)"
+  },
+  "way/1037080964#2": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "cheminement piéton visible (parvis, parc de La Belle Idée)"
+  },
+  "way/1037082233#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "piste gravillonnée vers les vestiaires du stade"
+  },
+  "way/1068920927#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "cheminement piéton revêtu visible"
+  },
+  "way/1068920927#2": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "cheminement piéton revêtu visible"
+  },
+  "way/1068920928#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "voie revêtue visible"
+  },
+  "way/1068920929#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1068920930#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1068920930#2": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1068920931#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1068920931#2": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1068921271": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1227619265#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1227619266": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1278267007": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1421553665": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1421553666#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1421553667#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1421553668": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1421553671": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1421553672": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1423527168#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "cheminement piéton visible (parvis, parc de La Belle Idée)"
+  },
+  "way/1423527172": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "cheminement piéton visible (parvis, parc de La Belle Idée)"
+  },
+  "way/1423527175#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "cheminement piéton visible (parvis, parc de La Belle Idée)"
+  },
+  "way/1423527176": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "cheminement piéton visible (parvis, parc de La Belle Idée)"
+  },
+  "way/1423527177": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "cheminement piéton visible (parvis, parc de La Belle Idée)"
+  },
+  "way/1423527178": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "cheminement piéton visible (parvis, parc de La Belle Idée)"
+  },
+  "way/1423527179": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "cheminement piéton visible (parvis, parc de La Belle Idée)"
+  },
+  "way/1442206466#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1442206467#1": {
+   "verdict": "douteux",
+   "action": "conserver",
+   "observation": "trace herbeuse entre voies ferrées, usage non établi"
+  },
+  "way/1442206468#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1442625861#1": {
+   "verdict": "douteux",
+   "action": "conserver",
+   "observation": "tracé posé sur la toiture d’un hangar : quai couvert ou décalage"
+  },
+  "way/1442625861#2": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1442983064#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1442983065#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1442983066#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1442983067#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1442983068#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1442983069#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1442983070#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1442983071#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "allée ou voie de desserte revêtue visible (parking, cour, zone d’activité)"
+  },
+  "way/1456564152#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "cheminement piéton visible (parvis, parc de La Belle Idée)"
+  },
+  "way/1513669510#1": {
+   "verdict": "visible",
+   "action": "conserver",
+   "observation": "piste en terre visible"
+  }
+ },
+ "anomalies": {
+  "TRONROUT0000000009478797@758174,6825221": {
+   "kind": "ouvrage hydraulique non répertorié",
+   "observation": "parapets visibles : l’ouvrage se prolonge au-delà du tronçon pont BD TOPO voisin (8,8 m)",
+   "open": false,
+   "structure": true
+  },
+  "TRONROUT0000000009480017@755742,6824163": {
+   "kind": "ouvrage hydraulique non répertorié",
+   "observation": "le chemin franchit un ruisseau boisé : ponceau probable",
+   "open": false,
+   "structure": true
+  },
+  "TRONROUT0000000009481869@755461,6823860": {
+   "kind": "ouvrage hydraulique non répertorié",
+   "observation": "exutoire d’étang sous le chemin : ponceau",
+   "open": false,
+   "structure": true
+  },
+  "TRONROUT0000000009481869@755469,6823866": {
+   "kind": "ouvrage hydraulique non répertorié",
+   "observation": "exutoire d’étang sous le chemin : ponceau",
+   "open": false,
+   "structure": true
+  },
+  "TRONROUT0000000009481869@755477,6823872": {
+   "kind": "ouvrage hydraulique non répertorié",
+   "observation": "exutoire d’étang sous le chemin : ponceau",
+   "open": false,
+   "structure": true
+  },
+  "TRONROUT0000000328328303@757950,6826148": {
+   "kind": "relief réel",
+   "observation": "piste de motocross / carrière : buttes réelles",
+   "open": false
+  },
+  "TRONROUT0000000328328306@758112,6826073": {
+   "kind": "relief réel",
+   "observation": "piste de motocross / carrière : buttes réelles",
+   "open": false
+  },
+  "TRONROUT0000002206426516@757997,6826070": {
+   "kind": "relief réel",
+   "observation": "piste de motocross : buttes réelles",
+   "open": false
+  },
+  "TRONROUT0000002206426516@757978,6826075": {
+   "kind": "relief réel",
+   "observation": "piste de motocross : buttes réelles",
+   "open": false
+  },
+  "TRONROUT0000002206426523@757899,6826108": {
+   "kind": "relief réel",
+   "observation": "piste de motocross : buttes réelles",
+   "open": false
+  },
+  "TRONROUT0000002206584849@758056,6826066": {
+   "kind": "relief réel",
+   "observation": "piste de motocross : buttes réelles",
+   "open": false
+  },
+  "TRONROUT0000002206986541@760847,6824678": {
+   "kind": "relief réel",
+   "observation": "berge de la Seine",
+   "open": false
+  },
+  "TRONROUT0000000348956755@759955,6820646": {
+   "kind": "à vérifier",
+   "observation": "creux étroit sous le chemin de la Croix des Fourches près d’une éolienne : fossé, tranchée ou buse ?",
+   "open": true
+  },
+  "TRONROUT0000000348956755@759958,6820655": {
+   "kind": "à vérifier",
+   "observation": "creux étroit sous le chemin de la Croix des Fourches près d’une éolienne : fossé, tranchée ou buse ?",
+   "open": true
+  },
+  "TRONROUT0000000348956755@759961,6820664": {
+   "kind": "à vérifier",
+   "observation": "creux étroit sous le chemin de la Croix des Fourches près d’une éolienne : fossé, tranchée ou buse ?",
+   "open": true
+  },
+  "TRONROUT0000002344919067@756565,6822418": {
+   "kind": "à vérifier",
+   "observation": "bosse de 1,3 m sur un chemin de la centrale photovoltaïque, rien de visible",
+   "open": true
+  }
+ },
+ "orphans": {
+  "way/1068921271": {
+   "observation": "boucle de parking d’un restaurant de La Belle Idée : raccord réel à la voirie visible mais absent d’OSM et de la BD TOPO",
+   "open": true
+  }
+ },
+ "notes": [
+  "Pont ferroviaire BD TOPO de 19 m (757 017–757 035 / 6 823 152) : aucune route dessous ; franchissement boisé d’un fossé. Il explique la rupture du profil ferroviaire signalée en V1.7 ; la voirie n’est pas concernée.",
+  "Rue du Pont de Clairvaux : pont BD TOPO de 21,7 m sur la rivière du Moulin (TRONROUT0000000009479965) ; la pente de 58 % relevée en V1.7 sur le MNT est le creux du lit sous le pont. Le tablier est interpolé (77,28 → 77,46 m).",
+  "Rue de l’Orme : pont routier de 25,8 m au-dessus de la voie ferrée (BIBLE_01 § 12.6), tablier 86,3 m, 5,3 m au-dessus du MNT.",
+  "Tronçon BD TOPO TRONROUT0000002203222908 : OSM le marque comme pont, la BD TOPO non ; passerelle piétonne sur un fossé visible, à confirmer."
+ ]
+}
