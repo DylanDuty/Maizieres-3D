@@ -1,3 +1,71 @@
+# Notes V1.6 — validation du bâti, 24 septembre 2026
+
+Branche `opus/v1.6-building-validation`, issue de `opus/v1.5-buildings` (`cbdcd97`). Aucun travail esthétique.
+
+## Accès aux sources officielles : toujours refusé
+
+Pendant cette passe, la politique réseau de l’environnement a encore renvoyé **403** pour `cadastre.data.gouv.fr`, `data.geopf.fr` et `rnb-api.beta.gouv.fr`. Les deux environnements disponibles sont en accès « trusted network ». Le cadastre Etalab et l’API RNB n’ont donc **pas pu être consultés**. Le pipeline est prêt :
+
+- `npm run data:validation-sources` télécharge le cadastre Etalab (couche bâtiments, INSEE 10220) dans `data-sources/cadastre/` et le RNB dans `data-sources/rnb/`, avec URL, date et licence. Les instantanés existants ne sont jamais écrasés.
+- `npm run data:buildings` reconstruit le référentiel et le valide. Si ces fichiers existent, la validation compare avec le **vrai cadastre**, ajoute les bâtiments cadastraux absents (source « Cadastre Etalab », provenance `cadastre`) et vérifie chaque identifiant RNB et son statut dans l’API.
+
+## Validation réalisée avec les sources locales
+
+Faute d’accès, la validation s’appuie sur deux indices cadastraux déjà présents, **explicitement signalés comme substituts** :
+
+1. **Cadastre DGFiP importé dans OSM** : 1 981 empreintes de la zone affichée portent la source cadastrale (« Mise à jour : 2018 » pour 1 613, 2013 et 2017 pour les autres). C’est une image du cadastre de 2013–2018, pas le cadastre actuel.
+2. **Champs cadastraux de la BD TOPO** : `origine_du_batiment` (« Cadastre » pour 2 050 objets), `appariement_fichiers_fonciers` et `date_d_apparition` (fichiers fonciers).
+
+Métriques : intersection exacte des polygones triangulés, couverture dans les deux sens, IoU, surface non couverte et largeur moyenne de la partie non couverte (surface non couverte / périmètre). Aucune fusion par proximité, **aucune géométrie modifiée ni supprimée**.
+
+### Les 96 empreintes OSM partiellement couvertes
+
+Diagnostic individuel dans `data-sources/building-validation.json` (`partialOsm`) :
+
+| Cause probable | Cas | Décision |
+|---|---:|---|
+| Artefact : décalage de contour (< 5 m² ou largeur < 0,5 m) | 28 | aucune action |
+| Écart de contour modéré (< 25 m²), dont 15 constructions légères | 41 | aucune action |
+| Emprise cadastrale plus large que l’empreinte IGN | 15 | litigieux |
+| Construction légère du cadastre en partie absente de la BD TOPO | 8 | litigieux |
+| Découpage différent : l’IGN ne reprend qu’une partie du bâtiment cadastral | 3 | litigieux |
+| Tracé OSM plus récent (orthophoto 2025) | 1 | litigieux : extension probable |
+
+Ces 27 cas litigieux (21 dans la commune) marquent les bâtiments IGN concernés comme « contour divergent ». Sans le cadastre actuel ni une imagerie datée, il est impossible de trancher entre extension réelle, annexe démolie et omission IGN. Le plus grand cas est `way/588791854`, un abri léger de 716 m² vers le chemin La Fin de Maizière, dont 554 m² ne sont pas couverts.
+
+### Bâtiments OSM seuls de plus de 80 m² (commune)
+
+| OSM | Surface | Secteur | Statut |
+|---|---:|---|---|
+| way/588792071 | 351 m² | vers la rue de l’Essy, à 311 m | bâtiment du cadastre 2018 absent de la BD TOPO, IGN le plus proche à 107 m |
+| way/588792505 | 328 m² | vers la rue de l’Essy, à 287 m | idem, IGN à 92 m |
+| way/588793679 | 218 m² | vers la rue de l’Essy, à 312 m | idem, IGN à 96 m |
+| way/588789726 | 336 m² | rue Joliot-Curie (Poussey) | construction légère au cadastre 2018, absente de la BD TOPO |
+| way/588792987 | 191 m² | rue du Château | construction légère au cadastre 2018 |
+| way/588792356 | 146 m² | rue du Lavoir | construction légère au cadastre 2018 |
+| way/588792110 | 124 m² | rue Joliot-Curie | construction légère au cadastre 2018 |
+| way/588791966 | 108 m² | rue du Docteur-Sollier | construction légère au cadastre 2018 |
+
+Tous restent **litigieux**. Ils existaient au cadastre de 2018 mais sont absents de la BD TOPO, dont la plupart des objets ont été vérifiés entre 2019 et 2025. La démolition est possible, mais pas prouvée : les huit sont conservés en confiance C. Les trois de la rue de l’Essy, isolés en plaine, sont les plus suspects.
+
+## Niveau de confiance par bâtiment
+
+Chaque bâtiment porte un bloc `validation` : confiance, statut, correspondance cadastrale (IoU, couverture), identifiants RNB, année d’apparition dans les fichiers fonciers et preuves.
+
+- **A** : empreinte IGN recouverte au moins à 50 % par le cadastre de référence, soit 1 992 bâtiments (1 853 dans la commune) ;
+- **B** : une seule source officielle ou un contour divergent, soit 337 (275). Cela comprend 200 bâtiments IGN absents du cadastre de 2018 (173 dans la commune), dont 82 d’origine cadastrale à l’IGN, donc probablement plus récents que l’import OSM, 76 saisis sur imagerie aérienne et 15 d’autre origine ;
+- **C** : empreinte OSM ou cadastre ancien absente de la BD TOPO, soit 162 (131). 101 sont litigieuses (83 dans la commune) et 61 sont de petites annexes plausibles, sous le seuil de saisie habituel de la BD TOPO.
+
+## RNB
+
+Les identifiants RNB viennent de la BD TOPO (`identifiants_rnb`) : 2 260 bâtiments sur 2 491 (90,7 %), 2 080 sur 2 259 dans la commune (92,1 %), dont 49 porteurs de plusieurs identifiants. **Ils n’ont pas été vérifiés contre l’API RNB** (statut, existence) : aucune correspondance RNB nouvelle n’a été créée par proximité.
+
+## Diagnostic
+
+`?diagnostic=provenance` est conservé. Nouveau : `?diagnostic=validation` affiche en gris la confiance A, en orange B, en violet les contours divergents du cadastre, en bleu C, et en vert les bâtiments ajoutés depuis le cadastre (aucun sans le vrai cadastre). La fiche d’un bâtiment indique aussi sa confiance et son statut.
+
+---
+
 # Notes V1.5 — exhaustivité du bâti, 24 septembre 2026
 
 Branche `opus/v1.5-buildings`, issue de `opus/v1.4`. Changement de priorité : la carte Three.js devient une référence géographique fidèle et exhaustive. Le rendu final sera fait dans Unreal Engine. Aucun travail graphique dans cette passe.

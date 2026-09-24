@@ -23,6 +23,7 @@ export function describe(r){
   if(i.usage)facts.push(`Usage : ${i.usage.toLowerCase()} (IGN BD TOPO)`);
   if(i.light)facts.push('Construction légère (cadastre / IGN)');
   if(i.floors)facts.push(`${i.floors} niveau${i.floors>1?'x':''} (IGN BD TOPO)`);
+  if(i.validation)facts.push(`Confiance ${i.validation.confidence} : ${i.validation.status}`);
   if(i.rnb)facts.push(`Identifiant RNB : ${i.rnb}`);
   facts.push(`Hauteur des murs : ${metres(i.wallHeight)} (${i.heightSource==='IGN BD TOPO'?'IGN BD TOPO':i.heightSource==='OSM'?'OpenStreetMap':'estimée'})`);
  }

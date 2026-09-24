@@ -22,5 +22,10 @@ const osmRef=new Set(ref.features.filter(f=>f.properties.source==='OpenStreetMap
 for(const f of osm.features.filter(f=>f.properties.building&&inExtent(centre(f)))){const s=prepareShape(polygons(f,project));const covered=ignShapes.filter(i=>intersects(s.b,i.b)).reduce((a,i)=>a+intersectionArea(s,i),0)/s.area;
  if(covered<.1){assert(osmRef.has(f.id),'Bâtiment OSM seul absent : '+f.id);osmKept++;}else{assert(!osmRef.has(f.id),'Doublon OSM sur IGN : '+f.id);osmRepresented++;}}
 assert.equal(osmKept,osmRef.size);
+// V1.6: Unreal-readiness without Three.js — every feature carries the fields an importer needs.
+const levels={};for(const f of ref.features){const p=f.properties;assert(p.id&&p.source&&p.provenance,'Champs d’identité manquants : '+f.id);assert(['Polygon','MultiPolygon'].includes(f.geometry.type));
+ assert(p.validation&&['A','B','C'].includes(p.validation.confidence)&&p.validation.status&&p.validation.evidence?.length,'Validation manquante : '+f.id);levels[p.validation.confidence]=(levels[p.validation.confidence]||0)+1;
+ if(p.source==='IGN BD TOPO')assert(p.derived&&'wallHeight' in p.derived&&'roofHeight' in p.derived&&p.ign.nature,'Attributs IGN manquants : '+f.id);}
+assert(ref.metadata.localProjection&&ref.metadata.validation,'Métadonnées de projection ou de validation absentes');
 const byProv=ref.features.reduce((m,f)=>(m[f.properties.provenance]=(m[f.properties.provenance]||0)+1,m),{});
-console.log(JSON.stringify({result:'OK',reference:ref.features.length,inCommune:ref.features.filter(f=>f.properties.inCommune).length,ignInExtent:ignExpected.length,osmOnlyKept:osmKept,osmRepresentedByIgn:osmRepresented,byProvenance:byProv,duplicates:0},null,2));
+console.log(JSON.stringify({result:'OK',reference:ref.features.length,inCommune:ref.features.filter(f=>f.properties.inCommune).length,ignInExtent:ignExpected.length,osmOnlyKept:osmKept,osmRepresentedByIgn:osmRepresented,byProvenance:byProv,confidence:levels,duplicates:0},null,2));

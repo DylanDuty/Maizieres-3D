@@ -1,3 +1,59 @@
+# Vérification V1.6 — validation du bâti, 24 septembre 2026
+
+Branche `opus/v1.6-building-validation`. Rapport complet : `data-sources/building-validation.json`.
+
+## Réponse à la question « avons-nous toutes les constructions connues des référentiels publics ? »
+
+**Pas encore démontrable** : le cadastre Etalab actuel et l’API RNB sont restés inaccessibles (403 réseau). Avec les sources disponibles localement :
+
+| Indicateur | Zone affichée | Commune |
+|---|---:|---:|
+| Total IGN BD TOPO | 2 329 | 2 128 |
+| Total OSM | 2 022 | 1 817 |
+| Total cadastre de référence (DGFiP 2013–2018 importé dans OSM, substitut) | 1 981 | 1 777 |
+| Cadastre de référence présent dans le référentiel (couverture ≥ 50 %) | 1 728 | — |
+| Cadastre de référence absent du référentiel | 0 | 0 |
+| Bâtiments avec identifiant RNB (fourni par l’IGN, non vérifié) | 2 260 (90,7 %) | 2 080 (92,1 %) |
+| **Total du référentiel final** | **2 491** | **2 259** |
+| Ajoutés grâce au cadastre | 0 (cadastre actuel non accessible) | 0 |
+| Supprimés après preuve de disparition ou d’erreur | 0 | 0 |
+| Géométries corrigées | 0 | 0 |
+| Litigieux : OSM seuls | 101 | 83 |
+| Litigieux : contours partiels > 25 m² ou tracé récent | 27 | 21 |
+| Sans correspondance : IGN absents du cadastre de référence | 200 | 173 |
+| Sans correspondance : OSM absents de la BD TOPO | 162 | 131 |
+| Différences géométriques non résolues | 96 empreintes, 3 027 m² non couverts (26 > 25 m²) | — |
+| Confiance A / B / C | 1 992 / 337 / 162 | 1 853 / 275 / 131 |
+| Bâtiments récents probables : IGN seuls saisis depuis 2019 / apparition fichiers fonciers ≥ 2015 | 49 / 6 | — |
+
+Lecture :
+- Tout le cadastre 2013–2018 disponible localement est dans le référentiel : aucun bâtiment cadastral n’y manque.
+- Les incertitudes restantes vont dans l’autre sens : des constructions du cadastre ancien absentes de la BD TOPO récente (démolies ou omises) et des contours divergents.
+- Les 173 bâtiments IGN absents du cadastre de 2018 (commune) sont probablement plus récents (82 d’origine cadastrale à l’IGN) ou non cadastrés.
+- Seul le cadastre actuel pourra le confirmer.
+
+## Contrôles et navigateur
+
+`npm run check:all` réussit (six contrôles). `check:buildings` vérifie en plus, pour les 2 491 bâtiments et sans Three.js :
+- géométrie Polygon/MultiPolygon, identifiant stable, source, provenance ;
+- bloc de validation complet (confiance, statut, preuves) ;
+- attributs IGN et hauteurs dérivées pour les bâtiments IGN ;
+- métadonnées de projection et de validation.
+
+Aucune géométrie IGN modifiée.
+
+`pnpm build` réussi. Build servi dans Chromium : la carte affiche 2 491 bâtiments (18 appels de dessin, 560 099 triangles, comme en V1.5). Les modes `?diagnostic=provenance` et `?diagnostic=validation` fonctionnent avec leur légende. Fiche, modes Fluide et Élevée, noms, format portrait, clavier et Échap vérifiés. **Console sans erreur ni avertissement.**
+
+## Secteurs restant à vérifier
+
+- Vers la rue de l’Essy : trois bâtiments du cadastre 2018 (218 à 351 m²), isolés, absents de la BD TOPO ;
+- Poussey : rue Joliot-Curie (sept cas litigieux, dont un abri de 336 m²), rue du Château, rue du Lavoir ;
+- Avenue du Général-de-Gaulle (dix cas), rue Georges-Clemenceau (six) et rue de la Chefferie (six) : contours divergents et abris légers ;
+- Chemin La Fin de Maizière : abri de 716 m², dont 554 m² absents de la BD TOPO ;
+- Rue du Docteur-Sollier, rue des Baudets, rue Maurice-Renault, rue de l’Orme : cas isolés.
+
+---
+
 # Vérification V1.5 — exhaustivité du bâti, 24 septembre 2026
 
 Branche `opus/v1.5-buildings`, partie de `opus/v1.4`. Source de vérité des bâtiments : `public/data/buildings.geojson` (voir `docs/referentiel-bati.md`).

@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {projection,polygons,bounds,insidePoly} from './geo.js';
 import {buildLandscape} from './landscape.js';
-import {buildBuildings,PROVENANCE_COLORS} from './buildings.js';
+import {buildBuildings,PROVENANCE_COLORS,VALIDATION_COLORS,diagnosticKey} from './buildings.js';
 import './style.css';
 import {benchmark} from './benchmark.js';
 import {qualitySettings} from './quality.js';
@@ -28,11 +28,14 @@ async function start(){
   // Give the browser a frame to paint loading feedback before building static batches.
   await new Promise(resolve=>requestAnimationFrame(resolve));
   // V1.5: building footprints come from the unified reference (IGN BD TOPO first, OSM complement).
-  const reference=buildingItems(buildingReference,project,extent),diagnostic=new URLSearchParams(location.search).get('diagnostic')==='provenance';
+  const reference=buildingItems(buildingReference,project,extent),diagnostic=['provenance','validation'].find(m=>m===new URLSearchParams(location.search).get('diagnostic'))||null;
   const terrain=buildLandscape(scene,data,project,extent,ignLandscape,reference.items);
   for(const f of data.features)if(f.geometry.type==='Point'&&['school','townhall','community_centre'].includes(f.properties.amenity)){const p=project(f.geometry.coordinates);const building=terrain.buildings.find(b=>insidePoly(p,b.poly));if(building){building.t={...building.t,amenity:f.properties.amenity,name:f.properties.name};}}
   const buildings=buildBuildings(scene,terrain.buildings,enrichment,{diagnostic});
-  if(diagnostic){const legend=document.createElement('div');legend.id='diagnostic-legend';legend.innerHTML=Object.entries({'ign+osm':'IGN et OSM','ign+osm-partiel':'IGN, OSM partiel','ign':'IGN seul','osm':'OSM seul'}).map(([k,v])=>`<span><i style="background:${PROVENANCE_COLORS[k]}"></i>${v} · ${reference.items.filter(i=>i.provenance===k).length}</span>`).join('');document.body.appendChild(legend);}
+  if(diagnostic){const legend=document.createElement('div');legend.id='diagnostic-legend';
+   const entries=diagnostic==='validation'?{A:'A · IGN confirmé par le cadastre',B:'B · source officielle unique','B-contour':'B · contour divergent du cadastre',C:'C · OSM seul, litigieux ou plausible',cadastre:'Ajouté depuis le cadastre'}:{'ign+osm':'IGN et OSM','ign+osm-partiel':'IGN, OSM partiel','ign':'IGN seul','osm':'OSM seul','cadastre':'Cadastre'};
+   const colors=diagnostic==='validation'?VALIDATION_COLORS:PROVENANCE_COLORS;
+   legend.innerHTML=Object.entries(entries).map(([k,v])=>`<span><i style="background:${colors[k]}"></i>${v} · ${reference.items.filter(i=>diagnosticKey(i,diagnostic)===k).length}</span>`).join('');document.body.appendChild(legend);}
   // A fine administrative line distinguishes the real commune from the context rectangle.
   for(const poly of boundaryPolys){const pts=poly[0].map(([x,z])=>new THREE.Vector3(x,.4,z));const geo=new THREE.BufferGeometry().setFromPoints(pts);const line=new THREE.Line(geo,new THREE.LineDashedMaterial({color:'#e0d9bb',dashSize:9,gapSize:7,transparent:true,opacity:.65}));line.computeLineDistances();scene.add(line);}
   const catalogue=createCatalogue(data,enrichment,project,extent,terrain.buildings,namedZones,bible);
