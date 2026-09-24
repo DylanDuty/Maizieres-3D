@@ -1,6 +1,6 @@
 {
   "name": "maizieres-3d",
-  "version": "1.6.0",
+  "version": "1.6.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -30,7 +30,8 @@
     "three": "0.180.0"
   },
   "devDependencies": {
-    "vite": "7.1.7",
-    "osmtogeojson": "3.0.0-beta.5"
+    "osmtogeojson": "3.0.0-beta.5",
+    "polygon-clipping": "0.15.7",
+    "vite": "7.1.7"
   }
 }

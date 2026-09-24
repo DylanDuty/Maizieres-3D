@@ -1015,7 +1015,7 @@
  ],
  "rejected": [],
  "officialValidation": {
-  "version": "1.6.1",
+  "version": "1.6.2",
   "detail": "data-sources/building-validation.json",
   "previous": {
    "total": 2491,
@@ -1026,6 +1026,21 @@
     "C": 162
    },
    "note": "V1.6 provisoire (substitut cadastral OSM 2013–2018)"
+  },
+  "v161": {
+   "total": 2543,
+   "inCommune": 2299,
+   "byConfidence": {
+    "A": 1984,
+    "B": 466,
+    "C": 93
+   },
+   "inCommuneByConfidence": {
+    "A": 1849,
+    "B": 384,
+    "C": 66
+   },
+   "note": "V1.6.1 (cadastre actuel et RNB, avant revue orthophoto)"
   },
   "sources": {
    "ign": {
@@ -1057,75 +1072,546 @@
    }
   },
   "final": {
-   "total": 2543,
-   "inCommune": 2299,
+   "total": 2494,
+   "inCommune": 2265,
    "byConfidence": {
-    "A": 1984,
-    "B": 466,
-    "C": 93
+    "A": 1994,
+    "B": 475,
+    "C": 25
    },
    "inCommuneByConfidence": {
-    "B": 384,
-    "A": 1849,
-    "C": 66
+    "B": 395,
+    "A": 1858,
+    "C": 12
    },
    "byProvenance": {
     "ign": 160,
     "ign+osm": 2044,
     "ign+osm-partiel": 125,
-    "osm": 137,
-    "cadastre": 77
+    "osm": 109,
+    "cadastre": 56
    }
   },
   "addedFromCadastre": {
-   "total": 77,
-   "inCommune": 58,
-   "withRnb": 2
+   "total": 56,
+   "inCommune": 49,
+   "withRnb": 1,
+   "visibleOnOrthophoto": 45,
+   "withdrawnAfterReview": 21
   },
   "removed": {
-   "total": 25,
-   "inCommune": 18
+   "total": 53,
+   "inCommune": 43,
+   "v161": 25,
+   "v162OsmOnly": 28,
+   "v162CadastralAdditionsWithdrawn": 21
   },
   "corrected": {
-   "rnbIdentifiers": 268,
-   "confidenceChanges": 335,
-   "geometries": 0
+   "rnbIdentifiers": 269,
+   "confidenceChanges": 320,
+   "geometriesEnriched": 3
   },
   "rnb": {
-   "withVerifiedId": 2016,
-   "withVerifiedIdInCommune": 1839,
+   "withVerifiedId": 2017,
+   "withVerifiedIdInCommune": 1840,
    "checks": {
-    "valide": 2027,
-    "incohérent spatialement": 130,
+    "valide": 2025,
+    "incohérent spatialement": 129,
     "inactif (identifiant retiré)": 158,
+    "valide (revue individuelle V1.6.2)": 2,
     "statut demolished": 1
    },
    "multipleIdsBefore": 49,
-   "multipleIdsAfter": 32,
+   "multipleIdsAfter": 31,
    "idsAddedFromExactBdtopoLink": 22,
-   "rnbOnlyActiveInCommune": 19
+   "rnbOnlyActiveInCommune": 22
   },
   "uncertain": {
-   "C": 93,
-   "B": 466,
+   "C": 25,
+   "B": 475,
    "partialOsm": 96,
-   "partialExtensionsConfirmed": 22
+   "partialExtensionsConfirmed": 22,
+   "contourDifferent": 134
   },
   "appearedSinceHistoricCadastre": 154,
   "confidenceChanges": {
    "A→B": 112,
-   "B→A": 104,
-   "C→B": 119
+   "B→A": 114,
+   "C→B": 94
+  },
+  "v162": {
+   "version": "1.6.2",
+   "orthophoto": {
+    "name": "BD ORTHO IGN 20 cm",
+    "layer": "ORTHOIMAGERY.ORTHOPHOTOS",
+    "service": "https://data.geopf.fr/wms-r",
+    "dateVol": "28–29 avril 2025 (PVA 2025, département 10)",
+    "mosaic": "ORTHOIMAGERY.ORTHOPHOTOS.GRAPHE-MOSAIQUAGE:graphe_bdortho",
+    "note": "Photo-interprétation : sert à constater l’existence ou l’absence d’un bâti, jamais à dessiner une empreinte."
+   },
+   "etalab": {
+    "host": "cadastre.s3.rbx.io.cloud.ovh.net",
+    "entry": "https://cadastre.data.gouv.fr/data/etalab-cadastre/latest/geojson/communes/10/10220/cadastre-10220-batiments.json.gz",
+    "testedAt": "2026-09-24",
+    "result": "refusé : le proxy de sortie répond 403 au CONNECT (politique d’organisation) ; cadastre.data.gouv.fr lui-même coupe la connexion",
+    "comparison": "non réalisée : aucune différence Parcellaire Express ↔ Etalab ne peut être établie sans l’export"
+   },
+   "rnbOrphans": {
+    "reviewed": 24,
+    "categories": {
+     "objet démoli ou incohérent": 14,
+     "adresse/position RNB imprécise": 7,
+     "plusieurs bâtiments regroupés": 1,
+     "bâtiment déjà présent mais mal associé": 2
+    },
+    "associated": [
+     {
+      "rnb": "K5QGP46TYCQR",
+      "target": "BATIMENT0000002330331325",
+      "category": "bâtiment déjà présent mais mal associé"
+     },
+     {
+      "rnb": "7H6KRN7T9WKX",
+      "target": "BATIMENT0000000301149753",
+      "category": "bâtiment déjà présent mais mal associé"
+     }
+    ],
+    "newBuildings": 0,
+    "unresolved": [
+     {
+      "rnb": "58Y4QCN7YBR4",
+      "category": "adresse/position RNB imprécise",
+      "evidence": [
+       "point seul sans adresse dans un potager",
+       "orthophoto 2025 : abri de jardin et serre légers visibles à 10–12 m, absents de la BD TOPO et du cadastre : aucune empreinte officielle à reprendre"
+      ]
+     },
+     {
+      "rnb": "MEJK7RK7Q4B1",
+      "category": "adresse/position RNB imprécise",
+      "evidence": [
+       "51 rue Joliot-Curie : forme RNB 24 m² entre la maison (BATIMENT0000000301151754) et le pool-house (BATIMENT0000002341955036)",
+       "orthophoto 2025 : zone sombre ambiguë (ombre portée ou abri) ; aucune empreinte BD TOPO ni cadastrale",
+       "forme RNB issue de la BDNB seule : pas assez fiable pour créer un bâtiment"
+      ]
+     }
+    ],
+    "stillWithoutFootprint": 22,
+    "unreviewedWithoutFootprint": []
+   },
+   "extensions": {
+    "reviewed": 22,
+    "verdicts": {
+     "douteux": 6,
+     "partie cadastrale non bâtie": 4,
+     "décalage cadastre/BD TOPO": 9,
+     "extension réelle intégrée": 3
+    },
+    "integrated": [
+     {
+      "id": "BATIMENT0000000009359079",
+      "cadastre": "cadastre:41207609",
+      "osm": "way/588789748",
+      "ignAreaM2": 57.85,
+      "finalAreaM2": 111.47,
+      "inCommune": true
+     },
+     {
+      "id": "BATIMENT0000000301151768",
+      "cadastre": "cadastre:39793960",
+      "osm": "way/588791972",
+      "ignAreaM2": 58.09,
+      "finalAreaM2": 123.25,
+      "inCommune": true
+     },
+     {
+      "id": "BATIMENT0000000301149220",
+      "cadastre": "cadastre:39817907",
+      "osm": "way/588792623",
+      "ignAreaM2": 23.26,
+      "finalAreaM2": 57.32,
+      "inCommune": true
+     }
+    ]
+   },
+   "cadastralAdditions": {
+    "reviewed": 77,
+    "verdicts": {
+     "bâti visible": 45,
+     "non vérifiable": 11,
+     "non bâti": 18,
+     "artefact": 3
+    },
+    "withdrawn": 21,
+    "withdrawnInCommune": 9,
+    "kept": 56,
+    "keptInCommune": 49
+   },
+   "osmOnly": {
+    "reviewed": 137,
+    "verdicts": {
+     "bâti visible": 86,
+     "non bâti": 28,
+     "non vérifiable": 23
+    },
+    "withdrawn": 28,
+    "withdrawnInCommune": 25
+   },
+   "confidenceChangesSinceV161": {
+    "total": 55,
+    "byChange": {
+     "B→A": 10,
+     "C→B": 45
+    },
+    "list": [
+     {
+      "id": "BATIMENT0000000301148586",
+      "from": "B",
+      "to": "A",
+      "reason": "validé : BD TOPO et cadastre actuel concordent"
+     },
+     {
+      "id": "BATIMENT0000000301148645",
+      "from": "B",
+      "to": "A",
+      "reason": "validé : BD TOPO et cadastre actuel concordent"
+     },
+     {
+      "id": "BATIMENT0000000301149220",
+      "from": "B",
+      "to": "A",
+      "reason": "validé : BD TOPO enrichie de l’extension du cadastre actuel visible sur l’orthophoto IGN 2025"
+     },
+     {
+      "id": "BATIMENT0000000301150047",
+      "from": "B",
+      "to": "A",
+      "reason": "validé : BD TOPO et cadastre actuel concordent"
+     },
+     {
+      "id": "BATIMENT0000000301150057",
+      "from": "B",
+      "to": "A",
+      "reason": "validé : BD TOPO et cadastre actuel concordent"
+     },
+     {
+      "id": "BATIMENT0000000301150058",
+      "from": "B",
+      "to": "A",
+      "reason": "validé : BD TOPO et cadastre actuel concordent"
+     },
+     {
+      "id": "BATIMENT0000000301150065",
+      "from": "B",
+      "to": "A",
+      "reason": "validé : BD TOPO et cadastre actuel concordent"
+     },
+     {
+      "id": "BATIMENT0000000301151768",
+      "from": "B",
+      "to": "A",
+      "reason": "validé : BD TOPO enrichie de l’extension du cadastre actuel visible sur l’orthophoto IGN 2025"
+     },
+     {
+      "id": "BATIMENT0000000301151798",
+      "from": "B",
+      "to": "A",
+      "reason": "validé : BD TOPO et cadastre actuel concordent"
+     },
+     {
+      "id": "BATIMENT0000000009359079",
+      "from": "B",
+      "to": "A",
+      "reason": "validé : BD TOPO enrichie de l’extension du cadastre actuel visible sur l’orthophoto IGN 2025"
+     },
+     {
+      "id": "cadastre:19891047",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:20394422",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:20394517",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:20394549",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:20394582",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:20394642",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:20394661",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:20394812",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23570228",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23570265",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23570271",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23570834",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23574404",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23574412",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23575030",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23575050",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23575291",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23575349",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23575395",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23575758",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23575781",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23577484",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23579250",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23579675",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23580243",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23580515",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23582227",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23582229",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:23582589",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:25515850",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:32816177",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:34580465",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:34631888",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:37265912",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:37265973",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:37854467",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:38876219",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:39160171",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:39216603",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:39216604",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:39696818",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:39696821",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:39810698",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:40921138",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     },
+     {
+      "id": "cadastre:40928305",
+      "from": "C",
+      "to": "B",
+      "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+     }
+    ]
+   },
+   "unresolved": {
+    "rnbWithoutFootprint": 2,
+    "doubtfulExtensions": 6,
+    "unverifiableAdditions": 10,
+    "unverifiableOsmOnly": 23
+   }
   },
   "v16Review": {
    "osmOnlyDisputed": {
     "count": 101,
     "outcome": {
-     "B — confirmé par le cadastre actuel (absent de la BD TOPO)": 74,
+     "B — confirmé par le cadastre actuel (absent de la BD TOPO)": 52,
      "C — partiellement au cadastre actuel, absent de la BD TOPO": 7,
      "supprimé (absent BD TOPO, cadastre actuel, RNB)": 15,
-     "C — absent de la BD TOPO": 3,
-     "C — absent du cadastre actuel et de la BD TOPO, mais point RNB actif": 2
+     "supprimé (non bâti sur l’orthophoto 2025)": 25,
+     "C — absent de la BD TOPO": 2
     }
    },
    "ignAbsentFromCadastre2018InCommune": {

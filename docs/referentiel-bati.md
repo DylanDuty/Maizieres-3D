@@ -1,4 +1,4 @@
-# Référentiel bâti — format intermédiaire (V1.5, validation officielle V1.6.1)
+# Référentiel bâti — format intermédiaire (V1.5, validation officielle V1.6.1, gelé pour Unreal en V1.6.2)
 
 Fichier : `public/data/buildings.geojson`, produit par `npm run data:buildings` (`scripts/build-buildings.mjs`) à partir des instantanés locaux. Il est la **source de vérité des bâtiments** de la carte Three.js et le point de départ prévu pour un export Unreal : aucune recherche documentaire n’est à refaire pour générer les volumes.
 
@@ -28,6 +28,7 @@ Fichier : `public/data/buildings.geojson`, produit par `npm run data:buildings` 
 | `osm` | `ids` recouvrants, `donor` (principal), `names`, `coverage`, `tags` sémantiques |
 | `derived` | Valeurs prêtes pour un moteur : hauteur de mur, hausse de toit (règle V1.1), étages, matériaux de toit, usage, construction légère |
 | `landmark` | Repère IGN (mairie, école, pompiers, salle) situé dans ce seul bâtiment |
+| `geometryEnrichment` | V1.6.2, 3 bâtiments seulement : empreinte BD TOPO réunie à l’extension du cadastre actuel vue sur l’orthophoto. Contient le polygone cadastral, les surfaces, l’observation et `ignGeometry` (géométrie BD TOPO d’origine). Les hauteurs IGN ne portent que sur la partie BD TOPO |
 
 Les champs absents valent `null`. **Un bâtiment sans attribut reste présent.** Les formes de toit, orientations de faîtage, couleurs et détails de façade ne figurent pas dans ce fichier : ce sont des choix de rendu (voir `src/building-profile.js`), à refaire dans Unreal.
 
@@ -57,9 +58,34 @@ Bloc `validation` de chaque bâtiment :
 
 Rapports : `data-sources/building-validation.json` (détail : réexamen V1.6, historique des classes, empreintes partielles, ajouts, suppressions, jumeaux, RNB sans empreinte) et `officialValidation` dans `data-sources/building-reference-report.json`.
 
+## Gel pour Unreal (V1.6.2)
+
+Le référentiel est **gelé à 2 494 bâtiments, dont 2 265 dans la commune**. Confiance A / B / C : 1 994 / 475 / 25.
+
+Chaque cas douteux a été revu individuellement sur la BD ORTHO IGN 20 cm (vol d’avril 2025). La revue porte sur :
+- les RNB sans empreinte ;
+- les extensions cadastrales ;
+- les ajouts cadastraux ;
+- les empreintes OSM seules.
+
+Les verdicts sont dans `data-sources/building-review-v1.6.2.json` et `validate-buildings.mjs` les applique. L’orthophoto ne sert qu’à constater l’existence d’un bâti, jamais à dessiner une empreinte.
+
+- `review` (ajouts cadastraux) : `bâti visible` (classe B), `non vérifiable` (reste C) ; les ajouts `non bâti` ou `artefact` sont écartés.
+- Empreintes OSM seules non bâties sur l’orthophoto : retirées.
+- RNB : association uniquement après revue individuelle, avec un verdict `valide (revue individuelle V1.6.2)` et la preuve dans le contrôle. Les RNB encore sans empreinte portent leur catégorie dans `rnbOnly[].review`.
+- Journal `data-sources/building-removed.json` : `removal.version` vaut 1.6.1 ou 1.6.2. Il contient aussi les ajouts cadastraux écartés (`provenance: cadastre`).
+- Classes V1.6.1 figées dans `data-sources/building-validation-v1.6.1.json` ; synthèse dans la section `v162` du rapport.
+- Pour Unreal :
+  - utiliser `geometry` ;
+  - les 3 bâtiments à `geometryEnrichment` peuvent être séparés en volume BD TOPO (`ignGeometry`) et en annexe plus basse ;
+  - ignorer ou traiter à part les classes C et les bâtiments B à contour différent si une précision de tracé est exigée.
+
 ## Contrôles
 
 - `npm run check:buildings` : chaque bâtiment IGN de la zone est présent une seule fois avec sa géométrie d’origine ; chaque empreinte OSM seule (< 10 %) est présente et aucune autre ; pas d’identifiant dupliqué ; SHA-256 des sources identiques à ceux des métadonnées.
-- `npm run check:enrichment` : tous les bâtiments du référentiel (2 543 en V1.6.1) sont rendus, aucun rejet.
-- `npm run check:buildings` vérifie aussi les suppressions (journal et preuves obligatoires) et l’absence de doublon des ajouts cadastraux.
+- `npm run check:enrichment` : tous les bâtiments du référentiel (2 494 en V1.6.2) sont rendus, aucun rejet.
+- `npm run check:buildings` vérifie aussi :
+  - les suppressions : journal et preuves obligatoires ;
+  - l’absence de doublon des ajouts cadastraux ;
+  - pour les 3 enrichissements, que l’empreinte finale contient toute la BD TOPO d’origine, conservée à l’identique dans `ignGeometry`.
 - Rapport chiffré : `data-sources/building-reference-report.json`. Audit de l’état V1.4 : `data-sources/building-audit.json` (`npm run audit:buildings`). Densité par rue : `data-sources/street-density.json`.

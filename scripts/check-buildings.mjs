@@ -16,7 +16,12 @@ for(const f of ref.features){assert(polygons(f,project).length>0,'Géométrie vi
 const ignRef=new Map(ref.features.filter(f=>f.properties.source==='IGN BD TOPO').map(f=>[f.id,f]));
 const ignExpected=ign.features.filter(f=>inExtent(centre(f)));
 assert.equal(ignRef.size,ignExpected.length,'Nombre de bâtiments IGN');
-for(const f of ignExpected){const r=ignRef.get(f.properties.cleabs);assert(r,'Bâtiment IGN manquant : '+f.properties.cleabs);assert.deepEqual(r.geometry,f.geometry,'Géométrie IGN modifiée : '+f.properties.cleabs);}
+// V1.6.2: a BD TOPO footprint may only differ when enriched by a reviewed cadastral extension that keeps the whole original.
+let enriched=0;
+for(const f of ignExpected){const r=ignRef.get(f.properties.cleabs);assert(r,'Bâtiment IGN manquant : '+f.properties.cleabs);
+ const en=r.properties.geometryEnrichment;if(!en){assert.deepEqual(r.geometry,f.geometry,'Géométrie IGN modifiée : '+f.properties.cleabs);continue;}
+ enriched++;assert.deepEqual(en.ignGeometry,f.geometry,'Géométrie IGN d’origine non conservée : '+f.properties.cleabs);assert(en.cadastre&&en.observation,'Enrichissement sans preuve : '+f.properties.cleabs);
+ const o=prepareShape(polygons(f,project)),n=prepareShape(polygons(r,project));assert(intersectionArea(o,n)/o.area>.99&&n.area>o.area,'Enrichissement qui retire une partie BD TOPO : '+f.properties.cleabs);}
 // 2. OSM footprints: kept only where IGN has (almost) nothing, never duplicated over an IGN building.
 const ignShapes=ignExpected.map(f=>prepareShape(polygons(f,project)));
 const osmRef=new Set(ref.features.filter(f=>f.properties.source==='OpenStreetMap').map(f=>f.id));let osmKept=0,osmRepresented=0;
@@ -24,7 +29,7 @@ for(const f of osm.features.filter(f=>f.properties.building&&inExtent(centre(f))
  if(covered<.1){assert(osmRef.has(f.id)||removed.has(f.id),'Bâtiment OSM seul absent sans preuve de suppression : '+f.id);if(osmRef.has(f.id))osmKept++;}else{assert(!osmRef.has(f.id),'Doublon OSM sur IGN : '+f.id);osmRepresented++;}}
 assert.equal(osmKept,osmRef.size);
 // V1.6.1: removals are only OSM-only footprints logged with their evidence; cadastral additions never overlap the reference.
-for(const f of removedLog.features){assert(f.properties.source==='OpenStreetMap'&&f.properties.removal?.reason&&f.properties.removal.evidence?.length,'Suppression sans preuve : '+f.id);assert(!ids.includes(f.id));}
+for(const f of removedLog.features){assert((f.properties.source==='OpenStreetMap'||f.properties.provenance==='cadastre')&&f.properties.removal?.reason&&f.properties.removal.evidence?.length,'Suppression sans preuve : '+f.id);assert(!ids.includes(f.id));}
 const cadAdded=ref.features.filter(f=>f.properties.provenance==='cadastre');for(const f of cadAdded){const s=prepareShape(polygons(f,project));const cov=ref.features.filter(g=>g.properties.provenance!=='cadastre').map(g=>prepareShape(polygons(g,project))).filter(g=>intersects(s.b,g.b)).reduce((a,g)=>a+intersectionArea(s,g),0)/s.area;assert(cov<.1,'Ajout cadastral en doublon : '+f.id);}
 // V1.6: Unreal-readiness without Three.js — every feature carries the fields an importer needs.
 const levels={};for(const f of ref.features){const p=f.properties;assert(p.id&&p.source&&p.provenance,'Champs d’identité manquants : '+f.id);assert(['Polygon','MultiPolygon'].includes(f.geometry.type));
@@ -32,4 +37,4 @@ const levels={};for(const f of ref.features){const p=f.properties;assert(p.id&&p
  if(p.source==='IGN BD TOPO')assert(p.derived&&'wallHeight' in p.derived&&'roofHeight' in p.derived&&p.ign.nature,'Attributs IGN manquants : '+f.id);}
 assert(ref.metadata.localProjection&&ref.metadata.validation,'Métadonnées de projection ou de validation absentes');
 const byProv=ref.features.reduce((m,f)=>(m[f.properties.provenance]=(m[f.properties.provenance]||0)+1,m),{});
-console.log(JSON.stringify({result:'OK',reference:ref.features.length,inCommune:ref.features.filter(f=>f.properties.inCommune).length,ignInExtent:ignExpected.length,osmOnlyKept:osmKept,removedWithEvidence:removed.size,addedFromCadastre:cadAdded.length,osmRepresentedByIgn:osmRepresented,byProvenance:byProv,confidence:levels,duplicates:0},null,2));
+console.log(JSON.stringify({result:'OK',reference:ref.features.length,inCommune:ref.features.filter(f=>f.properties.inCommune).length,ignInExtent:ignExpected.length,osmOnlyKept:osmKept,removedWithEvidence:removed.size,addedFromCadastre:cadAdded.length,ignEnrichedByCadastre:enriched,osmRepresentedByIgn:osmRepresented,byProvenance:byProv,confidence:levels,duplicates:0},null,2));

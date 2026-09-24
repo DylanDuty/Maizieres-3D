@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-24T17:21:07.715Z",
+ "generatedAt": "2026-09-24T18:02:33.146Z",
  "controlSources": {
   "cadastre": {
    "source": "Parcellaire Express (PCI) — plan cadastral DGFiP diffusé par l’IGN, couche batiment",
@@ -29,7 +29,16 @@
    "retrievedAt": "2026-09-24T17:13:23.808Z",
    "license": "Licence Ouverte 2.0",
    "file": "data-sources/rnb/rnb-10220.json"
-  }
+  },
+  "orthophoto": {
+   "name": "BD ORTHO IGN 20 cm",
+   "layer": "ORTHOIMAGERY.ORTHOPHOTOS",
+   "service": "https://data.geopf.fr/wms-r",
+   "dateVol": "28–29 avril 2025 (PVA 2025, département 10)",
+   "mosaic": "ORTHOIMAGERY.ORTHOPHOTOS.GRAPHE-MOSAIQUAGE:graphe_bdortho",
+   "note": "Photo-interprétation : sert à constater l’existence ou l’absence d’un bâti, jamais à dessiner une empreinte."
+  },
+  "review": "data-sources/building-review-v1.6.2.json"
  },
  "indicators": {
   "previous": {
@@ -41,6 +50,21 @@
     "C": 162
    },
    "note": "V1.6 provisoire (substitut cadastral OSM 2013–2018)"
+  },
+  "v161": {
+   "total": 2543,
+   "inCommune": 2299,
+   "byConfidence": {
+    "A": 1984,
+    "B": 466,
+    "C": 93
+   },
+   "inCommuneByConfidence": {
+    "A": 1849,
+    "B": 384,
+    "C": 66
+   },
+   "note": "V1.6.1 (cadastre actuel et RNB, avant revue orthophoto)"
   },
   "sources": {
    "ign": {
@@ -72,76 +96,547 @@
    }
   },
   "final": {
-   "total": 2543,
-   "inCommune": 2299,
+   "total": 2494,
+   "inCommune": 2265,
    "byConfidence": {
-    "A": 1984,
-    "B": 466,
-    "C": 93
+    "A": 1994,
+    "B": 475,
+    "C": 25
    },
    "inCommuneByConfidence": {
-    "B": 384,
-    "A": 1849,
-    "C": 66
+    "B": 395,
+    "A": 1858,
+    "C": 12
    },
    "byProvenance": {
     "ign": 160,
     "ign+osm": 2044,
     "ign+osm-partiel": 125,
-    "osm": 137,
-    "cadastre": 77
+    "osm": 109,
+    "cadastre": 56
    }
   },
   "addedFromCadastre": {
-   "total": 77,
-   "inCommune": 58,
-   "withRnb": 2
+   "total": 56,
+   "inCommune": 49,
+   "withRnb": 1,
+   "visibleOnOrthophoto": 45,
+   "withdrawnAfterReview": 21
   },
   "removed": {
-   "total": 25,
-   "inCommune": 18
+   "total": 53,
+   "inCommune": 43,
+   "v161": 25,
+   "v162OsmOnly": 28,
+   "v162CadastralAdditionsWithdrawn": 21
   },
   "corrected": {
-   "rnbIdentifiers": 268,
-   "confidenceChanges": 335,
-   "geometries": 0
+   "rnbIdentifiers": 269,
+   "confidenceChanges": 320,
+   "geometriesEnriched": 3
   },
   "rnb": {
-   "withVerifiedId": 2016,
-   "withVerifiedIdInCommune": 1839,
+   "withVerifiedId": 2017,
+   "withVerifiedIdInCommune": 1840,
    "checks": {
-    "valide": 2027,
-    "incohérent spatialement": 130,
+    "valide": 2025,
+    "incohérent spatialement": 129,
     "inactif (identifiant retiré)": 158,
+    "valide (revue individuelle V1.6.2)": 2,
     "statut demolished": 1
    },
    "multipleIdsBefore": 49,
-   "multipleIdsAfter": 32,
+   "multipleIdsAfter": 31,
    "idsAddedFromExactBdtopoLink": 22,
-   "rnbOnlyActiveInCommune": 19
+   "rnbOnlyActiveInCommune": 22
   },
   "uncertain": {
-   "C": 93,
-   "B": 466,
+   "C": 25,
+   "B": 475,
    "partialOsm": 96,
-   "partialExtensionsConfirmed": 22
+   "partialExtensionsConfirmed": 22,
+   "contourDifferent": 134
   },
   "appearedSinceHistoricCadastre": 154,
   "confidenceChanges": {
    "A→B": 112,
-   "B→A": 104,
-   "C→B": 119
+   "B→A": 114,
+   "C→B": 94
+  }
+ },
+ "v162": {
+  "version": "1.6.2",
+  "orthophoto": {
+   "name": "BD ORTHO IGN 20 cm",
+   "layer": "ORTHOIMAGERY.ORTHOPHOTOS",
+   "service": "https://data.geopf.fr/wms-r",
+   "dateVol": "28–29 avril 2025 (PVA 2025, département 10)",
+   "mosaic": "ORTHOIMAGERY.ORTHOPHOTOS.GRAPHE-MOSAIQUAGE:graphe_bdortho",
+   "note": "Photo-interprétation : sert à constater l’existence ou l’absence d’un bâti, jamais à dessiner une empreinte."
+  },
+  "etalab": {
+   "host": "cadastre.s3.rbx.io.cloud.ovh.net",
+   "entry": "https://cadastre.data.gouv.fr/data/etalab-cadastre/latest/geojson/communes/10/10220/cadastre-10220-batiments.json.gz",
+   "testedAt": "2026-09-24",
+   "result": "refusé : le proxy de sortie répond 403 au CONNECT (politique d’organisation) ; cadastre.data.gouv.fr lui-même coupe la connexion",
+   "comparison": "non réalisée : aucune différence Parcellaire Express ↔ Etalab ne peut être établie sans l’export"
+  },
+  "rnbOrphans": {
+   "reviewed": 24,
+   "categories": {
+    "objet démoli ou incohérent": 14,
+    "adresse/position RNB imprécise": 7,
+    "plusieurs bâtiments regroupés": 1,
+    "bâtiment déjà présent mais mal associé": 2
+   },
+   "associated": [
+    {
+     "rnb": "K5QGP46TYCQR",
+     "target": "BATIMENT0000002330331325",
+     "category": "bâtiment déjà présent mais mal associé"
+    },
+    {
+     "rnb": "7H6KRN7T9WKX",
+     "target": "BATIMENT0000000301149753",
+     "category": "bâtiment déjà présent mais mal associé"
+    }
+   ],
+   "newBuildings": 0,
+   "unresolved": [
+    {
+     "rnb": "58Y4QCN7YBR4",
+     "category": "adresse/position RNB imprécise",
+     "evidence": [
+      "point seul sans adresse dans un potager",
+      "orthophoto 2025 : abri de jardin et serre légers visibles à 10–12 m, absents de la BD TOPO et du cadastre : aucune empreinte officielle à reprendre"
+     ]
+    },
+    {
+     "rnb": "MEJK7RK7Q4B1",
+     "category": "adresse/position RNB imprécise",
+     "evidence": [
+      "51 rue Joliot-Curie : forme RNB 24 m² entre la maison (BATIMENT0000000301151754) et le pool-house (BATIMENT0000002341955036)",
+      "orthophoto 2025 : zone sombre ambiguë (ombre portée ou abri) ; aucune empreinte BD TOPO ni cadastrale",
+      "forme RNB issue de la BDNB seule : pas assez fiable pour créer un bâtiment"
+     ]
+    }
+   ],
+   "stillWithoutFootprint": 22,
+   "unreviewedWithoutFootprint": []
+  },
+  "extensions": {
+   "reviewed": 22,
+   "verdicts": {
+    "douteux": 6,
+    "partie cadastrale non bâtie": 4,
+    "décalage cadastre/BD TOPO": 9,
+    "extension réelle intégrée": 3
+   },
+   "integrated": [
+    {
+     "id": "BATIMENT0000000009359079",
+     "cadastre": "cadastre:41207609",
+     "osm": "way/588789748",
+     "ignAreaM2": 57.85,
+     "finalAreaM2": 111.47,
+     "inCommune": true
+    },
+    {
+     "id": "BATIMENT0000000301151768",
+     "cadastre": "cadastre:39793960",
+     "osm": "way/588791972",
+     "ignAreaM2": 58.09,
+     "finalAreaM2": 123.25,
+     "inCommune": true
+    },
+    {
+     "id": "BATIMENT0000000301149220",
+     "cadastre": "cadastre:39817907",
+     "osm": "way/588792623",
+     "ignAreaM2": 23.26,
+     "finalAreaM2": 57.32,
+     "inCommune": true
+    }
+   ]
+  },
+  "cadastralAdditions": {
+   "reviewed": 77,
+   "verdicts": {
+    "bâti visible": 45,
+    "non vérifiable": 11,
+    "non bâti": 18,
+    "artefact": 3
+   },
+   "withdrawn": 21,
+   "withdrawnInCommune": 9,
+   "kept": 56,
+   "keptInCommune": 49
+  },
+  "osmOnly": {
+   "reviewed": 137,
+   "verdicts": {
+    "bâti visible": 86,
+    "non bâti": 28,
+    "non vérifiable": 23
+   },
+   "withdrawn": 28,
+   "withdrawnInCommune": 25
+  },
+  "confidenceChangesSinceV161": {
+   "total": 55,
+   "byChange": {
+    "B→A": 10,
+    "C→B": 45
+   },
+   "list": [
+    {
+     "id": "BATIMENT0000000301148586",
+     "from": "B",
+     "to": "A",
+     "reason": "validé : BD TOPO et cadastre actuel concordent"
+    },
+    {
+     "id": "BATIMENT0000000301148645",
+     "from": "B",
+     "to": "A",
+     "reason": "validé : BD TOPO et cadastre actuel concordent"
+    },
+    {
+     "id": "BATIMENT0000000301149220",
+     "from": "B",
+     "to": "A",
+     "reason": "validé : BD TOPO enrichie de l’extension du cadastre actuel visible sur l’orthophoto IGN 2025"
+    },
+    {
+     "id": "BATIMENT0000000301150047",
+     "from": "B",
+     "to": "A",
+     "reason": "validé : BD TOPO et cadastre actuel concordent"
+    },
+    {
+     "id": "BATIMENT0000000301150057",
+     "from": "B",
+     "to": "A",
+     "reason": "validé : BD TOPO et cadastre actuel concordent"
+    },
+    {
+     "id": "BATIMENT0000000301150058",
+     "from": "B",
+     "to": "A",
+     "reason": "validé : BD TOPO et cadastre actuel concordent"
+    },
+    {
+     "id": "BATIMENT0000000301150065",
+     "from": "B",
+     "to": "A",
+     "reason": "validé : BD TOPO et cadastre actuel concordent"
+    },
+    {
+     "id": "BATIMENT0000000301151768",
+     "from": "B",
+     "to": "A",
+     "reason": "validé : BD TOPO enrichie de l’extension du cadastre actuel visible sur l’orthophoto IGN 2025"
+    },
+    {
+     "id": "BATIMENT0000000301151798",
+     "from": "B",
+     "to": "A",
+     "reason": "validé : BD TOPO et cadastre actuel concordent"
+    },
+    {
+     "id": "BATIMENT0000000009359079",
+     "from": "B",
+     "to": "A",
+     "reason": "validé : BD TOPO enrichie de l’extension du cadastre actuel visible sur l’orthophoto IGN 2025"
+    },
+    {
+     "id": "cadastre:19891047",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:20394422",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:20394517",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:20394549",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:20394582",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:20394642",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:20394661",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:20394812",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23570228",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23570265",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23570271",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23570834",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23574404",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23574412",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23575030",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23575050",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23575291",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23575349",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23575395",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23575758",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23575781",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23577484",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23579250",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23579675",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23580243",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23580515",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23582227",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23582229",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:23582589",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:25515850",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:32816177",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:34580465",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:34631888",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:37265912",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:37265973",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:37854467",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:38876219",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:39160171",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:39216603",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:39216604",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:39696818",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:39696821",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:39810698",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:40921138",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    },
+    {
+     "id": "cadastre:40928305",
+     "from": "C",
+     "to": "B",
+     "reason": "ajouté : cadastre actuel, bâti visible sur l’orthophoto IGN 2025, absent de la BD TOPO"
+    }
+   ]
+  },
+  "unresolved": {
+   "rnbWithoutFootprint": 2,
+   "doubtfulExtensions": 6,
+   "unverifiableAdditions": 10,
+   "unverifiableOsmOnly": 23
   }
  },
  "v16Review": {
   "osmOnlyDisputed": {
    "count": 101,
    "outcome": {
-    "B — confirmé par le cadastre actuel (absent de la BD TOPO)": 74,
+    "B — confirmé par le cadastre actuel (absent de la BD TOPO)": 52,
     "C — partiellement au cadastre actuel, absent de la BD TOPO": 7,
     "supprimé (absent BD TOPO, cadastre actuel, RNB)": 15,
-    "C — absent de la BD TOPO": 3,
-    "C — absent du cadastre actuel et de la BD TOPO, mais point RNB actif": 2
+    "supprimé (non bâti sur l’orthophoto 2025)": 25,
+    "C — absent de la BD TOPO": 2
    }
   },
   "ignAbsentFromCadastre2018InCommune": {
@@ -307,6 +802,18 @@
    "reason": "absent du cadastre actuel ; confirmé par le RNB"
   },
   {
+   "id": "BATIMENT0000000301148586",
+   "from": "B",
+   "to": "A",
+   "reason": "validé : BD TOPO et cadastre actuel concordent"
+  },
+  {
+   "id": "BATIMENT0000000301148645",
+   "from": "B",
+   "to": "A",
+   "reason": "validé : BD TOPO et cadastre actuel concordent"
+  },
+  {
    "id": "BATIMENT0000000301148737",
    "from": "A",
    "to": "B",
@@ -341,6 +848,12 @@
    "from": "A",
    "to": "B",
    "reason": "absent du cadastre actuel ; confirmé par le RNB"
+  },
+  {
+   "id": "BATIMENT0000000301149220",
+   "from": "B",
+   "to": "A",
+   "reason": "validé : BD TOPO enrichie de l’extension du cadastre actuel visible sur l’orthophoto IGN 2025"
   },
   {
    "id": "BATIMENT0000000301149638",
@@ -431,6 +944,30 @@
    "from": "A",
    "to": "B",
    "reason": "absent du cadastre actuel ; confirmé par le RNB"
+  },
+  {
+   "id": "BATIMENT0000000301150047",
+   "from": "B",
+   "to": "A",
+   "reason": "validé : BD TOPO et cadastre actuel concordent"
+  },
+  {
+   "id": "BATIMENT0000000301150057",
+   "from": "B",
+   "to": "A",
+   "reason": "validé : BD TOPO et cadastre actuel concordent"
+  },
+  {
+   "id": "BATIMENT0000000301150058",
+   "from": "B",
+   "to": "A",
+   "reason": "validé : BD TOPO et cadastre actuel concordent"
+  },
+  {
+   "id": "BATIMENT0000000301150065",
+   "from": "B",
+   "to": "A",
+   "reason": "validé : BD TOPO et cadastre actuel concordent"
   },
   {
    "id": "BATIMENT0000000301150770",
@@ -542,6 +1079,18 @@
   },
   {
    "id": "BATIMENT0000000301150925",
+   "from": "B",
+   "to": "A",
+   "reason": "validé : BD TOPO et cadastre actuel concordent"
+  },
+  {
+   "id": "BATIMENT0000000301151768",
+   "from": "B",
+   "to": "A",
+   "reason": "validé : BD TOPO enrichie de l’extension du cadastre actuel visible sur l’orthophoto IGN 2025"
+  },
+  {
+   "id": "BATIMENT0000000301151798",
    "from": "B",
    "to": "A",
    "reason": "validé : BD TOPO et cadastre actuel concordent"
@@ -1435,6 +1984,12 @@
    "reason": "validé : BD TOPO et cadastre actuel concordent"
   },
   {
+   "id": "BATIMENT0000000009359079",
+   "from": "B",
+   "to": "A",
+   "reason": "validé : BD TOPO enrichie de l’extension du cadastre actuel visible sur l’orthophoto IGN 2025"
+  },
+  {
    "id": "BATIMENT0000000009359081",
    "from": "B",
    "to": "A",
@@ -1477,19 +2032,7 @@
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
   },
   {
-   "id": "way/228577059",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
    "id": "way/228579592",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
-   "id": "way/228580629",
    "from": "C",
    "to": "B",
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
@@ -1531,12 +2074,6 @@
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
   },
   {
-   "id": "way/549959789",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
    "id": "way/549959803",
    "from": "C",
    "to": "B",
@@ -1567,19 +2104,7 @@
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
   },
   {
-   "id": "way/588789667",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
    "id": "way/588789726",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
-   "id": "way/588789738",
    "from": "C",
    "to": "B",
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
@@ -1627,19 +2152,7 @@
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
   },
   {
-   "id": "way/588789917",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
    "id": "way/588789941",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
-   "id": "way/588789945",
    "from": "C",
    "to": "B",
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
@@ -1669,12 +2182,6 @@
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
   },
   {
-   "id": "way/588791491",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
    "id": "way/588791521",
    "from": "C",
    "to": "B",
@@ -1699,12 +2206,6 @@
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
   },
   {
-   "id": "way/588791731",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
    "id": "way/588791751",
    "from": "C",
    "to": "B",
@@ -1724,12 +2225,6 @@
   },
   {
    "id": "way/588791768",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
-   "id": "way/588791777",
    "from": "C",
    "to": "B",
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
@@ -1771,12 +2266,6 @@
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
   },
   {
-   "id": "way/588791966",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
    "id": "way/588792020",
    "from": "C",
    "to": "B",
@@ -1789,31 +2278,13 @@
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
   },
   {
-   "id": "way/588792071",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
    "id": "way/588792073",
    "from": "C",
    "to": "B",
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
   },
   {
-   "id": "way/588792084",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
    "id": "way/588792090",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
-   "id": "way/588792110",
    "from": "C",
    "to": "B",
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
@@ -1855,12 +2326,6 @@
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
   },
   {
-   "id": "way/588792356",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
    "id": "way/588792369",
    "from": "C",
    "to": "B",
@@ -1885,12 +2350,6 @@
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
   },
   {
-   "id": "way/588792505",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
    "id": "way/588792554",
    "from": "C",
    "to": "B",
@@ -1909,12 +2368,6 @@
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
   },
   {
-   "id": "way/588792830",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
    "id": "way/588792860",
    "from": "C",
    "to": "B",
@@ -1922,24 +2375,6 @@
   },
   {
    "id": "way/588792958",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
-   "id": "way/588792961",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
-   "id": "way/588792983",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
-   "id": "way/588792987",
    "from": "C",
    "to": "B",
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
@@ -2035,12 +2470,6 @@
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
   },
   {
-   "id": "way/588793300",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
    "id": "way/588793304",
    "from": "C",
    "to": "B",
@@ -2059,25 +2488,7 @@
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
   },
   {
-   "id": "way/588793340",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
-   "id": "way/588793413",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
    "id": "way/588793460",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
-   "id": "way/588793462",
    "from": "C",
    "to": "B",
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
@@ -2120,12 +2531,6 @@
   },
   {
    "id": "way/588793673",
-   "from": "C",
-   "to": "B",
-   "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
-  },
-  {
-   "id": "way/588793679",
    "from": "C",
    "to": "B",
    "reason": "confirmé par le cadastre actuel (absent de la BD TOPO)"
@@ -2412,6 +2817,11 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "douteux",
+    "action": "aucune",
+    "observation": "bande cadastrale à l’est du hangar : sol clair encombré, toiture non identifiable"
+   },
    "ign": [
     "BATIMENT0000002006956405"
    ],
@@ -2431,6 +2841,11 @@
    "osmYear": 2013,
    "wall": "no",
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "douteux",
+    "action": "aucune",
+    "observation": "centre commercial : bande le long de la façade courbe, auvent possible, non tranché"
+   },
    "ign": [
     "BATIMENT0000000300132071",
     "BATIMENT0000000300132072"
@@ -2451,6 +2866,11 @@
    "osmYear": 2013,
    "wall": "no",
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "douteux",
+    "action": "aucune",
+    "observation": "centre commercial : bande le long de la façade, marquise possible, non tranché"
+   },
    "ign": [
     "BATIMENT0000000300132102"
    ],
@@ -2470,6 +2890,11 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "partie cadastrale non bâtie",
+    "action": "aucune",
+    "observation": "annexe ouest du polygone cadastral : pelouse (voir RNB CSYV3PG9NPC2)"
+   },
    "ign": [
     "BATIMENT0000000301151798"
    ],
@@ -2489,6 +2914,11 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "douteux",
+    "action": "aucune",
+    "observation": "bande sud : zone de stockage à ciel ouvert, appentis non démontré"
+   },
    "ign": [
     "BATIMENT0000000301150050"
    ],
@@ -2508,6 +2938,11 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "partie cadastrale non bâtie",
+    "action": "aucune",
+    "observation": "partie nord : jardin et végétation, aucune toiture"
+   },
    "ign": [
     "BATIMENT0000000301148645"
    ],
@@ -2527,6 +2962,11 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "décalage cadastre/BD TOPO",
+    "action": "aucune",
+    "observation": "même bâtiment décalé d’environ 3 m ; la toiture correspond à la BD TOPO"
+   },
    "ign": [
     "BATIMENT0000000301150065"
    ],
@@ -2546,6 +2986,13 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "extension réelle intégrée",
+    "action": "intégrer",
+    "observation": "annexe sud et liaison visibles (toiture grise), absentes de la BD TOPO",
+    "ign": "BATIMENT0000000009359079",
+    "cadastre": "cadastre:41207609"
+   },
    "ign": [
     "BATIMENT0000000009359079"
    ],
@@ -2565,6 +3012,13 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "extension réelle intégrée",
+    "action": "intégrer",
+    "observation": "aile ouest couverte de panneaux solaires visible, absente de la BD TOPO",
+    "ign": "BATIMENT0000000301151768",
+    "cadastre": "cadastre:39793960"
+   },
    "ign": [
     "BATIMENT0000000301151768"
    ],
@@ -2584,6 +3038,11 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "décalage cadastre/BD TOPO",
+    "action": "aucune",
+    "observation": "cadastre décalé d’environ 3 m vers le sud ; la toiture correspond à la BD TOPO"
+   },
    "ign": [
     "BATIMENT0000000301150057"
    ],
@@ -2603,6 +3062,7 @@
    "osmYear": 2013,
    "wall": "no",
    "verdict": "cadastre actuel proche de l’empreinte IGN : partie OSM non confirmée",
+   "review": null,
    "ign": [
     "BATIMENT0000000300132125"
    ],
@@ -2622,6 +3082,11 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "partie cadastrale non bâtie",
+    "action": "aucune",
+    "observation": "carré sud : sol nu / dalle, aucune toiture"
+   },
    "ign": [
     "BATIMENT0000000301149050"
    ],
@@ -2641,6 +3106,11 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "décalage cadastre/BD TOPO",
+    "action": "aucune",
+    "observation": "cadastre décalé d’environ 3 m vers le sud ; la toiture correspond à la BD TOPO"
+   },
    "ign": [
     "BATIMENT0000000301150047"
    ],
@@ -2660,6 +3130,11 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "décalage cadastre/BD TOPO",
+    "action": "aucune",
+    "observation": "cadastre décalé d’environ 3 m vers le sud ; la toiture correspond à la BD TOPO"
+   },
    "ign": [
     "BATIMENT0000000301150058"
    ],
@@ -2679,6 +3154,7 @@
    "osmYear": 2017,
    "wall": null,
    "verdict": "cadastre actuel proche de l’empreinte IGN : partie OSM non confirmée",
+   "review": null,
    "ign": [
     "BATIMENT0000000301150925"
    ],
@@ -2698,6 +3174,11 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "douteux",
+    "action": "aucune",
+    "observation": "bâtiment plus grand que les deux sources, qui sont décalées entre elles ; non tranché"
+   },
    "ign": [
     "BATIMENT0000000301149407"
    ],
@@ -2717,6 +3198,11 @@
    "osmYear": 2013,
    "wall": "no",
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "douteux",
+    "action": "aucune",
+    "observation": "centre commercial : sas ou marquise d’entrée, non tranché"
+   },
    "ign": [
     "BATIMENT0000000300132106"
    ],
@@ -2736,6 +3222,13 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "extension réelle intégrée",
+    "action": "intégrer",
+    "observation": "toiture continue sur toute la longueur de la rangée de garages, BD TOPO limitée au tiers est",
+    "ign": "BATIMENT0000000301149220",
+    "cadastre": "cadastre:39817907"
+   },
    "ign": [
     "BATIMENT0000000301149220"
    ],
@@ -2755,6 +3248,11 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "décalage cadastre/BD TOPO",
+    "action": "aucune",
+    "observation": "les deux contours décrivent le même bâtiment avec un décalage d’environ 5 m"
+   },
    "ign": [
     "BATIMENT0000000301149726"
    ],
@@ -2774,6 +3272,11 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "décalage cadastre/BD TOPO",
+    "action": "aucune",
+    "observation": "cadastre décalé vers le sud-ouest ; la toiture correspond à la BD TOPO"
+   },
    "ign": [
     "BATIMENT0000000301150064"
    ],
@@ -2793,6 +3296,11 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "décalage cadastre/BD TOPO",
+    "action": "aucune",
+    "observation": "les deux contours couvrent chacun une partie du même toit, décalés d’environ 2 m"
+   },
    "ign": [
     "BATIMENT0000000301148586"
    ],
@@ -2812,6 +3320,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "cadastre actuel proche de l’empreinte IGN : partie OSM non confirmée",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148519"
    ],
@@ -2831,6 +3340,11 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "partie cadastrale non bâtie",
+    "action": "aucune",
+    "observation": "partie sud : végétation, aucune toiture"
+   },
    "ign": [
     "BATIMENT0000000301149539"
    ],
@@ -2850,6 +3364,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "cadastre actuel proche de l’empreinte IGN : partie OSM non confirmée",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149753"
    ],
@@ -2869,6 +3384,11 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "décalage cadastre/BD TOPO",
+    "action": "aucune",
+    "observation": "même bâtiment ; le cadastre suit la toiture, la BD TOPO est décalée d’environ 5 m (géométrie IGN non modifiée)"
+   },
    "ign": [
     "BATIMENT0000000301148843"
    ],
@@ -2888,6 +3408,11 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "extension ou emprise confirmée par le cadastre actuel, absente de la BD TOPO",
+   "review": {
+    "verdict": "décalage cadastre/BD TOPO",
+    "action": "aucune",
+    "observation": "même bâtiment ; le cadastre suit la toiture, la BD TOPO est décalée d’environ 4 m (géométrie IGN non modifiée)"
+   },
    "ign": [
     "BATIMENT0000000301149517"
    ],
@@ -2907,6 +3432,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148955"
    ],
@@ -2926,6 +3452,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149930"
    ],
@@ -2945,6 +3472,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148954"
    ],
@@ -2964,6 +3492,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148843",
     "BATIMENT0000000301148844"
@@ -2984,6 +3513,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149659"
    ],
@@ -3003,6 +3533,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148730"
    ],
@@ -3022,6 +3553,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149080"
    ],
@@ -3041,6 +3573,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000002220709354"
    ],
@@ -3060,6 +3593,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148637"
    ],
@@ -3079,6 +3613,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149844"
    ],
@@ -3098,6 +3633,7 @@
    "osmYear": 2013,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000300132072"
    ],
@@ -3117,6 +3653,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149007"
    ],
@@ -3136,6 +3673,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149804"
    ],
@@ -3155,6 +3693,7 @@
    "osmYear": null,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000002321386914"
    ],
@@ -3174,6 +3713,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149661"
    ],
@@ -3193,6 +3733,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149990",
     "BATIMENT0000000301149992"
@@ -3213,6 +3754,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148850"
    ],
@@ -3232,6 +3774,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149981",
     "BATIMENT0000000301149982"
@@ -3252,6 +3795,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301151933"
    ],
@@ -3271,6 +3815,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149092"
    ],
@@ -3290,6 +3835,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148651"
    ],
@@ -3309,6 +3855,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000002330331325"
    ],
@@ -3328,6 +3875,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000002006956379"
    ],
@@ -3347,6 +3895,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149042"
    ],
@@ -3366,6 +3915,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148685"
    ],
@@ -3385,6 +3935,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301150072"
    ],
@@ -3404,6 +3955,7 @@
    "osmYear": 2025,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301151839",
     "BATIMENT0000000301151840"
@@ -3424,6 +3976,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149629"
    ],
@@ -3443,6 +3996,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148984"
    ],
@@ -3462,6 +4016,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148575",
     "BATIMENT0000000301148576"
@@ -3482,6 +4037,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148640"
    ],
@@ -3501,6 +4057,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149587"
    ],
@@ -3520,6 +4077,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149041"
    ],
@@ -3539,6 +4097,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148856"
    ],
@@ -3558,6 +4117,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148526"
    ],
@@ -3577,6 +4137,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149105"
    ],
@@ -3596,6 +4157,7 @@
    "osmYear": null,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000002321395957"
    ],
@@ -3615,6 +4177,7 @@
    "osmYear": 2025,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301151815"
    ],
@@ -3634,6 +4197,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149766",
     "BATIMENT0000000301149767"
@@ -3654,6 +4218,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149706"
    ],
@@ -3673,6 +4238,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301151928"
    ],
@@ -3692,6 +4258,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148886"
    ],
@@ -3711,6 +4278,7 @@
    "osmYear": 2017,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301150886",
     "BATIMENT0000000009358669"
@@ -3731,6 +4299,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149527"
    ],
@@ -3750,6 +4319,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301151930"
    ],
@@ -3769,6 +4339,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149156"
    ],
@@ -3788,6 +4359,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148753"
    ],
@@ -3807,6 +4379,7 @@
    "osmYear": 2013,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000300132118"
    ],
@@ -3826,6 +4399,7 @@
    "osmYear": 2013,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000300132083"
    ],
@@ -3845,6 +4419,7 @@
    "osmYear": 2013,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000300132077",
     "BATIMENT0000000300132078"
@@ -3865,6 +4440,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148780"
    ],
@@ -3884,6 +4460,7 @@
    "osmYear": 2013,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000300132078"
    ],
@@ -3903,6 +4480,7 @@
    "osmYear": 2013,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000300132119"
    ],
@@ -3922,6 +4500,7 @@
    "osmYear": 2013,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000300132117"
    ],
@@ -3941,6 +4520,7 @@
    "osmYear": 2013,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000300132076"
    ],
@@ -3960,6 +4540,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149124"
    ],
@@ -3979,6 +4560,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301151810"
    ],
@@ -3998,6 +4580,7 @@
    "osmYear": 2013,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000300132084"
    ],
@@ -4017,6 +4600,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148773",
     "BATIMENT0000000301148775"
@@ -4037,6 +4621,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149214"
    ],
@@ -4056,6 +4641,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148859"
    ],
@@ -4075,6 +4661,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301148865"
    ],
@@ -4094,6 +4681,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149911"
    ],
@@ -4113,6 +4701,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000325110369"
    ],
@@ -4132,6 +4721,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000325110340"
    ],
@@ -4151,6 +4741,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301151997",
     "BATIMENT0000000301151999"
@@ -4171,6 +4762,7 @@
    "osmYear": 2018,
    "wall": null,
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000002341955008"
    ],
@@ -4190,6 +4782,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000301149452",
     "BATIMENT0000000301149454"
@@ -4210,6 +4803,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000002006956380"
    ],
@@ -4229,6 +4823,7 @@
    "osmYear": 2018,
    "wall": "no",
    "verdict": "écart mineur (< 25 m²)",
+   "review": null,
    "ign": [
     "BATIMENT0000000325110361"
    ],
@@ -4241,6 +4836,7 @@
  "removed": [
   {
    "id": "way/228576472",
+   "version": "1.6.1",
    "areaM2": 18.93,
    "inCommune": false,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4251,6 +4847,7 @@
   },
   {
    "id": "way/228576619",
+   "version": "1.6.1",
    "areaM2": 13.32,
    "inCommune": false,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4260,7 +4857,20 @@
    ]
   },
   {
+   "id": "way/228577059",
+   "version": "1.6.2",
+   "areaM2": 592.75,
+   "inCommune": false,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : friche arbustive, aucune toiture"
+   ]
+  },
+  {
    "id": "way/228577467",
+   "version": "1.6.1",
    "areaM2": 9.64,
    "inCommune": false,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4271,6 +4881,7 @@
   },
   {
    "id": "way/228578366",
+   "version": "1.6.1",
    "areaM2": 9.02,
    "inCommune": false,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4281,6 +4892,7 @@
   },
   {
    "id": "way/228579332",
+   "version": "1.6.1",
    "areaM2": 9.76,
    "inCommune": false,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4291,6 +4903,7 @@
   },
   {
    "id": "way/228580394",
+   "version": "1.6.1",
    "areaM2": 8.74,
    "inCommune": false,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4300,7 +4913,20 @@
    ]
   },
   {
+   "id": "way/228580629",
+   "version": "1.6.2",
+   "areaM2": 95.59,
+   "inCommune": false,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 0.99)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : friche arbustive, aucune toiture"
+   ]
+  },
+  {
    "id": "way/549959545",
+   "version": "1.6.1",
    "areaM2": 10.47,
    "inCommune": false,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4310,7 +4936,20 @@
    ]
   },
   {
+   "id": "way/549959789",
+   "version": "1.6.2",
+   "areaM2": 108.77,
+   "inCommune": false,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : prairie, aucune structure"
+   ]
+  },
+  {
    "id": "way/588789260",
+   "version": "1.6.1",
    "areaM2": 44.95,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4321,6 +4960,7 @@
   },
   {
    "id": "way/588789271",
+   "version": "1.6.1",
    "areaM2": 36.4,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4331,6 +4971,7 @@
   },
   {
    "id": "way/588789411",
+   "version": "1.6.1",
    "areaM2": 37.68,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4341,6 +4982,7 @@
   },
   {
    "id": "way/588789451",
+   "version": "1.6.1",
    "areaM2": 38.87,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4350,7 +4992,81 @@
    ]
   },
   {
+   "id": "way/588789667",
+   "version": "1.6.2",
+   "areaM2": 29.53,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : jardin enherbé et arbres"
+   ]
+  },
+  {
+   "id": "way/588789738",
+   "version": "1.6.2",
+   "areaM2": 19.59,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : pelouse le long de la rue"
+   ]
+  },
+  {
+   "id": "way/588789917",
+   "version": "1.6.2",
+   "areaM2": 62.92,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 0.99)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : prairie"
+   ]
+  },
+  {
+   "id": "way/588789945",
+   "version": "1.6.2",
+   "areaM2": 13.18,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : pelouse de jardin"
+   ]
+  },
+  {
+   "id": "way/588791341",
+   "version": "1.6.2",
+   "areaM2": 20.49,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre décalé)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : décalé (couverture 0 %)",
+    "Parcellaire Express (PCI DGFiP, IGN) : empreinte équivalente (20.5 m², Bâtiment en dur) décalée de 5.2 m, sans autre contrepartie",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : pelouse (même objet que le RNB 9Y9PM47JK2TF et le cadastre 39808547)"
+   ]
+  },
+  {
+   "id": "way/588791491",
+   "version": "1.6.2",
+   "areaM2": 26.41,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : jardin, sol nu"
+   ]
+  },
+  {
    "id": "way/588791515",
+   "version": "1.6.1",
    "areaM2": 9.38,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4361,6 +5077,7 @@
   },
   {
    "id": "way/588791687",
+   "version": "1.6.1",
    "areaM2": 7.19,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4370,7 +5087,45 @@
    ]
   },
   {
+   "id": "way/588791731",
+   "version": "1.6.2",
+   "areaM2": 26.82,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : végétation près d’un dépôt, aucune toiture"
+   ]
+  },
+  {
+   "id": "way/588791777",
+   "version": "1.6.2",
+   "areaM2": 45.17,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : pelouse et sol nu"
+   ]
+  },
+  {
+   "id": "way/588791810",
+   "version": "1.6.2",
+   "areaM2": 64.77,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre absent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+    "BD TOPO : absent ; OSM sans source",
+    "RNB : point(s) actif(s) dans l’empreinte : J42GQDQHAZ3V",
+    "BD ORTHO IGN 20 cm : pelouse"
+   ]
+  },
+  {
    "id": "way/588791911",
+   "version": "1.6.1",
    "areaM2": 7.91,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4380,7 +5135,21 @@
    ]
   },
   {
+   "id": "way/588791966",
+   "version": "1.6.2",
+   "areaM2": 107.71,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "RNB : point(s) actif(s) dans l’empreinte : P729RX6T7SHY",
+    "BD ORTHO IGN 20 cm : jardin sous un arbre, sol visible"
+   ]
+  },
+  {
    "id": "way/588792057",
+   "version": "1.6.1",
    "areaM2": 15.36,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4390,7 +5159,44 @@
    ]
   },
   {
+   "id": "way/588792071",
+   "version": "1.6.2",
+   "areaM2": 351.18,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 85 %, IoU 0.68)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : grands cercles sur sol nu (anciens bassins ou cuves disparus)"
+   ]
+  },
+  {
+   "id": "way/588792084",
+   "version": "1.6.2",
+   "areaM2": 8.8,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : dalle de terrasse claire"
+   ]
+  },
+  {
+   "id": "way/588792110",
+   "version": "1.6.2",
+   "areaM2": 123.67,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : jardin et voiture, aucune toiture"
+   ]
+  },
+  {
    "id": "way/588792172",
+   "version": "1.6.1",
    "areaM2": 8.98,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4400,7 +5206,45 @@
    ]
   },
   {
+   "id": "way/588792242",
+   "version": "1.6.2",
+   "areaM2": 72.07,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre absent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "RNB : point(s) actif(s) dans l’empreinte : 3Z3KP6CE2933",
+    "BD ORTHO IGN 20 cm : cour pavée plantée d’arbres"
+   ]
+  },
+  {
+   "id": "way/588792356",
+   "version": "1.6.2",
+   "areaM2": 145.87,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : arbres et allée ; ancien bâtiment disparu"
+   ]
+  },
+  {
+   "id": "way/588792505",
+   "version": "1.6.2",
+   "areaM2": 327.65,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 81 %, IoU 0.67)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : grands cercles sur sol nu (anciens bassins ou cuves disparus)"
+   ]
+  },
+  {
    "id": "way/588792666",
+   "version": "1.6.1",
    "areaM2": 29.25,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4411,6 +5255,7 @@
   },
   {
    "id": "way/588792716",
+   "version": "1.6.1",
    "areaM2": 6.61,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4420,7 +5265,20 @@
    ]
   },
   {
+   "id": "way/588792830",
+   "version": "1.6.2",
+   "areaM2": 16.11,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : pelouse et haie"
+   ]
+  },
+  {
    "id": "way/588792877",
+   "version": "1.6.1",
    "areaM2": 20,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4431,6 +5289,7 @@
   },
   {
    "id": "way/588792955",
+   "version": "1.6.1",
    "areaM2": 16.98,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4440,7 +5299,44 @@
    ]
   },
   {
+   "id": "way/588792961",
+   "version": "1.6.2",
+   "areaM2": 73.9,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 0.99)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : jardin en friche (empreinte la plus proche du RNB X3H3MTQBQ5G1)"
+   ]
+  },
+  {
+   "id": "way/588792983",
+   "version": "1.6.2",
+   "areaM2": 24.91,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : cour d’activité pavée avec véhicules"
+   ]
+  },
+  {
+   "id": "way/588792987",
+   "version": "1.6.2",
+   "areaM2": 191.43,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : pelouse et arbres"
+   ]
+  },
+  {
    "id": "way/588793079",
+   "version": "1.6.1",
    "areaM2": 11.25,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4450,7 +5346,32 @@
    ]
   },
   {
+   "id": "way/588793300",
+   "version": "1.6.2",
+   "areaM2": 62.82,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : allée et pelouse ; seule la pointe sud recouvre le toit déjà décrit par la BD TOPO"
+   ]
+  },
+  {
+   "id": "way/588793340",
+   "version": "1.6.2",
+   "areaM2": 5.67,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : accotement enherbé"
+   ]
+  },
+  {
    "id": "way/588793377",
+   "version": "1.6.1",
    "areaM2": 16.45,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4460,7 +5381,44 @@
    ]
   },
   {
+   "id": "way/588793413",
+   "version": "1.6.2",
+   "areaM2": 10.6,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : pelouse"
+   ]
+  },
+  {
+   "id": "way/588793462",
+   "version": "1.6.2",
+   "areaM2": 40.64,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : sol nu et arbre (Ferme des Charmes, même objet probable que le RNB AXQ4DCT3XS93)"
+   ]
+  },
+  {
+   "id": "way/588793679",
+   "version": "1.6.2",
+   "areaM2": 217.65,
+   "inCommune": true,
+   "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+   "evidence": [
+    "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 70 %, IoU 0.54)",
+    "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+    "BD ORTHO IGN 20 cm : grands cercles sur sol nu (anciens bassins ou cuves disparus)"
+   ]
+  },
+  {
    "id": "way/935473873",
+   "version": "1.6.1",
    "areaM2": 41.76,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4471,6 +5429,7 @@
   },
   {
    "id": "way/1303286702",
+   "version": "1.6.1",
    "areaM2": 5.42,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4481,6 +5440,7 @@
   },
   {
    "id": "way/1433821870",
+   "version": "1.6.1",
    "areaM2": 19.63,
    "inCommune": true,
    "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
@@ -4490,70 +5450,227 @@
    ]
   }
  ],
+ "withdrawnCadastralAdditions": [
+  {
+   "id": "cadastre:22587690",
+   "areaM2": 9.21,
+   "inCommune": false,
+   "type": "Construction légère",
+   "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  {
+   "id": "cadastre:22587748",
+   "areaM2": 9.79,
+   "inCommune": false,
+   "type": "Construction légère",
+   "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  {
+   "id": "cadastre:22587759",
+   "areaM2": 9.15,
+   "inCommune": false,
+   "type": "Construction légère",
+   "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  {
+   "id": "cadastre:22587825",
+   "areaM2": 9.89,
+   "inCommune": false,
+   "type": "Construction légère",
+   "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  {
+   "id": "cadastre:22587834",
+   "areaM2": 9.79,
+   "inCommune": false,
+   "type": "Construction légère",
+   "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  {
+   "id": "cadastre:22587923",
+   "areaM2": 10.01,
+   "inCommune": false,
+   "type": "Construction légère",
+   "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  {
+   "id": "cadastre:22587987",
+   "areaM2": 9.32,
+   "inCommune": false,
+   "type": "Construction légère",
+   "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  {
+   "id": "cadastre:22587996",
+   "areaM2": 8.67,
+   "inCommune": false,
+   "type": "Construction légère",
+   "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  {
+   "id": "cadastre:22588365",
+   "areaM2": 9.4,
+   "inCommune": false,
+   "type": "Bâtiment en dur",
+   "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  {
+   "id": "cadastre:23578995",
+   "areaM2": 2.99,
+   "inCommune": true,
+   "type": "Construction légère",
+   "reason": "artefact : bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
+  },
+  {
+   "id": "cadastre:39362625",
+   "areaM2": 15.52,
+   "inCommune": false,
+   "type": "Bâtiment en dur",
+   "reason": "non bâti : sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+  },
+  {
+   "id": "cadastre:39362627",
+   "areaM2": 16.31,
+   "inCommune": false,
+   "type": "Bâtiment en dur",
+   "reason": "non bâti : sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+  },
+  {
+   "id": "cadastre:39362629",
+   "areaM2": 16.31,
+   "inCommune": false,
+   "type": "Bâtiment en dur",
+   "reason": "non bâti : sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+  },
+  {
+   "id": "cadastre:39808118",
+   "areaM2": 18.72,
+   "inCommune": true,
+   "type": "Bâtiment en dur",
+   "reason": "non bâti : accotement enherbé et chaussée"
+  },
+  {
+   "id": "cadastre:39808120",
+   "areaM2": 38.48,
+   "inCommune": true,
+   "type": "Bâtiment en dur",
+   "reason": "non bâti : cour pavée avec traces de roues, aucune toiture"
+  },
+  {
+   "id": "cadastre:39808749",
+   "areaM2": 152.64,
+   "inCommune": true,
+   "type": "Bâtiment en dur",
+   "reason": "non bâti : dalle béton sans toiture (démoli)"
+  },
+  {
+   "id": "cadastre:39810407",
+   "areaM2": 37.94,
+   "inCommune": true,
+   "type": "Construction légère",
+   "reason": "non bâti : cour pavée avec traces de roues, aucune toiture"
+  },
+  {
+   "id": "cadastre:39816945",
+   "areaM2": 17.97,
+   "inCommune": true,
+   "type": "Bâtiment en dur",
+   "reason": "non bâti : pelouse"
+  },
+  {
+   "id": "cadastre:39818200",
+   "areaM2": 83.52,
+   "inCommune": true,
+   "type": "Construction légère",
+   "reason": "non bâti : pelouse de jardin entre deux maisons ; les deux points RNB (BDNB) qu’il porte sont également sans bâti"
+  },
+  {
+   "id": "cadastre:40776829",
+   "areaM2": 2.85,
+   "inCommune": true,
+   "type": "Construction légère",
+   "reason": "artefact : bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
+  },
+  {
+   "id": "cadastre:40928273",
+   "areaM2": 2.43,
+   "inCommune": true,
+   "type": "Construction légère",
+   "reason": "artefact : bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
+  }
+ ],
  "addedFromCadastre": [
   {
    "id": "cadastre:19891047",
    "areaM2": 88.94,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:20394422",
    "areaM2": 45,
    "inCommune": true,
    "type": "Bâtiment FI",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:20394517",
    "areaM2": 101.31,
    "inCommune": true,
    "type": "Bâtiment FI",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:20394549",
    "areaM2": 52.6,
    "inCommune": true,
    "type": "Bâtiment FI",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:20394582",
    "areaM2": 56.82,
    "inCommune": true,
    "type": "Bâtiment FI",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:20394642",
    "areaM2": 72.42,
    "inCommune": true,
    "type": "Bâtiment FI",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:20394661",
    "areaM2": 139.61,
    "inCommune": true,
    "type": "Bâtiment FI",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:20394812",
    "areaM2": 53.28,
    "inCommune": true,
    "type": "Bâtiment FI",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:20628039",
@@ -4561,7 +5678,8 @@
    "inCommune": false,
    "type": "Bâtiment en dur",
    "confidence": "C",
-   "rnb": null
+   "rnb": null,
+   "review": "non vérifiable"
   },
   {
    "id": "cadastre:20628050",
@@ -4569,7 +5687,8 @@
    "inCommune": false,
    "type": "Bâtiment en dur",
    "confidence": "C",
-   "rnb": null
+   "rnb": null,
+   "review": "non vérifiable"
   },
   {
    "id": "cadastre:20628074",
@@ -4577,199 +5696,134 @@
    "inCommune": false,
    "type": "Construction légère",
    "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:22587690",
-   "areaM2": 9.21,
-   "inCommune": false,
-   "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:22587748",
-   "areaM2": 9.79,
-   "inCommune": false,
-   "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:22587759",
-   "areaM2": 9.15,
-   "inCommune": false,
-   "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:22587825",
-   "areaM2": 9.89,
-   "inCommune": false,
-   "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:22587834",
-   "areaM2": 9.79,
-   "inCommune": false,
-   "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:22587923",
-   "areaM2": 10.01,
-   "inCommune": false,
-   "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:22587987",
-   "areaM2": 9.32,
-   "inCommune": false,
-   "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:22587996",
-   "areaM2": 8.67,
-   "inCommune": false,
-   "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:22588365",
-   "areaM2": 9.4,
-   "inCommune": false,
-   "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "rnb": null,
+   "review": "non vérifiable"
   },
   {
    "id": "cadastre:23570228",
    "areaM2": 26.79,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23570265",
    "areaM2": 9.86,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23570271",
    "areaM2": 6.27,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23570834",
    "areaM2": 13.98,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23574404",
    "areaM2": 9.72,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23574412",
    "areaM2": 35.86,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23575030",
    "areaM2": 17.58,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23575050",
    "areaM2": 15.8,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23575291",
    "areaM2": 19.81,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23575349",
    "areaM2": 15.7,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23575395",
    "areaM2": 35.77,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23575758",
    "areaM2": 17.86,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23575781",
    "areaM2": 10.26,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23577484",
    "areaM2": 20.43,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:23578995",
-   "areaM2": 2.99,
-   "inCommune": true,
-   "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23579114",
@@ -4777,87 +5831,98 @@
    "inCommune": true,
    "type": "Construction légère",
    "confidence": "C",
-   "rnb": null
+   "rnb": null,
+   "review": "non vérifiable"
   },
   {
    "id": "cadastre:23579250",
    "areaM2": 19.59,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23579675",
    "areaM2": 27.14,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23580243",
    "areaM2": 26.55,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23580515",
    "areaM2": 17.27,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23582227",
    "areaM2": 15.95,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23582229",
    "areaM2": 15.96,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:23582589",
    "areaM2": 19.92,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:25515850",
    "areaM2": 21.81,
    "inCommune": false,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:32816177",
    "areaM2": 18.86,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:34580465",
    "areaM2": 41.75,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:34585447",
@@ -4865,23 +5930,26 @@
    "inCommune": true,
    "type": "Bâtiment en dur",
    "confidence": "C",
-   "rnb": null
+   "rnb": null,
+   "review": "non vérifiable"
   },
   {
    "id": "cadastre:34631888",
    "areaM2": 24.3,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:37265912",
    "areaM2": 35,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:37265972",
@@ -4889,39 +5957,44 @@
    "inCommune": true,
    "type": "Bâtiment en dur",
    "confidence": "C",
-   "rnb": null
+   "rnb": null,
+   "review": "non vérifiable"
   },
   {
    "id": "cadastre:37265973",
    "areaM2": 15.96,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:37854467",
    "areaM2": 8.99,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:38876219",
    "areaM2": 9.94,
    "inCommune": false,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:39160171",
    "areaM2": 30.97,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:39192423",
@@ -4929,23 +6002,26 @@
    "inCommune": true,
    "type": "Bâtiment en dur",
    "confidence": "C",
-   "rnb": null
+   "rnb": null,
+   "review": "non vérifiable"
   },
   {
    "id": "cadastre:39216603",
    "areaM2": 8.4,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:39216604",
    "areaM2": 10.34,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:39362589",
@@ -4953,79 +6029,26 @@
    "inCommune": false,
    "type": "Bâtiment en dur",
    "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:39362625",
-   "areaM2": 15.52,
-   "inCommune": false,
-   "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:39362627",
-   "areaM2": 16.31,
-   "inCommune": false,
-   "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:39362629",
-   "areaM2": 16.31,
-   "inCommune": false,
-   "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "rnb": null,
+   "review": "non vérifiable"
   },
   {
    "id": "cadastre:39696818",
    "areaM2": 27,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:39696821",
    "areaM2": 25.79,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:39808118",
-   "areaM2": 18.72,
-   "inCommune": true,
-   "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:39808120",
-   "areaM2": 38.48,
-   "inCommune": true,
-   "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:39808749",
-   "areaM2": 152.64,
-   "inCommune": true,
-   "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:39810407",
-   "areaM2": 37.94,
-   "inCommune": true,
-   "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:39810526",
@@ -5033,31 +6056,17 @@
    "inCommune": true,
    "type": "Construction légère",
    "confidence": "B",
-   "rnb": "CTSN6899Q328"
+   "rnb": "CTSN6899Q328",
+   "review": "non vérifiable"
   },
   {
    "id": "cadastre:39810698",
    "areaM2": 25.73,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:39816945",
-   "areaM2": 17.97,
-   "inCommune": true,
-   "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:39818200",
-   "areaM2": 83.52,
-   "inCommune": true,
-   "type": "Construction légère",
    "confidence": "B",
-   "rnb": "TSQ36SASD1RN/2N545PX8SQH4"
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:39823777",
@@ -5065,7 +6074,8 @@
    "inCommune": true,
    "type": "Bâtiment en dur",
    "confidence": "C",
-   "rnb": null
+   "rnb": null,
+   "review": "non vérifiable"
   },
   {
    "id": "cadastre:39823883",
@@ -5073,39 +6083,26 @@
    "inCommune": false,
    "type": "Construction légère",
    "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:40776829",
-   "areaM2": 2.85,
-   "inCommune": true,
-   "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "rnb": null,
+   "review": "non vérifiable"
   },
   {
    "id": "cadastre:40921138",
    "areaM2": 10.53,
    "inCommune": true,
    "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
-  },
-  {
-   "id": "cadastre:40928273",
-   "areaM2": 2.43,
-   "inCommune": true,
-   "type": "Construction légère",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   },
   {
    "id": "cadastre:40928305",
    "areaM2": 19.87,
    "inCommune": true,
    "type": "Bâtiment en dur",
-   "confidence": "C",
-   "rnb": null
+   "confidence": "B",
+   "rnb": null,
+   "review": "bâti visible"
   }
  ],
  "rnbOnly": [
@@ -5119,7 +6116,16 @@
    "position": [
     -28.2,
     -223.9
-   ]
+   ],
+   "review": {
+    "category": "objet démoli ou incohérent",
+    "resolved": true,
+    "evidence": [
+     "point seul, sans adresse, source BDNB uniquement",
+     "orthophoto 2025 : friche arborée, aucun bâti au point",
+     "empreinte la plus proche à 10,6 m (way/588792961, 74 m², déjà au référentiel avec le cadastre)"
+    ]
+   }
   },
   {
    "rnb": "9Y9PM47JK2TF",
@@ -5133,7 +6139,16 @@
    "position": [
     -158.3,
     516.2
-   ]
+   ],
+   "review": {
+    "category": "objet démoli ou incohérent",
+    "resolved": true,
+    "evidence": [
+     "forme RNB 20,5 m² identique au cadastre 39808547 (recouvrement 99 %)",
+     "orthophoto 2025 : pelouse, ni à la position RNB/cadastre ni à la position OSM décalée de 5 m (way/588791341)",
+     "way/588791341 retiré en V1.6.2 pour la même raison"
+    ]
+   }
   },
   {
    "rnb": "XA57BZ86GTFS",
@@ -5145,7 +6160,16 @@
    "position": [
     256.6,
     -57.7
-   ]
+   ],
+   "review": {
+    "category": "adresse/position RNB imprécise",
+    "resolved": true,
+    "evidence": [
+     "point seul sans adresse, posé sur la clôture entre deux pavillons",
+     "les deux pavillons ont déjà leur RNB vérifié (GAWEGA9GX3XW, TGDWQ71Y9CK1)",
+     "orthophoto 2025 : aucun autre bâti au point"
+    ]
+   }
   },
   {
    "rnb": "E3SG5A58GGM9",
@@ -5157,7 +6181,16 @@
    "position": [
     -289,
     360.2
-   ]
+   ],
+   "review": {
+    "category": "plusieurs bâtiments regroupés",
+    "resolved": true,
+    "evidence": [
+     "forme RNB 16 m² sur pelouse, décalée d’environ 5 m de la construction légère cadastrale 39810490 (20 m²)",
+     "BATIMENT0000002330331325 (BD TOPO, 33 m²) couvre à la fois la construction en dur 39808417 et une partie de 39810490",
+     "orthophoto 2025 : un seul bâti visible, déjà présent ; pas de second identifiant sur la même empreinte"
+    ]
+   }
   },
   {
    "rnb": "RT96NCTKV9AM",
@@ -5169,7 +6202,15 @@
    "position": [
     -699.8,
     783.9
-   ]
+   ],
+   "review": {
+    "category": "adresse/position RNB imprécise",
+    "resolved": true,
+    "evidence": [
+     "point seul sans adresse sur une pelouse de jardin",
+     "orthophoto 2025 : aucun bâti au point ; pavillons voisins déjà au référentiel avec leur RNB"
+    ]
+   }
   },
   {
    "rnb": "58Y4QCN7YBR4",
@@ -5181,7 +6222,15 @@
    "position": [
     -168.9,
     -79
-   ]
+   ],
+   "review": {
+    "category": "adresse/position RNB imprécise",
+    "resolved": false,
+    "evidence": [
+     "point seul sans adresse dans un potager",
+     "orthophoto 2025 : abri de jardin et serre légers visibles à 10–12 m, absents de la BD TOPO et du cadastre : aucune empreinte officielle à reprendre"
+    ]
+   }
   },
   {
    "rnb": "MEJK7RK7Q4B1",
@@ -5195,7 +6244,38 @@
    "position": [
     841.8,
     -398.1
-   ]
+   ],
+   "review": {
+    "category": "adresse/position RNB imprécise",
+    "resolved": false,
+    "evidence": [
+     "51 rue Joliot-Curie : forme RNB 24 m² entre la maison (BATIMENT0000000301151754) et le pool-house (BATIMENT0000002341955036)",
+     "orthophoto 2025 : zone sombre ambiguë (ombre portée ou abri) ; aucune empreinte BD TOPO ni cadastrale",
+     "forme RNB issue de la BDNB seule : pas assez fiable pour créer un bâtiment"
+    ]
+   }
+  },
+  {
+   "rnb": "TSQ36SASD1RN",
+   "areaM2": 62.8,
+   "addresses": [
+    "23 Avenue du General de Gaulle"
+   ],
+   "extIds": [
+    "bdnb:bdnb-bc-1JFT-K3JA-LMEU"
+   ],
+   "position": [
+    -481.8,
+    968.1
+   ],
+   "review": {
+    "category": "objet démoli ou incohérent",
+    "resolved": true,
+    "evidence": [
+     "23 avenue du Général-de-Gaulle : forme RNB (BDNB) sur cadastre:39818200, retiré en V1.6.2",
+     "orthophoto 2025 : pelouse, aucun bâti"
+    ]
+   }
   },
   {
    "rnb": "K14J6VEAG7V8",
@@ -5209,7 +6289,15 @@
    "position": [
     -711.7,
     873
-   ]
+   ],
+   "review": {
+    "category": "adresse/position RNB imprécise",
+    "resolved": true,
+    "evidence": [
+     "6 rue de la Chapelle : point d’adresse sur la pelouse",
+     "orthophoto 2025 : aucun bâti au point ; annexes voisines déjà au référentiel avec leur RNB"
+    ]
+   }
   },
   {
    "rnb": "AXQ4DCT3XS93",
@@ -5223,21 +6311,37 @@
    "position": [
     1207.8,
     2662.1
-   ]
+   ],
+   "review": {
+    "category": "objet démoli ou incohérent",
+    "resolved": true,
+    "evidence": [
+     "481 Ferme des Charmes : forme RNB 31 m² à 1,7 m de way/588793462 (41 m², cadastre 39827332), même objet probable",
+     "orthophoto 2025 : sol nu et arbre, aucune toiture ni sur la forme RNB ni sur l’empreinte OSM/cadastre ; way/588793462 retiré en V1.6.2"
+    ]
+   }
   },
   {
-   "rnb": "K5QGP46TYCQR",
-   "areaM2": 37.1,
+   "rnb": "3Z3KP6CE2933",
+   "areaM2": 71.6,
    "addresses": [
-    "39 Rue du General Leclerc"
+    "6 Rue des Ecoles"
    ],
    "extIds": [
-    "bdnb:bdnb-bc-URUD-FV9V-CBV7"
+    "bdnb:bdnb-bc-K6FU-J6XP-FCKL"
    ],
    "position": [
-    -283.7,
-    361.3
-   ]
+    -141.4,
+    55.8
+   ],
+   "review": {
+    "category": "objet démoli ou incohérent",
+    "resolved": true,
+    "evidence": [
+     "6 rue des Écoles : forme RNB (BDNB) 72 m² dans la cour d’école",
+     "orthophoto 2025 : cour goudronnée avec un terrain peint, aucun bâti ; way/588792242 retiré"
+    ]
+   }
   },
   {
    "rnb": "HFMTQATEXE98",
@@ -5249,7 +6353,15 @@
    "position": [
     287.8,
     -177.8
-   ]
+   ],
+   "review": {
+    "category": "objet démoli ou incohérent",
+    "resolved": true,
+    "evidence": [
+     "point seul sans adresse dans une haie au carrefour",
+     "orthophoto 2025 : aucun bâti ; bâtiment le plus proche à 33 m"
+    ]
+   }
   },
   {
    "rnb": "A58K5AW4BFNY",
@@ -5261,7 +6373,15 @@
    "position": [
     -600.8,
     1041.3
-   ]
+   ],
+   "review": {
+    "category": "objet démoli ou incohérent",
+    "resolved": true,
+    "evidence": [
+     "point seul sans adresse dans une prairie",
+     "orthophoto 2025 : aucun bâti ; bâtiment le plus proche à 40 m"
+    ]
+   }
   },
   {
    "rnb": "ET3MKN6N15C5",
@@ -5273,7 +6393,37 @@
    "position": [
     415.1,
     188.5
-   ]
+   ],
+   "review": {
+    "category": "objet démoli ou incohérent",
+    "resolved": true,
+    "evidence": [
+     "point seul sans adresse au milieu d’une parcelle cultivée",
+     "orthophoto 2025 : aucun bâti ; bâtiment le plus proche à 64 m"
+    ]
+   }
+  },
+  {
+   "rnb": "P729RX6T7SHY",
+   "areaM2": 109,
+   "addresses": [
+    "9 Rue du Docteur Sollier"
+   ],
+   "extIds": [
+    "bdnb:bdnb-bc-7CWF-EJSZ-FSCC"
+   ],
+   "position": [
+    -479.5,
+    614.2
+   ],
+   "review": {
+    "category": "objet démoli ou incohérent",
+    "resolved": true,
+    "evidence": [
+     "9 rue du Docteur-Sollier : forme RNB (BDNB) 109 m² sur la même emprise que way/588791966",
+     "orthophoto 2025 : jardin et sol nu, aucune toiture ; way/588791966 retiré"
+    ]
+   }
   },
   {
    "rnb": "6GNAKD2FS8D8",
@@ -5287,7 +6437,15 @@
    "position": [
     -722.4,
     969.5
-   ]
+   ],
+   "review": {
+    "category": "objet démoli ou incohérent",
+    "resolved": true,
+    "evidence": [
+     "47 avenue du Général-de-Gaulle : forme RNB 61 m² dans une cour",
+     "orthophoto 2025 : dalle béton sans toiture ; absent de la BD TOPO et du cadastre actuel (démoli)"
+    ]
+   }
   },
   {
    "rnb": "Q289NCVCWVSZ",
@@ -5299,7 +6457,16 @@
    "position": [
     1312.4,
     -227.8
-   ]
+   ],
+   "review": {
+    "category": "adresse/position RNB imprécise",
+    "resolved": true,
+    "evidence": [
+     "point seul sans adresse à côté du château d’eau",
+     "château d’eau déjà au référentiel (way/588791761, way/588791386) ; aucun autre bâti visible au point",
+     "pas d’identifiant commun : non associé"
+    ]
+   }
   },
   {
    "rnb": "AMMKT8XZRXAA",
@@ -5313,7 +6480,16 @@
    "position": [
     840.7,
     -315.8
-   ]
+   ],
+   "review": {
+    "category": "adresse/position RNB imprécise",
+    "resolved": true,
+    "evidence": [
+     "38 rue Joliot-Curie : forme RNB 198 m² sur une pelouse",
+     "même surface que le pavillon situé 18 m plus loin (BATIMENT0000002341955032, 219 m², RNB 3BE1NR9ER8DZ déjà vérifié)",
+     "orthophoto 2025 : pelouse à la position RNB (doublon décalé)"
+    ]
+   }
   },
   {
    "rnb": "77N2Q9DKBVSD",
@@ -5325,21 +6501,57 @@
    "position": [
     -520.4,
     494.2
-   ]
+   ],
+   "review": {
+    "category": "objet démoli ou incohérent",
+    "resolved": true,
+    "evidence": [
+     "point seul sans adresse sur les voies ferrées",
+     "orthophoto 2025 : aucun bâti"
+    ]
+   }
   },
   {
-   "rnb": "7H6KRN7T9WKX",
-   "areaM2": 30.4,
-   "addresses": [
-    "36 Rue du General Leclerc"
-   ],
+   "rnb": "2N545PX8SQH4",
+   "areaM2": 20,
+   "addresses": [],
    "extIds": [
-    "bdnb:bdnb-bc-9Q7Y-8UQT-2YC1"
+    "bdnb:bdnb-bc-X728-NYC7-5FZG"
    ],
    "position": [
-    -208.7,
-    508.1
-   ]
+    -478.3,
+    971.5
+   ],
+   "review": {
+    "category": "objet démoli ou incohérent",
+    "resolved": true,
+    "evidence": [
+     "forme RNB (BDNB) sur cadastre:39818200, retiré en V1.6.2",
+     "orthophoto 2025 : pelouse, aucun bâti"
+    ]
+   }
+  },
+  {
+   "rnb": "J42GQDQHAZ3V",
+   "areaM2": 55,
+   "addresses": [
+    "3 les carreaux"
+   ],
+   "extIds": [
+    "bdnb:bdnb-bc-FUAG-SRP9-FAQ2"
+   ],
+   "position": [
+    -2031.6,
+    1852.2
+   ],
+   "review": {
+    "category": "objet démoli ou incohérent",
+    "resolved": true,
+    "evidence": [
+     "3 les Carreaux : forme RNB (BDNB) 55 m² accolée à la maison",
+     "orthophoto 2025 : pelouse, aucune toiture ; way/588791810 retiré"
+    ]
+   }
   },
   {
    "rnb": "CSYV3PG9NPC2",
@@ -5353,7 +6565,15 @@
    "position": [
     919,
     -341.9
-   ]
+   ],
+   "review": {
+    "category": "objet démoli ou incohérent",
+    "resolved": true,
+    "evidence": [
+     "42 rue Joliot-Curie : forme RNB 101 m² à l’ouest de la maison, dans le polygone cadastral 39821743",
+     "orthophoto 2025 : pelouse ; BD TOPO limitée à la maison : annexe cadastrale non bâtie"
+    ]
+   }
   }
  ]
 }

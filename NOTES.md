@@ -1,3 +1,78 @@
+# Notes V1.6.2 — gel du référentiel bâti pour Unreal, 24 septembre 2026
+
+Branche `opus/v1.6-building-validation`, à partir de `0402261` (V1.6.1). Dernière passe de validation du bâti avant le gel pour Unreal Engine. Aucun graphisme modifié.
+
+## Méthode
+
+- **Revue individuelle** de chaque cas douteux, soit 260 cas, sur la BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : 24 bâtiments RNB, 22 extensions, 77 ajouts cadastraux et 137 empreintes OSM seules. Pour chacun, les empreintes BD TOPO, cadastre actuel, OSM et RNB sont superposées à l’image.
+- L’orthophoto sert **uniquement à constater** qu’un bâti existe ou non. Elle ne sert jamais à dessiner une empreinte.
+- Les verdicts sont consignés, avec leur observation, dans `data-sources/building-review-v1.6.2.json`. `scripts/validate-buildings.mjs` les applique : `npm run data:buildings` reste reproductible.
+- Les classes V1.6.1 sont figées dans `data-sources/building-validation-v1.6.1.json`. Chaque changement est tracé dans `v162.confidenceChangesSinceV161`.
+- Export Etalab : `cadastre.s3.rbx.io.cloud.ovh.net` est toujours refusé (403). Rien n’est comparé ni reconstruit.
+
+## Les 19 RNB sans empreinte
+
+| Catégorie | RNB | Décision |
+|---|---|---|
+| Bâtiment déjà présent mais mal associé | `7H6KRN7T9WKX` (identifiant cité par la BD TOPO elle-même, point à 0,1 m hors de l’empreinte), `K5QGP46TYCQR` (39 rue du Général-Leclerc, seul bâti de l’adresse, point à 0,4 m) | **associés** à BATIMENT0000000301149753 et BATIMENT0000002330331325 |
+| Plusieurs bâtiments regroupés | `E3SG5A58GGM9` (construction légère englobée dans BATIMENT0000002330331325) | non associé : pas de second identifiant sur la même empreinte |
+| Adresse ou position RNB imprécise | `XA57BZ86GTFS`, `RT96NCTKV9AM`, `K14J6VEAG7V8`, `Q289NCVCWVSZ` (château d’eau), `AMMKT8XZRXAA` (doublon décalé de 18 m), `58Y4QCN7YBR4`, `MEJK7RK7Q4B1` | aucun bâti au point, ou bâti déjà présent avec son propre RNB |
+| Objet démoli ou incohérent | `X3H3MTQBQ5G1`, `9Y9PM47JK2TF`, `HFMTQATEXE98`, `A58K5AW4BFNY`, `ET3MKN6N15C5`, `6GNAKD2FS8D8` (dalle), `77N2Q9DKBVSD` (voie ferrée), `AXQ4DCT3XS93`, `CSYV3PG9NPC2` | rien à ajouter |
+| Bâtiment réellement manquant | aucun | — |
+
+- Aucune empreinte officielle ne décrit un bâtiment réel absent du référentiel : **0 bâtiment ajouté**.
+- 5 autres RNB perdent leur empreinte parce que l’empreinte qui les portait est retirée : 2 sur `cadastre:39818200`, 3 sur des OSM non bâtis. Ils sont analysés de la même façon : démolis.
+- **Restent 22 RNB actifs sans empreinte**, tous expliqués.
+- **2 ne sont pas résolus** :
+  - `58Y4QCN7YBR4` : abri et serre de jardin visibles, mais absents de toute source officielle ;
+  - `MEJK7RK7Q4B1` : ombre ou abri, impossible à trancher.
+
+## Les 22 extensions cadastrales
+
+- **3 intégrées**, visibles sur l’orthophoto :
+  - BATIMENT0000000009359079 : annexe sud ;
+  - BATIMENT0000000301151768 : aile couverte de panneaux solaires ;
+  - BATIMENT0000000301149220 : rangée de garages entière.
+- Pour ces 3 bâtiments, l’empreinte finale est l’union de la BD TOPO et du polygone cadastral. L’empreinte BD TOPO d’origine reste dans `geometryEnrichment.ignGeometry`, et les hauteurs sont celles de la partie BD TOPO.
+- **9 décalages** cadastre/BD TOPO, sans extension réelle.
+- **4 parties cadastrales non bâties** : pelouse, jardin, dalle.
+- **6 douteuses** (auvents, marquises, stockage) : géométrie non modifiée, classe B conservée.
+
+## Les ajouts cadastraux et les OSM seuls
+
+- **Ajouts du cadastre actuel (77)** :
+  - 45 visibles : ils passent de C à B ;
+  - 11 non vérifiables : conservés ;
+  - **21 écartés**, dont 9 dans la commune : 9 « abris » sur des places de parking où stationnent des voitures, 3 cuves disparues, 6 dalles, cours ou pelouses, et 3 bandes de moins de 1 m de large.
+  - Le cadastre actuel conserve des bâtiments démolis : sa seule présence ne prouve pas l’existence.
+- **OSM seuls (137)** :
+  - 86 visibles ;
+  - 23 non vérifiables : conservés ;
+  - **28 retirés**, non bâtis en 2025 (pelouses, friches, cours, anciens bassins). Pour 25 d’entre eux, le cadastre actuel est pourtant « présent ».
+- Tous les retraits sont journalisés avec leur géométrie dans `data-sources/building-removed.json` (champ `removal.version`).
+
+## Résultat
+
+- 2 543 → **2 494** bâtiments ; dans la commune, 2 299 → **2 265**.
+- Confiance A / B / C : **1 994 / 475 / 25** ; dans la commune, 1 858 / 395 / 12.
+- **42 cas réellement non résolus** (34 dans la commune) : 2 RNB, 6 extensions douteuses, 11 ajouts et 23 OSM non vérifiables.
+
+## Les 2 265 bâtiments de la commune sont-ils le meilleur référentiel possible ?
+
+Oui, avec les sources publiques accessibles aujourd’hui :
+- chaque bâtiment BD TOPO est présent ;
+- chaque bâtiment du cadastre actuel est soit retrouvé, soit jumeau décalé, soit ajouté, soit écarté avec la preuve de l’orthophoto 2025 ;
+- chaque bâtiment RNB actif de la commune est soit dans une empreinte, soit expliqué ;
+- chaque empreinte qui ne vient que d’OSM a été contrôlée.
+
+Ce n’est pas une exhaustivité absolue :
+- l’export Etalab reste à comparer dès que son hôte sera autorisé. Il vient du même plan DGFiP que le Parcellaire Express, mais l’écart n’est pas mesuré ;
+- de petits abris de jardin visibles sur l’orthophoto n’existent dans aucune source officielle et ne peuvent pas être ajoutés sans empreinte ;
+- 34 cas restent non résolus dans la commune ;
+- 104 contours diffèrent du cadastre : c’est une question de précision du tracé, pas d’existence.
+
+---
+
 # Notes V1.6.1 — validation officielle cadastre et RNB, 24 septembre 2026
 
 Branche `opus/v1.6-building-validation`, à partir de `0543e8f` (V1.6 provisoire). Aucun travail graphique, sauf la légende du mode diagnostic.

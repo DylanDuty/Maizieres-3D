@@ -1,0 +1,1439 @@
+{
+ "note": "Revue individuelle V1.6.2 avant gel pour Unreal Engine : chaque cas douteux a été contrôlé sur l’orthophoto IGN 2025 avec les empreintes BD TOPO, cadastre actuel, OSM et RNB superposées. Appliquée par scripts/validate-buildings.mjs.",
+ "orthophoto": {
+  "name": "BD ORTHO IGN 20 cm",
+  "layer": "ORTHOIMAGERY.ORTHOPHOTOS",
+  "service": "https://data.geopf.fr/wms-r",
+  "dateVol": "28–29 avril 2025 (PVA 2025, département 10)",
+  "mosaic": "ORTHOIMAGERY.ORTHOPHOTOS.GRAPHE-MOSAIQUAGE:graphe_bdortho",
+  "note": "Photo-interprétation : sert à constater l’existence ou l’absence d’un bâti, jamais à dessiner une empreinte."
+ },
+ "etalab": {
+  "host": "cadastre.s3.rbx.io.cloud.ovh.net",
+  "entry": "https://cadastre.data.gouv.fr/data/etalab-cadastre/latest/geojson/communes/10/10220/cadastre-10220-batiments.json.gz",
+  "testedAt": "2026-09-24",
+  "result": "refusé : le proxy de sortie répond 403 au CONNECT (politique d’organisation) ; cadastre.data.gouv.fr lui-même coupe la connexion",
+  "comparison": "non réalisée : aucune différence Parcellaire Express ↔ Etalab ne peut être établie sans l’export"
+ },
+ "rnbOrphans": {
+  "X3H3MTQBQ5G1": {
+   "category": "objet démoli ou incohérent",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "point seul, sans adresse, source BDNB uniquement",
+    "orthophoto 2025 : friche arborée, aucun bâti au point",
+    "empreinte la plus proche à 10,6 m (way/588792961, 74 m², déjà au référentiel avec le cadastre)"
+   ]
+  },
+  "9Y9PM47JK2TF": {
+   "category": "objet démoli ou incohérent",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "forme RNB 20,5 m² identique au cadastre 39808547 (recouvrement 99 %)",
+    "orthophoto 2025 : pelouse, ni à la position RNB/cadastre ni à la position OSM décalée de 5 m (way/588791341)",
+    "way/588791341 retiré en V1.6.2 pour la même raison"
+   ]
+  },
+  "XA57BZ86GTFS": {
+   "category": "adresse/position RNB imprécise",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "point seul sans adresse, posé sur la clôture entre deux pavillons",
+    "les deux pavillons ont déjà leur RNB vérifié (GAWEGA9GX3XW, TGDWQ71Y9CK1)",
+    "orthophoto 2025 : aucun autre bâti au point"
+   ]
+  },
+  "E3SG5A58GGM9": {
+   "category": "plusieurs bâtiments regroupés",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "forme RNB 16 m² sur pelouse, décalée d’environ 5 m de la construction légère cadastrale 39810490 (20 m²)",
+    "BATIMENT0000002330331325 (BD TOPO, 33 m²) couvre à la fois la construction en dur 39808417 et une partie de 39810490",
+    "orthophoto 2025 : un seul bâti visible, déjà présent ; pas de second identifiant sur la même empreinte"
+   ]
+  },
+  "RT96NCTKV9AM": {
+   "category": "adresse/position RNB imprécise",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "point seul sans adresse sur une pelouse de jardin",
+    "orthophoto 2025 : aucun bâti au point ; pavillons voisins déjà au référentiel avec leur RNB"
+   ]
+  },
+  "58Y4QCN7YBR4": {
+   "category": "adresse/position RNB imprécise",
+   "resolved": false,
+   "action": "aucune",
+   "evidence": [
+    "point seul sans adresse dans un potager",
+    "orthophoto 2025 : abri de jardin et serre légers visibles à 10–12 m, absents de la BD TOPO et du cadastre : aucune empreinte officielle à reprendre"
+   ]
+  },
+  "MEJK7RK7Q4B1": {
+   "category": "adresse/position RNB imprécise",
+   "resolved": false,
+   "action": "aucune",
+   "evidence": [
+    "51 rue Joliot-Curie : forme RNB 24 m² entre la maison (BATIMENT0000000301151754) et le pool-house (BATIMENT0000002341955036)",
+    "orthophoto 2025 : zone sombre ambiguë (ombre portée ou abri) ; aucune empreinte BD TOPO ni cadastrale",
+    "forme RNB issue de la BDNB seule : pas assez fiable pour créer un bâtiment"
+   ]
+  },
+  "K14J6VEAG7V8": {
+   "category": "adresse/position RNB imprécise",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "6 rue de la Chapelle : point d’adresse sur la pelouse",
+    "orthophoto 2025 : aucun bâti au point ; annexes voisines déjà au référentiel avec leur RNB"
+   ]
+  },
+  "AXQ4DCT3XS93": {
+   "category": "objet démoli ou incohérent",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "481 Ferme des Charmes : forme RNB 31 m² à 1,7 m de way/588793462 (41 m², cadastre 39827332), même objet probable",
+    "orthophoto 2025 : sol nu et arbre, aucune toiture ni sur la forme RNB ni sur l’empreinte OSM/cadastre ; way/588793462 retiré en V1.6.2"
+   ]
+  },
+  "K5QGP46TYCQR": {
+   "category": "bâtiment déjà présent mais mal associé",
+   "resolved": true,
+   "action": "associer",
+   "evidence": [
+    "39 rue du Général-Leclerc : seul bâti à l’adresse = BATIMENT0000002330331325 (BD TOPO sans RNB)",
+    "point RNB à 0,4 m de l’empreinte ; forme RNB décalée d’environ 4 m vers le nord-ouest et recouvrant l’empreinte",
+    "orthophoto 2025 : un seul bâtiment ; aucun autre candidat"
+   ],
+   "target": "BATIMENT0000002330331325"
+  },
+  "HFMTQATEXE98": {
+   "category": "objet démoli ou incohérent",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "point seul sans adresse dans une haie au carrefour",
+    "orthophoto 2025 : aucun bâti ; bâtiment le plus proche à 33 m"
+   ]
+  },
+  "A58K5AW4BFNY": {
+   "category": "objet démoli ou incohérent",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "point seul sans adresse dans une prairie",
+    "orthophoto 2025 : aucun bâti ; bâtiment le plus proche à 40 m"
+   ]
+  },
+  "ET3MKN6N15C5": {
+   "category": "objet démoli ou incohérent",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "point seul sans adresse au milieu d’une parcelle cultivée",
+    "orthophoto 2025 : aucun bâti ; bâtiment le plus proche à 64 m"
+   ]
+  },
+  "6GNAKD2FS8D8": {
+   "category": "objet démoli ou incohérent",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "47 avenue du Général-de-Gaulle : forme RNB 61 m² dans une cour",
+    "orthophoto 2025 : dalle béton sans toiture ; absent de la BD TOPO et du cadastre actuel (démoli)"
+   ]
+  },
+  "Q289NCVCWVSZ": {
+   "category": "adresse/position RNB imprécise",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "point seul sans adresse à côté du château d’eau",
+    "château d’eau déjà au référentiel (way/588791761, way/588791386) ; aucun autre bâti visible au point",
+    "pas d’identifiant commun : non associé"
+   ]
+  },
+  "AMMKT8XZRXAA": {
+   "category": "adresse/position RNB imprécise",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "38 rue Joliot-Curie : forme RNB 198 m² sur une pelouse",
+    "même surface que le pavillon situé 18 m plus loin (BATIMENT0000002341955032, 219 m², RNB 3BE1NR9ER8DZ déjà vérifié)",
+    "orthophoto 2025 : pelouse à la position RNB (doublon décalé)"
+   ]
+  },
+  "77N2Q9DKBVSD": {
+   "category": "objet démoli ou incohérent",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "point seul sans adresse sur les voies ferrées",
+    "orthophoto 2025 : aucun bâti"
+   ]
+  },
+  "7H6KRN7T9WKX": {
+   "category": "bâtiment déjà présent mais mal associé",
+   "resolved": true,
+   "action": "associer",
+   "evidence": [
+    "36 rue du Général-Leclerc : la BD TOPO cite elle-même cet identifiant pour BATIMENT0000000301149753",
+    "écarté en V1.6.1 car le point RNB tombe à 0,1 m hors de l’empreinte (recouvrement 24 %)",
+    "orthophoto 2025 : un seul abri à cet endroit"
+   ],
+   "target": "BATIMENT0000000301149753"
+  },
+  "CSYV3PG9NPC2": {
+   "category": "objet démoli ou incohérent",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "42 rue Joliot-Curie : forme RNB 101 m² à l’ouest de la maison, dans le polygone cadastral 39821743",
+    "orthophoto 2025 : pelouse ; BD TOPO limitée à la maison : annexe cadastrale non bâtie"
+   ]
+  },
+  "TSQ36SASD1RN": {
+   "category": "objet démoli ou incohérent",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "23 avenue du Général-de-Gaulle : forme RNB (BDNB) sur cadastre:39818200, retiré en V1.6.2",
+    "orthophoto 2025 : pelouse, aucun bâti"
+   ]
+  },
+  "2N545PX8SQH4": {
+   "category": "objet démoli ou incohérent",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "forme RNB (BDNB) sur cadastre:39818200, retiré en V1.6.2",
+    "orthophoto 2025 : pelouse, aucun bâti"
+   ]
+  },
+  "3Z3KP6CE2933": {
+   "category": "objet démoli ou incohérent",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "6 rue des Écoles : forme RNB (BDNB) 72 m² dans la cour d’école",
+    "orthophoto 2025 : cour goudronnée avec un terrain peint, aucun bâti ; way/588792242 retiré"
+   ]
+  },
+  "P729RX6T7SHY": {
+   "category": "objet démoli ou incohérent",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "9 rue du Docteur-Sollier : forme RNB (BDNB) 109 m² sur la même emprise que way/588791966",
+    "orthophoto 2025 : jardin et sol nu, aucune toiture ; way/588791966 retiré"
+   ]
+  },
+  "J42GQDQHAZ3V": {
+   "category": "objet démoli ou incohérent",
+   "resolved": true,
+   "action": "aucune",
+   "evidence": [
+    "3 les Carreaux : forme RNB (BDNB) 55 m² accolée à la maison",
+    "orthophoto 2025 : pelouse, aucune toiture ; way/588791810 retiré"
+   ]
+  }
+ },
+ "extensions": {
+  "way/588791854": {
+   "verdict": "douteux",
+   "action": "aucune",
+   "observation": "bande cadastrale à l’est du hangar : sol clair encombré, toiture non identifiable"
+  },
+  "way/228575294": {
+   "verdict": "douteux",
+   "action": "aucune",
+   "observation": "centre commercial : bande le long de la façade courbe, auvent possible, non tranché"
+  },
+  "way/228581293": {
+   "verdict": "douteux",
+   "action": "aucune",
+   "observation": "centre commercial : bande le long de la façade, marquise possible, non tranché"
+  },
+  "way/588793483": {
+   "verdict": "partie cadastrale non bâtie",
+   "action": "aucune",
+   "observation": "annexe ouest du polygone cadastral : pelouse (voir RNB CSYV3PG9NPC2)"
+  },
+  "way/588792038": {
+   "verdict": "douteux",
+   "action": "aucune",
+   "observation": "bande sud : zone de stockage à ciel ouvert, appentis non démontré"
+  },
+  "way/588792538": {
+   "verdict": "partie cadastrale non bâtie",
+   "action": "aucune",
+   "observation": "partie nord : jardin et végétation, aucune toiture"
+  },
+  "way/588793051": {
+   "verdict": "décalage cadastre/BD TOPO",
+   "action": "aucune",
+   "observation": "même bâtiment décalé d’environ 3 m ; la toiture correspond à la BD TOPO"
+  },
+  "way/588789748": {
+   "verdict": "extension réelle intégrée",
+   "action": "intégrer",
+   "observation": "annexe sud et liaison visibles (toiture grise), absentes de la BD TOPO",
+   "ign": "BATIMENT0000000009359079",
+   "cadastre": "cadastre:41207609"
+  },
+  "way/588791972": {
+   "verdict": "extension réelle intégrée",
+   "action": "intégrer",
+   "observation": "aile ouest couverte de panneaux solaires visible, absente de la BD TOPO",
+   "ign": "BATIMENT0000000301151768",
+   "cadastre": "cadastre:39793960"
+  },
+  "way/588790054": {
+   "verdict": "décalage cadastre/BD TOPO",
+   "action": "aucune",
+   "observation": "cadastre décalé d’environ 3 m vers le sud ; la toiture correspond à la BD TOPO"
+  },
+  "way/588791377": {
+   "verdict": "partie cadastrale non bâtie",
+   "action": "aucune",
+   "observation": "carré sud : sol nu / dalle, aucune toiture"
+  },
+  "way/588789743": {
+   "verdict": "décalage cadastre/BD TOPO",
+   "action": "aucune",
+   "observation": "cadastre décalé d’environ 3 m vers le sud ; la toiture correspond à la BD TOPO"
+  },
+  "way/588789778": {
+   "verdict": "décalage cadastre/BD TOPO",
+   "action": "aucune",
+   "observation": "cadastre décalé d’environ 3 m vers le sud ; la toiture correspond à la BD TOPO"
+  },
+  "way/588791650": {
+   "verdict": "douteux",
+   "action": "aucune",
+   "observation": "bâtiment plus grand que les deux sources, qui sont décalées entre elles ; non tranché"
+  },
+  "way/228587065": {
+   "verdict": "douteux",
+   "action": "aucune",
+   "observation": "centre commercial : sas ou marquise d’entrée, non tranché"
+  },
+  "way/588792623": {
+   "verdict": "extension réelle intégrée",
+   "action": "intégrer",
+   "observation": "toiture continue sur toute la longueur de la rangée de garages, BD TOPO limitée au tiers est",
+   "ign": "BATIMENT0000000301149220",
+   "cadastre": "cadastre:39817907"
+  },
+  "way/588793384": {
+   "verdict": "décalage cadastre/BD TOPO",
+   "action": "aucune",
+   "observation": "les deux contours décrivent le même bâtiment avec un décalage d’environ 5 m"
+  },
+  "way/588792150": {
+   "verdict": "décalage cadastre/BD TOPO",
+   "action": "aucune",
+   "observation": "cadastre décalé vers le sud-ouest ; la toiture correspond à la BD TOPO"
+  },
+  "way/588790040": {
+   "verdict": "décalage cadastre/BD TOPO",
+   "action": "aucune",
+   "observation": "les deux contours couvrent chacun une partie du même toit, décalés d’environ 2 m"
+  },
+  "way/588791760": {
+   "verdict": "partie cadastrale non bâtie",
+   "action": "aucune",
+   "observation": "partie sud : végétation, aucune toiture"
+  },
+  "way/588791659": {
+   "verdict": "décalage cadastre/BD TOPO",
+   "action": "aucune",
+   "observation": "même bâtiment ; le cadastre suit la toiture, la BD TOPO est décalée d’environ 5 m (géométrie IGN non modifiée)"
+  },
+  "way/588792745": {
+   "verdict": "décalage cadastre/BD TOPO",
+   "action": "aucune",
+   "observation": "même bâtiment ; le cadastre suit la toiture, la BD TOPO est décalée d’environ 4 m (géométrie IGN non modifiée)"
+  }
+ },
+ "cadastralAdditions": {
+  "cadastre:19891047": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:20394422": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:20394517": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:20394549": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:20394582": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:20394642": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:20394661": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:20394812": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:20628039": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré ; conservé"
+  },
+  "cadastre:20628050": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré ; conservé"
+  },
+  "cadastre:20628074": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré ; conservé"
+  },
+  "cadastre:22587690": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  "cadastre:22587748": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  "cadastre:22587759": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  "cadastre:22587825": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  "cadastre:22587834": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  "cadastre:22587923": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  "cadastre:22587987": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  "cadastre:22587996": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  "cadastre:22588365": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+  },
+  "cadastre:23570228": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23570265": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23570271": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23570834": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23574404": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23574412": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23575030": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23575050": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23575291": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23575349": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23575395": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23575758": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23575781": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23577484": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23578995": {
+   "verdict": "artefact",
+   "action": "retirer",
+   "observation": "bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
+  },
+  "cadastre:23579114": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "cadastre:23579250": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23579675": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23580243": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23580515": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23582227": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23582229": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:23582589": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:25515850": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:32816177": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:34580465": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:34585447": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "cadastre:34631888": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:37265912": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:37265972": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "cadastre:37265973": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:37854467": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:38876219": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:39160171": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:39192423": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "cadastre:39216603": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:39216604": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:39362589": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "cadastre:39362625": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+  },
+  "cadastre:39362627": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+  },
+  "cadastre:39362629": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+  },
+  "cadastre:39696818": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:39696821": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:39808118": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "accotement enherbé et chaussée"
+  },
+  "cadastre:39808120": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "cour pavée avec traces de roues, aucune toiture"
+  },
+  "cadastre:39808749": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "dalle béton sans toiture (démoli)"
+  },
+  "cadastre:39810407": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "cour pavée avec traces de roues, aucune toiture"
+  },
+  "cadastre:39810526": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "cadastre:39810698": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:39816945": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "pelouse"
+  },
+  "cadastre:39818200": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "pelouse de jardin entre deux maisons ; les deux points RNB (BDNB) qu’il porte sont également sans bâti"
+  },
+  "cadastre:39823777": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "cadastre:39823883": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "cadastre:40776829": {
+   "verdict": "artefact",
+   "action": "retirer",
+   "observation": "bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
+  },
+  "cadastre:40921138": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "cadastre:40928273": {
+   "verdict": "artefact",
+   "action": "retirer",
+   "observation": "bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
+  },
+  "cadastre:40928305": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  }
+ },
+ "osmOnly": {
+  "way/228575138": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/228575143": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/228575383": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "bâti visible contigu, empreinte OSM décalée de quelques mètres"
+  },
+  "way/228575732": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/228576829": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/228577059": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "friche arbustive, aucune toiture"
+  },
+  "way/228577119": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/228578494": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "bâti visible contigu, empreinte OSM décalée de quelques mètres"
+  },
+  "way/228578944": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "bâti visible contigu, empreinte OSM décalée de quelques mètres"
+  },
+  "way/228579174": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/228579592": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "bâti visible contigu, empreinte OSM décalée de quelques mètres"
+  },
+  "way/228580154": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "bâti visible contigu, empreinte OSM décalée de quelques mètres"
+  },
+  "way/228580629": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "friche arbustive, aucune toiture"
+  },
+  "way/228582330": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "bâti visible contigu, empreinte OSM décalée de quelques mètres"
+  },
+  "way/549958938": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/549958990": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/549959091": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/549959196": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/549959648": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/549959715": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/549959789": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "prairie, aucune structure"
+  },
+  "way/549959803": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "bâti visible contigu, empreinte OSM décalée de quelques mètres"
+  },
+  "way/549959919": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588789543": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588789629": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588789643": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588789661": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588789667": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "jardin enherbé et arbres"
+  },
+  "way/588789726": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588789738": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "pelouse le long de la rue"
+  },
+  "way/588789739": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588789762": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588789770": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588789777": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588789786": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588789789": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588789793": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588789917": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "prairie"
+  },
+  "way/588789941": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588789945": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "pelouse de jardin"
+  },
+  "way/588790057": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588791341": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "pelouse (même objet que le RNB 9Y9PM47JK2TF et le cadastre 39808547)"
+  },
+  "way/588791361": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588791386": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588791487": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "bâti visible contigu, empreinte OSM décalée de quelques mètres"
+  },
+  "way/588791491": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "jardin, sol nu"
+  },
+  "way/588791521": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588791527": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588791617": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588791715": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588791731": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "végétation près d’un dépôt, aucune toiture"
+  },
+  "way/588791751": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588791761": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588791762": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588791768": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588791777": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "pelouse et sol nu"
+  },
+  "way/588791810": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "pelouse"
+  },
+  "way/588791839": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588791840": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588791844": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588791875": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588791912": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588791915": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588791945": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588791953": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588791966": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "jardin sous un arbre, sol visible"
+  },
+  "way/588791978": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588792020": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588792044": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "bâti visible contigu, empreinte OSM décalée de quelques mètres"
+  },
+  "way/588792071": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "grands cercles sur sol nu (anciens bassins ou cuves disparus)"
+  },
+  "way/588792073": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588792084": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "dalle de terrasse claire"
+  },
+  "way/588792090": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588792110": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "jardin et voiture, aucune toiture"
+  },
+  "way/588792118": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588792149": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588792197": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588792202": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588792242": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "cour pavée plantée d’arbres"
+  },
+  "way/588792278": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588792280": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588792356": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "arbres et allée ; ancien bâtiment disparu"
+  },
+  "way/588792369": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588792378": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588792431": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588792441": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "bâti visible contigu, empreinte OSM décalée de quelques mètres"
+  },
+  "way/588792505": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "grands cercles sur sol nu (anciens bassins ou cuves disparus)"
+  },
+  "way/588792545": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "bâti visible contigu, empreinte OSM décalée de quelques mètres"
+  },
+  "way/588792554": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588792630": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588792655": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588792758": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588792830": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "pelouse et haie"
+  },
+  "way/588792860": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588792958": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588792961": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "jardin en friche (empreinte la plus proche du RNB X3H3MTQBQ5G1)"
+  },
+  "way/588792983": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "cour d’activité pavée avec véhicules"
+  },
+  "way/588792987": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "pelouse et arbres"
+  },
+  "way/588792998": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "bâti visible contigu, empreinte OSM décalée de quelques mètres"
+  },
+  "way/588793096": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793099": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793118": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "bâti visible contigu, empreinte OSM décalée de quelques mètres"
+  },
+  "way/588793140": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588793155": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793165": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793175": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793190": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793198": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793237": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793246": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "bâti visible contigu, empreinte OSM décalée de quelques mètres"
+  },
+  "way/588793289": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793294": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588793299": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793300": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "allée et pelouse ; seule la pointe sud recouvre le toit déjà décrit par la BD TOPO"
+  },
+  "way/588793304": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588793308": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793325": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793340": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "accotement enherbé"
+  },
+  "way/588793413": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "pelouse"
+  },
+  "way/588793460": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793462": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "sol nu et arbre (Ferme des Charmes, même objet probable que le RNB AXQ4DCT3XS93)"
+  },
+  "way/588793556": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793590": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793605": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793613": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588793619": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588793660": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/588793673": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/588793679": {
+   "verdict": "non bâti",
+   "action": "retirer",
+   "observation": "grands cercles sur sol nu (anciens bassins ou cuves disparus)"
+  },
+  "way/935473872": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/939084839": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/1157275225": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/1303286661": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/1303286676": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/1303286684": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  },
+  "way/1303286690": {
+   "verdict": "non vérifiable",
+   "action": "conserver",
+   "observation": "sous couvert arboré, ombre ou trop petit pour être tranché ; conservé"
+  },
+  "way/1303286692": {
+   "verdict": "bâti visible",
+   "action": "conserver",
+   "observation": "toiture visible à l’emplacement"
+  }
+ }
+}

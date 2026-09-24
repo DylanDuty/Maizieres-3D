@@ -79,13 +79,6 @@
    "recoveredInV15": 0
   },
   {
-   "street": "Rue Albert Benoist",
-   "lengthM": 286,
-   "mainBuildings": 12,
-   "per100m": 4.2,
-   "recoveredInV15": 0
-  },
-  {
    "street": "Rue de la Chefferie",
    "lengthM": 252,
    "mainBuildings": 11,
@@ -107,6 +100,13 @@
    "recoveredInV15": 1
   },
   {
+   "street": "Rue Albert Benoist",
+   "lengthM": 286,
+   "mainBuildings": 13,
+   "per100m": 4.55,
+   "recoveredInV15": 0
+  },
+  {
    "street": "Rue Jules Ferry",
    "lengthM": 302,
    "mainBuildings": 14,
@@ -123,8 +123,8 @@
   {
    "street": "Avenue du Général de Gaulle",
    "lengthM": 1769,
-   "mainBuildings": 85,
-   "per100m": 4.81,
+   "mainBuildings": 84,
+   "per100m": 4.75,
    "recoveredInV15": 2
   },
   {
@@ -191,13 +191,6 @@
    "recoveredInV15": 2
   },
   {
-   "street": "Ruelle à Rosez",
-   "lengthM": 128,
-   "mainBuildings": 9,
-   "per100m": 7.04,
-   "recoveredInV15": 0
-  },
-  {
    "street": "Rue du Général Leclerc",
    "lengthM": 369,
    "mainBuildings": 26,
@@ -247,6 +240,13 @@
    "recoveredInV15": 1
   },
   {
+   "street": "Ruelle à Rosez",
+   "lengthM": 128,
+   "mainBuildings": 10,
+   "per100m": 7.82,
+   "recoveredInV15": 0
+  },
+  {
    "street": "Rue Jean-Baptiste de Lesseps",
    "lengthM": 303,
    "mainBuildings": 24,
@@ -275,13 +275,6 @@
    "recoveredInV15": 0
   },
   {
-   "street": "Avenue du Maréchal de Lattre de Tassigny",
-   "lengthM": 162,
-   "mainBuildings": 14,
-   "per100m": 8.66,
-   "recoveredInV15": 1
-  },
-  {
    "street": "Rue Georges Clemenceau",
    "lengthM": 531,
    "mainBuildings": 48,
@@ -289,18 +282,18 @@
    "recoveredInV15": 3
   },
   {
-   "street": "Rue Achille Flaubert",
-   "lengthM": 571,
-   "mainBuildings": 52,
-   "per100m": 9.11,
+   "street": "Avenue du Maréchal de Lattre de Tassigny",
+   "lengthM": 162,
+   "mainBuildings": 15,
+   "per100m": 9.28,
    "recoveredInV15": 1
   },
   {
-   "street": "Rue des Aulnes",
-   "lengthM": 107,
-   "mainBuildings": 10,
-   "per100m": 9.32,
-   "recoveredInV15": 0
+   "street": "Rue Achille Flaubert",
+   "lengthM": 571,
+   "mainBuildings": 53,
+   "per100m": 9.28,
+   "recoveredInV15": 1
   },
   {
    "street": "Rue des Jacquets",
@@ -322,6 +315,13 @@
    "mainBuildings": 21,
    "per100m": 9.85,
    "recoveredInV15": 1
+  },
+  {
+   "street": "Rue des Aulnes",
+   "lengthM": 107,
+   "mainBuildings": 11,
+   "per100m": 10.25,
+   "recoveredInV15": 0
   },
   {
    "street": "Rue des Bédouins",
@@ -359,13 +359,6 @@
    "recoveredInV15": 0
   },
   {
-   "street": "Rue du Lavoir",
-   "lengthM": 268,
-   "mainBuildings": 32,
-   "per100m": 11.95,
-   "recoveredInV15": 1
-  },
-  {
    "street": "Rue des Carreaux",
    "lengthM": 134,
    "mainBuildings": 16,
@@ -387,6 +380,13 @@
    "recoveredInV15": 0
   },
   {
+   "street": "Rue du Lavoir",
+   "lengthM": 268,
+   "mainBuildings": 33,
+   "per100m": 12.32,
+   "recoveredInV15": 1
+  },
+  {
    "street": "Place Adrien Quinet",
    "lengthM": 72,
    "mainBuildings": 10,
@@ -401,18 +401,18 @@
    "recoveredInV15": 2
   },
   {
-   "street": "Impasse de la Noue",
-   "lengthM": 66,
-   "mainBuildings": 11,
-   "per100m": 16.63,
-   "recoveredInV15": 0
-  },
-  {
    "street": "Place Saint-Denis",
    "lengthM": 140,
    "mainBuildings": 25,
    "per100m": 17.9,
    "recoveredInV15": 1
+  },
+  {
+   "street": "Impasse de la Noue",
+   "lengthM": 66,
+   "mainBuildings": 12,
+   "per100m": 18.14,
+   "recoveredInV15": 0
   },
   {
    "street": "Rue du Presbytère",

@@ -1,5 +1,5 @@
 {
- "note": "Bâtiments retirés du référentiel en V1.6.1, avec géométrie et preuves.",
+ "note": "Bâtiments retirés du référentiel (V1.6.1 : OSM absents de toutes les sources ; V1.6.2 : OSM non bâtis sur l’orthophoto IGN 2025), et ajouts cadastraux V1.6.1 écartés en V1.6.2, avec géométrie et preuves.",
  "features": [
   {
    "type": "Feature",
@@ -55,6 +55,7 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
@@ -117,10 +118,74 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
       "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/228577059",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.759776,
+       48.50656
+      ],
+      [
+       3.75973,
+       48.506419
+      ],
+      [
+       3.760212,
+       48.50634
+      ],
+      [
+       3.760263,
+       48.506482
+      ],
+      [
+       3.759776,
+       48.50656
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/228577059",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": false,
+    "areaM2": 592.75,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/228577059"
+     ],
+     "donor": "way/228577059",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2013"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : friche arbustive, aucune toiture"
      ]
     }
    }
@@ -178,6 +243,7 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
@@ -240,6 +306,7 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
@@ -302,6 +369,7 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 4 %, IoU 0.02)",
@@ -364,10 +432,75 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
       "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/228580629",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.759776,
+       48.50656
+      ],
+      [
+       3.7597,
+       48.506574
+      ],
+      [
+       3.75965,
+       48.506433
+      ],
+      [
+       3.75973,
+       48.506419
+      ],
+      [
+       3.759776,
+       48.50656
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/228580629",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": false,
+    "areaM2": 95.59,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/228580629"
+     ],
+     "donor": "way/228580629",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2013"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 0.99)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : friche arbustive, aucune toiture"
      ]
     }
    }
@@ -425,10 +558,74 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
       "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/549959789",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.8214863,
+       48.4997623
+      ],
+      [
+       3.8215241,
+       48.4996899
+      ],
+      [
+       3.8216877,
+       48.4997289
+      ],
+      [
+       3.8216469,
+       48.4998014
+      ],
+      [
+       3.8214863,
+       48.4997623
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/549959789",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": false,
+    "areaM2": 108.77,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/549959789"
+     ],
+     "donor": "way/549959789",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2017"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : prairie, aucune structure"
      ]
     }
    }
@@ -486,6 +683,7 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
@@ -547,6 +745,7 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
@@ -608,6 +807,7 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
@@ -669,10 +869,411 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
       "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588789667",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7959311,
+       48.5148642
+      ],
+      [
+       3.7960219,
+       48.5148407
+      ],
+      [
+       3.7960383,
+       48.5148759
+      ],
+      [
+       3.7959518,
+       48.5149003
+      ],
+      [
+       3.7959311,
+       48.5148642
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588789667",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 29.53,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588789667"
+     ],
+     "donor": "way/588789667",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : jardin enherbé et arbres"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588789738",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7868313,
+       48.5100202
+      ],
+      [
+       3.7868275,
+       48.5099731
+      ],
+      [
+       3.7868492,
+       48.5099727
+      ],
+      [
+       3.7868792,
+       48.5099722
+      ],
+      [
+       3.7868806,
+       48.5100197
+      ],
+      [
+       3.7868629,
+       48.5100199
+      ],
+      [
+       3.7868313,
+       48.5100202
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588789738",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 19.59,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588789738"
+     ],
+     "donor": "way/588789738",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : pelouse le long de la rue"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588789917",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.776626,
+       48.5013889
+      ],
+      [
+       3.7766693,
+       48.50138
+      ],
+      [
+       3.7767262,
+       48.5014989
+      ],
+      [
+       3.776729,
+       48.5015048
+      ],
+      [
+       3.7766607,
+       48.5015172
+      ],
+      [
+       3.7766318,
+       48.5014497
+      ],
+      [
+       3.77665,
+       48.501445
+      ],
+      [
+       3.776626,
+       48.5013889
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588789917",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 62.92,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588789917"
+     ],
+     "donor": "way/588789917",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 0.99)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : prairie"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588789945",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7888105,
+       48.5107183
+      ],
+      [
+       3.7888123,
+       48.510676
+      ],
+      [
+       3.78885,
+       48.5106765
+      ],
+      [
+       3.7888483,
+       48.5107194
+      ],
+      [
+       3.7888105,
+       48.5107183
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588789945",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 13.18,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588789945"
+     ],
+     "donor": "way/588789945",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : pelouse de jardin"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588791341",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7867964,
+       48.505179
+      ],
+      [
+       3.7867956,
+       48.5051441
+      ],
+      [
+       3.7868686,
+       48.5051435
+      ],
+      [
+       3.7868684,
+       48.5051776
+      ],
+      [
+       3.7867964,
+       48.505179
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588791341",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 20.49,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588791341"
+     ],
+     "donor": "way/588791341",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre décalé)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : décalé (couverture 0 %)",
+      "Parcellaire Express (PCI DGFiP, IGN) : empreinte équivalente (20.5 m², Bâtiment en dur) décalée de 5.2 m, sans autre contrepartie",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : pelouse (même objet que le RNB 9Y9PM47JK2TF et le cadastre 39808547)"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588791491",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7827674,
+       48.5030736
+      ],
+      [
+       3.7827668,
+       48.5031034
+      ],
+      [
+       3.7826704,
+       48.5031008
+      ],
+      [
+       3.7826503,
+       48.5030696
+      ],
+      [
+       3.7827674,
+       48.5030736
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588791491",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 26.41,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588791491"
+     ],
+     "donor": "way/588791491",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : jardin, sol nu"
      ]
     }
    }
@@ -731,6 +1332,7 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
@@ -793,10 +1395,202 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
       "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588791731",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7857116,
+       48.5118644
+      ],
+      [
+       3.7857152,
+       48.5118344
+      ],
+      [
+       3.7858215,
+       48.5118398
+      ],
+      [
+       3.7858139,
+       48.5118719
+      ],
+      [
+       3.7857116,
+       48.5118644
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588791731",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 26.82,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588791731"
+     ],
+     "donor": "way/588791731",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : végétation près d’un dépôt, aucune toiture"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588791777",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.780826,
+       48.5027639
+      ],
+      [
+       3.7808726,
+       48.5027184
+      ],
+      [
+       3.7809604,
+       48.5027559
+      ],
+      [
+       3.7809206,
+       48.5027976
+      ],
+      [
+       3.780826,
+       48.5027639
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588791777",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 45.17,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588791777"
+     ],
+     "donor": "way/588791777",
+     "coverage": 0.001,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : pelouse et sol nu"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588791810",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7614173,
+       48.4930442
+      ],
+      [
+       3.7615353,
+       48.493126
+      ],
+      [
+       3.7614848,
+       48.493158
+      ],
+      [
+       3.7613668,
+       48.4930762
+      ],
+      [
+       3.7614173,
+       48.4930442
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588791810",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 64.77,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588791810"
+     ],
+     "donor": "way/588791810",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": null
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre absent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM sans source",
+      "RNB : point(s) actif(s) dans l’empreinte : J42GQDQHAZ3V",
+      "BD ORTHO IGN 20 cm : pelouse"
      ]
     }
    }
@@ -854,10 +1648,76 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
       "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588791966",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7824299,
+       48.50429
+      ],
+      [
+       3.7824068,
+       48.5042251
+      ],
+      [
+       3.7826003,
+       48.5041958
+      ],
+      [
+       3.7826234,
+       48.5042597
+      ],
+      [
+       3.7824299,
+       48.50429
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588791966",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 107.71,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588791966"
+     ],
+     "donor": "way/588791966",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "RNB : point(s) actif(s) dans l’empreinte : P729RX6T7SHY",
+      "BD ORTHO IGN 20 cm : jardin sous un arbre, sol visible"
      ]
     }
    }
@@ -915,10 +1775,314 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
       "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792071",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7960958,
+       48.5027628
+      ],
+      [
+       3.796101,
+       48.5027361
+      ],
+      [
+       3.7961108,
+       48.5027193
+      ],
+      [
+       3.796125,
+       48.5027041
+      ],
+      [
+       3.7961434,
+       48.5026908
+      ],
+      [
+       3.7961651,
+       48.50268
+      ],
+      [
+       3.7961895,
+       48.5026722
+      ],
+      [
+       3.7962157,
+       48.5026676
+      ],
+      [
+       3.7962426,
+       48.5026663
+      ],
+      [
+       3.7962696,
+       48.5026684
+      ],
+      [
+       3.7962954,
+       48.5026737
+      ],
+      [
+       3.7963192,
+       48.5026823
+      ],
+      [
+       3.7963402,
+       48.5026936
+      ],
+      [
+       3.7963576,
+       48.5027073
+      ],
+      [
+       3.796371,
+       48.5027231
+      ],
+      [
+       3.7963795,
+       48.5027401
+      ],
+      [
+       3.7963833,
+       48.5027608
+      ],
+      [
+       3.7963781,
+       48.5027875
+      ],
+      [
+       3.7963683,
+       48.5028043
+      ],
+      [
+       3.7963541,
+       48.5028196
+      ],
+      [
+       3.7963357,
+       48.5028328
+      ],
+      [
+       3.796314,
+       48.5028435
+      ],
+      [
+       3.7962896,
+       48.5028514
+      ],
+      [
+       3.7962634,
+       48.502856
+      ],
+      [
+       3.7962365,
+       48.5028574
+      ],
+      [
+       3.7962095,
+       48.5028553
+      ],
+      [
+       3.7961837,
+       48.5028499
+      ],
+      [
+       3.7961599,
+       48.5028413
+      ],
+      [
+       3.7961389,
+       48.5028301
+      ],
+      [
+       3.7961214,
+       48.5028163
+      ],
+      [
+       3.7961081,
+       48.5028006
+      ],
+      [
+       3.7960995,
+       48.5027836
+      ],
+      [
+       3.7960958,
+       48.5027628
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792071",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 351.18,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792071"
+     ],
+     "donor": "way/588792071",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 85 %, IoU 0.68)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : grands cercles sur sol nu (anciens bassins ou cuves disparus)"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792084",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7859584,
+       48.5041302
+      ],
+      [
+       3.7859576,
+       48.504117
+      ],
+      [
+       3.7860364,
+       48.5041151
+      ],
+      [
+       3.7860369,
+       48.5041292
+      ],
+      [
+       3.7859584,
+       48.5041302
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792084",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 8.8,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792084"
+     ],
+     "donor": "way/588792084",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : dalle de terrasse claire"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792110",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7957714,
+       48.5131628
+      ],
+      [
+       3.7960214,
+       48.5131529
+      ],
+      [
+       3.7960272,
+       48.5132126
+      ],
+      [
+       3.7957767,
+       48.5132233
+      ],
+      [
+       3.7957714,
+       48.5131628
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792110",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 123.67,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792110"
+     ],
+     "donor": "way/588792110",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : jardin et voiture, aucune toiture"
      ]
     }
    }
@@ -976,10 +2140,318 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
       "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792242",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.787028,
+       48.5092867
+      ],
+      [
+       3.7871034,
+       48.5092082
+      ],
+      [
+       3.7871819,
+       48.5092401
+      ],
+      [
+       3.7871088,
+       48.5093209
+      ],
+      [
+       3.787028,
+       48.5092867
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792242",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 72.07,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792242"
+     ],
+     "donor": "way/588792242",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre absent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "RNB : point(s) actif(s) dans l’empreinte : 3Z3KP6CE2933",
+      "BD ORTHO IGN 20 cm : cour pavée plantée d’arbres"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792356",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.794849,
+       48.5137362
+      ],
+      [
+       3.7949491,
+       48.513719
+      ],
+      [
+       3.7950212,
+       48.5138822
+      ],
+      [
+       3.7949444,
+       48.5139002
+      ],
+      [
+       3.7949236,
+       48.5139035
+      ],
+      [
+       3.794849,
+       48.5137362
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792356",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 145.87,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792356"
+     ],
+     "donor": "way/588792356",
+     "coverage": 0.087,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : arbres et allée ; ancien bâtiment disparu"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792505",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.796056,
+       48.5027924
+      ],
+      [
+       3.7960537,
+       48.5028103
+      ],
+      [
+       3.7960461,
+       48.5028275
+      ],
+      [
+       3.7960337,
+       48.5028435
+      ],
+      [
+       3.7960168,
+       48.5028576
+      ],
+      [
+       3.7959962,
+       48.5028693
+      ],
+      [
+       3.7959725,
+       48.502878
+      ],
+      [
+       3.7959467,
+       48.5028835
+      ],
+      [
+       3.7959198,
+       48.5028856
+      ],
+      [
+       3.7958929,
+       48.5028842
+      ],
+      [
+       3.7958668,
+       48.5028793
+      ],
+      [
+       3.7958428,
+       48.5028712
+      ],
+      [
+       3.7958213,
+       48.5028601
+      ],
+      [
+       3.7958037,
+       48.5028466
+      ],
+      [
+       3.7957903,
+       48.5028309
+      ],
+      [
+       3.7957818,
+       48.5028138
+      ],
+      [
+       3.7957783,
+       48.5027943
+      ],
+      [
+       3.7957806,
+       48.5027764
+      ],
+      [
+       3.7957882,
+       48.5027591
+      ],
+      [
+       3.7958007,
+       48.5027432
+      ],
+      [
+       3.7958175,
+       48.5027291
+      ],
+      [
+       3.7958382,
+       48.5027175
+      ],
+      [
+       3.7958619,
+       48.5027087
+      ],
+      [
+       3.7958876,
+       48.5027032
+      ],
+      [
+       3.7959145,
+       48.5027011
+      ],
+      [
+       3.7959415,
+       48.5027024
+      ],
+      [
+       3.7959675,
+       48.5027073
+      ],
+      [
+       3.7959916,
+       48.5027155
+      ],
+      [
+       3.7960131,
+       48.5027266
+      ],
+      [
+       3.7960307,
+       48.5027401
+      ],
+      [
+       3.7960441,
+       48.5027558
+      ],
+      [
+       3.7960526,
+       48.5027729
+      ],
+      [
+       3.796056,
+       48.5027924
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792505",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 327.65,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792505"
+     ],
+     "donor": "way/588792505",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 81 %, IoU 0.67)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : grands cercles sur sol nu (anciens bassins ou cuves disparus)"
      ]
     }
    }
@@ -1038,6 +2510,7 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
@@ -1108,10 +2581,79 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
       "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792830",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7767572,
+       48.5015636
+      ],
+      [
+       3.776729,
+       48.5015048
+      ],
+      [
+       3.7767262,
+       48.5014989
+      ],
+      [
+       3.776754,
+       48.5014933
+      ],
+      [
+       3.7767848,
+       48.5015577
+      ],
+      [
+       3.7767572,
+       48.5015636
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792830",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 16.11,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792830"
+     ],
+     "donor": "way/588792830",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : pelouse et haie"
      ]
     }
    }
@@ -1169,6 +2711,7 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
@@ -1230,10 +2773,202 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
       "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792961",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7885505,
+       48.5116862
+      ],
+      [
+       3.7885451,
+       48.5115635
+      ],
+      [
+       3.7886184,
+       48.511562
+      ],
+      [
+       3.7886238,
+       48.5116853
+      ],
+      [
+       3.7885505,
+       48.5116862
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792961",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 73.9,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792961"
+     ],
+     "donor": "way/588792961",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 0.99)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : jardin en friche (empreinte la plus proche du RNB X3H3MTQBQ5G1)"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792983",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7766252,
+       48.5019963
+      ],
+      [
+       3.7766074,
+       48.5019711
+      ],
+      [
+       3.7767041,
+       48.5019407
+      ],
+      [
+       3.7767219,
+       48.5019675
+      ],
+      [
+       3.7766252,
+       48.5019963
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792983",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 24.91,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792983"
+     ],
+     "donor": "way/588792983",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : cour d’activité pavée avec véhicules"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588792987",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7933382,
+       48.5152355
+      ],
+      [
+       3.7934477,
+       48.5152303
+      ],
+      [
+       3.7934663,
+       48.5154453
+      ],
+      [
+       3.7933587,
+       48.5154494
+      ],
+      [
+       3.7933382,
+       48.5152355
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588792987",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 191.43,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588792987"
+     ],
+     "donor": "way/588792987",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : pelouse et arbres"
      ]
     }
    }
@@ -1291,10 +3026,137 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
       "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588793300",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7945528,
+       48.5153199
+      ],
+      [
+       3.7945368,
+       48.5152342
+      ],
+      [
+       3.7946261,
+       48.5152271
+      ],
+      [
+       3.7946404,
+       48.5153123
+      ],
+      [
+       3.7945528,
+       48.5153199
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588793300",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 62.82,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588793300"
+     ],
+     "donor": "way/588793300",
+     "coverage": 0.006,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : allée et pelouse ; seule la pointe sud recouvre le toit déjà décrit par la BD TOPO"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588793340",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7848677,
+       48.5083867
+      ],
+      [
+       3.7849039,
+       48.508385
+      ],
+      [
+       3.7849051,
+       48.5084046
+      ],
+      [
+       3.7848694,
+       48.5084055
+      ],
+      [
+       3.7848677,
+       48.5083867
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588793340",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 5.67,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588793340"
+     ],
+     "donor": "way/588793340",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : accotement enherbé"
      ]
     }
    }
@@ -1352,10 +3214,389 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
       "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588793413",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7868658,
+       48.5100602
+      ],
+      [
+       3.7868345,
+       48.510062
+      ],
+      [
+       3.7868313,
+       48.5100202
+      ],
+      [
+       3.7868629,
+       48.5100199
+      ],
+      [
+       3.7868658,
+       48.5100602
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588793413",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 10.6,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588793413"
+     ],
+     "donor": "way/588793413",
+     "coverage": 0,
+     "tags": {
+      "building": "yes",
+      "wall": "no"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : pelouse"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588793462",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.8053651,
+       48.4857681
+      ],
+      [
+       3.8054084,
+       48.4858481
+      ],
+      [
+       3.8053383,
+       48.4858647
+      ],
+      [
+       3.8053205,
+       48.4858305
+      ],
+      [
+       3.8053457,
+       48.4858246
+      ],
+      [
+       3.8053215,
+       48.4857781
+      ],
+      [
+       3.8053651,
+       48.4857681
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588793462",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 40.64,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588793462"
+     ],
+     "donor": "way/588793462",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 100 %, IoU 1)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : sol nu et arbre (Ferme des Charmes, même objet probable que le RNB AXQ4DCT3XS93)"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "way/588793679",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       3.7961613,
+       48.5029286
+      ],
+      [
+       3.7961427,
+       48.5029161
+      ],
+      [
+       3.7961377,
+       48.5029024
+      ],
+      [
+       3.7961422,
+       48.5028862
+      ],
+      [
+       3.7961534,
+       48.5028766
+      ],
+      [
+       3.7961711,
+       48.5028714
+      ],
+      [
+       3.7961942,
+       48.5028712
+      ],
+      [
+       3.796209,
+       48.5028751
+      ],
+      [
+       3.7962289,
+       48.5028887
+      ],
+      [
+       3.7962317,
+       48.5028796
+      ],
+      [
+       3.796244,
+       48.5028701
+      ],
+      [
+       3.7962545,
+       48.5028649
+      ],
+      [
+       3.7962728,
+       48.5028621
+      ],
+      [
+       3.7962883,
+       48.5028643
+      ],
+      [
+       3.7963038,
+       48.5028697
+      ],
+      [
+       3.7963147,
+       48.5028787
+      ],
+      [
+       3.7963234,
+       48.5028649
+      ],
+      [
+       3.796338,
+       48.5028573
+      ],
+      [
+       3.7963563,
+       48.5028532
+      ],
+      [
+       3.7963753,
+       48.5028543
+      ],
+      [
+       3.796389,
+       48.5028596
+      ],
+      [
+       3.7964022,
+       48.5028686
+      ],
+      [
+       3.7964053,
+       48.5028784
+      ],
+      [
+       3.7964043,
+       48.5028926
+      ],
+      [
+       3.7963985,
+       48.5029029
+      ],
+      [
+       3.7963869,
+       48.5029093
+      ],
+      [
+       3.7964,
+       48.5029171
+      ],
+      [
+       3.796412,
+       48.5029272
+      ],
+      [
+       3.7964127,
+       48.5029383
+      ],
+      [
+       3.7964059,
+       48.5029532
+      ],
+      [
+       3.7963947,
+       48.5029632
+      ],
+      [
+       3.7963795,
+       48.5029688
+      ],
+      [
+       3.7963432,
+       48.5029679
+      ],
+      [
+       3.7963349,
+       48.502964
+      ],
+      [
+       3.7963283,
+       48.5029574
+      ],
+      [
+       3.7963207,
+       48.5029657
+      ],
+      [
+       3.7963072,
+       48.5029741
+      ],
+      [
+       3.79629,
+       48.5029769
+      ],
+      [
+       3.7962735,
+       48.502977
+      ],
+      [
+       3.796258,
+       48.5029728
+      ],
+      [
+       3.7962406,
+       48.5029575
+      ],
+      [
+       3.7962336,
+       48.5029667
+      ],
+      [
+       3.7962207,
+       48.5029762
+      ],
+      [
+       3.7962042,
+       48.5029803
+      ],
+      [
+       3.796187,
+       48.5029804
+      ],
+      [
+       3.7961722,
+       48.5029785
+      ],
+      [
+       3.7961511,
+       48.5029617
+      ],
+      [
+       3.7961486,
+       48.5029523
+      ],
+      [
+       3.7961491,
+       48.502944
+      ],
+      [
+       3.7961613,
+       48.5029286
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "way/588793679",
+    "source": "OpenStreetMap",
+    "provenance": "osm",
+    "inCommune": true,
+    "areaM2": 217.65,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": {
+     "ids": [
+      "way/588793679"
+     ],
+     "donor": "way/588793679",
+     "coverage": 0,
+     "tags": {
+      "building": "yes"
+     },
+     "sourceTag": "cadastre-dgi-fr source : Direction Générale des Finances Publiques - Cadastre. Mise à jour : 2018"
+    },
+    "derived": null,
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : absent de la BD TOPO et non bâti sur l’orthophoto IGN 2025 (cadastre présent)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : présent (couverture 70 %, IoU 0.54)",
+      "BD TOPO : absent ; OSM cadastre-dgi-fr source : Direction Générale des Finances Pub",
+      "BD ORTHO IGN 20 cm : grands cercles sur sol nu (anciens bassins ou cuves disparus)"
      ]
     }
    }
@@ -1413,6 +3654,7 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
@@ -1474,6 +3716,7 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
@@ -1535,10 +3778,2211 @@
     },
     "derived": null,
     "removal": {
+     "version": "1.6.1",
      "reason": "absent de la BD TOPO, du cadastre actuel (Parcellaire Express (PCI DGFiP, IGN)) et du RNB : construction disparue ou tracé erroné",
      "evidence": [
       "Parcellaire Express (PCI DGFiP, IGN) : absent (couverture 0 %)",
       "BD TOPO : absent ; OSM sans source"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:22587690",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.7665131,
+        48.5058126
+       ],
+       [
+        3.76650399,
+        48.50579151
+       ],
+       [
+        3.76645342,
+        48.50580453
+       ],
+       [
+        3.76646792,
+        48.50582431
+       ],
+       [
+        3.7665131,
+        48.5058126
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:22587690",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": false,
+    "areaM2": 9.21,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": true,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Construction légère",
+     "codeInsee": "10323"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:22587748",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.76609627,
+        48.50588744
+       ],
+       [
+        3.7661451,
+        48.50587516
+       ],
+       [
+        3.76612974,
+        48.50585285
+       ],
+       [
+        3.76608378,
+        48.50586709
+       ],
+       [
+        3.76609627,
+        48.50588744
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:22587748",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": false,
+    "areaM2": 9.79,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": true,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Construction légère",
+     "codeInsee": "10323"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:22587759",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.76609627,
+        48.50588744
+       ],
+       [
+        3.76608378,
+        48.50586709
+       ],
+       [
+        3.76603456,
+        48.50588001
+       ],
+       [
+        3.76604946,
+        48.50589916
+       ],
+       [
+        3.76609627,
+        48.50588744
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:22587759",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": false,
+    "areaM2": 9.15,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": true,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Construction légère",
+     "codeInsee": "10323"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:22587825",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.76500611,
+        48.50576365
+       ],
+       [
+        3.76503976,
+        48.50575957
+       ],
+       [
+        3.76502681,
+        48.50572565
+       ],
+       [
+        3.76499169,
+        48.50573118
+       ],
+       [
+        3.76500611,
+        48.50576365
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:22587825",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": false,
+    "areaM2": 9.89,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": true,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Construction légère",
+     "codeInsee": "10323"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:22587834",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.76383456,
+        48.50548862
+       ],
+       [
+        3.76379956,
+        48.50549325
+       ],
+       [
+        3.76381167,
+        48.5055252
+       ],
+       [
+        3.76384815,
+        48.50552002
+       ],
+       [
+        3.76383456,
+        48.50548862
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:22587834",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": false,
+    "areaM2": 9.79,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": true,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Construction légère",
+     "codeInsee": "10323"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:22587923",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.76383456,
+        48.50548862
+       ],
+       [
+        3.76382161,
+        48.50545469
+       ],
+       [
+        3.76378744,
+        48.50546022
+       ],
+       [
+        3.76379956,
+        48.50549325
+       ],
+       [
+        3.76383456,
+        48.50548862
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:22587923",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": false,
+    "areaM2": 10.01,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": true,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Construction légère",
+     "codeInsee": "10323"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:22587987",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.76520805,
+        48.50550911
+       ],
+       [
+        3.76522248,
+        48.50554257
+       ],
+       [
+        3.7652545,
+        48.50553796
+       ],
+       [
+        3.76524088,
+        48.50550503
+       ],
+       [
+        3.76520805,
+        48.50550911
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:22587987",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": false,
+    "areaM2": 9.32,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": true,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Construction légère",
+     "codeInsee": "10323"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:22587996",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.76520805,
+        48.50550911
+       ],
+       [
+        3.76524088,
+        48.50550503
+       ],
+       [
+        3.76522646,
+        48.50547219
+       ],
+       [
+        3.76519743,
+        48.50547724
+       ],
+       [
+        3.76520805,
+        48.50550911
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:22587996",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": false,
+    "areaM2": 8.67,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": true,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Construction légère",
+     "codeInsee": "10323"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:22588365",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.76490294,
+        48.5054194
+       ],
+       [
+        3.76489146,
+        48.50538394
+       ],
+       [
+        3.7648593,
+        48.50538855
+       ],
+       [
+        3.76487294,
+        48.50542346
+       ],
+       [
+        3.76490294,
+        48.5054194
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:22588365",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": false,
+    "areaM2": 9.4,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": false,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Bâtiment en dur",
+     "codeInsee": "10323"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : places de parking peintes, véhicules garés dans l’empreinte ; abris de chariots réels décalés à côté"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:23578995",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.78801813,
+        48.50816418
+       ],
+       [
+        3.78805874,
+        48.50816391
+       ],
+       [
+        3.78805861,
+        48.50815491
+       ],
+       [
+        3.78801799,
+        48.50815518
+       ],
+       [
+        3.78801813,
+        48.50816418
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:23578995",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": true,
+    "areaM2": 2.99,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": true,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Construction légère",
+     "codeInsee": "10220"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "artefact",
+      "observation": "bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "artefact : bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:39362625",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.82094704,
+        48.49994941
+       ],
+       [
+        3.82094863,
+        48.4999556
+       ],
+       [
+        3.82095305,
+        48.49996115
+       ],
+       [
+        3.82095975,
+        48.4999656
+       ],
+       [
+        3.82096832,
+        48.49996842
+       ],
+       [
+        3.82097768,
+        48.49996935
+       ],
+       [
+        3.820987,
+        48.49996829
+       ],
+       [
+        3.82099549,
+        48.49996536
+       ],
+       [
+        3.82100218,
+        48.49996081
+       ],
+       [
+        3.82100643,
+        48.4999552
+       ],
+       [
+        3.82100782,
+        48.49994899
+       ],
+       [
+        3.82100623,
+        48.4999427
+       ],
+       [
+        3.82100181,
+        48.49993715
+       ],
+       [
+        3.82099497,
+        48.4999327
+       ],
+       [
+        3.8209864,
+        48.49992988
+       ],
+       [
+        3.82097705,
+        48.49992896
+       ],
+       [
+        3.82096772,
+        48.49993001
+       ],
+       [
+        3.82095924,
+        48.49993295
+       ],
+       [
+        3.82095268,
+        48.49993749
+       ],
+       [
+        3.82094843,
+        48.4999431
+       ],
+       [
+        3.82094704,
+        48.49994941
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:39362625",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": false,
+    "areaM2": 15.52,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": false,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Bâtiment en dur",
+     "codeInsee": "10089"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:39362627",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.82092052,
+        48.50000177
+       ],
+       [
+        3.82092211,
+        48.50000815
+       ],
+       [
+        3.82092666,
+        48.50001387
+       ],
+       [
+        3.82093364,
+        48.50001841
+       ],
+       [
+        3.82094235,
+        48.50002132
+       ],
+       [
+        3.82095197,
+        48.50002224
+       ],
+       [
+        3.82096157,
+        48.50002119
+       ],
+       [
+        3.82097019,
+        48.50001816
+       ],
+       [
+        3.82097702,
+        48.50001352
+       ],
+       [
+        3.82098139,
+        48.50000774
+       ],
+       [
+        3.82098278,
+        48.50000134
+       ],
+       [
+        3.82098119,
+        48.49999496
+       ],
+       [
+        3.82097664,
+        48.49998924
+       ],
+       [
+        3.82096966,
+        48.4999847
+       ],
+       [
+        3.82096095,
+        48.49998179
+       ],
+       [
+        3.82095133,
+        48.49998087
+       ],
+       [
+        3.82094173,
+        48.49998192
+       ],
+       [
+        3.82093312,
+        48.49998495
+       ],
+       [
+        3.82092628,
+        48.49998959
+       ],
+       [
+        3.82092191,
+        48.49999537
+       ],
+       [
+        3.82092052,
+        48.50000177
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:39362627",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": false,
+    "areaM2": 16.31,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": false,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Bâtiment en dur",
+     "codeInsee": "10089"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:39362629",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.82095643,
+        48.50005613
+       ],
+       [
+        3.82095484,
+        48.50004975
+       ],
+       [
+        3.82095028,
+        48.50004403
+       ],
+       [
+        3.82094331,
+        48.50003949
+       ],
+       [
+        3.8209346,
+        48.50003658
+       ],
+       [
+        3.82092497,
+        48.50003566
+       ],
+       [
+        3.82091538,
+        48.50003671
+       ],
+       [
+        3.82090676,
+        48.50003974
+       ],
+       [
+        3.82089993,
+        48.50004438
+       ],
+       [
+        3.82089556,
+        48.50005016
+       ],
+       [
+        3.82089417,
+        48.50005656
+       ],
+       [
+        3.82089576,
+        48.50006294
+       ],
+       [
+        3.82090031,
+        48.50006866
+       ],
+       [
+        3.82090729,
+        48.5000732
+       ],
+       [
+        3.820916,
+        48.50007611
+       ],
+       [
+        3.82092562,
+        48.50007703
+       ],
+       [
+        3.82093522,
+        48.50007598
+       ],
+       [
+        3.82094383,
+        48.50007295
+       ],
+       [
+        3.82095066,
+        48.50006832
+       ],
+       [
+        3.82095504,
+        48.50006253
+       ],
+       [
+        3.82095643,
+        48.50005613
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:39362629",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": false,
+    "areaM2": 16.31,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": false,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Bâtiment en dur",
+     "codeInsee": "10089"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : sol plat à la place de la cuve ; les cuves réelles sont une rangée plus à l’est, déjà au référentiel"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:39808118",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.79878412,
+        48.50130095
+       ],
+       [
+        3.79882079,
+        48.5012999
+       ],
+       [
+        3.79881417,
+        48.50123913
+       ],
+       [
+        3.79877627,
+        48.50123938
+       ],
+       [
+        3.79878412,
+        48.50130095
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:39808118",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": true,
+    "areaM2": 18.72,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": false,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Bâtiment en dur",
+     "codeInsee": "10220"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "accotement enherbé et chaussée"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : accotement enherbé et chaussée"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : accotement enherbé et chaussée",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : accotement enherbé et chaussée"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:39808120",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.79850456,
+        48.50103357
+       ],
+       [
+        3.79856898,
+        48.50103188
+       ],
+       [
+        3.79856095,
+        48.50095843
+       ],
+       [
+        3.79849604,
+        48.50096247
+       ],
+       [
+        3.79850456,
+        48.50103357
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:39808120",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": true,
+    "areaM2": 38.48,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": false,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Bâtiment en dur",
+     "codeInsee": "10220"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "cour pavée avec traces de roues, aucune toiture"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : cour pavée avec traces de roues, aucune toiture"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : cour pavée avec traces de roues, aucune toiture",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : cour pavée avec traces de roues, aucune toiture"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:39808749",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.78645779,
+        48.50869027
+       ],
+       [
+        3.78655323,
+        48.50868964
+       ],
+       [
+        3.78655255,
+        48.50849964
+       ],
+       [
+        3.78645104,
+        48.50850193
+       ],
+       [
+        3.78645779,
+        48.50869027
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:39808749",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": true,
+    "areaM2": 152.64,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": false,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Bâtiment en dur",
+     "codeInsee": "10220"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "dalle béton sans toiture (démoli)"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : dalle béton sans toiture (démoli)"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : dalle béton sans toiture (démoli)",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : dalle béton sans toiture (démoli)"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:39810407",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.79851799,
+        48.5011328
+       ],
+       [
+        3.79858998,
+        48.50113097
+       ],
+       [
+        3.79858098,
+        48.50106446
+       ],
+       [
+        3.79851107,
+        48.50106951
+       ],
+       [
+        3.79851799,
+        48.5011328
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:39810407",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": true,
+    "areaM2": 37.94,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": true,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Construction légère",
+     "codeInsee": "10220"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "cour pavée avec traces de roues, aucune toiture"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : cour pavée avec traces de roues, aucune toiture"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : cour pavée avec traces de roues, aucune toiture",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : cour pavée avec traces de roues, aucune toiture"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:39816945",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.78353812,
+        48.50091478
+       ],
+       [
+        3.78360473,
+        48.50091488
+       ],
+       [
+        3.78360328,
+        48.50088143
+       ],
+       [
+        3.78353588,
+        48.50088277
+       ],
+       [
+        3.78353812,
+        48.50091478
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:39816945",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": true,
+    "areaM2": 17.97,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": false,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Bâtiment en dur",
+     "codeInsee": "10220"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "pelouse"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : pelouse"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : pelouse",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Bâtiment en dur »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : pelouse"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:39818200",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.782421,
+        48.50101193
+       ],
+       [
+        3.78243368,
+        48.50106339
+       ],
+       [
+        3.78244881,
+        48.50112519
+       ],
+       [
+        3.78250288,
+        48.50111934
+       ],
+       [
+        3.78249481,
+        48.50107748
+       ],
+       [
+        3.782509,
+        48.50107612
+       ],
+       [
+        3.78254347,
+        48.50107293
+       ],
+       [
+        3.78252912,
+        48.50100024
+       ],
+       [
+        3.782421,
+        48.50101193
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:39818200",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": true,
+    "areaM2": 83.52,
+    "parts": 1,
+    "holes": 0,
+    "rnb": "TSQ36SASD1RN/2N545PX8SQH4",
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": true,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Construction légère",
+     "codeInsee": "10220"
+    },
+    "validation": {
+     "confidence": "B",
+     "status": "ajouté : cadastre actuel + RNB actif, absent de la BD TOPO",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [
+       "TSQ36SASD1RN",
+       "2N545PX8SQH4"
+      ],
+      "checks": [
+       {
+        "id": "TSQ36SASD1RN",
+        "verdict": "valide",
+        "status": "constructed",
+        "active": true,
+        "pointInside": true
+       },
+       {
+        "id": "2N545PX8SQH4",
+        "verdict": "valide",
+        "status": "constructed",
+        "active": true,
+        "pointInside": true
+       }
+      ],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "non bâti",
+      "observation": "pelouse de jardin entre deux maisons ; les deux points RNB (BDNB) qu’il porte sont également sans bâti"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : 2 bâtiment(s) actif(s) dont le point est dans l’empreinte",
+      "BD ORTHO IGN 20 cm : pelouse de jardin entre deux maisons ; les deux points RNB (BDNB) qu’il porte sont également sans bâti"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "non bâti : pelouse de jardin entre deux maisons ; les deux points RNB (BDNB) qu’il porte sont également sans bâti",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : 2 bâtiment(s) actif(s) dont le point est dans l’empreinte",
+      "BD ORTHO IGN 20 cm : pelouse de jardin entre deux maisons ; les deux points RNB (BDNB) qu’il porte sont également sans bâti"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:40776829",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.78609381,
+        48.50577743
+       ],
+       [
+        3.78609372,
+        48.50577113
+       ],
+       [
+        3.78603889,
+        48.50577095
+       ],
+       [
+        3.78603898,
+        48.50577734
+       ],
+       [
+        3.78609381,
+        48.50577743
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:40776829",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": true,
+    "areaM2": 2.85,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": true,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Construction légère",
+     "codeInsee": "10220"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "artefact",
+      "observation": "bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "artefact : bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
+     ]
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "cadastre:40928273",
+   "geometry": {
+    "type": "MultiPolygon",
+    "coordinates": [
+     [
+      [
+       [
+        3.79179738,
+        48.51228041
+       ],
+       [
+        3.79179215,
+        48.51228323
+       ],
+       [
+        3.79183396,
+        48.51231741
+       ],
+       [
+        3.7918392,
+        48.51231459
+       ],
+       [
+        3.79179738,
+        48.51228041
+       ]
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "cadastre:40928273",
+    "source": "Parcellaire Express (PCI DGFiP, IGN)",
+    "provenance": "cadastre",
+    "inCommune": true,
+    "areaM2": 2.43,
+    "parts": 1,
+    "holes": 0,
+    "rnb": null,
+    "ign": null,
+    "osm": null,
+    "derived": {
+     "wallHeight": null,
+     "roofHeight": null,
+     "floors": null,
+     "roofMaterials": [],
+     "roofMaterialCode": null,
+     "wallMaterialCode": null,
+     "usage": null,
+     "nature": null,
+     "lightConstruction": true,
+     "heightAccuracy": null
+    },
+    "cadastre": {
+     "type": "Construction légère",
+     "codeInsee": "10220"
+    },
+    "validation": {
+     "confidence": "C",
+     "status": "ajouté : cadastre actuel seul, absent de la BD TOPO et du RNB",
+     "cadastre": {
+      "reference": "Parcellaire Express (PCI DGFiP, IGN)",
+      "match": "source"
+     },
+     "rnb": {
+      "ids": [],
+      "checks": [],
+      "corrected": false
+     },
+     "review": {
+      "verdict": "artefact",
+      "observation": "bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
+     },
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
+     ]
+    },
+    "removal": {
+     "version": "1.6.2",
+     "reason": "artefact : bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte",
+     "evidence": [
+      "Parcellaire Express (PCI DGFiP, IGN) : type « Construction légère »",
+      "BD TOPO : absent (< 10 % de couverture)",
+      "RNB : aucun point actif dans l’empreinte",
+      "BD ORTHO IGN 20 cm : bande de moins de 1 m de large accolée à un bâtiment existant, sans structure distincte"
      ]
     }
    }

@@ -1,3 +1,62 @@
+# Vérification V1.6.2 — gel du référentiel bâti pour Unreal, 24 septembre 2026
+
+## Accès
+
+- `cadastre.s3.rbx.io.cloud.ovh.net` : **toujours refusé**. Le proxy de sortie répond 403 au CONNECT (politique d’organisation). `cadastre.data.gouv.fr` coupe lui-même la connexion. L’export Etalab n’a donc pas pu être téléchargé : **aucune différence Parcellaire Express ↔ Etalab n’a pu être établie**, et rien n’a été reconstruit.
+- `data.geopf.fr` : accessible. En plus du WFS, j’ai utilisé la **BD ORTHO IGN 20 cm** du service WMS (vol des 28–29 avril 2025) comme témoin d’existence.
+- RNB : instantané du 24/09/2026 réutilisé tel quel.
+
+## V1.6.1 → V1.6.2
+
+| Indicateur | V1.6.1 | V1.6.2 (gel) |
+|---|---:|---:|
+| Bâtiments du référentiel | 2 543 | **2 494** |
+| Dans la commune | 2 299 | **2 265** |
+| Ajouts du cadastre actuel conservés | 77 (58 dans la commune) | 56 (49), dont 45 visibles sur l’orthophoto |
+| Ajouts cadastraux écartés | — | 21 (9 dans la commune) : 18 non bâtis, 3 artefacts de moins de 1 m de large |
+| Empreintes OSM seules | 137 | 109 : 28 retirées (25 dans la commune), non bâties sur l’orthophoto |
+| Extensions cadastrales intégrées à l’empreinte | 0 | 3 (commune) |
+| RNB associés après revue individuelle | — | 2 |
+| Nouveaux bâtiments découverts parmi les 19 RNB | — | 0 |
+| RNB actifs de la commune sans empreinte | 19 (non analysés) | 22, tous analysés ; 2 restent non résolus |
+| Confiance A / B / C | 1 984 / 466 / 93 | **1 994 / 475 / 25** |
+| Dans la commune A / B / C | 1 849 / 384 / 66 | **1 858 / 395 / 12** |
+| Bâtiments avec au moins un RNB vérifié | 2 016 (79,3 %) | 2 017 / 2 494 (80,9 %) |
+| Dans la commune | 1 839 (80,0 %) | 1 840 / 2 265 (81,2 %) |
+| Changements de classe depuis la V1.6.1 | — | 55 : C→B 45 (ajouts visibles), B→A 10 (3 extensions intégrées, 7 extensions démenties) |
+
+Aucune suppression sans preuve : les 74 entrées de `data-sources/building-removed.json` portent chacune leur géométrie, leur version, leur motif et leurs preuves.
+
+## Cas réellement non résolus : 42 (34 dans la commune)
+
+| Groupe | Total | Commune |
+|---|---:|---:|
+| RNB sans empreinte : `58Y4QCN7YBR4` (abri et serre de jardin visibles, sans empreinte officielle) et `MEJK7RK7Q4B1` (zone sombre ambiguë, 51 rue Joliot-Curie) | 2 | 2 |
+| Extensions cadastrales douteuses (auvents, marquises, stockage) | 6 | 3 |
+| Ajouts cadastraux non vérifiables (arbres, ombre, taille) | 11 | 6 |
+| Empreintes OSM seules non vérifiables | 23 | 23 |
+
+À part, 134 bâtiments B (104 dans la commune) ont un contour différent du cadastre actuel. Leur existence est sûre, seul le tracé varie. Leur géométrie BD TOPO n’est pas modifiée.
+
+## Contrôles
+
+- `npm run check:all` réussit (six contrôles).
+- `check:buildings` :
+  - les 2 329 bâtiments IGN de la zone sont présents ;
+  - 3 géométries sont enrichies d’une extension cadastrale ; elles contiennent toute l’empreinte BD TOPO d’origine, conservée dans `geometryEnrichment.ignGeometry` ;
+  - toutes les autres géométries IGN sont inchangées ;
+  - chaque OSM seul absent figure au journal ;
+  - aucun ajout cadastral ne recouvre le référentiel ;
+  - aucun doublon.
+- `npm run audit:density` a été relancé sur le référentiel gelé.
+- `pnpm build` réussit. Dans Chromium :
+  - **2 494 bâtiments générés, exactement le nombre du référentiel**, aucun rejet ;
+  - 18 appels de dessin, 559 942 triangles ;
+  - `?diagnostic=validation` affiche A 1 994, B 295, B à contour différent 134, C OSM 15, ajouts cadastraux 56 ;
+  - **console sans erreur ni avertissement**.
+
+---
+
 # Vérification V1.6.1 — validation officielle, 24 septembre 2026
 
 ## Accès
