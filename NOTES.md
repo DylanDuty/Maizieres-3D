@@ -1,3 +1,44 @@
+# Notes V1.11 — POI, patrimoine et toponymie Unreal, 25 septembre 2026
+
+Branche `opus/v1.11-poi-toponymy`, à partir de `a2ee6d2`. Pas de modèle 3D, pas d’étiquettes permanentes ajoutées, pas de modification du bâti ni des référentiels gelés.
+
+## Audit
+
+- **Projet** :
+  - catalogue de clics (OSM, BD TOPO zones nommées) ;
+  - annotations Bible des rues ;
+  - landmarks d’enrichissement.
+- **Sources officielles ajoutées** (Géoplateforme) :
+  - BAN et BAN PLUS (liens adresse – bâtiment) ;
+  - BD TOPO : toponymie, lieux-dits, zones d’habitation, constructions ponctuelles ;
+  - servitudes GPU : aucune AC1.
+- **Bibles** : 506 extraits de lieux, 60 entrées de toponymie et 12 renommages, établis par lecture assistée. Toutes les citations sont exactes et vérifiées automatiquement.
+
+## Choix
+
+- **Statut** :
+  - les Bibles descriptives (01, 03, 04, 05) décident ;
+  - pour BIBLE_02, « historique » signifie « non établi aujourd’hui », jamais « fermé » ;
+  - BIBLE_06 n’apporte que du contexte : un souvenir seul ne crée pas de lieu.
+- **Affichage actuel** : statut actuel, position fiable et preuve suffisante. OSM seul ne suffit jamais. Un commerce doit avoir une preuve depuis 2023, figurer à la BIBLE_01 §11, ou être corroboré par OSM.
+- **Géométrie** :
+  - bâtiment, adresse BAN, objet BD TOPO, carrefour V1.8, ouvrage V1.9 ou point de toponymie ;
+  - sinon aucune géométrie ;
+  - jamais de polygone dessiné autour d’un nom.
+- **Toponymie** :
+  - la BAN est la forme officielle ;
+  - les variantes et les conflits sont documentés, jamais corrigés ;
+  - aucun appariement entre points cardinaux ;
+  - Lechère et Les Léchères restent distincts.
+- **Landmarks** : liste explicite P1 à P3 pour le futur travail Unreal. Le moulin de Poussey et la demeure de Poussey ne sont pas retenus (disparu, ou existence à vérifier).
+
+## Suite possible
+
+- Relever sur place : Croix des Ormes, Croix des Granges, Maison des Papillons, demeure de Poussey.
+- Reconfirmer les 22 commerces sans preuve récente.
+- Arbitrer les adresses divergentes (école, Baguette des Granges, Carrosserie Serbource).
+- Intégrer la couche POI au mode normal quand l’affichage des étiquettes sera arbitré.
+
 # Notes V1.10 — occupation du sol, végétation et hydrographie Unreal, 25 septembre 2026
 
 Branche `opus/v1.10-landcover`, à partir de `44f853f`. Pas de rendu artistique, pas d’arbres, de cultures, d’herbe, de matériaux, de rivière ni de PCG, pas d’import Unreal.

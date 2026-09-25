@@ -1,6 +1,6 @@
 {
   "name": "maizieres-3d",
-  "version": "1.10.0",
+  "version": "1.11.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -18,7 +18,7 @@
     "check:interaction": "node scripts/check-interaction.mjs",
     "data:bible": "node scripts/prepare-bible.mjs",
     "check:bible": "node scripts/check-bible.mjs",
-    "check:all": "npm run check && npm run check:enrichment && npm run check:presentation && npm run check:interaction && npm run check:bible && npm run check:buildings && npm run check:terrain && npm run check:roads && npm run check:rail && npm run check:landcover",
+    "check:all": "npm run check && npm run check:enrichment && npm run check:presentation && npm run check:interaction && npm run check:bible && npm run check:buildings && npm run check:terrain && npm run check:roads && npm run check:rail && npm run check:landcover && npm run check:poi",
     "data:buildings": "node scripts/build-buildings.mjs && node scripts/validate-buildings.mjs",
     "audit:buildings": "node scripts/audit-buildings.mjs",
     "check:buildings": "node scripts/check-buildings.mjs",
@@ -38,7 +38,10 @@
     "check:rail": "node --max-old-space-size=4096 scripts/check-rail.mjs",
     "data:landcover-fetch": "NODE_USE_ENV_PROXY=1 node scripts/fetch-landcover.mjs",
     "data:landcover": "node --max-old-space-size=6144 scripts/build-landcover.mjs",
-    "check:landcover": "node --max-old-space-size=4096 scripts/check-landcover.mjs"
+    "check:landcover": "node --max-old-space-size=4096 scripts/check-landcover.mjs",
+    "data:poi-fetch": "NODE_USE_ENV_PROXY=1 node scripts/fetch-poi.mjs",
+    "data:poi": "node --max-old-space-size=6144 scripts/build-poi.mjs",
+    "check:poi": "node --max-old-space-size=4096 scripts/check-poi.mjs"
   },
   "dependencies": {
     "three": "0.180.0"

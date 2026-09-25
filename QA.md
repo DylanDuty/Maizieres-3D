@@ -1,3 +1,52 @@
+# Vérification V1.11 — POI, patrimoine et toponymie Unreal, 25 septembre 2026
+
+Branche `opus/v1.11-poi-toponymy`, à partir de `a2ee6d2`. Le bâti, le terrain, la voirie, le ferroviaire, l’occupation du sol, l’origine Unreal et les Bibles sont inchangés (vérifié par SHA-256). Détail complet : `docs/referentiel-poi-toponymie.md`.
+
+| Mesure | Valeur |
+|---|---|
+| Lieux (POI) | **367** : 222 dans la commune, 28 hors commune (lieux-dits de l’emprise), 117 sans géométrie |
+| Actuels / historiques / incertains | **226** / **95** (ancien 54, historique 28, disparu 13) / **46** ; **128 affichés** sur la carte actuelle |
+| Bâtiments associés | **81 lieux** reliés à **114 bâtiments** du référentiel (BAN PLUS en priorité), empreintes non modifiées |
+| Lieux-dits | **131**, dont 90 dans la commune (BD TOPO + OSM fusionnés ; 28 OSM seuls non affichés) |
+| Secteurs | 8 : zone bâtie de Maizières (officielle), centre-bourg, Poussey, Les Granges, Le Craon (points), Soleil Levant (approximatif), Petit Village et Clos des Roy (sans position) |
+| Équipements publics | 24, dont **13 actuels** ; sport : 7, dont 6 actuels ; santé : 7, dont 4 actuels |
+| Commerces / entreprises | 122 : **36 actuels, dont 13 affichés** ; 22 à reconfirmer (preuve antérieure à 2023) ; 86 anciens, disparus ou incertains |
+| Patrimoine | 26 lieux, dont 4 actuels, et 18 éléments mobiliers de l’église |
+| Noms conflictuels | 5 conflits de voies, 6 variantes orthographiques de lieux-dits, 6 conflits de graphie documentés par les Bibles |
+| Noms locaux sans géométrie | 27 noms actuels, 9 odonymes locaux, 7 anciennes sections cadastrales |
+| Éléments incertains | 46 lieux, 22 commerces à reconfirmer, 28 lieux-dits OSM seuls |
+| Landmarks | **P1 : 3**, **P2 : 6**, **P3 : 8** |
+| Citations Bible vérifiées | 1 036, toutes exactes |
+
+## Contrôles
+
+- `npm run check:all` : **11 contrôles OK**. Ce sont `check`, `check:enrichment`, `check:presentation`, `check:interaction`, `check:bible`, `check:buildings`, `check:terrain`, `check:roads`, `check:rail`, `check:landcover` et `check:poi`.
+- `check:poi` vérifie :
+  - SHA-256 du bâti (2 494 bâtiments, dont 2 265 dans la commune), du terrain, de la voirie, du ferroviaire et de l’occupation du sol V1.10 ;
+  - `UNREAL_ORIGIN` ;
+  - Bibles identiques à l’archive ;
+  - 9 instantanés ;
+  - citations exactes ;
+  - champs obligatoires et identifiants uniques ;
+  - lieu historique, incertain, OSM seul ou C jamais affiché comme actuel ; aucun lieu fermé ou disparu affiché ;
+  - commerce affiché seulement avec une preuve récente ou corroborée ;
+  - bâtiments et voies existants ;
+  - conversions Unreal exactes ;
+  - polygones seulement avec une limite sourcée, jamais autour de Poussey, des Granges ou du centre-bourg ;
+  - landmarks P1 à P3 (P1 sur bâtiment ; moulin de Poussey exclu) ;
+  - forme officielle BAN de chaque voie conservée.
+- `pnpm build` réussi. Dans Chromium :
+  - les modes normal, `validation`, `terrain`, `roads`, `rail`, `landcover` et `poi` chargent **2 494 bâtiments, sans rejet** ;
+  - le rendu normal est identique au pixel près à V1.10 (18 appels de dessin, 559 942 triangles) ;
+  - en mode `poi`, un clic sur un lieu affiche son type, son statut, sa confiance, ses sources et ses citations (vérifié sur le monument aux morts, l’ancien presbytère et Poussey) ;
+  - **console sans erreur ni avertissement**.
+
+## Limites
+
+- Mérimée / POP, annuaire de l’éducation et SIRENE sont refusés par le proxy ; aucune servitude de monument historique (AC1) dans l’emprise.
+- Positions à relever : Croix des Ormes, Croix des Granges, Maison des Papillons, ancienne gare.
+- Bâtiments récents absents du référentiel gelé.
+
 # Vérification V1.10 — occupation du sol, végétation et hydrographie Unreal, 25 septembre 2026
 
 Branche `opus/v1.10-landcover`, à partir de `44f853f`. Le bâti, le terrain, la voirie, le ferroviaire et l’origine Unreal sont inchangés (vérifié par SHA-256). Détail complet : `docs/referentiel-occupation-sol.md`.

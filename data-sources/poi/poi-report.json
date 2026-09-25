@@ -1,0 +1,4738 @@
+{
+ "generatedAt": "2026-09-25T14:16:03.436Z",
+ "frozen": {
+  "buildingsSha256": "809f3af371719e2d3adfaa6e55a9d56235e4618e28e8a36595c85d501a4f3095",
+  "roadsSha256": "e14c17b94cbe7a126516351add558b5860773c3e2803c04012a0221fe740194e",
+  "railSha256": "ebc2298e50aabc2b1f692a05db7a48f2010b05b737c95cf3e01acef3a47b5103",
+  "landcoverSha256": "67076773d34ca3255a1d542a2890a3d4353700fbaca931b878ea1360b277fac4",
+  "terrainGeoTiffSha256": "3e08e2a6e98b1764730f364f3d80fe8cb1df49b4eb967920ac995e213bf1eaef",
+  "unrealOrigin": {
+   "crs": "EPSG:2154",
+   "E": 758278,
+   "N": 6823571,
+   "H": 0,
+   "verticalDatum": "NGF-IGN69",
+   "sourceLonLat": [
+    3.7890245,
+    48.5097657
+   ]
+  }
+ },
+ "sources": {
+  "ban-adresses": {
+   "source": "Base Adresse Nationale (BAN), adresses",
+   "typename": "BAN.DATA.GOUV:ban",
+   "retrievedAt": "2026-09-25T13:49:33.998Z",
+   "features": 1397,
+   "sha256": "8220127207c4ab217b4a3ba64266020f467ece4ff17556c884e18fb96a3873c2"
+  },
+  "banplus-lien-adresse-bati": {
+   "source": "BAN PLUS (IGN), liens adresse – bâtiment BD TOPO",
+   "typename": "BAN-PLUS:lien_adresse_bati",
+   "retrievedAt": "2026-09-25T13:49:36.706Z",
+   "features": 2420,
+   "sha256": "a19042cc9f50da22d4b77dec186b364217923ac5bab8bde09f6c8c513e8a7ead"
+  },
+  "bdtopo-construction-ponctuelle": {
+   "source": "BD TOPO construction ponctuelle",
+   "typename": "BDTOPO_V3:construction_ponctuelle",
+   "retrievedAt": "2026-09-25T13:49:38.062Z",
+   "features": 17,
+   "sha256": "6d06f23eb8a9686a8bce444fcccf074004878634ef5100852cc01fa769078eea"
+  },
+  "bdtopo-lieu-dit-non-habite": {
+   "source": "BD TOPO lieu-dit non habité",
+   "typename": "BDTOPO_V3:lieu_dit_non_habite",
+   "retrievedAt": "2026-09-25T13:49:37.164Z",
+   "features": 56,
+   "sha256": "9af81258ba4079f600842463bef499127c07102408deb99d6ccb07e22f73b11a"
+  },
+  "bdtopo-toponymie": {
+   "source": "BD TOPO toponymie (tous thèmes)",
+   "typename": "BDTOPO_V3:toponymie",
+   "retrievedAt": "2026-09-25T13:49:36.936Z",
+   "features": 131,
+   "sha256": "7d1cfda0dee0178b42ed88af17864e7074a055c800adc38e5abd2c08bc13be2a"
+  },
+  "bdtopo-zone-d-habitation": {
+   "source": "BD TOPO zone d’habitation (lieux-dits habités)",
+   "typename": "BDTOPO_V3:zone_d_habitation",
+   "retrievedAt": "2026-09-25T13:49:37.830Z",
+   "features": 22,
+   "sha256": "3a13f91658f345789047d0e6ffc4be54744ad0a3ca6633a2841abab39f595e90"
+  },
+  "sup-assiette-surfacique": {
+   "source": "Servitudes d’utilité publique (Géoportail de l’urbanisme), assiettes surfaciques",
+   "typename": "wfs_sup:assiette_sup_s",
+   "retrievedAt": "2026-09-25T13:52:02.687Z",
+   "features": 726,
+   "sha256": "244a06916ecfc6affaaae94e353044e48ec5a89a7bdafff3614edfa9b172e705"
+  },
+  "sup-generateur-ponctuel": {
+   "source": "Servitudes d’utilité publique (Géoportail de l’urbanisme), générateurs ponctuels",
+   "typename": "wfs_sup:generateur_sup_p",
+   "retrievedAt": "2026-09-25T13:51:42.734Z",
+   "features": 0,
+   "sha256": "fac3d0b4a843d078cc511ae66c0f9a829ba0e5d7dd8f3b28877b4f94c8479566"
+  },
+  "sup-generateur-surfacique": {
+   "source": "Servitudes d’utilité publique (Géoportail de l’urbanisme), générateurs surfaciques",
+   "typename": "wfs_sup:generateur_sup_s",
+   "retrievedAt": "2026-09-25T13:51:42.018Z",
+   "features": 2,
+   "sha256": "b807117279124df8b6232224073201ac422ce7279c2b5e0551416f8e047e4fcd"
+  }
+ },
+ "reusedReadOnly": {
+  "bdtopoZonesActivite": "data-sources/landcover/bdtopo-zone-d-activite.geojson",
+  "bdtopoReservoir": "data-sources/landcover/bdtopo-reservoir.geojson",
+  "bdtopoCimetiere": "data-sources/landcover/bdtopo-cimetiere.geojson",
+  "bdtopoTerrainDeSport": "data-sources/landcover/bdtopo-terrain-de-sport.geojson",
+  "bdtopoVoieNommee": "data-sources/roads/bdtopo-voie-nommee.geojson",
+  "osm": "public/data/maizieres.geojson",
+  "buildings": "public/data/buildings.geojson",
+  "roads": "public/data/roads.geojson",
+  "rail": "data-sources/rail/rail-report.json"
+ },
+ "bible": {
+  "extracts": {
+   "file": "data-sources/poi/bible-places-v1.11.json",
+   "sha256": "6aaed5cff61954d41f314e5d9d769aaff3ae1fecfa9be66f7010e0e4afd408e9",
+   "places": 506,
+   "toponymy": 60,
+   "nameHistory": 12,
+   "quotesVerified": 578
+  },
+  "curation": {
+   "file": "data-sources/poi/poi-curation-v1.11.json",
+   "sha256": "ff0191a49583adbea7795a3e9e6ec625a93952423c4bb4d1b9365f8281a7a21a",
+   "canonical": 70
+  },
+  "bibleSha256": {
+   "01": "049252e30276ede27a2e047910c88e33cf08e314c89a8e6c23c6391927af3b55",
+   "02": "2249658f165528f4ddd012ebcc4f43d3597043452c3c7831386a6c608c7bdb19",
+   "03": "99d812d0d1b5c7d71198da9e44130d4bbe22cc40c8864940e3aae4e0d4fc0d95",
+   "04": "83fd01208272cc705649f985ab974ee154183518401d8a9160066203c5816a7f",
+   "05": "f372730c468a53ecbce45abc32304264dc3d47f6146ed69553eb72314502e3c1",
+   "06": "0106cf0cb076d008ece99fb938b0a15b3eafabb466e02856469b711dc6cc570a"
+  },
+  "memoryOnlyNotMapped": 23,
+  "hydronymsToToponymy": 8,
+  "churchContents": 18
+ },
+ "totals": {
+  "poi": 367,
+  "inCommune": 222,
+  "outsideCommune": 28,
+  "withoutGeometry": 117,
+  "current": 226,
+  "historical": 95,
+  "uncertain": 46,
+  "displayedCurrent": 128,
+  "byStatus": {
+   "actuel": 226,
+   "historique": 28,
+   "disparu": 13,
+   "incertain": 46,
+   "ancien": 54
+  },
+  "byCategory": {
+   "commerce_entreprise": 122,
+   "zone_activite": 4,
+   "patrimoine": 26,
+   "equipement_sportif": 7,
+   "repere_local": 17,
+   "infrastructure": 11,
+   "lieu_dit": 131,
+   "secteur": 8,
+   "equipement_public": 24,
+   "autre": 10,
+   "sante": 7
+  },
+  "byCategoryCurrent": {
+   "commerce_entreprise": 36,
+   "zone_activite": 4,
+   "infrastructure": 11,
+   "lieu_dit": 125,
+   "secteur": 8,
+   "repere_local": 12,
+   "equipement_public": 13,
+   "equipement_sportif": 6,
+   "autre": 3,
+   "sante": 4,
+   "patrimoine": 4
+  },
+  "byGeometryKind": {
+   "documentaire": 90,
+   "ponctuelle": 76,
+   "sans géométrie": 117,
+   "approximative": 60,
+   "officielle": 24
+  },
+  "byConfidence": {
+   "A": 109,
+   "B": 236,
+   "C": 22
+  },
+  "withBuilding": 81,
+  "buildingsLinked": 114,
+  "withRoad": 114,
+  "lieuxDits": 131,
+  "lieuxDitsInCommune": 90,
+  "secteurs": 8,
+  "equipementsPublics": 24,
+  "equipementsPublicsActuels": 13,
+  "commercesEntreprisesActuels": 36,
+  "commercesEntreprisesAffiches": 13,
+  "commercesEntreprisesNonActuels": 86,
+  "patrimoine": 26,
+  "patrimoineActuel": 4,
+  "patrimoineMobilierEglise": 18,
+  "landmarks": {
+   "P1": 3,
+   "P2": 6,
+   "P3": 8
+  }
+ },
+ "areas": {
+  "count": 149,
+  "byGeometryKind": {
+   "officielle": 10,
+   "approximative": 56,
+   "ponctuelle": 68,
+   "sans géométrie": 15
+  },
+  "polygons": 11
+ },
+ "toponymy": {
+  "streets": 94,
+  "streetStatus": {
+   "variante_typographique": 35,
+   "officiel": 41,
+   "conflit_graphie": 8,
+   "osm_seul": 4,
+   "bible_et_osm_hors_ban": 4,
+   "bible_seule": 2
+  },
+  "conflicts": 5,
+  "lieuDitVariants": 65,
+  "lieuDitVariantsOrthographic": 6,
+  "bibleEntries": 60,
+  "bibleByKind": {
+   "variante_orthographique": 8,
+   "correction": 9,
+   "conflit_graphie": 6,
+   "non_valide": 21,
+   "anomalie_adressage": 5,
+   "ancien_nom": 7,
+   "nom_local": 4
+  },
+  "nameHistory": 12,
+  "hydronyms": 8,
+  "localOdonyms": 9,
+  "oldCadastralSections": 7,
+  "hydronymsAbsentFromOfficial": [
+   "Canal de Poussey",
+   "Cours d'eau des Menus Prés",
+   "Fossé des Épinettes",
+   "Mare aux Canards"
+  ],
+  "localNamesWithoutGeometry": 27
+ },
+ "landmarks": [
+  {
+   "priority": 1,
+   "name": "École primaire publique",
+   "poiId": "poi:ecole-primaire",
+   "building_ids": [
+    "BATIMENT0000000301149547",
+    "BATIMENT0000000301149544",
+    "BATIMENT0000000301149527",
+    "BATIMENT0000000301149424",
+    "BATIMENT0000000301149543",
+    "BATIMENT0000000301149803",
+    "BATIMENT0000000301149810",
+    "BATIMENT0000000301149528",
+    "BATIMENT0000000301149545",
+    "BATIMENT0000000301149549",
+    "BATIMENT0000000301149548",
+    "BATIMENT0000000301149546"
+   ],
+   "positioned": true
+  },
+  {
+   "priority": 1,
+   "name": "Église Saint-Denis",
+   "poiId": "poi:eglise-saint-denis",
+   "building_ids": [
+    "BATIMENT0000000301149566"
+   ],
+   "positioned": true
+  },
+  {
+   "priority": 1,
+   "name": "Mairie de Maizières-la-Grande-Paroisse",
+   "poiId": "poi:mairie",
+   "building_ids": [
+    "BATIMENT0000000301149537"
+   ],
+   "positioned": true
+  },
+  {
+   "priority": 2,
+   "name": "Château d’eau",
+   "poiId": "poi:chateau-eau-granges",
+   "building_ids": [
+    "way/588791386"
+   ],
+   "positioned": true
+  },
+  {
+   "priority": 2,
+   "name": "Château d’eau de Poussey",
+   "poiId": "poi:chateau-eau-poussey",
+   "building_ids": [
+    "way/588791761"
+   ],
+   "positioned": true
+  },
+  {
+   "priority": 2,
+   "name": "Monument aux morts",
+   "poiId": "poi:monument-aux-morts",
+   "building_ids": [],
+   "positioned": true
+  },
+  {
+   "priority": 2,
+   "name": "Pont de la rue de l’Orme",
+   "poiId": "poi:pont-rue-de-l-orme",
+   "building_ids": [],
+   "positioned": true
+  },
+  {
+   "priority": 2,
+   "name": "Pont sur la Seine",
+   "poiId": "poi:pont-seine",
+   "building_ids": [],
+   "positioned": true
+  },
+  {
+   "priority": 2,
+   "name": "Salle polyvalente",
+   "poiId": "poi:salle-polyvalente",
+   "building_ids": [
+    "BATIMENT0000000301149656"
+   ],
+   "positioned": true
+  },
+  {
+   "priority": 3,
+   "name": "Ancien presbytère",
+   "poiId": "poi:presbytere-ancien",
+   "building_ids": [
+    "BATIMENT0000000301149376",
+    "BATIMENT0000000301149375",
+    "BATIMENT0000000301149873"
+   ],
+   "positioned": true
+  },
+  {
+   "priority": 3,
+   "name": "Centre de première intervention (sapeurs-pompiers)",
+   "poiId": "poi:cpi",
+   "building_ids": [
+    "BATIMENT0000000301149810"
+   ],
+   "positioned": true
+  },
+  {
+   "priority": 3,
+   "name": "Cimetière (Champ de Repos)",
+   "poiId": "poi:cimetiere",
+   "building_ids": [],
+   "positioned": true
+  },
+  {
+   "priority": 3,
+   "name": "Croix des Ormes / Croix de Poussey",
+   "poiId": "poi:croix-des-ormes",
+   "building_ids": [],
+   "positioned": false
+  },
+  {
+   "priority": 3,
+   "name": "Dépôt d’hydrocarbures Sévéal",
+   "poiId": "poi:seveal",
+   "building_ids": [
+    "BATIMENT0000000301149036",
+    "BATIMENT0000000301149037",
+    "BATIMENT0000000301149035"
+   ],
+   "positioned": true
+  },
+  {
+   "priority": 3,
+   "name": "Gué de la Chapelle",
+   "poiId": "poi:gue-de-la-chapelle",
+   "building_ids": [],
+   "positioned": true
+  },
+  {
+   "priority": 3,
+   "name": "Passage à niveau n° 73 (rue du Général-Leclerc)",
+   "poiId": "poi:pn-general-leclerc",
+   "building_ids": [],
+   "positioned": true
+  },
+  {
+   "priority": 3,
+   "name": "Stade de Maizières-la-Grande-Paroisse",
+   "poiId": "poi:stade",
+   "building_ids": [],
+   "positioned": true
+  }
+ ],
+ "notRetainedLandmarks": [
+  {
+   "poiId": "poi:moulin-poussey",
+   "name": "Moulin de Poussey",
+   "status": "disparu",
+   "reason": "disparu / ruiné dès le début du XXe siècle (BIBLE_03) ; présence actuelle non documentée : pas de landmark"
+  },
+  {
+   "poiId": "poi:chateau-poussey-demeure",
+   "name": "Demeure (château) de Poussey",
+   "status": "incertain",
+   "reason": "emplacement non géolocalisé ; candidat landmark après vérification sur place"
+  }
+ ],
+ "toponymyDetail": {
+  "streets": [
+   {
+    "official": "Rue Achille Flaubert",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue Achille Flaubert",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue Achille-Flaubert",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Place Adrien Quinet",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Place Adrien Quinet",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Albert Benoist",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue Albert Benoist",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue Albert-Benoist",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Ambroise Pare",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue Ambroise Pare",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue Ambroise Paré",
+      "sources": [
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue Ambroise-Paré",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue des Aulnes",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue des Aulnes",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Basse de Poussey",
+    "status": "conflit_graphie",
+    "forms": [
+     {
+      "name": "Rue Basse de Poussey",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue Basse-de-Poussey",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue des Baudets",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue des Baudets",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue des Bedouins",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue des Bedouins",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue des Bédouins",
+      "sources": [
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue des Billouts",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue des Billouts",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue des Carreaux",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue des Carreaux",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Du Calvaire",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue Du Calvaire",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue du Calvaire",
+      "sources": [
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue de la Chapelle",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue de la Chapelle",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue du Chateau",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue du Chateau",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue du Château",
+      "sources": [
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue de la Chefferie",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue de la Chefferie",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue de la Contree du Pont",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue de la Contree du Pont",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue de la Contrée du Pont",
+      "sources": [
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue de la Contrée-du-Pont",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue des Cottrets",
+    "status": "conflit_graphie",
+    "forms": [
+     {
+      "name": "Rue des Cottrets",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue du Craon",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue du Craon",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue du Docteur Calmette",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue du Docteur Calmette",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue du Docteur-Calmette",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue du Docteur Sollier",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue du Docteur Sollier",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue du Docteur-Sollier",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue des Ecoles",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue des Ecoles",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue des Écoles",
+      "sources": [
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Ruelle des Ecoles",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Ruelle des Ecoles",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Ruelle des Écoles",
+      "sources": [
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue de l’Essy",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue de l’Essy",
+      "sources": [
+       "BAN"
+      ]
+     },
+     {
+      "name": "Rue de l'Essy",
+      "sources": [
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Avenue du General de Gaulle",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Avenue du General de Gaulle",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Avenue du Général de Gaulle",
+      "sources": [
+       "OSM"
+      ]
+     },
+     {
+      "name": "Avenue du Général-de-Gaulle",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue du General Leclerc",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue du General Leclerc",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue du Général Leclerc",
+      "sources": [
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue du Général-Leclerc",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Georges Clemenceau",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue Georges Clemenceau",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue Georges-Clémenceau",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue des Jacquets",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue des Jacquets",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Georges Pompidou",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue Georges Pompidou",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue Georges-Pompidou",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Jean Baptiste de Lesseps",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue Jean Baptiste de Lesseps",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue Jean-Baptiste de Lesseps",
+      "sources": [
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue Jean-Baptiste-de-Lesseps",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Jean Monnet",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue Jean Monnet",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue Jean-Monnet",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Joliot Curie",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue Joliot Curie",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue Joliot-Curie",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Jules Ferry",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue Jules Ferry",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue Jules-Ferry",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue du Lavoir",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue du Lavoir",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Place Leopoldine Deschamps",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Place Leopoldine Deschamps",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue de la Liberation",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue de la Liberation",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue de la Libération",
+      "sources": [
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue des Lombards",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue des Lombards",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Louis Joly",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue Louis Joly",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue Louis-Joly",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue du Mal de Lattre de Tassigny",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue du Mal de Lattre de Tassigny",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Maurice Renault",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue Maurice Renault",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue Maurice-Renault",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue du Moulin",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue du Moulin",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Impasse de la Noue",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Impasse de la Noue",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue de l’Orme",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue de l’Orme",
+      "sources": [
+       "BAN"
+      ]
+     },
+     {
+      "name": "Rue de l'Orme",
+      "sources": [
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue de la Paix",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue de la Paix",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Pasteur",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue Pasteur",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Patris de Breuil",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue Patris de Breuil",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue Patris-de-Breuil",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Avenue Philippe Seguin",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Avenue Philippe Seguin",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Avenue Philippe Séguin",
+      "sources": [
+       "OSM"
+      ]
+     },
+     {
+      "name": "Avenue Philippe-Seguin",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue des Pres de Poussey",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue des Pres de Poussey",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue des Prés de Poussey",
+      "sources": [
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue des Prés-de-Poussey",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue du Pot Bancelin",
+    "status": "conflit_graphie",
+    "forms": [
+     {
+      "name": "Rue du Pot Bancelin",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue du Pot-Bancelin",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue du Pont de Clairvaux",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue du Pont de Clairvaux",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue du Pont-de-Clairvaux",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue des Praillons",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue des Praillons",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue du Presbytere",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue du Presbytere",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue du Presbytère",
+      "sources": [
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue de la Republique",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue de la Republique",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue de la République",
+      "sources": [
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue des Sages",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue des Sages",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Bd Antoine de Saint Exupery",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Bd Antoine de Saint Exupery",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Boulevard Antoine de Saint-Exupéry",
+      "sources": [
+       "OSM"
+      ]
+     },
+     {
+      "name": "Boulevard Antoine-de-Saint-Exupéry",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Place Saint Denis",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Place Saint Denis",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Place Saint-Denis",
+      "sources": [
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue du Stade",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue du Stade",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue des Tabellions",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue des Tabellions",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Voie aux Vaches",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Voie aux Vaches",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Victor Hugo",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue Victor Hugo",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue Victor-Hugo",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Voie de la Garenne",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue Voie de la Garenne",
+      "sources": [
+       "BAN"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Les Granges",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Les Granges",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Le Chemin de la Guide",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Le Chemin de la Guide",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "OSM"
+      ]
+     },
+     {
+      "name": "Chemin de la Guide",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Ferme des Charmes",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Ferme des Charmes",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "La Noue Boulate Sud",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "La Noue Boulate Sud",
+      "sources": [
+       "BAN"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Pres de Poussey",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Pres de Poussey",
+      "sources": [
+       "BAN"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "La Ruelle des Bois",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "La Ruelle des Bois",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Les Terres Boyaux",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Les Terres Boyaux",
+      "sources": [
+       "BAN"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Le Tout Grain",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Le Tout Grain",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "La Glaciere",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "La Glaciere",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue de la Zone Industrielle",
+    "status": "variante_typographique",
+    "forms": [
+     {
+      "name": "Rue de la Zone Industrielle",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     },
+     {
+      "name": "Rue de la Zone-Industrielle",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Le Rougemont",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Le Rougemont",
+      "sources": [
+       "BAN"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Rue Du Bout Des Ruelles",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Rue Du Bout Des Ruelles",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Zone Industrielle la Glaciere",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Zone Industrielle la Glaciere",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Le Village",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Le Village",
+      "sources": [
+       "BAN"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Chemin de la Garenne",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Chemin de la Garenne",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée",
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Les Praillons",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Les Praillons",
+      "sources": [
+       "BAN"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Impasse des sages",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Impasse des sages",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "Poussey",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "Poussey",
+      "sources": [
+       "BAN"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "La Station",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "La Station",
+      "sources": [
+       "BAN",
+       "BD TOPO voie nommée"
+      ]
+     }
+    ]
+   },
+   {
+    "official": "La Voie de la Garenne",
+    "status": "officiel",
+    "forms": [
+     {
+      "name": "La Voie de la Garenne",
+      "sources": [
+       "BD TOPO voie nommée"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "osm_seul",
+    "forms": [
+     {
+      "name": "Rue Robert Galley",
+      "sources": [
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "conflit_graphie",
+    "forms": [
+     {
+      "name": "Rue Basse de Poussay",
+      "sources": [
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "osm_seul",
+    "forms": [
+     {
+      "name": "Avenue du Maréchal de Lattre de Tassigny",
+      "sources": [
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "bible_et_osm_hors_ban",
+    "forms": [
+     {
+      "name": "Rue du Maréchal de Lattre de Tassigny",
+      "sources": [
+       "OSM"
+      ]
+     },
+     {
+      "name": "Rue du Maréchal-de-Lattre-de-Tassigny",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "bible_et_osm_hors_ban",
+    "forms": [
+     {
+      "name": "Placette Léopoldine Deschamps",
+      "sources": [
+       "OSM"
+      ]
+     },
+     {
+      "name": "Placette Léopoldine-Deschamps",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "conflit_graphie",
+    "forms": [
+     {
+      "name": "Rue Patris",
+      "sources": [
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "conflit_graphie",
+    "forms": [
+     {
+      "name": "Rue des Cotterets",
+      "sources": [
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "osm_seul",
+    "forms": [
+     {
+      "name": "Ruelle à Rosez",
+      "sources": [
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "bible_et_osm_hors_ban",
+    "forms": [
+     {
+      "name": "Chemin de la Pie",
+      "sources": [
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "bible_et_osm_hors_ban",
+    "forms": [
+     {
+      "name": "Ruelle des Granges",
+      "sources": [
+       "BIBLE_01 §4.1",
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "conflit_graphie",
+    "forms": [
+     {
+      "name": "Rue du Pont Bancelin",
+      "sources": [
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "osm_seul",
+    "forms": [
+     {
+      "name": "Avenue Georges Pompidou",
+      "sources": [
+       "OSM"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "bible_seule",
+    "forms": [
+     {
+      "name": "Chemin du Bout des Ruelles",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "bible_seule",
+    "forms": [
+     {
+      "name": "Place / Placette Adrien-Quinet",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   },
+   {
+    "official": null,
+    "status": "conflit_graphie",
+    "forms": [
+     {
+      "name": "Rue du Pont",
+      "sources": [
+       "BIBLE_01 §4.1"
+      ]
+     }
+    ]
+   }
+  ],
+  "conflicts": [
+   {
+    "kind": "variante_orthographique",
+    "official": "Rue Basse de Poussey",
+    "a": [
+     "Rue Basse de Poussey [BAN, BD TOPO voie nommée]",
+     "Rue Basse-de-Poussey [BIBLE_01 §4.1]"
+    ],
+    "b": [
+     "Rue Basse de Poussay [OSM]"
+    ]
+   },
+   {
+    "kind": "variante_orthographique",
+    "official": "Rue des Cottrets",
+    "a": [
+     "Rue des Cottrets [BAN, BD TOPO voie nommée, BIBLE_01 §4.1]"
+    ],
+    "b": [
+     "Rue des Cotterets [OSM]"
+    ]
+   },
+   {
+    "kind": "variante_orthographique",
+    "official": "Rue du Pot Bancelin",
+    "a": [
+     "Rue du Pot Bancelin [BAN, BD TOPO voie nommée]",
+     "Rue du Pot-Bancelin [BIBLE_01 §4.1]"
+    ],
+    "b": [
+     "Rue du Pont Bancelin [OSM]"
+    ]
+   },
+   {
+    "kind": "forme_tronquee",
+    "official": "Rue Patris de Breuil",
+    "a": [
+     "Rue Patris [OSM]"
+    ],
+    "b": [
+     "Rue Patris de Breuil [BAN, BD TOPO voie nommée]",
+     "Rue Patris-de-Breuil [BIBLE_01 §4.1]"
+    ]
+   },
+   {
+    "kind": "forme_tronquee",
+    "official": "Rue du Pont de Clairvaux",
+    "a": [
+     "Rue du Pont [BIBLE_01 §4.1]"
+    ],
+    "b": [
+     "Rue du Pont de Clairvaux [BAN, BD TOPO voie nommée, OSM]",
+     "Rue du Pont-de-Clairvaux [BIBLE_01 §4.1]"
+    ]
+   }
+  ],
+  "lieuDitVariants": [
+   {
+    "official": "la Chefferie",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "La Chefferie",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 39,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Belle Idee",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "La Belle Idee",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 158,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Carreaux",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Les Carreaux",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 129,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Bout des Ruelles",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "Le Bout des Ruelles",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 95,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Rougemont",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Le Rougemont",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 133,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Rougemont",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Rougemont",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 659,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Charmes",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "Les Charmes",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 234,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Grandes Pâtures",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Les Grandes Pâtures",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 55,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Noue Boulate Sud",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "La Noue Boulate Sud",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 59,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Haute Beaune",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "La Haute Beaune",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 258,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Beau Mont",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Le Beaumont",
+    "variantSource": "OSM",
+    "editDistance": 1,
+    "distanceM": 171,
+    "kind": "variante_orthographique"
+   },
+   {
+    "official": "le Crot aux Laines",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Le Croc Aux Laines",
+    "variantSource": "OSM",
+    "editDistance": 1,
+    "distanceM": 355,
+    "kind": "variante_orthographique"
+   },
+   {
+    "official": "le Morembert",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Le Morembert",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 154,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Cave",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "La Cave",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 165,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Terres Boyaux",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "Les Terres Boyaux",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 185,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Dublées",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Les Dublees",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 42,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Grand Haut",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Le Grand Haut",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 638,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Lampe",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "La Lampe",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 149,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Chapelle d'Origny",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "La Chapelle d'Origny",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 1032,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Dîme du Saint",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "La Dime du Saint",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 276,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Léchère",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "La Lechere",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 167,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Praillons",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "Les Praillons",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 9,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Converts",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Les Converts",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 123,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Noue des Fontaines",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "La Noue des Fontaines",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 191,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "Pré Cossa",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Le Pre Cossat",
+    "variantSource": "OSM",
+    "editDistance": 1,
+    "distanceM": 337,
+    "kind": "variante_orthographique"
+   },
+   {
+    "official": "le Bois des Granges",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "Le Bois des Granges",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 197,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Craon",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "Le Craon",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 161,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Pont Bancelin",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Le Pont Bancelin",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 148,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Grosse Noue",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "La Grosse Noue",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 246,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "Prés Neufs",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Les Pres Neufs",
+    "variantSource": "OSM",
+    "editDistance": 0,
+    "distanceM": 71,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Grandes Pâtures",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Les Grandes Pâtures",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-070",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Léchère",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "La Lechère",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-071",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "La Grande Lechere",
+    "officialSource": "OSM",
+    "variant": "La Grande Lechère",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-072",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Grand Haut",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Le Grand Haut",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-073",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Bois des Granges",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "Bois des Granges",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-076",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Terres Boyaux",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "Les Terres Boyaux",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-077",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Carreaux",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Les Carreaux",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-078",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "Le Gué de Terre Blanche",
+    "officialSource": "OSM",
+    "variant": "Gué de Terre Blanche",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-080",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Chapelle d'Origny",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "La Chapelle d'Origny",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-081",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Charmes",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "Les Charmes / Ferme des Charmes",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-083",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Grosse Noue",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "La Grosse Noue",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-084",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Menus Prés",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Les Menus Prés",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-085",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Épinettes",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Les Épinettes",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-086",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Champ à Colin",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Le Champ à Colin",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-087",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Rougemont",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Le Rougemont",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-090",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Masures",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Les Masures",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-091",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Tripier",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Le Tripier",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-092",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Dîme du Saint",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "La Dîme du Saint",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-093",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Noue Boulate Sud",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "La Noue Boulate Sud",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-094",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Converts",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Les Converts",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-095",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "La Fondriere Ouest",
+    "officialSource": "OSM",
+    "variant": "La Fondrière Ouest",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-096",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Folie",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "La Folie",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-100",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Beau Mont",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Le Beaumont",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-102",
+    "editDistance": 1,
+    "kind": "variante_orthographique"
+   },
+   {
+    "official": "La Noue Boulatte-Nord",
+    "officialSource": "OSM",
+    "variant": "La Noue Boulatte Nord",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-104",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "Les Pres de Poussey Est",
+    "officialSource": "OSM",
+    "variant": "Les Prés de Poussey Est",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-105",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "Les Pres Tortu",
+    "officialSource": "OSM",
+    "variant": "Les Prés Tortu",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-107",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "la Chefferie",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "La Chefferie",
+    "variantSource": "BIBLE_01 §16",
+    "ref": "B01-110",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "les Praillons",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "Les Praillons",
+    "variantSource": "BIBLE_01 §17.2",
+    "ref": "B01-112",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "Pres de Poussey",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "Prés de Poussey",
+    "variantSource": "BIBLE_01 §5",
+    "ref": "B01-113",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "La Voie de la Garenne",
+    "officialSource": "OSM",
+    "variant": "Voie de la Garenne",
+    "variantSource": "BIBLE_01 §17.4",
+    "ref": "B01-114",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "Les Petites Vaudelées",
+    "officialSource": "OSM",
+    "variant": "Petites Vaudelées",
+    "variantSource": "BIBLE_01 §17.2",
+    "ref": "B01-123",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "La Pature d'Origny",
+    "officialSource": "OSM",
+    "variant": "La Pâture d'Origny",
+    "variantSource": "BIBLE_01 §17.3",
+    "ref": "B01-137",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Crot Tonnerre",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Le Croc Tonnerre",
+    "variantSource": "BIBLE_01 §17.3",
+    "ref": "B01-138",
+    "editDistance": 1,
+    "kind": "variante_orthographique"
+   },
+   {
+    "official": "le Craon",
+    "officialSource": "BD TOPO zone_d_habitation",
+    "variant": "Le Craon",
+    "variantSource": "BIBLE_01 §17.4",
+    "ref": "B01-143",
+    "editDistance": 0,
+    "kind": "variante_typographique"
+   },
+   {
+    "official": "le Pont Bancelin",
+    "officialSource": "BD TOPO lieu_dit_non_habite",
+    "variant": "Pot de Banselin / Pot Bancelin",
+    "variantSource": "BIBLE_01 §23",
+    "ref": "B01-150",
+    "editDistance": 2,
+    "kind": "variante_orthographique"
+   }
+  ],
+  "bible": [
+   {
+    "id": "T01-001",
+    "name": "Rue des Billouts",
+    "variants": [
+     "Billiouts"
+    ],
+    "kind": "variante_orthographique",
+    "preferredOfficialForm": "Rue des Billouts",
+    "bible": "01",
+    "section": "4.2",
+    "quote": "La forme `Billiouts` existe dans plusieurs annuaires privés et doit être conservée comme alias de recherche.",
+    "notes": "Forme communale : Billouts."
+   },
+   {
+    "id": "T01-002",
+    "name": "Chemin du Bout des Ruelles",
+    "variants": [
+     "Rue du Bout des Ruelles"
+    ],
+    "kind": "correction",
+    "preferredOfficialForm": "Chemin du Bout des Ruelles",
+    "bible": "01",
+    "section": "4.2",
+    "quote": "La forme `Rue du Bout des Ruelles`, rencontrée dans des bases secondaires, ne doit pas être utilisée comme forme principale.",
+    "notes": null
+   },
+   {
+    "id": "T01-003",
+    "name": "Placette Léopoldine-Deschamps",
+    "variants": [
+     "Place Léopoldine Deschamps",
+     "Placette Léopoldine Deschamps"
+    ],
+    "kind": "conflit_graphie",
+    "preferredOfficialForm": "Placette Léopoldine-Deschamps",
+    "bible": "01",
+    "section": "4.2",
+    "quote": "La commune utilise `Placette Léopoldine Deschamps`. Certaines bases d'adresses emploient `Place Léopoldine Deschamps`.",
+    "notes": "Forme municipale privilégiée."
+   },
+   {
+    "id": "T01-004",
+    "name": "Place / Placette Adrien-Quinet",
+    "variants": [
+     "Place Adrien-Quinet",
+     "Placette Adrien Quinet"
+    ],
+    "kind": "conflit_graphie",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "4.2",
+    "quote": "`Place Adrien-Quinet` et `Placette Adrien Quinet` apparaissent selon les sources.",
+    "notes": "Forme normalisée à confirmer (B)."
+   },
+   {
+    "id": "T01-005",
+    "name": "Chemin de la Pie",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "4.1",
+    "quote": "**Chemin de la Pie** — confirmé visuellement dans le secteur des Granges ; statut administratif fin à recouper",
+    "notes": "Confirmation visuelle seulement."
+   },
+   {
+    "id": "T01-006",
+    "name": "Ruelle des Granges",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "4.1",
+    "quote": "**Ruelle des Granges** — confirmée visuellement entre l'avenue du Général-de-Gaulle et le réseau de chemins des Granges",
+    "notes": "Confirmation visuelle ≠ validation administrative."
+   },
+   {
+    "id": "T01-007",
+    "name": "Rue du Pont",
+    "variants": [
+     "Rue du Pont-de-Clairvaux"
+    ],
+    "kind": "conflit_graphie",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "4.1",
+    "quote": "à réconcilier avec la dénomination municipale « Rue du Pont-de-Clairvaux » avant de les considérer comme deux voies distinctes",
+    "notes": "Libellé cartographique B+ visuel à Poussey."
+   },
+   {
+    "id": "T01-008",
+    "name": "Garenne (formes d'adressage)",
+    "variants": [
+     "Chemin de la Garenne",
+     "Voie de la Garenne",
+     "Rue Voie de la Garenne",
+     "La Voie de la Garenne"
+    ],
+    "kind": "anomalie_adressage",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "5.1",
+    "quote": "`Rue Voie de la Garenne` possède des numéros dans certaines bases d'adressage contemporaines.",
+    "notes": "Décision : ne pas fusionner ces formes."
+   },
+   {
+    "id": "T01-009",
+    "name": "Libellés d'adressage lieux-dits (§5)",
+    "variants": [
+     "Ferme des Charmes",
+     "La Belle Idée",
+     "La Chefferie",
+     "La Glacière",
+     "La Noue Boulate Sud",
+     "La Ruelle des Bois",
+     "La Station",
+     "Le Rougemont",
+     "Le Tout Grain",
+     "Le Village",
+     "Les Granges",
+     "Les Praillons",
+     "Les Terres Boyaux",
+     "Poussey",
+     "Prés de Poussey",
+     "Zone Industrielle La Glacière"
+    ],
+    "kind": "anomalie_adressage",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "5",
+    "quote": "Plusieurs bases modernes contiennent des libellés utilisés comme adresses mais qui sont parfois des lieux-dits, exploitations ou secteurs plutôt que des voies communales classiques :",
+    "notes": "Ne jamais faire passer un lieu-dit pour une rue."
+   },
+   {
+    "id": "T01-010",
+    "name": "La Ruelle des Bois",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "24",
+    "quote": "statut exact de La Ruelle des Bois ;",
+    "notes": null
+   },
+   {
+    "id": "T01-011",
+    "name": "Impasse des Sages",
+    "variants": [
+     "Rue des Sages"
+    ],
+    "kind": "non_valide",
+    "preferredOfficialForm": "Rue des Sages",
+    "bible": "01",
+    "section": "6",
+    "quote": "Impasse des Sages — **C** ; seule la Rue des Sages est officiellement bien documentée ;",
+    "notes": null
+   },
+   {
+    "id": "T01-012",
+    "name": "Ruelle à Rosez",
+    "variants": [
+     "Ruelle André-Rozés"
+    ],
+    "kind": "correction",
+    "preferredOfficialForm": "Ruelle à Rosez",
+    "bible": "01",
+    "section": "6",
+    "quote": "la forme « Ruelle André-Rozés » rencontrée précédemment est considérée comme une probable mauvaise transcription / normalisation et reste seulement comme alias de recherche",
+    "notes": "Libellé cartographique B+ ; secteur Pasteur / Docteur-Calmette / Craon."
+   },
+   {
+    "id": "T01-013",
+    "name": "Ruelle Apitache",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Ruelle Apitache — **C** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-014",
+    "name": "Ruelle du Cimetière",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Ruelle du Cimetière — **C** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-015",
+    "name": "Rue Jean-Baptiste-Petel",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Rue Jean-Baptiste-Petel — **C** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-016",
+    "name": "Route Nationale 19",
+    "variants": [
+     "RN19",
+     "grande route Paris–Belfort",
+     "Route Nationale"
+    ],
+    "kind": "ancien_nom",
+    "preferredOfficialForm": "RD619 / Avenue du Général-de-Gaulle",
+    "bible": "01",
+    "section": "6",
+    "quote": "Route Nationale 19 — **A comme ancien axe**, pas comme nom contemporain ;",
+    "notes": "Actuel : D619 / Avenue du Général-de-Gaulle (§20)."
+   },
+   {
+    "id": "T01-017",
+    "name": "Rue de la Gare",
+    "variants": [
+     "Avenue de la Gare"
+    ],
+    "kind": "ancien_nom",
+    "preferredOfficialForm": "Rue du Général-Leclerc (correspondance géographique, non juridique)",
+    "bible": "01",
+    "section": "12.3",
+    "quote": "La géographie converge fortement vers l'ancien corridor de la Gare correspondant aujourd'hui **principalement au corridor de la Rue du Général-Leclerc**, entre le centre / secteur de l'église, le passage à niveau et la D619.",
+    "notes": "A/B+ ; délibération de renommage non retrouvée ; encore utilisé dans les règlements de chasse."
+   },
+   {
+    "id": "T01-018",
+    "name": "Avenue de la Gare",
+    "variants": [],
+    "kind": "ancien_nom",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Avenue de la Gare — **A/B comme nom historique** ;",
+    "notes": "Carte postale datée 1911 (B03)."
+   },
+   {
+    "id": "T01-019",
+    "name": "Rue Ambroise-Paré",
+    "variants": [
+     "Rue de la Gare"
+    ],
+    "kind": "correction",
+    "preferredOfficialForm": "Rue Ambroise-Paré",
+    "bible": "01",
+    "section": "12.4",
+    "quote": "**Correction importante : Rue Ambroise-Paré ≠ ancienne Rue de la Gare dans son ensemble.**",
+    "notes": null
+   },
+   {
+    "id": "T01-020",
+    "name": "Grande Rue",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Grande Rue — **C** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-021",
+    "name": "Place du Tartel",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Place du Tartel — **C** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-022",
+    "name": "Rue Bel-Air",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Rue Bel-Air — **C** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-023",
+    "name": "Rue Chapeline",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Rue Chapeline — **C** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-024",
+    "name": "Rue de la Bretonnière",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Rue de la Bretonnière — **C** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-025",
+    "name": "Rue de la Ferme",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Rue de la Ferme — **C** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-026",
+    "name": "Rue de la Franconnée",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Rue de la Franconnée — **C** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-027",
+    "name": "Rue de la Liberté",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Rue de la Liberté — **C** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-028",
+    "name": "Rue de la Mairie",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Rue de la Mairie — **C** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-029",
+    "name": "Rue de l'Église",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Rue de l'Église — **C** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-030",
+    "name": "Chemin Latéral",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Chemin Latéral — **C** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-031",
+    "name": "Avenue Jules-Rozé",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "6",
+    "quote": "Avenue Jules-Rozé — **C** dans Maizières : attention à la confusion avec Châtres.",
+    "notes": null
+   },
+   {
+    "id": "T01-032",
+    "name": "Rue du Calvaire",
+    "variants": [
+     "ancien chemin rural"
+    ],
+    "kind": "ancien_nom",
+    "preferredOfficialForm": "Rue du Calvaire",
+    "bible": "01",
+    "section": "7.4",
+    "quote": "classé au domaine public et dénommé Rue du Calvaire en 2023 ;",
+    "notes": "Relie Rue de l'Orme ↔ Rue Joliot-Curie (159 m)."
+   },
+   {
+    "id": "T01-033",
+    "name": "Ruisseau des Moulins de Poussey",
+    "variants": [
+     "rivière du Moulin",
+     "ruisseau des Moulins de Poussey",
+     "bras des Moulins de Poussey",
+     "canal de Poussey"
+    ],
+    "kind": "conflit_graphie",
+    "preferredOfficialForm": "Ruisseau des Moulins de Poussey (SANDRE)",
+    "bible": "01",
+    "section": "13.2",
+    "quote": "Plusieurs appellations doivent rester distinguées jusqu'à étude hydrographique détaillée :",
+    "notes": "Nom officiel SANDRE cité en §26 ; « Rivière du Moulin » libellé cartographique."
+   },
+   {
+    "id": "T01-034",
+    "name": "Soleil Levant",
+    "variants": [
+     "rond des tricoteuses"
+    ],
+    "kind": "nom_local",
+    "preferredOfficialForm": "Soleil Levant",
+    "bible": "01",
+    "section": "9.1",
+    "quote": "surnommé par Michel Bourcier le **« rond des tricoteuses »** ;",
+    "notes": null
+   },
+   {
+    "id": "T01-035",
+    "name": "La Noue Boulatte Nord / La Noue Boulate Sud",
+    "variants": [
+     "La Noue Boulatte Nord",
+     "La Noue Boulate Sud"
+    ],
+    "kind": "variante_orthographique",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "16",
+    "quote": "graphie avec double « t » telle qu'affichée sur la carte fournie",
+    "notes": "Graphie Boulatte (Nord) vs Boulate (Sud) conservée telle quelle."
+   },
+   {
+    "id": "T01-036",
+    "name": "Pot Bancelin",
+    "variants": [
+     "Pot de Banselin",
+     "Pot Banselin",
+     "Rue du Pot-Bancelin"
+    ],
+    "kind": "variante_orthographique",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "23",
+    "quote": "**Pot de Banselin / Pot Bancelin** : objets romains, vase, plat d'argent ;",
+    "notes": null
+   },
+   {
+    "id": "T01-037",
+    "name": "La Lechère",
+    "variants": [
+     "Lechère",
+     "Les Léchères",
+     "La Grande Lechère"
+    ],
+    "kind": "variante_orthographique",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "23",
+    "quote": "**Lechère** : tuiles, amphores, monnaies et autres découvertes antiques ;",
+    "notes": "Lechère (§16, §23) et Les Léchères (§17.1) : identité non affirmée."
+   },
+   {
+    "id": "T01-038",
+    "name": "Voie de la Fin / Voie de Fin de Châtres",
+    "variants": [
+     "Voie de la Fin",
+     "Voie de Fin de Châtres"
+    ],
+    "kind": "variante_orthographique",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "17.1",
+    "quote": "- Voie de la Fin / Voie de Fin de Châtres",
+    "notes": null
+   },
+   {
+    "id": "T01-039",
+    "name": "Buisson Guet / Champ",
+    "variants": [
+     "Buisson Guet"
+    ],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "17.3",
+    "quote": "- Buisson Guet / Champ — C, lecture à confirmer",
+    "notes": null
+   },
+   {
+    "id": "T01-040",
+    "name": "Pierré",
+    "variants": [],
+    "kind": "nom_local",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "17.2",
+    "quote": "Pont de Clairvaux → secteur appelé « Pierré » ;",
+    "notes": null
+   },
+   {
+    "id": "T03-001",
+    "name": "Sections du cadastre napoléonien",
+    "variants": [
+     "Grands-Vaudelés",
+     "Maisières",
+     "Croc-au-Laines",
+     "Croc au Laines",
+     "Noieu-de-l'Église",
+     "Noieu de l'Église",
+     "La Cave",
+     "Cave"
+    ],
+    "kind": "variante_orthographique",
+    "preferredOfficialForm": null,
+    "bible": "03",
+    "section": "7",
+    "quote": "- section D — Maisières / Maizières ;",
+    "notes": "B01 §15 : Croc-au-Laines, Noieu-de-l'Église ; B03 : Croc au Laines, Noieu de l'Église, Maisières / Maizières. Ne pas transformer en quartiers contemporains."
+   },
+   {
+    "id": "T01-041",
+    "name": "La Baguette des Granges (adresse)",
+    "variants": [
+     "23 bis avenue du Général-de-Gaulle",
+     "25 bis avenue du Général-de-Gaulle"
+    ],
+    "kind": "anomalie_adressage",
+    "preferredOfficialForm": "25 bis avenue du Général-de-Gaulle",
+    "bible": "01",
+    "section": "11.3",
+    "quote": "**Attention historique :** le PCS 2017 plaçait La Baguette des Granges au 23 bis ; le répertoire municipal actuel indique 25 bis.",
+    "notes": null
+   },
+   {
+    "id": "T01-042",
+    "name": "Cabinet de santé rue de la République (adresse)",
+    "variants": [
+     "19 rue de la République",
+     "19 bis rue de la République"
+    ],
+    "kind": "anomalie_adressage",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "11.2",
+    "quote": "cabinet de santé : **19 / 19 bis rue de la République** selon professionnels ;",
+    "notes": null
+   },
+   {
+    "id": "T01-043",
+    "name": "Hôtel des Granges (adresse)",
+    "variants": [
+     "Route Nationale 19"
+    ],
+    "kind": "ancien_nom",
+    "preferredOfficialForm": "84 avenue du Général-de-Gaulle",
+    "bible": "01",
+    "section": "20.1",
+    "quote": "Repère historique : **84 avenue du Général-de-Gaulle**, auparavant adressé Route Nationale 19.",
+    "notes": null
+   },
+   {
+    "id": "T01-044",
+    "name": "Les Granges Hautes",
+    "variants": [],
+    "kind": "nom_local",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "8.2",
+    "quote": "secteur des **Granges Hautes** documenté ;",
+    "notes": null
+   },
+   {
+    "id": "T01-045",
+    "name": "La Station",
+    "variants": [],
+    "kind": "non_valide",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "19.3",
+    "quote": "`La Station` existe comme lieu-dit dans des bases d'adressage, mais rien ne prouve aujourd'hui qu'il s'agisse :",
+    "notes": "Ni gare, ni station de pompage, ni captage démontrés."
+   },
+   {
+    "id": "T01-046",
+    "name": "Station de pompage / Sainte-Amandine",
+    "variants": [
+     "Sainte Amandine",
+     "Station de Pompage"
+    ],
+    "kind": "correction",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "19.2",
+    "quote": "**Ne pas affirmer que Sainte-Amandine = ancienne station de pompage tant que ce lien n'est pas démontré.**",
+    "notes": null
+   },
+   {
+    "id": "T01-047",
+    "name": "Café Goujon / Café de la Gare",
+    "variants": [
+     "Café Goujon",
+     "Café de la Gare"
+    ],
+    "kind": "correction",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "12.5",
+    "quote": "L'identité entre le Café Goujon et le bâtiment plus récent du 2 rue Ambroise-Paré n'est **pas démontrée**.",
+    "notes": null
+   },
+   {
+    "id": "T01-048",
+    "name": "Aéromia / Parc de l'Aérodrome / La Belle Idée / ancien aérodrome",
+    "variants": [
+     "Aéromia",
+     "Parc de l'Aérodrome",
+     "La Belle Idée",
+     "ancien aérodrome"
+    ],
+    "kind": "correction",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "10.4",
+    "quote": "Ne pas assimiler automatiquement Aéromia, Parc de l'Aérodrome, La Belle Idée et l'ancien aérodrome : ils sont liés mais leurs périmètres et chronologies diffèrent.",
+    "notes": null
+   },
+   {
+    "id": "T01-049",
+    "name": "Mare aux Canards",
+    "variants": [],
+    "kind": "nom_local",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "14.1",
+    "quote": "ancienne mare / abreuvoir surnommée « Mare aux Canards » ;",
+    "notes": null
+   },
+   {
+    "id": "T03-002",
+    "name": "Les Bédouins",
+    "variants": [
+     "café Joly",
+     "Café des Bédouins",
+     "Mini Golf",
+     "Café du Mini Golf"
+    ],
+    "kind": "ancien_nom",
+    "preferredOfficialForm": null,
+    "bible": "03",
+    "section": "5",
+    "quote": "changement d'enseigne vers **Café du Mini Golf**.",
+    "notes": "Enseignes successives du même établissement."
+   },
+   {
+    "id": "T01-050",
+    "name": "Croix des Ormes / Croix de Poussey",
+    "variants": [
+     "Croix des Ormes",
+     "Croix de Poussey",
+     "Les Croix des Ormes"
+    ],
+    "kind": "variante_orthographique",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "14.3",
+    "quote": "## 14.3 Croix des Ormes / Croix de Poussey — A",
+    "notes": "Deux noms du même objet ; à ne pas fusionner avec les autres croix."
+   },
+   {
+    "id": "T03-003",
+    "name": "Rue Georges-Clémenceau",
+    "variants": [
+     "Georges-Clemenceau"
+    ],
+    "kind": "conflit_graphie",
+    "preferredOfficialForm": null,
+    "bible": "03",
+    "section": "3",
+    "quote": "emplacement indiqué rue **Georges-Clemenceau**, sur terrain appartenant alors à la famille Canillac.",
+    "notes": "B01 écrit « Rue Georges-Clémenceau » (accent) ; B03 « Georges-Clemenceau »."
+   },
+   {
+    "id": "T03-004",
+    "name": "Île Saint-Hélène",
+    "variants": [
+     "Île Sainte-Hélène",
+     "L'Île Saint-Hélène"
+    ],
+    "kind": "conflit_graphie",
+    "preferredOfficialForm": null,
+    "bible": "03",
+    "section": "7",
+    "quote": "## Île Sainte-Hélène / Ferme du Passage",
+    "notes": "B01 et la liste municipale (B03 §2) écrivent « Saint-Hélène » ; les fiches B03 écrivent « Sainte-Hélène »."
+   },
+   {
+    "id": "T03-005",
+    "name": "Voie de l'Orme",
+    "variants": [
+     "Rue de l'Orme",
+     "voie de l'Orme"
+    ],
+    "kind": "variante_orthographique",
+    "preferredOfficialForm": null,
+    "bible": "03",
+    "section": "3",
+    "quote": "Le bulletin de 2012 la situe à proximité du carrefour de la **Voie de l'Orme** et de la **rue Joliot-Curie**.",
+    "notes": "Identité avec la Rue de l'Orme non affirmée explicitement (B01 §10.1 cite aussi « la voie de l'Orme »)."
+   },
+   {
+    "id": "T03-006",
+    "name": "Champ de Repos",
+    "variants": [
+     "nouveau cimetière",
+     "cimetière"
+    ],
+    "kind": "ancien_nom",
+    "preferredOfficialForm": null,
+    "bible": "03",
+    "section": "3",
+    "quote": "## Champ de Repos et sépultures Bauzil de Rivette / Lesseps",
+    "notes": "Nom ancien du (nouveau) cimetière."
+   },
+   {
+    "id": "T03-007",
+    "name": "Arrêts TER Maizières Église / Maizières Tabac",
+    "variants": [
+     "Maizières Église",
+     "Maizières Tabac"
+    ],
+    "kind": "correction",
+    "preferredOfficialForm": null,
+    "bible": "03",
+    "section": "6",
+    "quote": "Après la disparition du BV : ne jamais recréer une gare ferroviaire contemporaine à partir d'un intitulé d'arrêt TER routier.",
+    "notes": null
+   },
+   {
+    "id": "T03-008",
+    "name": "Pont sur la Seine ≠ pont de l'Orme",
+    "variants": [
+     "pont de Seine",
+     "pont de la rue de l'Orme"
+    ],
+    "kind": "correction",
+    "preferredOfficialForm": null,
+    "bible": "03",
+    "section": "6",
+    "quote": "`PONT SUR LA SEINE ≠ PONT DE L'ORME`.",
+    "notes": null
+   },
+   {
+    "id": "T03-009",
+    "name": "Le Château (Poussey)",
+    "variants": [
+     "La Cour",
+     "château féodal",
+     "demeure post-féodale"
+    ],
+    "kind": "correction",
+    "preferredOfficialForm": null,
+    "bible": "03",
+    "section": "4",
+    "quote": "Après la disparition de la forteresse féodale, le terme « château » s'applique à une demeure aménagée dans les communs de l'ancien ensemble.",
+    "notes": "Ne jamais confondre château féodal et demeure post-féodale."
+   },
+   {
+    "id": "T01-051",
+    "name": "Le Village / Le Petit Village",
+    "variants": [
+     "Le Village",
+     "Le Petit Village"
+    ],
+    "kind": "anomalie_adressage",
+    "preferredOfficialForm": null,
+    "bible": "01",
+    "section": "7.13",
+    "quote": "le lieu-dit **Le Village** occupe le cœur du tissu central au nord des écoles.",
+    "notes": "Lieu-dit cadastral distinct du lotissement Le Petit Village (§9.2)."
+   }
+  ],
+  "nameHistory": [
+   {
+    "id": "N-001",
+    "currentName": "Maizières-la-Grande-Paroisse",
+    "oldNames": [
+     "Maizières-sur-Seine"
+    ],
+    "bible": "02",
+    "section": "3.2",
+    "quote": "Le nom **Maizières-sur-Seine** est attesté en **1608** dans la tradition documentaire locale."
+   },
+   {
+    "id": "N-002",
+    "currentName": "Île Saint-Hélène (surnom)",
+    "oldNames": [
+     "Maison du Passage",
+     "Ferme du Passage"
+    ],
+    "bible": "02",
+    "section": "37.1",
+    "quote": "Le surnom **« île Saint-Hélène »** apparaît par analogie avec l'isolement du lieu et le lieu d'exil de Napoléon Ier."
+   },
+   {
+    "id": "N-003",
+    "currentName": "Restaurant « À vos couverts » (site)",
+    "oldNames": [
+     "maréchal-ferrant"
+    ],
+    "bible": "02",
+    "section": "76",
+    "quote": "Michel Payen indique que l'ancien maréchal-ferrant correspond au site devenu plus tard le restaurant :"
+   },
+   {
+    "id": "N-004",
+    "currentName": "Base de défense aérienne 914 (dissoute 1989)",
+    "oldNames": [
+     "Base aérienne 781",
+     "Base aérienne 105",
+     "aérodrome de Romilly",
+     "caserne Doumer — La Belle Idée"
+    ],
+    "bible": "02",
+    "section": "89",
+    "quote": "- **1er janvier 1954 – 30 septembre 1961 : Base aérienne 105**"
+   },
+   {
+    "id": "N-005",
+    "currentName": "Rue du Calvaire",
+    "oldNames": [
+     "chemin rural du Calvaire"
+    ],
+    "bible": "02",
+    "section": "165",
+    "quote": "- classement dans le domaine public du chemin rural du Calvaire ;"
+   },
+   {
+    "id": "N-006",
+    "currentName": "Village Seniors / Rue des Sages",
+    "oldNames": [
+     "ancien terrain de football"
+    ],
+    "bible": "02",
+    "section": "152",
+    "quote": "- implantation sur **l'ancien terrain de football**."
+   },
+   {
+    "id": "N-007",
+    "currentName": "RD619",
+    "oldNames": [
+     "Grande Route",
+     "Route Nationale",
+     "RN19",
+     "route de Paris",
+     "nouvelle route de Nogent à Troyes"
+    ],
+    "bible": "06",
+    "section": "73",
+    "quote": "Il prolonge à sa manière la fonction historique de l'axe routier des Granges / RN19-RD619."
+   },
+   {
+    "id": "N-008",
+    "currentName": "Café du Mini-Golf (fermé en 2000)",
+    "oldNames": [
+     "Café Joly",
+     "Café des Bédouins"
+    ],
+    "bible": "06",
+    "section": "109",
+    "quote": "`Café Joly / Bédouins`"
+   },
+   {
+    "id": "N-009",
+    "currentName": "Salle polyvalente",
+    "oldNames": [
+     "salle de gymnastique et de patronage de L'Étoile"
+    ],
+    "bible": "06",
+    "section": "303",
+    "quote": "Michel Lamy explique que la future salle polyvalente provient de :"
+   },
+   {
+    "id": "N-010",
+    "currentName": "Maison des Associations (2 rue Jules-Ferry)",
+    "oldNames": [
+     "MJC",
+     "local club",
+     "petite salle des Associations d'alors",
+     "maison socio-culturelle"
+    ],
+    "bible": "06",
+    "section": "375",
+    "quote": "| Maison des Associations | remplacement moderne |"
+   },
+   {
+    "id": "N-011",
+    "currentName": "Croix de Poussey",
+    "oldNames": [
+     "Croix des Ormes"
+    ],
+    "bible": "06",
+    "section": "122",
+    "quote": "CROIX DES ORMES / CROIX DE POUSSEY — UN REPÈRE DÉPLACÉ"
+   },
+   {
+    "id": "N-012",
+    "currentName": "Tabac-presse / Point Poste (32 avenue du Général-de-Gaulle)",
+    "oldNames": [
+     "maréchalerie Jaillant",
+     "forge Vinot",
+     "station-service Antar",
+     "magasin automobile Vinot"
+    ],
+    "bible": "06",
+    "section": "67",
+    "quote": "`forge / mécanique / station`"
+   }
+  ],
+  "hydronyms": [
+   {
+    "ref": "B01-047",
+    "name": "Seine",
+    "status": "actuel",
+    "inOfficialHydrography": true,
+    "quote": "Élément structurant majeur au nord de la commune.",
+    "section": "13.1"
+   },
+   {
+    "ref": "B01-048",
+    "name": "Ruisseau des Moulins de Poussey / Rivière du Moulin",
+    "status": "actuel",
+    "inOfficialHydrography": true,
+    "quote": "Cours d'eau officiel d'environ 10 km rejoignant la Seine à Maizières.",
+    "section": "13.2"
+   },
+   {
+    "ref": "B01-049",
+    "name": "Canal de Poussey",
+    "status": "incertain",
+    "inOfficialHydrography": false,
+    "quote": "Le terme **canal de Poussey** est bien employé dans un bulletin municipal, mais sa correspondance exacte avec les autres branches reste à préciser.",
+    "section": "13.2"
+   },
+   {
+    "ref": "B01-050",
+    "name": "Noue de Ferloup",
+    "status": "actuel",
+    "inOfficialHydrography": true,
+    "quote": "- Noue de Ferloup ;",
+    "section": "13.3"
+   },
+   {
+    "ref": "B01-051",
+    "name": "Cours d'eau des Menus Prés",
+    "status": "actuel",
+    "inOfficialHydrography": false,
+    "quote": "cours d'eau des Menus Prés ;",
+    "section": "13.3"
+   },
+   {
+    "ref": "B01-052",
+    "name": "Fossé des Épinettes",
+    "status": "actuel",
+    "inOfficialHydrography": false,
+    "quote": "fossé des Épinettes.",
+    "section": "13.3"
+   },
+   {
+    "ref": "B01-053",
+    "name": "Mare aux Canards",
+    "status": "disparu",
+    "inOfficialHydrography": false,
+    "quote": "ancienne mare / abreuvoir surnommée « Mare aux Canards » ;",
+    "section": "14.1"
+   },
+   {
+    "ref": "B02-020",
+    "name": "Canal de la Haute-Seine",
+    "status": "historique",
+    "inOfficialHydrography": true,
+    "quote": "En **octobre 1846**, l'ouverture du **canal de la Haute-Seine** détourne ce trafic.",
+    "section": "38.1"
+   }
+  ],
+  "localNamesWithoutGeometry": [
+   {
+    "id": "poi:bible:B01-038",
+    "name": "Terrain de tir à l'arc",
+    "type": "equipement_sportif",
+    "sources": [
+     "BIBLE_01 B01-038"
+    ]
+   },
+   {
+    "id": "poi:bible:B01-059",
+    "name": "Les Pâtures",
+    "type": "lieu_dit",
+    "sources": [
+     "BIBLE_01 B01-059"
+    ]
+   },
+   {
+    "id": "poi:bible:B01-088",
+    "name": "La Réserve d'Origny",
+    "type": "lieu_dit",
+    "sources": [
+     "BIBLE_01 B01-088"
+    ]
+   },
+   {
+    "id": "poi:bible:B01-116",
+    "name": "Les Léchères",
+    "type": "lieu_dit",
+    "sources": [
+     "BIBLE_01 B01-116"
+    ]
+   },
+   {
+    "id": "poi:bible:B01-120",
+    "name": "La Vente",
+    "type": "lieu_dit",
+    "sources": [
+     "BIBLE_01 B01-120"
+    ]
+   },
+   {
+    "id": "poi:bible:B01-124",
+    "name": "Bois du Château",
+    "type": "lieu_dit",
+    "sources": [
+     "BIBLE_01 B01-124"
+    ]
+   },
+   {
+    "id": "poi:bible:B01-129",
+    "name": "Bois de Sapins",
+    "type": "lieu_dit",
+    "sources": [
+     "BIBLE_01 B01-129"
+    ]
+   },
+   {
+    "id": "poi:bible:B01-131",
+    "name": "Pierré",
+    "type": "repere_local",
+    "sources": [
+     "BIBLE_01 B01-131"
+    ]
+   },
+   {
+    "id": "poi:bible:B01-144",
+    "name": "Captage Sainte-Amandine (forage 02613X1028)",
+    "type": "equipement",
+    "sources": [
+     "BIBLE_01 B01-144"
+    ]
+   },
+   {
+    "id": "poi:bible:B01-146",
+    "name": "Lieu de stockage des Ponts et Chaussées (face à l'Hôtel des Granges)",
+    "type": "repere_local",
+    "sources": [
+     "BIBLE_01 B01-146"
+    ]
+   },
+   {
+    "id": "poi:bible:B02-035",
+    "name": "SICAM",
+    "type": "site_industriel",
+    "sources": [
+     "BIBLE_02 B02-035"
+    ]
+   },
+   {
+    "id": "poi:bible:B02-036",
+    "name": "Aub'Transport",
+    "type": "site_industriel",
+    "sources": [
+     "BIBLE_02 B02-036"
+    ]
+   },
+   {
+    "id": "poi:bible:B02-040",
+    "name": "Usine Atlantem",
+    "type": "site_industriel",
+    "sources": [
+     "BIBLE_02 B02-040"
+    ]
+   },
+   {
+    "id": "poi:bible:B03-055",
+    "name": "Restaurant Le Relais",
+    "type": "commerce",
+    "sources": [
+     "BIBLE_03 B03-055"
+    ]
+   },
+   {
+    "id": "poi:bible:B03-059",
+    "name": "Arrêts d'autocar TER Maizières Église / Maizières Tabac",
+    "type": "autre",
+    "sources": [
+     "BIBLE_03 B03-059"
+    ]
+   },
+   {
+    "id": "poi:bible:B03-067",
+    "name": "Terrain du diagnostic archéologique 2023 (derrière la pharmacie)",
+    "type": "autre",
+    "sources": [
+     "BIBLE_03 B03-067"
+    ]
+   },
+   {
+    "id": "poi:bible:B05-054",
+    "name": "Aub'Pneus",
+    "type": "entreprise",
+    "sources": [
+     "BIBLE_05 B05-054"
+    ]
+   },
+   {
+    "id": "poi:bible:B05-055",
+    "name": "Centre de Contrôle et de Sécurité",
+    "type": "service_prive",
+    "sources": [
+     "BIBLE_05 B05-055"
+    ]
+   },
+   {
+    "id": "poi:bible:B05-056",
+    "name": "Maizières Automobiles / Aub'Récup Auto",
+    "type": "entreprise",
+    "sources": [
+     "BIBLE_05 B05-056"
+    ]
+   },
+   {
+    "id": "poi:bible:B05-108",
+    "name": "La Halle / PEGASE",
+    "type": "commerce",
+    "sources": [
+     "BIBLE_05 B05-108"
+    ]
+   },
+   {
+    "id": "poi:bible:B06-005",
+    "name": "Salle des fêtes",
+    "type": "autre",
+    "sources": [
+     "BIBLE_06 B06-005"
+    ]
+   },
+   {
+    "id": "poi:bible:B06-006",
+    "name": "Parking du champ de foire",
+    "type": "lieu_dit",
+    "sources": [
+     "BIBLE_06 B06-006"
+    ]
+   },
+   {
+    "id": "poi:clos-des-roy",
+    "name": "Lotissement Le Clos des Roy",
+    "type": "lotissement",
+    "sources": [
+     "BIBLE_01 B01-012",
+     "BIBLE_06 B06-054"
+    ]
+   },
+   {
+    "id": "poi:croix-des-granges",
+    "name": "Croix des Granges",
+    "type": "croix",
+    "sources": [
+     "BIBLE_03 B03-025",
+     "BIBLE_06 B06-027"
+    ]
+   },
+   {
+    "id": "poi:croix-des-ormes",
+    "name": "Croix des Ormes / Croix de Poussey",
+    "type": "croix",
+    "sources": [
+     "BIBLE_01 B01-062",
+     "BIBLE_03 B03-028",
+     "BIBLE_06 B06-030",
+     "BIBLE_02 B02-050"
+    ]
+   },
+   {
+    "id": "poi:maison-des-papillons",
+    "name": "Maison des Papillons (MAM)",
+    "type": "petite_enfance",
+    "sources": [
+     "BIBLE_01 B01-015",
+     "BIBLE_04 B04-007",
+     "BIBLE_05 B05-002",
+     "BIBLE_02 B02-057"
+    ]
+   },
+   {
+    "id": "poi:petit-village",
+    "name": "Lotissement Le Petit Village",
+    "type": "lotissement",
+    "sources": [
+     "BIBLE_01 B01-011",
+     "BIBLE_02 B02-042"
+    ]
+   }
+  ],
+  "localOdonyms": [
+   {
+    "name": "Chemin du Pêcheur",
+    "status": "actuel",
+    "refs": [
+     "B01-115"
+    ],
+    "quote": "- Chemin du Pêcheur",
+    "section": "17.1",
+    "bible": "01"
+   },
+   {
+    "name": "Chemin du Vieux",
+    "status": "actuel",
+    "refs": [
+     "B01-121"
+    ],
+    "quote": "- Chemin du Vieux",
+    "section": "17.1",
+    "bible": "01"
+   },
+   {
+    "name": "Chemin des Pâtures",
+    "status": "actuel",
+    "refs": [
+     "B01-122"
+    ],
+    "quote": "- Chemin des Pâtures",
+    "section": "17.1",
+    "bible": "01"
+   },
+   {
+    "name": "Chemin Noir",
+    "status": "actuel",
+    "refs": [
+     "B01-127"
+    ],
+    "quote": "Chemin Noir → RD619 → chemin des éoliennes / Ferme des Charmes ;",
+    "section": "17.2",
+    "bible": "01"
+   },
+   {
+    "name": "Chemin des éoliennes",
+    "status": "actuel",
+    "refs": [
+     "B01-128"
+    ],
+    "quote": "- Chemin des éoliennes",
+    "section": "17.1",
+    "bible": "01"
+   },
+   {
+    "name": "Voie de la Fin / Voie de Fin de Châtres",
+    "status": "actuel",
+    "refs": [
+     "B01-130"
+    ],
+    "quote": "- Voie de la Fin / Voie de Fin de Châtres",
+    "section": "17.1",
+    "bible": "01"
+   },
+   {
+    "name": "Chemin à Leroy",
+    "status": "actuel",
+    "refs": [
+     "B01-132"
+    ],
+    "quote": "Chemin du Pot Bancelin → voie ferrée → chemin à Leroy → La Folie ;",
+    "section": "17.2",
+    "bible": "01"
+   },
+   {
+    "name": "Chemin du Pot Bancelin",
+    "status": "actuel",
+    "refs": [
+     "B01-133"
+    ],
+    "quote": "- Chemin du Pot Bancelin",
+    "section": "17.1",
+    "bible": "01"
+   },
+   {
+    "name": "Rue Patris-de-Breuil",
+    "status": "actuel",
+    "refs": [
+     "B02-044"
+    ],
+    "quote": "La présence actuelle de la rue Patris-de-Breuil est bien établie, mais la **raison officielle de la dénomination de la rue** doit encore être trouvée avant d'affirmer qu'elle honore précisément ces propriétaires.",
+    "section": "43.4",
+    "bible": "02"
+   }
+  ],
+  "oldCadastralSections": [
+   {
+    "name": "Section A — Grands-Vaudelés",
+    "refs": [
+     "B01-065",
+     "B03-001"
+    ],
+    "quote": "**A — Grands-Vaudelés**",
+    "bible": "01",
+    "section": "15"
+   },
+   {
+    "name": "Section C — Grandes Pâtures",
+    "refs": [
+     "B01-066"
+    ],
+    "quote": "**C — Grandes Pâtures**",
+    "bible": "01",
+    "section": "15"
+   },
+   {
+    "name": "Section E — Les Granges",
+    "refs": [
+     "B01-067"
+    ],
+    "quote": "- **E — Les Granges**",
+    "bible": "01",
+    "section": "15"
+   },
+   {
+    "name": "Section B — Poussey",
+    "refs": [
+     "B03-002"
+    ],
+    "quote": "- section B — **Poussey** ;",
+    "bible": "03",
+    "section": "7"
+   },
+   {
+    "name": "Section F — La Cave",
+    "refs": [
+     "B03-003"
+    ],
+    "quote": "- section F — Cave ;",
+    "bible": "03",
+    "section": "7"
+   },
+   {
+    "name": "Section G — Croc-au-Laines",
+    "refs": [
+     "B01-068"
+    ],
+    "quote": "**G — Croc-au-Laines**",
+    "bible": "01",
+    "section": "15"
+   },
+   {
+    "name": "Section H — Noieu-de-l'Église",
+    "refs": [
+     "B01-069"
+    ],
+    "quote": "**H — Noieu-de-l'Église**",
+    "bible": "01",
+    "section": "15"
+   }
+  ],
+  "rule": "forme officielle = BAN (source commune) ; aucune graphie n’est remplacée automatiquement ; les variantes, anciens noms et noms locaux restent documentés avec leur source"
+ },
+ "conflictsAndUncertainties": {
+  "poiConflicts": [
+   {
+    "id": "poi:baguette-des-granges",
+    "name": "La Baguette des Granges",
+    "conflicts": [
+     "numéro : 25 (RNE), 23 bis (PCS 2017), 25 bis (BIBLE_01) ; la BAN n’a que le n° 25"
+    ]
+   },
+   {
+    "id": "poi:carrosserie-serbource",
+    "name": "Carrosserie Serbource (CSA)",
+    "conflicts": [
+     "adresse : 18 ZI La Glacière (BIBLE_05, 2026) ; 10 rue de la Zone Industrielle (BIBLE_02, absent de la BAN)"
+    ]
+   },
+   {
+    "id": "poi:ecole-primaire",
+    "name": "École primaire publique",
+    "conflicts": [
+     "adresse BD TOPO (8 rue Jules-Ferry) ≠ adresse documentée (3 rue Jules-Ferry)"
+    ]
+   },
+   {
+    "id": "poi:pharmacie-saint-denis-ancienne",
+    "name": "Ancienne pharmacie Saint-Denis",
+    "conflicts": [
+     "OSM présente comme actuelle une pharmacie fermée / transférée en 2022"
+    ]
+   }
+  ],
+  "uncertain": [
+   {
+    "id": "poi:bible:B01-016",
+    "name": "Ages & Vie (secteur du Bout des Ruelles)",
+    "source": "BIBLE_01"
+   },
+   {
+    "id": "poi:bible:B01-117",
+    "name": "Grand Tournant",
+    "source": "BIBLE_01"
+   },
+   {
+    "id": "poi:bible:B01-118",
+    "name": "Pièce à Chaton",
+    "source": "BIBLE_01"
+   },
+   {
+    "id": "poi:bible:B01-119",
+    "name": "Pont du Château",
+    "source": "BIBLE_01"
+   },
+   {
+    "id": "poi:bible:B01-125",
+    "name": "Pont de la Marne",
+    "source": "BIBLE_01"
+   },
+   {
+    "id": "poi:bible:B01-126",
+    "name": "Gerluse",
+    "source": "BIBLE_01"
+   },
+   {
+    "id": "poi:bible:B01-142",
+    "name": "Buisson Guet / Champ",
+    "source": "BIBLE_01"
+   },
+   {
+    "id": "poi:bible:B01-151",
+    "name": "L'Homme Mort",
+    "source": "BIBLE_01 + BIBLE_02"
+   },
+   {
+    "id": "poi:bible:B01-152",
+    "name": "Le Croniat",
+    "source": "BIBLE_01 + BIBLE_02"
+   },
+   {
+    "id": "poi:bible:B03-026",
+    "name": "Croix de Maizières",
+    "source": "BIBLE_03 + BIBLE_06"
+   },
+   {
+    "id": "poi:bible:B03-027",
+    "name": "Croix de la place Saint-Denis",
+    "source": "BIBLE_03 + BIBLE_06"
+   },
+   {
+    "id": "poi:bible:B03-029",
+    "name": "Ancienne croix du cimetière (fosse commune)",
+    "source": "BIBLE_03"
+   },
+   {
+    "id": "poi:bible:B03-030",
+    "name": "Sépultures Bauzil de Rivette / Jean-Baptiste de Lesseps",
+    "source": "BIBLE_03"
+   },
+   {
+    "id": "poi:bible:B03-032",
+    "name": "Local communal proposé à l'équipe paroissiale",
+    "source": "BIBLE_03"
+   },
+   {
+    "id": "poi:bible:B03-033",
+    "name": "Presbytère restauré par Jean-Louis Bayle (XIXe)",
+    "source": "BIBLE_03"
+   },
+   {
+    "id": "poi:bible:B03-066",
+    "name": "Squelettes découverts en 1908 près de l'ancien château",
+    "source": "BIBLE_03"
+   },
+   {
+    "id": "poi:bible:B04-009",
+    "name": "futur Village Seniors (projet)",
+    "source": "BIBLE_04"
+   },
+   {
+    "id": "poi:bible:B04-029",
+    "name": "épicerie vrac itinérante (place de l'église)",
+    "source": "BIBLE_04"
+   },
+   {
+    "id": "poi:bible:B04-035",
+    "name": "zone de captage au nord de Poussey",
+    "source": "BIBLE_04"
+   },
+   {
+    "id": "poi:bible:B05-004",
+    "name": "Amicale des commerçants du Parc de l'Aérodrome",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-009",
+    "name": "CETA de Romilly-sur-Seine",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-016",
+    "name": "cabaret des Granges (Marie Jeanne Stam)",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-017",
+    "name": "commerce de vin Herbelin aux Granges",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-026",
+    "name": "Le Relais de Poussey",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-027",
+    "name": "L'Escargot Gourmand",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-034",
+    "name": "La Petite Biscuiterie",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-040",
+    "name": "commerce de viande Joseph Rivière",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-041",
+    "name": "produits laitiers Robert / Bianchi",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-042",
+    "name": "René Speeg (gros alimentaire)",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-043",
+    "name": "alimentation générale Jack Kaufmann",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-051",
+    "name": "fonction infirmière (65 av. Général-de-Gaulle)",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-058",
+    "name": "carrosserie (69 av. Général-de-Gaulle)",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-081",
+    "name": "maçonnerie Michel Quillet",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-082",
+    "name": "menuiserie-serrurerie Maurice Bourguignon",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-087",
+    "name": "exploitation forestière Jean Stevenne",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-088",
+    "name": "L. Rocher (Les Granges)",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-089",
+    "name": "La Vieille Demeure",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-090",
+    "name": "Sylvaine Gaillard (ZI La Glacière)",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-091",
+    "name": "EREFORM",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-092",
+    "name": "COLLOMB SA",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-096",
+    "name": "L'Atelier de Poussey",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-097",
+    "name": "Fascination (coiffure)",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-099",
+    "name": "L'Étoile des Sens",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-110",
+    "name": "La Halle aux Chaussures",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:bible:B05-111",
+    "name": "Multistore",
+    "source": "BIBLE_05"
+   },
+   {
+    "id": "poi:chateau-poussey-demeure",
+    "name": "Demeure (château) de Poussey",
+    "source": "BIBLE_03 + BIBLE_02"
+   }
+  ],
+  "osmOnly": [
+   {
+    "id": "poi:osm:node/1639052728",
+    "name": "Ferme des Charmes",
+    "type": "ecart"
+   },
+   {
+    "id": "poi:osm:node/5622932214",
+    "name": "Le Gué du Chene",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622934662",
+    "name": "Les Grandes Vaudelées",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622937799",
+    "name": "La Grande Contrée",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622944664",
+    "name": "La Mardelle",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622947736",
+    "name": "Les Mazures",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622952528",
+    "name": "Le Carreau Martin",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622954637",
+    "name": "Les Erys",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622961732",
+    "name": "Le Buisson Garet Ou Champ",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622965038",
+    "name": "Le Rondeau",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622965921",
+    "name": "Les Chatelains",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622970727",
+    "name": "La Grande Charrière",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622970753",
+    "name": "La Fondriere Est",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622971162",
+    "name": "Le Buissonnet",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622971672",
+    "name": "Le Carreau",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622974408",
+    "name": "Les Pres de Poussey Ouest",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622975162",
+    "name": "L Essy",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622975887",
+    "name": "La Noue Boulate",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622979260",
+    "name": "Le Chemin de la Guide",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622979979",
+    "name": "Le Bas du Croc Aux Laines",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622980934",
+    "name": "La Fondriere Pouilleuse",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622983267",
+    "name": "Le Pre de l'Église",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622984335",
+    "name": "Le Begnon",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622984686",
+    "name": "Le Petit Jonchery",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622991339",
+    "name": "Le Trou de la Muziere",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622999534",
+    "name": "Le Bas du Mesnil",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622999780",
+    "name": "La Noue des Lots",
+    "type": "lieu_dit"
+   },
+   {
+    "id": "poi:osm:node/5622999789",
+    "name": "La Noue de la Nagere",
+    "type": "lieu_dit"
+   }
+  ],
+  "currentWithoutGeometry": [
+   {
+    "id": "poi:bible:B01-038",
+    "name": "Terrain de tir à l'arc"
+   },
+   {
+    "id": "poi:bible:B01-059",
+    "name": "Les Pâtures"
+   },
+   {
+    "id": "poi:bible:B01-088",
+    "name": "La Réserve d'Origny"
+   },
+   {
+    "id": "poi:bible:B01-116",
+    "name": "Les Léchères"
+   },
+   {
+    "id": "poi:bible:B01-120",
+    "name": "La Vente"
+   },
+   {
+    "id": "poi:bible:B01-124",
+    "name": "Bois du Château"
+   },
+   {
+    "id": "poi:bible:B01-129",
+    "name": "Bois de Sapins"
+   },
+   {
+    "id": "poi:bible:B01-131",
+    "name": "Pierré"
+   },
+   {
+    "id": "poi:bible:B01-144",
+    "name": "Captage Sainte-Amandine (forage 02613X1028)"
+   },
+   {
+    "id": "poi:bible:B01-146",
+    "name": "Lieu de stockage des Ponts et Chaussées (face à l'Hôtel des Granges)"
+   },
+   {
+    "id": "poi:bible:B02-035",
+    "name": "SICAM"
+   },
+   {
+    "id": "poi:bible:B02-036",
+    "name": "Aub'Transport"
+   },
+   {
+    "id": "poi:bible:B02-040",
+    "name": "Usine Atlantem"
+   },
+   {
+    "id": "poi:bible:B03-055",
+    "name": "Restaurant Le Relais"
+   },
+   {
+    "id": "poi:bible:B03-059",
+    "name": "Arrêts d'autocar TER Maizières Église / Maizières Tabac"
+   },
+   {
+    "id": "poi:bible:B03-067",
+    "name": "Terrain du diagnostic archéologique 2023 (derrière la pharmacie)"
+   },
+   {
+    "id": "poi:bible:B05-054",
+    "name": "Aub'Pneus"
+   },
+   {
+    "id": "poi:bible:B05-055",
+    "name": "Centre de Contrôle et de Sécurité"
+   },
+   {
+    "id": "poi:bible:B05-056",
+    "name": "Maizières Automobiles / Aub'Récup Auto"
+   },
+   {
+    "id": "poi:bible:B05-108",
+    "name": "La Halle / PEGASE"
+   },
+   {
+    "id": "poi:bible:B06-005",
+    "name": "Salle des fêtes"
+   },
+   {
+    "id": "poi:bible:B06-006",
+    "name": "Parking du champ de foire"
+   },
+   {
+    "id": "poi:clos-des-roy",
+    "name": "Lotissement Le Clos des Roy"
+   },
+   {
+    "id": "poi:croix-des-granges",
+    "name": "Croix des Granges"
+   },
+   {
+    "id": "poi:croix-des-ormes",
+    "name": "Croix des Ormes / Croix de Poussey"
+   },
+   {
+    "id": "poi:maison-des-papillons",
+    "name": "Maison des Papillons (MAM)"
+   },
+   {
+    "id": "poi:petit-village",
+    "name": "Lotissement Le Petit Village"
+   }
+  ],
+  "commerceToReconfirm": [
+   {
+    "id": "poi:bible:B02-035",
+    "name": "SICAM",
+    "lastEvidenceYear": null
+   },
+   {
+    "id": "poi:bible:B02-036",
+    "name": "Aub'Transport",
+    "lastEvidenceYear": null
+   },
+   {
+    "id": "poi:bible:B02-040",
+    "name": "Usine Atlantem",
+    "lastEvidenceYear": null
+   },
+   {
+    "id": "poi:bible:B03-055",
+    "name": "Restaurant Le Relais",
+    "lastEvidenceYear": null
+   },
+   {
+    "id": "poi:bible:B05-006",
+    "name": "UPREN",
+    "lastEvidenceYear": 2013
+   },
+   {
+    "id": "poi:bible:B05-007",
+    "name": "Interface 10",
+    "lastEvidenceYear": 2013
+   },
+   {
+    "id": "poi:bible:B05-008",
+    "name": "GEIQ Sud Champagne",
+    "lastEvidenceYear": 2019
+   },
+   {
+    "id": "poi:bible:B05-010",
+    "name": "Mesure Service",
+    "lastEvidenceYear": 2020
+   },
+   {
+    "id": "poi:bible:B05-011",
+    "name": "SCEA Felizet",
+    "lastEvidenceYear": 2019
+   },
+   {
+    "id": "poi:bible:B05-012",
+    "name": "SAS Felizet Aliments",
+    "lastEvidenceYear": 2019
+   },
+   {
+    "id": "poi:bible:B05-054",
+    "name": "Aub'Pneus",
+    "lastEvidenceYear": null
+   },
+   {
+    "id": "poi:bible:B05-055",
+    "name": "Centre de Contrôle et de Sécurité",
+    "lastEvidenceYear": 2026
+   },
+   {
+    "id": "poi:bible:B05-056",
+    "name": "Maizières Automobiles / Aub'Récup Auto",
+    "lastEvidenceYear": null
+   },
+   {
+    "id": "poi:bible:B05-093",
+    "name": "Luc-Pierre Rafanot (maçonnerie)",
+    "lastEvidenceYear": 2017
+   },
+   {
+    "id": "poi:bible:B05-094",
+    "name": "Menuiserie Forgeot",
+    "lastEvidenceYear": 2017
+   },
+   {
+    "id": "poi:bible:B05-095",
+    "name": "ABF Bâtiment",
+    "lastEvidenceYear": 2017
+   },
+   {
+    "id": "poi:bible:B05-098",
+    "name": "Les Ciseaux d'Eva",
+    "lastEvidenceYear": 2021
+   },
+   {
+    "id": "poi:bible:B05-108",
+    "name": "La Halle / PEGASE",
+    "lastEvidenceYear": 2020
+   },
+   {
+    "id": "poi:bible:B05-109",
+    "name": "Optique de l'Aérodrome / Krys",
+    "lastEvidenceYear": null
+   },
+   {
+    "id": "poi:bible:B05-112",
+    "name": "L'Aube des Vins",
+    "lastEvidenceYear": 2017
+   },
+   {
+    "id": "poi:bible:B05-115",
+    "name": "Gédimat",
+    "lastEvidenceYear": null
+   },
+   {
+    "id": "poi:bible:B05-116",
+    "name": "Action",
+    "lastEvidenceYear": null
+   },
+   {
+    "id": "poi:bible:B05-119",
+    "name": "B&B HOTEL Romilly-sur-Seine",
+    "lastEvidenceYear": 2022
+   }
+  ]
+ },
+ "memoryOnly": [
+  {
+   "ref": "B01-044",
+   "name": "Voie ferrée Paris–Troyes (ligne Paris–Bâle)",
+   "reason": "ligne ferroviaire : référentiel V1.9"
+  },
+  {
+   "ref": "B04-021",
+   "name": "équipements sportifs",
+   "reason": "mention générique sans lieu précis"
+  },
+  {
+   "ref": "B04-022",
+   "name": "salles communales",
+   "reason": "mention générique sans lieu précis"
+  },
+  {
+   "ref": "B04-039",
+   "name": "déchetterie de Romilly",
+   "reason": "hors commune (Romilly-sur-Seine)"
+  },
+  {
+   "ref": "B02-022",
+   "name": "Ligne ferroviaire Paris–Mulhouse (Montereau–Troyes)",
+   "reason": "ligne ferroviaire : référentiel V1.9"
+  },
+  {
+   "ref": "B02-031",
+   "name": "Maison des grands-parents de Michel Payen",
+   "reason": "habitation privée liée à une personne : contexte seulement"
+  },
+  {
+   "ref": "B02-045",
+   "name": "Maison de Michel Bourcier",
+   "reason": "habitation privée liée à une personne : contexte seulement"
+  },
+  {
+   "ref": "B06-009",
+   "name": "Maison natale de Michel Payen",
+   "reason": "habitation privée liée à une personne : contexte seulement"
+  },
+  {
+   "ref": "B06-010",
+   "name": "Maison des grands-parents Payen",
+   "reason": "habitation privée liée à une personne : contexte seulement"
+  },
+  {
+   "ref": "B06-012",
+   "name": "Ferme familiale Payen",
+   "reason": "habitation privée liée à une personne : contexte seulement"
+  },
+  {
+   "ref": "B06-038",
+   "name": "Ligne Paris–Mulhouse (voie ferrée)",
+   "reason": "ligne ferroviaire : référentiel V1.9"
+  },
+  {
+   "ref": "B06-008",
+   "name": "Maréchal-ferrant (souvenir de Michel Payen)",
+   "reason": "mémoire locale seule (BIBLE_06)"
+  },
+  {
+   "ref": "B06-014",
+   "name": "École des garçons et école des filles",
+   "reason": "mémoire locale seule (BIBLE_06)"
+  },
+  {
+   "ref": "B06-016",
+   "name": "Épicerie L'Économique Troyen",
+   "reason": "mémoire locale seule (BIBLE_06)"
+  },
+  {
+   "ref": "B06-017",
+   "name": "Commerce de M. Corpel (vendeur de cochons)",
+   "reason": "mémoire locale seule (BIBLE_06)"
+  },
+  {
+   "ref": "B06-018",
+   "name": "Garages du centre-bourg",
+   "reason": "mémoire locale seule (BIBLE_06)"
+  },
+  {
+   "ref": "B06-024",
+   "name": "Ancien chemin du Gué",
+   "reason": "mémoire locale seule (BIBLE_06)"
+  },
+  {
+   "ref": "B06-034",
+   "name": "Fresques de la cour de l'école (Francis Bavoil)",
+   "reason": "mémoire locale seule (BIBLE_06)"
+  },
+  {
+   "ref": "B06-035",
+   "name": "Ancienne Avenue de la Gare",
+   "reason": "mémoire locale seule (BIBLE_06)"
+  },
+  {
+   "ref": "B06-036",
+   "name": "Ancienne Rue de la Gare",
+   "reason": "mémoire locale seule (BIBLE_06)"
+  },
+  {
+   "ref": "B06-043",
+   "name": "Station-service Antar (Vinot)",
+   "reason": "mémoire locale seule (BIBLE_06)"
+  },
+  {
+   "ref": "B06-045",
+   "name": "Magasin de presse de Mme Courtois",
+   "reason": "mémoire locale seule (BIBLE_06)"
+  },
+  {
+   "ref": "B06-049",
+   "name": "Discothèque La Grotte",
+   "reason": "mémoire locale seule (BIBLE_06)"
+  }
+ ]
+}
