@@ -1,0 +1,1017 @@
+{
+ "generatedAt": "2026-09-25T15:22:39.682Z",
+ "scope": "lieux actuels V1.11 sans bâtiment associé désignant manifestement un bâtiment ou un local (hors lieux-dits, zones, terrains, ouvrages, antennes, croix, cimetière)",
+ "sources": {
+  "reference": "public/data/buildings.geojson (gelé V1.6.2)",
+  "ban": "data-sources/poi/ban-adresses.geojson, banplus-lien-adresse-bati.geojson",
+  "rnb": [
+   "data-sources/rnb/rnb-10220.json",
+   "data-sources/buildings-audit-v1.11.1/rnb-joliot-curie-97.json",
+   "data-sources/buildings-audit-v1.11.1/rnb-maison-medicale.json",
+   "data-sources/buildings-audit-v1.11.1/rnb-philippe-seguin.json",
+   "data-sources/buildings-audit-v1.11.1/rnb-saint-exupery-9.json",
+   "data-sources/buildings-audit-v1.11.1/rnb-stade.json",
+   "data-sources/buildings-audit-v1.11.1/rnb-village-seniors.json"
+  ],
+  "bdtopo": [
+   "data-sources/buildings-audit-v1.11.1/bdtopo-batiment-joliot-curie-97.json",
+   "data-sources/buildings-audit-v1.11.1/bdtopo-batiment-maison-medicale.json",
+   "data-sources/buildings-audit-v1.11.1/bdtopo-batiment-philippe-seguin.json",
+   "data-sources/buildings-audit-v1.11.1/bdtopo-batiment-saint-exupery-9.json",
+   "data-sources/buildings-audit-v1.11.1/bdtopo-batiment-stade.json",
+   "data-sources/buildings-audit-v1.11.1/bdtopo-batiment-village-seniors.json"
+  ],
+  "cadastre": [
+   "data-sources/buildings-audit-v1.11.1/pci-batiment-joliot-curie-97.json",
+   "data-sources/buildings-audit-v1.11.1/pci-batiment-maison-medicale.json",
+   "data-sources/buildings-audit-v1.11.1/pci-batiment-philippe-seguin.json",
+   "data-sources/buildings-audit-v1.11.1/pci-batiment-saint-exupery-9.json",
+   "data-sources/buildings-audit-v1.11.1/pci-batiment-stade.json",
+   "data-sources/buildings-audit-v1.11.1/pci-batiment-village-seniors.json"
+  ],
+  "orthophoto": "IGN BD ORTHO (WMS-R ORTHOIMAGERY.ORTHOPHOTOS, avril 2025), contrôle visuel uniquement"
+ },
+ "totals": {
+  "casesExamined": 20,
+  "withPosition": 10,
+  "withoutPosition": 10,
+  "startWithoutBuilding": 20,
+  "associationsCorrected": 9,
+  "missingOfficialBuildings": 0,
+  "buildingsAdded": 0,
+  "visibleWithoutReliableGeometry": 0,
+  "poiImprecise": 11,
+  "stillWithoutBuildingGeometry": 11,
+  "buildings": 2494,
+  "buildingsInCommune": 2265
+ },
+ "cases": [
+  {
+   "poi": "poi:bible:B05-005",
+   "name": "AMITR",
+   "type": "sante",
+   "category": "sante",
+   "status": "actuel",
+   "address": "2 avenue Philippe-Séguin",
+   "startBuildingIds": [],
+   "coordinates": {
+    "L93": [
+     756364.47,
+     6822824.85
+    ],
+    "lonlat": [
+     3.763021,
+     48.503223
+    ]
+   },
+   "ban": {
+    "id": "10220_0354_00002",
+    "label": "2 Avenue Philippe Seguin",
+    "position": "segment",
+    "banPlusLinks": []
+   },
+   "nearestBuilding": {
+    "id": "BATIMENT0000000325110261",
+    "distanceM": 25.1
+   },
+   "rnbByAddress": [
+    {
+     "rnb_id": "C5WQ3RJ4FPEP",
+     "status": "constructed",
+     "source": "RNB API (audit V1.11.1)",
+     "referenceBuildings": [
+      "BATIMENT0000002006956399"
+     ],
+     "distanceM": 87.9
+    }
+   ],
+   "bdtopoFootprint": {
+    "id": "BATIMENT0000002006956399",
+    "source": "BD TOPO bâtiment (actuel)",
+    "distanceM": 87.9,
+    "areaM2": 763,
+    "created": "2017-11-15",
+    "usage": "Commercial et services",
+    "state": "En service",
+    "inReference": [
+     "BATIMENT0000002006956399"
+    ]
+   },
+   "cadastreFootprint": {
+    "id": "batiment.39912174",
+    "source": "Parcellaire Express bâtiment (actuel)",
+    "distanceM": 87,
+    "areaM2": 708,
+    "type": "Bâtiment en dur",
+    "inReference": [
+     "BATIMENT0000002006956399"
+    ]
+   },
+   "officialFootprintsAbsentFromReference": [
+    {
+     "source": "Parcellaire Express",
+     "id": "batiment.39912175",
+     "distanceM": 53.4,
+     "areaM2": 8,
+     "type": "Bâtiment en dur"
+    }
+   ],
+   "orthophoto": "immeuble de bureaux en U au nord-ouest du Parc de l’Aérodrome, visible",
+   "verdict": "association_corrigee",
+   "evidence": "RNB C5WQ3RJ4FPEP porte l’adresse « 2 Avenue Philippe Seguin » ; ce bâtiment RNB est le bâtiment BD TOPO BATIMENT0000002006956399 du référentiel",
+   "finalBuildingIds": [
+    "BATIMENT0000002006956399"
+   ],
+   "building_geometry_missing": false,
+   "building_position": {
+    "L93": [
+     756245.7,
+     6822884.5,
+     76.49
+    ],
+    "unreal": [
+     -203230,
+     68650,
+     7649
+    ],
+    "distanceFromAnchorM": 132.91,
+    "note": "centre de l’empreinte du bâtiment associé (référentiel V1.6.2)"
+   }
+  },
+  {
+   "poi": "poi:bible:B05-006",
+   "name": "UPREN",
+   "type": "entreprise",
+   "category": "commerce_entreprise",
+   "status": "actuel",
+   "address": "2 avenue Philippe-Séguin",
+   "startBuildingIds": [],
+   "coordinates": {
+    "L93": [
+     756364.47,
+     6822824.85
+    ],
+    "lonlat": [
+     3.763021,
+     48.503223
+    ]
+   },
+   "ban": {
+    "id": "10220_0354_00002",
+    "label": "2 Avenue Philippe Seguin",
+    "position": "segment",
+    "banPlusLinks": []
+   },
+   "nearestBuilding": {
+    "id": "BATIMENT0000000325110261",
+    "distanceM": 25.1
+   },
+   "rnbByAddress": [
+    {
+     "rnb_id": "C5WQ3RJ4FPEP",
+     "status": "constructed",
+     "source": "RNB API (audit V1.11.1)",
+     "referenceBuildings": [
+      "BATIMENT0000002006956399"
+     ],
+     "distanceM": 87.9
+    }
+   ],
+   "bdtopoFootprint": {
+    "id": "BATIMENT0000002006956399",
+    "source": "BD TOPO bâtiment (actuel)",
+    "distanceM": 87.9,
+    "areaM2": 763,
+    "created": "2017-11-15",
+    "usage": "Commercial et services",
+    "state": "En service",
+    "inReference": [
+     "BATIMENT0000002006956399"
+    ]
+   },
+   "cadastreFootprint": {
+    "id": "batiment.39912174",
+    "source": "Parcellaire Express bâtiment (actuel)",
+    "distanceM": 87,
+    "areaM2": 708,
+    "type": "Bâtiment en dur",
+    "inReference": [
+     "BATIMENT0000002006956399"
+    ]
+   },
+   "officialFootprintsAbsentFromReference": [
+    {
+     "source": "Parcellaire Express",
+     "id": "batiment.39912175",
+     "distanceM": 53.4,
+     "areaM2": 8,
+     "type": "Bâtiment en dur"
+    }
+   ],
+   "orthophoto": "idem",
+   "verdict": "association_corrigee",
+   "evidence": "même adresse que AMITR (2 avenue Philippe-Séguin) : RNB C5WQ3RJ4FPEP",
+   "finalBuildingIds": [
+    "BATIMENT0000002006956399"
+   ],
+   "building_geometry_missing": false,
+   "building_position": {
+    "L93": [
+     756245.7,
+     6822884.5,
+     76.49
+    ],
+    "unreal": [
+     -203230,
+     68650,
+     7649
+    ],
+    "distanceFromAnchorM": 132.91,
+    "note": "centre de l’empreinte du bâtiment associé (référentiel V1.6.2)"
+   }
+  },
+  {
+   "poi": "poi:bible:B05-007",
+   "name": "Interface 10",
+   "type": "entreprise",
+   "category": "commerce_entreprise",
+   "status": "actuel",
+   "address": "2 avenue Philippe-Séguin",
+   "startBuildingIds": [],
+   "coordinates": {
+    "L93": [
+     756364.47,
+     6822824.85
+    ],
+    "lonlat": [
+     3.763021,
+     48.503223
+    ]
+   },
+   "ban": {
+    "id": "10220_0354_00002",
+    "label": "2 Avenue Philippe Seguin",
+    "position": "segment",
+    "banPlusLinks": []
+   },
+   "nearestBuilding": {
+    "id": "BATIMENT0000000325110261",
+    "distanceM": 25.1
+   },
+   "rnbByAddress": [
+    {
+     "rnb_id": "C5WQ3RJ4FPEP",
+     "status": "constructed",
+     "source": "RNB API (audit V1.11.1)",
+     "referenceBuildings": [
+      "BATIMENT0000002006956399"
+     ],
+     "distanceM": 87.9
+    }
+   ],
+   "bdtopoFootprint": {
+    "id": "BATIMENT0000002006956399",
+    "source": "BD TOPO bâtiment (actuel)",
+    "distanceM": 87.9,
+    "areaM2": 763,
+    "created": "2017-11-15",
+    "usage": "Commercial et services",
+    "state": "En service",
+    "inReference": [
+     "BATIMENT0000002006956399"
+    ]
+   },
+   "cadastreFootprint": {
+    "id": "batiment.39912174",
+    "source": "Parcellaire Express bâtiment (actuel)",
+    "distanceM": 87,
+    "areaM2": 708,
+    "type": "Bâtiment en dur",
+    "inReference": [
+     "BATIMENT0000002006956399"
+    ]
+   },
+   "officialFootprintsAbsentFromReference": [
+    {
+     "source": "Parcellaire Express",
+     "id": "batiment.39912175",
+     "distanceM": 53.4,
+     "areaM2": 8,
+     "type": "Bâtiment en dur"
+    }
+   ],
+   "orthophoto": "idem",
+   "verdict": "association_corrigee",
+   "evidence": "même adresse que AMITR (2 avenue Philippe-Séguin) : RNB C5WQ3RJ4FPEP",
+   "finalBuildingIds": [
+    "BATIMENT0000002006956399"
+   ],
+   "building_geometry_missing": false,
+   "building_position": {
+    "L93": [
+     756245.7,
+     6822884.5,
+     76.49
+    ],
+    "unreal": [
+     -203230,
+     68650,
+     7649
+    ],
+    "distanceFromAnchorM": 132.91,
+    "note": "centre de l’empreinte du bâtiment associé (référentiel V1.6.2)"
+   }
+  },
+  {
+   "poi": "poi:bible:B05-008",
+   "name": "GEIQ Sud Champagne",
+   "type": "entreprise",
+   "category": "commerce_entreprise",
+   "status": "actuel",
+   "address": "2 avenue Philippe-Séguin",
+   "startBuildingIds": [],
+   "coordinates": {
+    "L93": [
+     756364.47,
+     6822824.85
+    ],
+    "lonlat": [
+     3.763021,
+     48.503223
+    ]
+   },
+   "ban": {
+    "id": "10220_0354_00002",
+    "label": "2 Avenue Philippe Seguin",
+    "position": "segment",
+    "banPlusLinks": []
+   },
+   "nearestBuilding": {
+    "id": "BATIMENT0000000325110261",
+    "distanceM": 25.1
+   },
+   "rnbByAddress": [
+    {
+     "rnb_id": "C5WQ3RJ4FPEP",
+     "status": "constructed",
+     "source": "RNB API (audit V1.11.1)",
+     "referenceBuildings": [
+      "BATIMENT0000002006956399"
+     ],
+     "distanceM": 87.9
+    }
+   ],
+   "bdtopoFootprint": {
+    "id": "BATIMENT0000002006956399",
+    "source": "BD TOPO bâtiment (actuel)",
+    "distanceM": 87.9,
+    "areaM2": 763,
+    "created": "2017-11-15",
+    "usage": "Commercial et services",
+    "state": "En service",
+    "inReference": [
+     "BATIMENT0000002006956399"
+    ]
+   },
+   "cadastreFootprint": {
+    "id": "batiment.39912174",
+    "source": "Parcellaire Express bâtiment (actuel)",
+    "distanceM": 87,
+    "areaM2": 708,
+    "type": "Bâtiment en dur",
+    "inReference": [
+     "BATIMENT0000002006956399"
+    ]
+   },
+   "officialFootprintsAbsentFromReference": [
+    {
+     "source": "Parcellaire Express",
+     "id": "batiment.39912175",
+     "distanceM": 53.4,
+     "areaM2": 8,
+     "type": "Bâtiment en dur"
+    }
+   ],
+   "orthophoto": "idem",
+   "verdict": "association_corrigee",
+   "evidence": "même adresse que AMITR (2 avenue Philippe-Séguin) : RNB C5WQ3RJ4FPEP",
+   "finalBuildingIds": [
+    "BATIMENT0000002006956399"
+   ],
+   "building_geometry_missing": false,
+   "building_position": {
+    "L93": [
+     756245.7,
+     6822884.5,
+     76.49
+    ],
+    "unreal": [
+     -203230,
+     68650,
+     7649
+    ],
+    "distanceFromAnchorM": 132.91,
+    "note": "centre de l’empreinte du bâtiment associé (référentiel V1.6.2)"
+   }
+  },
+  {
+   "poi": "poi:bible:B05-116",
+   "name": "Action",
+   "type": "commerce",
+   "category": "commerce_entreprise",
+   "status": "actuel",
+   "address": "9 boulevard Antoine-de-Saint-Exupéry",
+   "startBuildingIds": [],
+   "coordinates": {
+    "L93": [
+     756288.47,
+     6822753.75
+    ],
+    "lonlat": [
+     3.7619829,
+     48.50259
+    ]
+   },
+   "ban": {
+    "id": "10220_0406_00009",
+    "label": "9 Bd Antoine de Saint Exupery",
+    "position": "segment",
+    "banPlusLinks": []
+   },
+   "nearestBuilding": {
+    "id": "BATIMENT0000002006956396",
+    "distanceM": 39.1
+   },
+   "rnbByAddress": [
+    {
+     "rnb_id": "XX2T6M3PFBBH",
+     "status": "constructed",
+     "source": "RNB API (audit V1.11.1)",
+     "referenceBuildings": [
+      "BATIMENT0000002006956391"
+     ],
+     "distanceM": 40.7
+    }
+   ],
+   "bdtopoFootprint": {
+    "id": "BATIMENT0000002006956391",
+    "source": "BD TOPO bâtiment (actuel)",
+    "distanceM": 40.7,
+    "areaM2": 2198,
+    "created": "2017-11-15",
+    "usage": "Commercial et services",
+    "state": "En service",
+    "inReference": [
+     "BATIMENT0000002006956391"
+    ]
+   },
+   "cadastreFootprint": {
+    "id": "batiment.39912172",
+    "source": "Parcellaire Express bâtiment (actuel)",
+    "distanceM": 42.2,
+    "areaM2": 2263,
+    "type": "Bâtiment en dur",
+    "inReference": [
+     "BATIMENT0000002006956391"
+    ]
+   },
+   "officialFootprintsAbsentFromReference": [
+    {
+     "source": "Parcellaire Express",
+     "id": "batiment.39912175",
+     "distanceM": 53.4,
+     "areaM2": 8,
+     "type": "Bâtiment en dur"
+    }
+   ],
+   "orthophoto": "grand bâtiment commercial multi-cellules à l’est du boulevard, visible",
+   "verdict": "association_corrigee",
+   "evidence": "RNB XX2T6M3PFBBH porte l’adresse « 9 Bd Antoine de Saint Exupery » ; il est une cellule du bâtiment commercial BD TOPO BATIMENT0000002006956391 (qui porte déjà les identifiants RNB 5WB6AENWCBGS/XX2T6M3PFBBH)",
+   "finalBuildingIds": [
+    "BATIMENT0000002006956391"
+   ],
+   "building_geometry_missing": false,
+   "building_position": {
+    "L93": [
+     756344.19,
+     6822731.14,
+     76.69
+    ],
+    "unreal": [
+     -193381,
+     83986,
+     7669
+    ],
+    "distanceFromAnchorM": 60.13,
+    "note": "centre de l’empreinte du bâtiment associé (référentiel V1.6.2)"
+   }
+  },
+  {
+   "poi": "poi:maison-medicale",
+   "name": "Maison médicale Michel-Bourcier",
+   "type": "maison_medicale",
+   "category": "sante",
+   "status": "actuel",
+   "address": "31 avenue du Général-de-Gaulle",
+   "startBuildingIds": [],
+   "coordinates": {
+    "L93": [
+     757689.45,
+     6822597.68
+    ],
+    "lonlat": [
+     3.780926,
+     48.501063
+    ]
+   },
+   "ban": {
+    "id": "10220_0200_00031",
+    "label": "31 Avenue du General de Gaulle",
+    "position": "entrée",
+    "banPlusLinks": []
+   },
+   "nearestBuilding": {
+    "id": "BATIMENT0000002477590538",
+    "distanceM": 0.1
+   },
+   "rnbByAddress": [],
+   "bdtopoFootprint": {
+    "id": "BATIMENT0000002477590538",
+    "source": "BD TOPO bâtiment (actuel)",
+    "distanceM": 0.1,
+    "areaM2": 464,
+    "created": "2024-06-24",
+    "usage": "Commercial et services",
+    "state": "En service",
+    "inReference": [
+     "BATIMENT0000002477590538"
+    ]
+   },
+   "cadastreFootprint": {
+    "id": "batiment.25280183",
+    "source": "Parcellaire Express bâtiment (actuel)",
+    "distanceM": 0.3,
+    "areaM2": 36,
+    "type": "Construction légère",
+    "inReference": [
+     "BATIMENT0000002477590538"
+    ]
+   },
+   "officialFootprintsAbsentFromReference": [
+    {
+     "source": "Parcellaire Express",
+     "id": "batiment.39906686",
+     "distanceM": 34.7,
+     "areaM2": 13,
+     "type": "Construction légère"
+    }
+   ],
+   "orthophoto": "bâtiment récent avec parking, présent sur l’orthophoto d’avril 2025",
+   "verdict": "association_corrigee",
+   "evidence": "point BAN « entrée » du 31 avenue du Général-de-Gaulle à 0,1 m de la façade du bâtiment BD TOPO BATIMENT0000002477590538 (créé le 24/06/2024, usage commercial et services, RNB PAV65ZVZXWQB) ; V1.11 ne testait que l’inclusion stricte du point",
+   "finalBuildingIds": [
+    "BATIMENT0000002477590538"
+   ],
+   "building_geometry_missing": false,
+   "building_position": {
+    "L93": [
+     757680.93,
+     6822592.96,
+     78.1
+    ],
+    "unreal": [
+     -59707,
+     97804,
+     7810
+    ],
+    "distanceFromAnchorM": 9.74,
+    "note": "centre de l’empreinte du bâtiment associé (référentiel V1.6.2)"
+   }
+  },
+  {
+   "poi": "poi:bible:B05-093",
+   "name": "Luc-Pierre Rafanot (maçonnerie)",
+   "type": "entreprise",
+   "category": "commerce_entreprise",
+   "status": "actuel",
+   "address": "97 rue Joliot-Curie",
+   "startBuildingIds": [],
+   "coordinates": {
+    "L93": [
+     760345.91,
+     6823644.97
+    ],
+    "lonlat": [
+     3.81703,
+     48.510242
+    ]
+   },
+   "ban": {
+    "id": "10220_0240_00097",
+    "label": "97 Rue Joliot Curie",
+    "position": "segment",
+    "banPlusLinks": []
+   },
+   "nearestBuilding": {
+    "id": "BATIMENT0000000301151980",
+    "distanceM": 230.9
+   },
+   "rnbByAddress": [
+    {
+     "rnb_id": "ANW52GK2J8D3",
+     "status": "constructed",
+     "source": "RNB instantané V1.6 (24/09/2026)",
+     "referenceBuildings": [
+      "BATIMENT0000000301151981"
+     ],
+     "distanceM": 241.8
+    }
+   ],
+   "bdtopoFootprint": {
+    "id": "BATIMENT0000000301151981",
+    "source": "référentiel V1.6.2 (BD TOPO)",
+    "distanceM": 241.8,
+    "note": "bâtiment associé hors de la boîte de contrôle de ± 150 m autour du point BAN"
+   },
+   "cadastreFootprint": null,
+   "officialFootprintsAbsentFromReference": [],
+   "orthophoto": "maison avec piscine au bout de la rue Joliot-Curie, visible ; le point BAN est en plein champ",
+   "verdict": "association_corrigee",
+   "evidence": "RNB ANW52GK2J8D3 porte l’adresse « 97 Rue Joliot Curie » et correspond au bâtiment BD TOPO BATIMENT0000000301151981 du référentiel",
+   "finalBuildingIds": [
+    "BATIMENT0000000301151981"
+   ],
+   "building_geometry_missing": false,
+   "building_position": {
+    "L93": [
+     760136.65,
+     6823777.94,
+     78.14
+    ],
+    "unreal": [
+     185865,
+     -20694,
+     7814
+    ],
+    "distanceFromAnchorM": 247.93,
+    "note": "centre de l’empreinte du bâtiment associé (référentiel V1.6.2)"
+   }
+  },
+  {
+   "poi": "poi:stade",
+   "name": "Stade de Maizières-la-Grande-Paroisse",
+   "type": "stade",
+   "category": "equipement_sportif",
+   "status": "actuel",
+   "address": null,
+   "startBuildingIds": [],
+   "coordinates": {
+    "L93": [
+     758469.35,
+     6823113.1
+    ],
+    "lonlat": [
+     3.7915526,
+     48.5056295
+    ]
+   },
+   "ban": null,
+   "nearestBuilding": {
+    "id": "way/588792073",
+    "distanceM": 68.1
+   },
+   "rnbByAddress": [],
+   "bdtopoFootprint": {
+    "id": "BATIMENT0000000325110358",
+    "source": "BD TOPO bâtiment (actuel)",
+    "distanceM": 82.9,
+    "areaM2": 269,
+    "created": "2013-08-26",
+    "usage": "Sportif",
+    "state": "En service",
+    "inReference": [
+     "BATIMENT0000000325110358"
+    ]
+   },
+   "cadastreFootprint": {
+    "id": "batiment.39899049",
+    "source": "Parcellaire Express bâtiment (actuel)",
+    "distanceM": 82.6,
+    "areaM2": 26,
+    "type": "Construction légère",
+    "inReference": [
+     "BATIMENT0000000325110358"
+    ]
+   },
+   "officialFootprintsAbsentFromReference": [],
+   "orthophoto": "vestiaires au nord-est du terrain, visibles",
+   "verdict": "association_corrigee",
+   "evidence": "vestiaires documentés à l’angle rue du Stade / Voie aux Vaches (BIBLE_01 §7.10) : bâtiment BD TOPO BATIMENT0000000325110358, usage sportif, adresse BAN 1 rue du Stade (lien BAN PLUS), RNB V68HEYWMFD2M",
+   "finalBuildingIds": [
+    "BATIMENT0000000325110358"
+   ],
+   "building_geometry_missing": false,
+   "building_position": {
+    "L93": [
+     758503.54,
+     6823197.89,
+     78.66
+    ],
+    "unreal": [
+     22554,
+     37311,
+     7866
+    ],
+    "distanceFromAnchorM": 91.42,
+    "note": "centre de l’empreinte du bâtiment associé (référentiel V1.6.2)"
+   }
+  },
+  {
+   "poi": "poi:village-seniors",
+   "name": "Village Seniors (rue des Sages)",
+   "type": "residence",
+   "category": "equipement_public",
+   "status": "actuel",
+   "address": null,
+   "startBuildingIds": [],
+   "coordinates": {
+    "L93": [
+     758147.96,
+     6823331.06
+    ],
+    "lonlat": [
+     3.7872314,
+     48.507619
+    ]
+   },
+   "ban": null,
+   "nearestBuilding": {
+    "id": "BATIMENT0000002006956386",
+    "distanceM": 10.4
+   },
+   "rnbByAddress": [],
+   "bdtopoFootprint": {
+    "id": "BATIMENT0000002006956376",
+    "source": "BD TOPO bâtiment (actuel)",
+    "distanceM": 11.4,
+    "areaM2": 585,
+    "created": "2017-11-15",
+    "usage": "Indifférencié",
+    "state": "En service",
+    "inReference": [
+     "BATIMENT0000002006956376"
+    ]
+   },
+   "cadastreFootprint": {
+    "id": "batiment.39897254",
+    "source": "Parcellaire Express bâtiment (actuel)",
+    "distanceM": 11.3,
+    "areaM2": 452,
+    "type": "Bâtiment en dur",
+    "inReference": [
+     "BATIMENT0000002006956376"
+    ]
+   },
+   "officialFootprintsAbsentFromReference": [],
+   "orthophoto": "trois bâtiments de logements en bande autour de l’impasse de la rue des Sages, visibles",
+   "verdict": "association_corrigee",
+   "evidence": "adresses BAN 1 à 16 rue des Sages : liens BAN PLUS et RNB 2F3ZTW1SKYH9 (1-7), 2VZFK9Y9DVNY (2-8), 9XXBS36YFBG2 (10-16) ; bâtiments BD TOPO créés le 15/11/2017",
+   "finalBuildingIds": [
+    "BATIMENT0000002006956376",
+    "BATIMENT0000002006956386",
+    "BATIMENT0000002006956388"
+   ],
+   "building_geometry_missing": false,
+   "building_position": {
+    "L93": [
+     758134.91,
+     6823365.49,
+     77.48
+    ],
+    "unreal": [
+     -14309,
+     20551,
+     7748
+    ],
+    "distanceFromAnchorM": 36.82,
+    "note": "centre de l’empreinte du bâtiment associé (référentiel V1.6.2)"
+   }
+  },
+  {
+   "poi": "poi:bible:B05-109",
+   "name": "Optique de l'Aérodrome / Krys",
+   "type": "commerce",
+   "category": "commerce_entreprise",
+   "status": "actuel",
+   "address": "6 avenue Philippe-Séguin",
+   "startBuildingIds": [],
+   "coordinates": {
+    "L93": [
+     756357.84,
+     6822830.9
+    ],
+    "lonlat": [
+     3.762932,
+     48.503278
+    ]
+   },
+   "ban": {
+    "id": "10220_0354_00006",
+    "label": "6 Avenue Philippe Seguin",
+    "position": "segment",
+    "banPlusLinks": []
+   },
+   "nearestBuilding": {
+    "id": "BATIMENT0000000325110261",
+    "distanceM": 33.7
+   },
+   "rnbByAddress": [],
+   "bdtopoFootprint": {
+    "id": "BATIMENT0000000325110261",
+    "source": "BD TOPO bâtiment (actuel)",
+    "distanceM": 33.7,
+    "areaM2": 1083,
+    "created": "2013-08-26",
+    "usage": "Commercial et services",
+    "state": "En service",
+    "inReference": [
+     "BATIMENT0000000325110261"
+    ]
+   },
+   "cadastreFootprint": {
+    "id": "batiment.39912217",
+    "source": "Parcellaire Express bâtiment (actuel)",
+    "distanceM": 38,
+    "areaM2": 1052,
+    "type": "Bâtiment en dur",
+    "inReference": [
+     "BATIMENT0000000325110261"
+    ]
+   },
+   "officialFootprintsAbsentFromReference": [
+    {
+     "source": "Parcellaire Express",
+     "id": "batiment.39912175",
+     "distanceM": 50.1,
+     "areaM2": 8,
+     "type": "Bâtiment en dur"
+    }
+   ],
+   "orthophoto": "plusieurs bâtiments commerciaux existent autour ; aucun n’est désigné par l’adresse sans deviner",
+   "verdict": "poi_imprecis",
+   "evidence": "« 6 avenue Philippe-Séguin » : point BAN « segment » sur la chaussée, sans lien BAN PLUS ni bâtiment RNB à cette adresse ; la BIBLE_05 le situe dans la cellule A2 d’un « bâtiment A » non identifié par une source officielle",
+   "finalBuildingIds": [],
+   "building_geometry_missing": true
+  },
+  {
+   "poi": "poi:bible:B05-056",
+   "name": "Maizières Automobiles / Aub'Récup Auto",
+   "type": "entreprise",
+   "category": "commerce_entreprise",
+   "status": "actuel",
+   "address": "53 rue de l'Orme",
+   "startBuildingIds": [],
+   "coordinates": null,
+   "orthophoto": "non contrôlable sans position",
+   "verdict": "poi_imprecis",
+   "evidence": "« 53 rue de l’Orme » absent de la BAN et du RNB",
+   "finalBuildingIds": [],
+   "building_geometry_missing": true
+  },
+  {
+   "poi": "poi:bible:B05-108",
+   "name": "La Halle / PEGASE",
+   "type": "commerce",
+   "category": "commerce_entreprise",
+   "status": "actuel",
+   "address": null,
+   "startBuildingIds": [],
+   "coordinates": null,
+   "orthophoto": "non contrôlable sans position",
+   "verdict": "poi_imprecis",
+   "evidence": "« Parc de l’Aérodrome — bâtiment A1 » sans adresse",
+   "finalBuildingIds": [],
+   "building_geometry_missing": true
+  },
+  {
+   "poi": "poi:bible:B05-055",
+   "name": "Centre de Contrôle et de Sécurité",
+   "type": "service_prive",
+   "category": "commerce_entreprise",
+   "status": "actuel",
+   "address": null,
+   "startBuildingIds": [],
+   "coordinates": null,
+   "orthophoto": "non contrôlable sans position",
+   "verdict": "poi_imprecis",
+   "evidence": "« ZI La Glacière » sans numéro",
+   "finalBuildingIds": [],
+   "building_geometry_missing": true
+  },
+  {
+   "poi": "poi:bible:B05-054",
+   "name": "Aub'Pneus",
+   "type": "entreprise",
+   "category": "commerce_entreprise",
+   "status": "actuel",
+   "address": null,
+   "startBuildingIds": [],
+   "coordinates": null,
+   "orthophoto": "non contrôlable sans position",
+   "verdict": "poi_imprecis",
+   "evidence": "« ZI La Glacière » sans numéro",
+   "finalBuildingIds": [],
+   "building_geometry_missing": true
+  },
+  {
+   "poi": "poi:bible:B02-035",
+   "name": "SICAM",
+   "type": "site_industriel",
+   "category": "commerce_entreprise",
+   "status": "actuel",
+   "address": null,
+   "startBuildingIds": [],
+   "coordinates": null,
+   "orthophoto": "non contrôlable sans position",
+   "verdict": "poi_imprecis",
+   "evidence": "« ZI La Glacière » sans numéro",
+   "finalBuildingIds": [],
+   "building_geometry_missing": true
+  },
+  {
+   "poi": "poi:bible:B02-036",
+   "name": "Aub'Transport",
+   "type": "site_industriel",
+   "category": "commerce_entreprise",
+   "status": "actuel",
+   "address": null,
+   "startBuildingIds": [],
+   "coordinates": null,
+   "orthophoto": "non contrôlable sans position",
+   "verdict": "poi_imprecis",
+   "evidence": "« Zone Industrielle de La Glacière » sans numéro",
+   "finalBuildingIds": [],
+   "building_geometry_missing": true
+  },
+  {
+   "poi": "poi:bible:B02-040",
+   "name": "Usine Atlantem",
+   "type": "site_industriel",
+   "category": "commerce_entreprise",
+   "status": "actuel",
+   "address": null,
+   "startBuildingIds": [],
+   "coordinates": null,
+   "orthophoto": "non contrôlable sans position",
+   "verdict": "poi_imprecis",
+   "evidence": "« ZI La Glacière » sans numéro",
+   "finalBuildingIds": [],
+   "building_geometry_missing": true
+  },
+  {
+   "poi": "poi:bible:B03-055",
+   "name": "Restaurant Le Relais",
+   "type": "commerce",
+   "category": "commerce_entreprise",
+   "status": "actuel",
+   "address": null,
+   "startBuildingIds": [],
+   "coordinates": null,
+   "orthophoto": "non contrôlable sans position",
+   "verdict": "poi_imprecis",
+   "evidence": "« à proximité immédiate du Gué de la Chapelle » sans adresse",
+   "finalBuildingIds": [],
+   "building_geometry_missing": true
+  },
+  {
+   "poi": "poi:bible:B06-005",
+   "name": "Salle des fêtes",
+   "type": "autre",
+   "category": "autre",
+   "status": "actuel",
+   "address": null,
+   "startBuildingIds": [],
+   "coordinates": null,
+   "orthophoto": "non contrôlable sans position",
+   "verdict": "poi_imprecis",
+   "evidence": "salle des fêtes citée en 2024 sans adresse ; identité avec la salle polyvalente non établie",
+   "finalBuildingIds": [],
+   "building_geometry_missing": true
+  },
+  {
+   "poi": "poi:maison-des-papillons",
+   "name": "Maison des Papillons (MAM)",
+   "type": "petite_enfance",
+   "category": "equipement_public",
+   "status": "actuel",
+   "address": null,
+   "startBuildingIds": [],
+   "coordinates": null,
+   "orthophoto": "non contrôlable sans position",
+   "verdict": "poi_imprecis",
+   "evidence": "« desservie par le chemin du Bout des Ruelles, près des écoles » sans adresse ni bâtiment identifié",
+   "finalBuildingIds": [],
+   "building_geometry_missing": true
+  }
+ ]
+}

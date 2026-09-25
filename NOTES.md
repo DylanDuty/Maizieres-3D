@@ -1,3 +1,12 @@
+# Notes V1.11.1 — audit ciblé des bâtiments récents, 25 septembre 2026
+
+- **Constat** : aucun bâtiment ne manquait vraiment. Les lieux sans bâtiment de V1.11 venaient de positions d’adresse éloignées du bâtiment :
+  - points BAN « segment » posés sur la chaussée ;
+  - point BAN « entrée » posé sur le mur ;
+  - point BAN du 97 rue Joliot-Curie en plein champ.
+- **Méthode** : RNB par adresse, puis BAN PLUS, puis empreinte à 0,1 m de l’entrée. Chaque décision est contrôlée sur l’orthophoto d’avril 2025. Aucun bâtiment n’est modifié ni ajouté.
+- **Pour Unreal** : `building_position` donne le centre du bâtiment associé quand le point du lieu n’est pas sur lui. `building_geometry_missing` marque les 11 lieux sans adresse ou sans lien officiel, à relever avant tout placement.
+
 # Notes V1.11 — POI, patrimoine et toponymie Unreal, 25 septembre 2026
 
 Branche `opus/v1.11-poi-toponymy`, à partir de `a2ee6d2`. Pas de modèle 3D, pas d’étiquettes permanentes ajoutées, pas de modification du bâti ni des référentiels gelés.

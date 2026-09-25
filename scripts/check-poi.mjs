@@ -69,6 +69,13 @@ const T=rep.toponymyDetail,banStreets=new Set(read(`${D}/ban-adresses.geojson`).
 for(const n of banStreets)assert(T.streets.some(s=>s.official===n||s.forms.some(f=>f.name===n&&f.sources.includes('BAN'))),'Nom BAN absent : '+n);
 for(const s of T.streets.filter(s=>s.official))assert(s.forms.some(f=>f.name===s.official&&(f.sources.includes('BAN')||f.sources.includes('BD TOPO voie nommée'))),'Forme officielle remplacée : '+s.official);
 assert(T.conflicts.length>0&&T.lieuDitVariants.every(v=>v.official&&v.variant&&v.variantSource));
+// 10b. V1.11.1 targeted audit: decisions applied, only associations changed, no building added, flagged places documented.
+const AUD=read('data-sources/buildings-audit-v1.11.1/recent-buildings-audit.json'),DEC=read('data-sources/buildings-audit-v1.11.1/decisions.json').decisions;
+assert.equal(AUD.totals.buildings,2494);assert.equal(AUD.totals.buildingsInCommune,2265);assert.equal(AUD.totals.buildingsAdded,0);assert.equal(AUD.cases.length,DEC.length);
+for(const d of DEC){const p=P.find(x=>x.id===d.poi);assert(p,'Lieu audité absent : '+d.poi);assert.equal(p.buildingAudit.verdict,d.verdict);
+ if(d.verdict==='association_corrigee'){assert.deepEqual(p.building_ids,d.building_ids);assert.equal(p.building_geometry_missing,false);}
+ else{assert.equal(d.verdict,'poi_imprecis');assert.equal(p.building_ids.length,0);assert.equal(p.building_geometry_missing,true);assert(p.building_geometry_missing_reason);}}
+assert.equal(P.filter(p=>p.building_geometry_missing).length,DEC.filter(d=>d.verdict==='poi_imprecis').length);
 // 11. Report totals consistent with the files.
 assert.equal(rep.totals.poi,P.length);assert.equal(rep.totals.displayedCurrent,P.filter(p=>p.displayCurrent).length);assert.equal(rep.totals.withBuilding,P.filter(p=>p.building_ids.length).length);
 const pub=read('public/data/poi.json');assert.equal(pub.pois.length,P.filter(p=>p.geometry).length);assert.equal(pub.areas.length,A.filter(a=>a.ringsL93).length);

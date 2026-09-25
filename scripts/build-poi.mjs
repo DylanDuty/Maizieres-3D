@@ -284,6 +284,18 @@ for(const p of final){
  // Displayed on the current map: current status, a position, and enough evidence (curated or official, or a Bible B source; OSM alone never).
  p.displayCurrent=p.status==='actuel'&&!!p.anchor&&p.confidence!=='C'&&p.inCommune!==false&&!(p.sources.length&&p.sources.every(s=>s.source==='OSM'));
 }
+// V1.11.1 targeted audit of current places left without a building: decisions backed by BAN / BAN PLUS / RNB / BD TOPO and the
+// April 2025 orthophoto. Only the place → building association changes; no building geometry is modified or added.
+const AUDIT='data-sources/buildings-audit-v1.11.1/decisions.json';
+for(const p of final){p.building_geometry_missing=false;p.buildingAudit=null;p.building_position=null;}
+if(fs.existsSync(AUDIT))for(const d of read(AUDIT).decisions){const p=final.find(x=>x.id===d.poi);if(!p)throw Error('Audit V1.11.1 : lieu absent '+d.poi);
+ p.buildingAudit={verdict:d.verdict,evidence:d.by,orthophoto:d.ortho,...(d.banNote?{banNote:d.banNote}:{}),...(d.unreal?{unreal:d.unreal}:{})};
+ if(d.verdict==='association_corrigee'){for(const id of d.building_ids)if(!buildingById.has(id))throw Error('Audit V1.11.1 : bâtiment absent '+id);
+  p.building_ids=d.building_ids;p.building_id=d.building_ids[0];p.buildingLink='audit V1.11.1 : '+d.by;p.building_exists=true;p.notes=p.notes.filter(n=>!n.startsWith('aucune empreinte du référentiel bâti'));
+  // For Unreal, the associated building centre is given when the place anchor is not on the building (BAN point on the road, field centre…).
+  const b=buildingById.get(p.building_id);if(p.anchor&&!b.mp.some(poly=>insidePoly(p.anchor,poly))){const Z=terrainZ(...b.c);p.building_position={L93:[r2(b.c[0]),r2(b.c[1]),r2(Z)],unreal:toUnreal([b.c[0],b.c[1],Z]).map(Math.round),distanceFromAnchorM:r2(Math.hypot(b.c[0]-p.anchor[0],b.c[1]-p.anchor[1])),note:'centre de l’empreinte du bâtiment associé (référentiel V1.6.2)'};}}
+ else if(d.verdict==='poi_imprecis'){if(p.building_ids.length)throw Error('Audit V1.11.1 : lieu déjà associé '+d.poi);p.building_geometry_missing=true;p.building_geometry_missing_reason='lieu ou adresse imprécis : aucun bâtiment désignable sans deviner ('+d.by+')';}
+ else throw Error('Audit V1.11.1 : verdict non géré '+d.verdict);}
 final.sort((a,b)=>(a.id>b.id)-(a.id<b.id));
 
 // ---------- Areas: sectors, lieux-dits and zones with the nature of their geometry ----------
@@ -320,7 +332,7 @@ const META={version:'1.11',generatedBy:'scripts/build-poi.mjs',unrealOrigin:O,un
  rule:'une information historique n’est jamais présentée comme actuelle ; displayCurrent = statut actuel, position fiable et preuve suffisante (jamais OSM seul)'};
 const fullPoi=p=>({id:p.id,name:p.name,type:p.type,category:p.category,status:p.status,current_or_historical:p.current_or_historical,displayCurrent:p.displayCurrent,confidence:p.confidence,
  geometry:p.lonlat?{type:'Point',coordinates:p.lonlat}:null,geometryKind:p.geometryKind,positionSource:p.positionSource,precisionM:p.precisionM,L93:p.L93,unreal_position:p.unreal_position,orientation:p.orientation,orientationNote:p.orientationNote,
- building_id:p.building_id,building_ids:p.building_ids,buildingLink:p.buildingLink,road_id:p.road_id,roadLink:p.roadLink,address:p.address,ban_id:p.ban_id,inCommune:p.inCommune,areaId:p.areaId,
+ building_id:p.building_id,building_ids:p.building_ids,buildingLink:p.buildingLink,building_geometry_missing:p.building_geometry_missing,building_geometry_missing_reason:p.building_geometry_missing_reason||null,building_position:p.building_position,buildingAudit:p.buildingAudit,road_id:p.road_id,roadLink:p.roadLink,address:p.address,ban_id:p.ban_id,inCommune:p.inCommune,areaId:p.areaId,
  visual_priority:p.visual_priority,unreal_asset_priority:p.unreal_asset_priority,landmark_priority:p.landmark_priority,landmarkReason:p.landmarkReason,
  variants:[...new Set(p.variants)],notes:p.notes,conflicts:p.conflicts||[],contents:p.contents,lastEvidenceYear:p.lastEvidenceYear??null,source:[...new Set(p.sources.map(s=>s.source))].join(' + '),sources:p.sources});
 fs.mkdirSync('unreal/poi',{recursive:true});
@@ -330,7 +342,7 @@ fs.writeFileSync('unreal/poi/landmarks.json',JSON.stringify({metadata:{...META,l
  landmarks:landmarks.map(p=>({poiId:p.id,name:p.name,priority:p.landmark_priority,reason:p.landmarkReason,type:p.type,status:p.status,confidence:p.confidence,building_ids:p.building_ids,unreal_position:p.unreal_position,L93:p.L93,geometryKind:p.geometryKind,positionNote:p.anchor?null:'position à relever avant modélisation'})),notRetained})+'\n');
 // Three.js: compact layer for labels, clicks and ?diagnostic=poi.
 fs.writeFileSync('public/data/poi.json',JSON.stringify({metadata:{version:'1.11',generatedBy:'scripts/build-poi.mjs',note:'couche de lieux pour l’interaction Three.js ; provenance et confiance visibles en mode diagnostic'},
- pois:final.filter(p=>p.lonlat).map(p=>({id:p.id,name:p.name,type:p.type,category:p.category,status:p.status,coh:p.current_or_historical,display:p.displayCurrent,conf:p.confidence,lonlat:p.lonlat,geometryKind:p.geometryKind,building_ids:p.building_ids,road_id:p.road_id,address:p.address,landmark:p.landmark_priority,visual:p.visual_priority,
+ pois:final.filter(p=>p.lonlat).map(p=>({id:p.id,name:p.name,type:p.type,category:p.category,status:p.status,coh:p.current_or_historical,display:p.displayCurrent,conf:p.confidence,lonlat:p.lonlat,geometryKind:p.geometryKind,building_ids:p.building_ids,...(p.building_geometry_missing?{building_geometry_missing:true}:{}),road_id:p.road_id,address:p.address,landmark:p.landmark_priority,visual:p.visual_priority,
   source:[...new Set(p.sources.map(s=>s.source))].join(' + '),positionSource:p.positionSource,refs:p.sources.filter(s=>s.source.startsWith('BIBLE')).slice(0,3).map(s=>({bible:s.source.slice(6),section:s.section,quote:s.quote}))})),
  areas:areaOut.filter(a=>a.rings).map(a=>({id:a.id,name:a.name,type:a.type,geometryKind:a.geometryKind,poiId:a.poiId,rings:a.rings}))})+'\n');
 
@@ -347,7 +359,7 @@ const report={generatedAt:new Date().toISOString(),
  totals:{poi:final.length,inCommune:final.filter(p=>p.inCommune===true).length,outsideCommune:final.filter(p=>p.inCommune===false).length,withoutGeometry:final.filter(p=>!p.anchor).length,
   current:final.filter(p=>p.current_or_historical==='current').length,historical:final.filter(p=>p.current_or_historical==='historical').length,uncertain:final.filter(p=>p.current_or_historical==='uncertain').length,displayedCurrent:final.filter(p=>p.displayCurrent).length,
   byStatus:count(final,p=>p.status),byCategory:count(final,p=>p.category),byCategoryCurrent:count(final.filter(p=>p.status==='actuel'),p=>p.category),byGeometryKind:count(final,p=>p.geometryKind||'sans géométrie'),byConfidence:count(final,p=>p.confidence),
-  withBuilding:final.filter(p=>p.building_ids.length).length,buildingsLinked:new Set(final.flatMap(p=>p.building_ids)).size,withRoad:final.filter(p=>p.road_id).length,
+  withBuilding:final.filter(p=>p.building_ids.length).length,buildingAuditV1111:{associationsCorrigees:final.filter(p=>p.buildingAudit?.verdict==='association_corrigee').length,buildingGeometryMissing:final.filter(p=>p.building_geometry_missing).length,decisions:fs.existsSync(AUDIT)?sha(fs.readFileSync(AUDIT)):null},buildingsLinked:new Set(final.flatMap(p=>p.building_ids)).size,withRoad:final.filter(p=>p.road_id).length,
   lieuxDits:final.filter(p=>p.category==='lieu_dit').length,lieuxDitsInCommune:final.filter(p=>p.category==='lieu_dit'&&p.inCommune).length,secteurs:final.filter(p=>p.category==='secteur').length,
   equipementsPublics:final.filter(p=>p.category==='equipement_public').length,equipementsPublicsActuels:final.filter(p=>p.category==='equipement_public'&&p.status==='actuel').length,
   commercesEntreprisesActuels:final.filter(p=>p.category==='commerce_entreprise'&&p.status==='actuel').length,commercesEntreprisesAffiches:final.filter(p=>p.category==='commerce_entreprise'&&p.displayCurrent).length,commercesEntreprisesNonActuels:final.filter(p=>p.category==='commerce_entreprise'&&p.status!=='actuel').length,

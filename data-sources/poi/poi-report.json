@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-25T14:16:03.436Z",
+ "generatedAt": "2026-09-25T15:22:13.155Z",
  "frozen": {
   "buildingsSha256": "809f3af371719e2d3adfaa6e55a9d56235e4618e28e8a36595c85d501a4f3095",
   "roadsSha256": "e14c17b94cbe7a126516351add558b5860773c3e2803c04012a0221fe740194e",
@@ -174,8 +174,13 @@
    "B": 236,
    "C": 22
   },
-  "withBuilding": 81,
-  "buildingsLinked": 114,
+  "withBuilding": 90,
+  "buildingAuditV1111": {
+   "associationsCorrigees": 9,
+   "buildingGeometryMissing": 11,
+   "decisions": "1b6439ec201cd3a8a25914cce70186711ee522362e7a12091ecd3ffb5bfa127a"
+  },
+  "buildingsLinked": 122,
   "withRoad": 114,
   "lieuxDits": 131,
   "lieuxDitsInCommune": 90,
@@ -389,7 +394,9 @@
    "priority": 3,
    "name": "Stade de Maizières-la-Grande-Paroisse",
    "poiId": "poi:stade",
-   "building_ids": [],
+   "building_ids": [
+    "BATIMENT0000000325110358"
+   ],
    "positioned": true
   }
  ],

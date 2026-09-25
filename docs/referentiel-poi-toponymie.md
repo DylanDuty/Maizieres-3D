@@ -64,13 +64,13 @@ Natures de géométrie :
 | sans géométrie | nom documenté sans position fiable | 117 |
 
 Liens aux bâtiments :
-- 81 lieux sont reliés à 114 bâtiments du référentiel ;
+- 90 lieux sont reliés à 122 bâtiments du référentiel (81 et 114 en V1.11, avant l’audit V1.11.1) ;
 - le lien vient :
   - du lien officiel BAN PLUS, en priorité ;
   - sinon d’un périmètre BD TOPO de moins de 2 ha ;
   - sinon d’un point situé dans l’empreinte ;
 - aucune empreinte n’est modifiée.
-- Adresses sans empreinte : la maison médicale (31 av. du Général-de-Gaulle, 2023-2024) et plusieurs cellules du Parc de l’Aérodrome n’ont pas d’empreinte à leur adresse BAN. Ce sont probablement des bâtiments récents ; c’est signalé, et le référentiel bâti n’est pas modifié.
+- **Audit ciblé V1.11.1** (`docs/audit-batiments-recents-v1.11.1.md`) : la maison médicale, les cellules du Parc de l’Aérodrome et les autres lieux actuels restés sans bâtiment ont été vérifiés. Leurs bâtiments existaient déjà dans le référentiel. 9 associations ont été corrigées ; aucun bâtiment n’a été ajouté. 11 lieux trop imprécis portent `building_geometry_missing = true`.
 
 ## 3. Chiffres
 

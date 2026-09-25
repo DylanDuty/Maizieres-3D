@@ -1,6 +1,6 @@
 {
   "name": "maizieres-3d",
-  "version": "1.11.0",
+  "version": "1.11.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -41,7 +41,9 @@
     "check:landcover": "node --max-old-space-size=4096 scripts/check-landcover.mjs",
     "data:poi-fetch": "NODE_USE_ENV_PROXY=1 node scripts/fetch-poi.mjs",
     "data:poi": "node --max-old-space-size=6144 scripts/build-poi.mjs",
-    "check:poi": "node --max-old-space-size=4096 scripts/check-poi.mjs"
+    "check:poi": "node --max-old-space-size=4096 scripts/check-poi.mjs",
+    "data:recent-buildings-fetch": "NODE_USE_ENV_PROXY=1 node scripts/fetch-recent-buildings-audit.mjs",
+    "audit:recent-buildings": "node scripts/audit-recent-buildings.mjs"
   },
   "dependencies": {
     "three": "0.180.0"

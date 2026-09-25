@@ -1,3 +1,25 @@
+# Vérification V1.11.1 — audit ciblé des bâtiments récents sans association, 25 septembre 2026
+
+Branche `opus/v1.11.1-recent-buildings-audit`, à partir de `0722b1d`. Détail : `docs/audit-batiments-recents-v1.11.1.md`.
+
+| Mesure | Valeur |
+|---|---|
+| Lieux actuels désignant un bâtiment, sans association au départ | **20** (10 positionnés, 10 sans adresse exploitable) |
+| Associations récupérées | **9** (bâtiments déjà présents : RNB par adresse, BAN PLUS, point BAN d’entrée sur la façade, BIBLE_01 §7.10) |
+| Véritables bâtiments manquants | **0** |
+| Bâtiments ajoutés | **0** : total inchangé, **2 494, dont 2 265 dans la commune** |
+| Toujours sans géométrie de bâtiment | **11** lieux imprécis (`building_geometry_missing = true`) |
+| Lieux reliés à un bâtiment | 90, pour 122 bâtiments (81 et 114 en V1.11) |
+
+## Contrôles
+
+- `npm run check:all` : **11 contrôles OK**.
+- `check:poi` vérifie en plus :
+  - l’application de chaque décision ;
+  - l’absence d’ajout de bâtiment ;
+  - le drapeau `building_geometry_missing` sur les lieux imprécis.
+- `pnpm build` réussi. Le rendu normal est identique au pixel près. Chromium charge 2 494 bâtiments sans rejet, et la console n’affiche aucune erreur.
+
 # Vérification V1.11 — POI, patrimoine et toponymie Unreal, 25 septembre 2026
 
 Branche `opus/v1.11-poi-toponymy`, à partir de `a2ee6d2`. Le bâti, le terrain, la voirie, le ferroviaire, l’occupation du sol, l’origine Unreal et les Bibles sont inchangés (vérifié par SHA-256). Détail complet : `docs/referentiel-poi-toponymie.md`.

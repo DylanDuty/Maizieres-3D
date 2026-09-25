@@ -1,0 +1,7 @@
+{"note":"Zones de contrôle : une par emplacement de lieu actuel sans bâtiment associé en V1.11 (les lieux au même point partagent la zone).","zones":[
+ {"id":"philippe-seguin","L93":[756364,6822825],"pois":["poi:bible:B05-005","poi:bible:B05-006","poi:bible:B05-007","poi:bible:B05-008","poi:bible:B05-109"]},
+ {"id":"saint-exupery-9","L93":[756288,6822754],"pois":["poi:bible:B05-116"]},
+ {"id":"maison-medicale","L93":[757689,6822598],"pois":["poi:maison-medicale"]},
+ {"id":"joliot-curie-97","L93":[760346,6823645],"pois":["poi:bible:B05-093"]},
+ {"id":"stade","L93":[758469,6823113],"pois":["poi:stade"]},
+ {"id":"village-seniors","L93":[758148,6823331],"pois":["poi:village-seniors"]}]}

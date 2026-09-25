@@ -1,0 +1,1 @@
+{"metadata":{"source":"Référentiel national des bâtiments (RNB), API alpha, bb=nw_lat,nw_lng,se_lat,se_lng","request":"https://rnb-api.beta.gouv.fr/api/alpha/buildings/?bb=48.51157756288876,3.8149795122703676,48.508906877959845,3.819082981275157&limit=100","retrievedAt":"2026-09-25T15:16:54.333Z","license":"Licence Ouverte 2.0"},"buildings":[]}

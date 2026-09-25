@@ -1,0 +1,185 @@
+{
+ "note": "État de départ V1.11 (commit 0722b1d) des lieux audités : bâtiments associés avant l’audit.",
+ "pois": [
+  {
+   "id": "poi:bible:B02-035",
+   "name": "SICAM",
+   "building_ids": [],
+   "L93": null,
+   "address": null
+  },
+  {
+   "id": "poi:bible:B02-036",
+   "name": "Aub'Transport",
+   "building_ids": [],
+   "L93": null,
+   "address": null
+  },
+  {
+   "id": "poi:bible:B02-040",
+   "name": "Usine Atlantem",
+   "building_ids": [],
+   "L93": null,
+   "address": null
+  },
+  {
+   "id": "poi:bible:B03-055",
+   "name": "Restaurant Le Relais",
+   "building_ids": [],
+   "L93": null,
+   "address": null
+  },
+  {
+   "id": "poi:bible:B05-005",
+   "name": "AMITR",
+   "building_ids": [],
+   "L93": [
+    756364.47,
+    6822824.85,
+    76.27
+   ],
+   "address": "2 avenue Philippe-Séguin"
+  },
+  {
+   "id": "poi:bible:B05-006",
+   "name": "UPREN",
+   "building_ids": [],
+   "L93": [
+    756364.47,
+    6822824.85,
+    76.27
+   ],
+   "address": "2 avenue Philippe-Séguin"
+  },
+  {
+   "id": "poi:bible:B05-007",
+   "name": "Interface 10",
+   "building_ids": [],
+   "L93": [
+    756364.47,
+    6822824.85,
+    76.27
+   ],
+   "address": "2 avenue Philippe-Séguin"
+  },
+  {
+   "id": "poi:bible:B05-008",
+   "name": "GEIQ Sud Champagne",
+   "building_ids": [],
+   "L93": [
+    756364.47,
+    6822824.85,
+    76.27
+   ],
+   "address": "2 avenue Philippe-Séguin"
+  },
+  {
+   "id": "poi:bible:B05-054",
+   "name": "Aub'Pneus",
+   "building_ids": [],
+   "L93": null,
+   "address": null
+  },
+  {
+   "id": "poi:bible:B05-055",
+   "name": "Centre de Contrôle et de Sécurité",
+   "building_ids": [],
+   "L93": null,
+   "address": null
+  },
+  {
+   "id": "poi:bible:B05-056",
+   "name": "Maizières Automobiles / Aub'Récup Auto",
+   "building_ids": [],
+   "L93": null,
+   "address": "53 rue de l'Orme"
+  },
+  {
+   "id": "poi:bible:B05-093",
+   "name": "Luc-Pierre Rafanot (maçonnerie)",
+   "building_ids": [],
+   "L93": [
+    760345.91,
+    6823644.97,
+    79.29
+   ],
+   "address": "97 rue Joliot-Curie"
+  },
+  {
+   "id": "poi:bible:B05-108",
+   "name": "La Halle / PEGASE",
+   "building_ids": [],
+   "L93": null,
+   "address": null
+  },
+  {
+   "id": "poi:bible:B05-109",
+   "name": "Optique de l'Aérodrome / Krys",
+   "building_ids": [],
+   "L93": [
+    756357.84,
+    6822830.9,
+    76.32
+   ],
+   "address": "6 avenue Philippe-Séguin"
+  },
+  {
+   "id": "poi:bible:B05-116",
+   "name": "Action",
+   "building_ids": [],
+   "L93": [
+    756288.47,
+    6822753.75,
+    76.68
+   ],
+   "address": "9 boulevard Antoine-de-Saint-Exupéry"
+  },
+  {
+   "id": "poi:bible:B06-005",
+   "name": "Salle des fêtes",
+   "building_ids": [],
+   "L93": null,
+   "address": null
+  },
+  {
+   "id": "poi:maison-des-papillons",
+   "name": "Maison des Papillons (MAM)",
+   "building_ids": [],
+   "L93": null,
+   "address": null
+  },
+  {
+   "id": "poi:maison-medicale",
+   "name": "Maison médicale Michel-Bourcier",
+   "building_ids": [],
+   "L93": [
+    757689.45,
+    6822597.68,
+    77.96
+   ],
+   "address": "31 avenue du Général-de-Gaulle"
+  },
+  {
+   "id": "poi:stade",
+   "name": "Stade de Maizières-la-Grande-Paroisse",
+   "building_ids": [],
+   "L93": [
+    758469.35,
+    6823113.1,
+    78.94
+   ],
+   "address": null
+  },
+  {
+   "id": "poi:village-seniors",
+   "name": "Village Seniors (rue des Sages)",
+   "building_ids": [],
+   "L93": [
+    758147.96,
+    6823331.06,
+    77.21
+   ],
+   "address": null
+  }
+ ]
+}
