@@ -1,0 +1,40 @@
+{
+ "method": "Contrôle visuel sur l'orthophotographie IGN BD ORTHO (WMS-R ORTHOIMAGERY.ORTHOPHOTOS, prise de vue avril 2025), le 2026-09-25. L'orthophoto sert uniquement de contrôle : aucune géométrie n'a été dessinée, déplacée ou supprimée à partir de l'image ; une observation ne remplace jamais un attribut officiel.",
+ "overlaps": {
+  "rpg2024:8746607|ZONEVEGE0000002321885841": {"observation": "Bord de Seine : couvert arboré épars (jardins, vergers, rangées d'arbres) sur une prairie permanente déclarée ; ni forêt fermée continue ni prairie nue. Les deux géométries sources sont conservées, arbitrage de rendu à faire.", "open": true},
+  "rpg2024:4696991|ZONEVEGE0000002322385632": {"observation": "Bois visible sur l'orthophoto entre deux prés : la parcelle RPG déclarée englobe une bande boisée. Géométrie BD TOPO cohérente avec l'image ; priorité au bois pour la couverture visuelle, parcelle RPG conservée telle que déclarée.", "open": false},
+  "rpg2024:3135960|ZONEVEGE0000002321890905": {"observation": "Le polygone BD TOPO « Bois » englobe une cour de ferme et des bâtiments ; l'orthophoto montre un sol nu et des bâtiments, pas un bois. Incohérence de la source BD TOPO, non corrigée à l'œil.", "open": true},
+  "rpg2024:3116235|ZONEVEGE0000002321892030": {"observation": "Jeune peupleraie en rangs sur prairie : peupleraie BD TOPO et prairie déclarée compatibles.", "open": false},
+  "rpg2024:1097778|ZONEVEGE0000002322371309": {"observation": "Bande de jachère ouverte le long d'un bois ; le contour BD TOPO du bois déborde légèrement sur la bande. Compatible, géométries conservées.", "open": false},
+  "rpg2024:8339294|ZONEVEGE0000002322385539": {"observation": "Clairière en jachère : contour RPG légèrement plus large que la clairière visible. Compatible.", "open": false},
+  "rpg2024:958360|ZONEVEGE0000002322385316": {"observation": "Prairie bordée d'une ripisylve documentée : chevauchement de bordure. Compatible.", "open": false}
+ },
+ "relations": {
+  "758108.2,6824831.5": {"observation": "Route secondaire en remblai au-dessus d'un fond boisé : ouvrage probable (pont ou buse) mais non répertorié en V1.8 ; V1.8 gelée, non modifiée.", "open": true},
+  "755964.63,6824099.05": {"observation": "Chemin rural sous couvert arboré : franchissement non visible sur l'orthophoto.", "open": true},
+  "756240.4,6823848.04": {"observation": "Chemin carrossable franchissant un fossé/cours d'eau à ciel ouvert : buse probable, non documentée.", "open": true},
+  "756300.56,6823826.59": {"observation": "Chemin carrossable (secteur de carrière) franchissant le cours d'eau : buse probable, non documentée.", "open": true},
+  "757204.81,6826137.44": {"observation": "Bras des Menus Prés sous couvert boisé : le chemin rural s'arrête près du bras, franchissement non visible.", "open": true},
+  "757206.82,6826142.65": {"observation": "Même point que le précédent (deuxième tronçon du bras) : franchissement non visible.", "open": true}
+ },
+ "gaps": {
+  "758274,6823973": {"observation": "Centre-bourg : jardins, vergers familiaux et fond de vallon arboré du ruisseau ; non couvert par une source officielle d'occupation du sol.", "open": false},
+  "758686,6823377": {"observation": "Lotissement : maisons et jardins privés (tissu bâti), non cartographié en occupation du sol.", "open": false},
+  "757502,6823063": {"observation": "Village au sud de la voie ferrée : jardins et prés de fond de parcelle.", "open": false},
+  "756361,6821876": {"observation": "Friche/prairie non déclarée entre la centrale photovoltaïque et la zone industrielle ; aucune source ne documente sa fonction. Laissée non classée.", "open": true},
+  "758363,6823571": {"observation": "Centre-bourg : jardins, cours et petits prés.", "open": false},
+  "758811,6823911": {"observation": "Village : jardins et prés en arrière des maisons.", "open": false},
+  "757871,6822743": {"observation": "Village : jardins et cœurs d'îlots.", "open": false},
+  "758493,6825089": {"observation": "Bord de Seine : plantation arborée en rangs (peupliers ou verger) visible, non couverte par BD TOPO ni par le RPG 2024. Non ajoutée à l'œil.", "open": true}
+ },
+ "observations": [
+  {"id": "haies-b-courtes", "observation": "Échantillon de 9 haies DSB de confiance B : les linéaires de plus de 50 m correspondent à des haies visibles ; les très courts (< 30 m) en jardin ou le long de la voie ferrée sont peu lisibles. Conservés (source officielle), confiance B maintenue.", "open": false},
+  {"id": "haies-polygones-jardins", "observation": "Les polygones BD TOPO « Haie » sans linéaire DSB sont surtout des bosquets de jardin en village ; conservés dans une couche séparée hedge_polygon (B), jamais convertis en haies linéaires.", "open": false},
+  {"id": "centrales-pv", "observation": "Les 3 périmètres BD TOPO « centrale photovoltaïque » correspondent aux champs de panneaux visibles.", "open": false},
+  {"id": "noms-locaux", "observation": "« Canal de Poussey » et « rivière du Moulin » (BIBLE_01/04) ne figurent dans aucune source hydrographique officielle : aucun nom attribué à un tronçon.", "open": true}
+ ],
+ "notes": [
+  "Revue faite sur des planches orthophoto avec surimpression des couches V1.10 ; aucune géométrie modifiée.",
+  "Les chevauchements de contour < 0,2 ha et < 50 % de la parcelle sont classés automatiquement comme bandes de contour (non ouverts)."
+ ]
+}

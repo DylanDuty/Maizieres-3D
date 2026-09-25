@@ -1,3 +1,46 @@
+# Notes V1.10 — occupation du sol, végétation et hydrographie Unreal, 25 septembre 2026
+
+Branche `opus/v1.10-landcover`, à partir de `44f853f`. Pas de rendu artistique, pas d’arbres, de cultures, d’herbe, de matériaux, de rivière ni de PCG, pas d’import Unreal.
+
+## Audit
+
+- **Dans le projet** :
+  - OSM (landuse, natural, waterway, parkings) ;
+  - tronçons hydrographiques BD TOPO (instantané V1.9) ;
+  - la végétation stylisée du rendu (décor, non réutilisée).
+- **Sources officielles ajoutées** (WFS Géoplateforme, 17 instantanés) :
+  - RPG 2024, 2023, 2022 et codes de cultures ;
+  - BD TOPO : zones de végétation, haies DSB, surfaces et objets hydrographiques, zones d’activité, sport, cimetières, réservoirs, équipements de transport ;
+  - BD Forêt V2 ;
+  - cours d’eau BCAE.
+- Les produits RPG contenant un identifiant d’exploitant ne sont pas téléchargés.
+- La couche BCAE est servie en Lambert-93 malgré la sortie GeoJSON. Le CRS est enregistré dans l’instantané et respecté.
+
+## Choix
+
+- **Agriculture** :
+  - `landuse_type` vient de la catégorie RPG ; `crop_*` est la culture 2024 déclarée, datée et sourcée ;
+  - l’historique 2023-2022 est à part ;
+  - les terres non déclarées ne sont pas complétées.
+- **Bois** : BD TOPO, avec l’attribut BD Forêt. La proximité d’un cours d’eau est signalée, sans conclure à une ripisylve.
+- **Haies** :
+  - seuls les linéaires DSB sont des haies ; la confiance A exige un polygone « Haie » concordant ;
+  - les polygones sans linéaire sont gardés à part ;
+  - aucun bord de parcelle n’est promu en haie.
+- **Eau** :
+  - noms BD TOPO uniquement ;
+  - niveau approximatif tiré du MNT, jamais de profondeur ;
+  - croisements classés sans modifier V1.8 ni V1.9.
+- **Artificialisé** : surfaces distinctes des périmètres fonctionnels. OSM seulement en complément non couvert, en confiance C.
+- **Orthophoto** : planches de contrôle seulement (`landcover-review-v1.10.json`), aucune géométrie tirée de l’image.
+- **Simplification** : dérivée, 0,5 m, perte mesurée. La source est conservée quand la perte dépasse 2 %.
+
+## Suite possible
+
+- Arbitrer à la main les 2 recouvrements et les 2 zones non classées ouverts.
+- Documenter les 6 ouvrages hydrauliques manquants auprès du gestionnaire de voirie.
+- Mettre à jour la culture à chaque nouveau millésime RPG.
+
 # Notes V1.9 — référentiel ferroviaire et splines Unreal, 24 septembre 2026
 
 Branche `opus/v1.9-rail`, à partir de `52f3984`. Ni rendu, ni rails 3D, ni traverses, ni caténaire, ni signalisation, ni import Unreal.

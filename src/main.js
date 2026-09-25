@@ -13,6 +13,7 @@ import {palette} from './art.js';
 import {loadTerrain,buildTerrainDiagnostic} from './terrain.js';
 import {buildRoadsDiagnostic,ROAD_COLORS} from './roads-diagnostic.js';
 import {buildRailDiagnostic,RAIL_COLORS} from './rail-diagnostic.js';
+import {buildLandcoverDiagnostic,LANDCOVER_COLORS} from './landcover-diagnostic.js';
 const loading=document.querySelector('#loading');
 async function start(){
   const t0=performance.now();
@@ -31,16 +32,19 @@ async function start(){
   // Give the browser a frame to paint loading feedback before building static batches.
   await new Promise(resolve=>requestAnimationFrame(resolve));
   // V1.5: building footprints come from the unified reference (IGN BD TOPO first, OSM complement).
-  const reference=buildingItems(buildingReference,project,extent),diagnostic=['provenance','validation','terrain','roads','rail'].find(m=>m===new URLSearchParams(location.search).get('diagnostic'))||null;
+  const reference=buildingItems(buildingReference,project,extent),diagnostic=['provenance','validation','terrain','roads','rail','landcover'].find(m=>m===new URLSearchParams(location.search).get('diagnostic'))||null;
   // V1.7 ?diagnostic=terrain: real LiDAR HD relief; the flat stylised landscape is hidden, buildings sit on their base altitude.
   const relief=diagnostic==='terrain'?await loadTerrain(import.meta.env.BASE_URL):null,flatLayers=new Set(scene.children);
   const terrain=buildLandscape(scene,data,project,extent,ignLandscape,reference.items);
   let reliefMesh=null;if(relief){for(const o of scene.children)if(!flatLayers.has(o)&&!o.isLight)o.visible=false;reliefMesh=buildTerrainDiagnostic(scene,relief);}
   for(const f of data.features)if(f.geometry.type==='Point'&&['school','townhall','community_centre'].includes(f.properties.amenity)){const p=project(f.geometry.coordinates);const building=terrain.buildings.find(b=>insidePoly(p,b.poly));if(building){building.t={...building.t,amenity:f.properties.amenity,name:f.properties.name};}}
   const roadsRef=diagnostic==='roads'?await buildRoadsDiagnostic(scene,project,import.meta.env.BASE_URL):null,railRef=diagnostic==='rail'?await buildRailDiagnostic(scene,project,import.meta.env.BASE_URL):null;
-  const buildings=buildBuildings(scene,terrain.buildings,enrichment,{diagnostic:relief||roadsRef||railRef?null:diagnostic,elevation:relief?item=>relief.elevation.buildings[item.featureId].baseZ-relief.meta.yReference:null});
+  const landcoverRef=diagnostic==='landcover'?await buildLandcoverDiagnostic(scene,project,import.meta.env.BASE_URL):null;
+  const buildings=buildBuildings(scene,terrain.buildings,enrichment,{diagnostic:relief||roadsRef||railRef||landcoverRef?null:diagnostic,elevation:relief?item=>relief.elevation.buildings[item.featureId].baseZ-relief.meta.yReference:null});
   if(relief){const legend=document.createElement('div');legend.id='diagnostic-legend';const s=reliefMesh.stats;
    legend.innerHTML=[`Terrain IGN LiDAR HD (MNT) · grille ${s.step} m · ${s.vertices.toLocaleString('fr')} sommets`,`Altitude ${s.min} à ${s.max} m NGF-IGN69 · échelle verticale 1:1`,`y = altitude − ${s.yReference} m · quadrillage 100 m · courbes 5 m`,`NoData : ${s.noData}${s.noData?' (magenta)':''} · ${buildings.count} bâtiments posés à leur socle`].map(v=>`<span>${v}</span>`).join('');document.body.appendChild(legend);}
+  else if(landcoverRef){const legend=document.createElement('div');legend.id='diagnostic-legend';const s=landcoverRef.stats;
+   legend.innerHTML=[['terre_arable',`Terres arables, jachères, autres RPG 2024 · ${s.agriculture}`],['prairie',`Prairies RPG 2024 · ${s.prairie}`],['bois',`Bois et forêts · ${s.woodland}`],['peupleraie','Peupleraies'],['haie',`Haies DSB · ${s.hedge} · ${s.hedgeKm.toFixed(1)} km`],['haie_polygone',`Haies polygonales sans linéaire · ${s.hedgePolygon}`],['eau',`Surfaces en eau · ${s.water}`],['cours_eau',`Cours d’eau · ${s.waterLine} · ${s.waterKm.toFixed(1)} km`],['artificiel','Surfaces artificialisées'],['perimetre','Périmètres d’activité (contour)'],['incertain',`Incertain (confiance C) · ${s.uncertain}`]].map(([k,v])=>`<span><i style="background:${LANDCOVER_COLORS[k]}"></i>${v}</span>`).join('');document.body.appendChild(legend);}
   else if(railRef){const legend=document.createElement('div');legend.id='diagnostic-legend';const s=railRef.stats;
    legend.innerHTML=[['principal',`Voie principale · ${s.principal} · ${s.km.principal.toFixed(1)} km`],['service',`Voie de service · ${s.service} · ${s.km.service.toFixed(1)} km`],['unknown',`Statut incertain · ${s.unknown} · ${s.km.unknown.toFixed(1)} km`],['bridge',`Pont ferroviaire · ${railRef.bridges}`],['level',`Passage à niveau · ${railRef.levelCrossings}`],['historic',`Ancienne emprise (historique) · ${railRef.historic}`]].map(([k,v])=>`<span><i style="background:${RAIL_COLORS[k]}"></i>${v}</span>`).join('');document.body.appendChild(legend);}
   else if(roadsRef){const legend=document.createElement('div');legend.id='diagnostic-legend';const s=roadsRef.stats,labels=roadsRef.metadata.categories;
@@ -92,7 +96,7 @@ async function start(){
   controls.addEventListener('change',invalidate);
   addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);invalidate();});
   renderer.domElement.addEventListener('webglcontextlost',event=>{event.preventDefault();loading.hidden=false;loading.style.display='flex';loading.replaceChildren(Object.assign(document.createElement('strong'),{textContent:'Affichage 3D interrompu. Rechargez la page.'}));});
-  renderer.domElement.dataset.stats=JSON.stringify({...terrain.stats,relief:reliefMesh?.stats||null,roads:roadsRef?.stats||null,rail:railRef?.stats||null,buildings:buildings.count,enrichment:buildings.stats,clickable:catalogue.stats,loadMs:Math.round(performance.now()-t0)});reset();draw();renderer.shadowMap.autoUpdate=false;loading.remove();
+  renderer.domElement.dataset.stats=JSON.stringify({...terrain.stats,relief:reliefMesh?.stats||null,roads:roadsRef?.stats||null,rail:railRef?.stats||null,landcover:landcoverRef?.stats||null,buildings:buildings.count,enrichment:buildings.stats,clickable:catalogue.stats,loadMs:Math.round(performance.now()-t0)});reset();draw();renderer.shadowMap.autoUpdate=false;loading.remove();
   const snapshot=data.metadata.osmTimestamp?.slice(0,10)||data.metadata.retrievedAt.slice(0,10);document.querySelector('#data-date').textContent=`Relevé OSM · ${new Date(snapshot).toLocaleDateString('fr-FR')}`;
   // Read-only diagnostics for reproducible QA, without adding a performance dashboard.
   window.__MAIZIERES__={stats:{...terrain.stats,buildings:buildings.count,features:data.features.length,buildingReference:{...reference.stats,rendered:buildings.count,rejected:buildings.rejected},loadMs:Math.round(performance.now()-t0),origin:data.metadata.origin,extent},inspect:()=>({camera:camera.position.toArray(),target:controls.target.toArray(),drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,namesVisible}),breakdown:()=>{const out=[];scene.traverse(o=>{if(!o.isMesh)return;const g=o.geometry,tri=(g.index?g.index.count:g.getAttribute('position').count)/3;out.push({type:o.isInstancedMesh?'instanced':'mesh',instances:o.isInstancedMesh?o.count:1,triangles:tri*(o.isInstancedMesh?o.count:1),shadow:o.castShadow});});return out;},screen:(x,y,z)=>{const v=new THREE.Vector3(x,y,z).project(camera);return [(v.x*.5+.5)*innerWidth,(-v.y*.5+.5)*innerHeight];},view:(position,target)=>{controls.enableDamping=false;controls.target.set(...target);camera.position.set(...position);controls.update();controls.enableDamping=true;draw();}};

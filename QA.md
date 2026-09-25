@@ -1,3 +1,50 @@
+# Vérification V1.10 — occupation du sol, végétation et hydrographie Unreal, 25 septembre 2026
+
+Branche `opus/v1.10-landcover`, à partir de `44f853f`. Le bâti, le terrain, la voirie, le ferroviaire et l’origine Unreal sont inchangés (vérifié par SHA-256). Détail complet : `docs/referentiel-occupation-sol.md`.
+
+| Mesure | Valeur |
+|---|---|
+| Parcelles agricoles (RPG 2024) | **560** dans l’emprise, **2 438,20 ha** ; **334** dans la commune, **1 235,74 ha** |
+| Par type (ha emprise / commune) | terre arable 329 : 2 180,96 / 1 075,20 · jachère 119 : 114,97 / 89,92 · prairie permanente 39 : 100,43 / 46,05 · prairie temporaire 17 : 33,34 / 20,13 · culture permanente 3 : 1,98 / 0 · autre 53 : 6,52 / 4,43 |
+| Cultures documentées | 560 sur 560, année de culture **2024** (historique 2023 : 460, 2022 : 439 ; jamais présenté comme permanent) |
+| Bois et forêts | **253** polygones, **1 092,91 ha** (450,22 ha dans la commune) : peupleraies 614,82 ha, forêt fermée de feuillus 445,07 ha |
+| Haies | **378** haies DSB, **28,221 km** (12,287 km dans la commune), 237 A / 141 B ; 265 haies polygonales sans linéaire (10,18 ha) séparées |
+| Arbres documentés | 2 (OSM, B) ; aucun arbre tiré de l’orthophoto |
+| Hydrographie linéaire | **228** tronçons, **64,721 km** (23,952 km dans la commune) ; **136 nommés** / 92 sans nom ; 168 BCAE |
+| Surfaces en eau | **85**, **72,21 ha** (16,88 ha dans la commune) ; aucune nommée |
+| Surfaces artificialisées | **78** : 43 surfaces (11,30 ha), 35 périmètres fonctionnels (561,6 ha) ; 8 compléments OSM en confiance C |
+| Relations eau × voirie / rail | 80 : 27 ponts routiers V1.8, 45 buses probables, 2 pont ferroviaire V1.9, **6 ouvrages non documentés** |
+| Doublons / sans provenance | 0 / 0 |
+| Recouvrements RPG × bois / eau | 45 : 38 de moins de 0,2 ha (bandes de contour), 7 revus à l’orthophoto, **2 ouverts** |
+| Non classé dans la commune | 259,7 ha (191 ha hors périmètres) ; 51 zones de plus de 1 ha, surtout des jardins ; **2 ouvertes** |
+| Simplification 0,5 m | écart de surface ≤ 0,32 % par couche, ≤ 2 % par objet ; source conservée pour 49 petits objets |
+| Incohérences ouvertes | **19** |
+
+## Contrôles
+
+- `npm run check:all` : **10 contrôles OK**. Ce sont `check`, `check:enrichment`, `check:presentation`, `check:interaction`, `check:bible`, `check:buildings`, `check:terrain`, `check:roads`, `check:rail` et `check:landcover`.
+- `check:landcover` vérifie :
+  - SHA-256 du bâti (2 494 bâtiments, dont 2 265 dans la commune), des fichiers du terrain V1.7, de la voirie V1.8 et du ferroviaire V1.9 ;
+  - `UNREAL_ORIGIN` ;
+  - SHA-256 des 17 instantanés et emprise de requête ;
+  - géométrie source de chaque objet identique à l’instantané ;
+  - provenance et confiance partout ; OSM jamais en confiance A ;
+  - culture datée (2024) et historique séparé ;
+  - chaque haie adossée à un linéaire DSB ;
+  - noms d’eau issus de sources officielles uniquement ;
+  - conversions Unreal exactes (51 670 sommets de polygones, toutes les splines), points dans l’emprise ;
+  - niveau d’eau jamais au-dessus du terrain, pas de profondeur ;
+  - perte de simplification ≤ 2 % ;
+  - 0 doublon, recouvrements de 0,2 ha et plus revus, décompte des incohérences.
+- `pnpm build` réussi. Dans Chromium, les modes normal, `provenance`, `validation`, `terrain`, `roads`, `rail` et `landcover` chargent **2 494 bâtiments, sans rejet**. Le rendu normal est identique au pixel près à V1.9 (18 appels de dessin, 559 942 triangles). **Console sans erreur ni avertissement.**
+
+## Limites
+
+- Aucune source officielle d’arbres isolés ou d’alignements. Overpass et l’API OSM sont toujours refusés.
+- Le RPG ne couvre que les surfaces déclarées. Les jardins et friches restent non classés.
+- La culture est celle de 2024.
+- « Canal de Poussey » et « rivière du Moulin » sont absents des sources officielles.
+
 # Vérification V1.9 — référentiel ferroviaire et splines Unreal, 24 septembre 2026
 
 Branche `opus/v1.9-rail`, à partir de `52f3984`. Le bâti, le terrain, la voirie et l’origine Unreal sont inchangés (vérifié par SHA-256). Détail complet : `docs/referentiel-ferroviaire.md`.

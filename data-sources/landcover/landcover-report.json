@@ -1,0 +1,2435 @@
+{
+ "generatedAt": "2026-09-25T04:05:43.227Z",
+ "frozen": {
+  "buildingsSha256": "809f3af371719e2d3adfaa6e55a9d56235e4618e28e8a36595c85d501a4f3095",
+  "terrainGeoTiffSha256": "3e08e2a6e98b1764730f364f3d80fe8cb1df49b4eb967920ac995e213bf1eaef",
+  "roadsSha256": "e14c17b94cbe7a126516351add558b5860773c3e2803c04012a0221fe740194e",
+  "railSha256": "ebc2298e50aabc2b1f692a05db7a48f2010b05b737c95cf3e01acef3a47b5103",
+  "unrealOrigin": {
+   "crs": "EPSG:2154",
+   "E": 758278,
+   "N": 6823571,
+   "H": 0,
+   "verticalDatum": "NGF-IGN69",
+   "sourceLonLat": [
+    3.7890245,
+    48.5097657
+   ]
+  }
+ },
+ "sources": {
+  "bcae-cours-eau": {
+   "source": "Cours d’eau BCAE (conditionnalité PAC), millésime le plus récent",
+   "typename": "HYDROGRAPHY.BCAE.LATEST:bcae_cours_eau",
+   "retrievedAt": "2026-09-25T03:56:16.843Z",
+   "features": 172,
+   "sha256": "518ed26e106c3f2b30801e465a9bab9682825c471d363d0ef5bca618fb6e41a4"
+  },
+  "bdforet-v2-formation-vegetale": {
+   "source": "BD Forêt V2 (IGN), types de formation végétale",
+   "typename": "LANDCOVER.FORESTINVENTORY.V2:formation_vegetale",
+   "retrievedAt": "2026-09-25T03:50:16.432Z",
+   "features": 187,
+   "sha256": "a91762252070228a5f1fc13d0b7ddc60944f671b5a78c0983bc1654dd26c11ea"
+  },
+  "bdtopo-cimetiere": {
+   "source": "BD TOPO cimetière",
+   "typename": "BDTOPO_V3:cimetiere",
+   "retrievedAt": "2026-09-25T03:50:18.190Z",
+   "features": 2,
+   "sha256": "58d9fa992723444e7b2cf27efb4174a0156ec840a1d9a740605b7acc010162e4"
+  },
+  "bdtopo-cours-d-eau": {
+   "source": "BD TOPO cours d’eau (entité nommée)",
+   "typename": "BDTOPO_V3:cours_d_eau",
+   "retrievedAt": "2026-09-25T03:50:17.430Z",
+   "features": 31,
+   "sha256": "e2ab5edd687a5f70db86ea551d4787de6babb0c5fd722c140bb69d1c9fe19fab"
+  },
+  "bdtopo-detail-hydrographique": {
+   "source": "BD TOPO détail hydrographique",
+   "typename": "BDTOPO_V3:detail_hydrographique",
+   "retrievedAt": "2026-09-25T03:50:17.677Z",
+   "features": 4,
+   "sha256": "6b5b3a2050087e659761a98471802a6e6f34ebf4ce3dbd6003c6c569529f1011"
+  },
+  "bdtopo-equipement-de-transport": {
+   "source": "BD TOPO équipement de transport (parkings, aires)",
+   "typename": "BDTOPO_V3:equipement_de_transport",
+   "retrievedAt": "2026-09-25T03:50:18.721Z",
+   "features": 14,
+   "sha256": "a605d1215978f4e0dc6d2e6c0234c40d8a4688225f9536738ec0cd83eb1cdfc5"
+  },
+  "bdtopo-haie": {
+   "source": "BD TOPO haie (linéaire, Dispositif national de suivi des bocages)",
+   "typename": "BDTOPO_V3:haie",
+   "retrievedAt": "2026-09-25T03:50:16.052Z",
+   "features": 395,
+   "sha256": "c7c47ab591e52ddd9963c4a202ffbac25e29244d10e28c57ee2b559c7666bf83"
+  },
+  "bdtopo-plan-d-eau": {
+   "source": "BD TOPO plan d’eau",
+   "typename": "BDTOPO_V3:plan_d_eau",
+   "retrievedAt": "2026-09-25T03:50:16.996Z",
+   "features": 7,
+   "sha256": "f6b95512dc9a13ed99fad794f266875977773eb698cc6f6d41e32e287032f5af"
+  },
+  "bdtopo-reservoir": {
+   "source": "BD TOPO réservoir",
+   "typename": "BDTOPO_V3:reservoir",
+   "retrievedAt": "2026-09-25T03:50:18.382Z",
+   "features": 22,
+   "sha256": "988b4480eab5fc1150c38fd7426e76648dfd4088c7e4ee2fef21ef234ce6abd5"
+  },
+  "bdtopo-surface-hydrographique": {
+   "source": "BD TOPO surface hydrographique",
+   "typename": "BDTOPO_V3:surface_hydrographique",
+   "retrievedAt": "2026-09-25T03:50:16.692Z",
+   "features": 85,
+   "sha256": "8d962c178e2b5de114ee7ff9b95ff90f4222d265f3bad77497f7ea9736eaeb04"
+  },
+  "bdtopo-terrain-de-sport": {
+   "source": "BD TOPO terrain de sport",
+   "typename": "BDTOPO_V3:terrain_de_sport",
+   "retrievedAt": "2026-09-25T03:50:18.031Z",
+   "features": 6,
+   "sha256": "ed96ff2f61303910138df1d153e256daddd5a53b9b09458ab077f0cb7b703382"
+  },
+  "bdtopo-zone-d-activite": {
+   "source": "BD TOPO zone d’activité ou d’intérêt",
+   "typename": "BDTOPO_V3:zone_d_activite_ou_d_interet",
+   "retrievedAt": "2026-09-25T03:50:18.564Z",
+   "features": 34,
+   "sha256": "4fb9ef7c50b55353cda72712fb65e4b83754dba6927389a761aa1fdb620dc7f6"
+  },
+  "bdtopo-zone-de-vegetation": {
+   "source": "BD TOPO zone de végétation",
+   "typename": "BDTOPO_V3:zone_de_vegetation",
+   "retrievedAt": "2026-09-25T03:50:15.845Z",
+   "features": 717,
+   "sha256": "f5023ad10622ef07976b6249ae720760c0843ea65d4214dcdd7d92b999f4f93a"
+  },
+  "rpg-2022-parcelles": {
+   "source": "RPG 2022 (ASP / IGN), historique",
+   "typename": "RPG.2022:parcelles_graphiques",
+   "retrievedAt": "2026-09-25T03:50:15.191Z",
+   "features": 573,
+   "sha256": "79c4f6610d416594a97cbae14092fda7456d9e9ae67c63e591a28545202f4857"
+  },
+  "rpg-2023-parcelles": {
+   "source": "RPG 2023 (ASP / IGN), historique",
+   "typename": "RPG.2023:parcelles_graphiques",
+   "retrievedAt": "2026-09-25T03:50:14.935Z",
+   "features": 572,
+   "sha256": "d2686ad1a3f2de51e55bef0a1b5a13853c797c8fae9899a10680119c7b020f7c"
+  },
+  "rpg-2024-codes-cultures": {
+   "source": "RPG 2024, nomenclature des cultures",
+   "typename": "RPG.2024:codes_cultures",
+   "retrievedAt": "2026-09-25T03:50:15.341Z",
+   "features": 147,
+   "sha256": "0a26a427db56cb3ad8d10c24831eab70304ebdb1b566584885779b18bc570956"
+  },
+  "rpg-2024-parcelles": {
+   "source": "RPG 2024 (ASP / IGN), parcelles graphiques anonymes",
+   "typename": "RPG.2024:parcelles_graphiques",
+   "retrievedAt": "2026-09-25T03:50:14.675Z",
+   "features": 575,
+   "sha256": "b679d7799a3a2b892b8deea4d23dbc6939b02d56b4c678748a978ae5dcc57bd7"
+  }
+ },
+ "communeHa": 2038.24,
+ "agriculture": {
+  "parcels": 560,
+  "parcelsInCommune": 334,
+  "ha": 2438.2,
+  "haInCommune": 1235.74,
+  "byLanduseType": {
+   "terre_arable": {
+    "count": 329,
+    "ha": 2180.96,
+    "haInCommune": 1075.2
+   },
+   "autre_surface_agricole": {
+    "count": 53,
+    "ha": 6.52,
+    "haInCommune": 4.43
+   },
+   "jachere": {
+    "count": 119,
+    "ha": 114.97,
+    "haInCommune": 89.92
+   },
+   "culture_permanente": {
+    "count": 3,
+    "ha": 1.98,
+    "haInCommune": 0
+   },
+   "prairie_temporaire": {
+    "count": 17,
+    "ha": 33.34,
+    "haInCommune": 20.13
+   },
+   "prairie_permanente": {
+    "count": 39,
+    "ha": 100.43,
+    "haInCommune": 46.05
+   }
+  },
+  "byCrop": {
+   "Pomme de terre de consommation": {
+    "count": 4,
+    "ha": 29.95,
+    "haInCommune": 12.87
+   },
+   "Chanvre": {
+    "count": 27,
+    "ha": 141.13,
+    "haInCommune": 82.07
+   },
+   "Orge d'hiver": {
+    "count": 34,
+    "ha": 255.84,
+    "haInCommune": 93.97
+   },
+   "Betterave non fourragère / Bette": {
+    "count": 23,
+    "ha": 226.13,
+    "haInCommune": 102.84
+   },
+   "Blé tendre d'hiver": {
+    "count": 92,
+    "ha": 708.87,
+    "haInCommune": 338.8
+   },
+   "Orge de printemps": {
+    "count": 43,
+    "ha": 259.6,
+    "haInCommune": 125.15
+   },
+   "Graminée pure exclusivement pour gazon ou pour production de semences certifiées": {
+    "count": 9,
+    "ha": 42.64,
+    "haInCommune": 32.82
+   },
+   "Bordure de champ": {
+    "count": 3,
+    "ha": 0.26,
+    "haInCommune": 0.26
+   },
+   "Jachère (terre arable)": {
+    "count": 119,
+    "ha": 114.97,
+    "haInCommune": 89.92
+   },
+   "Surface agricole temporairement non exploitée": {
+    "count": 38,
+    "ha": 4.47,
+    "haInCommune": 2.93
+   },
+   "Colza d'hiver": {
+    "count": 47,
+    "ha": 266.31,
+    "haInCommune": 144.5
+   },
+   "Autre luzerne": {
+    "count": 15,
+    "ha": 140.46,
+    "haInCommune": 106.14
+   },
+   "Carotte": {
+    "count": 2,
+    "ha": 1.16,
+    "haInCommune": 0
+   },
+   "Bande tampon": {
+    "count": 11,
+    "ha": 1.75,
+    "haInCommune": 1.23
+   },
+   "Culture pérenne à forte biomasse (miscanthus, switchgrass, silphie, canne fourragère, …)": {
+    "count": 2,
+    "ha": 1.7,
+    "haInCommune": 0
+   },
+   "Autre prairie temporaire de 5 ans ou moins": {
+    "count": 17,
+    "ha": 33.34,
+    "haInCommune": 20.13
+   },
+   "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)": {
+    "count": 39,
+    "ha": 100.43,
+    "haInCommune": 46.05
+   },
+   "Maïs": {
+    "count": 9,
+    "ha": 27.55,
+    "haInCommune": 0
+   },
+   "Autre oléagineux d’un autre genre": {
+    "count": 10,
+    "ha": 11.53,
+    "haInCommune": 0
+   },
+   "Bande admissible le long d'une forêt sans production": {
+    "count": 1,
+    "ha": 0.04,
+    "haInCommune": 0.01
+   },
+   "Avoine de printemps": {
+    "count": 3,
+    "ha": 7.79,
+    "haInCommune": 7.79
+   },
+   "Tournesol": {
+    "count": 3,
+    "ha": 13.68,
+    "haInCommune": 13.68
+   },
+   "Lentille cultivée (non fourragère)": {
+    "count": 2,
+    "ha": 9.81,
+    "haInCommune": 0
+   },
+   "Sorgho": {
+    "count": 1,
+    "ha": 0.75,
+    "haInCommune": 0
+   },
+   "Mélange de légumineuses prépondérantes au semis et de graminées fourragères de 5 ans ou moins": {
+    "count": 2,
+    "ha": 2,
+    "haInCommune": 0
+   },
+   "Autre légume ou fruit pérenne": {
+    "count": 1,
+    "ha": 0.28,
+    "haInCommune": 0
+   },
+   "Seigle d'hiver": {
+    "count": 1,
+    "ha": 14.58,
+    "haInCommune": 14.58
+   },
+   "Oeillette": {
+    "count": 1,
+    "ha": 10.22,
+    "haInCommune": 0
+   },
+   "Pois de printemps semé avant le 31/05": {
+    "count": 1,
+    "ha": 10.97,
+    "haInCommune": 0
+   }
+  },
+  "withDocumentedCrop": 560,
+  "cropYear": 2024,
+  "history": {
+   "2022": 439,
+   "2023": 460
+  },
+  "unchangedCrop3Years": 88,
+  "declaredVsGeometricAreaMedianRatio": 1
+ },
+ "woodland": {
+  "polygons": 253,
+  "ha": 1092.91,
+  "haInCommune": 450.22,
+  "byType": {
+   "peupleraie": {
+    "count": 68,
+    "ha": 614.82,
+    "haInCommune": 286.97
+   },
+   "bois": {
+    "count": 89,
+    "ha": 8.33,
+    "haInCommune": 3.93
+   },
+   "foret_fermee_feuillus": {
+    "count": 86,
+    "ha": 445.07,
+    "haInCommune": 149.15
+   },
+   "lande_ligneuse": {
+    "count": 7,
+    "ha": 19.8,
+    "haInCommune": 10.17
+   },
+   "foret_ouverte": {
+    "count": 3,
+    "ha": 4.89,
+    "haInCommune": 0
+   }
+  },
+  "withBdforet": 253,
+  "nearWatercourse": 160
+ },
+ "hedges": {
+  "count": 378,
+  "lengthKm": 28.221,
+  "lengthKmInCommune": 12.287,
+  "byConfidence": {
+   "B": 141,
+   "A": 237
+  },
+  "withWidth": 262,
+  "polygonsWithoutLine": 265,
+  "polygonsWithoutLineHa": 10.18
+ },
+ "trees": {
+  "count": 2,
+  "source": "OSM natural=tree ; aucune couche officielle d’arbres ou d’alignements accessible"
+ },
+ "water": {
+  "lines": 228,
+  "lengthKm": 64.721,
+  "lengthKmInCommune": 23.952,
+  "named": 136,
+  "unnamed": 92,
+  "namedKm": 50.183,
+  "names": [
+   "Bras 01 des Menus Prés",
+   "Bras 02 des Menus Prés",
+   "Bras de la Noue de Ferloup",
+   "Bras de la Seine",
+   "Bras des Moulins de Poussey",
+   "Bras des Moulins de Sauvage",
+   "Canal 01 des Penouilles",
+   "Canal 01 du Haut Buon",
+   "Canal des Moulins",
+   "Canal des Moulins de Sauvage",
+   "Cours d'Eau 01 des Menus Prés",
+   "Cours d'Eau 01 du Gué de Vailly",
+   "Fossé 01 du Clos Baillot",
+   "Fossé 01 du Gobyat",
+   "Fossé 01 du Rondeau",
+   "Fossé 02 du Gobyat",
+   "Fossé 03 des Epinettes",
+   "Noue de Ferloup",
+   "Noue des Barces",
+   "Noue des Fourchus",
+   "Ruisseau des Moulins de Poussey",
+   "la Seine"
+  ],
+  "byPersistance": {
+   "Intermittent": {
+    "count": 127,
+    "ha": 0,
+    "haInCommune": 0
+   },
+   "Permanent": {
+    "count": 101,
+    "ha": 0,
+    "haInCommune": 0
+   }
+  },
+  "bcae": 168,
+  "fosses": 0,
+  "underground": 0,
+  "polygons": 85,
+  "polygonsHa": 72.21,
+  "polygonsHaInCommune": 16.88,
+  "polygonsByType": {
+   "Plan d'eau de gravière": {
+    "count": 7,
+    "ha": 14.54,
+    "haInCommune": 0
+   },
+   "Retenue": {
+    "count": 24,
+    "ha": 6.49,
+    "haInCommune": 0.64
+   },
+   "Ecoulement naturel": {
+    "count": 17,
+    "ha": 45.29,
+    "haInCommune": 14.98
+   },
+   "Mare": {
+    "count": 6,
+    "ha": 0.15,
+    "haInCommune": 0.1
+   },
+   "Réservoir-bassin d'orage": {
+    "count": 9,
+    "ha": 1.39,
+    "haInCommune": 0.72
+   },
+   "Réservoir-bassin": {
+    "count": 21,
+    "ha": 1.94,
+    "haInCommune": 0.44
+   },
+   "eau (OSM river)": {
+    "count": 1,
+    "ha": 2.41,
+    "haInCommune": 0
+   }
+  },
+  "polygonsNamed": 0,
+  "bible": [
+   {
+    "bibleName": "Seine",
+    "found": [
+     "Bras de la Seine",
+     "la Seine"
+    ]
+   },
+   {
+    "bibleName": "Moulins de Poussey",
+    "found": [
+     "Ruisseau des Moulins de Poussey",
+     "Bras des Moulins de Poussey"
+    ]
+   },
+   {
+    "bibleName": "Noue de Ferloup",
+    "found": [
+     "Noue de Ferloup",
+     "Bras de la Noue de Ferloup"
+    ]
+   },
+   {
+    "bibleName": "Menus Prés",
+    "found": [
+     "Bras 02 des Menus Prés",
+     "Bras 01 des Menus Prés",
+     "Cours d'Eau 01 des Menus Prés"
+    ]
+   },
+   {
+    "bibleName": "Epinettes",
+    "found": [
+     "Fossé 03 des Epinettes"
+    ]
+   },
+   {
+    "bibleName": "canal de Poussey",
+    "found": []
+   },
+   {
+    "bibleName": "rivière du Moulin",
+    "found": []
+   }
+  ]
+ },
+ "artificial": {
+  "surfaces": 78,
+  "byClass": {
+   "equipement_public": {
+    "count": 15,
+    "ha": 0.49,
+    "haInCommune": 0.14
+   },
+   "zone_industrielle": {
+    "count": 4,
+    "ha": 199.59,
+    "haInCommune": 97.42
+   },
+   "zone_commerciale": {
+    "count": 2,
+    "ha": 15.29,
+    "haInCommune": 0.14
+   },
+   "enceinte_militaire": {
+    "count": 1,
+    "ha": 30.89,
+    "haInCommune": 25.65
+   },
+   "equipement_sportif": {
+    "count": 6,
+    "ha": 6.57,
+    "haInCommune": 3.48
+   },
+   "parc_eolien_perimetre": {
+    "count": 2,
+    "ha": 258.84,
+    "haInCommune": 3.43
+   },
+   "equipement_technique": {
+    "count": 1,
+    "ha": 0.12,
+    "haInCommune": 0.12
+   },
+   "centrale_photovoltaique": {
+    "count": 3,
+    "ha": 46.26,
+    "haInCommune": 15.26
+   },
+   "aire_accueil": {
+    "count": 1,
+    "ha": 3.54,
+    "haInCommune": 3.54
+   },
+   "terrain_de_sport": {
+    "count": 7,
+    "ha": 1.97,
+    "haInCommune": 1.23
+   },
+   "cimetiere": {
+    "count": 2,
+    "ha": 1.05,
+    "haInCommune": 0.81
+   },
+   "reservoir": {
+    "count": 22,
+    "ha": 0.2,
+    "haInCommune": 0.19
+   },
+   "emprise_ferroviaire": {
+    "count": 1,
+    "ha": 2.89,
+    "haInCommune": 2.64
+   },
+   "parking": {
+    "count": 11,
+    "ha": 5.19,
+    "haInCommune": 1.52
+   }
+  },
+  "byKind": {
+   "périmètre fonctionnel (BD TOPO)": {
+    "count": 34,
+    "ha": 560.53,
+    "haInCommune": 148.11
+   },
+   "surface": {
+    "count": 43,
+    "ha": 11.3,
+    "haInCommune": 6.38
+   },
+   "périmètre fonctionnel (OSM)": {
+    "count": 1,
+    "ha": 1.07,
+    "haInCommune": 1.07
+   }
+  },
+  "osmComplements": 8
+ },
+ "relations": {
+  "count": 80,
+  "byKind": {
+   "road : buse / ponceau probable (non documenté)": 45,
+   "road : pont routier (V1.8)": 27,
+   "road : ouvrage non documenté sur un cours d’eau permanent": 6,
+   "rail : pont ferroviaire (V1.9 TRONFERR0000000009310482)": 2
+  },
+  "open": [
+   {
+    "with": "road",
+    "water": "TRON_EAU0000000009312751",
+    "waterName": null,
+    "waterPersistance": "Permanent",
+    "road": "TRONROUT0000000009479981",
+    "roadName": null,
+    "roadCategory": "route_secondaire",
+    "L93": [
+     758108.2,
+     6824831.5
+    ],
+    "kind": "ouvrage non documenté sur un cours d’eau permanent",
+    "open": true,
+    "review": {
+     "observation": "Route secondaire en remblai au-dessus d'un fond boisé : ouvrage probable (pont ou buse) mais non répertorié en V1.8 ; V1.8 gelée, non modifiée.",
+     "open": true
+    }
+   },
+   {
+    "with": "road",
+    "water": "TRON_EAU0000000009313282",
+    "waterName": null,
+    "waterPersistance": "Permanent",
+    "road": "TRONROUT0000002006399239",
+    "roadName": null,
+    "roadCategory": "chemin_rural",
+    "L93": [
+     755964.63,
+     6824099.05
+    ],
+    "kind": "ouvrage non documenté sur un cours d’eau permanent",
+    "open": true,
+    "review": {
+     "observation": "Chemin rural sous couvert arboré : franchissement non visible sur l'orthophoto.",
+     "open": true
+    }
+   },
+   {
+    "with": "road",
+    "water": "TRON_EAU0000000009313282",
+    "waterName": null,
+    "waterPersistance": "Permanent",
+    "road": "TRONROUT0000002477105815",
+    "roadName": null,
+    "roadCategory": "chemin_carrossable",
+    "L93": [
+     756240.4,
+     6823848.04
+    ],
+    "kind": "ouvrage non documenté sur un cours d’eau permanent",
+    "open": true,
+    "review": {
+     "observation": "Chemin carrossable franchissant un fossé/cours d'eau à ciel ouvert : buse probable, non documentée.",
+     "open": true
+    }
+   },
+   {
+    "with": "road",
+    "water": "TRON_EAU0000000009313282",
+    "waterName": null,
+    "waterPersistance": "Permanent",
+    "road": "TRONROUT0000002477105962",
+    "roadName": null,
+    "roadCategory": "chemin_carrossable",
+    "L93": [
+     756300.56,
+     6823826.59
+    ],
+    "kind": "ouvrage non documenté sur un cours d’eau permanent",
+    "open": true,
+    "review": {
+     "observation": "Chemin carrossable (secteur de carrière) franchissant le cours d'eau : buse probable, non documentée.",
+     "open": true
+    }
+   },
+   {
+    "with": "road",
+    "water": "TRON_EAU0000000065119364",
+    "waterName": "Bras 01 des Menus Prés",
+    "waterPersistance": "Permanent",
+    "road": "way/132008284#1",
+    "roadName": null,
+    "roadCategory": "chemin_rural",
+    "L93": [
+     757204.81,
+     6826137.44
+    ],
+    "kind": "ouvrage non documenté sur un cours d’eau permanent",
+    "open": true,
+    "review": {
+     "observation": "Bras des Menus Prés sous couvert boisé : le chemin rural s'arrête près du bras, franchissement non visible.",
+     "open": true
+    }
+   },
+   {
+    "with": "road",
+    "water": "TRON_EAU0000000065119364",
+    "waterName": "Bras 01 des Menus Prés",
+    "waterPersistance": "Permanent",
+    "road": "way/132008284#1",
+    "roadName": null,
+    "roadCategory": "chemin_rural",
+    "L93": [
+     757206.82,
+     6826142.65
+    ],
+    "kind": "ouvrage non documenté sur un cours d’eau permanent",
+    "open": true,
+    "review": {
+     "observation": "Même point que le précédent (deuxième tronçon du bras) : franchissement non visible.",
+     "open": true
+    }
+   }
+  ],
+  "roadBridges": [
+   {
+    "road": "TRONROUT0000000009478796",
+    "name": null,
+    "crosses": [],
+    "waterLine": false
+   },
+   {
+    "road": "TRONROUT0000000009478798",
+    "name": null,
+    "crosses": [
+     "La Seine"
+    ],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000009478799",
+    "name": null,
+    "crosses": [
+     "Rivière du Moulin"
+    ],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000009479959",
+    "name": null,
+    "crosses": [],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000009479965",
+    "name": "Rue du Pont de Clairvaux",
+    "crosses": [
+     "Rivière du Moulin"
+    ],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000009479988",
+    "name": null,
+    "crosses": [],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000009479989",
+    "name": null,
+    "crosses": [],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000009480016",
+    "name": null,
+    "crosses": [],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000009480018",
+    "name": null,
+    "crosses": [],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000009481873",
+    "name": null,
+    "crosses": [],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000009483634",
+    "name": "Rue de l'Orme",
+    "crosses": [
+     "voie ferrée"
+    ],
+    "waterLine": false
+   },
+   {
+    "road": "TRONROUT0000000065477174",
+    "name": null,
+    "crosses": [],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000065477175",
+    "name": null,
+    "crosses": [],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000065477220",
+    "name": null,
+    "crosses": [],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000065477221",
+    "name": null,
+    "crosses": [],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000065477222",
+    "name": null,
+    "crosses": [],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000065477245",
+    "name": null,
+    "crosses": [
+     "La Petite Rivière de Sauvage"
+    ],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000065477248",
+    "name": null,
+    "crosses": [],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000065477372",
+    "name": null,
+    "crosses": [],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000065477374",
+    "name": null,
+    "crosses": [
+     "La Seine"
+    ],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000065477379",
+    "name": null,
+    "crosses": [
+     "canal"
+    ],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000065477386",
+    "name": null,
+    "crosses": [
+     "La Seine"
+    ],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000065477423",
+    "name": null,
+    "crosses": [
+     "La Noue des Fourches"
+    ],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000099212500",
+    "name": null,
+    "crosses": [
+     "La Petite Rivière de Sauvage"
+    ],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000099212501",
+    "name": null,
+    "crosses": [
+     "La Petite Rivière de Sauvage"
+    ],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000224198285",
+    "name": null,
+    "crosses": [
+     "La Seine",
+     "dam"
+    ],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000224198287",
+    "name": null,
+    "crosses": [
+     "dam"
+    ],
+    "waterLine": true
+   },
+   {
+    "road": "TRONROUT0000000328328305",
+    "name": null,
+    "crosses": [],
+    "waterLine": false
+   },
+   {
+    "road": "TRONROUT0000002203222902",
+    "name": null,
+    "crosses": [],
+    "waterLine": false
+   },
+   {
+    "road": "TRONROUT0000002203222909",
+    "name": null,
+    "crosses": [],
+    "waterLine": false
+   }
+  ]
+ },
+ "quality": {
+  "duplicates": [],
+  "overlaps": [
+   {
+    "a": "rpg2024:10001406",
+    "b": "ZONEVEGE0000002321885834",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 423,
+    "shareOfParcel": 0.22,
+    "shareOfOther": 0.03,
+    "cropType": "Bordure de champ",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:10005066",
+    "b": "ZONEVEGE0000002321901624",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 1050,
+    "shareOfParcel": 0.98,
+    "shareOfOther": 0,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:10919782",
+    "b": "ZONEVEGE0000002322385539",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 397,
+    "shareOfParcel": 0.25,
+    "shareOfOther": 0,
+    "cropType": "Jachère (terre arable)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:1097778",
+    "b": "ZONEVEGE0000002322371309",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 2650,
+    "shareOfParcel": 0.76,
+    "shareOfOther": 0.08,
+    "cropType": "Jachère (terre arable)",
+    "review": {
+     "observation": "Bande de jachère ouverte le long d'un bois ; le contour BD TOPO du bois déborde légèrement sur la bande. Compatible, géométries conservées.",
+     "open": false
+    }
+   },
+   {
+    "a": "rpg2024:1290266",
+    "b": "ZONEVEGE0000002322385632",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 408,
+    "shareOfParcel": 0.37,
+    "shareOfOther": 0,
+    "cropType": "Jachère (terre arable)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:2149869",
+    "b": "ZONEVEGE0000002321885839",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 1117,
+    "shareOfParcel": 0.38,
+    "shareOfOther": 0.01,
+    "cropType": "Jachère (terre arable)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:2339809",
+    "b": "ZONEVEGE0000002321890905",
+    "bLayer": "woodland",
+    "bType": "bois",
+    "areaM2": 30,
+    "shareOfParcel": 1,
+    "shareOfOther": 0.01,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:2386528",
+    "b": "ZONEVEGE0000002321892030",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 1428,
+    "shareOfParcel": 0.47,
+    "shareOfOther": 0,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:2648545",
+    "b": "ZONEVEGE0000002322385632",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 310,
+    "shareOfParcel": 0.23,
+    "shareOfOther": 0,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:3116235",
+    "b": "ZONEVEGE0000002321892030",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 2524,
+    "shareOfParcel": 0.22,
+    "shareOfOther": 0,
+    "cropType": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+    "review": {
+     "observation": "Jeune peupleraie en rangs sur prairie : peupleraie BD TOPO et prairie déclarée compatibles.",
+     "open": false
+    }
+   },
+   {
+    "a": "rpg2024:3135960",
+    "b": "ZONEVEGE0000002321890905",
+    "bLayer": "woodland",
+    "bType": "bois",
+    "areaM2": 3825,
+    "shareOfParcel": 0.43,
+    "shareOfOther": 0.85,
+    "cropType": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+    "review": {
+     "observation": "Le polygone BD TOPO « Bois » englobe une cour de ferme et des bâtiments ; l'orthophoto montre un sol nu et des bâtiments, pas un bois. Incohérence de la source BD TOPO, non corrigée à l'œil.",
+     "open": true
+    }
+   },
+   {
+    "a": "rpg2024:3343430",
+    "b": "ZONEVEGE0000002322371297",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 1976,
+    "shareOfParcel": 0.57,
+    "shareOfOther": 0.07,
+    "cropType": "Jachère (terre arable)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:3389591",
+    "b": "ZONEVEGE0000002321892030",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 682,
+    "shareOfParcel": 0.73,
+    "shareOfOther": 0,
+    "cropType": "Bande tampon",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:3516470",
+    "b": "ZONEVEGE0000002322371309",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 734,
+    "shareOfParcel": 0.87,
+    "shareOfOther": 0.02,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:4192559",
+    "b": "ZONEVEGE0000002322385539",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 970,
+    "shareOfParcel": 0.21,
+    "shareOfOther": 0.01,
+    "cropType": "Jachère (terre arable)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:4305718",
+    "b": "ZONEVEGE0000002321892030",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 1278,
+    "shareOfParcel": 0.36,
+    "shareOfOther": 0,
+    "cropType": "Bande tampon",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:4438203",
+    "b": "ZONEVEGE0000002322385539",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 439,
+    "shareOfParcel": 0.81,
+    "shareOfOther": 0,
+    "cropType": "Jachère (terre arable)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:4438307",
+    "b": "ZONEVEGE0000002321890905",
+    "bLayer": "woodland",
+    "bType": "bois",
+    "areaM2": 50,
+    "shareOfParcel": 0.84,
+    "shareOfOther": 0.01,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:4572001",
+    "b": "ZONEVEGE0000002321892030",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 348,
+    "shareOfParcel": 0.65,
+    "shareOfOther": 0,
+    "cropType": "Bande tampon",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:4696991",
+    "b": "ZONEVEGE0000002322385632",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 25658,
+    "shareOfParcel": 0.24,
+    "shareOfOther": 0.09,
+    "cropType": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+    "review": {
+     "observation": "Bois visible sur l'orthophoto entre deux prés : la parcelle RPG déclarée englobe une bande boisée. Géométrie BD TOPO cohérente avec l'image ; priorité au bois pour la couverture visuelle, parcelle RPG conservée telle que déclarée.",
+     "open": false
+    }
+   },
+   {
+    "a": "rpg2024:5161158",
+    "b": "ZONEVEGE0000002322385248",
+    "bLayer": "woodland",
+    "bType": "bois",
+    "areaM2": 272,
+    "shareOfParcel": 0.14,
+    "shareOfOther": 1,
+    "cropType": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:5534691",
+    "b": "ZONEVEGE0000002321892030",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 649,
+    "shareOfParcel": 0.45,
+    "shareOfOther": 0,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:5709379",
+    "b": "ZONEVEGE0000002322371343",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 1225,
+    "shareOfParcel": 0.52,
+    "shareOfOther": 0,
+    "cropType": "Jachère (terre arable)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:5983380",
+    "b": "ZONEVEGE0000002321892030",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 176,
+    "shareOfParcel": 0.43,
+    "shareOfOther": 0,
+    "cropType": "Bande tampon",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:7180397",
+    "b": "ZONEVEGE0000002321892030",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 976,
+    "shareOfParcel": 0.99,
+    "shareOfOther": 0,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:7199020",
+    "b": "ZONEVEGE0000002321892030",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 966,
+    "shareOfParcel": 0.46,
+    "shareOfOther": 0,
+    "cropType": "Bande tampon",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:7276145",
+    "b": "ZONEVEGE0000002321901625",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 333,
+    "shareOfParcel": 0.23,
+    "shareOfOther": 0,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:7590748",
+    "b": "ZONEVEGE0000002321892030",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 226,
+    "shareOfParcel": 0.35,
+    "shareOfOther": 0,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:8204662",
+    "b": "ZONEVEGE0000002322385495",
+    "bLayer": "woodland",
+    "bType": "bois",
+    "areaM2": 64,
+    "shareOfParcel": 0,
+    "shareOfOther": 0.57,
+    "cropType": "Jachère (terre arable)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:8339294",
+    "b": "ZONEVEGE0000002322385539",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 3531,
+    "shareOfParcel": 0.21,
+    "shareOfOther": 0.02,
+    "cropType": "Jachère (terre arable)",
+    "review": {
+     "observation": "Clairière en jachère : contour RPG légèrement plus large que la clairière visible. Compatible.",
+     "open": false
+    }
+   },
+   {
+    "a": "rpg2024:8467582",
+    "b": "ZONEVEGE0000002321892030",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 518,
+    "shareOfParcel": 0.41,
+    "shareOfOther": 0,
+    "cropType": "Bande tampon",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:8583433",
+    "b": "ZONEVEGE0000002321892030",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 558,
+    "shareOfParcel": 0.59,
+    "shareOfOther": 0,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:8584765",
+    "b": "ZONEVEGE0000002321892030",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 428,
+    "shareOfParcel": 0.47,
+    "shareOfOther": 0,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:8620554",
+    "b": "ZONEVEGE0000002321901624",
+    "bLayer": "woodland",
+    "bType": "peupleraie",
+    "areaM2": 311,
+    "shareOfParcel": 1,
+    "shareOfOther": 0,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:8746607",
+    "b": "ZONEVEGE0000002321885841",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 94259,
+    "shareOfParcel": 0.46,
+    "shareOfOther": 0.84,
+    "cropType": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+    "review": {
+     "observation": "Bord de Seine : couvert arboré épars (jardins, vergers, rangées d'arbres) sur une prairie permanente déclarée ; ni forêt fermée continue ni prairie nue. Les deux géométries sources sont conservées, arbitrage de rendu à faire.",
+     "open": true
+    }
+   },
+   {
+    "a": "rpg2024:8746607",
+    "b": "SURF_EAU0000000009321203",
+    "bLayer": "water_polygon",
+    "bType": "Retenue",
+    "areaM2": 148,
+    "shareOfParcel": 0,
+    "shareOfOther": 1,
+    "cropType": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:8994843",
+    "b": "ZONEVEGE0000002321890905",
+    "bLayer": "woodland",
+    "bType": "bois",
+    "areaM2": 31,
+    "shareOfParcel": 1,
+    "shareOfOther": 0.01,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:935703",
+    "b": "ZONEVEGE0000002321901625",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 613,
+    "shareOfParcel": 0.23,
+    "shareOfOther": 0,
+    "cropType": "Jachère (terre arable)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:9490217",
+    "b": "ZONEVEGE0000002321892066",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 213,
+    "shareOfParcel": 0.88,
+    "shareOfOther": 0.01,
+    "cropType": "Surface agricole temporairement non exploitée",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:9515111",
+    "b": "ZONEVEGE0000002322385264",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 946,
+    "shareOfParcel": 0.5,
+    "shareOfOther": 0.01,
+    "cropType": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:958360",
+    "b": "ZONEVEGE0000002322385266",
+    "bLayer": "woodland",
+    "bType": "bois",
+    "areaM2": 337,
+    "shareOfParcel": 0,
+    "shareOfOther": 1,
+    "cropType": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:958360",
+    "b": "ZONEVEGE0000002322385269",
+    "bLayer": "woodland",
+    "bType": "bois",
+    "areaM2": 185,
+    "shareOfParcel": 0,
+    "shareOfOther": 1,
+    "cropType": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:958360",
+    "b": "ZONEVEGE0000002322385289",
+    "bLayer": "woodland",
+    "bType": "bois",
+    "areaM2": 411,
+    "shareOfParcel": 0,
+    "shareOfOther": 1,
+    "cropType": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:958360",
+    "b": "ZONEVEGE0000002322385310",
+    "bLayer": "woodland",
+    "bType": "bois",
+    "areaM2": 116,
+    "shareOfParcel": 0,
+    "shareOfOther": 1,
+    "cropType": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+    "review": {
+     "observation": "chevauchement < 0,2 ha : bande de contour entre limite RPG déclarative et contour BD TOPO, ou petite surface déclarée (SNE, bande tampon, jachère) en lisière ou dans un boisement ; les deux géométries sources sont conservées",
+     "open": false,
+     "rule": "automatique"
+    }
+   },
+   {
+    "a": "rpg2024:958360",
+    "b": "ZONEVEGE0000002322385316",
+    "bLayer": "woodland",
+    "bType": "bois",
+    "areaM2": 2829,
+    "shareOfParcel": 0.03,
+    "shareOfOther": 0.93,
+    "cropType": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+    "review": {
+     "observation": "Prairie bordée d'une ripisylve documentée : chevauchement de bordure. Compatible.",
+     "open": false
+    }
+   }
+  ],
+  "raster": {
+   "resolutionM": 2,
+   "communeHa": 2038.2,
+   "unclassifiedHa": 259.7,
+   "unclassifiedOutsideFunctionalPerimetersHa": 191,
+   "noLandcoverClassHa": 346.8,
+   "note": "non classé = ni parcelle RPG, bois, haie, eau, surface artificielle, bâtiment ni voirie (voirie = largeur V1.8) ; ce sont surtout jardins, cours, friches et terres non déclarées au RPG",
+   "pairOverlapsHa": {
+    "agriculture×woodland": 17.7,
+    "woodland×water_polygon": 5.2,
+    "agriculture×water_polygon": 0.1,
+    "agriculture×hedge_polygon": 0.4,
+    "agriculture×artificial": 0,
+    "agriculture×building": 0.1,
+    "woodland×artificial": 0
+   },
+   "gapsOver1ha": [
+    {
+     "ha": 7.6,
+     "centreL93": [
+      758274,
+      6823973
+     ],
+     "review": {
+      "observation": "Centre-bourg : jardins, vergers familiaux et fond de vallon arboré du ruisseau ; non couvert par une source officielle d'occupation du sol.",
+      "open": false
+     }
+    },
+    {
+     "ha": 6,
+     "centreL93": [
+      758686,
+      6823377
+     ],
+     "review": {
+      "observation": "Lotissement : maisons et jardins privés (tissu bâti), non cartographié en occupation du sol.",
+      "open": false
+     }
+    },
+    {
+     "ha": 5.9,
+     "centreL93": [
+      757502,
+      6823063
+     ],
+     "review": {
+      "observation": "Village au sud de la voie ferrée : jardins et prés de fond de parcelle.",
+      "open": false
+     }
+    },
+    {
+     "ha": 5.5,
+     "centreL93": [
+      756361,
+      6821876
+     ],
+     "review": {
+      "observation": "Friche/prairie non déclarée entre la centrale photovoltaïque et la zone industrielle ; aucune source ne documente sa fonction. Laissée non classée.",
+      "open": true
+     }
+    },
+    {
+     "ha": 4.8,
+     "centreL93": [
+      758363,
+      6823571
+     ],
+     "review": {
+      "observation": "Centre-bourg : jardins, cours et petits prés.",
+      "open": false
+     }
+    },
+    {
+     "ha": 4.3,
+     "centreL93": [
+      758811,
+      6823911
+     ],
+     "review": {
+      "observation": "Village : jardins et prés en arrière des maisons.",
+      "open": false
+     }
+    },
+    {
+     "ha": 4.3,
+     "centreL93": [
+      757871,
+      6822743
+     ],
+     "review": {
+      "observation": "Village : jardins et cœurs d'îlots.",
+      "open": false
+     }
+    },
+    {
+     "ha": 4.2,
+     "centreL93": [
+      758493,
+      6825089
+     ],
+     "review": {
+      "observation": "Bord de Seine : plantation arborée en rangs (peupliers ou verger) visible, non couverte par BD TOPO ni par le RPG 2024. Non ajoutée à l'œil.",
+      "open": true
+     }
+    },
+    {
+     "ha": 4.1,
+     "centreL93": [
+      757338,
+      6822571
+     ],
+     "review": null
+    },
+    {
+     "ha": 4,
+     "centreL93": [
+      757653,
+      6824270
+     ],
+     "review": null
+    },
+    {
+     "ha": 4,
+     "centreL93": [
+      758829,
+      6824152
+     ],
+     "review": null
+    },
+    {
+     "ha": 3.8,
+     "centreL93": [
+      757969,
+      6823258
+     ],
+     "review": null
+    },
+    {
+     "ha": 3.6,
+     "centreL93": [
+      758094,
+      6822818
+     ],
+     "review": null
+    },
+    {
+     "ha": 3.3,
+     "centreL93": [
+      757924,
+      6823621
+     ],
+     "review": null
+    },
+    {
+     "ha": 3.3,
+     "centreL93": [
+      757765,
+      6822528
+     ],
+     "review": null
+    },
+    {
+     "ha": 3.1,
+     "centreL93": [
+      758364,
+      6823839
+     ],
+     "review": null
+    },
+    {
+     "ha": 3,
+     "centreL93": [
+      757453,
+      6822794
+     ],
+     "review": null
+    },
+    {
+     "ha": 2.8,
+     "centreL93": [
+      758330,
+      6822496
+     ],
+     "review": null
+    },
+    {
+     "ha": 2.7,
+     "centreL93": [
+      757845,
+      6822901
+     ],
+     "review": null
+    },
+    {
+     "ha": 2.6,
+     "centreL93": [
+      756283,
+      6823446
+     ],
+     "review": null
+    },
+    {
+     "ha": 2.5,
+     "centreL93": [
+      759328,
+      6823826
+     ],
+     "review": null
+    },
+    {
+     "ha": 2.5,
+     "centreL93": [
+      756903,
+      6822618
+     ],
+     "review": null
+    },
+    {
+     "ha": 2.4,
+     "centreL93": [
+      758095,
+      6823338
+     ],
+     "review": null
+    },
+    {
+     "ha": 2.4,
+     "centreL93": [
+      758940,
+      6822944
+     ],
+     "review": null
+    },
+    {
+     "ha": 2.4,
+     "centreL93": [
+      759843,
+      6822848
+     ],
+     "review": null
+    },
+    {
+     "ha": 2.2,
+     "centreL93": [
+      759640,
+      6823941
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.9,
+     "centreL93": [
+      759786,
+      6823826
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.9,
+     "centreL93": [
+      758216,
+      6823669
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.8,
+     "centreL93": [
+      757514,
+      6822503
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.6,
+     "centreL93": [
+      758494,
+      6823335
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.5,
+     "centreL93": [
+      758091,
+      6824522
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.5,
+     "centreL93": [
+      759398,
+      6823925
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.5,
+     "centreL93": [
+      758213,
+      6823129
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.5,
+     "centreL93": [
+      757558,
+      6822865
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.5,
+     "centreL93": [
+      757668,
+      6822823
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.5,
+     "centreL93": [
+      759527,
+      6821323
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.4,
+     "centreL93": [
+      758857,
+      6824073
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.4,
+     "centreL93": [
+      758406,
+      6823467
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.3,
+     "centreL93": [
+      758779,
+      6824109
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.3,
+     "centreL93": [
+      758347,
+      6823262
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.3,
+     "centreL93": [
+      758370,
+      6823124
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.3,
+     "centreL93": [
+      757055,
+      6822702
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.2,
+     "centreL93": [
+      759047,
+      6824018
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.2,
+     "centreL93": [
+      758081,
+      6823618
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.2,
+     "centreL93": [
+      758240,
+      6823392
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.2,
+     "centreL93": [
+      758518,
+      6822488
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.1,
+     "centreL93": [
+      758109,
+      6825371
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.1,
+     "centreL93": [
+      758553,
+      6824197
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.1,
+     "centreL93": [
+      756406,
+      6823865
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.1,
+     "centreL93": [
+      759689,
+      6823756
+     ],
+     "review": null
+    },
+    {
+     "ha": 1.1,
+     "centreL93": [
+      758224,
+      6823012
+     ],
+     "review": null
+    }
+   ]
+  },
+  "withoutProvenance": 0,
+  "uncertain": {
+   "B": 407,
+   "C": 8
+  },
+  "simplification": {
+   "polygons": {
+    "agriculture": {
+     "objects": 560,
+     "vertices": 10097,
+     "verticesSimplified": 6907,
+     "areaAbsDiffM2": 9879,
+     "areaM2": 24382038,
+     "maxRelAreaDiff": 0.0192,
+     "areaRelDiff": 0.00041,
+     "maxVertexDeviationM": 0.5
+    },
+    "keptSource": [
+     "rpg2024:1850665",
+     "rpg2024:3389591",
+     "rpg2024:4454607",
+     "rpg2024:5435953",
+     "rpg2024:7590748",
+     "rpg2024:8583433",
+     "rpg2024:9490217",
+     "ZONEVEGE0000002322371032",
+     "ZONEVEGE0000002322371033",
+     "ZONEVEGE0000002322371052",
+     "ZONEVEGE0000002322371255",
+     "ZONEVEGE0000002322412903",
+     "ZONEVEGE0000002321885816",
+     "ZONEVEGE0000002321890852",
+     "ZONEVEGE0000002321890869",
+     "ZONEVEGE0000002321890871",
+     "ZONEVEGE0000002321890901",
+     "ZONEVEGE0000002321890924",
+     "ZONEVEGE0000002321890931",
+     "ZONEVEGE0000002321890987",
+     "ZONEVEGE0000002321890992",
+     "ZONEVEGE0000002321892132",
+     "ZONEVEGE0000002321892152",
+     "ZONEVEGE0000002321892153",
+     "ZONEVEGE0000002321892385",
+     "ZONEVEGE0000002322385247",
+     "ZONEVEGE0000002322385506",
+     "SURF_EAU0000000009321501",
+     "SURF_EAU0000000292129151",
+     "SURF_EAU0000002005319385",
+     "SURF_EAU0000002209784653",
+     "SURF_EAU0000002330709616",
+     "RESERVOI0000000009337591",
+     "RESERVOI0000000009337621",
+     "RESERVOI0000000009337623",
+     "RESERVOI0000000009337625",
+     "RESERVOI0000000009337626",
+     "RESERVOI0000000300132141",
+     "RESERVOI0000000301149106",
+     "RESERVOI0000000301149108",
+     "RESERVOI0000000301149109",
+     "RESERVOI0000000301149110",
+     "RESERVOI0000000301149111",
+     "RESERVOI0000000301149113",
+     "RESERVOI0000000301149114",
+     "RESERVOI0000000301149115",
+     "RESERVOI0000000301151974",
+     "RESERVOI0000002479317669",
+     "RESERVOI0000002479317670"
+    ],
+    "woodland": {
+     "objects": 253,
+     "vertices": 29384,
+     "verticesSimplified": 21789,
+     "areaAbsDiffM2": 1829,
+     "areaM2": 10929054,
+     "maxRelAreaDiff": 0.0194,
+     "areaRelDiff": 0.00017,
+     "maxVertexDeviationM": 0.5
+    },
+    "hedge_polygon": {
+     "objects": 265,
+     "vertices": 5623,
+     "verticesSimplified": 4834,
+     "areaAbsDiffM2": 322,
+     "areaM2": 101825,
+     "maxRelAreaDiff": 0.0199,
+     "areaRelDiff": 0.00316,
+     "maxVertexDeviationM": 0.5
+    },
+    "water_polygon": {
+     "objects": 85,
+     "vertices": 5578,
+     "verticesSimplified": 4709,
+     "areaAbsDiffM2": 514,
+     "areaM2": 722062,
+     "maxRelAreaDiff": 0.0174,
+     "areaRelDiff": 0.00071,
+     "maxVertexDeviationM": 0.5
+    },
+    "artificial": {
+     "objects": 78,
+     "vertices": 988,
+     "verticesSimplified": 910,
+     "areaAbsDiffM2": 419,
+     "areaM2": 5728996,
+     "maxRelAreaDiff": 0.0157,
+     "areaRelDiff": 0.00007,
+     "maxVertexDeviationM": 0.5
+    }
+   },
+   "lines": {
+    "hedges": {
+     "vertices": 2014,
+     "verticesSimplified": 2003,
+     "maxDeviationM": 0.48,
+     "toleranceM": 0.5
+    },
+    "water_lines": {
+     "vertices": 3635,
+     "verticesSimplified": 3178,
+     "maxDeviationM": 0.495,
+     "toleranceM": 0.5
+    }
+   }
+  }
+ },
+ "notes": [
+  "Revue faite sur des planches orthophoto avec surimpression des couches V1.10 ; aucune géométrie modifiée.",
+  "Les chevauchements de contour < 0,2 ha et < 50 % de la parcelle sont classés automatiquement comme bandes de contour (non ouverts)."
+ ],
+ "openIssues": {
+  "overlapsToCheck": [
+   {
+    "a": "rpg2024:3135960",
+    "b": "ZONEVEGE0000002321890905",
+    "bLayer": "woodland",
+    "bType": "bois",
+    "areaM2": 3825,
+    "shareOfParcel": 0.43,
+    "shareOfOther": 0.85,
+    "cropType": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+    "review": {
+     "observation": "Le polygone BD TOPO « Bois » englobe une cour de ferme et des bâtiments ; l'orthophoto montre un sol nu et des bâtiments, pas un bois. Incohérence de la source BD TOPO, non corrigée à l'œil.",
+     "open": true
+    }
+   },
+   {
+    "a": "rpg2024:8746607",
+    "b": "ZONEVEGE0000002321885841",
+    "bLayer": "woodland",
+    "bType": "foret_fermee_feuillus",
+    "areaM2": 94259,
+    "shareOfParcel": 0.46,
+    "shareOfOther": 0.84,
+    "cropType": "Prairie permanente - herbe prédominante (ressources fourragères ligneuses absentes ou peu présentes)",
+    "review": {
+     "observation": "Bord de Seine : couvert arboré épars (jardins, vergers, rangées d'arbres) sur une prairie permanente déclarée ; ni forêt fermée continue ni prairie nue. Les deux géométries sources sont conservées, arbitrage de rendu à faire.",
+     "open": true
+    }
+   }
+  ],
+  "duplicates": [],
+  "relationsOpen": [
+   {
+    "with": "road",
+    "water": "TRON_EAU0000000009312751",
+    "waterName": null,
+    "waterPersistance": "Permanent",
+    "road": "TRONROUT0000000009479981",
+    "roadName": null,
+    "roadCategory": "route_secondaire",
+    "L93": [
+     758108.2,
+     6824831.5
+    ],
+    "kind": "ouvrage non documenté sur un cours d’eau permanent",
+    "open": true,
+    "review": {
+     "observation": "Route secondaire en remblai au-dessus d'un fond boisé : ouvrage probable (pont ou buse) mais non répertorié en V1.8 ; V1.8 gelée, non modifiée.",
+     "open": true
+    }
+   },
+   {
+    "with": "road",
+    "water": "TRON_EAU0000000009313282",
+    "waterName": null,
+    "waterPersistance": "Permanent",
+    "road": "TRONROUT0000002006399239",
+    "roadName": null,
+    "roadCategory": "chemin_rural",
+    "L93": [
+     755964.63,
+     6824099.05
+    ],
+    "kind": "ouvrage non documenté sur un cours d’eau permanent",
+    "open": true,
+    "review": {
+     "observation": "Chemin rural sous couvert arboré : franchissement non visible sur l'orthophoto.",
+     "open": true
+    }
+   },
+   {
+    "with": "road",
+    "water": "TRON_EAU0000000009313282",
+    "waterName": null,
+    "waterPersistance": "Permanent",
+    "road": "TRONROUT0000002477105815",
+    "roadName": null,
+    "roadCategory": "chemin_carrossable",
+    "L93": [
+     756240.4,
+     6823848.04
+    ],
+    "kind": "ouvrage non documenté sur un cours d’eau permanent",
+    "open": true,
+    "review": {
+     "observation": "Chemin carrossable franchissant un fossé/cours d'eau à ciel ouvert : buse probable, non documentée.",
+     "open": true
+    }
+   },
+   {
+    "with": "road",
+    "water": "TRON_EAU0000000009313282",
+    "waterName": null,
+    "waterPersistance": "Permanent",
+    "road": "TRONROUT0000002477105962",
+    "roadName": null,
+    "roadCategory": "chemin_carrossable",
+    "L93": [
+     756300.56,
+     6823826.59
+    ],
+    "kind": "ouvrage non documenté sur un cours d’eau permanent",
+    "open": true,
+    "review": {
+     "observation": "Chemin carrossable (secteur de carrière) franchissant le cours d'eau : buse probable, non documentée.",
+     "open": true
+    }
+   },
+   {
+    "with": "road",
+    "water": "TRON_EAU0000000065119364",
+    "waterName": "Bras 01 des Menus Prés",
+    "waterPersistance": "Permanent",
+    "road": "way/132008284#1",
+    "roadName": null,
+    "roadCategory": "chemin_rural",
+    "L93": [
+     757204.81,
+     6826137.44
+    ],
+    "kind": "ouvrage non documenté sur un cours d’eau permanent",
+    "open": true,
+    "review": {
+     "observation": "Bras des Menus Prés sous couvert boisé : le chemin rural s'arrête près du bras, franchissement non visible.",
+     "open": true
+    }
+   },
+   {
+    "with": "road",
+    "water": "TRON_EAU0000000065119364",
+    "waterName": "Bras 01 des Menus Prés",
+    "waterPersistance": "Permanent",
+    "road": "way/132008284#1",
+    "roadName": null,
+    "roadCategory": "chemin_rural",
+    "L93": [
+     757206.82,
+     6826142.65
+    ],
+    "kind": "ouvrage non documenté sur un cours d’eau permanent",
+    "open": true,
+    "review": {
+     "observation": "Même point que le précédent (deuxième tronçon du bras) : franchissement non visible.",
+     "open": true
+    }
+   }
+  ],
+  "uncertainC": [
+   {
+    "id": "way/529601741",
+    "layer": "artificial",
+    "class": "parking"
+   },
+   {
+    "id": "way/588789534",
+    "layer": "artificial",
+    "class": "terrain_de_sport"
+   },
+   {
+    "id": "way/588794550",
+    "layer": "artificial",
+    "class": "parking"
+   },
+   {
+    "id": "way/588794551",
+    "layer": "artificial",
+    "class": "parking"
+   },
+   {
+    "id": "way/588794552",
+    "layer": "artificial",
+    "class": "parking"
+   },
+   {
+    "id": "way/588794553",
+    "layer": "artificial",
+    "class": "parking"
+   },
+   {
+    "id": "way/1026708159",
+    "layer": "artificial",
+    "class": "parking"
+   },
+   {
+    "id": "way/1267132815",
+    "layer": "artificial",
+    "class": "equipement_sportif"
+   }
+  ],
+  "observations": [
+   {
+    "id": "haies-b-courtes",
+    "observation": "Échantillon de 9 haies DSB de confiance B : les linéaires de plus de 50 m correspondent à des haies visibles ; les très courts (< 30 m) en jardin ou le long de la voie ferrée sont peu lisibles. Conservés (source officielle), confiance B maintenue.",
+    "open": false
+   },
+   {
+    "id": "haies-polygones-jardins",
+    "observation": "Les polygones BD TOPO « Haie » sans linéaire DSB sont surtout des bosquets de jardin en village ; conservés dans une couche séparée hedge_polygon (B), jamais convertis en haies linéaires.",
+    "open": false
+   },
+   {
+    "id": "centrales-pv",
+    "observation": "Les 3 périmètres BD TOPO « centrale photovoltaïque » correspondent aux champs de panneaux visibles.",
+    "open": false
+   },
+   {
+    "id": "noms-locaux",
+    "observation": "« Canal de Poussey » et « rivière du Moulin » (BIBLE_01/04) ne figurent dans aucune source hydrographique officielle : aucun nom attribué à un tronçon.",
+    "open": true
+   }
+  ],
+  "gapsOpen": [
+   {
+    "ha": 5.5,
+    "centreL93": [
+     756361,
+     6821876
+    ],
+    "review": {
+     "observation": "Friche/prairie non déclarée entre la centrale photovoltaïque et la zone industrielle ; aucune source ne documente sa fonction. Laissée non classée.",
+     "open": true
+    }
+   },
+   {
+    "ha": 4.2,
+    "centreL93": [
+     758493,
+     6825089
+    ],
+    "review": {
+     "observation": "Bord de Seine : plantation arborée en rangs (peupliers ou verger) visible, non couverte par BD TOPO ni par le RPG 2024. Non ajoutée à l'œil.",
+     "open": true
+    }
+   }
+  ],
+  "count": 19
+ }
+}
