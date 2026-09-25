@@ -9,13 +9,15 @@ function split(points,axis,mid,side){const out=[];for(let i=0;i<points.length;i+
 export const PROVENANCE_COLORS={'ign+osm':'#b9bfc6','ign+osm-partiel':'#e9a23b','ign':'#e0301e','osm':'#2f6fe0','cadastre':'#1f9e5a'};
 // ?diagnostic=validation: V1.6 confidence levels and unresolved contours.
 export const VALIDATION_COLORS={A:'#b9bfc6',B:'#e9a23b','B-contour':'#9b4fd1',C:'#2f6fe0',cadastre:'#1f9e5a'};
-export const diagnosticKey=(item,mode)=>mode==='validation'?(item.provenance==='cadastre'?'cadastre':item.validation?.confidence==='B'&&/contour divergent|contour différent|extension cadastrale/.test(item.validation.status)?'B-contour':item.validation?.confidence||'C'):item.provenance;
+// V2.0.1 ?diagnostic=buildings-audit: reference building, reintegrated footprint, display base corrected; markers for the rest.
+export const AUDIT_COLORS={normal:'#c9c4b8',reintegre:'#2f9e5a','rendu-corrige':'#2f6fe0',incertain:'#e9a23b','sans-empreinte':'#c0359b'};
+export const diagnosticKey=(item,mode)=>mode==='buildings-audit'?item.auditStatus||'normal':mode==='validation'?(item.provenance==='cadastre'?'cadastre':item.validation?.confidence==='B'&&/contour divergent|contour différent|extension cadastrale/.test(item.validation.status)?'B-contour':item.validation?.confidence||'C'):item.provenance;
 export function buildBuildings(scene,items,enrichment={buildings:{}},options={}){
  const walls=new Batch(material()),roofs=new Batch(material()),windows=new Batch(material({roughness:.65})),details=new Batch(material());
  const batches=[walls,roofs,windows,details],ranges=batches.map(()=>[]),pickMeshes=[];
  let count=0;const lifts=[],rejected=[],info=new Map(),landmarks=[],stats={ignWallHeights:0,ignRoofHeights:0,knownFloors:0,knownRoofMaterials:0,roofHeightClamps:0,categories:{}};
  for(const item of items){const {poly,t,id}=item;if(area(poly[0])>100000){rejected.push({id,reason:'surface > 100 000 m²'});continue;}const extra=item.extra||enrichment.buildings[id]||{},p=buildingProfile(t,poly,extra,id);if(!p){rejected.push({id,reason:'profil impossible'});continue;}
-  if(options.diagnostic){p.wallColor=(options.diagnostic==='validation'?VALIDATION_COLORS:PROVENANCE_COLORS)[diagnosticKey(item,options.diagnostic)]||'#999';p.roofColor=new THREE.Color(p.wallColor).multiplyScalar(.8).getStyle();p.shade=0;}
+  if(options.diagnostic){p.wallColor=(options.diagnostic==='buildings-audit'?AUDIT_COLORS:options.diagnostic==='validation'?VALIDATION_COLORS:PROVENANCE_COLORS)[diagnosticKey(item,options.diagnostic)]||'#999';p.roofColor=new THREE.Color(p.wallColor).multiplyScalar(.8).getStyle();p.shade=0;}
   const starts=batches.map(b=>b.p.length/9);
   const bb=bounds(poly[0]),base=.35,axis=p.axis,mid=(axis.min+axis.max)/2,half=Math.max(.1,(axis.max-axis.min)/2);
   const top=q=>base+p.wallHeight+p.roofHeight*Math.max(0,1-Math.abs(q[0]*axis.axis[0]+q[1]*axis.axis[1]-mid)/half);

@@ -1,6 +1,6 @@
 {
   "name": "maizieres-3d",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -18,7 +18,7 @@
     "check:interaction": "node scripts/check-interaction.mjs",
     "data:bible": "node scripts/prepare-bible.mjs",
     "check:bible": "node scripts/check-bible.mjs",
-    "check:all": "npm run check && npm run check:enrichment && npm run check:presentation && npm run check:interaction && npm run check:bible && npm run check:buildings && npm run check:terrain && npm run check:roads && npm run check:rail && npm run check:landcover && npm run check:poi && npm run check:v2",
+    "check:all": "npm run check && npm run check:enrichment && npm run check:presentation && npm run check:interaction && npm run check:bible && npm run check:buildings && npm run check:terrain && npm run check:roads && npm run check:rail && npm run check:landcover && npm run check:poi && npm run check:v2 && npm run check:building-visibility",
     "data:buildings": "node scripts/build-buildings.mjs && node scripts/validate-buildings.mjs",
     "audit:buildings": "node scripts/audit-buildings.mjs",
     "check:buildings": "node scripts/check-buildings.mjs",
@@ -44,6 +44,8 @@
     "check:poi": "node --max-old-space-size=4096 scripts/check-poi.mjs",
     "data:v2": "node --max-old-space-size=6144 scripts/build-v2.mjs",
     "check:v2": "node --max-old-space-size=4096 scripts/check-v2.mjs",
+    "data:missing-buildings": "node --max-old-space-size=6144 scripts/build-missing-buildings.mjs",
+    "check:building-visibility": "node --max-old-space-size=4096 scripts/check-building-visibility.mjs",
     "data:recent-buildings-fetch": "NODE_USE_ENV_PROXY=1 node scripts/fetch-recent-buildings-audit.mjs",
     "audit:recent-buildings": "node scripts/audit-recent-buildings.mjs"
   },
@@ -51,6 +53,7 @@
     "three": "0.180.0"
   },
   "devDependencies": {
+    "clipper-lib": "6.4.2",
     "geotiff": "2.1.3",
     "osmtogeojson": "3.0.0-beta.5",
     "polygon-clipping": "0.15.7",

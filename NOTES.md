@@ -1,3 +1,12 @@
+# Notes V2.0.1 — maisons manquantes, 25 septembre 2026
+
+- **Deux causes distinctes.**
+  - **Rendu** : le socle venait de l’altitude minimale LiDAR sous l’emprise, alors que le relief affiché est une grille de 10 m lissée. Les petites maisons sur les pentes paraissaient enterrées ou cachées. Le socle affiché suit maintenant ce relief (`src/building-elevation.js`) ; l’altitude de référence reste la valeur Unreal.
+  - **Données** : des annexes et garages présents au cadastre, et quelques abris OSM, manquaient au référentiel.
+- **Le référentiel gelé V1.6.2 reste intact.** Les réintégrations forment un complément de même schéma, avec leur altitude calculée selon la méthode V1.7. Aucune empreinte n’est tracée à la main : la géométrie est celle du cadastre ou d’OSM, ou leur différence exacte avec le référentiel.
+- **Retraits antérieurs.** Les 49 retraits V1.6.2 sont maintenus. 6 retraits V1.6.1 sont annulés : ce sont des abris OSM absents de toutes les sources officielles, mais visibles sur l’orthophoto 2025.
+- **Pour Unreal.** Les 16 constructions visibles sans géométrie publique (`missing_buildings_without_geometry`) sont à relever sur place ou dans une future livraison cadastrale avant tout placement.
+
 # Notes V2.0 — Maizières technique complète visible, 25 septembre 2026
 
 - **Assemblage seulement** :

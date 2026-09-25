@@ -1,0 +1,83 @@
+{
+ "generatedBy": "scripts/build-missing-buildings.mjs",
+ "decisions": 98,
+ "added": 90,
+ "inCommune": 85,
+ "byProvenance": {
+  "cadastre": 79,
+  "osm": 11
+ },
+ "byMode": {
+  "empreinte entière": 6,
+  "partie non couverte": 84
+ },
+ "fromRemovedV161": 6,
+ "fromRemovedV162": 0,
+ "areaM2": 3173.2,
+ "skipped": [
+  {
+   "sourceId": "cadastre:19815565",
+   "reason": "hors de l’emprise du référentiel (commune + 150 m)",
+   "centerL93": [
+    755747.3,
+    6823113.1
+   ]
+  },
+  {
+   "sourceId": "cadastre:25476649",
+   "reason": "hors de l’emprise du référentiel (commune + 150 m)",
+   "centerL93": [
+    755684.5,
+    6822862.9
+   ]
+  },
+  {
+   "sourceId": "cadastre:25515972",
+   "reason": "hors de l’emprise du référentiel (commune + 150 m)",
+   "centerL93": [
+    755689.7,
+    6822587
+   ]
+  },
+  {
+   "sourceId": "cadastre:25515979",
+   "reason": "hors de l’emprise du référentiel (commune + 150 m)",
+   "centerL93": [
+    755681.9,
+    6822587.8
+   ]
+  },
+  {
+   "sourceId": "cadastre:29681935",
+   "reason": "hors de l’emprise du référentiel (commune + 150 m)",
+   "centerL93": [
+    755683,
+    6822756.2
+   ]
+  },
+  {
+   "sourceId": "cadastre:34453627",
+   "reason": "hors de l’emprise du référentiel (commune + 150 m)",
+   "centerL93": [
+    755721,
+    6823121
+   ]
+  },
+  {
+   "sourceId": "cadastre:35560057",
+   "reason": "hors de l’emprise du référentiel (commune + 150 m)",
+   "centerL93": [
+    755677,
+    6823132.1
+   ]
+  },
+  {
+   "sourceId": "cadastre:35560109",
+   "reason": "hors de l’emprise du référentiel (commune + 150 m)",
+   "centerL93": [
+    755700.3,
+    6823126.2
+   ]
+  }
+ ]
+}

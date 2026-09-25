@@ -1,3 +1,35 @@
+# Vérification V2.0.1 — audit visuel des maisons manquantes, 25 septembre 2026
+
+Branche `opus/v2.0.1-missing-buildings`, à partir de `e18a491`. Détail : `docs/audit-maisons-manquantes-v2.0.1.md`. Captures : `docs/qa/v2.0.1/`.
+
+| Mesure | Valeur |
+|---|---|
+| Examiné | 195 dalles orthophoto couvrant toute la zone bâtie ; 464 parties d’empreintes publiques non couvertes ; 24 points repérés à l’œil ; 43 adresses et points RNB isolés |
+| Rendu V2.0 | 2 494 / 2 494 identifiants dans la scène, toits complets ; 124 bâtiments enterrés sur plus du quart des murs (23 sur plus de la moitié) → 319 socles recalés sur le relief affiché, 0 enfoui |
+| Réintégrés | **90** : Parcellaire Express 79, OSM 11 (dont 6 retraits V1.6.1 annulés, aucun retrait V1.6.2) |
+| Visibles sans géométrie publique | **16** (listés, non dessinés) ; 6 points incertains ; 163 cas douteux sans ajout |
+| Total | **2 584** bâtiments, dont **2 350** dans la commune (2 494 / 2 265 avant) |
+
+## Contrôles
+
+- `npm run check:all` : **13 contrôles OK**. Ce sont les 12 contrôles existants plus `check:building-visibility`, qui fait 8 vérifications :
+  - les identifiants attendus sont comparés un à un à ceux de la scène ;
+  - Z, enfouissement, triangulation ;
+  - chevauchements, traçabilité.
+- `pnpm build` réussi.
+
+## Chromium
+
+Chromium est lancé avec SwiftShader.
+
+- **Identifiants** : 2 584 identifiants attendus, 2 584 présents dans la scène ; 0 manquant, 0 enfoui.
+- **Console** : vide en vue normale et avec `?diagnostic=buildings-audit`.
+- **Vues contrôlées** :
+  - vue générale, centre-bourg, Poussey, Les Granges ;
+  - rues de la Chefferie, du Général-Leclerc et de Lattre-de-Tassigny ;
+  - trois réintégrations en vue rapprochée.
+- **Sélection** : le clic sur une réintégration affiche sa fiche, avec la confiance B et la preuve.
+
 # Vérification V2.0 — Maizières technique complète visible, 25 septembre 2026
 
 Branche `opus/v2.0-threejs-complete`, à partir de `79c50d9`. Aucun référentiel gelé n’est modifié (vérifié par SHA-256 dans `check:v2`). Détail : `docs/V2.0-TECHNIQUE-VISIBLE.md`. Captures : `docs/qa/v2.0/`.

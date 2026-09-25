@@ -1,0 +1,2086 @@
+{
+ "metadata": {
+  "version": "2.0.1",
+  "rule": "Réintégration seulement si la construction est nettement visible sur l’orthophoto 2025 ET si une géométrie publique existe (Parcellaire Express, OSM, retrait antérieur) ; pour une partie non couverte, la géométrie est la différence exacte entre l’empreinte publique et le référentiel (aucun tracé manuel)."
+ },
+ "reintegrate": [
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:19815565",
+   "sourceType": "Bâtiment en dur",
+   "mode": "empreinte entière",
+   "seedsL93": [
+    [
+     755748.5,
+     6823111.2
+    ]
+   ],
+   "components": [
+    2
+   ],
+   "observation": "maison entière à toiture brune, absente du référentiel",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:20394710",
+   "sourceType": "Bâtiment FI",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757495.1,
+     6822859.6
+    ]
+   ],
+   "components": [
+    5
+   ],
+   "observation": "partie basse du bâtiment scolaire (toiture grise)",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:20394724",
+   "sourceType": "Bâtiment FI",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757866.5,
+     6822689.8
+    ]
+   ],
+   "components": [
+    6
+   ],
+   "observation": "annexe à toiture brune",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:20394824",
+   "sourceType": "Bâtiment FI",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757998.2,
+     6822576.1
+    ]
+   ],
+   "components": [
+    7
+   ],
+   "observation": "annexe à toiture grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:20395005",
+   "sourceType": "Bâtiment FI",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757357.7,
+     6822605.8
+    ]
+   ],
+   "components": [
+    12
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:20628025",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     760333.3,
+     6825565.8
+    ]
+   ],
+   "components": [
+    13
+   ],
+   "observation": "annexe basse au bout du bâtiment",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:23568694",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757550.9,
+     6822600.2
+    ]
+   ],
+   "components": [
+    33
+   ],
+   "observation": "annexe accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:23570313",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757922.6,
+     6822679.0
+    ],
+    [
+     757911.5,
+     6822680.6
+    ]
+   ],
+   "components": [
+    35,
+    36
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:23574475",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758347.9,
+     6823149.2
+    ]
+   ],
+   "components": [
+    38
+   ],
+   "observation": "annexe à toiture grise",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:23575137",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757624.0,
+     6822761.4
+    ]
+   ],
+   "components": [
+    39
+   ],
+   "observation": "garage accolé à toiture grise",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:23575737",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758525.7,
+     6823412.6
+    ]
+   ],
+   "components": [
+    40
+   ],
+   "observation": "annexe grise",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:23575922",
+   "sourceType": "Construction légère",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758581.1,
+     6823383.1
+    ]
+   ],
+   "components": [
+    41
+   ],
+   "observation": "annexe à toiture grise",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:23576464",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758462.2,
+     6823417.2
+    ]
+   ],
+   "components": [
+    42
+   ],
+   "observation": "annexe accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:23577103",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758520.2,
+     6823243.7
+    ]
+   ],
+   "components": [
+    43
+   ],
+   "observation": "garage à toiture grise",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:23577378",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758572.0,
+     6823377.7
+    ]
+   ],
+   "components": [
+    44
+   ],
+   "observation": "garage à toiture claire",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:23580041",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758449.6,
+     6823463.4
+    ]
+   ],
+   "components": [
+    47
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:25476649",
+   "sourceType": "Construction légère",
+   "mode": "empreinte entière",
+   "seedsL93": [
+    [
+     755687.7,
+     6822860.7
+    ]
+   ],
+   "components": [
+    48
+   ],
+   "observation": "bâtiment entier à toiture claire, absent du référentiel",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:25515972",
+   "sourceType": "Construction légère",
+   "mode": "empreinte entière",
+   "seedsL93": [
+    [
+     755690.2,
+     6822586.0
+    ]
+   ],
+   "components": [
+    49
+   ],
+   "observation": "partie est du bâtiment à toiture sombre",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:25515979",
+   "sourceType": "Bâtiment en dur",
+   "mode": "empreinte entière",
+   "seedsL93": [
+    [
+     755682.7,
+     6822586.7
+    ]
+   ],
+   "components": [
+    50
+   ],
+   "observation": "partie ouest du même bâtiment à toiture sombre",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:25761036",
+   "sourceType": "Construction légère",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     759015.5,
+     6824147.7
+    ]
+   ],
+   "components": [
+    51
+   ],
+   "observation": "annexe accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:29681935",
+   "sourceType": "Bâtiment en dur",
+   "mode": "empreinte entière",
+   "seedsL93": [
+    [
+     755683.7,
+     6822755.5
+    ]
+   ],
+   "components": [
+    53
+   ],
+   "observation": "petit bâtiment technique à toiture claire",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:30275451",
+   "sourceType": "Construction légère",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757777.0,
+     6822724.4
+    ]
+   ],
+   "components": [
+    54
+   ],
+   "observation": "annexe sombre accolée (pool house)",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:34453627",
+   "sourceType": "Bâtiment en dur",
+   "mode": "empreinte entière",
+   "seedsL93": [
+    [
+     755720.9,
+     6823118.6
+    ]
+   ],
+   "components": [
+    56
+   ],
+   "observation": "maison entière à toiture brune, absente du référentiel",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:34580699",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758409.8,
+     6823695.0
+    ]
+   ],
+   "components": [
+    57
+   ],
+   "observation": "annexe accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:34631971",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758288.0,
+     6823032.7
+    ]
+   ],
+   "components": [
+    58
+   ],
+   "observation": "annexe accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:35560057",
+   "sourceType": "Bâtiment en dur",
+   "mode": "empreinte entière",
+   "seedsL93": [
+    [
+     755677.1,
+     6823129.7
+    ]
+   ],
+   "components": [
+    61
+   ],
+   "observation": "maison entière à toiture brune, absente du référentiel",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:35560109",
+   "sourceType": "Bâtiment en dur",
+   "mode": "empreinte entière",
+   "seedsL93": [
+    [
+     755700.2,
+     6823123.8
+    ]
+   ],
+   "components": [
+    62
+   ],
+   "observation": "maison entière à toiture brune, absente du référentiel",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:37265803",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758865.3,
+     6824194.3
+    ]
+   ],
+   "components": [
+    63
+   ],
+   "observation": "annexe grise",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39362353",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     760531.7,
+     6822536.2
+    ]
+   ],
+   "components": [
+    67
+   ],
+   "observation": "silo circulaire visible",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39362354",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     760533.4,
+     6822530.1
+    ]
+   ],
+   "components": [
+    68
+   ],
+   "observation": "silo circulaire visible",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39362494",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     760536.0,
+     6822524.0
+    ]
+   ],
+   "components": [
+    69
+   ],
+   "observation": "silo circulaire visible",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39362887",
+   "sourceType": "Construction légère",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     760572.7,
+     6822521.8
+    ]
+   ],
+   "components": [
+    89
+   ],
+   "observation": "extension à toiture claire accolée au hall",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39696777",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758528.5,
+     6822533.2
+    ]
+   ],
+   "components": [
+    91
+   ],
+   "observation": "appentis accolé",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39696820",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757393.9,
+     6822545.1
+    ]
+   ],
+   "components": [
+    92
+   ],
+   "observation": "partie à toiture grise du hall agricole",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39696822",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758528.1,
+     6822562.4
+    ]
+   ],
+   "components": [
+    93
+   ],
+   "observation": "annexe accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39793508",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     759190.0,
+     6824035.7
+    ]
+   ],
+   "components": [
+    95
+   ],
+   "observation": "partie ouest à toiture sombre",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39793590",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758633.4,
+     6824157.4
+    ]
+   ],
+   "components": [
+    98
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39793673",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758767.9,
+     6824174.2
+    ]
+   ],
+   "components": [
+    102
+   ],
+   "observation": "appentis gris accolé",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39793959",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     759081.3,
+     6823878.6
+    ]
+   ],
+   "components": [
+    105
+   ],
+   "observation": "petite annexe",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39794067",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758974.9,
+     6823996.9
+    ]
+   ],
+   "components": [
+    108
+   ],
+   "observation": "annexe à toiture claire",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39794352",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     759269.3,
+     6823932.1
+    ]
+   ],
+   "components": [
+    111
+   ],
+   "observation": "garage accolé à toiture grise",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39794585",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     759919.4,
+     6823893.2
+    ]
+   ],
+   "components": [
+    113
+   ],
+   "observation": "appentis gris accolé",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808157",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758252.2,
+     6822872.1
+    ]
+   ],
+   "components": [
+    127
+   ],
+   "observation": "petite annexe grise",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808244",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758009.6,
+     6822784.3
+    ]
+   ],
+   "components": [
+    130
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808251",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758109.5,
+     6823009.0
+    ]
+   ],
+   "components": [
+    132
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808387",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758034.3,
+     6823162.2
+    ]
+   ],
+   "components": [
+    134
+   ],
+   "observation": "appentis clair accolé",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808506",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758061.5,
+     6823142.8
+    ]
+   ],
+   "components": [
+    135
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808591",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758217.6,
+     6823049.2
+    ]
+   ],
+   "components": [
+    140
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808622",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758289.0,
+     6823222.2
+    ]
+   ],
+   "components": [
+    141
+   ],
+   "observation": "annexe accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808671",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758343.1,
+     6823094.9
+    ]
+   ],
+   "components": [
+    149
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808701",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758360.3,
+     6823123.3
+    ]
+   ],
+   "components": [
+    150
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808703",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758339.7,
+     6823157.2
+    ]
+   ],
+   "components": [
+    151
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808823",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758056.0,
+     6823358.3
+    ]
+   ],
+   "components": [
+    155
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808824",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758066.0,
+     6823345.3
+    ]
+   ],
+   "components": [
+    156
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808825",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758054.4,
+     6823341.3
+    ]
+   ],
+   "components": [
+    157
+   ],
+   "observation": "dépendance allongée à toiture grise",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808863",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758056.6,
+     6823228.9
+    ]
+   ],
+   "components": [
+    158
+   ],
+   "observation": "annexe accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808952",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758426.0,
+     6823364.1
+    ],
+    [
+     758418.2,
+     6823361.8
+    ]
+   ],
+   "components": [
+    162,
+    163
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39808994",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758314.2,
+     6823350.0
+    ]
+   ],
+   "components": [
+    167
+   ],
+   "observation": "véranda ou annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39809146",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758474.1,
+     6823348.9
+    ]
+   ],
+   "components": [
+    175
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39809179",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758504.9,
+     6823468.5
+    ]
+   ],
+   "components": [
+    177
+   ],
+   "observation": "appentis accolé",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39809375",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758604.5,
+     6823469.0
+    ]
+   ],
+   "components": [
+    178
+   ],
+   "observation": "garage accolé à toiture brune",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39809716",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758025.2,
+     6823682.6
+    ]
+   ],
+   "components": [
+    180
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39809891",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758050.0,
+     6823630.4
+    ]
+   ],
+   "components": [
+    185
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39810134",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758233.4,
+     6823547.9
+    ]
+   ],
+   "components": [
+    187
+   ],
+   "observation": "garage accolé à toiture brune",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39810239",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758352.0,
+     6823731.1
+    ]
+   ],
+   "components": [
+    191
+   ],
+   "observation": "partie ouest à toiture brune",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39810301",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758283.7,
+     6823755.6
+    ]
+   ],
+   "components": [
+    193
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39816533",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757204.5,
+     6822750.6
+    ]
+   ],
+   "components": [
+    212
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39816785",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757232.6,
+     6822682.0
+    ]
+   ],
+   "components": [
+    220
+   ],
+   "observation": "partie ouest à toiture grise",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39816867",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757538.2,
+     6822539.1
+    ]
+   ],
+   "components": [
+    221
+   ],
+   "observation": "annexe accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39816946",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757875.8,
+     6822582.7
+    ]
+   ],
+   "components": [
+    223
+   ],
+   "observation": "annexe à toiture grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39817029",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757620.1,
+     6822675.7
+    ]
+   ],
+   "components": [
+    225
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39817205",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757726.5,
+     6822834.4
+    ]
+   ],
+   "components": [
+    226
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39817341",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757678.7,
+     6823014.4
+    ],
+    [
+     757668.2,
+     6823020.1
+    ]
+   ],
+   "components": [
+    228,
+    229
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39817418",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757830.9,
+     6822771.4
+    ]
+   ],
+   "components": [
+    231
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39817554",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757926.2,
+     6822706.6
+    ]
+   ],
+   "components": [
+    233
+   ],
+   "observation": "bâtiment en longueur à toiture sombre",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39817867",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757597.4,
+     6822896.4
+    ]
+   ],
+   "components": [
+    236
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39817868",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757606.3,
+     6822898.9
+    ]
+   ],
+   "components": [
+    237
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39817903",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757635.1,
+     6822954.5
+    ]
+   ],
+   "components": [
+    238
+   ],
+   "observation": "annexe claire accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39821646",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     759544.8,
+     6823780.9
+    ]
+   ],
+   "components": [
+    244
+   ],
+   "observation": "annexe sombre accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39821742",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     759182.7,
+     6823884.4
+    ]
+   ],
+   "components": [
+    253
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39821840",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     759327.3,
+     6822573.8
+    ]
+   ],
+   "components": [
+    259
+   ],
+   "observation": "annexe basse accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39823542",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758442.0,
+     6822374.1
+    ]
+   ],
+   "components": [
+    276
+   ],
+   "observation": "appentis gris accolé",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39823647",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757052.7,
+     6822723.5
+    ]
+   ],
+   "components": [
+    278
+   ],
+   "observation": "appentis gris accolé",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39823688",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757026.9,
+     6822673.9
+    ]
+   ],
+   "components": [
+    279
+   ],
+   "observation": "appentis accolé",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:39823875",
+   "sourceType": "Construction légère",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758483.7,
+     6822360.5
+    ]
+   ],
+   "components": [
+    305
+   ],
+   "observation": "annexe à toiture claire accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:40921102",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758354.7,
+     6823309.0
+    ]
+   ],
+   "components": [
+    319
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "cadastre",
+   "sourceId": "cadastre:40921234",
+   "sourceType": "Bâtiment en dur",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758137.3,
+     6823534.1
+    ],
+    [
+     758116.0,
+     6823533.7
+    ]
+   ],
+   "components": [
+    320,
+    321
+   ],
+   "observation": "verrière accolée au bâtiment",
+   "removedIn": null
+  },
+  {
+   "source": "osm",
+   "sourceId": "way/588789810",
+   "sourceType": "building=yes",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     759455.4,
+     6823694.6
+    ]
+   ],
+   "components": [
+    356
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "osm",
+   "sourceId": "way/588791664",
+   "sourceType": "building=yes",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     756740.5,
+     6822946.1
+    ]
+   ],
+   "components": [
+    358
+   ],
+   "observation": "annexe claire entre deux corps de bâtiment",
+   "removedIn": null
+  },
+  {
+   "source": "osm",
+   "sourceId": "way/588791678",
+   "sourceType": "building=yes",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758345.7,
+     6823096.9
+    ]
+   ],
+   "components": [
+    359
+   ],
+   "observation": "annexe grise accolée",
+   "removedIn": null
+  },
+  {
+   "source": "osm",
+   "sourceId": "way/588791987",
+   "sourceType": "building=yes",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     758072.7,
+     6823064.3
+    ]
+   ],
+   "components": [
+    362
+   ],
+   "observation": "abri à toiture claire",
+   "removedIn": null
+  },
+  {
+   "source": "osm",
+   "sourceId": "way/588792057",
+   "sourceType": "building=yes",
+   "mode": "empreinte entière",
+   "seedsL93": [
+    [
+     757751.0,
+     6822892.8
+    ]
+   ],
+   "components": [
+    363,
+    417
+   ],
+   "observation": "annexe sombre accolée visible (retrait à annuler)",
+   "removedIn": "1.6.1"
+  },
+  {
+   "source": "osm",
+   "sourceId": "way/588792826",
+   "sourceType": "building=yes",
+   "mode": "partie non couverte",
+   "seedsL93": [
+    [
+     757701.5,
+     6823054.0
+    ]
+   ],
+   "components": [
+    370
+   ],
+   "observation": "garage à toiture claire accolé",
+   "removedIn": null
+  },
+  {
+   "source": "osm",
+   "sourceId": "way/588792877",
+   "sourceType": "building=yes",
+   "mode": "empreinte entière",
+   "seedsL93": [
+    [
+     757709.0,
+     6823053.1
+    ]
+   ],
+   "components": [
+    371,
+    428
+   ],
+   "observation": "abri gris visible (retrait à annuler)",
+   "removedIn": "1.6.1"
+  },
+  {
+   "source": "osm",
+   "sourceId": "way/588792955",
+   "sourceType": "building=yes",
+   "mode": "empreinte entière",
+   "seedsL93": [
+    [
+     756748.2,
+     6823155.2
+    ]
+   ],
+   "components": [
+    372,
+    429
+   ],
+   "observation": "abri sombre visible (retrait à annuler)",
+   "removedIn": "1.6.1"
+  },
+  {
+   "source": "osm",
+   "sourceId": "way/588793377",
+   "sourceType": "building=yes",
+   "mode": "empreinte entière",
+   "seedsL93": [
+    [
+     757552.6,
+     6822480.8
+    ]
+   ],
+   "components": [
+    373,
+    436
+   ],
+   "observation": "abri gris visible (retrait à annuler)",
+   "removedIn": "1.6.1"
+  },
+  {
+   "source": "osm",
+   "sourceId": "way/935473873",
+   "sourceType": "building=yes",
+   "mode": "empreinte entière",
+   "seedsL93": [
+    [
+     756932.1,
+     6822664.3
+    ]
+   ],
+   "components": [
+    377,
+    440
+   ],
+   "observation": "abri gris visible (retrait à annuler)",
+   "removedIn": "1.6.1"
+  },
+  {
+   "source": "osm",
+   "sourceId": "way/1433821870",
+   "sourceType": "building=yes",
+   "mode": "empreinte entière",
+   "seedsL93": [
+    [
+     758125.3,
+     6822987.1
+    ]
+   ],
+   "components": [
+    379,
+    442
+   ],
+   "observation": "annexe grise visible (retrait à annuler)",
+   "removedIn": "1.6.1"
+  }
+ ],
+ "missing_buildings_without_geometry": [
+  {
+   "id": "vis-A",
+   "positionL93": [
+    759635.0,
+    6823801.0
+   ],
+   "lonlat": [
+    3.8074272,
+    48.5117113
+   ],
+   "approximate": true,
+   "observation": "bâtiment à toiture brune au sud-est du château d’eau de Poussey",
+   "sector": "Rue Joliot Curie (adresse BAN la plus proche, 6 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-D1",
+   "positionL93": [
+    757983.3,
+    6823388.3
+   ],
+   "lonlat": [
+    3.7850099,
+    48.5081487
+   ],
+   "approximate": true,
+   "observation": "serre vitrée",
+   "sector": "Rue du General Leclerc (adresse BAN la plus proche, 49 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-D2",
+   "positionL93": [
+    757990.3,
+    6823376.3
+   ],
+   "lonlat": [
+    3.7851031,
+    48.5080402
+   ],
+   "approximate": true,
+   "observation": "annexe à toiture brune",
+   "sector": "Rue du General Leclerc (adresse BAN la plus proche, 41 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-F",
+   "positionL93": [
+    758221.7,
+    6823070.0
+   ],
+   "lonlat": [
+    3.7881943,
+    48.5052641
+   ],
+   "approximate": true,
+   "observation": "long bâtiment à toiture gris-bleu (environ 40 × 10 m)",
+   "sector": "Rue Maurice Renault (adresse BAN la plus proche, 31 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-H1",
+   "positionL93": [
+    756745.0,
+    6823033.3
+   ],
+   "lonlat": [
+    3.7681995,
+    48.5050649
+   ],
+   "approximate": true,
+   "observation": "bâtiment à toit plat blanc",
+   "sector": "Rue du Pot Bancelin (adresse BAN la plus proche, 21 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-H2",
+   "positionL93": [
+    756767.0,
+    6823030.3
+   ],
+   "lonlat": [
+    3.7684969,
+    48.505036
+   ],
+   "approximate": true,
+   "observation": "bâtiment à toiture grise",
+   "sector": "Rue du Pot Bancelin (adresse BAN la plus proche, 17 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-I",
+   "positionL93": [
+    756748.3,
+    6823128.3
+   ],
+   "lonlat": [
+    3.7682566,
+    48.5059192
+   ],
+   "approximate": true,
+   "observation": "bâtiment allongé à toiture brune",
+   "sector": "Le Chemin de la Guide (adresse BAN la plus proche, 62 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-K",
+   "positionL93": [
+    757820.0,
+    6822715.7
+   ],
+   "lonlat": [
+    3.782709,
+    48.502113
+   ],
+   "approximate": true,
+   "observation": "bâtiment à toit plat blanc",
+   "sector": "Rue Georges Clemenceau (adresse BAN la plus proche, 61 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-P1",
+   "positionL93": [
+    758496.7,
+    6822396.7
+   ],
+   "lonlat": [
+    3.7918255,
+    48.4991827
+   ],
+   "approximate": true,
+   "observation": "bâtiment à toiture sombre accolé au long bâtiment",
+   "sector": "Rue de la Chefferie (adresse BAN la plus proche, 25 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-P2",
+   "positionL93": [
+    758483.7,
+    6822413.7
+   ],
+   "lonlat": [
+    3.7916519,
+    48.4993368
+   ],
+   "approximate": true,
+   "observation": "annexe à toiture grise",
+   "sector": "Rue de la Chefferie (adresse BAN la plus proche, 17 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-Q",
+   "positionL93": [
+    757235.0,
+    6822786.7
+   ],
+   "lonlat": [
+    3.7747998,
+    48.5028036
+   ],
+   "approximate": true,
+   "observation": "abri à toiture sombre",
+   "sector": "Avenue du General de Gaulle (adresse BAN la plus proche, 64 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-R1",
+   "positionL93": [
+    756961.7,
+    6822643.3
+   ],
+   "lonlat": [
+    3.7710813,
+    48.5015377
+   ],
+   "approximate": true,
+   "observation": "hangar léger à toiture grise",
+   "sector": "sans adresse à moins de 80 m (Avenue du General de Gaulle à 90 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-R2",
+   "positionL93": [
+    756940.7,
+    6822650.3
+   ],
+   "lonlat": [
+    3.770798,
+    48.5016025
+   ],
+   "approximate": true,
+   "observation": "abri à toiture grise",
+   "sector": "sans adresse à moins de 80 m (Avenue du General de Gaulle à 95 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-T",
+   "positionL93": [
+    757911.7,
+    6822765.0
+   ],
+   "lonlat": [
+    3.7839569,
+    48.5025483
+   ],
+   "approximate": true,
+   "observation": "abri à toiture grise",
+   "sector": "Rue Georges Clemenceau (adresse BAN la plus proche, 40 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-U2",
+   "positionL93": [
+    758116.7,
+    6823177.3
+   ],
+   "lonlat": [
+    3.7867874,
+    48.5062388
+   ],
+   "approximate": true,
+   "observation": "maison à toiture brune",
+   "sector": "Rue du Mal de Lattre de Tassigny (adresse BAN la plus proche, 20 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  },
+  {
+   "id": "vis-U3",
+   "positionL93": [
+    758146.7,
+    6823163.3
+   ],
+   "lonlat": [
+    3.7871916,
+    48.5061101
+   ],
+   "approximate": true,
+   "observation": "garage à toiture grise",
+   "sector": "Rue Albert Benoist (adresse BAN la plus proche, 25 m)",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (avril 2025) : construction nettement visible",
+    "aucune empreinte BD TOPO, Parcellaire Express, OSM ni forme RNB à cet endroit (instantanés du dépôt, vérifiés le 25/09/2026 : 2 489 et 2 258 objets, identiques au service)"
+   ],
+   "action": "aucune empreinte créée (pas de dessin à main levée) : à relever avant tout placement Unreal"
+  }
+ ],
+ "uncertain": [
+  {
+   "id": "vis-B",
+   "positionL93": [
+    758215.0,
+    6823423.3
+   ],
+   "observation": "structure blanche (tente ou abri démontable) près des courts de tennis",
+   "sector": "Place Leopoldine Deschamps (adresse BAN la plus proche, 32 m)",
+   "lonlat": [
+    3.7881513,
+    48.5084428
+   ]
+  },
+  {
+   "id": "vis-C",
+   "positionL93": [
+    758043.3,
+    6823496.7
+   ],
+   "observation": "petit élément sombre, arbre ou kiosque",
+   "sector": "Rue de la Republique (adresse BAN la plus proche, 13 m)",
+   "lonlat": [
+    3.7858368,
+    48.5091185
+   ]
+  },
+  {
+   "id": "vis-E",
+   "positionL93": [
+    758671.7,
+    6823536.7
+   ],
+   "observation": "surface sombre entre deux maisons, toit plat ou enrobé",
+   "sector": "Rue Jean Baptiste de Lesseps (adresse BAN la plus proche, 14 m)",
+   "lonlat": [
+    3.7943495,
+    48.5094217
+   ]
+  },
+  {
+   "id": "vis-G",
+   "positionL93": [
+    757483.3,
+    6822958.3
+   ],
+   "observation": "longue structure à toit translucide (serre ou manège)",
+   "sector": "Rue Achille Flaubert (adresse BAN la plus proche, 30 m)",
+   "lonlat": [
+    3.7781837,
+    48.5043252
+   ]
+  },
+  {
+   "id": "vis-M",
+   "positionL93": [
+    758491.7,
+    6822463.3
+   ],
+   "observation": "piscine couverte ou abri",
+   "sector": "Rue de la Chefferie (adresse BAN la plus proche, 22 m)",
+   "lonlat": [
+    3.7917669,
+    48.4997823
+   ]
+  },
+  {
+   "id": "vis-N",
+   "positionL93": [
+    758635.0,
+    6822486.7
+   ],
+   "observation": "deux abris (toit vert, toit brun) ; les empreintes de référence voisines sont décalées d’environ 8 m",
+   "sector": "Les Terres Boyaux (adresse BAN la plus proche, 23 m)",
+   "lonlat": [
+    3.7937097,
+    48.4999798
+   ]
+  }
+ ]
+}

@@ -2,7 +2,8 @@ import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {projection,polygons,bounds,insidePoly} from './geo.js';
 import {buildLandscape} from './landscape.js';
-import {buildBuildings,PROVENANCE_COLORS,VALIDATION_COLORS,diagnosticKey} from './buildings.js';
+import {buildBuildings,PROVENANCE_COLORS,VALIDATION_COLORS,AUDIT_COLORS,diagnosticKey} from './buildings.js';
+import {displayBase} from './building-elevation.js';
 import './style.css';
 import {benchmark} from './benchmark.js';
 import {qualitySettings,QUALITY_LABELS,QUALITY_ORDER} from './quality.js';
@@ -36,19 +37,32 @@ async function start(){
   // Give the browser a frame to paint loading feedback before building static batches.
   await new Promise(resolve=>requestAnimationFrame(resolve));
   // V1.5: building footprints come from the unified reference (IGN BD TOPO first, OSM complement).
+  // V2.0.1: the frozen reference (2 494) plus the buildings reintegrated by the visual audit, in the V2 view and ?diagnostic=buildings-audit.
+  const auditMode=params.get('diagnostic')==='buildings-audit',withAdditions=!['provenance','validation','terrain','roads','rail','landcover','poi'].includes(params.get('diagnostic'));
+  const [additions,additionsElevation,auditPoints]=withAdditions?await Promise.all(['buildings-additions-v2.0.1.geojson','buildings-additions-elevation-v2.0.1.json','buildings-audit-v2.0.1.json'].map(n=>fetch(`${import.meta.env.BASE_URL}data/${n}`).then(r=>r.json()))):[null,null,null];
+  const expectedIds=[...buildingReference.features,...(additions?.features||[])].map(f=>f.properties.id);if(additions)buildingReference.features.push(...additions.features);
   const reference=buildingItems(buildingReference,project,extent),diagnostic=['provenance','validation','terrain','roads','rail','landcover','poi'].find(m=>m===params.get('diagnostic'))||null;
   // V2.0: without a V1 diagnostic the normal view is the assembled scene on the real relief; ?diagnostic=v2 or ?perf adds the technical layer (sources, HUD).
-  const v2Mode=!diagnostic,technical=params.get('diagnostic')==='v2'||params.has('perf');
+  const v2Mode=!diagnostic,technical=params.get('diagnostic')==='v2'||auditMode||params.has('perf');
   // V1.7 ?diagnostic=terrain: real LiDAR HD relief; the flat stylised landscape is hidden, buildings sit on their base altitude.
   const relief=diagnostic==='terrain'||v2Mode?await loadTerrain(import.meta.env.BASE_URL,v2Mode?'v2-terrain':'terrain-threejs'):null,flatLayers=new Set(scene.children);
+  if(relief&&additionsElevation)Object.assign(relief.elevation.buildings,additionsElevation.buildings);
   const v2=v2Mode?await buildV2Scene(scene,{relief,base:import.meta.env.BASE_URL,quality}):null;
+  // V2.0.1: display base of every building on the displayed relief (see building-elevation.js) and audit status.
+  const display=new Map();if(v2)for(const item of reference.items){const d=displayBase(item.poly,relief.elevation.buildings[item.featureId].baseZ-relief.meta.yReference,v2.heightAt);display.set(item.id,d);item.auditStatus=item.audit?.status==='réintégré'?'reintegre':d.corrected?'rendu-corrige':'normal';}
   const terrain=v2?{buildings:reference.items,landmarks:[],stats:{}}:buildLandscape(scene,data,project,extent,ignLandscape,reference.items);
   let reliefMesh=null;if(relief&&!v2){for(const o of scene.children)if(!flatLayers.has(o)&&!o.isLight)o.visible=false;reliefMesh=buildTerrainDiagnostic(scene,relief);}
   for(const f of data.features)if(f.geometry.type==='Point'&&['school','townhall','community_centre'].includes(f.properties.amenity)){const p=project(f.geometry.coordinates);const building=terrain.buildings.find(b=>insidePoly(p,b.poly));if(building){building.t={...building.t,amenity:f.properties.amenity,name:f.properties.name};}}
   const roadsRef=diagnostic==='roads'?await buildRoadsDiagnostic(scene,project,import.meta.env.BASE_URL):null,railRef=diagnostic==='rail'?await buildRailDiagnostic(scene,project,import.meta.env.BASE_URL):null;
   const landcoverRef=diagnostic==='landcover'?await buildLandcoverDiagnostic(scene,project,import.meta.env.BASE_URL):null;
   const poiRef=diagnostic==='poi'?await buildPoiDiagnostic(scene,project,import.meta.env.BASE_URL):null;
-  const buildings=buildBuildings(scene,terrain.buildings,enrichment,{diagnostic:relief||roadsRef||railRef||landcoverRef||poiRef?null:diagnostic,elevation:relief?item=>relief.elevation.buildings[item.featureId].baseZ-relief.meta.yReference:null});
+  const buildings=buildBuildings(scene,terrain.buildings,enrichment,{diagnostic:auditMode?'buildings-audit':relief||roadsRef||railRef||landcoverRef||poiRef?null:diagnostic,elevation:v2?item=>display.get(item.id).base-.45:relief?item=>relief.elevation.buildings[item.featureId].baseZ-relief.meta.yReference:null});
+  // V2.0.1 visibility audit: every expected id has walls or roof in the scene graph, stands in the terrain range and is not buried.
+  const renderedIds=new Set();for(const m of buildings.pickMeshes.slice(0,2))for(const r of m.userData.featureRanges)if(r.end>r.start)renderedIds.add(r.id.split('#')[0]);
+  const buildingAudit={expected:expectedIds.length,reference:expectedIds.length-(additions?.features.length||0),additions:additions?.features.length||0,rendered:renderedIds.size,missingIds:expectedIds.filter(id=>!renderedIds.has(id)),
+   buried:[...display].filter(([id,d])=>d.base+buildings.info.get(id).maxHeight<d.terrainMax+.5).map(([id])=>id),outOfRange:[...display].filter(([,d])=>d.base<d.terrainMin-.5||d.base>d.terrainMax+.5).map(([id])=>id),
+   corrected:[...display.values()].filter(d=>d.corrected).length,raised:[...display.values()].filter(d=>d.delta>.25).length,lowered:[...display.values()].filter(d=>d.delta<-.25).length,
+   withoutGeometry:auditPoints?.withoutGeometry.length||0,uncertain:auditPoints?.uncertain.length||0};
   if(reliefMesh){const legend=document.createElement('div');legend.id='diagnostic-legend';const s=reliefMesh.stats;
    legend.innerHTML=[`Terrain IGN LiDAR HD (MNT) · grille ${s.step} m · ${s.vertices.toLocaleString('fr')} sommets`,`Altitude ${s.min} à ${s.max} m NGF-IGN69 · échelle verticale 1:1`,`y = altitude − ${s.yReference} m · quadrillage 100 m · courbes 5 m`,`NoData : ${s.noData}${s.noData?' (magenta)':''} · ${buildings.count} bâtiments posés à leur socle`].map(v=>`<span>${v}</span>`).join('');document.body.appendChild(legend);}
   else if(poiRef){const legend=document.createElement('div');legend.id='diagnostic-legend';const s=poiRef.stats;
@@ -63,6 +77,11 @@ async function start(){
    const entries=diagnostic==='validation'?{A:'A · IGN confirmé par le cadastre',B:'B · source officielle unique','B-contour':'B · contour différent du cadastre actuel',C:'C · OSM seul non confirmé',cadastre:'Ajouté depuis le cadastre actuel (B ou C)'}:{'ign+osm':'IGN et OSM','ign+osm-partiel':'IGN, OSM partiel','ign':'IGN seul','osm':'OSM seul','cadastre':'Cadastre'};
    const colors=diagnostic==='validation'?VALIDATION_COLORS:PROVENANCE_COLORS;
    legend.innerHTML=Object.entries(entries).map(([k,v])=>`<span><i style="background:${colors[k]}"></i>${v} · ${reference.items.filter(i=>diagnosticKey(i,diagnostic)===k).length}</span>`).join('');document.body.appendChild(legend);}
+  if(auditMode){// Markers: visible constructions without any public footprint (magenta), doubtful cases (orange); no geometry is invented.
+   const pin=(list,color,h)=>{if(!list.length)return;const geo=new THREE.ConeGeometry(2.2,h,8),mesh=new THREE.InstancedMesh(geo,new THREE.MeshBasicMaterial({color}),list.length),m=new THREE.Matrix4();list.forEach((q,i)=>{const [x,z]=project(q.lonlat);m.makeRotationX(Math.PI);m.setPosition(x,v2.heightAt(x,z)+h/2+1,z);mesh.setMatrixAt(i,m);});mesh.name='audit-'+color;scene.add(mesh);};
+   pin(auditPoints.withoutGeometry,AUDIT_COLORS['sans-empreinte'],14);pin(auditPoints.uncertain,AUDIT_COLORS.incertain,8);
+   const a=buildingAudit,legend=document.createElement('div');legend.id='diagnostic-legend';
+   legend.innerHTML=[['normal',`Référentiel V1.6.2 · ${a.reference-a.corrected}`],['rendu-corrige',`Socle recalé sur le relief affiché · ${a.corrected}`],['reintegre',`Réintégré V2.0.1 · ${a.additions}`],['incertain',`Incertain (repère, rien n’est dessiné) · ${a.uncertain}`],['sans-empreinte',`Visible sans empreinte publique (repère) · ${a.withoutGeometry}`]].map(([k,v])=>`<span><i style="background:${AUDIT_COLORS[k]}"></i>${v}</span>`).join('')+`<span>${a.rendered} / ${a.expected} bâtiments présents dans la scène · manquants ${a.missingIds.length} · enfouis ${a.buried.length}</span>`;document.body.appendChild(legend);}
   // A fine administrative line distinguishes the real commune from the context rectangle.
   for(const poly of boundaryPolys){const pts=poly[0].map(([x,z])=>new THREE.Vector3(x,relief?(relief.sample(x,z)-relief.meta.yReference||0)+1:.4,z));const geo=new THREE.BufferGeometry().setFromPoints(pts);const line=new THREE.Line(geo,new THREE.LineDashedMaterial({color:'#e0d9bb',dashSize:9,gapSize:7,transparent:true,opacity:.65}));line.computeLineDistances();scene.add(line);}
   const catalogue=createCatalogue(data,enrichment,project,extent,terrain.buildings,namedZones,bible);
@@ -111,7 +130,8 @@ async function start(){
   renderer.domElement.dataset.stats=JSON.stringify({...terrain.stats,relief:reliefMesh?.stats||null,roads:roadsRef?.stats||null,rail:railRef?.stats||null,landcover:landcoverRef?.stats||null,poi:poiRef?{...poiRef.stats,buildingsLinked:poiBuildings}:null,v2:v2?{...v2.stats,records:v2Records,texture:v2.texture}:null,buildings:buildings.count,enrichment:buildings.stats,clickable:catalogue.stats,loadMs:Math.round(performance.now()-t0)});reset();draw();renderer.shadowMap.autoUpdate=false;loading.remove();
   const snapshot=data.metadata.osmTimestamp?.slice(0,10)||data.metadata.retrievedAt.slice(0,10);document.querySelector('#data-date').textContent=`Relevé OSM · ${new Date(snapshot).toLocaleDateString('fr-FR')}`;
   // Read-only diagnostics for reproducible QA, without adding a performance dashboard.
-  window.__MAIZIERES__={stats:{...terrain.stats,buildings:buildings.count,features:data.features.length,buildingReference:{...reference.stats,rendered:buildings.count,rejected:buildings.rejected},loadMs:Math.round(performance.now()-t0),origin:data.metadata.origin,extent},inspect:()=>({camera:camera.position.toArray(),target:controls.target.toArray(),drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,namesVisible}),breakdown:()=>{const out=[];scene.traverse(o=>{if(!o.isMesh)return;const g=o.geometry,tri=(g.index?g.index.count:g.getAttribute('position').count)/3;out.push({type:o.isInstancedMesh?'instanced':'mesh',instances:o.isInstancedMesh?o.count:1,triangles:tri*(o.isInstancedMesh?o.count:1),shadow:o.castShadow});});return out;},screen:(x,y,z)=>{const v=new THREE.Vector3(x,y,z).project(camera);return [(v.x*.5+.5)*innerWidth,(-v.y*.5+.5)*innerHeight];},view:(position,target)=>{controls.enableDamping=false;controls.target.set(...target);camera.position.set(...position);controls.update();controls.enableDamping=true;draw();}};
+  renderer.domElement.dataset.buildingAudit=JSON.stringify({...buildingAudit,missingIds:buildingAudit.missingIds.slice(0,20),buried:buildingAudit.buried.slice(0,20),outOfRange:buildingAudit.outOfRange.slice(0,20)});
+  window.__MAIZIERES__={buildingAudit,renderedBuildingIds:()=>[...renderedIds],stats:{...terrain.stats,buildings:buildings.count,features:data.features.length,buildingReference:{...reference.stats,rendered:buildings.count,rejected:buildings.rejected},loadMs:Math.round(performance.now()-t0),origin:data.metadata.origin,extent},inspect:()=>({camera:camera.position.toArray(),target:controls.target.toArray(),drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,namesVisible}),breakdown:()=>{const out=[];scene.traverse(o=>{if(!o.isMesh)return;const g=o.geometry,tri=(g.index?g.index.count:g.getAttribute('position').count)/3;out.push({type:o.isInstancedMesh?'instanced':'mesh',instances:o.isInstancedMesh?o.count:1,triangles:tri*(o.isInstancedMesh?o.count:1),shadow:o.castShadow});});return out;},screen:(x,y,z)=>{const v=new THREE.Vector3(x,y,z).project(camera);return [(v.x*.5+.5)*innerWidth,(-v.y*.5+.5)*innerHeight];},view:(position,target)=>{controls.enableDamping=false;controls.target.set(...target);camera.position.set(...position);controls.update();controls.enableDamping=true;draw();}};
   // V2.0 interface: search, quick views, legend and (technical mode) performance HUD.
   if(v2){
    const flyTo=(x,z,distance)=>{const dir=camera.position.clone().sub(controls.target);dir.y=Math.max(dir.y,dir.length()*.55);dir.setLength(distance);controls.enableDamping=false;controls.target.set(x,v2.heightAt(x,z),z);camera.position.copy(controls.target).add(dir);controls.update();controls.enableDamping=true;invalidate();};
@@ -121,7 +141,7 @@ async function start(){
    const railCentre=service.length?[(Math.min(...service.map(p=>p[0]))+Math.max(...service.map(p=>p[0])))/2,(Math.min(...service.map(p=>p[1]))+Math.max(...service.map(p=>p[1])))/2]:null;
    const views=[{name:'Vue générale',reset:true},{name:'Centre-bourg',p:at('poi:eglise-saint-denis'),d:620},{name:'Poussey',p:at('poi:poussey'),d:900},{name:'Les Granges',p:at('poi:les-granges'),d:900},{name:'Ferroviaire',p:railCentre,d:1300},{name:'Parc de l’Aérodrome',p:at('poi:parc-aerodrome'),d:1000}].filter(v=>v.reset||v.p);
    installViews(views,v=>v.reset?reset():flyTo(v.p[0],v.p[1],v.d));installLegend();
-   if(technical)installPerfHud(renderer,`Bâtiments ${buildings.count} · routes ${v2.stats.roads.count} · voies ${v2.stats.rail.tracks}\nParcelles ${v2.stats.agriculture} · bois ${v2.stats.woodland} · haies ${v2.stats.hedges.count} · POI ${v2Records.pois}\nTexture ${v2.texture.width}×${v2.texture.height} (${v2.texture.metresPerPixel} m/px)`,draw);
+   if(technical&&!auditMode)installPerfHud(renderer,`Bâtiments ${buildings.count} · routes ${v2.stats.roads.count} · voies ${v2.stats.rail.tracks}\nParcelles ${v2.stats.agriculture} · bois ${v2.stats.woodland} · haies ${v2.stats.hedges.count} · POI ${v2Records.pois}\nTexture ${v2.texture.width}×${v2.texture.height} (${v2.texture.metresPerPixel} m/px)`,draw);
    Object.assign(window.__MAIZIERES__,{v2:{stats:v2.stats,records:v2Records,views:views.map(v=>v.name),searchIndex:search.index,heightAt:v2.heightAt},search:q=>search.search(q),focus:name=>{const r=catalogue.records.find(r=>r.name===name&&r.poi)||catalogue.records.find(r=>r.name===name&&r.searchable!==false);if(r)focus(r);return !!r;},selectId:id=>{const r=catalogue.byId.get(id);selection.select(r);return !!r;},quick:name=>{const v=views.find(v=>v.name===name);if(v)v.reset?reset():flyTo(v.p[0],v.p[1],v.d);return !!v;}});
   }
   const gl=renderer.getContext(),debug=gl.getExtension('WEBGL_debug_renderer_info');

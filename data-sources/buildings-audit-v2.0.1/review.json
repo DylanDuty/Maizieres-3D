@@ -1,0 +1,7510 @@
+{
+ "metadata": {
+  "version": "2.0.1",
+  "note": "Audit visuel systématique des maisons manquantes : toute la zone bâtie de la commune (195 dalles de 160 m, BD ORTHO IGN 20 cm) comparée au référentiel bâti gelé V1.6.2 (buildings.geojson), à la BD TOPO, au Parcellaire Express actuel, au RNB, à OSM et aux retraits V1.6.1/V1.6.2. Chaque partie d’empreinte publique non couverte par le référentiel (≥ 15 m² après ouverture morphologique de 1,2 m) a été examinée sur l’orthophoto. L’orthophoto sert à constater, jamais à dessiner.",
+  "orthophoto": {
+   "name": "BD ORTHO IGN 20 cm",
+   "service": "https://data.geopf.fr/wms-r",
+   "layer": "ORTHOIMAGERY.ORTHOPHOTOS",
+   "dateVol": "28–29 avril 2025"
+  },
+  "sources": {
+   "reference": "public/data/buildings.geojson (V1.6.2, gelé)",
+   "bdtopo": "data-sources/ign/batiment.geojson (2 489 objets ; le service en compte 2 489 le 25/09/2026)",
+   "cadastre": "data-sources/cadastre/pci-express-batiment.geojson (2 258 objets ; idem service)",
+   "rnb": "data-sources/rnb/rnb-10220.json",
+   "osm": "public/data/maizieres.geojson",
+   "removed": "data-sources/building-removed.json (25 retraits V1.6.1, 49 retraits V1.6.2)",
+   "ban": "data-sources/poi/ban-adresses.geojson"
+  },
+  "verdicts": {
+   "bâti visible": "toiture nettement visible sur l’orthophoto 2025 à l’emplacement de l’empreinte publique",
+   "non bâti": "sol, pelouse, parking, voirie, ombre ou simple écart de tracé entre sources",
+   "douteux": "terrasse, véranda, auvent, zone floutée de l’orthophoto, ombre ou végétation : non tranché, rien n’est ajouté"
+  }
+ },
+ "components": [
+  {
+   "k": 0,
+   "source": "cadastre",
+   "sourceId": "cadastre:39793994",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 31.5,
+   "sourceAreaM2": 73.8,
+   "inCommune": true,
+   "centerL93": [
+    759094.3,
+    6823971.7
+   ],
+   "verdict": "douteux",
+   "observation": "extension claire (terrasse ou véranda), non tranché"
+  },
+  {
+   "k": 1,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817978",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 23.1,
+   "sourceAreaM2": 127.9,
+   "inCommune": true,
+   "centerL93": [
+    757941.1,
+    6823005.0
+   ],
+   "verdict": "douteux",
+   "observation": "bande sombre à l'ouest de la maison, ombre possible"
+  },
+  {
+   "k": 2,
+   "source": "cadastre",
+   "sourceId": "cadastre:19815565",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 248.2,
+   "sourceAreaM2": 248.2,
+   "inCommune": false,
+   "centerL93": [
+    755748.5,
+    6823111.2
+   ],
+   "verdict": "bâti visible",
+   "observation": "maison entière à toiture brune, absente du référentiel"
+  },
+  {
+   "k": 3,
+   "source": "cadastre",
+   "sourceId": "cadastre:20378997",
+   "sourceType": "Bâtiment FI",
+   "kind": "empreinte entière",
+   "areaM2": 64.1,
+   "sourceAreaM2": 64.1,
+   "inCommune": false,
+   "centerL93": [
+    755733.0,
+    6823042.5
+   ],
+   "verdict": "non bâti",
+   "observation": "bande d'herbe le long de la voirie"
+  },
+  {
+   "k": 4,
+   "source": "cadastre",
+   "sourceId": "cadastre:20394530",
+   "sourceType": "Bâtiment FI",
+   "kind": "partie non couverte",
+   "areaM2": 35.5,
+   "sourceAreaM2": 133.1,
+   "inCommune": true,
+   "centerL93": [
+    756228.9,
+    6823418.5
+   ],
+   "verdict": "douteux",
+   "observation": "appentis gris, non tranché"
+  },
+  {
+   "k": 5,
+   "source": "cadastre",
+   "sourceId": "cadastre:20394710",
+   "sourceType": "Bâtiment FI",
+   "kind": "partie non couverte",
+   "areaM2": 23.5,
+   "sourceAreaM2": 88.7,
+   "inCommune": true,
+   "centerL93": [
+    757495.1,
+    6822859.6
+   ],
+   "verdict": "bâti visible",
+   "observation": "partie basse du bâtiment scolaire (toiture grise)"
+  },
+  {
+   "k": 6,
+   "source": "cadastre",
+   "sourceId": "cadastre:20394724",
+   "sourceType": "Bâtiment FI",
+   "kind": "partie non couverte",
+   "areaM2": 18.5,
+   "sourceAreaM2": 92.3,
+   "inCommune": true,
+   "centerL93": [
+    757866.5,
+    6822689.8
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe à toiture brune"
+  },
+  {
+   "k": 7,
+   "source": "cadastre",
+   "sourceId": "cadastre:20394824",
+   "sourceType": "Bâtiment FI",
+   "kind": "partie non couverte",
+   "areaM2": 22.2,
+   "sourceAreaM2": 118.8,
+   "inCommune": true,
+   "centerL93": [
+    757998.2,
+    6822576.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe à toiture grise accolée"
+  },
+  {
+   "k": 8,
+   "source": "cadastre",
+   "sourceId": "cadastre:20394824",
+   "sourceType": "Bâtiment FI",
+   "kind": "partie non couverte",
+   "areaM2": 50.8,
+   "sourceAreaM2": 118.8,
+   "inCommune": true,
+   "centerL93": [
+    757990.9,
+    6822578.2
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe"
+  },
+  {
+   "k": 9,
+   "source": "cadastre",
+   "sourceId": "cadastre:20394845",
+   "sourceType": "Bâtiment FI",
+   "kind": "partie non couverte",
+   "areaM2": 25.6,
+   "sourceAreaM2": 110.9,
+   "inCommune": true,
+   "centerL93": [
+    758632.3,
+    6822475.1
+   ],
+   "verdict": "non bâti",
+   "observation": "sol nu"
+  },
+  {
+   "k": 10,
+   "source": "cadastre",
+   "sourceId": "cadastre:20394845",
+   "sourceType": "Bâtiment FI",
+   "kind": "partie non couverte",
+   "areaM2": 29.1,
+   "sourceAreaM2": 110.9,
+   "inCommune": true,
+   "centerL93": [
+    758628.3,
+    6822482.4
+   ],
+   "verdict": "non bâti",
+   "observation": "sol nu"
+  },
+  {
+   "k": 11,
+   "source": "cadastre",
+   "sourceId": "cadastre:20394879",
+   "sourceType": "Bâtiment FI",
+   "kind": "partie non couverte",
+   "areaM2": 15.8,
+   "sourceAreaM2": 68.6,
+   "inCommune": true,
+   "centerL93": [
+    757518.7,
+    6822426.1
+   ],
+   "verdict": "non bâti",
+   "observation": "ombre au sol"
+  },
+  {
+   "k": 12,
+   "source": "cadastre",
+   "sourceId": "cadastre:20395005",
+   "sourceType": "Bâtiment FI",
+   "kind": "partie non couverte",
+   "areaM2": 20.9,
+   "sourceAreaM2": 126.2,
+   "inCommune": true,
+   "centerL93": [
+    757357.7,
+    6822605.8
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 13,
+   "source": "cadastre",
+   "sourceId": "cadastre:20628025",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 31.8,
+   "sourceAreaM2": 256.2,
+   "inCommune": false,
+   "centerL93": [
+    760333.3,
+    6825565.8
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe basse au bout du bâtiment"
+  },
+  {
+   "k": 14,
+   "source": "cadastre",
+   "sourceId": "cadastre:20628059",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 45.7,
+   "sourceAreaM2": 112.9,
+   "inCommune": false,
+   "centerL93": [
+    760364.1,
+    6825639.2
+   ],
+   "verdict": "douteux",
+   "observation": "sous les arbres, non visible"
+  },
+  {
+   "k": 15,
+   "source": "cadastre",
+   "sourceId": "cadastre:22587796",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 161.6,
+   "sourceAreaM2": 872.0,
+   "inCommune": false,
+   "centerL93": [
+    756544.8,
+    6822936.7
+   ],
+   "verdict": "douteux",
+   "observation": "bande le long de la façade du centre commercial (auvent possible)"
+  },
+  {
+   "k": 16,
+   "source": "cadastre",
+   "sourceId": "cadastre:22587796",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 81.3,
+   "sourceAreaM2": 872.0,
+   "inCommune": false,
+   "centerL93": [
+    756528.9,
+    6822982.1
+   ],
+   "verdict": "non bâti",
+   "observation": "trottoir le long de la façade (écart de tracé)"
+  },
+  {
+   "k": 17,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588060",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 32.7,
+   "sourceAreaM2": 71.3,
+   "inCommune": false,
+   "centerL93": [
+    756453.9,
+    6823138.5
+   ],
+   "verdict": "non bâti",
+   "observation": "parking (écart de tracé)"
+  },
+  {
+   "k": 18,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588068",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 29.1,
+   "sourceAreaM2": 113.7,
+   "inCommune": false,
+   "centerL93": [
+    756353.3,
+    6823118.3
+   ],
+   "verdict": "non bâti",
+   "observation": "sol (écart de tracé)"
+  },
+  {
+   "k": 19,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588116",
+   "sourceType": "Construction légère",
+   "kind": "empreinte entière",
+   "areaM2": 96.7,
+   "sourceAreaM2": 96.7,
+   "inCommune": false,
+   "centerL93": [
+    756116.7,
+    6823186.3
+   ],
+   "verdict": "douteux",
+   "observation": "sous les arbres"
+  },
+  {
+   "k": 20,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588314",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 19.0,
+   "sourceAreaM2": 28.6,
+   "inCommune": false,
+   "centerL93": [
+    756611.2,
+    6823097.7
+   ],
+   "verdict": "non bâti",
+   "observation": "ombre portée"
+  },
+  {
+   "k": 21,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588324",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 17.3,
+   "sourceAreaM2": 66.9,
+   "inCommune": false,
+   "centerL93": [
+    756702.4,
+    6823062.7
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage des silos"
+  },
+  {
+   "k": 22,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588336",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 18.4,
+   "sourceAreaM2": 64.8,
+   "inCommune": false,
+   "centerL93": [
+    756700.2,
+    6823052.5
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage des silos"
+  },
+  {
+   "k": 23,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588344",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 28.0,
+   "sourceAreaM2": 65.3,
+   "inCommune": false,
+   "centerL93": [
+    756698.4,
+    6823041.8
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage des silos"
+  },
+  {
+   "k": 24,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588443",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 19.3,
+   "sourceAreaM2": 21986.8,
+   "inCommune": false,
+   "centerL93": [
+    756695.3,
+    6823028.8
+   ],
+   "verdict": "non bâti",
+   "observation": "aire de stockage"
+  },
+  {
+   "k": 25,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588443",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 283.0,
+   "sourceAreaM2": 21986.8,
+   "inCommune": false,
+   "centerL93": [
+    756614.3,
+    6822923.3
+   ],
+   "verdict": "non bâti",
+   "observation": "bande de parking le long de la façade"
+  },
+  {
+   "k": 26,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588471",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 40.5,
+   "sourceAreaM2": 1358.4,
+   "inCommune": false,
+   "centerL93": [
+    756471.3,
+    6823141.1
+   ],
+   "verdict": "non bâti",
+   "observation": "voirie"
+  },
+  {
+   "k": 27,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588471",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 24.8,
+   "sourceAreaM2": 1358.4,
+   "inCommune": false,
+   "centerL93": [
+    756445.4,
+    6823147.5
+   ],
+   "verdict": "non bâti",
+   "observation": "voirie"
+  },
+  {
+   "k": 28,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588478",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 17.1,
+   "sourceAreaM2": 3676.1,
+   "inCommune": false,
+   "centerL93": [
+    756409.3,
+    6823137.8
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe (écart de tracé)"
+  },
+  {
+   "k": 29,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588478",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 18.3,
+   "sourceAreaM2": 3676.1,
+   "inCommune": false,
+   "centerL93": [
+    756399.1,
+    6823131.1
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe (écart de tracé)"
+  },
+  {
+   "k": 30,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588478",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 24.4,
+   "sourceAreaM2": 3676.1,
+   "inCommune": false,
+   "centerL93": [
+    756345.0,
+    6823128.2
+   ],
+   "verdict": "non bâti",
+   "observation": "sol (écart de tracé)"
+  },
+  {
+   "k": 31,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588478",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 52.8,
+   "sourceAreaM2": 3676.1,
+   "inCommune": false,
+   "centerL93": [
+    756338.6,
+    6823152.2
+   ],
+   "verdict": "non bâti",
+   "observation": "sol (écart de tracé)"
+  },
+  {
+   "k": 32,
+   "source": "cadastre",
+   "sourceId": "cadastre:22588727",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 594.6,
+   "sourceAreaM2": 594.6,
+   "inCommune": false,
+   "centerL93": [
+    756137.6,
+    6823181.4
+   ],
+   "verdict": "non bâti",
+   "observation": "friche arbustive (confirmé V1.6.2)"
+  },
+  {
+   "k": 33,
+   "source": "cadastre",
+   "sourceId": "cadastre:23568694",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 23.0,
+   "sourceAreaM2": 343.0,
+   "inCommune": true,
+   "centerL93": [
+    757550.9,
+    6822600.2
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe accolée"
+  },
+  {
+   "k": 34,
+   "source": "cadastre",
+   "sourceId": "cadastre:23570081",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 109.3,
+   "sourceAreaM2": 188.6,
+   "inCommune": true,
+   "centerL93": [
+    756957.0,
+    6822728.3
+   ],
+   "verdict": "douteux",
+   "observation": "piscine couverte et véranda, non tranché"
+  },
+  {
+   "k": 35,
+   "source": "cadastre",
+   "sourceId": "cadastre:23570313",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 16.1,
+   "sourceAreaM2": 155.0,
+   "inCommune": true,
+   "centerL93": [
+    757922.6,
+    6822679.0
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 36,
+   "source": "cadastre",
+   "sourceId": "cadastre:23570313",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 104.5,
+   "sourceAreaM2": 155.0,
+   "inCommune": true,
+   "centerL93": [
+    757911.5,
+    6822680.6
+   ],
+   "verdict": "bâti visible",
+   "observation": "maison entière à toiture grise sombre, absente du référentiel"
+  },
+  {
+   "k": 37,
+   "source": "cadastre",
+   "sourceId": "cadastre:23574372",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 20.6,
+   "sourceAreaM2": 98.5,
+   "inCommune": true,
+   "centerL93": [
+    757215.7,
+    6822750.8
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse claire"
+  },
+  {
+   "k": 38,
+   "source": "cadastre",
+   "sourceId": "cadastre:23574475",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 26.0,
+   "sourceAreaM2": 29.6,
+   "inCommune": true,
+   "centerL93": [
+    758347.9,
+    6823149.2
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe à toiture grise"
+  },
+  {
+   "k": 39,
+   "source": "cadastre",
+   "sourceId": "cadastre:23575137",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 59.5,
+   "sourceAreaM2": 154.8,
+   "inCommune": true,
+   "centerL93": [
+    757624.0,
+    6822761.4
+   ],
+   "verdict": "bâti visible",
+   "observation": "garage accolé à toiture grise"
+  },
+  {
+   "k": 40,
+   "source": "cadastre",
+   "sourceId": "cadastre:23575737",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 20.2,
+   "sourceAreaM2": 135.6,
+   "inCommune": true,
+   "centerL93": [
+    758525.7,
+    6823412.6
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise"
+  },
+  {
+   "k": 41,
+   "source": "cadastre",
+   "sourceId": "cadastre:23575922",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 21.7,
+   "sourceAreaM2": 26.2,
+   "inCommune": true,
+   "centerL93": [
+    758581.1,
+    6823383.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe à toiture grise"
+  },
+  {
+   "k": 42,
+   "source": "cadastre",
+   "sourceId": "cadastre:23576464",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 23.6,
+   "sourceAreaM2": 176.4,
+   "inCommune": true,
+   "centerL93": [
+    758462.2,
+    6823417.2
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe accolée"
+  },
+  {
+   "k": 43,
+   "source": "cadastre",
+   "sourceId": "cadastre:23577103",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 59.7,
+   "sourceAreaM2": 148.8,
+   "inCommune": true,
+   "centerL93": [
+    758520.2,
+    6823243.7
+   ],
+   "verdict": "bâti visible",
+   "observation": "garage à toiture grise"
+  },
+  {
+   "k": 44,
+   "source": "cadastre",
+   "sourceId": "cadastre:23577378",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 42.9,
+   "sourceAreaM2": 128.9,
+   "inCommune": true,
+   "centerL93": [
+    758572.0,
+    6823377.7
+   ],
+   "verdict": "bâti visible",
+   "observation": "garage à toiture claire"
+  },
+  {
+   "k": 45,
+   "source": "cadastre",
+   "sourceId": "cadastre:23578801",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 43.3,
+   "sourceAreaM2": 108.5,
+   "inCommune": true,
+   "centerL93": [
+    758890.5,
+    6824178.5
+   ],
+   "verdict": "non bâti",
+   "observation": "terrasse arrondie"
+  },
+  {
+   "k": 46,
+   "source": "cadastre",
+   "sourceId": "cadastre:23579467",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 92.0,
+   "sourceAreaM2": 882.9,
+   "inCommune": true,
+   "centerL93": [
+    758221.4,
+    6823401.1
+   ],
+   "verdict": "douteux",
+   "observation": "bande claire le long de la salle, non tranché"
+  },
+  {
+   "k": 47,
+   "source": "cadastre",
+   "sourceId": "cadastre:23580041",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 23.7,
+   "sourceAreaM2": 117.6,
+   "inCommune": true,
+   "centerL93": [
+    758449.6,
+    6823463.4
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 48,
+   "source": "cadastre",
+   "sourceId": "cadastre:25476649",
+   "sourceType": "Construction légère",
+   "kind": "empreinte entière",
+   "areaM2": 176.1,
+   "sourceAreaM2": 176.1,
+   "inCommune": false,
+   "centerL93": [
+    755687.7,
+    6822860.7
+   ],
+   "verdict": "bâti visible",
+   "observation": "bâtiment entier à toiture claire, absent du référentiel"
+  },
+  {
+   "k": 49,
+   "source": "cadastre",
+   "sourceId": "cadastre:25515972",
+   "sourceType": "Construction légère",
+   "kind": "empreinte entière",
+   "areaM2": 52.4,
+   "sourceAreaM2": 52.4,
+   "inCommune": false,
+   "centerL93": [
+    755690.2,
+    6822586.0
+   ],
+   "verdict": "bâti visible",
+   "observation": "partie est du bâtiment à toiture sombre"
+  },
+  {
+   "k": 50,
+   "source": "cadastre",
+   "sourceId": "cadastre:25515979",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 90.7,
+   "sourceAreaM2": 90.7,
+   "inCommune": false,
+   "centerL93": [
+    755682.7,
+    6822586.7
+   ],
+   "verdict": "bâti visible",
+   "observation": "partie ouest du même bâtiment à toiture sombre"
+  },
+  {
+   "k": 51,
+   "source": "cadastre",
+   "sourceId": "cadastre:25761036",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 21.1,
+   "sourceAreaM2": 109.7,
+   "inCommune": true,
+   "centerL93": [
+    759015.5,
+    6824147.7
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe accolée"
+  },
+  {
+   "k": 52,
+   "source": "cadastre",
+   "sourceId": "cadastre:26039571",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 20.7,
+   "sourceAreaM2": 28.0,
+   "inCommune": false,
+   "centerL93": [
+    756326.8,
+    6823047.7
+   ],
+   "verdict": "douteux",
+   "observation": "bande sur le parking, non tranché"
+  },
+  {
+   "k": 53,
+   "source": "cadastre",
+   "sourceId": "cadastre:29681935",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 40.4,
+   "sourceAreaM2": 40.4,
+   "inCommune": false,
+   "centerL93": [
+    755683.7,
+    6822755.5
+   ],
+   "verdict": "bâti visible",
+   "observation": "petit bâtiment technique à toiture claire"
+  },
+  {
+   "k": 54,
+   "source": "cadastre",
+   "sourceId": "cadastre:30275451",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 21.8,
+   "sourceAreaM2": 26.7,
+   "inCommune": true,
+   "centerL93": [
+    757777.0,
+    6822724.4
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée (pool house)"
+  },
+  {
+   "k": 55,
+   "source": "cadastre",
+   "sourceId": "cadastre:32775484",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 37.5,
+   "sourceAreaM2": 434.8,
+   "inCommune": false,
+   "centerL93": [
+    756288.1,
+    6822999.4
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage du tracé"
+  },
+  {
+   "k": 56,
+   "source": "cadastre",
+   "sourceId": "cadastre:34453627",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 183.1,
+   "sourceAreaM2": 183.1,
+   "inCommune": false,
+   "centerL93": [
+    755720.9,
+    6823118.6
+   ],
+   "verdict": "bâti visible",
+   "observation": "maison entière à toiture brune, absente du référentiel"
+  },
+  {
+   "k": 57,
+   "source": "cadastre",
+   "sourceId": "cadastre:34580699",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 22.3,
+   "sourceAreaM2": 346.5,
+   "inCommune": true,
+   "centerL93": [
+    758409.8,
+    6823695.0
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe accolée"
+  },
+  {
+   "k": 58,
+   "source": "cadastre",
+   "sourceId": "cadastre:34631971",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 16.6,
+   "sourceAreaM2": 20.0,
+   "inCommune": true,
+   "centerL93": [
+    758288.0,
+    6823032.7
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe accolée"
+  },
+  {
+   "k": 59,
+   "source": "cadastre",
+   "sourceId": "cadastre:34994101",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 130.7,
+   "sourceAreaM2": 1795.5,
+   "inCommune": true,
+   "centerL93": [
+    756283.0,
+    6822632.4
+   ],
+   "verdict": "non bâti",
+   "observation": "parking (écart de tracé)"
+  },
+  {
+   "k": 60,
+   "source": "cadastre",
+   "sourceId": "cadastre:34994101",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 232.9,
+   "sourceAreaM2": 1795.5,
+   "inCommune": true,
+   "centerL93": [
+    756263.2,
+    6822603.9
+   ],
+   "verdict": "non bâti",
+   "observation": "trottoir (écart de tracé)"
+  },
+  {
+   "k": 61,
+   "source": "cadastre",
+   "sourceId": "cadastre:35560057",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 211.5,
+   "sourceAreaM2": 211.5,
+   "inCommune": false,
+   "centerL93": [
+    755677.1,
+    6823129.7
+   ],
+   "verdict": "bâti visible",
+   "observation": "maison entière à toiture brune, absente du référentiel"
+  },
+  {
+   "k": 62,
+   "source": "cadastre",
+   "sourceId": "cadastre:35560109",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 183.1,
+   "sourceAreaM2": 183.1,
+   "inCommune": false,
+   "centerL93": [
+    755700.2,
+    6823123.8
+   ],
+   "verdict": "bâti visible",
+   "observation": "maison entière à toiture brune, absente du référentiel"
+  },
+  {
+   "k": 63,
+   "source": "cadastre",
+   "sourceId": "cadastre:37265803",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 25.0,
+   "sourceAreaM2": 124.0,
+   "inCommune": true,
+   "centerL93": [
+    758865.3,
+    6824194.3
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise"
+  },
+  {
+   "k": 64,
+   "source": "cadastre",
+   "sourceId": "cadastre:38601789",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 121.2,
+   "sourceAreaM2": 1564.0,
+   "inCommune": true,
+   "centerL93": [
+    756184.9,
+    6822513.2
+   ],
+   "verdict": "non bâti",
+   "observation": "voirie (écart de tracé)"
+  },
+  {
+   "k": 65,
+   "source": "cadastre",
+   "sourceId": "cadastre:38601789",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 144.3,
+   "sourceAreaM2": 1564.0,
+   "inCommune": true,
+   "centerL93": [
+    756154.6,
+    6822530.4
+   ],
+   "verdict": "non bâti",
+   "observation": "talus (écart de tracé)"
+  },
+  {
+   "k": 66,
+   "source": "cadastre",
+   "sourceId": "cadastre:38975465",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 235.4,
+   "sourceAreaM2": 1106.7,
+   "inCommune": true,
+   "centerL93": [
+    756237.4,
+    6822578.0
+   ],
+   "verdict": "non bâti",
+   "observation": "parking (écart de tracé)"
+  },
+  {
+   "k": 67,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362353",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 24.2,
+   "sourceAreaM2": 27.7,
+   "inCommune": false,
+   "centerL93": [
+    760531.7,
+    6822536.2
+   ],
+   "verdict": "bâti visible",
+   "observation": "silo circulaire visible"
+  },
+  {
+   "k": 68,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362354",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 28.4,
+   "sourceAreaM2": 32.1,
+   "inCommune": false,
+   "centerL93": [
+    760533.4,
+    6822530.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "silo circulaire visible"
+  },
+  {
+   "k": 69,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362494",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 27.1,
+   "sourceAreaM2": 31.9,
+   "inCommune": false,
+   "centerL93": [
+    760536.0,
+    6822524.0
+   ],
+   "verdict": "bâti visible",
+   "observation": "silo circulaire visible"
+  },
+  {
+   "k": 70,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362586",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 46.4,
+   "sourceAreaM2": 1895.3,
+   "inCommune": false,
+   "centerL93": [
+    760744.7,
+    6822615.1
+   ],
+   "verdict": "douteux",
+   "observation": "toiture végétalisée ou dépôt, non tranché"
+  },
+  {
+   "k": 71,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362586",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 38.9,
+   "sourceAreaM2": 1895.3,
+   "inCommune": false,
+   "centerL93": [
+    760690.4,
+    6822575.2
+   ],
+   "verdict": "non bâti",
+   "observation": "sol"
+  },
+  {
+   "k": 72,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362588",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 301.9,
+   "sourceAreaM2": 4103.3,
+   "inCommune": false,
+   "centerL93": [
+    761032.8,
+    6822630.1
+   ],
+   "verdict": "non bâti",
+   "observation": "bande le long de la façade"
+  },
+  {
+   "k": 73,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362590",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 542.3,
+   "sourceAreaM2": 6825.0,
+   "inCommune": false,
+   "centerL93": [
+    760879.0,
+    6822591.6
+   ],
+   "verdict": "non bâti",
+   "observation": "bande le long de la façade"
+  },
+  {
+   "k": 74,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362590",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 15.0,
+   "sourceAreaM2": 6825.0,
+   "inCommune": false,
+   "centerL93": [
+    760799.5,
+    6822607.3
+   ],
+   "verdict": "douteux",
+   "observation": "ombre et convoyeur"
+  },
+  {
+   "k": 75,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362625",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 15.6,
+   "sourceAreaM2": 15.6,
+   "inCommune": false,
+   "centerL93": [
+    760649.4,
+    6822503.9
+   ],
+   "verdict": "douteux",
+   "observation": "entre silos, non tranché"
+  },
+  {
+   "k": 76,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362627",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 16.3,
+   "sourceAreaM2": 16.3,
+   "inCommune": false,
+   "centerL93": [
+    760647.4,
+    6822509.7
+   ],
+   "verdict": "douteux",
+   "observation": "entre silos, non tranché"
+  },
+  {
+   "k": 77,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362629",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 16.3,
+   "sourceAreaM2": 16.3,
+   "inCommune": false,
+   "centerL93": [
+    760645.4,
+    6822515.8
+   ],
+   "verdict": "douteux",
+   "observation": "entre silos, non tranché"
+  },
+  {
+   "k": 78,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362669",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 71.8,
+   "sourceAreaM2": 75.4,
+   "inCommune": false,
+   "centerL93": [
+    760632.6,
+    6822525.9
+   ],
+   "verdict": "douteux",
+   "observation": "convoyeur ou auvent allongé"
+  },
+  {
+   "k": 79,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362670",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 35.2,
+   "sourceAreaM2": 88.3,
+   "inCommune": false,
+   "centerL93": [
+    760557.2,
+    6822502.3
+   ],
+   "verdict": "douteux",
+   "observation": "silos décalés"
+  },
+  {
+   "k": 80,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362670",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 25.1,
+   "sourceAreaM2": 88.3,
+   "inCommune": false,
+   "centerL93": [
+    760548.2,
+    6822497.4
+   ],
+   "verdict": "douteux",
+   "observation": "silo partiellement décalé"
+  },
+  {
+   "k": 81,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362671",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 26.4,
+   "sourceAreaM2": 98.1,
+   "inCommune": false,
+   "centerL93": [
+    760550.6,
+    6822491.1
+   ],
+   "verdict": "douteux",
+   "observation": "silo partiellement décalé"
+  },
+  {
+   "k": 82,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362673",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 34.8,
+   "sourceAreaM2": 155.2,
+   "inCommune": false,
+   "centerL93": [
+    760600.8,
+    6822518.2
+   ],
+   "verdict": "douteux",
+   "observation": "toiture technique, non tranché"
+  },
+  {
+   "k": 83,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362713",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 40.0,
+   "sourceAreaM2": 239.7,
+   "inCommune": false,
+   "centerL93": [
+    760572.3,
+    6822508.3
+   ],
+   "verdict": "douteux",
+   "observation": "bande entre halls, non tranché"
+  },
+  {
+   "k": 84,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362714",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 35.7,
+   "sourceAreaM2": 57.5,
+   "inCommune": false,
+   "centerL93": [
+    760536.9,
+    6822483.4
+   ],
+   "verdict": "non bâti",
+   "observation": "sol"
+  },
+  {
+   "k": 85,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362843",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 124.2,
+   "sourceAreaM2": 292.2,
+   "inCommune": false,
+   "centerL93": [
+    760701.1,
+    6822616.9
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), non contrôlable"
+  },
+  {
+   "k": 86,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362879",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 130.5,
+   "sourceAreaM2": 655.6,
+   "inCommune": false,
+   "centerL93": [
+    760662.8,
+    6822600.5
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), non contrôlable"
+  },
+  {
+   "k": 87,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362881",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 46.4,
+   "sourceAreaM2": 550.4,
+   "inCommune": false,
+   "centerL93": [
+    760977.5,
+    6822615.5
+   ],
+   "verdict": "douteux",
+   "observation": "bande grise en bord de hall"
+  },
+  {
+   "k": 88,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362885",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 34.9,
+   "sourceAreaM2": 49.3,
+   "inCommune": false,
+   "centerL93": [
+    760796.4,
+    6822590.7
+   ],
+   "verdict": "douteux",
+   "observation": "ombre et passerelle"
+  },
+  {
+   "k": 89,
+   "source": "cadastre",
+   "sourceId": "cadastre:39362887",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 89.8,
+   "sourceAreaM2": 346.6,
+   "inCommune": false,
+   "centerL93": [
+    760572.7,
+    6822521.8
+   ],
+   "verdict": "bâti visible",
+   "observation": "extension à toiture claire accolée au hall"
+  },
+  {
+   "k": 90,
+   "source": "cadastre",
+   "sourceId": "cadastre:39367036",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 109.1,
+   "sourceAreaM2": 109.1,
+   "inCommune": false,
+   "centerL93": [
+    760694.6,
+    6822481.7
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe"
+  },
+  {
+   "k": 91,
+   "source": "cadastre",
+   "sourceId": "cadastre:39696777",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 22.7,
+   "sourceAreaM2": 66.5,
+   "inCommune": true,
+   "centerL93": [
+    758528.5,
+    6822533.2
+   ],
+   "verdict": "bâti visible",
+   "observation": "appentis accolé"
+  },
+  {
+   "k": 92,
+   "source": "cadastre",
+   "sourceId": "cadastre:39696820",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 99.8,
+   "sourceAreaM2": 577.9,
+   "inCommune": true,
+   "centerL93": [
+    757393.9,
+    6822545.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "partie à toiture grise du hall agricole"
+  },
+  {
+   "k": 93,
+   "source": "cadastre",
+   "sourceId": "cadastre:39696822",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 18.2,
+   "sourceAreaM2": 27.1,
+   "inCommune": true,
+   "centerL93": [
+    758528.1,
+    6822562.4
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe accolée"
+  },
+  {
+   "k": 94,
+   "source": "cadastre",
+   "sourceId": "cadastre:39696886",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 174.5,
+   "sourceAreaM2": 1237.7,
+   "inCommune": true,
+   "centerL93": [
+    759405.7,
+    6822650.9
+   ],
+   "verdict": "non bâti",
+   "observation": "bande le long du hall (écart de tracé)"
+  },
+  {
+   "k": 95,
+   "source": "cadastre",
+   "sourceId": "cadastre:39793508",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 70.6,
+   "sourceAreaM2": 175.8,
+   "inCommune": true,
+   "centerL93": [
+    759190.0,
+    6824035.7
+   ],
+   "verdict": "bâti visible",
+   "observation": "partie ouest à toiture sombre"
+  },
+  {
+   "k": 96,
+   "source": "cadastre",
+   "sourceId": "cadastre:39793547",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 20.4,
+   "sourceAreaM2": 25.5,
+   "inCommune": true,
+   "centerL93": [
+    758933.6,
+    6824181.9
+   ],
+   "verdict": "douteux",
+   "observation": "sous l'ombre, non tranché"
+  },
+  {
+   "k": 97,
+   "source": "cadastre",
+   "sourceId": "cadastre:39793552",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 18.3,
+   "sourceAreaM2": 112.5,
+   "inCommune": true,
+   "centerL93": [
+    759004.8,
+    6824129.0
+   ],
+   "verdict": "douteux",
+   "observation": "bande claire (terrasse probable)"
+  },
+  {
+   "k": 98,
+   "source": "cadastre",
+   "sourceId": "cadastre:39793590",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 16.0,
+   "sourceAreaM2": 63.3,
+   "inCommune": true,
+   "centerL93": [
+    758633.4,
+    6824157.4
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 99,
+   "source": "cadastre",
+   "sourceId": "cadastre:39793592",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 69.2,
+   "sourceAreaM2": 144.8,
+   "inCommune": true,
+   "centerL93": [
+    758658.8,
+    6824044.9
+   ],
+   "verdict": "non bâti",
+   "observation": "terrasse"
+  },
+  {
+   "k": 100,
+   "source": "cadastre",
+   "sourceId": "cadastre:39793623",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 62.3,
+   "sourceAreaM2": 62.9,
+   "inCommune": true,
+   "centerL93": [
+    758682.8,
+    6824187.4
+   ],
+   "verdict": "non bâti",
+   "observation": "chemin et cour (décalage)"
+  },
+  {
+   "k": 101,
+   "source": "cadastre",
+   "sourceId": "cadastre:39793627",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 52.2,
+   "sourceAreaM2": 394.0,
+   "inCommune": true,
+   "centerL93": [
+    758714.5,
+    6824038.1
+   ],
+   "verdict": "non bâti",
+   "observation": "cour"
+  },
+  {
+   "k": 102,
+   "source": "cadastre",
+   "sourceId": "cadastre:39793673",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 25.6,
+   "sourceAreaM2": 159.9,
+   "inCommune": true,
+   "centerL93": [
+    758767.9,
+    6824174.2
+   ],
+   "verdict": "bâti visible",
+   "observation": "appentis gris accolé"
+  },
+  {
+   "k": 103,
+   "source": "cadastre",
+   "sourceId": "cadastre:39793673",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 17.4,
+   "sourceAreaM2": 159.9,
+   "inCommune": true,
+   "centerL93": [
+    758763.8,
+    6824166.3
+   ],
+   "verdict": "non bâti",
+   "observation": "véhicule ou terrasse"
+  },
+  {
+   "k": 104,
+   "source": "cadastre",
+   "sourceId": "cadastre:39793920",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 22.4,
+   "sourceAreaM2": 171.2,
+   "inCommune": true,
+   "centerL93": [
+    759064.5,
+    6823923.5
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse claire"
+  },
+  {
+   "k": 105,
+   "source": "cadastre",
+   "sourceId": "cadastre:39793959",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 15.3,
+   "sourceAreaM2": 131.4,
+   "inCommune": true,
+   "centerL93": [
+    759081.3,
+    6823878.6
+   ],
+   "verdict": "bâti visible",
+   "observation": "petite annexe"
+  },
+  {
+   "k": 106,
+   "source": "cadastre",
+   "sourceId": "cadastre:39793965",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 15.3,
+   "sourceAreaM2": 98.8,
+   "inCommune": true,
+   "centerL93": [
+    759117.8,
+    6823971.4
+   ],
+   "verdict": "douteux",
+   "observation": "véranda, non tranché"
+  },
+  {
+   "k": 107,
+   "source": "cadastre",
+   "sourceId": "cadastre:39794066",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 27.4,
+   "sourceAreaM2": 118.3,
+   "inCommune": true,
+   "centerL93": [
+    758968.1,
+    6823987.3
+   ],
+   "verdict": "douteux",
+   "observation": "décalage de tracé"
+  },
+  {
+   "k": 108,
+   "source": "cadastre",
+   "sourceId": "cadastre:39794067",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 22.3,
+   "sourceAreaM2": 34.5,
+   "inCommune": true,
+   "centerL93": [
+    758974.9,
+    6823996.9
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe à toiture claire"
+  },
+  {
+   "k": 109,
+   "source": "cadastre",
+   "sourceId": "cadastre:39794149",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 20.8,
+   "sourceAreaM2": 133.1,
+   "inCommune": true,
+   "centerL93": [
+    758876.1,
+    6824145.4
+   ],
+   "verdict": "douteux",
+   "observation": "bande en pignon (auvent possible)"
+  },
+  {
+   "k": 110,
+   "source": "cadastre",
+   "sourceId": "cadastre:39794320",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 29.6,
+   "sourceAreaM2": 29.6,
+   "inCommune": true,
+   "centerL93": [
+    758786.4,
+    6824143.6
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin"
+  },
+  {
+   "k": 111,
+   "source": "cadastre",
+   "sourceId": "cadastre:39794352",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 48.3,
+   "sourceAreaM2": 190.6,
+   "inCommune": true,
+   "centerL93": [
+    759269.3,
+    6823932.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "garage accolé à toiture grise"
+  },
+  {
+   "k": 112,
+   "source": "cadastre",
+   "sourceId": "cadastre:39794500",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 25.3,
+   "sourceAreaM2": 79.8,
+   "inCommune": true,
+   "centerL93": [
+    759723.6,
+    6823857.8
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade (terrasse probable)"
+  },
+  {
+   "k": 113,
+   "source": "cadastre",
+   "sourceId": "cadastre:39794585",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 33.5,
+   "sourceAreaM2": 261.8,
+   "inCommune": true,
+   "centerL93": [
+    759919.4,
+    6823893.2
+   ],
+   "verdict": "bâti visible",
+   "observation": "appentis gris accolé"
+  },
+  {
+   "k": 114,
+   "source": "cadastre",
+   "sourceId": "cadastre:39794761",
+   "sourceType": "Construction légère",
+   "kind": "empreinte entière",
+   "areaM2": 192.0,
+   "sourceAreaM2": 192.0,
+   "inCommune": true,
+   "centerL93": [
+    758595.2,
+    6824193.8
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin et arbres"
+  },
+  {
+   "k": 115,
+   "source": "cadastre",
+   "sourceId": "cadastre:39794763",
+   "sourceType": "Construction légère",
+   "kind": "empreinte entière",
+   "areaM2": 132.8,
+   "sourceAreaM2": 146.1,
+   "inCommune": true,
+   "centerL93": [
+    758710.3,
+    6824025.8
+   ],
+   "verdict": "non bâti",
+   "observation": "arbres et cour"
+  },
+  {
+   "k": 116,
+   "source": "cadastre",
+   "sourceId": "cadastre:39794805",
+   "sourceType": "Construction légère",
+   "kind": "empreinte entière",
+   "areaM2": 123.9,
+   "sourceAreaM2": 123.9,
+   "inCommune": true,
+   "centerL93": [
+    758781.9,
+    6823956.5
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin (véhicule)"
+  },
+  {
+   "k": 117,
+   "source": "cadastre",
+   "sourceId": "cadastre:39794882",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 15.6,
+   "sourceAreaM2": 17.9,
+   "inCommune": true,
+   "centerL93": [
+    758873.6,
+    6824007.4
+   ],
+   "verdict": "douteux",
+   "observation": "bande claire en pignon"
+  },
+  {
+   "k": 118,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808112",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 218.5,
+   "sourceAreaM2": 218.5,
+   "inCommune": true,
+   "centerL93": [
+    758821.6,
+    6822812.1
+   ],
+   "verdict": "non bâti",
+   "observation": "silos démolis, sol nu (retiré V1.6.2)"
+  },
+  {
+   "k": 119,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808113",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 353.9,
+   "sourceAreaM2": 353.9,
+   "inCommune": true,
+   "centerL93": [
+    758818.9,
+    6822794.7
+   ],
+   "verdict": "non bâti",
+   "observation": "silo démoli, sol nu (retiré V1.6.2)"
+  },
+  {
+   "k": 120,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808114",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 330.0,
+   "sourceAreaM2": 330.0,
+   "inCommune": true,
+   "centerL93": [
+    758795.0,
+    6822797.9
+   ],
+   "verdict": "non bâti",
+   "observation": "silo démoli, sol nu (retiré V1.6.2)"
+  },
+  {
+   "k": 121,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808115",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 25.0,
+   "sourceAreaM2": 4865.2,
+   "inCommune": true,
+   "centerL93": [
+    758773.3,
+    6822660.7
+   ],
+   "verdict": "non bâti",
+   "observation": "bande de trottoir"
+  },
+  {
+   "k": 122,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808116",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 22.6,
+   "sourceAreaM2": 113.7,
+   "inCommune": true,
+   "centerL93": [
+    758747.8,
+    6822622.5
+   ],
+   "verdict": "douteux",
+   "observation": "bande en pignon"
+  },
+  {
+   "k": 123,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808118",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 18.8,
+   "sourceAreaM2": 18.8,
+   "inCommune": true,
+   "centerL93": [
+    759009.5,
+    6822633.9
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe"
+  },
+  {
+   "k": 124,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808119",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 30.0,
+   "sourceAreaM2": 30.0,
+   "inCommune": true,
+   "centerL93": [
+    759007.6,
+    6822622.1
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe"
+  },
+  {
+   "k": 125,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808120",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 38.6,
+   "sourceAreaM2": 38.6,
+   "inCommune": true,
+   "centerL93": [
+    758990.1,
+    6822603.3
+   ],
+   "verdict": "non bâti",
+   "observation": "passage"
+  },
+  {
+   "k": 126,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808154",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 101.5,
+   "sourceAreaM2": 330.4,
+   "inCommune": true,
+   "centerL93": [
+    758968.2,
+    6822746.6
+   ],
+   "verdict": "douteux",
+   "observation": "bande claire en façade (auvent possible)"
+  },
+  {
+   "k": 127,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808157",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 16.9,
+   "sourceAreaM2": 34.4,
+   "inCommune": true,
+   "centerL93": [
+    758252.2,
+    6822872.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "petite annexe grise"
+  },
+  {
+   "k": 128,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808202",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 32.0,
+   "sourceAreaM2": 93.9,
+   "inCommune": true,
+   "centerL93": [
+    758056.5,
+    6822923.6
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade (terrasse ou marquise)"
+  },
+  {
+   "k": 129,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808203",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 33.9,
+   "sourceAreaM2": 139.6,
+   "inCommune": true,
+   "centerL93": [
+    758066.8,
+    6822899.4
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade"
+  },
+  {
+   "k": 130,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808244",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 19.1,
+   "sourceAreaM2": 81.3,
+   "inCommune": true,
+   "centerL93": [
+    758009.6,
+    6822784.3
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 131,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808245",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 34.3,
+   "sourceAreaM2": 137.3,
+   "inCommune": true,
+   "centerL93": [
+    757973.2,
+    6822634.6
+   ],
+   "verdict": "douteux",
+   "observation": "bande claire accolée"
+  },
+  {
+   "k": 132,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808251",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 20.2,
+   "sourceAreaM2": 66.5,
+   "inCommune": true,
+   "centerL93": [
+    758109.5,
+    6823009.0
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 133,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808383",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 19.5,
+   "sourceAreaM2": 92.5,
+   "inCommune": true,
+   "centerL93": [
+    758033.9,
+    6823105.9
+   ],
+   "verdict": "douteux",
+   "observation": "bande claire (terrasse)"
+  },
+  {
+   "k": 134,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808387",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 26.2,
+   "sourceAreaM2": 76.6,
+   "inCommune": true,
+   "centerL93": [
+    758034.3,
+    6823162.2
+   ],
+   "verdict": "bâti visible",
+   "observation": "appentis clair accolé"
+  },
+  {
+   "k": 135,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808506",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 29.0,
+   "sourceAreaM2": 56.5,
+   "inCommune": true,
+   "centerL93": [
+    758061.5,
+    6823142.8
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 136,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808508",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 31.0,
+   "sourceAreaM2": 153.4,
+   "inCommune": true,
+   "centerL93": [
+    758055.6,
+    6823163.2
+   ],
+   "verdict": "douteux",
+   "observation": "décalage de tracé"
+  },
+  {
+   "k": 137,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808547",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 20.5,
+   "sourceAreaM2": 20.5,
+   "inCommune": true,
+   "centerL93": [
+    758124.4,
+    6823053.4
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe"
+  },
+  {
+   "k": 138,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808583",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 38.6,
+   "sourceAreaM2": 105.8,
+   "inCommune": true,
+   "centerL93": [
+    758218.4,
+    6823212.9
+   ],
+   "verdict": "douteux",
+   "observation": "bande claire en façade"
+  },
+  {
+   "k": 139,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808584",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 71.8,
+   "sourceAreaM2": 140.1,
+   "inCommune": true,
+   "centerL93": [
+    758248.3,
+    6823213.4
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade (terrasse)"
+  },
+  {
+   "k": 140,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808591",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 16.3,
+   "sourceAreaM2": 41.6,
+   "inCommune": true,
+   "centerL93": [
+    758217.6,
+    6823049.2
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 141,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808622",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 21.1,
+   "sourceAreaM2": 37.7,
+   "inCommune": true,
+   "centerL93": [
+    758289.0,
+    6823222.2
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe accolée"
+  },
+  {
+   "k": 142,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808625",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 38.6,
+   "sourceAreaM2": 117.5,
+   "inCommune": true,
+   "centerL93": [
+    758321.8,
+    6823200.5
+   ],
+   "verdict": "douteux",
+   "observation": "bande claire en façade (véranda)"
+  },
+  {
+   "k": 143,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808628",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 36.9,
+   "sourceAreaM2": 130.7,
+   "inCommune": true,
+   "centerL93": [
+    758385.3,
+    6823167.2
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade"
+  },
+  {
+   "k": 144,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808629",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 24.2,
+   "sourceAreaM2": 102.4,
+   "inCommune": true,
+   "centerL93": [
+    758389.1,
+    6823138.8
+   ],
+   "verdict": "douteux",
+   "observation": "bande claire en façade (terrasse)"
+  },
+  {
+   "k": 145,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808631",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 31.8,
+   "sourceAreaM2": 118.1,
+   "inCommune": true,
+   "centerL93": [
+    758390.6,
+    6823094.4
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse claire"
+  },
+  {
+   "k": 146,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808669",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 24.0,
+   "sourceAreaM2": 24.0,
+   "inCommune": true,
+   "centerL93": [
+    758316.6,
+    6823099.5
+   ],
+   "verdict": "non bâti",
+   "observation": "même annexe que BATIMENT0000000301149818 (jumeau décalé de 3,7 m, V1.6.1) : déjà au référentiel"
+  },
+  {
+   "k": 147,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808670",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 27.3,
+   "sourceAreaM2": 110.7,
+   "inCommune": true,
+   "centerL93": [
+    758337.3,
+    6823080.8
+   ],
+   "verdict": "douteux",
+   "observation": "bande en pignon"
+  },
+  {
+   "k": 148,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808671",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 22.6,
+   "sourceAreaM2": 125.2,
+   "inCommune": true,
+   "centerL93": [
+    758353.2,
+    6823099.2
+   ],
+   "verdict": "douteux",
+   "observation": "ombre et végétation"
+  },
+  {
+   "k": 149,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808671",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 16.3,
+   "sourceAreaM2": 125.2,
+   "inCommune": true,
+   "centerL93": [
+    758343.1,
+    6823094.9
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 150,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808701",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 22.8,
+   "sourceAreaM2": 125.1,
+   "inCommune": true,
+   "centerL93": [
+    758360.3,
+    6823123.3
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 151,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808703",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 19.8,
+   "sourceAreaM2": 136.8,
+   "inCommune": true,
+   "centerL93": [
+    758339.7,
+    6823157.2
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 152,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808705",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 35.5,
+   "sourceAreaM2": 110.3,
+   "inCommune": true,
+   "centerL93": [
+    758332.8,
+    6823171.6
+   ],
+   "verdict": "douteux",
+   "observation": "bande en pignon"
+  },
+  {
+   "k": 153,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808744",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 23.5,
+   "sourceAreaM2": 100.7,
+   "inCommune": true,
+   "centerL93": [
+    758281.6,
+    6823080.3
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade (terrasse)"
+  },
+  {
+   "k": 154,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808749",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 153.0,
+   "sourceAreaM2": 153.0,
+   "inCommune": true,
+   "centerL93": [
+    758093.1,
+    6823438.9
+   ],
+   "verdict": "non bâti",
+   "observation": "dalle ou cour, aucune toiture"
+  },
+  {
+   "k": 155,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808823",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 21.9,
+   "sourceAreaM2": 83.9,
+   "inCommune": true,
+   "centerL93": [
+    758056.0,
+    6823358.3
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 156,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808824",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 15.7,
+   "sourceAreaM2": 19.2,
+   "inCommune": true,
+   "centerL93": [
+    758066.0,
+    6823345.3
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 157,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808825",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 50.5,
+   "sourceAreaM2": 176.6,
+   "inCommune": true,
+   "centerL93": [
+    758054.4,
+    6823341.3
+   ],
+   "verdict": "bâti visible",
+   "observation": "dépendance allongée à toiture grise"
+  },
+  {
+   "k": 158,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808863",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 17.7,
+   "sourceAreaM2": 127.5,
+   "inCommune": true,
+   "centerL93": [
+    758056.6,
+    6823228.9
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe accolée"
+  },
+  {
+   "k": 159,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808910",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 28.3,
+   "sourceAreaM2": 109.3,
+   "inCommune": true,
+   "centerL93": [
+    758203.0,
+    6823348.1
+   ],
+   "verdict": "douteux",
+   "observation": "véranda vitrée, non tranché"
+  },
+  {
+   "k": 160,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808911",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 20.1,
+   "sourceAreaM2": 152.3,
+   "inCommune": true,
+   "centerL93": [
+    758187.2,
+    6823357.5
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse claire"
+  },
+  {
+   "k": 161,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808950",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 21.8,
+   "sourceAreaM2": 112.9,
+   "inCommune": true,
+   "centerL93": [
+    758410.1,
+    6823344.2
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse claire"
+  },
+  {
+   "k": 162,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808952",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 24.0,
+   "sourceAreaM2": 133.6,
+   "inCommune": true,
+   "centerL93": [
+    758426.0,
+    6823364.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 163,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808952",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 30.2,
+   "sourceAreaM2": 133.6,
+   "inCommune": true,
+   "centerL93": [
+    758418.2,
+    6823361.8
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 164,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808954",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 25.6,
+   "sourceAreaM2": 106.0,
+   "inCommune": true,
+   "centerL93": [
+    758431.1,
+    6823409.1
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse"
+  },
+  {
+   "k": 165,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808956",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 34.1,
+   "sourceAreaM2": 84.6,
+   "inCommune": true,
+   "centerL93": [
+    758400.6,
+    6823407.8
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse claire"
+  },
+  {
+   "k": 166,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808991",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 21.7,
+   "sourceAreaM2": 125.4,
+   "inCommune": true,
+   "centerL93": [
+    758349.9,
+    6823376.5
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse claire"
+  },
+  {
+   "k": 167,
+   "source": "cadastre",
+   "sourceId": "cadastre:39808994",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 21.5,
+   "sourceAreaM2": 142.8,
+   "inCommune": true,
+   "centerL93": [
+    758314.2,
+    6823350.0
+   ],
+   "verdict": "bâti visible",
+   "observation": "véranda ou annexe grise accolée"
+  },
+  {
+   "k": 168,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809030",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 15.5,
+   "sourceAreaM2": 29.9,
+   "inCommune": true,
+   "centerL93": [
+    758424.7,
+    6823241.2
+   ],
+   "verdict": "douteux",
+   "observation": "annexe sous l'ombre, non tranché"
+  },
+  {
+   "k": 169,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809032",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 31.6,
+   "sourceAreaM2": 127.2,
+   "inCommune": true,
+   "centerL93": [
+    758378.8,
+    6823252.0
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse"
+  },
+  {
+   "k": 170,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809067",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 22.6,
+   "sourceAreaM2": 125.6,
+   "inCommune": true,
+   "centerL93": [
+    758310.8,
+    6823260.7
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade"
+  },
+  {
+   "k": 171,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809069",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 33.9,
+   "sourceAreaM2": 133.9,
+   "inCommune": true,
+   "centerL93": [
+    758295.8,
+    6823270.5
+   ],
+   "verdict": "douteux",
+   "observation": "cour claire, non tranché"
+  },
+  {
+   "k": 172,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809069",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 31.2,
+   "sourceAreaM2": 133.9,
+   "inCommune": true,
+   "centerL93": [
+    758287.8,
+    6823265.5
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse"
+  },
+  {
+   "k": 173,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809070",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 25.8,
+   "sourceAreaM2": 49.7,
+   "inCommune": true,
+   "centerL93": [
+    758262.9,
+    6823249.7
+   ],
+   "verdict": "douteux",
+   "observation": "bande en pignon"
+  },
+  {
+   "k": 174,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809071",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 100.4,
+   "sourceAreaM2": 230.1,
+   "inCommune": true,
+   "centerL93": [
+    758279.8,
+    6823263.0
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin entre deux bâtiments"
+  },
+  {
+   "k": 175,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809146",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 19.4,
+   "sourceAreaM2": 144.6,
+   "inCommune": true,
+   "centerL93": [
+    758474.1,
+    6823348.9
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 176,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809178",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 47.8,
+   "sourceAreaM2": 116.9,
+   "inCommune": true,
+   "centerL93": [
+    758530.8,
+    6823463.3
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse"
+  },
+  {
+   "k": 177,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809179",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 18.9,
+   "sourceAreaM2": 91.5,
+   "inCommune": true,
+   "centerL93": [
+    758504.9,
+    6823468.5
+   ],
+   "verdict": "bâti visible",
+   "observation": "appentis accolé"
+  },
+  {
+   "k": 178,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809375",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 36.6,
+   "sourceAreaM2": 121.4,
+   "inCommune": true,
+   "centerL93": [
+    758604.5,
+    6823469.0
+   ],
+   "verdict": "bâti visible",
+   "observation": "garage accolé à toiture brune"
+  },
+  {
+   "k": 179,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809447",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 26.7,
+   "sourceAreaM2": 156.3,
+   "inCommune": true,
+   "centerL93": [
+    758481.1,
+    6823553.3
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade"
+  },
+  {
+   "k": 180,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809716",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 51.4,
+   "sourceAreaM2": 583.4,
+   "inCommune": true,
+   "centerL93": [
+    758025.2,
+    6823682.6
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 181,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809845",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 41.9,
+   "sourceAreaM2": 202.1,
+   "inCommune": true,
+   "centerL93": [
+    758533.4,
+    6823849.8
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse"
+  },
+  {
+   "k": 182,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809845",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 19.3,
+   "sourceAreaM2": 202.1,
+   "inCommune": true,
+   "centerL93": [
+    758522.4,
+    6823853.9
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse"
+  },
+  {
+   "k": 183,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809888",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 19.7,
+   "sourceAreaM2": 19.7,
+   "inCommune": true,
+   "centerL93": [
+    758117.5,
+    6823595.0
+   ],
+   "verdict": "douteux",
+   "observation": "petite construction légère, non tranché"
+  },
+  {
+   "k": 184,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809890",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 21.4,
+   "sourceAreaM2": 109.3,
+   "inCommune": true,
+   "centerL93": [
+    758051.4,
+    6823605.5
+   ],
+   "verdict": "douteux",
+   "observation": "bande en pignon"
+  },
+  {
+   "k": 185,
+   "source": "cadastre",
+   "sourceId": "cadastre:39809891",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 31.5,
+   "sourceAreaM2": 79.5,
+   "inCommune": true,
+   "centerL93": [
+    758050.0,
+    6823630.4
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 186,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810134",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 18.4,
+   "sourceAreaM2": 187.0,
+   "inCommune": true,
+   "centerL93": [
+    758239.6,
+    6823533.2
+   ],
+   "verdict": "douteux",
+   "observation": "véranda"
+  },
+  {
+   "k": 187,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810134",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 38.7,
+   "sourceAreaM2": 187.0,
+   "inCommune": true,
+   "centerL93": [
+    758233.4,
+    6823547.9
+   ],
+   "verdict": "bâti visible",
+   "observation": "garage accolé à toiture brune"
+  },
+  {
+   "k": 188,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810135",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 23.9,
+   "sourceAreaM2": 48.9,
+   "inCommune": true,
+   "centerL93": [
+    758255.7,
+    6823520.7
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade"
+  },
+  {
+   "k": 189,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810209",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 18.4,
+   "sourceAreaM2": 28.1,
+   "inCommune": true,
+   "centerL93": [
+    758413.5,
+    6823713.6
+   ],
+   "verdict": "douteux",
+   "observation": "muret ou appentis, non tranché"
+  },
+  {
+   "k": 190,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810210",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 35.1,
+   "sourceAreaM2": 185.8,
+   "inCommune": true,
+   "centerL93": [
+    758409.1,
+    6823670.0
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade (auvent)"
+  },
+  {
+   "k": 191,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810239",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 59.9,
+   "sourceAreaM2": 181.3,
+   "inCommune": true,
+   "centerL93": [
+    758352.0,
+    6823731.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "partie ouest à toiture brune"
+  },
+  {
+   "k": 192,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810277",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 17.3,
+   "sourceAreaM2": 130.1,
+   "inCommune": true,
+   "centerL93": [
+    758258.1,
+    6823751.3
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade"
+  },
+  {
+   "k": 193,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810301",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 25.5,
+   "sourceAreaM2": 119.7,
+   "inCommune": true,
+   "centerL93": [
+    758283.7,
+    6823755.6
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 194,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810340",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 96.6,
+   "sourceAreaM2": 162.3,
+   "inCommune": true,
+   "centerL93": [
+    756701.0,
+    6822877.9
+   ],
+   "verdict": "non bâti",
+   "observation": "cour enrobée"
+  },
+  {
+   "k": 195,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810341",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 16.5,
+   "sourceAreaM2": 36.2,
+   "inCommune": true,
+   "centerL93": [
+    756712.5,
+    6822894.9
+   ],
+   "verdict": "douteux",
+   "observation": "décalage de tracé"
+  },
+  {
+   "k": 196,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810367",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 24.4,
+   "sourceAreaM2": 128.1,
+   "inCommune": true,
+   "centerL93": [
+    756732.1,
+    6822974.8
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse"
+  },
+  {
+   "k": 197,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810370",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 16.3,
+   "sourceAreaM2": 69.3,
+   "inCommune": true,
+   "centerL93": [
+    756252.6,
+    6823432.4
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade"
+  },
+  {
+   "k": 198,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810373",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 46.8,
+   "sourceAreaM2": 557.6,
+   "inCommune": true,
+   "centerL93": [
+    756214.0,
+    6823360.4
+   ],
+   "verdict": "douteux",
+   "observation": "cour, non tranché"
+  },
+  {
+   "k": 199,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810373",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 26.9,
+   "sourceAreaM2": 557.6,
+   "inCommune": true,
+   "centerL93": [
+    756202.6,
+    6823353.3
+   ],
+   "verdict": "douteux",
+   "observation": "cour, non tranché"
+  },
+  {
+   "k": 200,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810375",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 81.2,
+   "sourceAreaM2": 151.8,
+   "inCommune": true,
+   "centerL93": [
+    756209.5,
+    6823337.5
+   ],
+   "verdict": "non bâti",
+   "observation": "cour avec véhicules"
+  },
+  {
+   "k": 201,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810401",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 43.7,
+   "sourceAreaM2": 148.2,
+   "inCommune": true,
+   "centerL93": [
+    756191.8,
+    6823314.7
+   ],
+   "verdict": "douteux",
+   "observation": "cour, non tranché"
+  },
+  {
+   "k": 202,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810402",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 38.3,
+   "sourceAreaM2": 87.9,
+   "inCommune": true,
+   "centerL93": [
+    756181.2,
+    6823297.6
+   ],
+   "verdict": "douteux",
+   "observation": "auvent ou abri à voitures, non tranché"
+  },
+  {
+   "k": 203,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810403",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 41.3,
+   "sourceAreaM2": 92.9,
+   "inCommune": false,
+   "centerL93": [
+    756178.5,
+    6823278.3
+   ],
+   "verdict": "douteux",
+   "observation": "auvent ou abri à voitures, non tranché"
+  },
+  {
+   "k": 204,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810404",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 43.7,
+   "sourceAreaM2": 87.5,
+   "inCommune": false,
+   "centerL93": [
+    756181.4,
+    6823260.9
+   ],
+   "verdict": "douteux",
+   "observation": "auvent ou abri à voitures, non tranché"
+  },
+  {
+   "k": 205,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810407",
+   "sourceType": "Construction légère",
+   "kind": "empreinte entière",
+   "areaM2": 38.0,
+   "sourceAreaM2": 38.0,
+   "inCommune": true,
+   "centerL93": [
+    758991.3,
+    6822614.8
+   ],
+   "verdict": "non bâti",
+   "observation": "chemin"
+  },
+  {
+   "k": 206,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810556",
+   "sourceType": "Construction légère",
+   "kind": "empreinte entière",
+   "areaM2": 22.2,
+   "sourceAreaM2": 22.2,
+   "inCommune": true,
+   "centerL93": [
+    758318.4,
+    6823091.0
+   ],
+   "verdict": "douteux",
+   "observation": "sous les arbres"
+  },
+  {
+   "k": 207,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810808",
+   "sourceType": "Construction légère",
+   "kind": "empreinte entière",
+   "areaM2": 27.0,
+   "sourceAreaM2": 27.0,
+   "inCommune": true,
+   "centerL93": [
+    758035.1,
+    6823800.6
+   ],
+   "verdict": "non bâti",
+   "observation": "friche"
+  },
+  {
+   "k": 208,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810931",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 30.5,
+   "sourceAreaM2": 49.5,
+   "inCommune": true,
+   "centerL93": [
+    758087.6,
+    6823578.3
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin (végétation)"
+  },
+  {
+   "k": 209,
+   "source": "cadastre",
+   "sourceId": "cadastre:39810960",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 17.7,
+   "sourceAreaM2": 59.8,
+   "inCommune": true,
+   "centerL93": [
+    758169.4,
+    6823632.8
+   ],
+   "verdict": "douteux",
+   "observation": "bande en pignon"
+  },
+  {
+   "k": 210,
+   "source": "cadastre",
+   "sourceId": "cadastre:39811056",
+   "sourceType": "Construction légère",
+   "kind": "empreinte entière",
+   "areaM2": 74.7,
+   "sourceAreaM2": 74.7,
+   "inCommune": true,
+   "centerL93": [
+    758243.5,
+    6823777.2
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin"
+  },
+  {
+   "k": 211,
+   "source": "cadastre",
+   "sourceId": "cadastre:39811060",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 16.5,
+   "sourceAreaM2": 20.7,
+   "inCommune": true,
+   "centerL93": [
+    756711.6,
+    6822892.0
+   ],
+   "verdict": "douteux",
+   "observation": "décalage de tracé"
+  },
+  {
+   "k": 212,
+   "source": "cadastre",
+   "sourceId": "cadastre:39816533",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 26.3,
+   "sourceAreaM2": 114.9,
+   "inCommune": true,
+   "centerL93": [
+    757204.5,
+    6822750.6
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 213,
+   "source": "cadastre",
+   "sourceId": "cadastre:39816578",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 25.0,
+   "sourceAreaM2": 25.0,
+   "inCommune": true,
+   "centerL93": [
+    757373.7,
+    6822695.3
+   ],
+   "verdict": "non bâti",
+   "observation": "cour"
+  },
+  {
+   "k": 214,
+   "source": "cadastre",
+   "sourceId": "cadastre:39816586",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 25.9,
+   "sourceAreaM2": 186.2,
+   "inCommune": true,
+   "centerL93": [
+    757299.7,
+    6822737.0
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse"
+  },
+  {
+   "k": 215,
+   "source": "cadastre",
+   "sourceId": "cadastre:39816627",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 23.4,
+   "sourceAreaM2": 40.2,
+   "inCommune": true,
+   "centerL93": [
+    757388.5,
+    6822495.2
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade"
+  },
+  {
+   "k": 216,
+   "source": "cadastre",
+   "sourceId": "cadastre:39816706",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 23.9,
+   "sourceAreaM2": 622.3,
+   "inCommune": true,
+   "centerL93": [
+    757443.6,
+    6822602.3
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade"
+  },
+  {
+   "k": 217,
+   "source": "cadastre",
+   "sourceId": "cadastre:39816710",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 81.4,
+   "sourceAreaM2": 556.7,
+   "inCommune": true,
+   "centerL93": [
+    757390.2,
+    6822652.6
+   ],
+   "verdict": "douteux",
+   "observation": "ombre du bâtiment et haie"
+  },
+  {
+   "k": 218,
+   "source": "cadastre",
+   "sourceId": "cadastre:39816744",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 63.4,
+   "sourceAreaM2": 63.4,
+   "inCommune": true,
+   "centerL93": [
+    757374.8,
+    6822638.1
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe"
+  },
+  {
+   "k": 219,
+   "source": "cadastre",
+   "sourceId": "cadastre:39816753",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 29.5,
+   "sourceAreaM2": 181.6,
+   "inCommune": true,
+   "centerL93": [
+    757239.1,
+    6822666.1
+   ],
+   "verdict": "douteux",
+   "observation": "ombre portée"
+  },
+  {
+   "k": 220,
+   "source": "cadastre",
+   "sourceId": "cadastre:39816785",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 42.6,
+   "sourceAreaM2": 143.1,
+   "inCommune": true,
+   "centerL93": [
+    757232.6,
+    6822682.0
+   ],
+   "verdict": "bâti visible",
+   "observation": "partie ouest à toiture grise"
+  },
+  {
+   "k": 221,
+   "source": "cadastre",
+   "sourceId": "cadastre:39816867",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 34.5,
+   "sourceAreaM2": 615.3,
+   "inCommune": true,
+   "centerL93": [
+    757538.2,
+    6822539.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe accolée"
+  },
+  {
+   "k": 222,
+   "source": "cadastre",
+   "sourceId": "cadastre:39816945",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 18.0,
+   "sourceAreaM2": 18.0,
+   "inCommune": true,
+   "centerL93": [
+    757885.0,
+    6822581.3
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe"
+  },
+  {
+   "k": 223,
+   "source": "cadastre",
+   "sourceId": "cadastre:39816946",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 48.3,
+   "sourceAreaM2": 205.5,
+   "inCommune": true,
+   "centerL93": [
+    757875.8,
+    6822582.7
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe à toiture grise accolée"
+  },
+  {
+   "k": 224,
+   "source": "cadastre",
+   "sourceId": "cadastre:39816977",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 39.0,
+   "sourceAreaM2": 212.3,
+   "inCommune": true,
+   "centerL93": [
+    757428.8,
+    6822674.2
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin"
+  },
+  {
+   "k": 225,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817029",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 37.5,
+   "sourceAreaM2": 184.2,
+   "inCommune": true,
+   "centerL93": [
+    757620.1,
+    6822675.7
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 226,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817205",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 19.8,
+   "sourceAreaM2": 250.6,
+   "inCommune": true,
+   "centerL93": [
+    757726.5,
+    6822834.4
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 227,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817208",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 45.2,
+   "sourceAreaM2": 45.3,
+   "inCommune": true,
+   "centerL93": [
+    757685.2,
+    6822786.2
+   ],
+   "verdict": "non bâti",
+   "observation": "sol nu"
+  },
+  {
+   "k": 228,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817341",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 17.7,
+   "sourceAreaM2": 187.0,
+   "inCommune": true,
+   "centerL93": [
+    757678.7,
+    6823014.4
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 229,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817341",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 24.5,
+   "sourceAreaM2": 187.0,
+   "inCommune": true,
+   "centerL93": [
+    757668.2,
+    6823020.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 230,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817387",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 29.7,
+   "sourceAreaM2": 226.2,
+   "inCommune": true,
+   "centerL93": [
+    757803.6,
+    6822663.9
+   ],
+   "verdict": "douteux",
+   "observation": "ombre et végétation"
+  },
+  {
+   "k": 231,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817418",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 26.7,
+   "sourceAreaM2": 202.2,
+   "inCommune": true,
+   "centerL93": [
+    757830.9,
+    6822771.4
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 232,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817426",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 17.5,
+   "sourceAreaM2": 25.4,
+   "inCommune": true,
+   "centerL93": [
+    757888.0,
+    6822830.4
+   ],
+   "verdict": "douteux",
+   "observation": "petite construction, non tranché"
+  },
+  {
+   "k": 233,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817554",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 29.8,
+   "sourceAreaM2": 62.2,
+   "inCommune": true,
+   "centerL93": [
+    757926.2,
+    6822706.6
+   ],
+   "verdict": "bâti visible",
+   "observation": "bâtiment en longueur à toiture sombre"
+  },
+  {
+   "k": 234,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817689",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 61.9,
+   "sourceAreaM2": 310.6,
+   "inCommune": true,
+   "centerL93": [
+    757813.8,
+    6822968.6
+   ],
+   "verdict": "douteux",
+   "observation": "cour, non tranché"
+  },
+  {
+   "k": 235,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817860",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 18.0,
+   "sourceAreaM2": 126.1,
+   "inCommune": true,
+   "centerL93": [
+    757534.5,
+    6822862.8
+   ],
+   "verdict": "douteux",
+   "observation": "bande claire"
+  },
+  {
+   "k": 236,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817867",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 23.2,
+   "sourceAreaM2": 39.8,
+   "inCommune": true,
+   "centerL93": [
+    757597.4,
+    6822896.4
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 237,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817868",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 26.5,
+   "sourceAreaM2": 33.3,
+   "inCommune": true,
+   "centerL93": [
+    757606.3,
+    6822898.9
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 238,
+   "source": "cadastre",
+   "sourceId": "cadastre:39817903",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 46.5,
+   "sourceAreaM2": 162.7,
+   "inCommune": true,
+   "centerL93": [
+    757635.1,
+    6822954.5
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe claire accolée"
+  },
+  {
+   "k": 239,
+   "source": "cadastre",
+   "sourceId": "cadastre:39818162",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 46.3,
+   "sourceAreaM2": 196.6,
+   "inCommune": true,
+   "centerL93": [
+    757568.8,
+    6822519.4
+   ],
+   "verdict": "douteux",
+   "observation": "cour, non tranché"
+  },
+  {
+   "k": 240,
+   "source": "cadastre",
+   "sourceId": "cadastre:39818200",
+   "sourceType": "Construction légère",
+   "kind": "empreinte entière",
+   "areaM2": 76.4,
+   "sourceAreaM2": 83.7,
+   "inCommune": true,
+   "centerL93": [
+    757804.4,
+    6822598.1
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin"
+  },
+  {
+   "k": 241,
+   "source": "cadastre",
+   "sourceId": "cadastre:39818327",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 75.2,
+   "sourceAreaM2": 107.8,
+   "inCommune": true,
+   "centerL93": [
+    757741.5,
+    6822673.7
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin"
+  },
+  {
+   "k": 242,
+   "source": "cadastre",
+   "sourceId": "cadastre:39818409",
+   "sourceType": "Construction légère",
+   "kind": "empreinte entière",
+   "areaM2": 108.1,
+   "sourceAreaM2": 108.1,
+   "inCommune": true,
+   "centerL93": [
+    757803.3,
+    6822952.3
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin (bâti démoli)"
+  },
+  {
+   "k": 243,
+   "source": "cadastre",
+   "sourceId": "cadastre:39818412",
+   "sourceType": "Construction légère",
+   "kind": "empreinte entière",
+   "areaM2": 26.5,
+   "sourceAreaM2": 26.5,
+   "inCommune": true,
+   "centerL93": [
+    757819.3,
+    6822823.9
+   ],
+   "verdict": "non bâti",
+   "observation": "sol"
+  },
+  {
+   "k": 244,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821646",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 33.2,
+   "sourceAreaM2": 74.3,
+   "inCommune": true,
+   "centerL93": [
+    759544.8,
+    6823780.9
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée"
+  },
+  {
+   "k": 245,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821647",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 56.2,
+   "sourceAreaM2": 178.2,
+   "inCommune": true,
+   "centerL93": [
+    759554.6,
+    6823756.4
+   ],
+   "verdict": "douteux",
+   "observation": "bande sous les arbres"
+  },
+  {
+   "k": 246,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821692",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 28.2,
+   "sourceAreaM2": 209.8,
+   "inCommune": true,
+   "centerL93": [
+    759480.8,
+    6823752.7
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage du cadastre"
+  },
+  {
+   "k": 247,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821692",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 34.5,
+   "sourceAreaM2": 209.8,
+   "inCommune": true,
+   "centerL93": [
+    759468.9,
+    6823750.4
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage du cadastre"
+  },
+  {
+   "k": 248,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821694",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 61.8,
+   "sourceAreaM2": 155.9,
+   "inCommune": true,
+   "centerL93": [
+    759472.6,
+    6823733.0
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage du cadastre"
+  },
+  {
+   "k": 249,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821694",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 18.0,
+   "sourceAreaM2": 155.9,
+   "inCommune": true,
+   "centerL93": [
+    759468.9,
+    6823724.1
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage du cadastre"
+  },
+  {
+   "k": 250,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821695",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 26.8,
+   "sourceAreaM2": 101.7,
+   "inCommune": true,
+   "centerL93": [
+    759471.0,
+    6823708.1
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage du cadastre"
+  },
+  {
+   "k": 251,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821696",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 27.7,
+   "sourceAreaM2": 53.6,
+   "inCommune": true,
+   "centerL93": [
+    759454.5,
+    6823698.5
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage du cadastre"
+  },
+  {
+   "k": 252,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821736",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 19.7,
+   "sourceAreaM2": 141.9,
+   "inCommune": true,
+   "centerL93": [
+    759464.7,
+    6823687.1
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage du cadastre"
+  },
+  {
+   "k": 253,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821742",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 53.6,
+   "sourceAreaM2": 285.0,
+   "inCommune": true,
+   "centerL93": [
+    759182.7,
+    6823884.4
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 254,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821743",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 109.8,
+   "sourceAreaM2": 162.4,
+   "inCommune": true,
+   "centerL93": [
+    759194.2,
+    6823922.1
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin"
+  },
+  {
+   "k": 255,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821833",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 37.1,
+   "sourceAreaM2": 111.2,
+   "inCommune": true,
+   "centerL93": [
+    759437.2,
+    6823729.3
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage du cadastre"
+  },
+  {
+   "k": 256,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821834",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 46.0,
+   "sourceAreaM2": 120.6,
+   "inCommune": true,
+   "centerL93": [
+    759432.0,
+    6823711.2
+   ],
+   "verdict": "douteux",
+   "observation": "partie nord sombre, décalage possible"
+  },
+  {
+   "k": 257,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821838",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 34.5,
+   "sourceAreaM2": 125.9,
+   "inCommune": true,
+   "centerL93": [
+    759425.2,
+    6823674.3
+   ],
+   "verdict": "douteux",
+   "observation": "partie nord sombre, décalage possible"
+  },
+  {
+   "k": 258,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821839",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 20.0,
+   "sourceAreaM2": 103.6,
+   "inCommune": true,
+   "centerL93": [
+    759417.6,
+    6823655.6
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage du cadastre"
+  },
+  {
+   "k": 259,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821840",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 76.6,
+   "sourceAreaM2": 108.7,
+   "inCommune": true,
+   "centerL93": [
+    759327.3,
+    6822573.8
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe basse accolée"
+  },
+  {
+   "k": 260,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821841",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 441.2,
+   "sourceAreaM2": 20979.7,
+   "inCommune": true,
+   "centerL93": [
+    759171.9,
+    6822830.9
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage du tracé le long du hall"
+  },
+  {
+   "k": 261,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821841",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 93.3,
+   "sourceAreaM2": 20979.7,
+   "inCommune": true,
+   "centerL93": [
+    759132.0,
+    6822879.2
+   ],
+   "verdict": "douteux",
+   "observation": "quai ou auvent le long du hall"
+  },
+  {
+   "k": 262,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821841",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 126.5,
+   "sourceAreaM2": 20979.7,
+   "inCommune": true,
+   "centerL93": [
+    759125.2,
+    6822812.3
+   ],
+   "verdict": "douteux",
+   "observation": "quai ou auvent le long du hall"
+  },
+  {
+   "k": 263,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821841",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 130.1,
+   "sourceAreaM2": 20979.7,
+   "inCommune": true,
+   "centerL93": [
+    759118.5,
+    6822744.9
+   ],
+   "verdict": "douteux",
+   "observation": "quai ou auvent le long du hall"
+  },
+  {
+   "k": 264,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821841",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 81.1,
+   "sourceAreaM2": 20979.7,
+   "inCommune": true,
+   "centerL93": [
+    759120.1,
+    6822783.1
+   ],
+   "verdict": "douteux",
+   "observation": "quai ou auvent le long du hall"
+  },
+  {
+   "k": 265,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821841",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 131.0,
+   "sourceAreaM2": 20979.7,
+   "inCommune": true,
+   "centerL93": [
+    759114.0,
+    6822711.2
+   ],
+   "verdict": "douteux",
+   "observation": "quai ou auvent le long du hall"
+  },
+  {
+   "k": 266,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821841",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 116.0,
+   "sourceAreaM2": 20979.7,
+   "inCommune": true,
+   "centerL93": [
+    759109.2,
+    6822677.3
+   ],
+   "verdict": "douteux",
+   "observation": "quai ou auvent le long du hall"
+  },
+  {
+   "k": 267,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821841",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 35.8,
+   "sourceAreaM2": 20979.7,
+   "inCommune": true,
+   "centerL93": [
+    759107.9,
+    6822656.3
+   ],
+   "verdict": "douteux",
+   "observation": "quai ou auvent le long du hall"
+  },
+  {
+   "k": 268,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821843",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 29.0,
+   "sourceAreaM2": 4400.4,
+   "inCommune": true,
+   "centerL93": [
+    759264.1,
+    6822627.7
+   ],
+   "verdict": "non bâti",
+   "observation": "voirie"
+  },
+  {
+   "k": 269,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821889",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 130.4,
+   "sourceAreaM2": 330.3,
+   "inCommune": true,
+   "centerL93": [
+    759309.6,
+    6822774.5
+   ],
+   "verdict": "non bâti",
+   "observation": "ombre portée du hall"
+  },
+  {
+   "k": 270,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821890",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 48.8,
+   "sourceAreaM2": 1092.4,
+   "inCommune": true,
+   "centerL93": [
+    759391.5,
+    6822869.9
+   ],
+   "verdict": "douteux",
+   "observation": "ombre portée ou appentis"
+  },
+  {
+   "k": 271,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821890",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 75.9,
+   "sourceAreaM2": 1092.4,
+   "inCommune": true,
+   "centerL93": [
+    759383.2,
+    6822831.0
+   ],
+   "verdict": "douteux",
+   "observation": "cour, non tranché"
+  },
+  {
+   "k": 272,
+   "source": "cadastre",
+   "sourceId": "cadastre:39821983",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 38.4,
+   "sourceAreaM2": 109.2,
+   "inCommune": true,
+   "centerL93": [
+    759125.1,
+    6822768.3
+   ],
+   "verdict": "douteux",
+   "observation": "bande en bord de hall"
+  },
+  {
+   "k": 273,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823490",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 43.0,
+   "sourceAreaM2": 54.4,
+   "inCommune": true,
+   "centerL93": [
+    758649.3,
+    6822466.8
+   ],
+   "verdict": "non bâti",
+   "observation": "sol nu"
+  },
+  {
+   "k": 274,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823492",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 21.5,
+   "sourceAreaM2": 94.0,
+   "inCommune": true,
+   "centerL93": [
+    758494.2,
+    6822530.1
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse"
+  },
+  {
+   "k": 275,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823496",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 23.9,
+   "sourceAreaM2": 91.7,
+   "inCommune": true,
+   "centerL93": [
+    758486.8,
+    6822420.8
+   ],
+   "verdict": "douteux",
+   "observation": "véranda claire, non tranché"
+  },
+  {
+   "k": 276,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823542",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 33.4,
+   "sourceAreaM2": 89.7,
+   "inCommune": true,
+   "centerL93": [
+    758442.0,
+    6822374.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "appentis gris accolé"
+  },
+  {
+   "k": 277,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823585",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 20.7,
+   "sourceAreaM2": 627.2,
+   "inCommune": true,
+   "centerL93": [
+    758416.2,
+    6822546.6
+   ],
+   "verdict": "douteux",
+   "observation": "sous les arbres"
+  },
+  {
+   "k": 278,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823647",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 44.5,
+   "sourceAreaM2": 118.4,
+   "inCommune": true,
+   "centerL93": [
+    757052.7,
+    6822723.5
+   ],
+   "verdict": "bâti visible",
+   "observation": "appentis gris accolé"
+  },
+  {
+   "k": 279,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823688",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 18.7,
+   "sourceAreaM2": 43.5,
+   "inCommune": true,
+   "centerL93": [
+    757026.9,
+    6822673.9
+   ],
+   "verdict": "bâti visible",
+   "observation": "appentis accolé"
+  },
+  {
+   "k": 280,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823691",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 78.4,
+   "sourceAreaM2": 187.6,
+   "inCommune": true,
+   "centerL93": [
+    756020.5,
+    6822523.6
+   ],
+   "verdict": "non bâti",
+   "observation": "pelouse (écart de tracé)"
+  },
+  {
+   "k": 281,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823692",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 136.3,
+   "sourceAreaM2": 911.6,
+   "inCommune": true,
+   "centerL93": [
+    756027.3,
+    6822569.8
+   ],
+   "verdict": "non bâti",
+   "observation": "pelouse (écart de tracé)"
+  },
+  {
+   "k": 282,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823693",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 424.8,
+   "sourceAreaM2": 1971.7,
+   "inCommune": true,
+   "centerL93": [
+    756104.0,
+    6822601.5
+   ],
+   "verdict": "non bâti",
+   "observation": "trottoir (écart de tracé)"
+  },
+  {
+   "k": 283,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823694",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 70.0,
+   "sourceAreaM2": 558.7,
+   "inCommune": true,
+   "centerL93": [
+    756159.0,
+    6822644.2
+   ],
+   "verdict": "non bâti",
+   "observation": "pelouse (écart de tracé)"
+  },
+  {
+   "k": 284,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823694",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 23.7,
+   "sourceAreaM2": 558.7,
+   "inCommune": true,
+   "centerL93": [
+    756147.8,
+    6822654.9
+   ],
+   "verdict": "non bâti",
+   "observation": "pelouse (écart de tracé)"
+  },
+  {
+   "k": 285,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823775",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 25.0,
+   "sourceAreaM2": 514.9,
+   "inCommune": true,
+   "centerL93": [
+    756186.1,
+    6822716.3
+   ],
+   "verdict": "non bâti",
+   "observation": "parking (écart de tracé)"
+  },
+  {
+   "k": 286,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823775",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 113.0,
+   "sourceAreaM2": 514.9,
+   "inCommune": true,
+   "centerL93": [
+    756165.4,
+    6822714.4
+   ],
+   "verdict": "non bâti",
+   "observation": "parking (écart de tracé)"
+  },
+  {
+   "k": 287,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823776",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 219.5,
+   "sourceAreaM2": 494.7,
+   "inCommune": true,
+   "centerL93": [
+    756212.7,
+    6822705.0
+   ],
+   "verdict": "non bâti",
+   "observation": "parking (écart de tracé)"
+  },
+  {
+   "k": 288,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823778",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 156.8,
+   "sourceAreaM2": 986.3,
+   "inCommune": true,
+   "centerL93": [
+    756301.9,
+    6822661.1
+   ],
+   "verdict": "non bâti",
+   "observation": "parking ou pelouse (écart de tracé)"
+  },
+  {
+   "k": 289,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823779",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 76.1,
+   "sourceAreaM2": 2262.7,
+   "inCommune": true,
+   "centerL93": [
+    756355.5,
+    6822716.9
+   ],
+   "verdict": "non bâti",
+   "observation": "parking ou pelouse (écart de tracé)"
+  },
+  {
+   "k": 290,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823779",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 86.5,
+   "sourceAreaM2": 2262.7,
+   "inCommune": true,
+   "centerL93": [
+    756322.1,
+    6822700.9
+   ],
+   "verdict": "non bâti",
+   "observation": "parking ou pelouse (écart de tracé)"
+  },
+  {
+   "k": 291,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823780",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 46.5,
+   "sourceAreaM2": 3215.8,
+   "inCommune": false,
+   "centerL93": [
+    756183.4,
+    6822920.4
+   ],
+   "verdict": "non bâti",
+   "observation": "parking ou pelouse (écart de tracé)"
+  },
+  {
+   "k": 292,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823780",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 175.2,
+   "sourceAreaM2": 3215.8,
+   "inCommune": false,
+   "centerL93": [
+    756155.7,
+    6822931.4
+   ],
+   "verdict": "douteux",
+   "observation": "auvent le long du bâtiment commercial"
+  },
+  {
+   "k": 293,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823780",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 136.6,
+   "sourceAreaM2": 3215.8,
+   "inCommune": true,
+   "centerL93": [
+    756110.5,
+    6822888.0
+   ],
+   "verdict": "non bâti",
+   "observation": "parking ou pelouse (écart de tracé)"
+  },
+  {
+   "k": 294,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823781",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 31.1,
+   "sourceAreaM2": 708.3,
+   "inCommune": true,
+   "centerL93": [
+    756256.8,
+    6822860.1
+   ],
+   "verdict": "non bâti",
+   "observation": "entrée (écart de tracé)"
+  },
+  {
+   "k": 295,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823822",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 77.7,
+   "sourceAreaM2": 439.4,
+   "inCommune": true,
+   "centerL93": [
+    756329.6,
+    6822771.8
+   ],
+   "verdict": "non bâti",
+   "observation": "parking ou pelouse (écart de tracé)"
+  },
+  {
+   "k": 296,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823823",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 20.4,
+   "sourceAreaM2": 1052.0,
+   "inCommune": true,
+   "centerL93": [
+    756420.5,
+    6822766.2
+   ],
+   "verdict": "non bâti",
+   "observation": "parking ou pelouse (écart de tracé)"
+  },
+  {
+   "k": 297,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823823",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 42.8,
+   "sourceAreaM2": 1052.0,
+   "inCommune": true,
+   "centerL93": [
+    756394.7,
+    6822772.3
+   ],
+   "verdict": "non bâti",
+   "observation": "parking ou pelouse (écart de tracé)"
+  },
+  {
+   "k": 298,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823823",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 64.8,
+   "sourceAreaM2": 1052.0,
+   "inCommune": true,
+   "centerL93": [
+    756380.6,
+    6822781.1
+   ],
+   "verdict": "non bâti",
+   "observation": "parking ou pelouse (écart de tracé)"
+  },
+  {
+   "k": 299,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823824",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 125.8,
+   "sourceAreaM2": 885.7,
+   "inCommune": true,
+   "centerL93": [
+    756455.8,
+    6822756.0
+   ],
+   "verdict": "non bâti",
+   "observation": "parking ou pelouse (écart de tracé)"
+  },
+  {
+   "k": 300,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823825",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 92.4,
+   "sourceAreaM2": 609.9,
+   "inCommune": true,
+   "centerL93": [
+    756505.3,
+    6822739.8
+   ],
+   "verdict": "non bâti",
+   "observation": "parking ou pelouse (écart de tracé)"
+  },
+  {
+   "k": 301,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823826",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 27.2,
+   "sourceAreaM2": 628.8,
+   "inCommune": true,
+   "centerL93": [
+    756559.4,
+    6822744.7
+   ],
+   "verdict": "non bâti",
+   "observation": "parking ou pelouse (écart de tracé)"
+  },
+  {
+   "k": 302,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823826",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 81.0,
+   "sourceAreaM2": 628.8,
+   "inCommune": true,
+   "centerL93": [
+    756543.2,
+    6822732.5
+   ],
+   "verdict": "non bâti",
+   "observation": "parking ou pelouse (écart de tracé)"
+  },
+  {
+   "k": 303,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823827",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 46.4,
+   "sourceAreaM2": 385.5,
+   "inCommune": true,
+   "centerL93": [
+    756604.3,
+    6822768.4
+   ],
+   "verdict": "non bâti",
+   "observation": "parking ou pelouse (écart de tracé)"
+  },
+  {
+   "k": 304,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823829",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 52.6,
+   "sourceAreaM2": 728.7,
+   "inCommune": true,
+   "centerL93": [
+    756612.1,
+    6822804.8
+   ],
+   "verdict": "non bâti",
+   "observation": "parking (écart de tracé)"
+  },
+  {
+   "k": 305,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823875",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 15.4,
+   "sourceAreaM2": 22.0,
+   "inCommune": true,
+   "centerL93": [
+    758483.7,
+    6822360.5
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe à toiture claire accolée"
+  },
+  {
+   "k": 306,
+   "source": "cadastre",
+   "sourceId": "cadastre:39823923",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 32.1,
+   "sourceAreaM2": 72.6,
+   "inCommune": true,
+   "centerL93": [
+    756411.4,
+    6822762.9
+   ],
+   "verdict": "non bâti",
+   "observation": "parking (écart de tracé)"
+  },
+  {
+   "k": 307,
+   "source": "cadastre",
+   "sourceId": "cadastre:39827332",
+   "sourceType": "Bâtiment en dur",
+   "kind": "empreinte entière",
+   "areaM2": 40.8,
+   "sourceAreaM2": 40.8,
+   "inCommune": true,
+   "centerL93": [
+    759511.7,
+    6820921.4
+   ],
+   "verdict": "non bâti",
+   "observation": "sol et arbres"
+  },
+  {
+   "k": 308,
+   "source": "cadastre",
+   "sourceId": "cadastre:39827333",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 32.5,
+   "sourceAreaM2": 48.0,
+   "inCommune": true,
+   "centerL93": [
+    759491.8,
+    6820897.8
+   ],
+   "verdict": "douteux",
+   "observation": "sous les arbres"
+  },
+  {
+   "k": 309,
+   "source": "cadastre",
+   "sourceId": "cadastre:39827335",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 65.8,
+   "sourceAreaM2": 146.4,
+   "inCommune": true,
+   "centerL93": [
+    759476.5,
+    6820905.1
+   ],
+   "verdict": "douteux",
+   "observation": "ombre et végétation"
+  },
+  {
+   "k": 310,
+   "source": "cadastre",
+   "sourceId": "cadastre:40576489",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 21.8,
+   "sourceAreaM2": 218.2,
+   "inCommune": true,
+   "centerL93": [
+    759565.2,
+    6823722.0
+   ],
+   "verdict": "douteux",
+   "observation": "décalage de tracé"
+  },
+  {
+   "k": 311,
+   "source": "cadastre",
+   "sourceId": "cadastre:40677968",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 32.3,
+   "sourceAreaM2": 6337.1,
+   "inCommune": true,
+   "centerL93": [
+    756136.0,
+    6822721.3
+   ],
+   "verdict": "non bâti",
+   "observation": "pelouse (écart de tracé)"
+  },
+  {
+   "k": 312,
+   "source": "cadastre",
+   "sourceId": "cadastre:40677968",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 22.4,
+   "sourceAreaM2": 6337.1,
+   "inCommune": true,
+   "centerL93": [
+    756128.9,
+    6822831.1
+   ],
+   "verdict": "non bâti",
+   "observation": "trottoir (écart de tracé)"
+  },
+  {
+   "k": 313,
+   "source": "cadastre",
+   "sourceId": "cadastre:40677968",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 237.8,
+   "sourceAreaM2": 6337.1,
+   "inCommune": true,
+   "centerL93": [
+    756111.8,
+    6822711.3
+   ],
+   "verdict": "non bâti",
+   "observation": "bande (écart de tracé)"
+  },
+  {
+   "k": 314,
+   "source": "cadastre",
+   "sourceId": "cadastre:40677968",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 30.3,
+   "sourceAreaM2": 6337.1,
+   "inCommune": true,
+   "centerL93": [
+    756114.9,
+    6822772.0
+   ],
+   "verdict": "non bâti",
+   "observation": "trottoir (écart de tracé)"
+  },
+  {
+   "k": 315,
+   "source": "cadastre",
+   "sourceId": "cadastre:40677968",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 228.6,
+   "sourceAreaM2": 6337.1,
+   "inCommune": true,
+   "centerL93": [
+    756077.3,
+    6822735.1
+   ],
+   "verdict": "non bâti",
+   "observation": "bande (écart de tracé)"
+  },
+  {
+   "k": 316,
+   "source": "cadastre",
+   "sourceId": "cadastre:40677968",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 21.6,
+   "sourceAreaM2": 6337.1,
+   "inCommune": true,
+   "centerL93": [
+    756076.7,
+    6822806.3
+   ],
+   "verdict": "non bâti",
+   "observation": "trottoir (écart de tracé)"
+  },
+  {
+   "k": 317,
+   "source": "cadastre",
+   "sourceId": "cadastre:40741423",
+   "sourceType": "Construction légère",
+   "kind": "partie non couverte",
+   "areaM2": 127.5,
+   "sourceAreaM2": 990.1,
+   "inCommune": true,
+   "centerL93": [
+    756319.1,
+    6823525.5
+   ],
+   "verdict": "non bâti",
+   "observation": "sol nu"
+  },
+  {
+   "k": 318,
+   "source": "cadastre",
+   "sourceId": "cadastre:40794309",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 19.3,
+   "sourceAreaM2": 67.0,
+   "inCommune": true,
+   "centerL93": [
+    758063.6,
+    6823127.5
+   ],
+   "verdict": "douteux",
+   "observation": "annexe accolée, non tranché"
+  },
+  {
+   "k": 319,
+   "source": "cadastre",
+   "sourceId": "cadastre:40921102",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 24.0,
+   "sourceAreaM2": 144.4,
+   "inCommune": true,
+   "centerL93": [
+    758354.7,
+    6823309.0
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 320,
+   "source": "cadastre",
+   "sourceId": "cadastre:40921234",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 41.8,
+   "sourceAreaM2": 1333.1,
+   "inCommune": true,
+   "centerL93": [
+    758137.3,
+    6823534.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "verrière accolée au bâtiment"
+  },
+  {
+   "k": 321,
+   "source": "cadastre",
+   "sourceId": "cadastre:40921234",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 40.7,
+   "sourceAreaM2": 1333.1,
+   "inCommune": true,
+   "centerL93": [
+    758116.0,
+    6823533.7
+   ],
+   "verdict": "bâti visible",
+   "observation": "verrière accolée au bâtiment"
+  },
+  {
+   "k": 322,
+   "source": "cadastre",
+   "sourceId": "cadastre:45289770",
+   "sourceType": "Bâtiment en dur",
+   "kind": "partie non couverte",
+   "areaM2": 46.5,
+   "sourceAreaM2": 60.6,
+   "inCommune": true,
+   "centerL93": [
+    759344.7,
+    6822751.7
+   ],
+   "verdict": "non bâti",
+   "observation": "ombre portée"
+  },
+  {
+   "k": 323,
+   "source": "osm",
+   "sourceId": "way/228573763",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 20.4,
+   "sourceAreaM2": 3676.6,
+   "inCommune": false,
+   "centerL93": [
+    756379.3,
+    6823119.7
+   ],
+   "verdict": "non bâti",
+   "observation": "bande (écart de tracé)"
+  },
+  {
+   "k": 324,
+   "source": "osm",
+   "sourceId": "way/228576751",
+   "sourceType": "building=roof",
+   "kind": "partie non couverte",
+   "areaM2": 46.2,
+   "sourceAreaM2": 60.6,
+   "inCommune": false,
+   "centerL93": [
+    756518.3,
+    6823053.1
+   ],
+   "verdict": "non bâti",
+   "observation": "parking"
+  },
+  {
+   "k": 325,
+   "source": "osm",
+   "sourceId": "way/228577754",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 92.2,
+   "sourceAreaM2": 216.4,
+   "inCommune": false,
+   "centerL93": [
+    756208.5,
+    6823461.1
+   ],
+   "verdict": "non bâti",
+   "observation": "cour (tracé OSM erroné)"
+  },
+  {
+   "k": 326,
+   "source": "osm",
+   "sourceId": "way/366040709",
+   "sourceType": "building=retail",
+   "kind": "partie non couverte",
+   "areaM2": 121.2,
+   "sourceAreaM2": 5457.2,
+   "inCommune": true,
+   "centerL93": [
+    756110.6,
+    6822757.4
+   ],
+   "verdict": "douteux",
+   "observation": "auvent vitré, non tranché"
+  },
+  {
+   "k": 327,
+   "source": "osm",
+   "sourceId": "way/499681288",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 43.4,
+   "sourceAreaM2": 888.9,
+   "inCommune": true,
+   "centerL93": [
+    756276.4,
+    6822872.1
+   ],
+   "verdict": "non bâti",
+   "observation": "patio intérieur"
+  },
+  {
+   "k": 328,
+   "source": "osm",
+   "sourceId": "way/499681288",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 43.2,
+   "sourceAreaM2": 888.9,
+   "inCommune": true,
+   "centerL93": [
+    756265.5,
+    6822874.9
+   ],
+   "verdict": "non bâti",
+   "observation": "patio intérieur"
+  },
+  {
+   "k": 329,
+   "source": "osm",
+   "sourceId": "way/499681288",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 40.9,
+   "sourceAreaM2": 888.9,
+   "inCommune": true,
+   "centerL93": [
+    756254.7,
+    6822877.5
+   ],
+   "verdict": "non bâti",
+   "observation": "patio intérieur"
+  },
+  {
+   "k": 330,
+   "source": "osm",
+   "sourceId": "way/499690359",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 70.9,
+   "sourceAreaM2": 539.6,
+   "inCommune": false,
+   "centerL93": [
+    756294.2,
+    6822999.1
+   ],
+   "verdict": "non bâti",
+   "observation": "décalage de tracé"
+  },
+  {
+   "k": 331,
+   "source": "osm",
+   "sourceId": "way/549958870",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 36.0,
+   "sourceAreaM2": 1274.7,
+   "inCommune": false,
+   "centerL93": [
+    760424.3,
+    6822579.6
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée)"
+  },
+  {
+   "k": 332,
+   "source": "osm",
+   "sourceId": "way/549958895",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 28.6,
+   "sourceAreaM2": 1643.3,
+   "inCommune": false,
+   "centerL93": [
+    760733.8,
+    6822532.8
+   ],
+   "verdict": "douteux",
+   "observation": "bande en bord de hall"
+  },
+  {
+   "k": 333,
+   "source": "osm",
+   "sourceId": "way/549958981",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 106.4,
+   "sourceAreaM2": 1895.0,
+   "inCommune": false,
+   "centerL93": [
+    760747.1,
+    6822617.5
+   ],
+   "verdict": "douteux",
+   "observation": "toiture végétalisée ou dépôt, non tranché"
+  },
+  {
+   "k": 334,
+   "source": "osm",
+   "sourceId": "way/549958981",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 62.9,
+   "sourceAreaM2": 1895.0,
+   "inCommune": false,
+   "centerL93": [
+    760731.4,
+    6822618.8
+   ],
+   "verdict": "douteux",
+   "observation": "toiture végétalisée ou dépôt, non tranché"
+  },
+  {
+   "k": 335,
+   "source": "osm",
+   "sourceId": "way/549958981",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 61.1,
+   "sourceAreaM2": 1895.0,
+   "inCommune": false,
+   "centerL93": [
+    760693.1,
+    6822603.2
+   ],
+   "verdict": "douteux",
+   "observation": "toiture végétalisée ou dépôt, non tranché"
+  },
+  {
+   "k": 336,
+   "source": "osm",
+   "sourceId": "way/549959231",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 135.0,
+   "sourceAreaM2": 531.1,
+   "inCommune": false,
+   "centerL93": [
+    760592.3,
+    6822528.6
+   ],
+   "verdict": "douteux",
+   "observation": "structure à toiture claire, OSM seul, non tranché"
+  },
+  {
+   "k": 337,
+   "source": "osm",
+   "sourceId": "way/549959373",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 30.0,
+   "sourceAreaM2": 366.6,
+   "inCommune": false,
+   "centerL93": [
+    760569.8,
+    6822623.8
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), non contrôlable"
+  },
+  {
+   "k": 338,
+   "source": "osm",
+   "sourceId": "way/549959374",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 49.3,
+   "sourceAreaM2": 4100.2,
+   "inCommune": false,
+   "centerL93": [
+    761077.2,
+    6822673.7
+   ],
+   "verdict": "douteux",
+   "observation": "quai le long du hall"
+  },
+  {
+   "k": 339,
+   "source": "osm",
+   "sourceId": "way/549959453",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 135.5,
+   "sourceAreaM2": 808.8,
+   "inCommune": false,
+   "centerL93": [
+    760645.3,
+    6822584.2
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée)"
+  },
+  {
+   "k": 340,
+   "source": "osm",
+   "sourceId": "way/549959652",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 34.3,
+   "sourceAreaM2": 56.4,
+   "inCommune": false,
+   "centerL93": [
+    760602.4,
+    6822502.7
+   ],
+   "verdict": "non bâti",
+   "observation": "sol"
+  },
+  {
+   "k": 341,
+   "source": "osm",
+   "sourceId": "way/549959719",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 39.4,
+   "sourceAreaM2": 412.1,
+   "inCommune": false,
+   "centerL93": [
+    760542.6,
+    6822615.6
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), non contrôlable"
+  },
+  {
+   "k": 342,
+   "source": "osm",
+   "sourceId": "way/549959719",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 25.2,
+   "sourceAreaM2": 412.1,
+   "inCommune": false,
+   "centerL93": [
+    760541.8,
+    6822600.4
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), non contrôlable"
+  },
+  {
+   "k": 343,
+   "source": "osm",
+   "sourceId": "way/588789257",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 35.9,
+   "sourceAreaM2": 131.7,
+   "inCommune": true,
+   "centerL93": [
+    760407.8,
+    6822658.7
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), non contrôlable"
+  },
+  {
+   "k": 344,
+   "source": "osm",
+   "sourceId": "way/588789260",
+   "sourceType": "building=yes",
+   "kind": "empreinte entière",
+   "areaM2": 45.1,
+   "sourceAreaM2": 45.1,
+   "inCommune": true,
+   "centerL93": [
+    760279.5,
+    6822517.8
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), non contrôlable"
+  },
+  {
+   "k": 345,
+   "source": "osm",
+   "sourceId": "way/588789271",
+   "sourceType": "building=yes",
+   "kind": "empreinte entière",
+   "areaM2": 36.5,
+   "sourceAreaM2": 36.5,
+   "inCommune": true,
+   "centerL93": [
+    760337.6,
+    6822666.3
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), non contrôlable"
+  },
+  {
+   "k": 346,
+   "source": "osm",
+   "sourceId": "way/588789294",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 34.1,
+   "sourceAreaM2": 1151.9,
+   "inCommune": true,
+   "centerL93": [
+    760233.1,
+    6822696.7
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), non contrôlable"
+  },
+  {
+   "k": 347,
+   "source": "osm",
+   "sourceId": "way/588789298",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 24.6,
+   "sourceAreaM2": 1474.0,
+   "inCommune": true,
+   "centerL93": [
+    760326.1,
+    6822718.9
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), non contrôlable"
+  },
+  {
+   "k": 348,
+   "source": "osm",
+   "sourceId": "way/588789312",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 26.2,
+   "sourceAreaM2": 492.4,
+   "inCommune": true,
+   "centerL93": [
+    760139.4,
+    6822760.2
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), non contrôlable"
+  },
+  {
+   "k": 349,
+   "source": "osm",
+   "sourceId": "way/588789343",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 38.8,
+   "sourceAreaM2": 418.3,
+   "inCommune": true,
+   "centerL93": [
+    760024.1,
+    6822754.5
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), non contrôlable"
+  },
+  {
+   "k": 350,
+   "source": "osm",
+   "sourceId": "way/588789352",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 64.9,
+   "sourceAreaM2": 2557.2,
+   "inCommune": true,
+   "centerL93": [
+    759891.1,
+    6822748.3
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), non contrôlable"
+  },
+  {
+   "k": 351,
+   "source": "osm",
+   "sourceId": "way/588789378",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 35.5,
+   "sourceAreaM2": 150.4,
+   "inCommune": true,
+   "centerL93": [
+    760139.3,
+    6822607.5
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), non contrôlable"
+  },
+  {
+   "k": 352,
+   "source": "osm",
+   "sourceId": "way/588789411",
+   "sourceType": "building=yes",
+   "kind": "empreinte entière",
+   "areaM2": 37.8,
+   "sourceAreaM2": 37.8,
+   "inCommune": true,
+   "centerL93": [
+    760013.3,
+    6822571.3
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée)"
+  },
+  {
+   "k": 353,
+   "source": "osm",
+   "sourceId": "way/588789451",
+   "sourceType": "building=yes",
+   "kind": "empreinte entière",
+   "areaM2": 39.0,
+   "sourceAreaM2": 39.0,
+   "inCommune": true,
+   "centerL93": [
+    759642.7,
+    6822553.9
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée)"
+  },
+  {
+   "k": 354,
+   "source": "osm",
+   "sourceId": "way/588789479",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 79.3,
+   "sourceAreaM2": 2006.3,
+   "inCommune": true,
+   "centerL93": [
+    759589.9,
+    6822731.7
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée)"
+  },
+  {
+   "k": 355,
+   "source": "osm",
+   "sourceId": "way/588789488",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 38.5,
+   "sourceAreaM2": 4002.6,
+   "inCommune": true,
+   "centerL93": [
+    759759.5,
+    6822713.7
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée)"
+  },
+  {
+   "k": 356,
+   "source": "osm",
+   "sourceId": "way/588789810",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 15.7,
+   "sourceAreaM2": 53.5,
+   "inCommune": true,
+   "centerL93": [
+    759455.4,
+    6823694.6
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 357,
+   "source": "osm",
+   "sourceId": "way/588791341",
+   "sourceType": "building=yes",
+   "kind": "empreinte entière",
+   "areaM2": 20.5,
+   "sourceAreaM2": 20.5,
+   "inCommune": true,
+   "centerL93": [
+    758121.2,
+    6823057.5
+   ],
+   "verdict": "non bâti",
+   "observation": "pelouse"
+  },
+  {
+   "k": 358,
+   "source": "osm",
+   "sourceId": "way/588791664",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 29.1,
+   "sourceAreaM2": 51.2,
+   "inCommune": true,
+   "centerL93": [
+    756740.5,
+    6822946.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe claire entre deux corps de bâtiment"
+  },
+  {
+   "k": 359,
+   "source": "osm",
+   "sourceId": "way/588791678",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 29.1,
+   "sourceAreaM2": 125.1,
+   "inCommune": true,
+   "centerL93": [
+    758345.7,
+    6823096.9
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 360,
+   "source": "osm",
+   "sourceId": "way/588791810",
+   "sourceType": "building=yes",
+   "kind": "empreinte entière",
+   "areaM2": 64.9,
+   "sourceAreaM2": 64.9,
+   "inCommune": true,
+   "centerL93": [
+    756259.4,
+    6821698.6
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe"
+  },
+  {
+   "k": 361,
+   "source": "osm",
+   "sourceId": "way/588791854",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 555.0,
+   "sourceAreaM2": 718.1,
+   "inCommune": true,
+   "centerL93": [
+    756314.1,
+    6823509.9
+   ],
+   "verdict": "non bâti",
+   "observation": "cour (tracé OSM ancien)"
+  },
+  {
+   "k": 362,
+   "source": "osm",
+   "sourceId": "way/588791987",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 23.9,
+   "sourceAreaM2": 51.7,
+   "inCommune": true,
+   "centerL93": [
+    758072.7,
+    6823064.3
+   ],
+   "verdict": "bâti visible",
+   "observation": "abri à toiture claire"
+  },
+  {
+   "k": 363,
+   "source": "osm",
+   "sourceId": "way/588792057",
+   "sourceType": "building=yes",
+   "kind": "empreinte entière",
+   "areaM2": 15.4,
+   "sourceAreaM2": 15.4,
+   "inCommune": true,
+   "centerL93": [
+    757751.0,
+    6822892.8
+   ],
+   "verdict": "bâti visible",
+   "observation": "petite annexe sombre"
+  },
+  {
+   "k": 364,
+   "source": "osm",
+   "sourceId": "way/588792231",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 18.4,
+   "sourceAreaM2": 209.8,
+   "inCommune": true,
+   "centerL93": [
+    759480.7,
+    6823738.1
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade"
+  },
+  {
+   "k": 365,
+   "source": "osm",
+   "sourceId": "way/588792240",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 20.8,
+   "sourceAreaM2": 101.7,
+   "inCommune": true,
+   "centerL93": [
+    759475.8,
+    6823700.0
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade"
+  },
+  {
+   "k": 366,
+   "source": "osm",
+   "sourceId": "way/588792242",
+   "sourceType": "building=yes",
+   "kind": "empreinte entière",
+   "areaM2": 72.2,
+   "sourceAreaM2": 72.2,
+   "inCommune": true,
+   "centerL93": [
+    758136.8,
+    6823513.8
+   ],
+   "verdict": "non bâti",
+   "observation": "cour plantée"
+  },
+  {
+   "k": 367,
+   "source": "osm",
+   "sourceId": "way/588792355",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 452.5,
+   "sourceAreaM2": 20980.6,
+   "inCommune": true,
+   "centerL93": [
+    759092.8,
+    6822655.8
+   ],
+   "verdict": "non bâti",
+   "observation": "bande (écart de tracé)"
+  },
+  {
+   "k": 368,
+   "source": "osm",
+   "sourceId": "way/588792647",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 20.1,
+   "sourceAreaM2": 128.0,
+   "inCommune": true,
+   "centerL93": [
+    758295.6,
+    6823076.5
+   ],
+   "verdict": "douteux",
+   "observation": "bande claire (allée), non tranché"
+  },
+  {
+   "k": 369,
+   "source": "osm",
+   "sourceId": "way/588792666",
+   "sourceType": "building=yes",
+   "kind": "empreinte entière",
+   "areaM2": 29.3,
+   "sourceAreaM2": 29.3,
+   "inCommune": true,
+   "centerL93": [
+    757572.5,
+    6822597.0
+   ],
+   "verdict": "non bâti",
+   "observation": "cour"
+  },
+  {
+   "k": 370,
+   "source": "osm",
+   "sourceId": "way/588792826",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 42.8,
+   "sourceAreaM2": 134.3,
+   "inCommune": true,
+   "centerL93": [
+    757701.5,
+    6823054.0
+   ],
+   "verdict": "bâti visible",
+   "observation": "garage à toiture claire accolé"
+  },
+  {
+   "k": 371,
+   "source": "osm",
+   "sourceId": "way/588792877",
+   "sourceType": "building=yes",
+   "kind": "empreinte entière",
+   "areaM2": 20.1,
+   "sourceAreaM2": 20.1,
+   "inCommune": true,
+   "centerL93": [
+    757709.0,
+    6823053.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "abri à toiture grise"
+  },
+  {
+   "k": 372,
+   "source": "osm",
+   "sourceId": "way/588792955",
+   "sourceType": "building=yes",
+   "kind": "empreinte entière",
+   "areaM2": 17.0,
+   "sourceAreaM2": 17.0,
+   "inCommune": true,
+   "centerL93": [
+    756748.2,
+    6823155.2
+   ],
+   "verdict": "bâti visible",
+   "observation": "abri à toiture grise"
+  },
+  {
+   "k": 373,
+   "source": "osm",
+   "sourceId": "way/588793377",
+   "sourceType": "building=yes",
+   "kind": "empreinte entière",
+   "areaM2": 16.5,
+   "sourceAreaM2": 16.5,
+   "inCommune": true,
+   "centerL93": [
+    757552.6,
+    6822480.8
+   ],
+   "verdict": "bâti visible",
+   "observation": "abri à toiture grise"
+  },
+  {
+   "k": 374,
+   "source": "osm",
+   "sourceId": "way/588793385",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 27.0,
+   "sourceAreaM2": 128.8,
+   "inCommune": true,
+   "centerL93": [
+    758284.7,
+    6823266.0
+   ],
+   "verdict": "douteux",
+   "observation": "terrasse arrondie"
+  },
+  {
+   "k": 375,
+   "source": "osm",
+   "sourceId": "way/588793635",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 20.1,
+   "sourceAreaM2": 1092.3,
+   "inCommune": true,
+   "centerL93": [
+    759392.7,
+    6822828.8
+   ],
+   "verdict": "douteux",
+   "observation": "décalage de tracé"
+  },
+  {
+   "k": 376,
+   "source": "osm",
+   "sourceId": "way/588793635",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 16.7,
+   "sourceAreaM2": 1092.3,
+   "inCommune": true,
+   "centerL93": [
+    759386.1,
+    6822837.4
+   ],
+   "verdict": "douteux",
+   "observation": "décalage de tracé"
+  },
+  {
+   "k": 377,
+   "source": "osm",
+   "sourceId": "way/935473873",
+   "sourceType": "building=yes",
+   "kind": "empreinte entière",
+   "areaM2": 41.9,
+   "sourceAreaM2": 41.9,
+   "inCommune": true,
+   "centerL93": [
+    756932.1,
+    6822664.3
+   ],
+   "verdict": "bâti visible",
+   "observation": "abri à toiture grise"
+  },
+  {
+   "k": 378,
+   "source": "osm",
+   "sourceId": "way/1423527166",
+   "sourceType": "building=yes",
+   "kind": "partie non couverte",
+   "areaM2": 166.6,
+   "sourceAreaM2": 868.5,
+   "inCommune": false,
+   "centerL93": [
+    755859.2,
+    6822950.5
+   ],
+   "verdict": "non bâti",
+   "observation": "terrasse de restaurant (mobilier)"
+  },
+  {
+   "k": 379,
+   "source": "osm",
+   "sourceId": "way/1433821870",
+   "sourceType": "building=yes",
+   "kind": "empreinte entière",
+   "areaM2": 19.7,
+   "sourceAreaM2": 19.7,
+   "inCommune": true,
+   "centerL93": [
+    758125.3,
+    6822987.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise accolée"
+  },
+  {
+   "k": 380,
+   "source": "rnb",
+   "sourceId": "G5TEAF23FNWH",
+   "sourceType": "RNB",
+   "kind": "partie non couverte",
+   "areaM2": 39.2,
+   "sourceAreaM2": 577.8,
+   "inCommune": true,
+   "centerL93": [
+    758130.6,
+    6823534.3
+   ],
+   "verdict": "douteux",
+   "observation": "verrière, décalage de tracé"
+  },
+  {
+   "k": 381,
+   "source": "rnb",
+   "sourceId": "JN6JZAS2ARG2",
+   "sourceType": "RNB",
+   "kind": "partie non couverte",
+   "areaM2": 23.1,
+   "sourceAreaM2": 93.0,
+   "inCommune": true,
+   "centerL93": [
+    758151.4,
+    6823721.1
+   ],
+   "verdict": "douteux",
+   "observation": "ombre portée"
+  },
+  {
+   "k": 382,
+   "source": "rnb",
+   "sourceId": "E3SG5A58GGM9",
+   "sourceType": "RNB",
+   "kind": "empreinte entière",
+   "areaM2": 16.0,
+   "sourceAreaM2": 16.0,
+   "inCommune": true,
+   "centerL93": [
+    757991.9,
+    6823208.0
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe"
+  },
+  {
+   "k": 383,
+   "source": "rnb",
+   "sourceId": "7CAD8Q2ZFF8K",
+   "sourceType": "RNB",
+   "kind": "partie non couverte",
+   "areaM2": 79.0,
+   "sourceAreaM2": 415.0,
+   "inCommune": true,
+   "centerL93": [
+    758312.7,
+    6823779.7
+   ],
+   "verdict": "non bâti",
+   "observation": "cour avec véhicule"
+  },
+  {
+   "k": 384,
+   "source": "rnb",
+   "sourceId": "MEJK7RK7Q4B1",
+   "sourceType": "RNB",
+   "kind": "partie non couverte",
+   "areaM2": 20.6,
+   "sourceAreaM2": 24.1,
+   "inCommune": true,
+   "centerL93": [
+    759117.8,
+    6823976.9
+   ],
+   "verdict": "douteux",
+   "observation": "annexe sombre, non tranché"
+  },
+  {
+   "k": 385,
+   "source": "rnb",
+   "sourceId": "AXQ4DCT3XS93",
+   "sourceType": "RNB",
+   "kind": "empreinte entière",
+   "areaM2": 30.8,
+   "sourceAreaM2": 30.8,
+   "inCommune": true,
+   "centerL93": [
+    759516.1,
+    6820922.0
+   ],
+   "verdict": "non bâti",
+   "observation": "cour (RNB décalé)"
+  },
+  {
+   "k": 386,
+   "source": "rnb",
+   "sourceId": "K5QGP46TYCQR",
+   "sourceType": "RNB",
+   "kind": "partie non couverte",
+   "areaM2": 21.1,
+   "sourceAreaM2": 37.2,
+   "inCommune": true,
+   "centerL93": [
+    757996.1,
+    6823208.4
+   ],
+   "verdict": "douteux",
+   "observation": "bande en façade"
+  },
+  {
+   "k": 387,
+   "source": "rnb",
+   "sourceId": "6GNAKD2FS8D8",
+   "sourceType": "RNB",
+   "kind": "empreinte entière",
+   "areaM2": 61.4,
+   "sourceAreaM2": 61.4,
+   "inCommune": true,
+   "centerL93": [
+    757563.3,
+    6822594.6
+   ],
+   "verdict": "non bâti",
+   "observation": "cour"
+  },
+  {
+   "k": 388,
+   "source": "rnb",
+   "sourceId": "AMMKT8XZRXAA",
+   "sourceType": "RNB",
+   "kind": "empreinte entière",
+   "areaM2": 198.0,
+   "sourceAreaM2": 198.0,
+   "inCommune": true,
+   "centerL93": [
+    759117.8,
+    6823894.9
+   ],
+   "verdict": "non bâti",
+   "observation": "pelouse"
+  },
+  {
+   "k": 389,
+   "source": "rnb",
+   "sourceId": "6FV8N8PZNCE3",
+   "sourceType": "RNB",
+   "kind": "partie non couverte",
+   "areaM2": 52.7,
+   "sourceAreaM2": 218.2,
+   "inCommune": true,
+   "centerL93": [
+    757980.8,
+    6822642.2
+   ],
+   "verdict": "non bâti",
+   "observation": "pelouse (fontaine)"
+  },
+  {
+   "k": 390,
+   "source": "removed-1.6.1",
+   "sourceId": "way/228576472",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 19.0,
+   "sourceAreaM2": 19.0,
+   "inCommune": false,
+   "centerL93": [
+    756194.6,
+    6823423.1
+   ],
+   "verdict": "non bâti",
+   "observation": "bande en pied de façade (retrait V1.6.1 confirmé)"
+  },
+  {
+   "k": 391,
+   "source": "removed-1.6.1",
+   "sourceId": "way/228576619",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 13.4,
+   "sourceAreaM2": 13.4,
+   "inCommune": false,
+   "centerL93": [
+    756629.0,
+    6823114.5
+   ],
+   "verdict": "non bâti",
+   "observation": "stationnement (retrait confirmé)"
+  },
+  {
+   "k": 392,
+   "source": "removed-1.6.2",
+   "sourceId": "way/228577059",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 594.2,
+   "sourceAreaM2": 594.2,
+   "inCommune": false,
+   "centerL93": [
+    756137.6,
+    6823181.4
+   ],
+   "verdict": "non bâti",
+   "observation": "friche arbustive (retrait confirmé)"
+  },
+  {
+   "k": 393,
+   "source": "removed-1.6.1",
+   "sourceId": "way/228577467",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 9.7,
+   "sourceAreaM2": 9.7,
+   "inCommune": false,
+   "centerL93": [
+    756502.7,
+    6823074.7
+   ],
+   "verdict": "non bâti",
+   "observation": "stationnement (retrait confirmé)"
+  },
+  {
+   "k": 394,
+   "source": "removed-1.6.1",
+   "sourceId": "way/228578366",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 9.0,
+   "sourceAreaM2": 9.0,
+   "inCommune": false,
+   "centerL93": [
+    756528.8,
+    6823092.2
+   ],
+   "verdict": "non bâti",
+   "observation": "stationnement (retrait confirmé)"
+  },
+  {
+   "k": 395,
+   "source": "removed-1.6.1",
+   "sourceId": "way/228579332",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 9.8,
+   "sourceAreaM2": 9.8,
+   "inCommune": false,
+   "centerL93": [
+    756511.8,
+    6823113.5
+   ],
+   "verdict": "non bâti",
+   "observation": "stationnement (retrait confirmé)"
+  },
+  {
+   "k": 396,
+   "source": "removed-1.6.1",
+   "sourceId": "way/228580394",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 8.8,
+   "sourceAreaM2": 8.8,
+   "inCommune": false,
+   "centerL93": [
+    756527.9,
+    6823088.5
+   ],
+   "verdict": "non bâti",
+   "observation": "stationnement (retrait confirmé)"
+  },
+  {
+   "k": 397,
+   "source": "removed-1.6.2",
+   "sourceId": "way/228580629",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 95.8,
+   "sourceAreaM2": 95.8,
+   "inCommune": false,
+   "centerL93": [
+    756116.7,
+    6823186.3
+   ],
+   "verdict": "non bâti",
+   "observation": "boisement (retrait confirmé)"
+  },
+  {
+   "k": 398,
+   "source": "removed-1.6.1",
+   "sourceId": "way/549959545",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 10.5,
+   "sourceAreaM2": 10.5,
+   "inCommune": false,
+   "centerL93": [
+    761084.6,
+    6822663.8
+   ],
+   "verdict": "non bâti",
+   "observation": "sol (retrait confirmé)"
+  },
+  {
+   "k": 399,
+   "source": "removed-1.6.2",
+   "sourceId": "way/549959789",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 109.0,
+   "sourceAreaM2": 109.0,
+   "inCommune": false,
+   "centerL93": [
+    760694.6,
+    6822481.7
+   ],
+   "verdict": "non bâti",
+   "observation": "friche (retrait confirmé)"
+  },
+  {
+   "k": 400,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588789260",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 45.1,
+   "sourceAreaM2": 45.1,
+   "inCommune": true,
+   "centerL93": [
+    760279.5,
+    6822517.8
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), retrait maintenu faute de preuve"
+  },
+  {
+   "k": 401,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588789271",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 36.5,
+   "sourceAreaM2": 36.5,
+   "inCommune": true,
+   "centerL93": [
+    760337.6,
+    6822666.3
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), retrait maintenu faute de preuve"
+  },
+  {
+   "k": 402,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588789411",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 37.8,
+   "sourceAreaM2": 37.8,
+   "inCommune": true,
+   "centerL93": [
+    760013.3,
+    6822571.3
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), retrait maintenu faute de preuve"
+  },
+  {
+   "k": 403,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588789451",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 39.0,
+   "sourceAreaM2": 39.0,
+   "inCommune": true,
+   "centerL93": [
+    759642.7,
+    6822553.9
+   ],
+   "verdict": "douteux",
+   "observation": "zone à orthophoto dégradée (floutée), retrait maintenu faute de preuve"
+  },
+  {
+   "k": 404,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588789667",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 29.6,
+   "sourceAreaM2": 29.6,
+   "inCommune": true,
+   "centerL93": [
+    758786.4,
+    6824143.6
+   ],
+   "verdict": "non bâti",
+   "observation": "friche arborée (retrait confirmé)"
+  },
+  {
+   "k": 405,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588789738",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 19.6,
+   "sourceAreaM2": 19.6,
+   "inCommune": true,
+   "centerL93": [
+    758117.5,
+    6823595.0
+   ],
+   "verdict": "non bâti",
+   "observation": "pelouse (retrait confirmé)"
+  },
+  {
+   "k": 406,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588789917",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 63.1,
+   "sourceAreaM2": 63.1,
+   "inCommune": true,
+   "centerL93": [
+    757374.8,
+    6822638.1
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe (retrait confirmé)"
+  },
+  {
+   "k": 407,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588789945",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 13.2,
+   "sourceAreaM2": 13.2,
+   "inCommune": true,
+   "centerL93": [
+    758262.6,
+    6823674.4
+   ],
+   "verdict": "non bâti",
+   "observation": "pelouse (retrait confirmé)"
+  },
+  {
+   "k": 408,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588791341",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 20.5,
+   "sourceAreaM2": 20.5,
+   "inCommune": true,
+   "centerL93": [
+    758121.2,
+    6823057.5
+   ],
+   "verdict": "non bâti",
+   "observation": "pelouse (retrait confirmé)"
+  },
+  {
+   "k": 409,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588791491",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 26.5,
+   "sourceAreaM2": 26.5,
+   "inCommune": true,
+   "centerL93": [
+    757819.3,
+    6822823.9
+   ],
+   "verdict": "non bâti",
+   "observation": "potager (retrait confirmé)"
+  },
+  {
+   "k": 410,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588791515",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 9.4,
+   "sourceAreaM2": 9.4,
+   "inCommune": true,
+   "centerL93": [
+    758072.1,
+    6823081.3
+   ],
+   "verdict": "douteux",
+   "observation": "petit abri possible, 9 m², non tranché"
+  },
+  {
+   "k": 411,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588791687",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 7.2,
+   "sourceAreaM2": 7.2,
+   "inCommune": true,
+   "centerL93": [
+    758332.2,
+    6823156.6
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin (retrait confirmé)"
+  },
+  {
+   "k": 412,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588791731",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 26.9,
+   "sourceAreaM2": 26.9,
+   "inCommune": true,
+   "centerL93": [
+    758035.1,
+    6823800.6
+   ],
+   "verdict": "non bâti",
+   "observation": "friche (retrait confirmé)"
+  },
+  {
+   "k": 413,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588791777",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 45.3,
+   "sourceAreaM2": 45.3,
+   "inCommune": true,
+   "centerL93": [
+    757685.2,
+    6822786.2
+   ],
+   "verdict": "non bâti",
+   "observation": "sol nu (retrait confirmé)"
+  },
+  {
+   "k": 414,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588791810",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 64.9,
+   "sourceAreaM2": 64.9,
+   "inCommune": true,
+   "centerL93": [
+    756259.4,
+    6821698.6
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe (retrait confirmé)"
+  },
+  {
+   "k": 415,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588791911",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 7.9,
+   "sourceAreaM2": 7.9,
+   "inCommune": true,
+   "centerL93": [
+    757624.4,
+    6822769.0
+   ],
+   "verdict": "douteux",
+   "observation": "recouvre en partie un garage déjà repéré (#39)"
+  },
+  {
+   "k": 416,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588791966",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 108.0,
+   "sourceAreaM2": 108.0,
+   "inCommune": true,
+   "centerL93": [
+    757803.3,
+    6822952.3
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin (retrait confirmé)"
+  },
+  {
+   "k": 417,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588792057",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 15.4,
+   "sourceAreaM2": 15.4,
+   "inCommune": true,
+   "centerL93": [
+    757751.0,
+    6822892.8
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe sombre accolée visible (retrait à annuler)"
+  },
+  {
+   "k": 418,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588792071",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 352.1,
+   "sourceAreaM2": 352.1,
+   "inCommune": true,
+   "centerL93": [
+    758818.8,
+    6822797.8
+   ],
+   "verdict": "non bâti",
+   "observation": "silo démoli, sol nu (retrait confirmé)"
+  },
+  {
+   "k": 419,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588792084",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 8.8,
+   "sourceAreaM2": 8.8,
+   "inCommune": true,
+   "centerL93": [
+    758060.7,
+    6822941.5
+   ],
+   "verdict": "non bâti",
+   "observation": "piscine (retrait confirmé)"
+  },
+  {
+   "k": 420,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588792110",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 124.0,
+   "sourceAreaM2": 124.0,
+   "inCommune": true,
+   "centerL93": [
+    758781.9,
+    6823956.5
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin (retrait confirmé)"
+  },
+  {
+   "k": 421,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588792172",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 9.0,
+   "sourceAreaM2": 9.0,
+   "inCommune": true,
+   "centerL93": [
+    756270.8,
+    6821709.3
+   ],
+   "verdict": "douteux",
+   "observation": "petit ouvrage de 9 m², non tranché"
+  },
+  {
+   "k": 422,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588792242",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 72.2,
+   "sourceAreaM2": 72.2,
+   "inCommune": true,
+   "centerL93": [
+    758136.8,
+    6823513.8
+   ],
+   "verdict": "non bâti",
+   "observation": "cour plantée (retrait confirmé)"
+  },
+  {
+   "k": 423,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588792356",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 146.2,
+   "sourceAreaM2": 146.2,
+   "inCommune": true,
+   "centerL93": [
+    758710.1,
+    6824025.0
+   ],
+   "verdict": "non bâti",
+   "observation": "arbres et cour (retrait confirmé)"
+  },
+  {
+   "k": 424,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588792505",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 328.5,
+   "sourceAreaM2": 328.5,
+   "inCommune": true,
+   "centerL93": [
+    758794.9,
+    6822801.1
+   ],
+   "verdict": "non bâti",
+   "observation": "silo démoli, sol nu (retrait confirmé)"
+  },
+  {
+   "k": 425,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588792666",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 29.3,
+   "sourceAreaM2": 29.3,
+   "inCommune": true,
+   "centerL93": [
+    757572.5,
+    6822597.0
+   ],
+   "verdict": "non bâti",
+   "observation": "cour (retrait confirmé)"
+  },
+  {
+   "k": 426,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588792716",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 6.6,
+   "sourceAreaM2": 6.6,
+   "inCommune": true,
+   "centerL93": [
+    759473.8,
+    6823678.8
+   ],
+   "verdict": "non bâti",
+   "observation": "margelle (retrait confirmé)"
+  },
+  {
+   "k": 427,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588792830",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 16.1,
+   "sourceAreaM2": 16.1,
+   "inCommune": true,
+   "centerL93": [
+    757380.9,
+    6822646.4
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe (retrait confirmé)"
+  },
+  {
+   "k": 428,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588792877",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 20.1,
+   "sourceAreaM2": 20.1,
+   "inCommune": true,
+   "centerL93": [
+    757709.0,
+    6823053.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "abri gris visible (retrait à annuler)"
+  },
+  {
+   "k": 429,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588792955",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 17.0,
+   "sourceAreaM2": 17.0,
+   "inCommune": true,
+   "centerL93": [
+    756748.2,
+    6823155.2
+   ],
+   "verdict": "bâti visible",
+   "observation": "abri sombre visible (retrait à annuler)"
+  },
+  {
+   "k": 430,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588792961",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 74.1,
+   "sourceAreaM2": 74.1,
+   "inCommune": true,
+   "centerL93": [
+    758243.5,
+    6823777.3
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin (retrait confirmé)"
+  },
+  {
+   "k": 431,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588792983",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 25.0,
+   "sourceAreaM2": 25.0,
+   "inCommune": true,
+   "centerL93": [
+    757373.7,
+    6822695.3
+   ],
+   "verdict": "non bâti",
+   "observation": "cour (retrait confirmé)"
+  },
+  {
+   "k": 432,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588792987",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 191.9,
+   "sourceAreaM2": 191.9,
+   "inCommune": true,
+   "centerL93": [
+    758595.2,
+    6824193.8
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin (retrait confirmé)"
+  },
+  {
+   "k": 433,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588793079",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 11.3,
+   "sourceAreaM2": 11.3,
+   "inCommune": true,
+   "centerL93": [
+    758277.2,
+    6823214.6
+   ],
+   "verdict": "douteux",
+   "observation": "objet sombre en bord de voie, non tranché"
+  },
+  {
+   "k": 434,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588793300",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 63.0,
+   "sourceAreaM2": 63.0,
+   "inCommune": true,
+   "centerL93": [
+    758682.8,
+    6824187.3
+   ],
+   "verdict": "non bâti",
+   "observation": "cour (retrait confirmé)"
+  },
+  {
+   "k": 435,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588793340",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 5.7,
+   "sourceAreaM2": 5.7,
+   "inCommune": true,
+   "centerL93": [
+    757973.9,
+    6823415.6
+   ],
+   "verdict": "non bâti",
+   "observation": "cour (retrait confirmé)"
+  },
+  {
+   "k": 436,
+   "source": "removed-1.6.1",
+   "sourceId": "way/588793377",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 16.5,
+   "sourceAreaM2": 16.5,
+   "inCommune": true,
+   "centerL93": [
+    757552.6,
+    6822480.8
+   ],
+   "verdict": "bâti visible",
+   "observation": "abri gris visible (retrait à annuler)"
+  },
+  {
+   "k": 437,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588793413",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 10.6,
+   "sourceAreaM2": 10.6,
+   "inCommune": true,
+   "centerL93": [
+    758117.0,
+    6823599.9
+   ],
+   "verdict": "non bâti",
+   "observation": "pelouse (retrait confirmé)"
+  },
+  {
+   "k": 438,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588793462",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 40.8,
+   "sourceAreaM2": 40.8,
+   "inCommune": true,
+   "centerL93": [
+    759511.7,
+    6820921.4
+   ],
+   "verdict": "non bâti",
+   "observation": "cour (retrait confirmé)"
+  },
+  {
+   "k": 439,
+   "source": "removed-1.6.2",
+   "sourceId": "way/588793679",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 218.2,
+   "sourceAreaM2": 218.2,
+   "inCommune": true,
+   "centerL93": [
+    758821.4,
+    6822815.3
+   ],
+   "verdict": "non bâti",
+   "observation": "silos démolis, sol nu (retrait confirmé)"
+  },
+  {
+   "k": 440,
+   "source": "removed-1.6.1",
+   "sourceId": "way/935473873",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 41.9,
+   "sourceAreaM2": 41.9,
+   "inCommune": true,
+   "centerL93": [
+    756932.1,
+    6822664.3
+   ],
+   "verdict": "bâti visible",
+   "observation": "abri gris visible (retrait à annuler)"
+  },
+  {
+   "k": 441,
+   "source": "removed-1.6.1",
+   "sourceId": "way/1303286702",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 5.4,
+   "sourceAreaM2": 5.4,
+   "inCommune": true,
+   "centerL93": [
+    759572.4,
+    6823711.3
+   ],
+   "verdict": "douteux",
+   "observation": "petit élément de 5 m², non tranché"
+  },
+  {
+   "k": 442,
+   "source": "removed-1.6.1",
+   "sourceId": "way/1433821870",
+   "sourceType": "osm",
+   "kind": "empreinte entière",
+   "areaM2": 19.7,
+   "sourceAreaM2": 19.7,
+   "inCommune": true,
+   "centerL93": [
+    758125.3,
+    6822987.1
+   ],
+   "verdict": "bâti visible",
+   "observation": "annexe grise visible (retrait à annuler)"
+  },
+  {
+   "k": 443,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:22587690",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 9.2,
+   "sourceAreaM2": 9.2,
+   "inCommune": false,
+   "centerL93": [
+    756617.5,
+    6823114.7
+   ],
+   "verdict": "non bâti",
+   "observation": "stationnement (retrait confirmé)"
+  },
+  {
+   "k": 444,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:22587748",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 9.8,
+   "sourceAreaM2": 9.8,
+   "inCommune": false,
+   "centerL93": [
+    756590.1,
+    6823121.4
+   ],
+   "verdict": "non bâti",
+   "observation": "stationnement (retrait confirmé)"
+  },
+  {
+   "k": 445,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:22587759",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 9.2,
+   "sourceAreaM2": 9.2,
+   "inCommune": false,
+   "centerL93": [
+    756586.5,
+    6823122.7
+   ],
+   "verdict": "non bâti",
+   "observation": "stationnement (retrait confirmé)"
+  },
+  {
+   "k": 446,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:22587825",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 9.9,
+   "sourceAreaM2": 9.9,
+   "inCommune": false,
+   "centerL93": [
+    756509.1,
+    6823106.6
+   ],
+   "verdict": "non bâti",
+   "observation": "stationnement (retrait confirmé)"
+  },
+  {
+   "k": 447,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:22587834",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 9.8,
+   "sourceAreaM2": 9.8,
+   "inCommune": false,
+   "centerL93": [
+    756421.3,
+    6823079.3
+   ],
+   "verdict": "non bâti",
+   "observation": "stationnement (retrait confirmé)"
+  },
+  {
+   "k": 448,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:22587923",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 10.0,
+   "sourceAreaM2": 10.0,
+   "inCommune": false,
+   "centerL93": [
+    756420.4,
+    6823075.7
+   ],
+   "verdict": "non bâti",
+   "observation": "stationnement (retrait confirmé)"
+  },
+  {
+   "k": 449,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:22587987",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 9.3,
+   "sourceAreaM2": 9.3,
+   "inCommune": false,
+   "centerL93": [
+    756525.3,
+    6823082.2
+   ],
+   "verdict": "non bâti",
+   "observation": "stationnement (retrait confirmé)"
+  },
+  {
+   "k": 450,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:22587996",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 8.7,
+   "sourceAreaM2": 8.7,
+   "inCommune": false,
+   "centerL93": [
+    756524.3,
+    6823078.5
+   ],
+   "verdict": "non bâti",
+   "observation": "stationnement (retrait confirmé)"
+  },
+  {
+   "k": 451,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:22588365",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 9.4,
+   "sourceAreaM2": 9.4,
+   "inCommune": false,
+   "centerL93": [
+    756499.6,
+    6823068.6
+   ],
+   "verdict": "non bâti",
+   "observation": "stationnement (retrait confirmé)"
+  },
+  {
+   "k": 452,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:23578995",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 3.0,
+   "sourceAreaM2": 3.0,
+   "inCommune": true,
+   "centerL93": [
+    758207.0,
+    6823391.7
+   ],
+   "verdict": "non bâti",
+   "observation": "bande (retrait confirmé)"
+  },
+  {
+   "k": 453,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:39362625",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 15.6,
+   "sourceAreaM2": 15.6,
+   "inCommune": false,
+   "centerL93": [
+    760649.4,
+    6822503.9
+   ],
+   "verdict": "douteux",
+   "observation": "entre silos, non tranché (retrait maintenu)"
+  },
+  {
+   "k": 454,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:39362627",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 16.3,
+   "sourceAreaM2": 16.3,
+   "inCommune": false,
+   "centerL93": [
+    760647.4,
+    6822509.7
+   ],
+   "verdict": "douteux",
+   "observation": "entre silos, non tranché (retrait maintenu)"
+  },
+  {
+   "k": 455,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:39362629",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 16.3,
+   "sourceAreaM2": 16.3,
+   "inCommune": false,
+   "centerL93": [
+    760645.4,
+    6822515.8
+   ],
+   "verdict": "douteux",
+   "observation": "entre silos, non tranché (retrait maintenu)"
+  },
+  {
+   "k": 456,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:39808118",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 18.8,
+   "sourceAreaM2": 18.8,
+   "inCommune": true,
+   "centerL93": [
+    759009.5,
+    6822633.9
+   ],
+   "verdict": "non bâti",
+   "observation": "herbe (retrait confirmé)"
+  },
+  {
+   "k": 457,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:39808120",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 38.6,
+   "sourceAreaM2": 38.6,
+   "inCommune": true,
+   "centerL93": [
+    758990.1,
+    6822603.3
+   ],
+   "verdict": "non bâti",
+   "observation": "passage (retrait confirmé)"
+  },
+  {
+   "k": 458,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:39808749",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 153.0,
+   "sourceAreaM2": 153.0,
+   "inCommune": true,
+   "centerL93": [
+    758093.1,
+    6823438.9
+   ],
+   "verdict": "non bâti",
+   "observation": "dalle (retrait confirmé)"
+  },
+  {
+   "k": 459,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:39810407",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 38.0,
+   "sourceAreaM2": 38.0,
+   "inCommune": true,
+   "centerL93": [
+    758991.3,
+    6822614.8
+   ],
+   "verdict": "non bâti",
+   "observation": "passage (retrait confirmé)"
+  },
+  {
+   "k": 460,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:39816945",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 18.0,
+   "sourceAreaM2": 18.0,
+   "inCommune": true,
+   "centerL93": [
+    757885.0,
+    6822581.3
+   ],
+   "verdict": "non bâti",
+   "observation": "pelouse (retrait confirmé)"
+  },
+  {
+   "k": 461,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:39818200",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 83.7,
+   "sourceAreaM2": 83.7,
+   "inCommune": true,
+   "centerL93": [
+    757804.3,
+    6822598.0
+   ],
+   "verdict": "non bâti",
+   "observation": "jardin (retrait confirmé)"
+  },
+  {
+   "k": 462,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:40776829",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 2.9,
+   "sourceAreaM2": 2.9,
+   "inCommune": true,
+   "centerL93": [
+    758064.0,
+    6823125.1
+   ],
+   "verdict": "non bâti",
+   "observation": "bande (retrait confirmé)"
+  },
+  {
+   "k": 463,
+   "source": "removed-1.6.2",
+   "sourceId": "cadastre:40928273",
+   "sourceType": "cadastre",
+   "kind": "empreinte entière",
+   "areaM2": 2.4,
+   "sourceAreaM2": 2.4,
+   "inCommune": true,
+   "centerL93": [
+    758481.4,
+    6823854.6
+   ],
+   "verdict": "non bâti",
+   "observation": "bande (retrait confirmé)"
+  }
+ ],
+ "visualPoints": {
+  "withoutGeometry": [
+   "vis-A",
+   "vis-D1",
+   "vis-D2",
+   "vis-F",
+   "vis-H1",
+   "vis-H2",
+   "vis-I",
+   "vis-K",
+   "vis-P1",
+   "vis-P2",
+   "vis-Q",
+   "vis-R1",
+   "vis-R2",
+   "vis-T",
+   "vis-U2",
+   "vis-U3"
+  ],
+  "uncertain": [
+   "vis-B",
+   "vis-C",
+   "vis-E",
+   "vis-G",
+   "vis-M",
+   "vis-N"
+  ],
+  "resolved": [
+   {
+    "id": "vis-J",
+    "note": "couvert par la réintégration cadastrale"
+   },
+   {
+    "id": "vis-L",
+    "note": "couvert par la réintégration cadastrale"
+   },
+   {
+    "id": "vis-O",
+    "note": "déjà au référentiel"
+   },
+   {
+    "id": "vis-U1",
+    "note": "partie couverte par la réintégration cadastrale ; dalle non bâtie"
+   },
+   {
+    "id": "vis-V",
+    "note": "terrain de sport, non bâti"
+   },
+   {
+    "id": "vis-W",
+    "note": "dalle, non bâtie"
+   }
+  ]
+ },
+ "addresses": {
+  "note": "Adresses BAN de type entrée, bâtiment ou parcelle à plus de 15 m de tout bâtiment, et points RNB isolés : contrôlés sur l’orthophoto",
+  "result": "terrains nus, lots non bâtis (impasse des Sages, rue des Jacquets), parcelles agricoles et voirie : aucune construction manquante"
+ }
+}

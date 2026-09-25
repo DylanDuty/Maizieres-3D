@@ -2,6 +2,15 @@
 
 Prototype local Three.js de la commune de l’Aube, code INSEE **10220**. Empreintes, voirie, voies ferrées et occupation du sol proviennent d’OpenStreetMap. Le contour communal provient de l’API Découpage administratif française.
 
+**Version 2.0.1** : audit visuel des maisons manquantes, sur toute la zone bâtie comparée à l’orthophoto IGN 2025, au cadastre, à la BD TOPO, au RNB et à OSM.
+
+- **Rendu** : les 2 494 bâtiments étaient bien présents dans la scène, mais 124 étaient en partie enterrés par le relief affiché. Leur socle suit maintenant ce relief.
+- **Réintégrations** : 90 bâtiments (annexes, garages, abris et une maison), repris du cadastre ou d’OSM, dont 6 retraits V1.6.1 annulés.
+- **Total affiché** : 2 584 bâtiments, dont 2 350 dans la commune. Le référentiel gelé V1.6.2 est inchangé ; les réintégrations sont dans `public/data/buildings-additions-v2.0.1.geojson`.
+- **Sans géométrie publique** : 16 constructions visibles sont seulement listées, jamais dessinées.
+
+Contrôle : `npm run check:building-visibility`. Diagnostic : `?diagnostic=buildings-audit`. Détail : `docs/audit-maisons-manquantes-v2.0.1.md`.
+
 **Version 2.0** : première vue normale complète et visible, sans paramètre. Elle assemble tous les référentiels gelés sur le relief LiDAR réel :
 
 - **2 494 bâtiments**, posés à leur altitude ;
