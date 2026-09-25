@@ -2,7 +2,7 @@ name: GitHub Pages
 
 on:
   push:
-    branches: [opus/v1.4]
+    branches: [opus/v1.4, opus/v2.0-threejs-complete]
   workflow_dispatch:
 
 permissions:

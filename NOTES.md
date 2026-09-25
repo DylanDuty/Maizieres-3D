@@ -1,3 +1,22 @@
+# Notes V2.0 — Maizières technique complète visible, 25 septembre 2026
+
+- **Assemblage seulement** :
+  - bâti V1.6.2 et V1.11.1, terrain V1.7, voirie V1.8, ferroviaire V1.9, occupation du sol V1.10, lieux V1.11 et V1.11.1 ;
+  - origine Unreal E0 758278 / N0 6823571 inchangée ;
+  - aucun référentiel reconstruit ni corrigé.
+  - `scripts/build-v2.mjs` ne fait que convertir et simplifier pour l’affichage, avec les tolérances documentées dans `docs/V2.0-TECHNIQUE-VISIBLE.md`.
+- **Terrain d’affichage** : `v2-terrain.*` échantillonne le GeoTIFF V1.7 au pas de 10 m sur toute l’emprise. L’ancienne grille `terrain-threejs.*` ne couvrait que la commune + 150 m ; elle reste inchangée pour `?diagnostic=terrain`.
+- **Bâtiments** : l’altitude vient toujours de `building-terrain-elevation.json` (calculée au 1 m), pas de la grille d’affichage.
+- **Eau** : aucune profondeur n’est déduite. Le MNT donne la surface de l’eau.
+- **Chemins** : empierrés, de terre et sentiers ne reçoivent jamais la bordure ni la teinte des chaussées.
+- **Lieux** : un lieu sans géométrie reste un point ou n’est pas affiché. Seuls les landmarks P1 et P2 actuels et les secteurs principaux ont une étiquette permanente.
+- **Performances** : la vue est conçue pour les vieux PC :
+  - 11 à 12 appels de rendu et rendu à la demande ;
+  - ratio de pixels limité ;
+  - ombres seulement en « Élevée » ;
+  - haies 3D retirées en « Très fluide ».
+  - La cadence réelle reste à mesurer sur GPU matériel : le conteneur de QA n’a que SwiftShader.
+
 # Notes V1.11.1 — audit ciblé des bâtiments récents, 25 septembre 2026
 
 - **Constat** : aucun bâtiment ne manquait vraiment. Les lieux sans bâtiment de V1.11 venaient de positions d’adresse éloignées du bâtiment :

@@ -1,3 +1,47 @@
+# Vérification V2.0 — Maizières technique complète visible, 25 septembre 2026
+
+Branche `opus/v2.0-threejs-complete`, à partir de `79c50d9`. Aucun référentiel gelé n’est modifié (vérifié par SHA-256 dans `check:v2`). Détail : `docs/V2.0-TECHNIQUE-VISIBLE.md`. Captures : `docs/qa/v2.0/`.
+
+| Mesure | Valeur |
+|---|---|
+| Bâtiments affichés | **2 494** (2 265 dans la commune), 0 rejeté, tous sur le terrain affiché |
+| Relief | grille 10 m, 601 × 679 points, 813 600 triangles, sans NoData ; écart à la grille 1 m : RMSE 0,10 m, maximum 1,22 m |
+| Voirie / rail | 1 585 voies (8 catégories), 25 voies ferrées, 4 passages à niveau, 1 pont ferroviaire |
+| Occupation du sol | 560 parcelles, 253 bois, 378 haies + 265 polygones, 85 surfaces et 228 lignes d’eau, 78 surfaces artificielles |
+| Fluide | 12 appels de rendu, 1 128 k triangles, texture 3 072 px, tampon 1 400 × 860 |
+| Élevée | 12 appels de rendu, 1 128 k triangles, texture 4 096 px, tampon 1 750 × 1 075, ombres 2 048 |
+| Très fluide | 11 appels de rendu, 1 107 k triangles, texture 2 048 px, tampon 1 120 × 688 |
+| FPS `?benchmark` (SwiftShader, sans GPU) | Très fluide 3,1 ; Fluide 2,6 ; Élevée 1,6 (mesure logicielle, sert seulement à comparer les modes) |
+
+## Contrôles
+
+- `npm run check:all` : **12 contrôles OK**, dont `check:v2` (12 points).
+- `pnpm build` réussi, y compris avec `BASE_PATH=/Maizieres-3D/`.
+
+## Chromium
+
+Chromium est lancé avec SwiftShader.
+
+- **Vues contrôlées** :
+  - vue générale, centre-bourg, Poussey, Les Granges ;
+  - Parc de l’Aérodrome, La Glacière, secteur ferroviaire ;
+  - zones agricoles, Seine ;
+  - limites nord-ouest et sud-est ;
+  - vues rapprochées de l’église, du pont sur la Seine et du pont de la rue de l’Orme.
+- **Console** : vide dans toutes les vues et dans les 7 diagnostics (provenance, validation, terrain, roads, rail, landcover, poi), ainsi qu’avec `?diagnostic=v2`.
+- **Sélection** :
+  - bâtiment : « Maison », confiance A, RNB ;
+  - rue : « Rue des Écoles » ;
+  - lieux : Église Saint-Denis, Salle polyvalente ;
+  - parcelle : terre arable, culture 2024, 8,14 ha.
+  - Le sol nu du village ne sélectionne rien.
+- **Recherche** : « Poussey », « Saint-Denis », « Rue Joliot-Curie » et « Les Granges » trouvent le bon lieu, centrent la caméra et mettent le résultat en surbrillance.
+- **Corrections de présentation pendant la QA** :
+  - **terrain** : grille étendue à toute l’emprise, car voies, haies et bâtiments dépassaient l’ancienne grille communale ;
+  - **coins de l’emprise** : coupure des rubans au bord du terrain ;
+  - **couleurs** : centrales photovoltaïques éclaircies et rayées, jupe du terrain neutre, haies moins sombres ;
+  - **clic** : polygones vides filtrés, car ils provoquaient une erreur.
+
 # Vérification V1.11.1 — audit ciblé des bâtiments récents sans association, 25 septembre 2026
 
 Branche `opus/v1.11.1-recent-buildings-audit`, à partir de `0722b1d`. Détail : `docs/audit-batiments-recents-v1.11.1.md`.

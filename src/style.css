@@ -42,3 +42,24 @@
 /* V1.5 — development legend for ?diagnostic=provenance. */
 #diagnostic-legend{position:fixed;left:24px;top:120px;display:flex;flex-direction:column;gap:4px;background:#fffffff0;border:1px solid #ccc;border-radius:8px;padding:8px 10px;font-size:12px;z-index:6}
 #diagnostic-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px}
+
+/* V2.0 — search, quick views, compact legend, technical HUD, landmark labels. Sober and small. */
+#search{position:fixed;top:29px;left:50%;transform:translateX(-50%);width:min(320px,34vw);z-index:7}
+#search input{width:100%;min-height:43px;border:1px solid #d5ddd3;border-radius:7px;background:#ffffffee;padding:0 14px;font:14px Segoe UI,Arial,sans-serif;color:#253d30;box-shadow:0 3px 16px #24493d12}
+#search input:focus{outline:3px solid #377658;outline-offset:2px}
+#search ul{list-style:none;margin:6px 0 0;padding:4px;background:#fffffff7;border:1px solid #d5ddd3;border-radius:8px;box-shadow:0 8px 24px #24493d22;max-height:50vh;overflow:auto}
+#search li{display:flex;justify-content:space-between;gap:10px;padding:7px 9px;border-radius:5px;cursor:pointer;font-size:13px}
+#search li span{color:#7b8a7e;font-size:11px;white-space:nowrap}
+#search li:hover,#search li[aria-selected=true]{background:#e8f0e6}
+#views{position:fixed;top:84px;right:28px;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:5px;max-width:560px;z-index:6}
+#views button{min-height:30px;padding:0 10px;font-size:12px;border-radius:15px;background:#ffffffd9}
+#legend{position:fixed;right:24px;bottom:150px;z-index:6;text-align:right}
+#legend button{min-height:30px;padding:0 12px;font-size:12px;border-radius:15px}
+#legend ul{list-style:none;margin:6px 0 0;padding:8px 10px;background:#fffffff2;border:1px solid #d5ddd3;border-radius:8px;text-align:left;font-size:12px;columns:2;column-gap:14px;box-shadow:0 6px 20px #24493d1a}
+#legend li{margin:2px 0;break-inside:avoid;white-space:nowrap}
+#legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px;border:1px solid #0000001a}
+#legend ul[hidden]{display:none}
+#perf-hud{position:fixed;left:24px;top:130px;margin:0;padding:8px 10px;background:#1d2a22d9;color:#e8f3ea;font:11px/1.45 ui-monospace,Consolas,monospace;border-radius:6px;z-index:8;pointer-events:none}
+.map-label.landmark{background:#fffaf0f2;border-color:#d9b26a;font-weight:600}
+.map-label.landmark.minor{font-size:11px;font-weight:500;padding:2px 8px;min-height:22px;opacity:.92}
+@media(max-width:850px){#search{top:auto;bottom:128px;left:16px;transform:none;width:calc(100vw - 32px)}#views{top:auto;bottom:178px;left:16px;right:16px;justify-content:flex-start}#legend{bottom:230px;right:16px}}

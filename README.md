@@ -2,6 +2,22 @@
 
 Prototype local Three.js de la commune de l’Aube, code INSEE **10220**. Empreintes, voirie, voies ferrées et occupation du sol proviennent d’OpenStreetMap. Le contour communal provient de l’API Découpage administratif française.
 
+**Version 2.0** : première vue normale complète et visible, sans paramètre. Elle assemble tous les référentiels gelés sur le relief LiDAR réel :
+
+- **2 494 bâtiments**, posés à leur altitude ;
+- voirie V1.8 en 8 catégories (les chemins ne sont jamais présentés comme revêtus) ;
+- ferroviaire V1.9 ;
+- 560 parcelles, 253 bois, 378 haies, l’eau et les surfaces artificielles de V1.10 ;
+- lieux et landmarks V1.11.
+
+Nouveautés d’interface :
+
+- recherche, vues rapides et légende repliable ;
+- trois modes de qualité : Très fluide, **Fluide** (défaut) et Élevée ;
+- HUD technique avec `?perf` ou `?diagnostic=v2`.
+
+Données d’affichage : `npm run data:v2`. Contrôle : `npm run check:v2` (`check:all` en enchaîne 12). Détail et limites : `docs/V2.0-TECHNIQUE-VISIBLE.md`. En ligne : https://dylanduty.github.io/Maizieres-3D/.
+
 **Version 1.5** : la carte devient une référence géographique. **Les bâtiments viennent du référentiel unifié `public/data/buildings.geojson`** : IGN BD TOPO comme géométrie principale, OSM comme complément et sémantique. On passe ainsi à 2 491 bâtiments dans la zone affichée (2 259 dans la commune), au lieu de 1 968. Format documenté dans `docs/referentiel-bati.md` pour un futur export Unreal. Régénération : `npm run data:buildings`. Couverture et audit : `npm run audit:buildings`, `npm run check:buildings`, et `?diagnostic=provenance` pour colorer les bâtiments selon leur source.
 
 **Version 1.4** : direction artistique « village dans un film d’animation ». Mosaïque de champs peinte, ciel et horizon brumeux, maisons aux volets colorés, constructions légères rendues comme des abris fermés, arbres en nuage, ombres claires qui suivent la vue. Toutes les rues nommées sont cliquables avec une zone de clic élargie, et tous les bâtiments ont une fiche (sans nom inventé). Extraits des Bibles documentaires 01 et 03 dans les fiches, repère du Gué de la Chapelle. Coordonnées, empreintes et enrichissements IGN inchangés.

@@ -27,28 +27,33 @@ export function describe(r){
   if(i.rnb)facts.push(`Identifiant RNB : ${i.rnb}`);
   facts.push(`Hauteur des murs : ${metres(i.wallHeight)} (${i.heightSource==='IGN BD TOPO'?'IGN BD TOPO':i.heightSource==='OSM'?'OpenStreetMap':'estimée'})`);
  }
+ for(const f of r.facts||[])facts.push(f);
  if(r.bible&&!r.source.startsWith('Bible'))sources.push('Bibles documentaires');
  return {eyebrow:r.kind,title:r.name,facts,quotes,source:sources.join(' · ')+(b.method?'. '+b.method:'')};
 }
 
-export function installSelection({scene,camera,canvas,catalogue,meshes,buildingInfo,invalidate,target=()=>new THREE.Vector3()}){
- const raycaster=new THREE.Raycaster(),plane=new THREE.Plane(new THREE.Vector3(0,1,0),0),ground=new THREE.Vector3(),projected=new THREE.Vector3(),right=new THREE.Vector3();
+// V2.0: heightAt / ground place picking and highlights on the real relief; technical=false hides the source line (visitor view).
+export function installSelection({scene,camera,canvas,catalogue,meshes,buildingInfo,invalidate,target=()=>new THREE.Vector3(),heightAt=null,ground=null,technical=true}){
+ const raycaster=new THREE.Raycaster(),plane=new THREE.Plane(new THREE.Vector3(0,1,0),0),groundPoint=new THREE.Vector3(),projected=new THREE.Vector3(),right=new THREE.Vector3();
  const panel=document.querySelector('#selection'),title=document.querySelector('#selection-title'),kind=document.querySelector('#selection-kind'),facts=document.querySelector('#selection-facts'),quotes=document.querySelector('#selection-quotes'),note=document.querySelector('#selection-note');
  // Depth-tested highlight: it never paints through houses, and it is disposed at each change.
  const common={transparent:true,depthWrite:false,side:THREE.DoubleSide,fog:false};
  const fillMaterial=new THREE.MeshBasicMaterial({...common,color:'#ffd36b',opacity:.3}),lineMaterial=new THREE.MeshBasicMaterial({...common,color:'#ffb23f',opacity:.92}),shellMaterial=new THREE.MeshBasicMaterial({...common,color:'#ffe08a',opacity:.5});
  let highlight=null,selected=null,start=null;const pointers=new Set();
  const toScreen=p=>{projected.set(...p).project(camera);return projected.z>-1&&projected.z<1?[(projected.x*.5+.5)*canvas.clientWidth,(-projected.y*.5+.5)*canvas.clientHeight]:null;};
+ // On the relief, flat highlight geometry is densified then lifted onto the displayed terrain.
+ const densify=(pts,max=8)=>{if(!heightAt)return pts;const out=[pts[0]];for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i],k=Math.ceil(Math.hypot(b[0]-a[0],b[1]-a[1])/max);for(let j=1;j<=k;j++)out.push([a[0]+(b[0]-a[0])*j/k,a[1]+(b[1]-a[1])*j/k]);}return out;};
+ function drape(object){if(!heightAt)return;object.traverse(o=>{if(!o.isMesh||o.userData.noDrape)return;const p=o.geometry.getAttribute('position');for(let i=0;i<p.count;i++)p.setY(i,p.getY(i)+heightAt(p.getX(i),p.getZ(i)));p.needsUpdate=true;o.geometry.computeBoundingSphere();});}
  function clearHighlight(){if(highlight){scene.remove(highlight);highlight.traverse(o=>o.geometry?.dispose());highlight=null;}}
- function outline(group,poly,y,width){const batch=new Batch(lineMaterial);for(const ring of poly)strip(batch,[...ring,ring[0]],width,y,'#ffffff');const m=batch.mesh(group);if(m)m.receiveShadow=false;}
+ function outline(group,poly,y,width){const batch=new Batch(lineMaterial);for(const ring of poly)strip(batch,densify([...ring,ring[0]]),width,y,'#ffffff');const m=batch.mesh(group);if(m)m.receiveShadow=false;}
  function buildingShell(group,id){
   // Copy the selected building's own triangles from the shared batches, slightly inflated.
   const info=buildingInfo.get(id);if(!info)return;const b=bounds(info.poly[0]),c=[(b.minX+b.maxX)/2,(b.minZ+b.maxZ)/2],radius=Math.max(2,Math.hypot(b.maxX-b.minX,b.maxZ-b.minZ)/2),k=1+.45/radius,out=[];
   for(const mesh of meshes){const pos=mesh.geometry.getAttribute('position');for(const r of mesh.userData.featureRanges)if(r.id===id)for(let v=r.start*3;v<r.end*3;v++)out.push(c[0]+(pos.getX(v)-c[0])*k,pos.getY(v)*1.01+.05,c[1]+(pos.getZ(v)-c[1])*k);}
-  if(!out.length)return;const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(out,3));const m=new THREE.Mesh(g,shellMaterial);m.renderOrder=10;group.add(m);outline(group,info.poly,.45,1.4);
+  if(!out.length)return;const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(out,3));const m=new THREE.Mesh(g,shellMaterial);m.renderOrder=10;m.userData.noDrape=true;group.add(m);outline(group,info.poly,.45,1.4);
  }
  function render(r){
-  const d=describe(r);kind.textContent=d.eyebrow;title.textContent=d.title;note.textContent=d.source;
+  const d=describe(r);kind.textContent=d.eyebrow;title.textContent=d.title;note.textContent=d.source;note.hidden=!technical;
   facts.replaceChildren(...d.facts.map(t=>Object.assign(document.createElement('li'),{textContent:t})));facts.hidden=!d.facts.length;
   quotes.replaceChildren(...d.quotes.slice(0,3).map(q=>{const el=document.createElement('blockquote');el.textContent=`« ${q.text} »`;el.append(Object.assign(document.createElement('cite'),{textContent:q.cite}));return el;}));quotes.hidden=!d.quotes.length;
  }
@@ -60,17 +65,18 @@ export function installSelection({scene,camera,canvas,catalogue,meshes,buildingI
   const group=new THREE.Group();group.renderOrder=10;
   // Highlight thickness follows the viewing distance so a street stays visible from the whole-commune view.
   const scale=Math.max(1,camera.position.distanceTo(target())/260);
-  if(r.type==='line'){const batch=new Batch(lineMaterial);for(const line of r.lines)strip(batch,line,Math.max(4.5,r.width+2.2)*Math.min(scale,5),.4,'#ffffff');batch.mesh(group);}
+  if(r.type==='line'){const batch=new Batch(lineMaterial);for(const line of r.lines)strip(batch,densify(line),Math.max(4.5,r.width+2.2)*Math.min(scale,5),.4,'#ffffff');batch.mesh(group);}
   else if(r.type==='building'){for(const id of r.memberIds||[r.id])buildingShell(group,id);if(!group.children.length)for(const poly of r.polys)outline(group,poly,.45,1.4);}
-  else if(r.polys){const batch=new Batch(fillMaterial);for(const poly of r.polys){batch.polygon(poly,.6,'#ffffff');outline(group,poly,.7,2.4);}batch.mesh(group);}
-  else{const p=r.position,ring=[];for(let i=0;i<=40;i++)ring.push([p[0]+Math.cos(i*Math.PI/20)*24*Math.min(scale,4),p[2]+Math.sin(i*Math.PI/20)*24*Math.min(scale,4)]);const batch=new Batch(lineMaterial);strip(batch,ring,3.2*Math.min(scale,4),1,'#ffffff');batch.mesh(group);const fill=new Batch(fillMaterial);fill.polygon([ring.slice(0,-1)],.9,'#ffffff');fill.mesh(group);}
+  else if(r.polys){const batch=new Batch(fillMaterial);for(const poly of r.polys){if(!heightAt)batch.polygon(poly,.6,'#ffffff');outline(group,poly,.7,heightAt?3.2:2.4);}batch.mesh(group);}
+  else{const p=r.position,lift=heightAt?-heightAt(p[0],p[2]):0,ring=[];for(let i=0;i<=40;i++)ring.push([p[0]+Math.cos(i*Math.PI/20)*24*Math.min(scale,4),p[2]+Math.sin(i*Math.PI/20)*24*Math.min(scale,4)]);const batch=new Batch(lineMaterial);strip(batch,ring,3.2*Math.min(scale,4),1+(heightAt?heightAt(p[0],p[2])+lift+.6:0),'#ffffff');batch.mesh(group);const fill=new Batch(fillMaterial);fill.polygon([ring.slice(0,-1)],.9+(heightAt?.6:0),'#ffffff');fill.mesh(group);}
+  drape(group);
   group.traverse(o=>{if(o.isMesh){o.receiveShadow=false;o.castShadow=false;o.renderOrder=10;}});
   highlight=group;scene.add(group);invalidate();
  }
  // Screen-space road search with a tolerance that grows with the road's visible width.
  function nearestRoad(x,y){let best=null,bestD=Infinity,bestPoint=null;const p=[x,y];
-  for(const r of catalogue.records)if(r.type==='line')for(const line of r.lines)for(let i=1;i<line.length;i++){const a=toScreen([line[i-1][0],.3,line[i-1][1]]),b=toScreen([line[i][0],.3,line[i][1]]);if(!a||!b)continue;const d=segmentDistance(p,a,b);if(d<bestD){bestD=d;best=r;bestPoint=line[i];}}
-  if(!best)return null;right.setFromMatrixColumn(camera.matrixWorld,0);const a=toScreen([bestPoint[0],.3,bestPoint[1]]),b=toScreen([bestPoint[0]+right.x*best.width,.3,bestPoint[1]+right.z*best.width]);const widthPx=a&&b?Math.hypot(a[0]-b[0],a[1]-b[1]):0;
+  for(const r of catalogue.records)if(r.type==='line')for(const line of r.lines)for(let i=1;i<line.length;i++){const ya=heightAt?heightAt(line[i-1][0],line[i-1][1])+.3:.3,yb=heightAt?heightAt(line[i][0],line[i][1])+.3:.3,a=toScreen([line[i-1][0],ya,line[i-1][1]]),b=toScreen([line[i][0],yb,line[i][1]]);if(!a||!b)continue;const d=segmentDistance(p,a,b);if(d<bestD){bestD=d;best=r;bestPoint=line[i];}}
+  if(!best)return null;right.setFromMatrixColumn(camera.matrixWorld,0);const yp=heightAt?heightAt(bestPoint[0],bestPoint[1])+.3:.3,a=toScreen([bestPoint[0],yp,bestPoint[1]]),b=toScreen([bestPoint[0]+right.x*best.width,yp,bestPoint[1]+right.z*best.width]);const widthPx=a&&b?Math.hypot(a[0]-b[0],a[1]-b[1]):0;
   return {record:best,distance:bestD,tolerance:Math.max(16,widthPx/2+8)};
  }
  function nearestPoint(x,y){let best=null,bestD=Infinity;for(const r of catalogue.records)if(r.type==='point'){const s=toScreen(r.position);if(!s)continue;const d=Math.hypot(s[0]-x,s[1]-y);if(d<bestD){bestD=d;best=r;}}return best&&{record:best,distance:bestD};}
@@ -85,7 +91,8 @@ export function installSelection({scene,camera,canvas,catalogue,meshes,buildingI
   if(point&&point.distance<(hitId?12:24))return done(point.record);
   if(hitId&&buildingInfo.has(hitId)){const info=buildingInfo.get(hitId),b=bounds(info.poly[0]);const light=info.light&&info.kind!=='canopy';
    return done({id:hitId,type:'building',generic:true,info,name:light?KIND_LABELS.light:info.knownUsage?KIND_LABELS[info.kind]||'Bâtiment':'Bâtiment',kind:'Bâtiment sans nom connu',polys:[info.poly],position:[(b.minX+b.maxX)/2,0,(b.minZ+b.maxZ)/2],source:info.source==='IGN BD TOPO'?'Empreinte IGN BD TOPO'+(info.osmIds.length?' · sémantique OpenStreetMap':''):info.provenance==='cadastre'?'Empreinte du cadastre actuel ('+info.source+')':'Empreinte OpenStreetMap seule (absente de la BD TOPO)'});}
-  if(raycaster.ray.intersectPlane(plane,ground)){const candidates=catalogue.records.filter(r=>r.type==='zone'&&r.polys.some(poly=>insidePoly([ground.x,ground.z],poly)));candidates.sort((a,b)=>area(a.polys[0][0])-area(b.polys[0][0]));if(candidates[0])return done(candidates[0]);}
+  const hitGround=ground?(typeof ground==='function'?ground(raycaster.ray):raycaster.intersectObject(ground,false)[0]?.point):null;
+  if(hitGround?groundPoint.copy(hitGround):raycaster.ray.intersectPlane(plane,groundPoint)){const candidates=catalogue.records.filter(r=>r.type==='zone'&&r.polys.some(poly=>insidePoly([groundPoint.x,groundPoint.z],poly)));candidates.sort((a,b)=>area(a.polys[0][0])-area(b.polys[0][0]));if(candidates[0])return done(candidates[0]);}
   done(null);
  }
  canvas.addEventListener('pointerdown',e=>{pointers.add(e.pointerId);if(pointers.size>1){start=null;return;}if(e.button===0)start={id:e.pointerId,x:e.clientX,y:e.clientY,moved:false};});

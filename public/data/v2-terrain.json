@@ -1,0 +1,20 @@
+{
+ "source": "IGN LiDAR HD MNT (grille 1 m du référentiel V1.7, unreal/terrain/maizieres-mnt-lidarhd-1m-lamb93-ign69.tif), rééchantillonnage bilinéaire",
+ "sourceSha256": "3e08e2a6e98b1764730f364f3d80fe8cb1df49b4eb967920ac995e213bf1eaef",
+ "frame": "repère local Three.js de src/geo.js (x est, z sud, mètres)",
+ "scope": "rectangle inscrit dans l’emprise V1.7 complète (V2.0) ; terrain-threejs.* (commune + 150 m) reste inchangé pour ?diagnostic=terrain",
+ "x0": -2850,
+ "z0": -2760,
+ "step": 10,
+ "cols": 601,
+ "rows": 679,
+ "encoding": "Uint16 little-endian, ligne par ligne (z croissant) : altitude_NGF = zBase + valeur / 100 ; 65535 = NoData",
+ "zBase": 61,
+ "noData": 0,
+ "yReference": 77.2,
+ "vsGrid1m": {
+  "rmse": 0.103,
+  "max": 1.22,
+  "samples": 100000
+ }
+}

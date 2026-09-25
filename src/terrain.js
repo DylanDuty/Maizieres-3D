@@ -2,8 +2,9 @@ import * as THREE from 'three';
 
 // V1.7 technical terrain (?diagnostic=terrain only). Real IGN LiDAR HD relief at true scale (no exaggeration), sampled on a
 // 10 m working grid in the local frame of geo.js. y = altitude NGF − yReference (terrain altitude at the common origin).
-export async function loadTerrain(base){
- const [meta,bin,elevation]=await Promise.all([fetch(`${base}data/terrain-threejs.json`).then(r=>r.json()),fetch(`${base}data/terrain-threejs.bin`).then(r=>r.arrayBuffer()),fetch(`${base}data/building-terrain-elevation.json`).then(r=>r.json())]);
+// V2.0 passes name='v2-terrain' (same encoding, whole V1.7 extent); the V1.7 diagnostic keeps terrain-threejs.
+export async function loadTerrain(base,name='terrain-threejs'){
+ const [meta,bin,elevation]=await Promise.all([fetch(`${base}data/${name}.json`).then(r=>r.json()),fetch(`${base}data/${name}.bin`).then(r=>r.arrayBuffer()),fetch(`${base}data/building-terrain-elevation.json`).then(r=>r.json())]);
  const data=new Uint16Array(bin),alt=(c,r)=>{const v=data[r*meta.cols+c];return v===65535?NaN:meta.zBase+v/100;};
  // Bilinear altitude (NGF metres) at local (x, z); NaN outside the grid or on NoData.
  const sample=(x,z)=>{const fx=(x-meta.x0)/meta.step,fz=(z-meta.z0)/meta.step,c=Math.floor(fx),r=Math.floor(fz);if(c<0||r<0||c>=meta.cols-1||r>=meta.rows-1)return NaN;const u=fx-c,w=fz-r;return (alt(c,r)*(1-u)+alt(c+1,r)*u)*(1-w)+(alt(c,r+1)*(1-u)+alt(c+1,r+1)*u)*w;};
