@@ -41,12 +41,14 @@ for(const e of A.buildings){const r=e.roof,id=e.buildingId;
  assert(ROOFS.includes(r.type)&&CF.includes(r.confidence)&&MATS.includes(r.material)&&COLORS.includes(r.colorFamily)&&CF.includes(r.materialConfidence)&&CF.includes(r.colorConfidence));
  assert.equal(r.type==='unknown',r.confidence==='unknown');assert.equal(r.colorFamily==='unknown',r.colorConfidence==='unknown');assert.equal(r.material==='unknown',r.materialConfidence==='unknown');
  if(r.ridgeOrientationDeg!=null){assert(r.ridgeOrientationDeg>=0&&r.ridgeOrientationDeg<180,'angle hors convention 0–180 : '+id);assert(['gable','hip','shed','complex','industrial'].includes(r.type));assert.equal(r.ridgeOrientationStatus,'measured');}
- else assert.equal(r.ridgeOrientationStatus,'unknown');
+ else{const na=r.type==='flat'||/cylindrique/.test(e.notes);assert.equal(r.ridgeOrientationStatus,na?'not_applicable':'unknown','faîtage inconnu / sans objet confondus : '+id);assert.equal(r.ridgeOrientationConfidence,r.ridgeOrientationStatus);}
+ if(e.levelsStatus==='derived')assert(/hauteur à l’égout \d/.test(e.trace.levels)||e.trace.levels==null,'niveaux « dérivés » sans hauteur mesurée ou officielle : '+id);
+ if(e.levelsStatus==='estimated')assert(/typologie/.test(e.trace.levels),'niveaux estimés non tracés : '+id);
  if(r.uphillAzimuthDeg!=null)assert(r.type==='shed'&&r.uphillAzimuthDeg>=0&&r.uphillAzimuthDeg<360);
  if(r.slopeDeg!=null)assert(r.slopeDeg>=0&&r.slopeDeg<=75,'pente impossible : '+id);if(r.type==='flat')assert.equal(r.slopeDeg,0);
- assert(Array.isArray(e.sources)&&e.sources.length>=1);assert.equal(e.architectureVersion,'2.3');
+ assert(Array.isArray(e.sources)&&e.sources.length>=1);assert.equal(e.architectureVersion,'2.3.1');
  if(r.type!=='unknown')assert(e.trace.roofType,'type de toit sans source : '+id);if(r.colorFamily!=='unknown')assert(e.trace.color);if(r.material!=='unknown')assert(e.trace.material);}
-ok('4. valeurs possibles (hauteurs > 0, niveaux entiers, faîtage 0–180°, pentes 0–75°), statuts et confiances valides, inconnu = null, estimations tracées et arrondies');
+ok('4. valeurs possibles (hauteurs > 0, niveaux entiers, faîtage 0–180°, pentes 0–75°), statuts et confiances valides, inconnu = null, faîtage « sans objet » distinct d’« inconnu », niveaux dérivés seulement d’une hauteur mesurée ou officielle, estimations tracées et arrondies');
 // 5. V2.2 manual objects, flat roofs of vis-A and vis-H1.
 const manual=A.buildings.filter(e=>e.layer==='manual_orthophoto_v2_2');assert.equal(manual.length,12);
 for(const k of ['vis-A','vis-H1']){const e=byId.get('manual-v2.2:'+k);assert.equal(e.roof.type,'flat',k+' doit être en toit plat');assert.equal(e.roof.slopeDeg,0);}

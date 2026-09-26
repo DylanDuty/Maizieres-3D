@@ -50,7 +50,7 @@
     "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
     "changer un type de toit connu (confiance A/B)"
    ],
-   "count": 368
+   "count": 369
   },
   {
    "id": "RES_PLAIN_PIED_HIP",
@@ -316,7 +316,7 @@
     "changer un type de toit connu (confiance A/B)",
     "réduire la maison à un seul pignon quand l’empreinte est en L/T/U"
    ],
-   "count": 306
+   "count": 305
   },
   {
    "id": "GARAGE",

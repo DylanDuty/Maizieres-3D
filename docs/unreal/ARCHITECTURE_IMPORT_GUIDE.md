@@ -1,4 +1,6 @@
-# Guide d'import Unreal — architecture V2.3
+# Guide d'import Unreal — architecture V2.3 / V2.3.1
+
+> Point d'entrée du gel : `unreal/freeze-v1/README.md` (Freeze V1).
 
 Ce guide explique comment Unreal peut **élever** les bâtiments à partir des profils V2.3, **sans jamais déplacer la géographie**.
 
@@ -41,6 +43,7 @@ Pour chaque bâtiment `b` de `building-architecture.json` :
      - `complex` : plusieurs volumes. Découper l'empreinte en rectangles (L, T, U) avec un faîtage par aile, le principal selon `roofOrientationDeg` ;
      - `industrial` : double pente faible ou shed industriel ;
      - `unknown` : toit neutre de l'archétype, en respectant l'orientation de `mainBearingDeg`.
+   - **Faîtage** : `roofOrientationStatus` vaut `measured`, `unknown` (faîtage non mesuré : suivre `mainBearingDeg`) ou `not_applicable` (toit plat ou cuve cylindrique : **aucun** faîtage à créer). Depuis V2.3.1, ce dernier statut n'est plus confondu avec `unknown`.
    - **Pente** : `roofSlopeDeg` quand le statut est `measured`. Sinon, prendre la plage de l'archétype.
    - **Hauteur du faîtage** : si `totalHeightM` est mesurée, `totalHeightM − wallHeightM` donne directement la hausse de toit.
 5. **Couleur et matériau.** Choisir le matériau dessin animé de `roofColorFamily` et `roofMaterialFamily`. Ce sont des familles, jamais une texture photographique.

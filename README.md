@@ -2,6 +2,14 @@
 
 Prototype local Three.js de la commune de l’Aube, code INSEE **10220**. Empreintes, voirie, voies ferrées et occupation du sol proviennent d’OpenStreetMap. Le contour communal provient de l’API Découpage administratif française.
 
+**Version 2.3.1 — Unreal Freeze V1** : consolidation et gel de la géographie V2.2 et de l'architecture V2.3, sans nouvel enrichissement.
+
+- **Point d'entrée Unreal** : `unreal/freeze-v1/README.md`.
+- **Référence du gel** : `docs/freeze/UNREAL_GEOGRAPHIC_ARCHITECTURAL_FREEZE_V1.0.md`.
+- **Manifeste SHA-256** : `docs/freeze/UNREAL_FREEZE_MANIFEST_V1.0.json`.
+- **Statistiques** : recalculées et cohérentes (chaque ventilation porte sur les 2 596 bâtiments), vérifiées par `npm run check:architecture-stats`.
+- **Rapport** : `docs/audit/V2.3.1_ARCHITECTURE_FREEZE_QA.md`. QA visuelle : `docs/qa/v2.3.1/`.
+
 **Version 2.3** : enrichissement architectural préparatoire à Unreal. La géographie V2.2 est strictement inchangée.
 
 - **Un profil par bâtiment** (2 596), dans `public/data/building-architecture-v2.3.json` :

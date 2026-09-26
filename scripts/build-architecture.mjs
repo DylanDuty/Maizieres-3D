@@ -98,7 +98,7 @@ function baseClass(it,m,lm,roof,top){const p=it.p,ign=p.ign||{},t=p.osm?.tags||{
  if(ign.nature==='Tribune')return {cls:'OTHER',conf:'A',why:'BD TOPO nature « Tribune »'};
  if(['roof','carport'].includes(t.building)||t.amenity==='fuel')return {cls:'OTHER',conf:'A',why:'OSM auvent / abri ouvert'};
  if(t.building==='retail'||t.shop||t.amenity==='fast_food')return {cls:'COMMERCIAL',conf:'A',why:'OSM commerce'};
- if(p.manualGeometry){const c={habitation:['RES',null],garage:['GARAGE','B'],abri:['SHED','B'],hangar:['HANGAR','B'],serre:['GREENHOUSE','B'],annexe:['ANNEX','B'],usage_non_etabli:['UNKNOWN','unknown']}[p.category]||['UNKNOWN','unknown'];return {cls:c[0],conf:c[1]||'B',why:`relevé V2.2 : ${p.categoryLabel||p.category}`};}
+ if(p.manualGeometry){const c={habitation:['RES',null],garage:['GARAGE','B'],abri:['SHED','B'],hangar:['HANGAR','B'],serre:['GREENHOUSE','B'],annexe:['ANNEX','B'],usage_non_etabli:['UNKNOWN','unknown']}[p.category]||['UNKNOWN','unknown'];return {cls:c[0],conf:c[1]||'B',why:`relevé V2.2 sur orthophoto, observation visuelle (aucune source d’usage officielle) : ${p.categoryLabel||p.category}`};}
  switch(ign.usage1){
   case 'Résidentiel':return {cls:'RES',conf:'A',why:'BD TOPO usage résidentiel'};
   case 'Annexe':if(light&&area<60)return {cls:'SHED',conf:'B',why:'BD TOPO annexe, construction légère'};
@@ -121,6 +121,11 @@ function baseClass(it,m,lm,roof,top){const p=it.p,ign=p.ign||{},t=p.osm?.tags||{
 // ---------- per building ----------
 const TYPO_WALL={RES:3.0,GARAGE:2.5,ANNEX:2.5,SHED:2.0,GREENHOUSE:2.5,FARM:4.5,HANGAR:5.0,INDUSTRIAL:6.0,COMMERCIAL:5.0,PUBLIC:5.0,OTHER:3.0,UNKNOWN:3.0,SILO_TANK:8.0,RELIGIOUS:8.0,HERITAGE:5.5,WATER_TOWER:20.0};
 const manualFlat=new Map(decisions.cases.concat(decisions.newFindings).filter(c=>c.decision==='ajout_manuel').map(c=>[`manual-v2.2:${c.id}`,/toit[- ]terrasse|toit plat/i.test(c.observation)]));
+// V2.3.1: where the V2.2 manual survey (20 cm orthophoto, a source already attached to these objects) explicitly
+// contradicts the automatic 0,5 m reading, the survey wins. Only demonstrated contradictions are listed here.
+const MANUAL_OBSERVED={
+ 'manual-v2.2:vis-U2':{roof:'gable',color:'brown',why:'relevé V2.2 : « toiture brune à deux pans » ; la lecture automatique à 0,5 m (gris clair 58 %, brun 38 %, toit complexe C) mêle la terrasse claire voisine, exclue du relevé'},
+ 'manual-v2.2:v2.2-new-01':{color:'mixed',why:'relevé V2.2 : « deux abris accolés, toitures rouge et grise » ; la lecture automatique (gris foncé 46 %, brun 32 %, rouge 19 %) ne retenait que le gris'}};
 const out=[],exceptions=[];
 for(const [i,it] of items.entries()){
  const m=M.get(it.id);if(!m)throw Error('mesure absente : '+it.id);
@@ -133,6 +138,7 @@ for(const [i,it] of items.entries()){
  if(roof&&roof.type!=='unknown'){roofType=roof.type;roofConf=roof.confidence;roofStatus='measured';roofSource=S.lidar;sources.add(S.lidar);}
  else if(p.manualGeometry&&manualFlat.get(it.id)){roofType='flat';roofConf='B';roofStatus='orthophoto';roofSource=S.manual;sources.add(S.manual);notes.push('toit plat observé sur l’orthophoto (relevé V2.2)');}
  else {roofType='unknown';roofConf='unknown';roofStatus='unknown';roofSource=null;if(roof?.why)notes.push(roof.why);}
+ const obs=MANUAL_OBSERVED[it.id];if(obs){sources.add(S.manual);notes.push(obs.why);if(obs.roof){roofType=obs.roof;roofConf='B';roofStatus='orthophoto';roofSource=S.manual;}}
  if(t['roof:shape']){notes.push(`OSM roof:shape=${t['roof:shape']}`);}
  const top=measured?L.topM:null;
  // Class
@@ -155,28 +161,35 @@ for(const [i,it] of items.entries()){
  if(declared){levels=declared;levelsStatus='official';levelsSrc=ign.floors?S.bdtopo+' (nombre d’étages déclaré, combles aménagés inclus)':S.osm;levelsConf='A';}
  const eave=wall;let storeys=null,storeysStatus='unknown';
  const singleVolume=['FARM','HANGAR','INDUSTRIAL','COMMERCIAL','SILO_TANK','WATER_TOWER','RELIGIOUS','GREENHOUSE','OTHER'].includes(clsKey);
- if(['GARAGE','ANNEX','SHED','GREENHOUSE'].includes(clsKey)){storeys=1;storeysStatus='derived';}
+ // V2.3.1: « derived » only from an official or measured eave height. Without one, an annex / outbuilding is a
+ // single level by typology (« estimated »), and nothing is assumed where no roof is visible (masked zone) or where
+ // the LiDAR found nothing standing.
+ const annexLike=['GARAGE','ANNEX','SHED','GREENHOUSE'].includes(clsKey),noElevation=L.status==='non détecté'&&L.reason==='aucune élévation mesurée';
+ if(annexLike&&eave!=null){storeys=1;storeysStatus='derived';}
+ else if(annexLike&&!masked&&!noElevation){storeys=1;storeysStatus='estimated';}
  else if(!singleVolume&&eave!=null){storeys=eave<=4.2?1:eave<=7.2?2:eave<=10?3:Math.round(eave/3);storeysStatus='derived';}
- if(levels==null&&storeys!=null&&!singleVolume){levels=storeys;levelsStatus='derived';levelsSrc=`hauteur à l’égout ${eave} m (${wallStatus==='official'?'BD TOPO':'LiDAR'})`+(['GARAGE','ANNEX','SHED'].includes(clsKey)?' ; annexe':'');levelsConf='B';}
+ if(levels==null&&storeys!=null&&!singleVolume){levels=storeys;levelsStatus=storeysStatus;levelsSrc=storeysStatus==='derived'?`hauteur à l’égout ${eave} m (${wallStatus==='official'?'BD TOPO':'LiDAR'})`+(annexLike?' ; annexe':''):'annexe / dépendance : un niveau (typologie, aucune hauteur mesurée)';levelsConf=storeysStatus==='derived'?'B':'C';}
  // Water towers: the « wall » of a tower is meaningless (shaft + tank) — only the official total height is kept.
  if(cls==='WATER_TOWER'){wall=null;wallStatus='unknown';wallSrc=null;wallConf='unknown';}
  // Estimated heights only when nothing better exists, as round typological values — never against a LiDAR
  // measurement that found nothing standing (the object may be a ground-level surface).
- const noElevation=L.status==='non détecté'&&L.reason==='aucune élévation mesurée';
  if(noElevation)notes.push('aucune hauteur estimée : le LiDAR 2025 ne mesure rien de dressé dans l’empreinte');
  if(wall==null&&!masked&&!noElevation&&cls!=='WATER_TOWER'){wall=TYPO_WALL[clsKey]??3.0;if(clsKey==='RES'&&levels>=2)wall=5.5;wallStatus='estimated';wallSrc=S.typo;wallConf='C';}
  if(total==null&&wall!=null&&!masked&&!noElevation&&wallStatus==='estimated'){total=roofType==='flat'?wall:r1(wall+({RES:3,GARAGE:1,ANNEX:1,SHED:1}[clsKey]??2));totalStatus='estimated';totalSrc=S.typo;}
  if(cls==='RES'){const st=storeys??(levels>=2?2:1);cls=resClass(st,roofType);if(roofType==='unknown'){notes.push('archétype résidentiel par défaut : toiture non mesurée');if(clsConf==='A')clsConf='B';}if(storeys==null){if(clsConf!=='C')clsConf='C';notes.push('niveaux visibles non établis (plain-pied par défaut)');}}
  if(clsConf==='C'&&cls==='UNKNOWN')clsConf='unknown';
  // Cylindrical silos and tanks: a cone or dome, never a ridge. Keep « flat » when measured flat.
- if(['SILO_TANK','WATER_TOWER'].includes(cls)&&m.shape.compactness>=.8&&roofType!=='flat'&&roofType!=='unknown'){roofType='complex';if(roof){roof.ridge=null;}notes.push('couverture de cuve / silo cylindrique (cône ou dôme) : pas de faîtage');}
+ const cylinder=['SILO_TANK','WATER_TOWER'].includes(cls)&&m.shape.compactness>=.8&&roofType!=='flat'&&roofType!=='unknown';
+ if(cylinder){roofType='complex';if(roof){roof.ridge=null;}notes.push('couverture de cuve / silo cylindrique (cône ou dôme) : pas de faîtage');}
  if(total!=null&&wall!=null&&total<wall)total=wall;
  // Colour & material
- const colour=masked?{family:'unknown',confidence:'unknown'}:colourOf(m);if(colour.family!=='unknown')sources.add(S.ortho);
- const mat=masked?{material:'unknown',confidence:'unknown',status:'unknown',source:null,note:''}:materialOf(p,roof&&roof.type!=='unknown'?roof:{type:roofType},colour,cls,roofSource);if(mat.source)sources.add(mat.source);
+ const colour=masked?{family:'unknown',confidence:'unknown'}:obs?.color?{family:obs.color,confidence:'B',status:'orthophoto',manual:true}:colourOf(m);if(colour.family!=='unknown'&&!colour.manual)sources.add(S.ortho);
+ const mat=masked?{material:'unknown',confidence:'unknown',status:'unknown',source:null,note:''}:materialOf(p,roof&&roof.type!=='unknown'?roof:{type:roofType},colour,cls,roofSource);if(colour.manual&&mat.source===S.ortho)mat.source=S.manual;if(mat.source)sources.add(mat.source);
  // Ridge
  let ridge=null,ridgeStatus='unknown',ridgeConf='unknown';
  if(roof&&roof.ridge!=null&&['gable','hip','shed','complex','industrial'].includes(roofType)){ridge=roof.ridge;ridgeStatus='measured';ridgeConf=roof.ridgeConf;}
+ // V2.3.1: a flat roof or a cylinder cap has no ridge at all — « not_applicable », never « unknown ».
+ if(roofType==='flat'||cylinder){ridgeStatus='not_applicable';ridgeConf='not_applicable';}
  let slope=null,slopeStatus='unknown';if(roof&&roof.slope!=null&&roofType!=='flat'){slope=roof.slope;slopeStatus='measured';}
  if(roofType==='flat'){slope=0;slopeStatus=roofStatus==='measured'?'measured':'derived';}
  // Shape and attachments
@@ -194,7 +207,7 @@ for(const [i,it] of items.entries()){
   roofConf!=='unknown'||heightGood?'C':clsConf!=='unknown'&&wallStatus==='estimated'?'C':'unknown';
  if(masked)overall='unknown';
  const pr=prov.get(it.id);
- const entry={buildingId:it.id,architectureVersion:'2.3',layer:it.layer,
+ const entry={buildingId:it.id,architectureVersion:'2.3.1',layer:it.layer,
   buildingClass:cls,buildingClassConfidence:clsConf,
   levels,levelsStatus,visibleStoreys:storeys,visibleStoreysStatus:storeysStatus,
   wallHeightM:wall,wallHeightStatus:wallStatus,totalHeightM:total,totalHeightStatus:totalStatus,
@@ -202,7 +215,7 @@ for(const [i,it] of items.entries()){
    material:mat.material,materialConfidence:mat.confidence,materialStatus:mat.status,colorFamily:colour.family,colorConfidence:colour.confidence,colorStatus:colour.family==='unknown'?'unknown':'orthophoto'},
   shape:{footprintFamily:m.shape.family,areaM2:m.shape.areaM2,lengthM:m.shape.lengthM,widthM:m.shape.widthM,ratio:m.shape.ratio,mainBearingDeg:m.shape.bearingDeg,rectangularity:m.shape.rectangularity,compactness:m.shape.compactness,attachedGarage,annex,touchingFootprints:touching[i].length},
   unreal:{archetype:cls,variationSeed:seedOf(it.id),allowProceduralVariation:!(lm&&['eglise','chateau_eau','monument'].includes(lm.type))},
-  trace:{class:why,levels:levelsSrc,wallHeight:wallSrc,totalHeight:totalSrc,roofType:roofSource,ridge:ridgeStatus==='measured'?S.lidar+' (axe des pentes dominantes)':null,slope:slopeStatus==='measured'?S.lidar+' (pente médiane des pans)':null,material:mat.source?`${mat.source}${mat.note?' — '+mat.note:''}`:null,color:colour.family!=='unknown'?S.ortho+(colour.shares?' — parts '+Object.entries(colour.shares).map(([k,v])=>`${k} ${Math.round(v*100)} %`).join(', '):''):null},
+  trace:{class:why,levels:levelsSrc,wallHeight:wallSrc,totalHeight:totalSrc,roofType:roofSource,ridge:ridgeStatus==='measured'?S.lidar+' (axe des pentes dominantes)':null,slope:slopeStatus==='measured'?S.lidar+' (pente médiane des pans)':null,material:mat.source?`${mat.source}${mat.note?' — '+mat.note:''}`:null,color:colour.manual?S.manual+' (teinte relevée sur l’orthophoto 20 cm)':colour.family!=='unknown'?S.ortho+(colour.shares?' — parts '+Object.entries(colour.shares).map(([k,v])=>`${k} ${Math.round(v*100)} %`).join(', '):''):null},
   lidar:{status:L.status,reason:L.reason||null,topM:measured?L.topM:null,roofPixels:L.roofPixels??null},
   sources:[...sources],confidenceOverall:overall,notes:notes.join(' ; '),
   footprint:{file:it.file,geometrySha256:it.geometrySha256},position:pr?{baseZ:pr.baseZ,unrealCm:pr.unrealCm}:null,landmark:lm?{poiId:lm.poiId,name:lm.name,type:lm.type}:null};
@@ -210,24 +223,32 @@ for(const [i,it] of items.entries()){
  if(L.status==='non détecté'&&L.reason==='aucune élévation mesurée')exceptions.push({id:it.id,layer:it.layer,areaM2:m.shape.areaM2,kind:'aucune élévation LiDAR 2025 dans l’empreinte',detail:`élévation > 1,2 m sur ${Math.round((L.elevatedFraction||0)*100)} % de l’empreinte ; végétation ${Math.round((L.vegetationFraction||0)*100)} %`,colour:colour.family,position:pr?.unrealCm||null});
 }
 // ---------- statistics ----------
+const HEIGHT_RANK=['official','measured','derived','estimated','unknown'];
+const bestHeight=e=>HEIGHT_RANK[Math.min(HEIGHT_RANK.indexOf(e.wallHeightStatus),HEIGHT_RANK.indexOf(e.totalHeightStatus))];
 const n=out.length,pct=v=>Math.round(v/n*1000)/10,count=f=>out.filter(f).length,dist=f=>Object.fromEntries(Object.entries(out.reduce((a,e)=>{const k=f(e);a[k]=(a[k]||0)+1;return a;},{})).sort((a,b)=>b[1]-a[1]));
 const stats={buildings:n,byClass:dist(e=>e.buildingClass),byRoofType:dist(e=>e.roof.type),byRoofConfidence:dist(e=>e.roof.confidence),
  roofTypeAB:count(e=>['A','B'].includes(e.roof.confidence)),roofTypeABPercent:pct(count(e=>['A','B'].includes(e.roof.confidence))),
  ridgeAB:count(e=>['A','B'].includes(e.roof.ridgeOrientationConfidence)),ridgeABPercent:pct(count(e=>['A','B'].includes(e.roof.ridgeOrientationConfidence))),
  wallHeight:dist(e=>e.wallHeightStatus),totalHeight:dist(e=>e.totalHeightStatus),levels:dist(e=>e.levelsStatus),
- heightOfficialOrMeasured:count(e=>['official','measured'].includes(e.wallHeightStatus)||e.totalHeightStatus==='measured'),
- heightOfficialOrMeasuredPercent:pct(count(e=>['official','measured'].includes(e.wallHeightStatus)||e.totalHeightStatus==='measured')),
- heightEstimated:count(e=>e.wallHeightStatus==='estimated'),heightEstimatedPercent:pct(count(e=>e.wallHeightStatus==='estimated')),
- heightUnknown:count(e=>e.wallHeightStatus==='unknown'&&e.totalHeightStatus==='unknown'),
+ // V2.3.1: one height status per building = the best of its wall and total heights (official > measured > derived >
+ // estimated > unknown). The five counts add up to the corpus; the two water towers are « official » (reservoir height).
+ heightBest:Object.fromEntries(HEIGHT_RANK.map(k=>[k,count(e=>bestHeight(e)===k)])),
+ heightOfficialOrMeasured:count(e=>['official','measured'].includes(bestHeight(e))),
+ heightOfficialOrMeasuredPercent:pct(count(e=>['official','measured'].includes(bestHeight(e)))),
+ heightEstimated:count(e=>bestHeight(e)==='estimated'),heightEstimatedPercent:pct(count(e=>bestHeight(e)==='estimated')),
+ heightUnknown:count(e=>bestHeight(e)==='unknown'),
+ ridge:{applicable:count(e=>e.roof.ridgeOrientationStatus!=='not_applicable'),...Object.fromEntries(['A','B','C','unknown','not_applicable'].map(k=>[k,count(e=>e.roof.ridgeOrientationConfidence===k)]))},
+ levelsSummary:{known:count(e=>['official','derived'].includes(e.levelsStatus)),official:count(e=>e.levelsStatus==='official'),derived:count(e=>e.levelsStatus==='derived'),estimated:count(e=>e.levelsStatus==='estimated'),unknown:count(e=>e.levelsStatus==='unknown')},
+ materialStatus:dist(e=>e.roof.materialStatus),
  classKnown:count(e=>e.buildingClass!=='UNKNOWN'),classKnownPercent:pct(count(e=>e.buildingClass!=='UNKNOWN')),byClassConfidence:dist(e=>e.buildingClassConfidence),
  materialKnown:count(e=>e.roof.material!=='unknown'),materialKnownPercent:pct(count(e=>e.roof.material!=='unknown')),byMaterial:dist(e=>e.roof.material),
  colorKnown:count(e=>!['unknown'].includes(e.roof.colorFamily)),colorKnownPercent:pct(count(e=>e.roof.colorFamily!=='unknown')),byColor:dist(e=>e.roof.colorFamily),
- totallyUnknown:count(e=>e.buildingClass==='UNKNOWN'&&e.roof.type==='unknown'&&!['official','measured'].includes(e.wallHeightStatus)&&e.totalHeightStatus!=='measured'&&e.roof.colorFamily==='unknown'),
+ totallyUnknown:count(e=>e.buildingClass==='UNKNOWN'&&e.roof.type==='unknown'&&bestHeight(e)==='unknown'&&e.roof.colorFamily==='unknown'),
  overall:dist(e=>e.confidenceOverall),lidar:dist(e=>e.lidar.status),footprintFamily:dist(e=>e.shape.footprintFamily),
- importantUnknowns:{roofType:count(e=>e.roof.type==='unknown'),ridge:count(e=>e.roof.ridgeOrientationDeg==null&&e.roof.type!=='flat'),height:count(e=>!['official','measured'].includes(e.wallHeightStatus)&&e.totalHeightStatus!=='measured'),material:count(e=>e.roof.material==='unknown'),color:count(e=>e.roof.colorFamily==='unknown'),class:count(e=>e.buildingClass==='UNKNOWN')}};
+ importantUnknowns:{roofType:count(e=>e.roof.type==='unknown'),ridge:count(e=>e.roof.ridgeOrientationConfidence==='unknown'),height:count(e=>bestHeight(e)==='unknown'),wallHeight:count(e=>e.wallHeightStatus==='unknown'),totalHeight:count(e=>e.totalHeightStatus==='unknown'),levels:count(e=>e.levelsStatus==='unknown'),material:count(e=>e.roof.material==='unknown'),color:count(e=>e.roof.colorFamily==='unknown'),class:count(e=>e.buildingClass==='UNKNOWN')}};
 stats.totallyUnknownPercent=pct(stats.totallyUnknown);
 const footprintSha=Object.fromEntries(Object.entries(FILES).map(([k,f])=>[f,sha(fs.readFileSync(f))]));
-const meta={version:'2.3',generatedBy:'scripts/build-architecture.mjs (npm run data:architecture)',measurements:MEAS,measurementsSha256:sha(fs.readFileSync(MEAS)),footprintFilesSha256:footprintSha,
+const meta={version:'2.3.1',generatedBy:'scripts/build-architecture.mjs (npm run data:architecture)',measurements:MEAS,measurementsSha256:sha(fs.readFileSync(MEAS)),footprintFilesSha256:footprintSha,
  conventions:{ridgeOrientationDeg:'axe du faîtage, degrés 0–180 dans le sens horaire depuis le nord du quadrillage Lambert-93 (non orienté)',mainBearingDeg:'axe du grand côté du rectangle minimal de l’empreinte, même convention',heights:'mètres au-dessus du sol (sol nu LiDAR / BD TOPO)',levels:'niveaux déclarés (BD TOPO : combles aménagés inclus) ; visibleStoreys = niveaux lisibles en façade, dérivés de la hauteur à l’égout',
   statuses:{official:'attribut IGN BD TOPO ou OSM',measured:'mesure LiDAR HD 2025',orthophoto:'observation sur l’orthophoto 2025',derived:'déduit d’autres valeurs mesurées/officielles',estimated:'valeur typologique ronde, jamais présentée comme mesure',unknown:'aucune base suffisante'},
   confidence:{A:'source officielle ou observation très claire',B:'déduction solide / plusieurs indices',C:'estimation typologique',unknown:'aucune base'}},
@@ -235,7 +256,7 @@ const meta={version:'2.3',generatedBy:'scripts/build-architecture.mjs (npm run d
 fs.writeFileSync(OUT,JSON.stringify({metadata:meta,buildings:out})+'\n');
 // ---------- Unreal ----------
 fs.mkdirSync(U,{recursive:true});
-fs.writeFileSync(`${U}/building-architecture.json`,JSON.stringify({metadata:{version:'2.3',generatedBy:meta.generatedBy,unrealOrigin:UNREAL_ORIGIN,units:'unrealCm = [X, Y, Z] (cm) de la table V2.2 ; hauteurs en mètres ; angles en degrés (convention ci-dessous)',conventions:meta.conventions,
+fs.writeFileSync(`${U}/building-architecture.json`,JSON.stringify({metadata:{version:'2.3.1',generatedBy:meta.generatedBy,unrealOrigin:UNREAL_ORIGIN,units:'unrealCm = [X, Y, Z] (cm) de la table V2.2 ; hauteurs en mètres ; angles en degrés (convention ci-dessous)',conventions:meta.conventions,
  rule:'Ne jamais modifier empreinte, position ni orientation : ces données ne décrivent que l’élévation. Les empreintes restent celles des GeoJSON gelés (SHA-256 par bâtiment).',footprintFilesSha256:footprintSha,count:out.length},
  buildings:out.map(e=>({id:e.buildingId,layer:e.layer,footprintSha256:e.footprint.geometrySha256,unrealCm:e.position?.unrealCm||null,baseZ:e.position?.baseZ??null,archetype:e.unreal.archetype,classConfidence:e.buildingClassConfidence,
   wallHeightM:e.wallHeightM,wallHeightStatus:e.wallHeightStatus,totalHeightM:e.totalHeightM,totalHeightStatus:e.totalHeightStatus,levels:e.levels,levelsStatus:e.levelsStatus,visibleStoreys:e.visibleStoreys,

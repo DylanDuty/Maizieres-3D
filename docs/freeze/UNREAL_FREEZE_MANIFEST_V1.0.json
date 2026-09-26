@@ -1,0 +1,524 @@
+{
+ "freezeVersion": "1.0",
+ "name": "Maizières-la-Grande-Paroisse — Unreal Freeze V1 (géographie V2.2 + architecture V2.3.1)",
+ "geographicBaseCommit": "309e65ed52cfc0947bb8cd66117b7ff84ceb028a",
+ "architecturalBaseCommit": "4c609ee17fdbc682883baafc87cbfaeade0cd22c",
+ "finalFreezeCommit": null,
+ "finalFreezeCommitNote": "commit qui contient tous les fichiers hachés ci-dessous (un fichier ne peut pas contenir le hash de son propre commit) ; les commits suivants de la branche ne touchent que docs/freeze/ et docs/audit/V2.3.1_ARCHITECTURE_FREEZE_QA.md",
+ "buildings": 2596,
+ "buildingsInCommune": 2362,
+ "officialBuildingsV162": 2494,
+ "reintegratedV201": 90,
+ "manualBuildingsV22": 12,
+ "architectureProfiles": 2596,
+ "architectureVersion": "2.3.1",
+ "geographicFilesFrozen": 42,
+ "unknownClassBuildings": [
+  "manual-v2.2:vis-A",
+  "manual-v2.2:vis-F",
+  "manual-v2.2:vis-H1",
+  "manual-v2.2:vis-H2"
+ ],
+ "maskedZoneBuildings": 75,
+ "landmarks": 16,
+ "uniqueModelLandmarks": [
+  "poi:eglise-saint-denis",
+  "poi:chateau-eau-granges",
+  "poi:chateau-eau-poussey",
+  "poi:monument-aux-morts"
+ ],
+ "unrealOrigin": {
+  "crs": "EPSG:2154",
+  "E": 758278,
+  "N": 6823571,
+  "H": 0,
+  "verticalDatum": "NGF-IGN69",
+  "sourceLonLat": [
+   3.7890245,
+   48.5097657
+  ],
+  "units": "cm",
+  "axes": "X est, Y sud, Z haut",
+  "realToUnreal": "X = (E − E0) × 100 ; Y = −(N − N0) × 100 ; Z = H × 100"
+ },
+ "stats": {
+  "byClass": {
+   "SHED": 497,
+   "ANNEX": 409,
+   "RES_PLAIN_PIED_GABLE": 369,
+   "RES_COMPLEX": 305,
+   "GARAGE": 238,
+   "RES_R1_GABLE": 202,
+   "INDUSTRIAL": 120,
+   "COMMERCIAL": 75,
+   "SILO_TANK": 72,
+   "HANGAR": 70,
+   "RES_R1_HIP": 46,
+   "RES_FLAT": 45,
+   "RES_PLAIN_PIED_HIP": 45,
+   "FARM": 33,
+   "RES_R2_PLUS": 24,
+   "PUBLIC": 16,
+   "OTHER": 15,
+   "GREENHOUSE": 5,
+   "UNKNOWN": 4,
+   "HERITAGE": 3,
+   "WATER_TOWER": 2,
+   "RELIGIOUS": 1
+  },
+  "roofConfidence": {
+   "A": 990,
+   "B": 809,
+   "unknown": 621,
+   "C": 176
+  },
+  "roofType": {
+   "gable": 850,
+   "unknown": 621,
+   "complex": 456,
+   "flat": 273,
+   "shed": 260,
+   "hip": 122,
+   "industrial": 14
+  },
+  "ridge": {
+   "applicable": 2302,
+   "A": 887,
+   "B": 272,
+   "C": 504,
+   "unknown": 639,
+   "not_applicable": 294
+  },
+  "heightBest": {
+   "official": 1831,
+   "measured": 546,
+   "derived": 0,
+   "estimated": 89,
+   "unknown": 130
+  },
+  "wallHeight": {
+   "official": 1829,
+   "measured": 525,
+   "unknown": 132,
+   "estimated": 110
+  },
+  "totalHeight": {
+   "measured": 2350,
+   "unknown": 138,
+   "estimated": 89,
+   "official": 19
+  },
+  "levels": {
+   "known": 2098,
+   "official": 994,
+   "derived": 1104,
+   "estimated": 85,
+   "unknown": 413
+  },
+  "material": {
+   "known": 1310,
+   "unknown": 1286,
+   "byStatus": {
+    "unknown": 1286,
+    "official": 744,
+    "estimated": 422,
+    "derived": 144
+   }
+  },
+  "color": {
+   "known": 2483,
+   "unknown": 113
+  },
+  "overall": {
+   "B": 1087,
+   "A": 708,
+   "C": 672,
+   "unknown": 129
+  }
+ },
+ "readyForUnreal": false,
+ "readyForUnrealNote": "en attente : contrôles, build et Chromium sur le commit de gel",
+ "files": [
+  {
+   "path": "public/data/bible-annotations.json",
+   "sha256": "e8ce783cc70e1905d9bf12dacbd87eba833a6a8b08f09cdc86be4626af66f765",
+   "role": "poi",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/building-enrichment.json",
+   "sha256": "fd5a3e88aba553dbb38aec1d7eb4cacb3edbf20f07bfaec0f33b80ccb4ddbfd0",
+   "role": "buildings-attributes",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/building-terrain-elevation.json",
+   "sha256": "9c856a77194d664b5dab71915a8bf85a7a758a237375b07d8681eaca0d99085b",
+   "role": "terrain",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/buildings-additions-elevation-v2.0.1.json",
+   "sha256": "042232eba8b798f1949ab665adbfca56a01b03b9b6edd279053a864530d952fb",
+   "role": "buildings-additions-v2.0.1",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/buildings-additions-v2.0.1.geojson",
+   "sha256": "0f5a75916f782bf8fc6dcabf25107fd13c796492b3305d6fa28f401de8845af4",
+   "role": "buildings-additions-v2.0.1",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/buildings-audit-v2.0.1.json",
+   "sha256": "166b3c36cde43eeca1f303cd14ffffa82eba1509d073b38c43bae78a0f8fea87",
+   "role": "buildings-attributes",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/buildings-audit-v2.2.json",
+   "sha256": "1ab1639325b39214d929e7eb71e9af2f643aa64e22fbb56f8e4071341b57fa20",
+   "role": "buildings-attributes",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/buildings-manual-elevation-v2.2.json",
+   "sha256": "1da72a0962af3a7f2da56fe20aaf7f216b477de9d59cc9a085066ef9a4b5868f",
+   "role": "buildings-manual-v2.2",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/buildings-manual-v2.2.geojson",
+   "sha256": "00bc98fb6b9119bee366d082cd6b9183a198f5ad850f3a6c96409f79346a56ea",
+   "role": "buildings-manual-v2.2",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/buildings.geojson",
+   "sha256": "809f3af371719e2d3adfaa6e55a9d56235e4618e28e8a36595c85d501a4f3095",
+   "role": "buildings-official",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/commune.geojson",
+   "sha256": "bd7d8cc25cb9ac694b2eb930ede0c6a027d0afc2329f22551c4def483a952c6f",
+   "role": "commune",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/hydro-audit-v2.1.json",
+   "sha256": "fe83d1ff83eee827f92c8b775d2e98913bb16d3d4be01078f64c30559bb5e885",
+   "role": "landcover-hydro",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/ign-landscape.geojson",
+   "sha256": "74611b9c76928079d788a71f5150791ebf2730f8765491c78ed86d434c01435c",
+   "role": "landcover-hydro",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/landcover-diagnostic.json",
+   "sha256": "268b2534170cb237b76ecbb6558fc728736e3d12baaa12aeaae012051193ff10",
+   "role": "landcover-hydro",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/landcover.geojson",
+   "sha256": "67076773d34ca3255a1d542a2890a3d4353700fbaca931b878ea1360b277fac4",
+   "role": "landcover-hydro",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/maizieres.geojson",
+   "sha256": "ddc94faec8033d224ba06ada9d0f5c0802af21327ca4a0a106414355477ea991",
+   "role": "commune",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/named-zones.geojson",
+   "sha256": "f5e74a35c654da04a7025132e611a45ef99633a54e6060a961b1b3195955fb72",
+   "role": "poi",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/poi.json",
+   "sha256": "02522aa7e0574810057526a2bae2e08f25ad74a2d0704821bec6637357283611",
+   "role": "poi",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/rail-diagnostic.json",
+   "sha256": "8cf29f353baa95736424232617a91a178edbf04a7d7e44192d8fd38847124a84",
+   "role": "rail",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/rail-land.geojson",
+   "sha256": "9e167248c204015fa941065ef6e098bfeafb8df0ca68420d6aea1bf6027bdce5",
+   "role": "rail",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/rail.geojson",
+   "sha256": "ebc2298e50aabc2b1f692a05db7a48f2010b05b737c95cf3e01acef3a47b5103",
+   "role": "rail",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/roads.geojson",
+   "sha256": "e14c17b94cbe7a126516351add558b5860773c3e2803c04012a0221fe740194e",
+   "role": "roads",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/terrain-threejs.bin",
+   "sha256": "5915976d80d0379704d6f5eaf0d9ac8c433546950d6bf4aa2e0aba29ed1685e2",
+   "role": "terrain",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/terrain-threejs.json",
+   "sha256": "e9312051dff4c4d1c6d7d7239f5e2cbbcb05e40d978082ebe6540ba65cea3cdb",
+   "role": "terrain",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/v2-scene.json",
+   "sha256": "d5517d9c10cdba127997285aea05a353bab66b491075eb3d3a4ef00eeff7b0f9",
+   "role": "scene-threejs",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/v2-terrain.bin",
+   "sha256": "107e2f50da798da8658d50a4410fe68cd8af0095b07dd2b7777066a3be03088f",
+   "role": "terrain",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/v2-terrain.json",
+   "sha256": "57ae15f1bb4b931c2c4353dcf69618bb4cf8e71878066290f8761d118cd7b46d",
+   "role": "terrain",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/buildings/buildings-provenance-v2.2.json",
+   "sha256": "050c740ca093b2982dd4451321c905156bbb781ad9dae9bbe09858115236a56b",
+   "role": "buildings-attributes",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/landcover/agricultural-polygons.json",
+   "sha256": "998e2f877c237ec543f55b8ca61c4605087cf3a21a75702952bce29418324a9b",
+   "role": "landcover-hydro",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/landcover/artificial-surfaces.json",
+   "sha256": "539e61368f5cb8cc55c23b55a80718a68de919d7cee606961ff2bb53df79689d",
+   "role": "landcover-hydro",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/landcover/hedge-splines.json",
+   "sha256": "9950a1745a1323d711f64c1ade9596c955915c66e4e876146106af9749747a1d",
+   "role": "landcover-hydro",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/landcover/water-lines.json",
+   "sha256": "5f0931467a8719120fd993efb2a787e556f62ebc75f78f5400e8ce73b19534c7",
+   "role": "landcover-hydro",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/landcover/water-polygons.json",
+   "sha256": "573982fb5c1aea012ee1c2294af83712b3b2d65fa3cf2849a4bd5a767df16001",
+   "role": "landcover-hydro",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/landcover/woodland-polygons.json",
+   "sha256": "0bddb0e46e70566b35dc9a46fa6ae982fe0dd2570fd41f87a18075d81e6694f3",
+   "role": "landcover-hydro",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/poi/areas.json",
+   "sha256": "64c4fa95ed4c24e897b53f923842274acfba972443608a2debf1c3324d368a91",
+   "role": "poi",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/poi/landmarks.json",
+   "sha256": "35bdac01189706d4aa0a9484e19644201fda44ccbf83621685cf4d00d1584f8c",
+   "role": "poi",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/poi/poi.json",
+   "sha256": "a597c022657851698978707bfad95161da5ca2d060ce23207c68f1c53898036f",
+   "role": "poi",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/rail/rail-splines.json",
+   "sha256": "7a082376a4e871749ee7959f10e7daf5bd0d3aef5ffda90706dd0837c01eb73e",
+   "role": "rail",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/roads/road-splines.json",
+   "sha256": "0e461f899067eb4912964035bbd564070ab66fe415122ae5d2324dfe6414aadc",
+   "role": "roads",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/terrain/maizieres-heightmap-6097x6859.png",
+   "sha256": "40f34df84a5aea41fe5ce8096037c789768e76daa488045f06c496a1bedbe4cb",
+   "role": "terrain",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/terrain/maizieres-mnt-lidarhd-1m-lamb93-ign69.tif",
+   "sha256": "3e08e2a6e98b1764730f364f3d80fe8cb1df49b4eb967920ac995e213bf1eaef",
+   "role": "terrain",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "unreal/terrain/terrain-reference.json",
+   "sha256": "152a80c3fdada82355e147f2cc37e198cf6a2b958c64f189bd1293db1e2a4b54",
+   "role": "terrain",
+   "frozenSince": "V2.2",
+   "frozenGeography": true
+  },
+  {
+   "path": "public/data/building-architecture-v2.3.json",
+   "sha256": "6eeb7489927ba292c8d2f940b20bca751f13fe622d4bc91b4b5f2bde03e66bc4",
+   "role": "architecture-profiles",
+   "note": "profil complet par bâtiment (V2.3.1), traçabilité et sources",
+   "frozenSince": "V2.3.1",
+   "frozenGeography": false
+  },
+  {
+   "path": "unreal/architecture/building-architecture.json",
+   "sha256": "a5a6abd0f3d7118ae669128cfd071226d53a13991cb7e8a59d8356a9c8a25a02",
+   "role": "architecture-unreal",
+   "note": "profil compact par bâtiment pour Unreal",
+   "frozenSince": "V2.3.1",
+   "frozenGeography": false
+  },
+  {
+   "path": "unreal/architecture/building-archetypes.json",
+   "sha256": "279b8172f284d95011c1e6640a6e1c6f6696265f53e2eed58672d353c2a39753",
+   "role": "archetypes",
+   "note": "règles par archétype",
+   "frozenSince": "V2.3.1",
+   "frozenGeography": false
+  },
+  {
+   "path": "unreal/architecture/landmark-architecture.json",
+   "sha256": "4a0f81331c8355d14482f72c0b70ed9340b4e44f7fb3facae50ac995233e2ffc",
+   "role": "landmarks",
+   "note": "bâtiments remarquables",
+   "frozenSince": "V2.3.1",
+   "frozenGeography": false
+  },
+  {
+   "path": "unreal/freeze-v1/architecture-exceptions.json",
+   "sha256": "7e2edaad91f43bace6e14402b4b4f3d8f15373b6fc8cb795cbebf6ce865a8698",
+   "role": "exceptions",
+   "note": "4 UNKNOWN, 75 masqués, 12 relevés V2.2",
+   "frozenSince": "V2.3.1",
+   "frozenGeography": false
+  },
+  {
+   "path": "unreal/freeze-v1/README.md",
+   "sha256": "09acb1ade0a8d81e5803c82dd200830e79f9d12bef6a646a42a7098efc5e908a",
+   "role": "import-guide",
+   "note": "package d’import : ordre, repère, conventions",
+   "frozenSince": "V2.3.1",
+   "frozenGeography": false
+  },
+  {
+   "path": "docs/unreal/ARCHITECTURE_IMPORT_GUIDE.md",
+   "sha256": "d93b9365ab4539fafbedd8af693f4488df9aa8f493f24d39224de65fa87cdf1f",
+   "role": "import-guide",
+   "note": "algorithme de construction des bâtiments",
+   "frozenSince": "V2.3.1",
+   "frozenGeography": false
+  },
+  {
+   "path": "data-sources/architecture/roof-measurements-v2.3.json",
+   "sha256": "72f688538bc63059346597adfa0fd72d35865a380a5b962bfa32723c715b8f04",
+   "role": "architecture-measurements",
+   "note": "mesures LiDAR HD / BD ORTHO par bâtiment",
+   "frozenSince": "V2.3.1",
+   "frozenGeography": false
+  },
+  {
+   "path": "data-sources/architecture/frozen-geography-v2.2-sha256.json",
+   "sha256": "ab051c2e09bfb42fc350cf99bf3c35219a8eb0242739c19cfa47a77f44331d43",
+   "role": "geography-freeze-reference",
+   "note": "empreintes SHA-256 des 42 fichiers gelés, relevées au commit V2.2",
+   "frozenSince": "V2.3.1",
+   "frozenGeography": false
+  },
+  {
+   "path": "scripts/terrain-frame.mjs",
+   "sha256": "6fa6d48150fe914e0a57e2cf38b7dc7bd40de84e4943433b9ae0b111acab2f54",
+   "role": "origin",
+   "note": "origine Unreal et conversions Lambert-93 ↔ Unreal (code)",
+   "frozenSince": "V2.3.1",
+   "frozenGeography": false
+  }
+ ],
+ "notVersioned": [
+  {
+   "path": "unreal/terrain/maizieres-heightmap-6097x6859.r16",
+   "note": "heightmap RAW 16 bits dérivée du PNG (même grille) ; hors Git (.gitignore), régénérée par npm run data:terrain",
+   "sha256Local": "46708e3ce1bd8cf767a162d2b59db0674fde51043b1aa7e1a7ffc9d91e239ca5"
+  }
+ ]
+}
