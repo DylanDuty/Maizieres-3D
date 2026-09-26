@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {Batch,strip} from './geometry.js';
 import {insidePoly,area,bounds} from './geo.js';
 import {segmentDistance,featureAtFace} from './cartography.js';
+import {architectureFacts} from './architecture.js';
 
 // Visible labels for the building families used by the renderer. They describe a type, never a name.
 export const KIND_LABELS={house:'Maison',light:'Construction légère',hangar:'Hangar / grand abri',annex:'Dépendance',garage:'Garage',agricultural:'Bâtiment agricole',farm:'Ferme',industrial:'Bâtiment industriel',commercial:'Commerce / activité',large:'Grand bâtiment',public:'Équipement public',canopy:'Abri ouvert',silo:'Silo',greenhouse:'Serre',church:'Église'};
@@ -27,7 +28,8 @@ export function describe(r){
   if(i.floors)facts.push(`${i.floors} niveau${i.floors>1?'x':''} (IGN BD TOPO)`);
   if(i.validation)facts.push(`Confiance ${i.validation.confidence} : ${i.validation.status}`);
   if(i.rnb)facts.push(`Identifiant RNB : ${i.rnb}`);
-  facts.push(`Hauteur des murs : ${metres(i.wallHeight)} (${i.heightSource==='IGN BD TOPO'?'IGN BD TOPO':i.heightSource==='OSM'?'OpenStreetMap':'estimée'})`);
+  if(i.architecture)facts.push(...architectureFacts(i.architecture));
+  else facts.push(`Hauteur des murs : ${metres(i.wallHeight)} (${i.heightSource==='IGN BD TOPO'?'IGN BD TOPO':i.heightSource==='OSM'?'OpenStreetMap':'estimée'})`);
  }
  for(const f of r.facts||[])facts.push(f);
  if(r.bible&&!r.source.startsWith('Bible'))sources.push('Bibles documentaires');
@@ -55,7 +57,9 @@ export function installSelection({scene,camera,canvas,catalogue,meshes,buildingI
   if(!out.length)return;const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(out,3));const m=new THREE.Mesh(g,shellMaterial);m.renderOrder=10;m.userData.noDrape=true;group.add(m);outline(group,info.poly,.45,1.4);
  }
  function render(r){
-  const d=describe(r);kind.textContent=d.eyebrow;title.textContent=d.title;note.textContent=d.source;note.hidden=!technical;
+  const d=describe(r);
+  // V2.3: named buildings (landmarks, POI) also show their architectural profile in the preview modes.
+  if(r.type==='building'&&!r.generic){const e=buildingInfo.get(r.id)?.architecture;if(e)d.facts.push(...architectureFacts(e));}kind.textContent=d.eyebrow;title.textContent=d.title;note.textContent=d.source;note.hidden=!technical;
   facts.replaceChildren(...d.facts.map(t=>Object.assign(document.createElement('li'),{textContent:t})));facts.hidden=!d.facts.length;
   quotes.replaceChildren(...d.quotes.slice(0,3).map(q=>{const el=document.createElement('blockquote');el.textContent=`« ${q.text} »`;el.append(Object.assign(document.createElement('cite'),{textContent:q.cite}));return el;}));quotes.hidden=!d.quotes.length;
  }

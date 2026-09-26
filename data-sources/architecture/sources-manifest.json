@@ -1,0 +1,680 @@
+{
+ "version": "2.3",
+ "generatedBy": "scripts/fetch-architecture-sources.mjs (npm run data:architecture-fetch)",
+ "lidar": {
+  "product": "IGN LiDAR HD — MNH (modèle numérique de hauteur : surface − sol nu), 0,5 m",
+  "service": "Géoplateforme IGN, WMS-R IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93 (GeoTIFF float32)",
+  "license": "Licence Ouverte Etalab 2.0 — © IGN"
+ },
+ "orthophoto": {
+  "product": "IGN BD ORTHO (mosaïque la plus récente, prise de vue avril 2025 sur la commune)",
+  "service": "Géoplateforme IGN, WMS-R ORTHOIMAGERY.ORTHOPHOTOS, JPEG, même grille 0,5 m que le LiDAR",
+  "license": "Licence Ouverte Etalab 2.0 — © IGN",
+  "use": "classification de la famille de couleur des toitures uniquement ; aucune image ne devient un asset"
+ },
+ "crs": "EPSG:2154",
+ "pixel": 0.5,
+ "note": "Dalles brutes hors Git (data-sources/architecture/lidar-hd-mnh, data-sources/architecture/bdortho-0m50) ; toute différence de SHA-256 arrête le pipeline.",
+ "tiles": [
+  {
+   "key": "0755-6823",
+   "x": 755,
+   "y": 6823,
+   "bboxL93": [
+    754999.75,
+    6822000.25,
+    755999.75,
+    6823000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0755_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6823_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6822000.25,755999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "d726369cbe24821f474d69e6ad6ca8ee44fcefcaf84500e3b9e0721a0380809f",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0755_6823_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6822000.25,755999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 630518
+   },
+   "orthoSha256": "a0a122db305f84593f4730ba0ecc58ebde2a9d3112c096d06a3be73ed200ddd3",
+   "lidarMission": "24LHDMF",
+   "lidarAcquisition": [
+    "2025-02-14",
+    "2025-02-19"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:56:57.536Z"
+  },
+  {
+   "key": "0755-6824",
+   "x": 755,
+   "y": 6824,
+   "bboxL93": [
+    754999.75,
+    6823000.25,
+    755999.75,
+    6824000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0755_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0755_6824_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6823000.25,755999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0755_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "b2b74fb3bcef8ae6472d4483a0349e0407b3bdf1bca5b655c135caf55c0558ca",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0755_6824_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=754999.75,6823000.25,755999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 699918
+   },
+   "orthoSha256": "f4fa88de1a57c90cda4aa37be9d39a9b21e5952146ce3bdcd5526ad0fba87f63",
+   "lidarMission": "24LHDMF",
+   "lidarAcquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:57:04.924Z"
+  },
+  {
+   "key": "0756-6822",
+   "x": 756,
+   "y": 6822,
+   "bboxL93": [
+    755999.75,
+    6821000.25,
+    756999.75,
+    6822000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0756_6822_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6822_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6821000.25,756999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6822_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "7c9e5bc6888d293393a4fd6ef8f65fb2ef40833356468bb21cefde4de1871721",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0756_6822_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6821000.25,756999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 459419
+   },
+   "orthoSha256": "efb245e3b4fa7ee57f04633444503d42edd0acf9e6d513451a7ac54dcf5731ea",
+   "lidarMission": "24LHDMF",
+   "lidarAcquisition": [
+    "2025-02-14",
+    "2025-02-19"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:57:14.810Z"
+  },
+  {
+   "key": "0756-6823",
+   "x": 756,
+   "y": 6823,
+   "bboxL93": [
+    755999.75,
+    6822000.25,
+    756999.75,
+    6823000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0756_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6823_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6822000.25,756999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "5c8bdb969a5407c24adaf5e42abfc48771f5b1a10438b58c55f876b4cf9ddd7f",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0756_6823_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6822000.25,756999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 575165
+   },
+   "orthoSha256": "ea2f448dd1f04a0f186457ce2f279d9873f9e77188a0aad06a3e1547a53ad007",
+   "lidarMission": "24LHDMF",
+   "lidarAcquisition": [
+    "2025-02-14",
+    "2025-02-19"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:57:26.822Z"
+  },
+  {
+   "key": "0756-6824",
+   "x": 756,
+   "y": 6824,
+   "bboxL93": [
+    755999.75,
+    6823000.25,
+    756999.75,
+    6824000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0756_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6824_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6823000.25,756999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "2989bf8563fa5cd315bc3a70a87c9b4d0ef30a3dd25c219c5cd51956619314d4",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0756_6824_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6823000.25,756999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 604098
+   },
+   "orthoSha256": "d142ca31cea15f537ac968e1db069386abcaad4f539721ad642b12d505dda4b0",
+   "lidarMission": "24LHDMF",
+   "lidarAcquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:57:38.985Z"
+  },
+  {
+   "key": "0756-6826",
+   "x": 756,
+   "y": 6826,
+   "bboxL93": [
+    755999.75,
+    6825000.25,
+    756999.75,
+    6826000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0756_6826_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0756_6826_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6825000.25,756999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0756_6826_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "6085614075cfdb04b238ae33ad750061f2344d1b942f6c465ae78b08df3ffab1",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0756_6826_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=755999.75,6825000.25,756999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 529478
+   },
+   "orthoSha256": "264164e1b00ea7108cb6c18bd7b4b952b99cfc908ca1347de30fe33078c1f4f2",
+   "lidarMission": "24LHDMF",
+   "lidarAcquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:57:51.931Z"
+  },
+  {
+   "key": "0757-6823",
+   "x": 757,
+   "y": 6823,
+   "bboxL93": [
+    756999.75,
+    6822000.25,
+    757999.75,
+    6823000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0757_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6823_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6822000.25,757999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "b8ff94a5ad5878ce4bba6d538ca2b026d42bc55ece5b77ba687365f5e96ec3e7",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0757_6823_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6822000.25,757999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 618474
+   },
+   "orthoSha256": "51de6fb9c0b14fc55b2ea14ee83b1648780804d3a5fe15bffaf8f6e4a6977077",
+   "lidarMission": "24LHDMF",
+   "lidarAcquisition": [
+    "2025-02-14",
+    "2025-02-19"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:57:59.101Z"
+  },
+  {
+   "key": "0757-6824",
+   "x": 757,
+   "y": 6824,
+   "bboxL93": [
+    756999.75,
+    6823000.25,
+    757999.75,
+    6824000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0757_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0757_6824_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6823000.25,757999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0757_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "3fab0b98d427257688aeb758c0fad586a47f2c241e25ddf64a153f1f6515f9b2",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0757_6824_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=756999.75,6823000.25,757999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 600214
+   },
+   "orthoSha256": "ae3fabfd07e14830769b07731d5fac269afa95a7c97b3768b3a1ad9ada04605b",
+   "lidarMission": "24LHDMF",
+   "lidarAcquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:58:06.322Z"
+  },
+  {
+   "key": "0758-6823",
+   "x": 758,
+   "y": 6823,
+   "bboxL93": [
+    757999.75,
+    6822000.25,
+    758999.75,
+    6823000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0758_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6823_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6822000.25,758999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "6a0552210c4b70b6c5b830b49919e3aa0e3b7caeea883a25a3b72bbc498a0e28",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0758_6823_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6822000.25,758999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 420775
+   },
+   "orthoSha256": "5450720c6f354c6a8e22a0abf1fae261cbb0f6840478e6090a45e78e8f3ccafd",
+   "lidarMission": "25LHDZIRomilly",
+   "lidarAcquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:58:19.184Z"
+  },
+  {
+   "key": "0758-6824",
+   "x": 758,
+   "y": 6824,
+   "bboxL93": [
+    757999.75,
+    6823000.25,
+    758999.75,
+    6824000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0758_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6824_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6823000.25,758999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "55659a419ae6034fa465698dcc71788e4cab636db178d9cf15f52183c4e5faa8",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0758_6824_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6823000.25,758999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 666530
+   },
+   "orthoSha256": "192b03853ff586ce67b01dac1619d10035f09d854793ea1eaf08923c2f39cf57",
+   "lidarMission": "25LHDZIRomilly",
+   "lidarAcquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:58:25.341Z"
+  },
+  {
+   "key": "0758-6825",
+   "x": 758,
+   "y": 6825,
+   "bboxL93": [
+    757999.75,
+    6824000.25,
+    758999.75,
+    6825000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0758_6825_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0758_6825_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6824000.25,758999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0758_6825_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "0a04a7af736179a86c73c798cff0efda9922097a15cd498394c5a552bcf7df94",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0758_6825_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=757999.75,6824000.25,758999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 581920
+   },
+   "orthoSha256": "db95b723c7c8bfbeb64aff2a6e409c15d5b33575687e215b79c91a8fa7e06a74",
+   "lidarMission": "24LHDMF",
+   "lidarAcquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:58:33.868Z"
+  },
+  {
+   "key": "0759-6821",
+   "x": 759,
+   "y": 6821,
+   "bboxL93": [
+    758999.75,
+    6820000.25,
+    759999.75,
+    6821000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0759_6821_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6821_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6820000.25,759999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6821_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "a694c4cbb6ab6fab3cded4c0861f7efaf33ccbea3eeb097963751c4709892893",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0759_6821_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6820000.25,759999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 404065
+   },
+   "orthoSha256": "1b4fa244287440377da465247df83c032a8ba612c7b318a13d72639757bdef7f",
+   "lidarMission": "25LHDZIRomilly",
+   "lidarAcquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:58:42.843Z"
+  },
+  {
+   "key": "0759-6822",
+   "x": 759,
+   "y": 6822,
+   "bboxL93": [
+    758999.75,
+    6821000.25,
+    759999.75,
+    6822000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0759_6822_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6822_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6821000.25,759999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6822_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "0ae04e0ba124d971611922d97bec044b5d6d6b46fa1293ed400116b865437537",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0759_6822_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6821000.25,759999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 372877
+   },
+   "orthoSha256": "67a7832a9811df5f7c2a93147061cf1814d7e5d9c8422e2c399a01f5f59c933f",
+   "lidarMission": "25LHDZIRomilly",
+   "lidarAcquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:58:49.529Z"
+  },
+  {
+   "key": "0759-6823",
+   "x": 759,
+   "y": 6823,
+   "bboxL93": [
+    758999.75,
+    6822000.25,
+    759999.75,
+    6823000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0759_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6823_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6822000.25,759999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "1d2fb5b6b93b7d7ccc366bf6f9b4ca5801a68e93d9c9531292eb2003d0e34ae1",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0759_6823_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6822000.25,759999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 434672
+   },
+   "orthoSha256": "fff9d50310de6fc31e17367290d95a79ede14f246086c252236e8cc019485fa7",
+   "lidarMission": "25LHDZIRomilly",
+   "lidarAcquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:58:53.970Z"
+  },
+  {
+   "key": "0759-6824",
+   "x": 759,
+   "y": 6824,
+   "bboxL93": [
+    758999.75,
+    6823000.25,
+    759999.75,
+    6824000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0759_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6824_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6823000.25,759999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "8676d601ebb447b066d7b64d356ccb0a71b70d56f8b0fcd9e27b0f18f3744029",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0759_6824_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6823000.25,759999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 450488
+   },
+   "orthoSha256": "b2e2fca0283c4618e3fe08e18ff17027ca2de2e7f72e8af54ec6a0774605dcf7",
+   "lidarMission": "25LHDZIRomilly",
+   "lidarAcquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:59:06.693Z"
+  },
+  {
+   "key": "0759-6825",
+   "x": 759,
+   "y": 6825,
+   "bboxL93": [
+    758999.75,
+    6824000.25,
+    759999.75,
+    6825000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0759_6825_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0759_6825_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6824000.25,759999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0759_6825_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "a73e7e28a2444d1621084e5540223bb0fa4f93754926baaf4db76ae2d54e9b35",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0759_6825_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=758999.75,6824000.25,759999.75,6825000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 578194
+   },
+   "orthoSha256": "e1fd5bd7f4c1d07d7e5dc074ec2ce0e29cfdfb6b5116877b7baff9461b8aae26",
+   "lidarMission": "24LHDMF",
+   "lidarAcquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:59:13.878Z"
+  },
+  {
+   "key": "0760-6821",
+   "x": 760,
+   "y": 6821,
+   "bboxL93": [
+    759999.75,
+    6820000.25,
+    760999.75,
+    6821000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0760_6821_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6821_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6820000.25,760999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6821_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "c5cd360b1651713be1aa408fc3d0de704ea1f3055a0974d0c93eb68aa471e76d",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0760_6821_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6820000.25,760999.75,6821000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 353912
+   },
+   "orthoSha256": "7935162d1e08fc9bd642ed1958ef6b9bc0b0586c16c4bfeec1578752157fa942",
+   "lidarMission": "25LHDZIRomilly",
+   "lidarAcquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:59:21.763Z"
+  },
+  {
+   "key": "0760-6822",
+   "x": 760,
+   "y": 6822,
+   "bboxL93": [
+    759999.75,
+    6821000.25,
+    760999.75,
+    6822000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0760_6822_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6822_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6821000.25,760999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6822_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "58667a4533ebbc3513d35dad775c7828c3a72acb746b875d170af1af8ddcba03",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0760_6822_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6821000.25,760999.75,6822000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 339001
+   },
+   "orthoSha256": "df0cb9714704237af516019d96926886b41f11e846256640a3ef1e2830b45ec4",
+   "lidarMission": "25LHDZIRomilly",
+   "lidarAcquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:59:32.458Z"
+  },
+  {
+   "key": "0760-6823",
+   "x": 760,
+   "y": 6823,
+   "bboxL93": [
+    759999.75,
+    6822000.25,
+    760999.75,
+    6823000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0760_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6823_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6822000.25,760999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "8e333840ae352c77873eaec17c84e94ed87ac3bc6a7f5eb5888b00412193154a",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0760_6823_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6822000.25,760999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 381647
+   },
+   "orthoSha256": "0b269eda00dac5a9b1d800c6836fa56b350f5230290d1876b40dc0afaa9a4b5b",
+   "lidarMission": "25LHDZIRomilly",
+   "lidarAcquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:59:38.660Z"
+  },
+  {
+   "key": "0760-6824",
+   "x": 760,
+   "y": 6824,
+   "bboxL93": [
+    759999.75,
+    6823000.25,
+    760999.75,
+    6824000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0760_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6824_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6823000.25,760999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6824_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "349e60af31d32eb8368fe0d361b90ef3c8a2a00fd7aa135c75dc8aba33e5b64c",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0760_6824_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6823000.25,760999.75,6824000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 469184
+   },
+   "orthoSha256": "9d73bf4f9585be09903867893d329b8963971cc395db44a38b5c7260c8115f34",
+   "lidarMission": "25LHDZIRomilly",
+   "lidarAcquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:59:44.400Z"
+  },
+  {
+   "key": "0760-6826",
+   "x": 760,
+   "y": 6826,
+   "bboxL93": [
+    759999.75,
+    6825000.25,
+    760999.75,
+    6826000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0760_6826_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0760_6826_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6825000.25,760999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0760_6826_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "ac418d64c2310d43e9c59d36a03322234a358bd9a28db449dc2a5a51b80dd251",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0760_6826_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=759999.75,6825000.25,760999.75,6826000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 611009
+   },
+   "orthoSha256": "9068e930870d377a839c1b70cd4aa5bcbb88e08b8cbaf405eb82102f87dd14cf",
+   "lidarMission": "24LHDMF",
+   "lidarAcquisition": [
+    "2025-02-19",
+    "2025-02-19"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T16:59:51.260Z"
+  },
+  {
+   "key": "0761-6823",
+   "x": 761,
+   "y": 6823,
+   "bboxL93": [
+    760999.75,
+    6822000.25,
+    761999.75,
+    6823000.25
+   ],
+   "mnh": {
+    "file": "data-sources/architecture/lidar-hd-mnh/LHD_FXX_0761_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "url": "https://data.geopf.fr/wms-r/LHD_FXX_0761_6823_MNH_0M50_LAMB93_IGN69.tif?SERVICE=WMS&VERSION=1.3.0&EXCEPTIONS=text/xml&REQUEST=GetMap&LAYERS=IGNF_LIDAR-HD_MNH_ELEVATION.ELEVATIONGRIDCOVERAGE.LAMB93&FORMAT=image/geotiff&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6822000.25,761999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FILENAME=LHD_FXX_0761_6823_MNH_0M50_LAMB93_IGN69.tif",
+    "bytes": 16000513
+   },
+   "mnhSha256": "fa130719f659c99159acf2de05dd155ed7ce208f76529fd21f3cbe9fc0d94257",
+   "ortho": {
+    "file": "data-sources/architecture/bdortho-0m50/BDORTHO_0761_6823_0M50_LAMB93.jpg",
+    "url": "https://data.geopf.fr/wms-r?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS&STYLES=&CRS=EPSG:2154&BBOX=760999.75,6822000.25,761999.75,6823000.25&WIDTH=2000&HEIGHT=2000&FORMAT=image/jpeg",
+    "bytes": 375923
+   },
+   "orthoSha256": "06a8028647ba2f8fdfcc852c2b6b054b8bb2922711dc3c5704cfa76e8364942a",
+   "lidarMission": "25LHDZIRomilly",
+   "lidarAcquisition": [
+    "2025-10-18",
+    "2025-10-18"
+   ],
+   "lidarEdition": "2026-05-19",
+   "retrievedAt": "2026-09-26T17:00:00.702Z"
+  }
+ ]
+}

@@ -1,0 +1,888 @@
+{
+ "version": "2.3",
+ "note": "Constats seulement : aucune empreinte n’a été modifiée.",
+ "maskedZone": {
+  "note": "site dont l’orthophoto et le LiDAR IGN sont volontairement dégradés (mosaïque / interpolation) : aucune mesure possible",
+  "buildings": 75,
+  "boundsL93": [
+   759566.6,
+   6822511.2,
+   760683.4,
+   6822825.8
+  ],
+  "areaHa": 22.7
+ },
+ "noElevation": [
+  {
+   "id": "BATIMENT0000000300132125",
+   "layer": "official_v1_6_2",
+   "areaM2": 59.4,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    -176404,
+    52064,
+    7577
+   ]
+  },
+  {
+   "id": "BATIMENT0000000300132137",
+   "layer": "official_v1_6_2",
+   "areaM2": 16.9,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    -160534,
+    47690,
+    7627
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301149817",
+   "layer": "official_v1_6_2",
+   "areaM2": 19.6,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 24 % de l’empreinte ; végétation 9 %",
+   "colour": "light_gray",
+   "position": [
+    8964,
+    51394,
+    7806
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301148762",
+   "layer": "official_v1_6_2",
+   "areaM2": 123.7,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 4 % de l’empreinte ; végétation 14 %",
+   "colour": "dark_gray",
+   "position": [
+    -65520,
+    91020,
+    7602
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301148893",
+   "layer": "official_v1_6_2",
+   "areaM2": 47.6,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 8 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    -69376,
+    98254,
+    7748
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301148978",
+   "layer": "official_v1_6_2",
+   "areaM2": 15.7,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 3 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    -79737,
+    105308,
+    7656
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301148985",
+   "layer": "official_v1_6_2",
+   "areaM2": 29,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 37 % de l’empreinte ; végétation 41 %",
+   "colour": "dark_gray",
+   "position": [
+    -51822,
+    94142,
+    7761
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301149007",
+   "layer": "official_v1_6_2",
+   "areaM2": 21.9,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 6 % de l’empreinte ; végétation 0 %",
+   "colour": "brown",
+   "position": [
+    -39336,
+    74218,
+    7769
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301149221",
+   "layer": "official_v1_6_2",
+   "areaM2": 22.5,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    -72496,
+    55280,
+    7549
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301149587",
+   "layer": "official_v1_6_2",
+   "areaM2": 16.7,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 24 % de l’empreinte ; végétation 0 %",
+   "colour": "mixed",
+   "position": [
+    -20762,
+    17343,
+    7689
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301149798",
+   "layer": "official_v1_6_2",
+   "areaM2": 29.2,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 8 % de l’empreinte ; végétation 0 %",
+   "colour": "white",
+   "position": [
+    28652,
+    -26523,
+    7683
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301150030",
+   "layer": "official_v1_6_2",
+   "areaM2": 12.6,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 40 %",
+   "colour": "blue_gray",
+   "position": [
+    57620,
+    -54802,
+    7626
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301150886",
+   "layer": "official_v1_6_2",
+   "areaM2": 20.6,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 23 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    237275,
+    104465,
+    8531
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301150887",
+   "layer": "official_v1_6_2",
+   "areaM2": 20.6,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 5 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    237091,
+    103992,
+    8521
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301150888",
+   "layer": "official_v1_6_2",
+   "areaM2": 12.9,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 24 % de l’empreinte ; végétation 0 %",
+   "colour": "dark_gray",
+   "position": [
+    238301,
+    104121,
+    8535
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301150889",
+   "layer": "official_v1_6_2",
+   "areaM2": 15.2,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 10 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    239004,
+    103395,
+    8520
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301150890",
+   "layer": "official_v1_6_2",
+   "areaM2": 13.1,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 3 % de l’empreinte ; végétation 0 %",
+   "colour": "dark_gray",
+   "position": [
+    238788,
+    104007,
+    8531
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301150924",
+   "layer": "official_v1_6_2",
+   "areaM2": 12.9,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "dark_gray",
+   "position": [
+    239172,
+    103872,
+    8536
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301151918",
+   "layer": "official_v1_6_2",
+   "areaM2": 12.1,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 30 %",
+   "colour": "dark_gray",
+   "position": [
+    136806,
+    -26164,
+    7729
+   ]
+  },
+  {
+   "id": "BATIMENT0000000301151957",
+   "layer": "official_v1_6_2",
+   "areaM2": 21.8,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 22 % de l’empreinte ; végétation 21 %",
+   "colour": "dark_gray",
+   "position": [
+    133624,
+    -30708,
+    7705
+   ]
+  },
+  {
+   "id": "BATIMENT0000000335663857",
+   "layer": "official_v1_6_2",
+   "areaM2": 25.8,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 10 % de l’empreinte ; végétation 7 %",
+   "colour": "dark_gray",
+   "position": [
+    -23962,
+    73056,
+    7805
+   ]
+  },
+  {
+   "id": "BATIMENT0000002330331378",
+   "layer": "official_v1_6_2",
+   "areaM2": 70.3,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 24 %",
+   "colour": "brown",
+   "position": [
+    35394,
+    108064,
+    8014
+   ]
+  },
+  {
+   "id": "BATIMENT0000002330331379",
+   "layer": "official_v1_6_2",
+   "areaM2": 33.3,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    35668,
+    109066,
+    8027
+   ]
+  },
+  {
+   "id": "BATIMENT0000002330331380",
+   "layer": "official_v1_6_2",
+   "areaM2": 33.2,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 15 %",
+   "colour": "light_gray",
+   "position": [
+    34786,
+    112336,
+    8060
+   ]
+  },
+  {
+   "id": "BATIMENT0000002494157683",
+   "layer": "official_v1_6_2",
+   "areaM2": 241,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "blue_gray",
+   "position": [
+    -38704,
+    60654,
+    7580
+   ]
+  },
+  {
+   "id": "BATIMENT0000002494156607",
+   "layer": "official_v1_6_2",
+   "areaM2": 211.4,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    -39337,
+    70634,
+    7687
+   ]
+  },
+  {
+   "id": "BATIMENT0000002494156837",
+   "layer": "official_v1_6_2",
+   "areaM2": 174,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "white",
+   "position": [
+    -202382,
+    52758,
+    7619
+   ]
+  },
+  {
+   "id": "BATIMENT0000002494157528",
+   "layer": "official_v1_6_2",
+   "areaM2": 34.8,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 2 % de l’empreinte ; végétation 0 %",
+   "colour": "white",
+   "position": [
+    -84206,
+    102534,
+    7671
+   ]
+  },
+  {
+   "id": "BATIMENT0000000009355310",
+   "layer": "official_v1_6_2",
+   "areaM2": 60.7,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    -18042,
+    -34230,
+    7530
+   ]
+  },
+  {
+   "id": "BATIMENT0000000009358758",
+   "layer": "official_v1_6_2",
+   "areaM2": 212.6,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 15 % de l’empreinte ; végétation 21 %",
+   "colour": "light_gray",
+   "position": [
+    69892,
+    79086,
+    8034
+   ]
+  },
+  {
+   "id": "BATIMENT0000000009361091",
+   "layer": "official_v1_6_2",
+   "areaM2": 55.8,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 48 %",
+   "colour": "dark_gray",
+   "position": [
+    13719,
+    120191,
+    7998
+   ]
+  },
+  {
+   "id": "way/228577119",
+   "layer": "official_v1_6_2",
+   "areaM2": 13.4,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    -165320,
+    45528,
+    7601
+   ]
+  },
+  {
+   "id": "way/228579174",
+   "layer": "official_v1_6_2",
+   "areaM2": 12.4,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    -164670,
+    42852,
+    7547
+   ]
+  },
+  {
+   "id": "way/549958938",
+   "layer": "official_v1_6_2",
+   "areaM2": 12.7,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    161259,
+    326383,
+    9108
+   ]
+  },
+  {
+   "id": "way/549958990",
+   "layer": "official_v1_6_2",
+   "areaM2": 14.3,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "white",
+   "position": [
+    179932,
+    207853,
+    8721
+   ]
+  },
+  {
+   "id": "way/549959091",
+   "layer": "official_v1_6_2",
+   "areaM2": 13.7,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "white",
+   "position": [
+    198684,
+    280136,
+    9476
+   ]
+  },
+  {
+   "id": "way/549959196",
+   "layer": "official_v1_6_2",
+   "areaM2": 13.3,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    189395,
+    319860,
+    9617
+   ]
+  },
+  {
+   "id": "way/549959648",
+   "layer": "official_v1_6_2",
+   "areaM2": 13.9,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 5 % de l’empreinte ; végétation 0 %",
+   "colour": "white",
+   "position": [
+    166038,
+    289473,
+    8873
+   ]
+  },
+  {
+   "id": "way/549959715",
+   "layer": "official_v1_6_2",
+   "areaM2": 13.1,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "mixed",
+   "position": [
+    204582,
+    241535,
+    9096
+   ]
+  },
+  {
+   "id": "way/549959803",
+   "layer": "official_v1_6_2",
+   "areaM2": 16,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "brown",
+   "position": [
+    171532,
+    253721,
+    8727
+   ]
+  },
+  {
+   "id": "way/549959919",
+   "layer": "official_v1_6_2",
+   "areaM2": 13.2,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "white",
+   "position": [
+    211832,
+    196172,
+    8975
+   ]
+  },
+  {
+   "id": "way/588789726",
+   "layer": "official_v1_6_2",
+   "areaM2": 337,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 17 % de l’empreinte ; végétation 1 %",
+   "colour": "light_gray",
+   "position": [
+    36638,
+    -39993,
+    7651
+   ]
+  },
+  {
+   "id": "way/588789793",
+   "layer": "official_v1_6_2",
+   "areaM2": 12.4,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 14 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    -116315,
+    89622,
+    7622
+   ]
+  },
+  {
+   "id": "way/588791915",
+   "layer": "official_v1_6_2",
+   "areaM2": 23.8,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 10 % de l’empreinte ; végétation 8 %",
+   "colour": "dark_gray",
+   "position": [
+    -9586,
+    -13576,
+    7648
+   ]
+  },
+  {
+   "id": "way/588792118",
+   "layer": "official_v1_6_2",
+   "areaM2": 12.8,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    -47995,
+    80596,
+    7738
+   ]
+  },
+  {
+   "id": "way/588792378",
+   "layer": "official_v1_6_2",
+   "areaM2": 57.2,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 18 % de l’empreinte ; végétation 25 %",
+   "colour": "dark_gray",
+   "position": [
+    -7879,
+    -5431,
+    7636
+   ]
+  },
+  {
+   "id": "cadastre:20394549",
+   "layer": "official_v1_6_2",
+   "areaM2": 52.7,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 5 % de l’empreinte ; végétation 0 %",
+   "colour": "brown",
+   "position": [
+    -24911,
+    28481,
+    7709
+   ]
+  },
+  {
+   "id": "cadastre:20394661",
+   "layer": "official_v1_6_2",
+   "areaM2": 140,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    -10847,
+    38157,
+    7655
+   ]
+  },
+  {
+   "id": "cadastre:23579114",
+   "layer": "official_v1_6_2",
+   "areaM2": 15.7,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 20 % de l’empreinte ; végétation 0 %",
+   "colour": "mixed",
+   "position": [
+    -9748,
+    18137,
+    7723
+   ]
+  },
+  {
+   "id": "cadastre:39810698",
+   "layer": "official_v1_6_2",
+   "areaM2": 25.8,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 24 % de l’empreinte ; végétation 0 %",
+   "colour": "brown",
+   "position": [
+    2982,
+    32620,
+    7806
+   ]
+  },
+  {
+   "id": "cadastre:39823777",
+   "layer": "official_v1_6_2",
+   "areaM2": 22.9,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 12 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    -204341,
+    86277,
+    7662
+   ]
+  },
+  {
+   "id": "cadastre:39823883",
+   "layer": "official_v1_6_2",
+   "areaM2": 272.4,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 15 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    -213283,
+    65264,
+    7611
+   ]
+  },
+  {
+   "id": "cadastre:23577103~partie",
+   "layer": "reintegrated_v2_0_1",
+   "areaM2": 59.7,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 5 % de l’empreinte ; végétation 0 %",
+   "colour": "mixed",
+   "position": [
+    24300,
+    32663,
+    7807
+   ]
+  },
+  {
+   "id": "cadastre:34631971~partie",
+   "layer": "reintegrated_v2_0_1",
+   "areaM2": 16.6,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 24 % de l’empreinte ; végétation 0 %",
+   "colour": "brown",
+   "position": [
+    1042,
+    53781,
+    7815
+   ]
+  },
+  {
+   "id": "cadastre:39362353~partie",
+   "layer": "reintegrated_v2_0_1",
+   "areaM2": 24.4,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    225400,
+    103489,
+    8531
+   ]
+  },
+  {
+   "id": "cadastre:39362354~partie",
+   "layer": "reintegrated_v2_0_1",
+   "areaM2": 28.5,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    225594,
+    104089,
+    8529
+   ]
+  },
+  {
+   "id": "cadastre:39362494~partie",
+   "layer": "reintegrated_v2_0_1",
+   "areaM2": 27.2,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    225835,
+    104697,
+    8526
+   ]
+  },
+  {
+   "id": "cadastre:39808701~partie",
+   "layer": "reintegrated_v2_0_1",
+   "areaM2": 36,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 16 % de l’empreinte ; végétation 0 %",
+   "colour": "dark_gray",
+   "position": [
+    8350,
+    45388,
+    7774
+   ]
+  },
+  {
+   "id": "cadastre:39816867~partie",
+   "layer": "reintegrated_v2_0_1",
+   "areaM2": 34.5,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 19 % de l’empreinte ; végétation 0 %",
+   "colour": "brown",
+   "position": [
+    -73950,
+    103395,
+    7674
+   ]
+  },
+  {
+   "id": "cadastre:39821742~partie",
+   "layer": "reintegrated_v2_0_1",
+   "areaM2": 53.6,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 6 % de l’empreinte ; végétation 0 %",
+   "colour": "light_gray",
+   "position": [
+    90615,
+    -31338,
+    7912
+   ]
+  },
+  {
+   "id": "cadastre:39821840~partie",
+   "layer": "reintegrated_v2_0_1",
+   "areaM2": 82.7,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 2 % de l’empreinte ; végétation 19 %",
+   "colour": "light_gray",
+   "position": [
+    104915,
+    99508,
+    8417
+   ]
+  },
+  {
+   "id": "way/588791987~partie",
+   "layer": "reintegrated_v2_0_1",
+   "areaM2": 23.9,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 7 % de l’empreinte ; végétation 0 %",
+   "colour": "white",
+   "position": [
+    -20499,
+    50601,
+    7699
+   ]
+  },
+  {
+   "id": "way/588792057",
+   "layer": "reintegrated_v2_0_1",
+   "areaM2": 15.4,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "mixed",
+   "position": [
+    -52748,
+    67787,
+    7719
+   ]
+  },
+  {
+   "id": "way/588792877",
+   "layer": "reintegrated_v2_0_1",
+   "areaM2": 20.1,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 14 %",
+   "colour": "light_gray",
+   "position": [
+    -56960,
+    51763,
+    7537
+   ]
+  },
+  {
+   "id": "manual-v2.2:vis-A",
+   "layer": "manual_orthophoto_v2_2",
+   "areaM2": 161.9,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "brown",
+   "position": [
+    135735,
+    -22898,
+    7734
+   ]
+  },
+  {
+   "id": "manual-v2.2:vis-H1",
+   "layer": "manual_orthophoto_v2_2",
+   "areaM2": 108,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 0 %",
+   "colour": "white",
+   "position": [
+    -153303,
+    53932,
+    7532
+   ]
+  },
+  {
+   "id": "manual-v2.2:vis-H2",
+   "layer": "manual_orthophoto_v2_2",
+   "areaM2": 156.8,
+   "kind": "aucune élévation LiDAR 2025 dans l’empreinte",
+   "detail": "élévation > 1,2 m sur 0 % de l’empreinte ; végétation 5 %",
+   "colour": "light_gray",
+   "position": [
+    -151121,
+    54061,
+    7568
+   ]
+  }
+ ]
+}

@@ -4,6 +4,7 @@ import {bounds,area,insidePoly} from './geo.js';
 import {buildingProfile} from './building-profile.js';
 import {saintDenis} from './church.js';
 import {isChurch} from './building-source.js';
+import {applyArchitecture,roofSurface,splitByLines,edgeCuts,ARCH_COLORS} from './architecture.js';
 function split(points,axis,mid,side){const out=[];for(let i=0;i<points.length;i++){const a=points[i],b=points[(i+1)%points.length],da=a[0]*axis[0]+a[1]*axis[1]-mid,db=b[0]*axis[0]+b[1]*axis[1]-mid;if(da*side>=-.00001)out.push(a);if(da*db<0){const t=da/(da-db);out.push([a[0]+t*(b[0]-a[0]),a[1]+t*(b[1]-a[1])]);}}return out;}
 // Diagnostic colours by provenance (?diagnostic=provenance): development aid, not an art choice.
 export const PROVENANCE_COLORS={'ign+osm':'#b9bfc6','ign+osm-partiel':'#e9a23b','ign':'#e0301e','osm':'#2f6fe0','cadastre':'#1f9e5a'};
@@ -16,8 +17,10 @@ export function buildBuildings(scene,items,enrichment={buildings:{}},options={})
  const walls=new Batch(material()),roofs=new Batch(material()),windows=new Batch(material({roughness:.65})),details=new Batch(material());
  const batches=[walls,roofs,windows,details],ranges=batches.map(()=>[]),pickMeshes=[];
  let count=0;const lifts=[],rejected=[],info=new Map(),landmarks=[],stats={ignWallHeights:0,ignRoofHeights:0,knownFloors:0,knownRoofMaterials:0,roofHeightClamps:0,categories:{}};
- for(const item of items){const {poly,t,id}=item;if(area(poly[0])>100000){rejected.push({id,reason:'surface > 100 000 m²'});continue;}const extra=item.extra||enrichment.buildings[id]||{},p=buildingProfile(t,poly,extra,id);if(!p){rejected.push({id,reason:'profil impossible'});continue;}
-  if(options.diagnostic){p.wallColor=(options.diagnostic==='buildings-audit'?AUDIT_COLORS:options.diagnostic==='validation'?VALIDATION_COLORS:PROVENANCE_COLORS)[diagnosticKey(item,options.diagnostic)]||'#999';p.roofColor=new THREE.Color(p.wallColor).multiplyScalar(.8).getStyle();p.shade=0;}
+ for(const item of items){const {poly,t,id}=item;if(area(poly[0])>100000){rejected.push({id,reason:'surface > 100 000 m²'});continue;}const extra=item.extra||enrichment.buildings[id]||{};let p=buildingProfile(t,poly,extra,id);if(!p){rejected.push({id,reason:'profil impossible'});continue;}
+  // V2.3 ?architecture=1: documented elevation (roof type, ridge, heights, colour family) on the unchanged footprint.
+  const arch=options.architecture?.get(item.featureId||id.split('#')[0])||null;if(arch)p=applyArchitecture(p,arch,poly);
+  if(options.diagnostic){p.wallColor=options.diagnostic==='architecture'?ARCH_COLORS[arch?.confidenceOverall||'unknown']:(options.diagnostic==='buildings-audit'?AUDIT_COLORS:options.diagnostic==='validation'?VALIDATION_COLORS:PROVENANCE_COLORS)[diagnosticKey(item,options.diagnostic)]||'#999';p.roofColor=new THREE.Color(p.wallColor).multiplyScalar(.8).getStyle();p.shade=0;}
   const starts=batches.map(b=>b.p.length/9);
   const bb=bounds(poly[0]),base=.35,axis=p.axis,mid=(axis.min+axis.max)/2,half=Math.max(.1,(axis.max-axis.min)/2);
   const top=q=>base+p.wallHeight+p.roofHeight*Math.max(0,1-Math.abs(q[0]*axis.axis[0]+q[1]*axis.axis[1]-mid)/half);
@@ -25,6 +28,21 @@ export function buildBuildings(scene,items,enrichment={buildings:{}},options={})
   const shutter=p.shutterColor,doorColor=new THREE.Color(p.shutterColor).multiplyScalar(.72),chimney=new THREE.Color(p.wallColor).multiplyScalar(.86);let door=false;
   let maxHeight=p.wallHeight+p.roofHeight;
   if(isChurch(item)){maxHeight=saintDenis(poly,p,walls,roofs,details).maxHeight;}
+  else if(arch){
+   // Generic min-of-planes roof: walls follow the roof edge, every surface is split along the creases.
+   const model=roofSurface(p),topA=q=>base+p.wallHeight+model.h(q);maxHeight=p.wallHeight+p.roofHeight;
+   const edgeColor=new THREE.Color(p.roofColor).multiplyScalar(.68);
+   for(const r of poly)for(let i=0;i<r.length;i++){const a=r[i],b=r[(i+1)%r.length],pts=[a,...edgeCuts(a,b,model.lines).map(f=>[a[0]+f*(b[0]-a[0]),a[1]+f*(b[1]-a[1])]),b];
+    for(let j=1;j<pts.length;j++){const c=pts[j-1],d=pts[j];if(p.kind!=='canopy')walls.quad([c[0],base,c[1]],[d[0],base,d[1]],[d[0],topA(d),d[1]],[c[0],topA(c),c[1]],wallColor);if(p.kind!=='canopy')details.quad([c[0],topA(c)-.16,c[1]],[d[0],topA(d)-.16,d[1]],[d[0],topA(d)+.015,d[1]],[c[0],topA(c)+.015,c[1]],edgeColor);}
+    const dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz);if(len<3||['annex','garage','silo','greenhouse','canopy','light','hangar'].includes(p.kind))continue;
+    const ux=dx/len,uz=dz/len,spacing=p.bulk?8:3.6,side=insidePoly([(a[0]+b[0])/2-uz*.2,(a[1]+b[1])/2+ux*.2],poly)?-1:1,nx=-uz*.05*side,nz=ux*.05*side;
+    const face=(u0,u1,y0,y1,color,depth=1)=>windows.quad([a[0]+ux*u0+nx*depth,y0,a[1]+uz*u0+nz*depth],[a[0]+ux*u1+nx*depth,y0,a[1]+uz*u1+nz*depth],[a[0]+ux*u1+nx*depth,y1,a[1]+uz*u1+nz*depth],[a[0]+ux*u0+nx*depth,y1,a[1]+uz*u0+nz*depth],color);
+    const house=['house','public','farm'].includes(p.kind);
+    for(let floor=0;floor<(p.bulk?1:p.windowFloors);floor++)for(let d=2;d<len-1;d+=spacing){const w=p.bulk?.7:.43,y=base+(p.bulk?Math.min(3,p.wallHeight-1.2):1+floor*2.6),h=p.bulk?1:1.15;if(y+h>base+p.wallHeight-.1)continue;if(house&&len>=5)face(d-w-.46,d+w+.46,y-.02,y+h+.02,shutter,.6);face(d-w,d+w,y,y+h,p.bulk?'#8fa3ad':'#5b6f7d');}
+    if(house&&!door&&len>=6&&p.wallHeight>=2.6){const d=Math.min(len-1.6,2+spacing*Math.max(0,Math.floor((len-4)/spacing/2))+spacing/2);face(d-.5,d+.5,base,base+2.1,doorColor,1.3);door=true;}
+   }
+   const rings=shapeRings(poly),flat=rings.flat();for(const tri of THREE.ShapeUtils.triangulateShape(rings[0],rings.slice(1))){const points=tri.map(i=>[flat[i].x,flat[i].y]);for(const piece of splitByLines(points,model.lines))for(let i=1;i<piece.length-1;i++)roofs.tri(...[piece[0],piece[i],piece[i+1]].map(q=>[q[0],topA(q),q[1]]),roofColor);}
+  }
   else {
    for(const r of poly)for(let i=0;i<r.length;i++){const a=r[i],b=r[(i+1)%r.length],da=a[0]*axis.axis[0]+a[1]*axis.axis[1]-mid,db=b[0]*axis.axis[0]+b[1]*axis.axis[1]-mid,edge=[a];if(da*db<0){const f=da/(da-db);edge.push([a[0]+f*(b[0]-a[0]),a[1]+f*(b[1]-a[1])]);}edge.push(b);for(let j=1;j<edge.length;j++){const c=edge[j-1],d=edge[j];if(p.kind!=='canopy')walls.quad([c[0],base,c[1]],[d[0],base,d[1]],[d[0],top(d),d[1]],[c[0],top(c),c[1]],wallColor);if(p.kind!=='canopy')details.quad([c[0],top(c)-.16,c[1]],[d[0],top(d)-.16,d[1]],[d[0],top(d)+.015,d[1]],[c[0],top(c)+.015,c[1]],new THREE.Color(p.roofColor).multiplyScalar(.68));}
     const dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz);if(len<3||['annex','garage','silo','greenhouse','canopy','light','hangar'].includes(p.kind))continue;
@@ -49,7 +67,7 @@ export function buildBuildings(scene,items,enrichment={buildings:{}},options={})
   batches.forEach((b,i)=>{const end=b.p.length/9;if(end>starts[i])ranges[i].push({start:starts[i],end,id});});
   // V1.7 ?diagnostic=terrain: the whole building is lifted to its terrain base altitude (footprint unchanged).
   const dy=options.elevation?.(item)||0;if(dy)lifts.push({starts,ends:batches.map(b=>b.p.length/9),dy});
-  info.set(id,{manual:item.provenance==='orthophoto_manual_v2.2'?item.manualInfo||{}:null,validation:item.validation||null,source:item.source||'OpenStreetMap',provenance:item.provenance||null,rnb:item.rnb||null,osmIds:t['@osm']||[id],kind:p.kind,knownUsage:p.knownUsage,usage:extra.usage&&extra.usage!=='Indifférencié'?extra.usage:null,floors:extra.floors||Number.parseInt(t['building:levels'])||null,wallHeight:p.wallHeight,heightSource:p.heightSource,maxHeight,light:t.wall==='no'||extra.lightConstruction===true,ign:!!extra.ignId,poly});
+  info.set(id,{architecture:arch,manual:item.provenance==='orthophoto_manual_v2.2'?item.manualInfo||{}:null,validation:item.validation||null,source:item.source||'OpenStreetMap',provenance:item.provenance||null,rnb:item.rnb||null,osmIds:t['@osm']||[id],kind:p.kind,knownUsage:p.knownUsage,usage:extra.usage&&extra.usage!=='Indifférencié'?extra.usage:null,floors:extra.floors||Number.parseInt(t['building:levels'])||null,wallHeight:p.wallHeight,heightSource:p.heightSource,maxHeight,light:t.wall==='no'||extra.lightConstruction===true,ign:!!extra.ignId,poly});
   if(p.kind==='church'||p.kind==='public'){const name=extra.landmark?.name||t.name||(t.amenity==='townhall'?'Mairie':t.amenity==='school'?'École primaire':null);if(name)landmarks.push({name,position:[(bb.minX+bb.maxX)/2,maxHeight+4+dy,(bb.minZ+bb.maxZ)/2],id});}
   if(p.heightSource==='IGN BD TOPO')stats.ignWallHeights++;if(p.roofHeightSource==='IGN statistical roof maximum')stats.ignRoofHeights++;if(p.roofHeightClamped)stats.roofHeightClamps++;if(extra.floors)stats.knownFloors++;if(p.materialSource==='IGN cadastral declaration')stats.knownRoofMaterials++;stats.categories[p.kind]=(stats.categories[p.kind]||0)+1;count++;
  }

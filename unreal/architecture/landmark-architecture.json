@@ -1,0 +1,988 @@
+{
+ "metadata": {
+  "version": "2.3",
+  "generatedBy": "scripts/build-architecture.mjs (npm run data:architecture)",
+  "levels": {
+   "unique_model": "modèle unique dédié",
+   "procedural_custom": "génération procédurale avec paramètres propres au bâtiment",
+   "procedural": "archétype procédural standard"
+  },
+  "counts": {
+   "unique_model": 4,
+   "procedural_custom": 10,
+   "procedural": 2
+  },
+  "notBuildings": "ponts, cimetière, croix, gué et passage à niveau relèvent des couches routes / rail / POI (V1.11), pas de l’architecture"
+ },
+ "landmarks": [
+  {
+   "id": "poi:ecole-primaire",
+   "name": "École primaire publique",
+   "type": "ecole",
+   "status": "actuel",
+   "buildingIds": [
+    "BATIMENT0000000301149547",
+    "BATIMENT0000000301149544",
+    "BATIMENT0000000301149527",
+    "BATIMENT0000000301149424",
+    "BATIMENT0000000301149543",
+    "BATIMENT0000000301149803",
+    "BATIMENT0000000301149810",
+    "BATIMENT0000000301149528",
+    "BATIMENT0000000301149545",
+    "BATIMENT0000000301149549",
+    "BATIMENT0000000301149548",
+    "BATIMENT0000000301149546"
+   ],
+   "unrealPosition": [
+    -15139,
+    7197,
+    7731
+   ],
+   "L93": [
+    758126.61,
+    6823499.03,
+    77.31
+   ],
+   "silhouette": "groupe scolaire de plusieurs volumes",
+   "dimensions": {
+    "buildings": 12,
+    "totalFootprintM2": 2119,
+    "mainFootprint": {
+     "id": "BATIMENT0000000301149547",
+     "lengthM": 35.8,
+     "widthM": 33.3,
+     "bearingDeg": 148.2,
+     "footprintFamily": "complex"
+    },
+    "tankDiameterM": null
+   },
+   "heights": {
+    "wallHeightM": 4.9,
+    "wallHeightStatus": "official",
+    "totalHeightM": 12.2,
+    "totalHeightStatus": "measured"
+   },
+   "roof": {
+    "type": "complex",
+    "confidence": "B",
+    "ridgeOrientationDeg": 141,
+    "slopeDeg": 31,
+    "colorFamily": "light_gray",
+    "material": "unknown"
+   },
+   "particularities": [
+    "ensemble de 12 volumes d’âges différents (école, préaux, annexes)",
+    "fresques de la cour (Francis Bavoil) : non modélisables en vue aérienne"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "OpenStreetMap",
+    "unreal/poi/landmarks.json (V1.11) + Bibles",
+    "unreal/poi/landmarks.json (V1.11)"
+   ],
+   "confidence": "B",
+   "modelingLevel": "procedural_custom"
+  },
+  {
+   "id": "poi:eglise-saint-denis",
+   "name": "Église Saint-Denis",
+   "type": "eglise",
+   "status": "actuel",
+   "buildingIds": [
+    "BATIMENT0000000301149566"
+   ],
+   "unrealPosition": [
+    -16465,
+    -17246,
+    7797
+   ],
+   "L93": [
+    758113.35,
+    6823743.46,
+    77.97
+   ],
+   "silhouette": "église composite : nef, double transept, chœur et abside à pans, clocher",
+   "dimensions": {
+    "buildings": 1,
+    "totalFootprintM2": 766,
+    "mainFootprint": {
+     "id": "BATIMENT0000000301149566",
+     "lengthM": 45.2,
+     "widthM": 23.3,
+     "bearingDeg": 86.9,
+     "footprintFamily": "complex"
+    },
+    "tankDiameterM": null
+   },
+   "heights": {
+    "wallHeightM": 8.3,
+    "wallHeightStatus": "official",
+    "totalHeightM": 20.1,
+    "totalHeightStatus": "measured"
+   },
+   "roof": {
+    "type": "complex",
+    "confidence": "B",
+    "ridgeOrientationDeg": 79,
+    "slopeDeg": 51,
+    "colorFamily": "blue_gray",
+    "material": "unknown"
+   },
+   "particularities": [
+    "nef romane (fin XIe–début XIIe s.) plus haute que les bas-côtés",
+    "double transept du XVIe s. : trois pignons au nord, deux au sud",
+    "chœur à trois vaisseaux, chevet à pans coupés, abside à cinq pans",
+    "tourelle ronde d’escalier, grands contreforts",
+    "clocher (BD TOPO construction ponctuelle « Clocher »), chantier de restauration 2024–2026"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "OpenStreetMap",
+    "unreal/poi/landmarks.json (V1.11) + Bibles",
+    "unreal/poi/landmarks.json (V1.11)",
+    "BIBLE_03 Patrimoine"
+   ],
+   "confidence": "B",
+   "modelingLevel": "unique_model"
+  },
+  {
+   "id": "poi:mairie",
+   "name": "Mairie de Maizières-la-Grande-Paroisse",
+   "type": "mairie",
+   "status": "actuel",
+   "buildingIds": [
+    "BATIMENT0000000301149537"
+   ],
+   "unrealPosition": [
+    -15431,
+    830,
+    7707
+   ],
+   "L93": [
+    758123.69,
+    6823562.7,
+    77.07
+   ],
+   "silhouette": "bâtiment public à façade brique et pierre",
+   "dimensions": {
+    "buildings": 1,
+    "totalFootprintM2": 80,
+    "mainFootprint": {
+     "id": "BATIMENT0000000301149537",
+     "lengthM": 18.3,
+     "widthM": 6.4,
+     "bearingDeg": 1.8,
+     "footprintFamily": "complex"
+    },
+    "tankDiameterM": null
+   },
+   "heights": {
+    "wallHeightM": 5.4,
+    "wallHeightStatus": "official",
+    "totalHeightM": 7.3,
+    "totalHeightStatus": "measured"
+   },
+   "roof": {
+    "type": "gable",
+    "confidence": "A",
+    "ridgeOrientationDeg": 5,
+    "slopeDeg": 42,
+    "colorFamily": "dark_gray",
+    "material": "unknown"
+   },
+   "particularities": [
+    "façade brique et pierre, composition verticale",
+    "baies cintrées au rez-de-chaussée, balcon central",
+    "bâtiment scolaire plus bas accolé (vues anciennes) ; agrandie et rénovée depuis 2003"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "OpenStreetMap",
+    "unreal/poi/landmarks.json (V1.11) + Bibles",
+    "unreal/poi/landmarks.json (V1.11)",
+    "BIBLE_03 Patrimoine"
+   ],
+   "confidence": "A",
+   "modelingLevel": "procedural_custom"
+  },
+  {
+   "id": "poi:chateau-eau-granges",
+   "name": "Château d’eau",
+   "type": "chateau_eau",
+   "status": "actuel",
+   "buildingIds": [
+    "way/588791386"
+   ],
+   "unrealPosition": [
+    -11227,
+    58538,
+    7757
+   ],
+   "L93": [
+    758165.73,
+    6822985.62,
+    77.57
+   ],
+   "silhouette": "fût vertical + cuve circulaire au sommet",
+   "dimensions": {
+    "buildings": 1,
+    "totalFootprintM2": 46,
+    "mainFootprint": {
+     "id": "way/588791386",
+     "lengthM": 7.6,
+     "widthM": 7.6,
+     "bearingDeg": 36.5,
+     "footprintFamily": "irregular"
+    },
+    "tankDiameterM": 7.2
+   },
+   "heights": {
+    "wallHeightM": null,
+    "wallHeightStatus": "unknown",
+    "totalHeightM": 27.6,
+    "totalHeightStatus": "official"
+   },
+   "roof": {
+    "type": "complex",
+    "confidence": "B",
+    "ridgeOrientationDeg": null,
+    "slopeDeg": 35,
+    "colorFamily": "light_gray",
+    "material": "unknown"
+   },
+   "particularities": [
+    "château d’eau sur fût : cuve circulaire large au sommet (ombre portée longue sur l’orthophoto 2025)"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "OpenStreetMap",
+    "unreal/poi/landmarks.json (V1.11) + Bibles",
+    "unreal/poi/landmarks.json (V1.11)"
+   ],
+   "confidence": "C",
+   "modelingLevel": "unique_model"
+  },
+  {
+   "id": "poi:chateau-eau-poussey",
+   "name": "Château d’eau de Poussey",
+   "type": "chateau_eau",
+   "status": "actuel",
+   "buildingIds": [
+    "way/588791761"
+   ],
+   "unrealPosition": [
+    132360,
+    -22700,
+    7712
+   ],
+   "L93": [
+    759601.6,
+    6823798,
+    77.12
+   ],
+   "silhouette": "fût vertical + cuve circulaire au sommet",
+   "dimensions": {
+    "buildings": 1,
+    "totalFootprintM2": 24,
+    "mainFootprint": {
+     "id": "way/588791761",
+     "lengthM": 5.5,
+     "widthM": 5.5,
+     "bearingDeg": 44.9,
+     "footprintFamily": "irregular"
+    },
+    "tankDiameterM": 5.1
+   },
+   "heights": {
+    "wallHeightM": null,
+    "wallHeightStatus": "unknown",
+    "totalHeightM": 25.3,
+    "totalHeightStatus": "official"
+   },
+   "roof": {
+    "type": "complex",
+    "confidence": "B",
+    "ridgeOrientationDeg": null,
+    "slopeDeg": 18,
+    "colorFamily": "mixed",
+    "material": "unknown"
+   },
+   "particularities": [
+    "château d’eau de Poussey : cuve circulaire au sommet, repère de la Croix des Ormes"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "OpenStreetMap",
+    "unreal/poi/landmarks.json (V1.11) + Bibles",
+    "unreal/poi/landmarks.json (V1.11)"
+   ],
+   "confidence": "C",
+   "modelingLevel": "unique_model"
+  },
+  {
+   "id": "poi:monument-aux-morts",
+   "name": "Monument aux morts",
+   "type": "monument",
+   "status": "actuel",
+   "buildingIds": [],
+   "unrealPosition": [
+    -23420,
+    7810,
+    7729
+   ],
+   "L93": [
+    758043.8,
+    6823492.9,
+    77.29
+   ],
+   "silhouette": "obélisque sur socle",
+   "dimensions": {
+    "note": "pas d’empreinte bâtie : position ponctuelle V1.11 (BD TOPO / Bible)"
+   },
+   "heights": {
+    "totalHeightM": null,
+    "totalHeightStatus": "unknown"
+   },
+   "roof": null,
+   "particularities": [
+    "obélisque sur socle, calcaire",
+    "éléments en bronze : Croix de Guerre, palme, frise de laurier",
+    "médaillon « Tête de Poilu » (René Bertrand-Boutée)",
+    "ne jamais générer de nom gravé"
+   ],
+   "sources": [
+    "unreal/poi/landmarks.json (V1.11)",
+    "BIBLE_03 Patrimoine"
+   ],
+   "confidence": "B",
+   "modelingLevel": "unique_model"
+  },
+  {
+   "id": "poi:salle-polyvalente",
+   "name": "Salle polyvalente",
+   "type": "salle",
+   "status": "actuel",
+   "buildingIds": [
+    "BATIMENT0000000301149656"
+   ],
+   "unrealPosition": [
+    -400,
+    -6624,
+    7733
+   ],
+   "L93": [
+    758274,
+    6823637.24,
+    77.33
+   ],
+   "silhouette": "salle communale à deux pans",
+   "dimensions": {
+    "buildings": 1,
+    "totalFootprintM2": 78,
+    "mainFootprint": {
+     "id": "BATIMENT0000000301149656",
+     "lengthM": 10.7,
+     "widthM": 7.4,
+     "bearingDeg": 89.2,
+     "footprintFamily": "rectangle"
+    },
+    "tankDiameterM": null
+   },
+   "heights": {
+    "wallHeightM": 4,
+    "wallHeightStatus": "official",
+    "totalHeightM": 6.6,
+    "totalHeightStatus": "measured"
+   },
+   "roof": {
+    "type": "gable",
+    "confidence": "A",
+    "ridgeOrientationDeg": 91,
+    "slopeDeg": 28,
+    "colorFamily": "red_orange",
+    "material": "tile"
+   },
+   "particularities": [
+    "ancienne salle de gymnastique et de patronage de L’Étoile"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "IGN BD TOPO, matériaux déclarés (fichiers fonciers DGFiP)",
+    "OpenStreetMap",
+    "unreal/poi/landmarks.json (V1.11) + Bibles",
+    "unreal/poi/landmarks.json (V1.11)"
+   ],
+   "confidence": "A",
+   "modelingLevel": "procedural_custom"
+  },
+  {
+   "id": "poi:presbytere-ancien",
+   "name": "Ancien presbytère",
+   "type": "presbytere",
+   "status": "historique",
+   "buildingIds": [
+    "BATIMENT0000000301149376",
+    "BATIMENT0000000301149375",
+    "BATIMENT0000000301149873"
+   ],
+   "unrealPosition": [
+    -9688,
+    -18082,
+    7710
+   ],
+   "L93": [
+    758181.12,
+    6823751.82,
+    77.1
+   ],
+   "silhouette": "maison ancienne",
+   "dimensions": {
+    "buildings": 3,
+    "totalFootprintM2": 348,
+    "mainFootprint": {
+     "id": "BATIMENT0000000301149376",
+     "lengthM": 15.4,
+     "widthM": 12.8,
+     "bearingDeg": 2.7,
+     "footprintFamily": "L"
+    },
+    "tankDiameterM": null
+   },
+   "heights": {
+    "wallHeightM": 6.3,
+    "wallHeightStatus": "official",
+    "totalHeightM": 8.8,
+    "totalHeightStatus": "measured"
+   },
+   "roof": {
+    "type": "complex",
+    "confidence": "B",
+    "ridgeOrientationDeg": 93,
+    "slopeDeg": 36,
+    "colorFamily": "mixed",
+    "material": "unknown"
+   },
+   "particularities": [
+    "maison ancienne du 15 rue Pasteur, vendue par le diocèse avant 2017 : à traiter comme maison ancienne"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "OpenStreetMap",
+    "unreal/poi/landmarks.json (V1.11) + Bibles",
+    "unreal/poi/landmarks.json (V1.11)"
+   ],
+   "confidence": "B",
+   "modelingLevel": "procedural_custom"
+  },
+  {
+   "id": "poi:cpi",
+   "name": "Centre de première intervention (sapeurs-pompiers)",
+   "type": "secours",
+   "status": "actuel",
+   "buildingIds": [
+    "BATIMENT0000000301149810"
+   ],
+   "unrealPosition": [
+    -7340,
+    1390,
+    7736
+   ],
+   "L93": [
+    758204.6,
+    6823557.1,
+    77.36
+   ],
+   "silhouette": "bâtiment de service",
+   "dimensions": {
+    "buildings": 1,
+    "totalFootprintM2": 111,
+    "mainFootprint": {
+     "id": "BATIMENT0000000301149810",
+     "lengthM": 16.2,
+     "widthM": 7,
+     "bearingDeg": 84,
+     "footprintFamily": "rectangle"
+    },
+    "tankDiameterM": null
+   },
+   "heights": {
+    "wallHeightM": 4.6,
+    "wallHeightStatus": "official",
+    "totalHeightM": 6.8,
+    "totalHeightStatus": "measured"
+   },
+   "roof": {
+    "type": "gable",
+    "confidence": "A",
+    "ridgeOrientationDeg": 81,
+    "slopeDeg": 27,
+    "colorFamily": "red_orange",
+    "material": "tile"
+   },
+   "particularities": [
+    "centre de première intervention (sapeurs-pompiers volontaires)"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "OpenStreetMap",
+    "unreal/poi/landmarks.json (V1.11) + Bibles",
+    "unreal/poi/landmarks.json (V1.11)"
+   ],
+   "confidence": "A",
+   "modelingLevel": "procedural"
+  },
+  {
+   "id": "poi:seveal",
+   "name": "Dépôt d’hydrocarbures Sévéal",
+   "type": "site_industriel",
+   "status": "actuel",
+   "buildingIds": [
+    "BATIMENT0000000301149036",
+    "BATIMENT0000000301149037",
+    "BATIMENT0000000301149035"
+   ],
+   "unrealPosition": [
+    51285,
+    70207,
+    8009
+   ],
+   "L93": [
+    758790.85,
+    6822868.93,
+    80.09
+   ],
+   "silhouette": "bacs cylindriques et bâtiments techniques",
+   "dimensions": {
+    "buildings": 3,
+    "totalFootprintM2": 3064,
+    "mainFootprint": {
+     "id": "BATIMENT0000000301149036",
+     "lengthM": 67.9,
+     "widthM": 51.1,
+     "bearingDeg": 94.8,
+     "footprintFamily": "complex"
+    },
+    "tankDiameterM": null
+   },
+   "heights": {
+    "wallHeightM": 9.4,
+    "wallHeightStatus": "official",
+    "totalHeightM": 13.8,
+    "totalHeightStatus": "measured"
+   },
+   "roof": {
+    "type": "gable",
+    "confidence": "A",
+    "ridgeOrientationDeg": 96,
+    "slopeDeg": 16,
+    "colorFamily": "light_gray",
+    "material": "metal"
+   },
+   "particularities": [
+    "dépôt d’hydrocarbures : bacs cylindriques et bâtiments de service",
+    "landmark industriel visible depuis la RD619"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "OpenStreetMap",
+    "unreal/poi/landmarks.json (V1.11) + Bibles",
+    "unreal/poi/landmarks.json (V1.11)"
+   ],
+   "confidence": "A",
+   "modelingLevel": "procedural_custom"
+  },
+  {
+   "id": "poi:stade",
+   "name": "Stade de Maizières-la-Grande-Paroisse",
+   "type": "stade",
+   "status": "actuel",
+   "buildingIds": [
+    "BATIMENT0000000325110358"
+   ],
+   "unrealPosition": [
+    19135,
+    45790,
+    7894
+   ],
+   "L93": [
+    758469.35,
+    6823113.1,
+    78.94
+   ],
+   "silhouette": "vestiaires",
+   "dimensions": {
+    "buildings": 1,
+    "totalFootprintM2": 269,
+    "mainFootprint": {
+     "id": "BATIMENT0000000325110358",
+     "lengthM": 20.6,
+     "widthM": 13.1,
+     "bearingDeg": 92.6,
+     "footprintFamily": "rectangle"
+    },
+    "tankDiameterM": null
+   },
+   "heights": {
+    "wallHeightM": 4,
+    "wallHeightStatus": "official",
+    "totalHeightM": 4.9,
+    "totalHeightStatus": "measured"
+   },
+   "roof": {
+    "type": "hip",
+    "confidence": "A",
+    "ridgeOrientationDeg": 92,
+    "slopeDeg": 15,
+    "colorFamily": "light_gray",
+    "material": "unknown"
+   },
+   "particularities": [
+    "vestiaires du stade"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "OpenStreetMap",
+    "unreal/poi/landmarks.json (V1.11) + Bibles",
+    "unreal/poi/landmarks.json (V1.11)"
+   ],
+   "confidence": "A",
+   "modelingLevel": "procedural"
+  },
+  {
+   "id": "auto:silos-cerealiers",
+   "name": "Complexe de silos (nature BD TOPO « Silo »)",
+   "type": "silos",
+   "status": "actuel",
+   "buildingIds": [
+    "BATIMENT0000000301150834",
+    "BATIMENT0000000301150835",
+    "BATIMENT0000000301150836",
+    "BATIMENT0000000301150837",
+    "BATIMENT0000000301150838",
+    "BATIMENT0000000301150839",
+    "BATIMENT0000000301150840",
+    "BATIMENT0000000301150841",
+    "BATIMENT0000000301150842",
+    "BATIMENT0000000301150843",
+    "BATIMENT0000000301150844",
+    "BATIMENT0000000301150845",
+    "BATIMENT0000000301150846",
+    "BATIMENT0000000301150847",
+    "BATIMENT0000000301150848",
+    "BATIMENT0000000301150849",
+    "BATIMENT0000000301150850",
+    "BATIMENT0000000301150854",
+    "BATIMENT0000000301150855",
+    "BATIMENT0000000301150858",
+    "BATIMENT0000000301150859",
+    "BATIMENT0000000301150860",
+    "BATIMENT0000000301150861",
+    "BATIMENT0000000301150862",
+    "BATIMENT0000000301150863",
+    "BATIMENT0000000301150864",
+    "BATIMENT0000000301150865",
+    "BATIMENT0000000301150866",
+    "BATIMENT0000000301150867",
+    "BATIMENT0000000301150869",
+    "BATIMENT0000000301150870",
+    "BATIMENT0000000301150871",
+    "BATIMENT0000000301150872",
+    "BATIMENT0000000301150873",
+    "BATIMENT0000000301150901",
+    "BATIMENT0000000301150902",
+    "BATIMENT0000000301150903",
+    "BATIMENT0000000301150904",
+    "BATIMENT0000000301150905",
+    "BATIMENT0000000301150906",
+    "BATIMENT0000000301150910",
+    "BATIMENT0000000301150911",
+    "BATIMENT0000000301150912",
+    "BATIMENT0000000301150914",
+    "BATIMENT0000000301150915",
+    "BATIMENT0000000301150916",
+    "BATIMENT0000000301150917",
+    "BATIMENT0000000301150918",
+    "BATIMENT0000000301150919",
+    "BATIMENT0000000301150920"
+   ],
+   "unrealPosition": null,
+   "L93": null,
+   "silhouette": "batterie de cellules cylindriques de 40 à 55 m et tours de manutention",
+   "dimensions": {
+    "buildings": 50,
+    "totalFootprintM2": 2025,
+    "mainFootprint": {
+     "id": "BATIMENT0000000301150848",
+     "lengthM": 23.2,
+     "widthM": 15.5,
+     "bearingDeg": 157.6,
+     "footprintFamily": "rectangle"
+    }
+   },
+   "heights": {
+    "totalHeightM": 55.5,
+    "totalHeightStatus": "measured",
+    "range": [
+     33.7,
+     55.5
+    ]
+   },
+   "roof": null,
+   "particularities": [
+    "plus haut ensemble bâti de la commune, visible de très loin (LiDAR 2025)"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "OpenStreetMap"
+   ],
+   "confidence": "A",
+   "modelingLevel": "procedural_custom"
+  },
+  {
+   "id": "auto:BATIMENT0000000300132072",
+   "name": "Grand bâtiment commercial (22033 m²)",
+   "type": "commercial",
+   "status": "actuel",
+   "buildingIds": [
+    "BATIMENT0000000300132072"
+   ],
+   "unrealPosition": [
+    -167268,
+    54336,
+    7541
+   ],
+   "L93": null,
+   "silhouette": "grand volume à toiture flat",
+   "dimensions": {
+    "buildings": 1,
+    "totalFootprintM2": 22033,
+    "mainFootprint": {
+     "id": "BATIMENT0000000300132072",
+     "lengthM": 167.2,
+     "widthM": 155.3,
+     "bearingDeg": 15.1,
+     "footprintFamily": "complex"
+    }
+   },
+   "heights": {
+    "wallHeightM": 11.4,
+    "wallHeightStatus": "official",
+    "totalHeightM": 11.4,
+    "totalHeightStatus": "measured"
+   },
+   "roof": {
+    "type": "flat",
+    "confidence": "A",
+    "ridgeOrientationDeg": null,
+    "slopeDeg": 0,
+    "colorFamily": "white",
+    "material": "membrane"
+   },
+   "particularities": [
+    "volume très visible en vue aérienne"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "OpenStreetMap"
+   ],
+   "confidence": "A",
+   "modelingLevel": "procedural_custom"
+  },
+  {
+   "id": "auto:BATIMENT0000000301150899",
+   "name": "Grand bâtiment industriel (6827 m²)",
+   "type": "industrial",
+   "status": "actuel",
+   "buildingIds": [
+    "BATIMENT0000000301150899"
+   ],
+   "unrealPosition": [
+    255784,
+    96191,
+    8493
+   ],
+   "L93": null,
+   "silhouette": "grand volume à toiture gable",
+   "dimensions": {
+    "buildings": 1,
+    "totalFootprintM2": 6827,
+    "mainFootprint": {
+     "id": "BATIMENT0000000301150899",
+     "lengthM": 170.4,
+     "widthM": 41.5,
+     "bearingDeg": 75.4,
+     "footprintFamily": "complex"
+    }
+   },
+   "heights": {
+    "wallHeightM": 13,
+    "wallHeightStatus": "official",
+    "totalHeightM": 18.1,
+    "totalHeightStatus": "measured"
+   },
+   "roof": {
+    "type": "gable",
+    "confidence": "A",
+    "ridgeOrientationDeg": 75,
+    "slopeDeg": 20,
+    "colorFamily": "light_gray",
+    "material": "metal"
+   },
+   "particularities": [
+    "volume très visible en vue aérienne"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "OpenStreetMap"
+   ],
+   "confidence": "A",
+   "modelingLevel": "procedural_custom"
+  },
+  {
+   "id": "auto:BATIMENT0000000325110252",
+   "name": "Grand bâtiment commercial (6097 m²)",
+   "type": "commercial",
+   "status": "actuel",
+   "buildingIds": [
+    "BATIMENT0000000325110252"
+   ],
+   "unrealPosition": [
+    -216994,
+    79355,
+    7674
+   ],
+   "L93": null,
+   "silhouette": "grand volume à toiture flat",
+   "dimensions": {
+    "buildings": 1,
+    "totalFootprintM2": 6097,
+    "mainFootprint": {
+     "id": "BATIMENT0000000325110252",
+     "lengthM": 132.7,
+     "widthM": 80.9,
+     "bearingDeg": 12.9,
+     "footprintFamily": "complex"
+    }
+   },
+   "heights": {
+    "wallHeightM": 6.6,
+    "wallHeightStatus": "official",
+    "totalHeightM": 8.8,
+    "totalHeightStatus": "measured"
+   },
+   "roof": {
+    "type": "flat",
+    "confidence": "B",
+    "ridgeOrientationDeg": null,
+    "slopeDeg": 0,
+    "colorFamily": "white",
+    "material": "membrane"
+   },
+   "particularities": [
+    "volume très visible en vue aérienne"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "OpenStreetMap"
+   ],
+   "confidence": "B",
+   "modelingLevel": "procedural_custom"
+  },
+  {
+   "id": "auto:BATIMENT0000002206127459",
+   "name": "Grand bâtiment industriel (22296 m²)",
+   "type": "industrial",
+   "status": "actuel",
+   "buildingIds": [
+    "BATIMENT0000002206127459"
+   ],
+   "unrealPosition": [
+    -243317,
+    93508,
+    7734
+   ],
+   "L93": null,
+   "silhouette": "grand volume à toiture flat",
+   "dimensions": {
+    "buildings": 1,
+    "totalFootprintM2": 22296,
+    "mainFootprint": {
+     "id": "BATIMENT0000002206127459",
+     "lengthM": 197.6,
+     "widthM": 120.9,
+     "bearingDeg": 95.9,
+     "footprintFamily": "T"
+    }
+   },
+   "heights": {
+    "wallHeightM": 14.6,
+    "wallHeightStatus": "official",
+    "totalHeightM": 14.6,
+    "totalHeightStatus": "measured"
+   },
+   "roof": {
+    "type": "flat",
+    "confidence": "A",
+    "ridgeOrientationDeg": null,
+    "slopeDeg": 0,
+    "colorFamily": "dark_gray",
+    "material": "membrane"
+   },
+   "particularities": [
+    "volume très visible en vue aérienne"
+   ],
+   "sources": [
+    "empreinte gelée (géométrie dérivée)",
+    "IGN LiDAR HD MNH 0,5 m (missions 24LHDMF, 25LHDZIRomilly, vols 2025)",
+    "IGN BD TOPO (référentiel V1.6.2)",
+    "IGN BD ORTHO avril 2025 (couleur de toiture, 0,5 m)",
+    "OpenStreetMap"
+   ],
+   "confidence": "A",
+   "modelingLevel": "procedural_custom"
+  }
+ ]
+}

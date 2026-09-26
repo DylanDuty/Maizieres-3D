@@ -2,6 +2,27 @@
 
 Prototype local Three.js de la commune de l’Aube, code INSEE **10220**. Empreintes, voirie, voies ferrées et occupation du sol proviennent d’OpenStreetMap. Le contour communal provient de l’API Découpage administratif française.
 
+**Version 2.3** : enrichissement architectural préparatoire à Unreal. La géographie V2.2 est strictement inchangée.
+
+- **Un profil par bâtiment** (2 596), dans `public/data/building-architecture-v2.3.json` :
+  - classe (archétype Unreal) ;
+  - hauteurs à l'égout et au point haut ;
+  - niveaux déclarés et niveaux lisibles ;
+  - type de toit, orientation du faîtage, pente ;
+  - famille de couleur et matériau ;
+  - forme de l'empreinte, annexes ;
+  - confiance et trace de chaque attribut.
+- **Sources mesurées** :
+  - **LiDAR HD IGN 2025 (MNH, 0,5 m)** pour les toits et les hauteurs ;
+  - BD ORTHO avril 2025 pour les couleurs ;
+  - BD TOPO pour les hauteurs officielles.
+  - Aucune donnée Google.
+- **Ce qui n'est pas connu reste `unknown`.** Les estimations sont marquées `estimated`.
+- **Aperçu** : `?architecture=1`. Diagnostic de confiance : `?diagnostic=architecture` (A vert, B orange, C bleu, inconnu magenta). La carte par défaut n'est pas modifiée.
+- **Unreal** : `unreal/architecture/` contient les bâtiments, les archétypes et les landmarks ; guide dans `docs/unreal/ARCHITECTURE_IMPORT_GUIDE.md`.
+- **Contrôle** : `npm run check:architecture`.
+- **Rapports** : `docs/audit/V2.3_ARCHITECTURAL_ENRICHMENT.md`, et les constats géographiques non corrigés dans `docs/audit/GEOGRAPHIC_FREEZE_EXCEPTIONS.md`.
+
 **Version 2.2** : corrections finales du bâti avant le gel pour Unreal (`READY_FOR_UNREAL_GEOGRAPHIC_FREEZE = true`).
 
 - **Les 16 constructions sans géométrie publique sont arbitrées** :

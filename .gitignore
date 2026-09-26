@@ -18,3 +18,7 @@ __MACOSX/
 data-sources/terrain/lidar-hd-mnt/
 # Heightmap RAW 16 bits régénérée par npm run data:terrain (doublon non compressé du PNG 16 bits)
 unreal/terrain/*.r16
+# V2.3 : dalles LiDAR HD MNH et BD ORTHO 0,5 m (22 km²), vérifiées par SHA-256 dans data-sources/architecture/sources-manifest.json
+data-sources/architecture/lidar-hd-mnh/
+data-sources/architecture/bdortho-0m50/
+__pycache__/

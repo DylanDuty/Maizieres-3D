@@ -1,3 +1,10 @@
+# Notes V2.3 — enrichissement architectural, 26 septembre 2026
+
+- **Le LiDAR HD 2025 change la nature des données.** L'orientation des faîtages, les pentes et les points hauts sont mesurés, et non plus déduits de la forme de l'empreinte. En V2.2, le faîtage suivait toujours le grand côté du rectangle minimal.
+- **Niveaux déclarés et niveaux lisibles.** La BD TOPO compte les combles aménagés : un bâtiment à deux niveaux déclarés a souvent un égout à 4,4 m. La silhouette (plain-pied ou R+1) suit donc l'égout mesuré.
+- **Site masqué.** Un site entre la voie ferrée et la RD619 est dégradé à la fois dans l'orthophoto (mosaïque) et dans le LiDAR (interpolation). Ses 75 bâtiments restent inconnus.
+- **Relevés V2.2 sans élévation.** vis-A, vis-H1 et vis-H2 ne montrent aucune élévation sur le LiDAR 2025. Leur toit plat observé est conservé, aucune hauteur n'est inventée, et une vérification sur place est demandée.
+
 # Notes V2.2 — corrections finales du bâti, 26 septembre 2026
 
 - **Aucune source publique ne couvrait les 16 cas**, même relue le 26/09 (BD TOPO, cadastre, RNB, OSM). Les ajouts sont donc des relevés manuels sur l’orthophoto.

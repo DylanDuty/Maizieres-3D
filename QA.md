@@ -1,3 +1,24 @@
+# Vérification V2.3 — enrichissement architectural pour Unreal, 26 septembre 2026
+
+Branche `opus/v2.3-architectural-enrichment`, à partir de `309e65e`. Rapport : `docs/audit/V2.3_ARCHITECTURAL_ENRICHMENT.md`. Captures : `docs/qa/v2.3/`.
+
+- **Géographie** : 42 fichiers géographiques et Unreal de la V2.2 identiques octet pour octet. L'empreinte de chaque bâtiment est vérifiée par SHA-256.
+- **Profils** : 2 596 sur 2 596.
+  - Toit de confiance A ou B : 1 798.
+  - Faîtage A ou B : 1 159.
+  - Hauteur officielle ou mesurée : 2 375.
+- **Contrôles** :
+  - `npm run check:all` : **16 contrôles OK**, dont `check:architecture` (8 vérifications) ;
+  - `check:final-building-freeze` : 8 ;
+  - `check:building-visibility` : 8 ;
+  - `check:geographic-integrity` : 9 ;
+  - `pnpm build` réussi.
+- **Chromium** (SwiftShader), dans les modes défaut, `?architecture=1`, `?diagnostic=architecture` et `?architecture=1&manual=0` :
+  - 2 596 bâtiments sur 2 596 dans la scène (2 584 avec `manual=0`) ;
+  - 0 enfoui ;
+  - console vide ;
+  - le clic sur un bâtiment affiche son profil architectural (vis-A, Saint-Denis).
+
 # Vérification V2.2 — corrections finales du bâti avant gel Unreal, 26 septembre 2026
 
 Branche `opus/v2.2-final-building-freeze`, à partir de `c87ea11`. Rapport : `docs/audit/V2.2_FINAL_BUILDING_FREEZE.md`. Captures : `docs/qa/v2.2/`.

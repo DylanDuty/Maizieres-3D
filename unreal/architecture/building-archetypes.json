@@ -1,0 +1,979 @@
+{
+ "metadata": {
+  "version": "2.3",
+  "generatedBy": "scripts/build-architecture.mjs (npm run data:architecture)",
+  "rule": "Un archétype ne fait pas la ressemblance : les attributs documentés (type de toit, faîtage, pente, hauteurs, couleur) priment toujours sur les plages ci-dessous, qui ne servent qu’à combler les inconnues.",
+  "seed": "variationSeed = FNV-1a 32 bits de l’identifiant du bâtiment (stable entre deux générations)"
+ },
+ "archetypes": [
+  {
+   "id": "RES_PLAIN_PIED_GABLE",
+   "usage": "maison individuelle de plain-pied",
+   "roofTypes": [
+    "gable"
+   ],
+   "levels": [
+    1
+   ],
+   "wallHeightRangeM": [
+    2.4,
+    4.2
+   ],
+   "roofSlopeRangeDeg": [
+    25,
+    50
+   ],
+   "allowedRoofColors": [
+    "red_orange",
+    "brown",
+    "dark_gray"
+   ],
+   "materials": [
+    "tile",
+    "slate_like"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": true,
+   "variations": [
+    "lucarnes absentes",
+    "cheminée",
+    "couleur d’enduit clair",
+    "volets"
+   ],
+   "randomisation": [
+    "détails de façade",
+    "cheminée",
+    "menuiseries"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 368
+  },
+  {
+   "id": "RES_PLAIN_PIED_HIP",
+   "usage": "maison de plain-pied à quatre pans",
+   "roofTypes": [
+    "hip"
+   ],
+   "levels": [
+    1
+   ],
+   "wallHeightRangeM": [
+    2.4,
+    4.2
+   ],
+   "roofSlopeRangeDeg": [
+    20,
+    45
+   ],
+   "allowedRoofColors": [
+    "red_orange",
+    "brown",
+    "dark_gray"
+   ],
+   "materials": [
+    "tile"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": true,
+   "variations": [
+    "cheminée",
+    "couleur d’enduit"
+   ],
+   "randomisation": [
+    "détails de façade",
+    "menuiseries"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 45
+  },
+  {
+   "id": "RES_R1_GABLE",
+   "usage": "maison à étage (R+1) à deux pans",
+   "roofTypes": [
+    "gable"
+   ],
+   "levels": [
+    2
+   ],
+   "wallHeightRangeM": [
+    4.2,
+    7.2
+   ],
+   "roofSlopeRangeDeg": [
+    25,
+    50
+   ],
+   "allowedRoofColors": [
+    "red_orange",
+    "brown",
+    "dark_gray"
+   ],
+   "materials": [
+    "tile",
+    "slate_like"
+   ],
+   "allowDormers": true,
+   "allowGarageVariation": true,
+   "variations": [
+    "lucarnes",
+    "cheminée",
+    "maison ancienne de bourg"
+   ],
+   "randomisation": [
+    "détails de façade",
+    "menuiseries",
+    "lucarnes si non documentées"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 202
+  },
+  {
+   "id": "RES_R1_HIP",
+   "usage": "maison à étage à quatre pans",
+   "roofTypes": [
+    "hip"
+   ],
+   "levels": [
+    2
+   ],
+   "wallHeightRangeM": [
+    4.2,
+    7.2
+   ],
+   "roofSlopeRangeDeg": [
+    20,
+    45
+   ],
+   "allowedRoofColors": [
+    "red_orange",
+    "brown",
+    "dark_gray"
+   ],
+   "materials": [
+    "tile"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": true,
+   "variations": [
+    "cheminée"
+   ],
+   "randomisation": [
+    "détails de façade"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 46
+  },
+  {
+   "id": "RES_R2_PLUS",
+   "usage": "habitation de trois niveaux visibles ou plus",
+   "roofTypes": [
+    "gable",
+    "hip",
+    "complex",
+    "flat"
+   ],
+   "levels": [
+    3,
+    4
+   ],
+   "wallHeightRangeM": [
+    7.2,
+    13
+   ],
+   "roofSlopeRangeDeg": [
+    0,
+    50
+   ],
+   "allowedRoofColors": [
+    "red_orange",
+    "brown",
+    "dark_gray",
+    "light_gray"
+   ],
+   "materials": [
+    "tile",
+    "slate_like",
+    "membrane"
+   ],
+   "allowDormers": true,
+   "allowGarageVariation": false,
+   "variations": [
+    "immeuble de bourg",
+    "corps de ferme à étage"
+   ],
+   "randomisation": [
+    "détails de façade"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 24
+  },
+  {
+   "id": "RES_FLAT",
+   "usage": "maison à toit plat / toit-terrasse",
+   "roofTypes": [
+    "flat"
+   ],
+   "levels": [
+    1,
+    2
+   ],
+   "wallHeightRangeM": [
+    2.5,
+    7
+   ],
+   "roofSlopeRangeDeg": [
+    0,
+    5
+   ],
+   "allowedRoofColors": [
+    "light_gray",
+    "dark_gray",
+    "white"
+   ],
+   "materials": [
+    "membrane"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": true,
+   "variations": [
+    "acrotère",
+    "terrasse"
+   ],
+   "randomisation": [
+    "acrotère",
+    "garde-corps"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 45
+  },
+  {
+   "id": "RES_COMPLEX",
+   "usage": "maison à plusieurs volumes / pignons croisés / mono-pente",
+   "roofTypes": [
+    "complex",
+    "shed",
+    "industrial"
+   ],
+   "levels": [
+    1,
+    2
+   ],
+   "wallHeightRangeM": [
+    2.4,
+    7.2
+   ],
+   "roofSlopeRangeDeg": [
+    10,
+    50
+   ],
+   "allowedRoofColors": [
+    "red_orange",
+    "brown",
+    "dark_gray",
+    "mixed"
+   ],
+   "materials": [
+    "tile",
+    "slate_like"
+   ],
+   "allowDormers": true,
+   "allowGarageVariation": true,
+   "variations": [
+    "L",
+    "T",
+    "extensions"
+   ],
+   "randomisation": [
+    "répartition des pans si non mesurée"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)",
+    "réduire la maison à un seul pignon quand l’empreinte est en L/T/U"
+   ],
+   "count": 306
+  },
+  {
+   "id": "GARAGE",
+   "usage": "garage individuel",
+   "roofTypes": [
+    "flat",
+    "shed",
+    "gable"
+   ],
+   "levels": [
+    1
+   ],
+   "wallHeightRangeM": [
+    2.2,
+    3.2
+   ],
+   "roofSlopeRangeDeg": [
+    0,
+    35
+   ],
+   "allowedRoofColors": [
+    "red_orange",
+    "brown",
+    "dark_gray",
+    "light_gray"
+   ],
+   "materials": [
+    "tile",
+    "membrane",
+    "metal"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": false,
+   "variations": [
+    "porte basculante",
+    "accolé ou isolé"
+   ],
+   "randomisation": [
+    "porte",
+    "teinte"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 238
+  },
+  {
+   "id": "ANNEX",
+   "usage": "dépendance / annexe maçonnée",
+   "roofTypes": [
+    "gable",
+    "shed",
+    "flat"
+   ],
+   "levels": [
+    1
+   ],
+   "wallHeightRangeM": [
+    2,
+    3.5
+   ],
+   "roofSlopeRangeDeg": [
+    0,
+    45
+   ],
+   "allowedRoofColors": [
+    "red_orange",
+    "brown",
+    "dark_gray",
+    "light_gray"
+   ],
+   "materials": [
+    "tile",
+    "metal",
+    "membrane"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": false,
+   "variations": [
+    "appentis",
+    "remise"
+   ],
+   "randomisation": [
+    "ouvertures",
+    "teinte"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 409
+  },
+  {
+   "id": "SHED",
+   "usage": "abri de jardin / construction légère",
+   "roofTypes": [
+    "shed",
+    "gable",
+    "flat",
+    "unknown"
+   ],
+   "levels": [
+    1
+   ],
+   "wallHeightRangeM": [
+    1.8,
+    2.8
+   ],
+   "roofSlopeRangeDeg": [
+    0,
+    35
+   ],
+   "allowedRoofColors": [
+    "dark_gray",
+    "brown",
+    "light_gray",
+    "mixed"
+   ],
+   "materials": [
+    "metal",
+    "unknown"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": false,
+   "variations": [
+    "bois",
+    "tôle",
+    "bâche"
+   ],
+   "randomisation": [
+    "matériau léger",
+    "teinte"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)",
+    "en faire une maison"
+   ],
+   "count": 497
+  },
+  {
+   "id": "GREENHOUSE",
+   "usage": "serre",
+   "roofTypes": [
+    "gable",
+    "unknown"
+   ],
+   "levels": [
+    1
+   ],
+   "wallHeightRangeM": [
+    2,
+    3.5
+   ],
+   "roofSlopeRangeDeg": [
+    15,
+    35
+   ],
+   "allowedRoofColors": [
+    "white",
+    "light_gray"
+   ],
+   "materials": [
+    "glass"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": false,
+   "variations": [
+    "tunnel",
+    "serre vitrée"
+   ],
+   "randomisation": [
+    "armature"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 5
+  },
+  {
+   "id": "FARM",
+   "usage": "bâtiment agricole maçonné (grange, étable, corps de ferme)",
+   "roofTypes": [
+    "gable",
+    "hip",
+    "complex",
+    "industrial"
+   ],
+   "levels": [],
+   "wallHeightRangeM": [
+    3.5,
+    8
+   ],
+   "roofSlopeRangeDeg": [
+    10,
+    45
+   ],
+   "allowedRoofColors": [
+    "red_orange",
+    "brown",
+    "light_gray",
+    "blue_gray"
+   ],
+   "materials": [
+    "tile",
+    "metal",
+    "fiber_cement"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": false,
+   "variations": [
+    "portes charretières",
+    "grange"
+   ],
+   "randomisation": [
+    "ouvertures",
+    "bardage"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 33
+  },
+  {
+   "id": "HANGAR",
+   "usage": "hangar / grand volume léger",
+   "roofTypes": [
+    "gable",
+    "shed",
+    "industrial",
+    "flat"
+   ],
+   "levels": [],
+   "wallHeightRangeM": [
+    3.5,
+    10
+   ],
+   "roofSlopeRangeDeg": [
+    3,
+    20
+   ],
+   "allowedRoofColors": [
+    "light_gray",
+    "blue_gray",
+    "dark_gray"
+   ],
+   "materials": [
+    "metal",
+    "fiber_cement"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": false,
+   "variations": [
+    "ouvert",
+    "bardé"
+   ],
+   "randomisation": [
+    "bardage",
+    "ouvertures"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 70
+  },
+  {
+   "id": "INDUSTRIAL",
+   "usage": "bâtiment industriel / logistique",
+   "roofTypes": [
+    "flat",
+    "industrial",
+    "gable",
+    "shed"
+   ],
+   "levels": [],
+   "wallHeightRangeM": [
+    5,
+    15
+   ],
+   "roofSlopeRangeDeg": [
+    0,
+    15
+   ],
+   "allowedRoofColors": [
+    "light_gray",
+    "dark_gray",
+    "white",
+    "blue_gray"
+   ],
+   "materials": [
+    "metal",
+    "membrane"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": false,
+   "variations": [
+    "quais",
+    "panneaux solaires",
+    "lanterneaux"
+   ],
+   "randomisation": [
+    "ouvertures",
+    "quais"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 120
+  },
+  {
+   "id": "COMMERCIAL",
+   "usage": "commerce / services",
+   "roofTypes": [
+    "flat",
+    "gable",
+    "industrial",
+    "complex"
+   ],
+   "levels": [
+    1,
+    2
+   ],
+   "wallHeightRangeM": [
+    3,
+    10
+   ],
+   "roofSlopeRangeDeg": [
+    0,
+    40
+   ],
+   "allowedRoofColors": [
+    "white",
+    "light_gray",
+    "dark_gray",
+    "red_orange"
+   ],
+   "materials": [
+    "membrane",
+    "metal",
+    "tile"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": false,
+   "variations": [
+    "enseigne générique (aucune marque)",
+    "auvent"
+   ],
+   "randomisation": [
+    "devanture"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)",
+    "reproduire un logo ou une marque"
+   ],
+   "count": 75
+  },
+  {
+   "id": "PUBLIC",
+   "usage": "bâtiment public (école, salle, services)",
+   "roofTypes": [
+    "gable",
+    "hip",
+    "complex",
+    "flat",
+    "shed"
+   ],
+   "levels": [
+    1,
+    2
+   ],
+   "wallHeightRangeM": [
+    3,
+    8
+   ],
+   "roofSlopeRangeDeg": [
+    0,
+    45
+   ],
+   "allowedRoofColors": [
+    "red_orange",
+    "brown",
+    "dark_gray",
+    "light_gray"
+   ],
+   "materials": [
+    "tile",
+    "metal",
+    "membrane"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": false,
+   "variations": [
+    "préau",
+    "cour"
+   ],
+   "randomisation": [
+    "menuiseries"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 16
+  },
+  {
+   "id": "HERITAGE",
+   "usage": "bâtiment ancien remarquable (presbytère)",
+   "roofTypes": [
+    "gable",
+    "complex",
+    "hip"
+   ],
+   "levels": [
+    1,
+    2
+   ],
+   "wallHeightRangeM": [
+    2.5,
+    7.5
+   ],
+   "roofSlopeRangeDeg": [
+    15,
+    50
+   ],
+   "allowedRoofColors": [
+    "red_orange",
+    "brown",
+    "dark_gray"
+   ],
+   "materials": [
+    "tile",
+    "slate_like"
+   ],
+   "allowDormers": true,
+   "allowGarageVariation": false,
+   "variations": [
+    "maison de bourg ancienne"
+   ],
+   "randomisation": [
+    "aucune au-delà des menuiseries"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 3
+  },
+  {
+   "id": "RELIGIOUS",
+   "usage": "édifice religieux",
+   "roofTypes": [
+    "complex"
+   ],
+   "levels": [],
+   "wallHeightRangeM": [
+    6,
+    12
+   ],
+   "roofSlopeRangeDeg": [
+    35,
+    60
+   ],
+   "allowedRoofColors": [
+    "dark_gray",
+    "blue_gray"
+   ],
+   "materials": [
+    "slate_like",
+    "tile"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": false,
+   "variations": [],
+   "randomisation": [],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)",
+    "toute génération procédurale : modèle unique (Saint-Denis)"
+   ],
+   "count": 1
+  },
+  {
+   "id": "WATER_TOWER",
+   "usage": "château d’eau",
+   "roofTypes": [
+    "complex",
+    "flat"
+   ],
+   "levels": [],
+   "wallHeightRangeM": [
+    15,
+    30
+   ],
+   "roofSlopeRangeDeg": [
+    0,
+    25
+   ],
+   "allowedRoofColors": [
+    "light_gray",
+    "white"
+   ],
+   "materials": [
+    "unknown"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": false,
+   "variations": [],
+   "randomisation": [],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)",
+    "toute génération procédurale : modèle unique par ouvrage"
+   ],
+   "count": 2
+  },
+  {
+   "id": "SILO_TANK",
+   "usage": "silo / cuve cylindrique",
+   "roofTypes": [
+    "flat",
+    "complex"
+   ],
+   "levels": [],
+   "wallHeightRangeM": [
+    5,
+    55
+   ],
+   "roofSlopeRangeDeg": [
+    0,
+    30
+   ],
+   "allowedRoofColors": [
+    "light_gray",
+    "white",
+    "dark_gray"
+   ],
+   "materials": [
+    "metal"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": false,
+   "variations": [
+    "batterie de cellules",
+    "bac d’hydrocarbures"
+   ],
+   "randomisation": [
+    "passerelles"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)",
+    "ajouter un faîtage à un cylindre"
+   ],
+   "count": 72
+  },
+  {
+   "id": "OTHER",
+   "usage": "structure particulière (tribune, auvent, abri ouvert)",
+   "roofTypes": [
+    "flat",
+    "shed",
+    "gable",
+    "unknown"
+   ],
+   "levels": [],
+   "wallHeightRangeM": [
+    2,
+    8
+   ],
+   "roofSlopeRangeDeg": [
+    0,
+    30
+   ],
+   "allowedRoofColors": [
+    "light_gray",
+    "dark_gray",
+    "white"
+   ],
+   "materials": [
+    "metal",
+    "unknown"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": false,
+   "variations": [
+    "auvent sur poteaux",
+    "tribune"
+   ],
+   "randomisation": [
+    "poteaux"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)"
+   ],
+   "count": 15
+  },
+  {
+   "id": "UNKNOWN",
+   "usage": "usage non établi",
+   "roofTypes": [
+    "unknown",
+    "flat",
+    "gable"
+   ],
+   "levels": [],
+   "wallHeightRangeM": [
+    2.5,
+    6
+   ],
+   "roofSlopeRangeDeg": [
+    0,
+    45
+   ],
+   "allowedRoofColors": [
+    "light_gray",
+    "brown",
+    "dark_gray"
+   ],
+   "materials": [
+    "unknown"
+   ],
+   "allowDormers": false,
+   "allowGarageVariation": false,
+   "variations": [
+    "volume neutre"
+   ],
+   "randomisation": [
+    "aucune"
+   ],
+   "forbidden": [
+    "modifier l’empreinte, la position ou l’orientation géographique",
+    "remplacer une hauteur officielle ou mesurée par une valeur aléatoire",
+    "changer un type de toit connu (confiance A/B)",
+    "inventer un usage"
+   ],
+   "count": 4
+  }
+ ]
+}
