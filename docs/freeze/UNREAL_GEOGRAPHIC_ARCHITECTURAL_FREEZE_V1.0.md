@@ -8,7 +8,7 @@ Ce document est **la référence** pour l'import Unreal Engine de Maizières-la-
 | Version du gel | 1.0 |
 | Commit du gel géographique (V2.2) | `309e65ed52cfc0947bb8cd66117b7ff84ceb028a` |
 | Commit de base architecture (V2.3) | `4c609ee17fdbc682883baafc87cbfaeade0cd22c` |
-| Commit du gel final (V2.3.1) | `finalFreezeCommit` dans le manifeste |
+| Commit du gel final (V2.3.1) | `4a133f913f2f4e7f0496bfd58794ffc68904e016` (`finalFreezeCommit`) |
 | Manifeste | `docs/freeze/UNREAL_FREEZE_MANIFEST_V1.0.json` (SHA-256 de 52 fichiers canoniques) |
 | Contrôle | `npm run check:architecture-stats` (et `npm run check:all`) |
 
@@ -173,4 +173,4 @@ La liste lisible par machine est dans `unreal/freeze-v1/architecture-exceptions.
 
 ## 4. État
 
-La valeur de `READY_FOR_UNREAL_FREEZE` est donnée par `readyForUnreal` dans le manifeste. Le rapport `docs/audit/V2.3.1_ARCHITECTURE_FREEZE_QA.md` en donne les conditions et leur vérification.
+**`READY_FOR_UNREAL_FREEZE = true`** (`readyForUnreal` dans le manifeste). Toutes les conditions ont été vérifiées sur le commit `4a133f9` : contrôles, build, Chromium sur 10 modes (2 596 bâtiments rendus, 2 584 avec `manual=0`, 0 enfoui, console vide). Détail dans `docs/audit/V2.3.1_ARCHITECTURE_FREEZE_QA.md`.

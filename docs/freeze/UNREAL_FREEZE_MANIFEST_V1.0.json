@@ -3,7 +3,7 @@
  "name": "Maizières-la-Grande-Paroisse — Unreal Freeze V1 (géographie V2.2 + architecture V2.3.1)",
  "geographicBaseCommit": "309e65ed52cfc0947bb8cd66117b7ff84ceb028a",
  "architecturalBaseCommit": "4c609ee17fdbc682883baafc87cbfaeade0cd22c",
- "finalFreezeCommit": null,
+ "finalFreezeCommit": "4a133f913f2f4e7f0496bfd58794ffc68904e016",
  "finalFreezeCommitNote": "commit qui contient tous les fichiers hachés ci-dessous (un fichier ne peut pas contenir le hash de son propre commit) ; les commits suivants de la branche ne touchent que docs/freeze/ et docs/audit/V2.3.1_ARCHITECTURE_FREEZE_QA.md",
  "buildings": 2596,
  "buildingsInCommune": 2362,
@@ -136,8 +136,8 @@
    "unknown": 129
   }
  },
- "readyForUnreal": false,
- "readyForUnrealNote": "en attente : contrôles, build et Chromium sur le commit de gel",
+ "readyForUnreal": true,
+ "readyForUnrealNote": "tous les contrôles, le build et Chromium ont passé sur finalFreezeCommit",
  "files": [
   {
    "path": "public/data/bible-annotations.json",
