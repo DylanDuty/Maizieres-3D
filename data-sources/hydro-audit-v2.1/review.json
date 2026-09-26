@@ -1,0 +1,153 @@
+{
+ "metadata": {
+  "version": "2.1",
+  "note": "Classement humain des points terminaux du réseau hydrographique hors limite de l’emprise (29), contrôlés un à un sur l’orthophoto ; les 37 points en limite de l’emprise sont des sorties du terrain V1.7."
+ },
+ "points": {
+  "TRON_EAU0000000009312708:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009312711:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009312715:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009312716:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009312746:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009312756:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009312757:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009312766:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009312795:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009313269:aval": {
+   "verdict": "expliqué",
+   "observation": "exutoire BD TOPO au bord de la rue, dans le bâti : le fossé intermittent se perd (busage ou infiltration non documentés) ; rien de visible au-delà sur l’orthophoto",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009313270:amont": {
+   "verdict": "expliqué",
+   "observation": "tête de fossé intermittent au fond des jardins, en limite du bâti (probable sortie busée non documentée)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009313271:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009313275:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009313276:amont": {
+   "verdict": "expliqué",
+   "observation": "tête de fossé intermittent au carrefour du chemin, le long de la voie",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009313277:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000009313281:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000065119320:amont": {
+   "verdict": "expliqué",
+   "observation": "tête de fossé au chemin de la peupleraie (buse possible sous le chemin, non documentée)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000065119323:amont": {
+   "verdict": "expliqué",
+   "observation": "tête de fossé au chemin de la peupleraie (buse possible sous le chemin, non documentée)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000065119329:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000065119540:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000129491640:amont": {
+   "verdict": "expliqué",
+   "observation": "tête de fossé le long de la zone d’activité (fossé de bord de voie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000000129491640:aval": {
+   "verdict": "expliqué",
+   "observation": "fossé rejoignant le canal le long du parking (surface en eau)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000002005083541:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000002005319386:amont": {
+   "verdict": "expliqué",
+   "observation": "arrivée dans une surface en eau (étang, gravière, canal)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000002005319387:amont": {
+   "verdict": "expliqué",
+   "observation": "arrivée dans une surface en eau (étang, gravière, canal)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000002005319389:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000002005319390:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000002245355332:amont": {
+   "verdict": "expliqué",
+   "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  },
+  "TRON_EAU0000002287744609:amont": {
+   "verdict": "expliqué",
+   "observation": "arrivée dans une surface en eau (étang, gravière, canal)",
+   "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+  }
+ }
+}

@@ -1,0 +1,2840 @@
+{
+ "metadata": {
+  "version": "2.1",
+  "generatedBy": "scripts/audit-geography.mjs"
+ },
+ "buildings": {
+  "total": 2584,
+  "reference": 2494,
+  "additions": 90,
+  "inCommune": 2350,
+  "grid": {
+   "cellM": 160,
+   "cellsInBuiltArea": 146,
+   "controlled": 146,
+   "byStatus": {
+    "correcte": 76,
+    "incertaine": 58,
+    "anomalie": 12
+   }
+  },
+  "duplicates": [],
+  "invalid": [],
+  "offsets": {
+   "checked": 62,
+   "moved": 0,
+   "verdict": "62 bâtiments de la commune dont l’empreinte s’écarte de plus de 2,5 m de son homologue cadastral : sur l’orthophoto, l’empreinte du référentiel (BD TOPO) est posée sur la toiture dans tous les cas ; l’écart vient du dessin cadastral (décalage connu du PCI) ou d’un homologue qui est en fait un bâtiment voisin. Aucun déplacement."
+  },
+  "poussey": {
+   "cells": 40,
+   "cellM": 120,
+   "extentL93": [
+    758640,
+    6823560,
+    760200,
+    6824280
+   ],
+   "streets": [
+    "D20 (axe principal)",
+    "rue Joliot-Curie",
+    "rue Basse de Poussey",
+    "rue des Lombards",
+    "rue des Billouts",
+    "rue du Lavoir",
+    "rue du Château",
+    "rue des Bédouins",
+    "rue des Prés de Poussey",
+    "Pont de Clairvaux"
+   ],
+   "result": "40 cellules de 120 m contrôlées une à une (référentiel en rouge, réintégrations V2.0.1 en vert, cadastre en jaune sur l’orthophoto 2025) : chaque maison visible a son empreinte, bien placée et orientée ; aucune maison manquante, aucun doublon, aucun décalage notable. Restent visibles sans empreinte quelques abris de jardin de moins de 15 m² (non inventoriés) et vis-A (bâtiment au sud-est du château d’eau, déjà listé).",
+   "newMissing": 0,
+   "moved": 0
+  },
+  "withoutGeometry": [
+   {
+    "id": "vis-A",
+    "sector": "Rue Joliot Curie (adresse BAN la plus proche, 6 m)",
+    "observation": "bâtiment à toiture brune au sud-est du château d’eau de Poussey",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   },
+   {
+    "id": "vis-D1",
+    "sector": "Rue du General Leclerc (adresse BAN la plus proche, 49 m)",
+    "observation": "serre vitrée",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   },
+   {
+    "id": "vis-D2",
+    "sector": "Rue du General Leclerc (adresse BAN la plus proche, 41 m)",
+    "observation": "annexe à toiture brune",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 1,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 1,
+       "nonCouvertsParLeReferentiel": 1
+      },
+      "RNB": {
+       "aMoinsDe3m": 1,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     },
+     "note": "l’empreinte cadastrale à 1 m (cadastre:39808459, 429 m²) est le bâtiment voisin, déjà couvert à 97 % par le référentiel ; l’annexe elle-même n’a pas d’empreinte"
+    }
+   },
+   {
+    "id": "vis-F",
+    "sector": "Rue Maurice Renault (adresse BAN la plus proche, 31 m)",
+    "observation": "long bâtiment à toiture gris-bleu (environ 40 × 10 m)",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   },
+   {
+    "id": "vis-H1",
+    "sector": "Rue du Pot Bancelin (adresse BAN la plus proche, 21 m)",
+    "observation": "bâtiment à toit plat blanc",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   },
+   {
+    "id": "vis-H2",
+    "sector": "Rue du Pot Bancelin (adresse BAN la plus proche, 17 m)",
+    "observation": "bâtiment à toiture grise",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   },
+   {
+    "id": "vis-I",
+    "sector": "Le Chemin de la Guide (adresse BAN la plus proche, 62 m)",
+    "observation": "bâtiment allongé à toiture brune",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   },
+   {
+    "id": "vis-K",
+    "sector": "Rue Georges Clemenceau (adresse BAN la plus proche, 61 m)",
+    "observation": "bâtiment à toit plat blanc",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   },
+   {
+    "id": "vis-P1",
+    "sector": "Rue de la Chefferie (adresse BAN la plus proche, 25 m)",
+    "observation": "bâtiment à toiture sombre accolé au long bâtiment",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   },
+   {
+    "id": "vis-P2",
+    "sector": "Rue de la Chefferie (adresse BAN la plus proche, 17 m)",
+    "observation": "annexe à toiture grise",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 1,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 1,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 1,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   },
+   {
+    "id": "vis-Q",
+    "sector": "Avenue du General de Gaulle (adresse BAN la plus proche, 64 m)",
+    "observation": "abri à toiture sombre",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   },
+   {
+    "id": "vis-R1",
+    "sector": "sans adresse à moins de 80 m (Avenue du General de Gaulle à 90 m)",
+    "observation": "hangar léger à toiture grise",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   },
+   {
+    "id": "vis-R2",
+    "sector": "sans adresse à moins de 80 m (Avenue du General de Gaulle à 95 m)",
+    "observation": "abri à toiture grise",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   },
+   {
+    "id": "vis-T",
+    "sector": "Rue Georges Clemenceau (adresse BAN la plus proche, 40 m)",
+    "observation": "abri à toiture grise",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   },
+   {
+    "id": "vis-U2",
+    "sector": "Rue du Mal de Lattre de Tassigny (adresse BAN la plus proche, 20 m)",
+    "observation": "maison à toiture brune",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   },
+   {
+    "id": "vis-U3",
+    "sector": "Rue Albert Benoist (adresse BAN la plus proche, 25 m)",
+    "observation": "garage à toiture grise",
+    "recheck": {
+     "date": "2026-09-26",
+     "result": "toujours sans géométrie publique",
+     "detail": {
+      "BDTOPO": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "CADAST": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      },
+      "RNB": {
+       "aMoinsDe3m": 0,
+       "nonCouvertsParLeReferentiel": 0
+      }
+     }
+    }
+   }
+  ]
+ },
+ "roads": {
+  "splines": 1585,
+  "topology": {
+   "components": 9,
+   "impasses": 164,
+   "orphans": [
+    {
+     "roads": [
+      "way/1068921271",
+      "way/1421553668",
+      "way/1421553671",
+      "way/1421553672"
+     ],
+     "lengthM": 346,
+     "categories": [
+      "voie_de_desserte"
+     ],
+     "names": [],
+     "provenance": [
+      "osm"
+     ],
+     "inCommune": false,
+     "centreL93": [
+      756285,
+      6822995
+     ],
+     "review": {
+      "observation": "boucle de parking d’un restaurant de La Belle Idée : raccord réel à la voirie visible mais absent d’OSM et de la BD TOPO",
+      "open": true
+     }
+    }
+   ],
+   "nearMisses": 0,
+   "duplicates": 0,
+   "crossingsWithoutNode": 0
+  },
+  "freeEnds": 448,
+  "freeEndsAtEdge": 109,
+  "gaps1to5m": [
+   {
+    "road": "spline:TRONROUT0000002492550949",
+    "name": null,
+    "cat": "voie_locale",
+    "L93": [
+     756018.7,
+     6822096.3
+    ],
+    "edge": false,
+    "gap": {
+     "to": "spline:TRONROUT0000002492550972",
+     "d": 5
+    }
+   },
+   {
+    "road": "spline:way/103925830#1",
+    "name": null,
+    "cat": "voie_de_desserte",
+    "L93": [
+     756372.3,
+     6822979
+    ],
+    "edge": false,
+    "gap": {
+     "to": "spline:way/1278267007",
+     "d": 3.7
+    }
+   },
+   {
+    "road": "spline:way/377317550#1",
+    "name": null,
+    "cat": "voie_de_desserte",
+    "L93": [
+     756436.9,
+     6823085.8
+    ],
+    "edge": false,
+    "gap": {
+     "to": "spline:way/499690351#1",
+     "d": 2
+    }
+   },
+   {
+    "road": "spline:way/377317550#2",
+    "name": null,
+    "cat": "voie_de_desserte",
+    "L93": [
+     756440.2,
+     6823100.2
+    ],
+    "edge": false,
+    "gap": {
+     "to": "spline:way/499690352#1",
+     "d": 2.9
+    }
+   },
+   {
+    "road": "spline:way/533882030#1",
+    "name": null,
+    "cat": "voie_de_desserte",
+    "L93": [
+     756023.3,
+     6822632.8
+    ],
+    "edge": false,
+    "gap": {
+     "to": "spline:way/533882036#1",
+     "d": 3.6
+    }
+   },
+   {
+    "road": "spline:way/533882036#1",
+    "name": null,
+    "cat": "voie_de_desserte",
+    "L93": [
+     756021,
+     6822635.6
+    ],
+    "edge": false,
+    "gap": {
+     "to": "spline:way/533882030#1",
+     "d": 3.6
+    }
+   },
+   {
+    "road": "spline:way/1068920927#1",
+    "name": null,
+    "cat": "voie_pietonne",
+    "L93": [
+     756495.1,
+     6823086.8
+    ],
+    "edge": false,
+    "gap": {
+     "to": "spline:way/499690352#1",
+     "d": 2.9
+    }
+   },
+   {
+    "road": "spline:way/1227619265#1",
+    "name": null,
+    "cat": "voie_de_desserte",
+    "L93": [
+     756251.3,
+     6822851.8
+    ],
+    "edge": false,
+    "gap": {
+     "to": "spline:way/1227619266",
+     "d": 2.8
+    }
+   },
+   {
+    "road": "spline:way/1278267007",
+    "name": null,
+    "cat": "voie_de_desserte",
+    "L93": [
+     756373,
+     6822982.7
+    ],
+    "edge": false,
+    "gap": {
+     "to": "spline:way/103925830#1",
+     "d": 3.7
+    }
+   },
+   {
+    "road": "spline:way/1423527175#1",
+    "name": null,
+    "cat": "sentier",
+    "L93": [
+     755842.8,
+     6822969.7
+    ],
+    "edge": false,
+    "gap": {
+     "to": "spline:way/1423527176",
+     "d": 2.8
+    }
+   },
+   {
+    "road": "spline:way/1442983071#1",
+    "name": null,
+    "cat": "voie_de_desserte",
+    "L93": [
+     756564.5,
+     6823115
+    ],
+    "edge": false,
+    "gap": {
+     "to": "spline:way/1442983065#1",
+     "d": 3.9
+    }
+   }
+  ],
+  "anomaliesToCheck": 4,
+  "review": {
+   "gaps1to5m": "11 extrémités à 2–5 m d’une autre voie, toutes dans les allées de parking et dessertes OSM des zones commerciales ouest (La Belle Idée), dont 3 dans la commune : écarts de tracé OSM entre allées, recouverts à l’écran par la largeur des rubans (≥ 3 m) ; aucune rupture visible, aucune correction (référentiel V1.8 gelé).",
+   "orphan": "boucle de parking d’un restaurant de La Belle Idée (hors commune, 346 m) : raccord réel visible sur l’orthophoto mais absent d’OSM et de la BD TOPO (revue V1.8, ouvert)",
+   "freeEnds": "les autres extrémités libres sont des impasses (164, BD TOPO) et des fins de sentier ou de chemin ; 109 sont des sorties de l’emprise",
+   "anomalies": "creux sous le chemin de la Croix des Fourches (revue V1.8, ouvert : fossé, tranchée ou buse ?)"
+  }
+ },
+ "rail": {
+  "tracks": 25,
+  "topology": {
+   "components": 2,
+   "switches": 28,
+   "bufferStops": 16,
+   "borderEnds": 4,
+   "orphans": [
+    {
+     "tracks": [
+      "way/174931208",
+      "way/174931209"
+     ],
+     "lengthM": 830,
+     "border": false,
+     "kinds": [
+      "spur"
+     ]
+    }
+   ],
+   "nearMisses": [
+    {
+     "track": "way/174931209",
+     "end": "B",
+     "near": "way/174931210",
+     "gapM": 2.95,
+     "L93": [
+      760755.51,
+      6822709.64
+     ]
+    }
+   ],
+   "crossingsWithoutConnection": [
+    {
+     "a": "way/233599039",
+     "b": "way/233599046",
+     "L93": [
+      758640.52,
+      6822965.93
+     ],
+     "review": "croisement de deux voies de service du faisceau ouest sans nœud OSM : aiguillage probable non cartographié"
+    },
+    {
+     "a": "way/233599046",
+     "b": "way/233599052",
+     "L93": [
+      758877.41,
+      6822931.46
+     ],
+     "review": "croisement de deux voies de service du faisceau ouest sans nœud OSM : aiguillage probable non cartographié"
+    },
+    {
+     "a": "way/612311100",
+     "b": "way/721610239",
+     "L93": [
+      760754.03,
+      6822748.5
+     ],
+     "review": "la communication J1357 relie la voie 1 au faisceau sud en traversant la voie 2 sans nœud commun dans OSM : traversée ou aiguillages non cartographiés ; à vérifier (données SNCF Réseau inaccessibles)"
+    }
+   ]
+  },
+  "unknownStatus": [
+   {
+    "id": "way/174931208",
+    "kind": "spur",
+    "lengthM": 351.62,
+    "review": "zone floutée (diffusion restreinte) ; aucune connexion au reste du réseau dans OSM"
+   },
+   {
+    "id": "way/174931209",
+    "kind": "spur",
+    "lengthM": 478.86,
+    "review": "zone floutée (diffusion restreinte) ; extrémité à 2,95 m de la voie way/174931210 sans nœud commun"
+   },
+   {
+    "id": "way/233599048",
+    "kind": "spur",
+    "lengthM": 47.1,
+    "review": "zone floutée (diffusion restreinte)"
+   }
+  ],
+  "levelCrossings": 4,
+  "bridges": 1,
+  "review": {
+   "orphan": "embranchements way/174931208 et way/174931209 (830 m, zone floutée de l’orthophoto, diffusion restreinte) : aucune connexion dans OSM ; extrémité à 2,95 m de way/174931210",
+   "crossings": "3 croisements sans nœud commun (faisceau ouest ×2, communication J1357) : aiguillages ou traversées probables non cartographiés (revue V1.9, ouverts)",
+   "bridge": "pont ferroviaire de la rue de l’Orme : profil conservé, rue passant dessous (V1.8 / V1.9)",
+   "interruptions": "aucun rail interrompu hors butoirs (16), sorties d’emprise (4) et l’embranchement isolé ci-dessus"
+  }
+ },
+ "landcover": {
+  "permanentRiverInsideParcelsM": 705,
+  "parcels": [
+   "rpg2024:3116235",
+   "rpg2024:958360",
+   "rpg2024:9515111",
+   "rpg2024:3343430"
+  ],
+  "openIssues": {
+   "overlapsToCheck": 2,
+   "duplicates": 0,
+   "relationsOpen": 6,
+   "uncertainC": 8,
+   "observations": 4,
+   "gapsOpen": 2,
+   "count": 19
+  },
+  "review": {
+   "riverInParcels": "705 m de cours d’eau permanents tombent dans 4 parcelles RPG 2024 (limites déclarées qui englobent berges et fossés) : depuis V2.1 l’eau est dessinée après la végétation et les parcelles, le cours d’eau reste visible",
+   "mud": "la « zone boueuse » de Poussey était le vert foncé des haies ripisylves (bandes DSB jusqu’à 98 m) peint par-dessus la rivière, avec leurs murs 3D bruns-verts : corrigé (voir hydrographie)",
+   "gaps": "trous et chevauchements > 1 ha de la revue V1.10 : inchangés, classés en V1.10"
+  }
+ },
+ "toponymy": {
+  "labelled": 15,
+  "labelIssues": [],
+  "review": {
+   "labels": "les 15 étiquettes permanentes (bourg, Poussey, Les Granges, Parc de l’Aérodrome, La Glacière, le Craon, landmarks P1/P2) portent un statut actuel et une confiance A ou B ; aucune position incertaine affichée comme certaine",
+   "names": "rivière du Moulin (BIBLE_01, OSM) = Ruisseau des Moulins de Poussey (BD TOPO) : nom BD TOPO conservé ; « canal de Poussey » (bulletin municipal) sans correspondance établie : non affiché"
+  }
+ },
+ "cells": [
+  {
+   "key": "756160_6823360",
+   "buildings": 13,
+   "cadastre": 7,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:20394530"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810370"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810373"
+    }
+   ]
+  },
+  {
+   "key": "758880_6824000",
+   "buildings": 45,
+   "cadastre": 40,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:25761036"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39793552"
+    }
+   ]
+  },
+  {
+   "key": "758560_6823360",
+   "buildings": 24,
+   "cadastre": 26,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:23575922"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:23577378"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39809375"
+    }
+   ]
+  },
+  {
+   "key": "758080_6823040",
+   "buildings": 20,
+   "cadastre": 20,
+   "status": "anomalie",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808591"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-F"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-U2"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-U3"
+    }
+   ]
+  },
+  {
+   "key": "758720_6824000",
+   "buildings": 60,
+   "cadastre": 42,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39794149"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39794882"
+    }
+   ]
+  },
+  {
+   "key": "758080_6823840",
+   "buildings": 6,
+   "cadastre": 3,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "757920_6822560",
+   "buildings": 30,
+   "cadastre": 25,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:20394824"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:23570313"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808245"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39817554"
+    }
+   ]
+  },
+  {
+   "key": "757120_6822560",
+   "buildings": 26,
+   "cadastre": 22,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39816753"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39816785"
+    }
+   ]
+  },
+  {
+   "key": "757600_6822880",
+   "buildings": 57,
+   "cadastre": 45,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39817341"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39817341"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39817868"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39817903"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/588792057"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/588792057"
+    }
+   ]
+  },
+  {
+   "key": "757280_6822560",
+   "buildings": 39,
+   "cadastre": 29,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:20395005"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39816710"
+    }
+   ]
+  },
+  {
+   "key": "757440_6822400",
+   "buildings": 19,
+   "cadastre": 12,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39816867"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39818162"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/588793377"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/588793377"
+    }
+   ]
+  },
+  {
+   "key": "757440_6822880",
+   "buildings": 28,
+   "cadastre": 25,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39817867"
+    },
+    {
+     "kind": "incertain",
+     "id": "vis-G"
+    }
+   ]
+  },
+  {
+   "key": "758240_6823040",
+   "buildings": 40,
+   "cadastre": 35,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:23574475"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808628"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808629"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808631"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808670"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808671"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808671"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808701"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808703"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808705"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808744"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810556"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/588791678"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588792647"
+    }
+   ]
+  },
+  {
+   "key": "758560_6824000",
+   "buildings": 20,
+   "cadastre": 13,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39793590"
+    }
+   ]
+  },
+  {
+   "key": "758720_6823520",
+   "buildings": 4,
+   "cadastre": 6,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "757920_6823680",
+   "buildings": 47,
+   "cadastre": 26,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39809716"
+    }
+   ]
+  },
+  {
+   "key": "757440_6823040",
+   "buildings": 1,
+   "cadastre": 2,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "756640_6822880",
+   "buildings": 14,
+   "cadastre": 14,
+   "status": "anomalie",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810341"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810367"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39811060"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/588791664"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-H1"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-H2"
+    }
+   ]
+  },
+  {
+   "key": "756640_6823040",
+   "buildings": 10,
+   "cadastre": 8,
+   "status": "anomalie",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/588792955"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/588792955"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-I"
+    }
+   ]
+  },
+  {
+   "key": "757760_6822720",
+   "buildings": 43,
+   "cadastre": 39,
+   "status": "anomalie",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:30275451"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39817418"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39817426"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-T"
+    }
+   ]
+  },
+  {
+   "key": "757760_6822560",
+   "buildings": 37,
+   "cadastre": 35,
+   "status": "anomalie",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:20394724"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:23570313"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39816946"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39817387"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-K"
+    }
+   ]
+  },
+  {
+   "key": "757600_6822560",
+   "buildings": 60,
+   "cadastre": 45,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39817029"
+    }
+   ]
+  },
+  {
+   "key": "757120_6822720",
+   "buildings": 18,
+   "cadastre": 11,
+   "status": "anomalie",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:23574372"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39816533"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-Q"
+    }
+   ]
+  },
+  {
+   "key": "758400_6822240",
+   "buildings": 15,
+   "cadastre": 10,
+   "status": "anomalie",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39823542"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39823875"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-P1"
+    }
+   ]
+  },
+  {
+   "key": "758400_6822400",
+   "buildings": 24,
+   "cadastre": 19,
+   "status": "anomalie",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39696777"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39823492"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39823496"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39823585"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-P2"
+    },
+    {
+     "kind": "incertain",
+     "id": "vis-M"
+    }
+   ]
+  },
+  {
+   "key": "757920_6822880",
+   "buildings": 27,
+   "cadastre": 26,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39817978"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808202"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808203"
+    }
+   ]
+  },
+  {
+   "key": "758080_6822880",
+   "buildings": 19,
+   "cadastre": 15,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808251"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/1433821870"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/1433821870"
+    }
+   ]
+  },
+  {
+   "key": "758400_6822720",
+   "buildings": 1,
+   "cadastre": 1,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "757920_6823200",
+   "buildings": 42,
+   "cadastre": 34,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808823"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808824"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808825"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808863"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "K5QGP46TYCQR"
+    }
+   ]
+  },
+  {
+   "key": "757920_6823360",
+   "buildings": 32,
+   "cadastre": 29,
+   "status": "anomalie",
+   "findings": [
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-D1"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-D2"
+    },
+    {
+     "kind": "incertain",
+     "id": "vis-C"
+    }
+   ]
+  },
+  {
+   "key": "757760_6823680",
+   "buildings": 17,
+   "cadastre": 15,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758400_6823680",
+   "buildings": 37,
+   "cadastre": 26,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:34580699"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810209"
+    }
+   ]
+  },
+  {
+   "key": "758240_6823680",
+   "buildings": 52,
+   "cadastre": 42,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39810239"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810277"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39810301"
+    }
+   ]
+  },
+  {
+   "key": "758240_6823520",
+   "buildings": 33,
+   "cadastre": 29,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810135"
+    }
+   ]
+  },
+  {
+   "key": "758080_6823520",
+   "buildings": 51,
+   "cadastre": 39,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39809888"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810134"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39810134"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810960"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:40921234"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:40921234"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "G5TEAF23FNWH"
+    }
+   ]
+  },
+  {
+   "key": "758080_6823680",
+   "buildings": 54,
+   "cadastre": 34,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "JN6JZAS2ARG2"
+    }
+   ]
+  },
+  {
+   "key": "758720_6824160",
+   "buildings": 45,
+   "cadastre": 30,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:37265803"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39793673"
+    }
+   ]
+  },
+  {
+   "key": "756960_6822720",
+   "buildings": 10,
+   "cadastre": 8,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39823647"
+    }
+   ]
+  },
+  {
+   "key": "756800_6822720",
+   "buildings": 4,
+   "cadastre": 4,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:23570081"
+    }
+   ]
+  },
+  {
+   "key": "757760_6822880",
+   "buildings": 25,
+   "cadastre": 24,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39817689"
+    }
+   ]
+  },
+  {
+   "key": "757600_6822400",
+   "buildings": 4,
+   "cadastre": 3,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "757760_6822400",
+   "buildings": 3,
+   "cadastre": 2,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "757920_6822720",
+   "buildings": 35,
+   "cadastre": 34,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808244"
+    }
+   ]
+  },
+  {
+   "key": "757600_6822720",
+   "buildings": 41,
+   "cadastre": 29,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:23575137"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39817205"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588791911"
+    }
+   ]
+  },
+  {
+   "key": "757920_6822400",
+   "buildings": 2,
+   "cadastre": 2,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "757440_6822560",
+   "buildings": 38,
+   "cadastre": 30,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:23568694"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39816706"
+    }
+   ]
+  },
+  {
+   "key": "756960_6822560",
+   "buildings": 10,
+   "cadastre": 7,
+   "status": "anomalie",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39823688"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-R1"
+    }
+   ]
+  },
+  {
+   "key": "757440_6822720",
+   "buildings": 49,
+   "cadastre": 37,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:20394710"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39817860"
+    }
+   ]
+  },
+  {
+   "key": "757280_6822720",
+   "buildings": 26,
+   "cadastre": 18,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39816586"
+    }
+   ]
+  },
+  {
+   "key": "757280_6822400",
+   "buildings": 13,
+   "cadastre": 11,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39696820"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39816627"
+    }
+   ]
+  },
+  {
+   "key": "757280_6822240",
+   "buildings": 3,
+   "cadastre": 3,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758880_6822560",
+   "buildings": 4,
+   "cadastre": 6,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758880_6822720",
+   "buildings": 4,
+   "cadastre": 3,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808154"
+    }
+   ]
+  },
+  {
+   "key": "758720_6822560",
+   "buildings": 3,
+   "cadastre": 2,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808116"
+    }
+   ]
+  },
+  {
+   "key": "758720_6822720",
+   "buildings": 1,
+   "cadastre": 4,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758720_6822880",
+   "buildings": 3,
+   "cadastre": 2,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758560_6822400",
+   "buildings": 4,
+   "cadastre": 2,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "incertain",
+     "id": "vis-N"
+    }
+   ]
+  },
+  {
+   "key": "758080_6822720",
+   "buildings": 4,
+   "cadastre": 3,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758240_6822720",
+   "buildings": 3,
+   "cadastre": 2,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808157"
+    }
+   ]
+  },
+  {
+   "key": "757920_6823520",
+   "buildings": 37,
+   "cadastre": 29,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39809890"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39809891"
+    }
+   ]
+  },
+  {
+   "key": "757760_6823840",
+   "buildings": 2,
+   "cadastre": 2,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "757600_6823680",
+   "buildings": 2,
+   "cadastre": 1,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "757760_6823040",
+   "buildings": 6,
+   "cadastre": 5,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "757920_6823040",
+   "buildings": 43,
+   "cadastre": 33,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808383"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808387"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808506"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808508"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:40794309"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/588791987"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588791515"
+    }
+   ]
+  },
+  {
+   "key": "757600_6823040",
+   "buildings": 11,
+   "cadastre": 8,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/588792826"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/588792877"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/588792877"
+    }
+   ]
+  },
+  {
+   "key": "757440_6823200",
+   "buildings": 2,
+   "cadastre": 1,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758400_6823520",
+   "buildings": 18,
+   "cadastre": 23,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39809447"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810210"
+    }
+   ]
+  },
+  {
+   "key": "758400_6823360",
+   "buildings": 26,
+   "cadastre": 20,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:23575737"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:23576464"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:23580041"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808952"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808952"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808954"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808956"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39809178"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39809179"
+    }
+   ]
+  },
+  {
+   "key": "758560_6823680",
+   "buildings": 6,
+   "cadastre": 5,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758240_6823360",
+   "buildings": 34,
+   "cadastre": 28,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808991"
+    }
+   ]
+  },
+  {
+   "key": "758560_6823840",
+   "buildings": 44,
+   "cadastre": 33,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758400_6823200",
+   "buildings": 34,
+   "cadastre": 30,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:23577103"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808950"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39809030"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39809146"
+    }
+   ]
+  },
+  {
+   "key": "758880_6823840",
+   "buildings": 37,
+   "cadastre": 24,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39794066"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39794067"
+    }
+   ]
+  },
+  {
+   "key": "758080_6823200",
+   "buildings": 22,
+   "cadastre": 28,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808583"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808910"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808911"
+    }
+   ]
+  },
+  {
+   "key": "758400_6823840",
+   "buildings": 10,
+   "cadastre": 11,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39809845"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39809845"
+    }
+   ]
+  },
+  {
+   "key": "757920_6823840",
+   "buildings": 9,
+   "cadastre": 8,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758080_6823360",
+   "buildings": 18,
+   "cadastre": 27,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:23579467"
+    },
+    {
+     "kind": "incertain",
+     "id": "vis-B"
+    }
+   ]
+  },
+  {
+   "key": "758720_6823840",
+   "buildings": 18,
+   "cadastre": 18,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758240_6823200",
+   "buildings": 47,
+   "cadastre": 39,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808584"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808622"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39808625"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39808994"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39809032"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39809067"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39809069"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39809069"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39809070"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:40921102"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588793385"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588793079"
+    }
+   ]
+  },
+  {
+   "key": "758560_6824160",
+   "buildings": 14,
+   "cadastre": 10,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758400_6824000",
+   "buildings": 3,
+   "cadastre": 3,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758560_6824320",
+   "buildings": 3,
+   "cadastre": 3,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758880_6824160",
+   "buildings": 5,
+   "cadastre": 6,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39793547"
+    }
+   ]
+  },
+  {
+   "key": "758400_6824160",
+   "buildings": 1,
+   "cadastre": 1,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "756160_6823200",
+   "buildings": 9,
+   "cadastre": 7,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810373"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810401"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810402"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810403"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39810404"
+    }
+   ]
+  },
+  {
+   "key": "759360_6820800",
+   "buildings": 6,
+   "cadastre": 7,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39827333"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39827335"
+    }
+   ]
+  },
+  {
+   "key": "759360_6820960",
+   "buildings": 3,
+   "cadastre": 1,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759520_6820800",
+   "buildings": 2,
+   "cadastre": 0,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759360_6822720",
+   "buildings": 10,
+   "cadastre": 5,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39821890"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39821890"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588793635"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588793635"
+    }
+   ]
+  },
+  {
+   "key": "759040_6822720",
+   "buildings": 23,
+   "cadastre": 3,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39821841"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39821841"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39821841"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39821841"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39821983"
+    }
+   ]
+  },
+  {
+   "key": "759040_6822560",
+   "buildings": 5,
+   "cadastre": 1,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39821841"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39821841"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39821841"
+    }
+   ]
+  },
+  {
+   "key": "759040_6822880",
+   "buildings": 3,
+   "cadastre": 1,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759200_6822560",
+   "buildings": 20,
+   "cadastre": 4,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39821840"
+    }
+   ]
+  },
+  {
+   "key": "759360_6822560",
+   "buildings": 8,
+   "cadastre": 6,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759200_6822720",
+   "buildings": 5,
+   "cadastre": 4,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759200_6823840",
+   "buildings": 20,
+   "cadastre": 14,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39794352"
+    }
+   ]
+  },
+  {
+   "key": "759040_6823840",
+   "buildings": 44,
+   "cadastre": 34,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39793994"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39793920"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39793959"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39793965"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39821742"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "MEJK7RK7Q4B1"
+    }
+   ]
+  },
+  {
+   "key": "759200_6824000",
+   "buildings": 2,
+   "cadastre": 2,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759360_6823840",
+   "buildings": 32,
+   "cadastre": 29,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759360_6823520",
+   "buildings": 5,
+   "cadastre": 5,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39821838"
+    }
+   ]
+  },
+  {
+   "key": "759360_6823680",
+   "buildings": 24,
+   "cadastre": 24,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39821834"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/588789810"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588792231"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588792240"
+    }
+   ]
+  },
+  {
+   "key": "759840_6823840",
+   "buildings": 18,
+   "cadastre": 12,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39794585"
+    }
+   ]
+  },
+  {
+   "key": "759520_6823840",
+   "buildings": 42,
+   "cadastre": 30,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759680_6823680",
+   "buildings": 15,
+   "cadastre": 15,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759840_6823680",
+   "buildings": 5,
+   "cadastre": 6,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759680_6823840",
+   "buildings": 22,
+   "cadastre": 16,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39794500"
+    }
+   ]
+  },
+  {
+   "key": "759520_6823680",
+   "buildings": 26,
+   "cadastre": 21,
+   "status": "anomalie",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39821646"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:39821647"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "cadastre:40576489"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/1303286702"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-A"
+    }
+   ]
+  },
+  {
+   "key": "759040_6824000",
+   "buildings": 27,
+   "cadastre": 18,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39793508"
+    }
+   ]
+  },
+  {
+   "key": "760000_6823680",
+   "buildings": 7,
+   "cadastre": 4,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "756160_6822560",
+   "buildings": 5,
+   "cadastre": 6,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "756000_6822720",
+   "buildings": 1,
+   "cadastre": 1,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/366040709"
+    }
+   ]
+  },
+  {
+   "key": "756000_6822560",
+   "buildings": 3,
+   "cadastre": 5,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "756480_6822720",
+   "buildings": 5,
+   "cadastre": 5,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "756320_6822720",
+   "buildings": 4,
+   "cadastre": 5,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758560_6823520",
+   "buildings": 14,
+   "cadastre": 21,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "incertain",
+     "id": "vis-E"
+    }
+   ]
+  },
+  {
+   "key": "758560_6823200",
+   "buildings": 9,
+   "cadastre": 9,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758400_6823040",
+   "buildings": 1,
+   "cadastre": 2,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "756160_6822720",
+   "buildings": 3,
+   "cadastre": 2,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "756000_6822400",
+   "buildings": 1,
+   "cadastre": 1,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "756160_6823520",
+   "buildings": 1,
+   "cadastre": 1,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "756800_6822560",
+   "buildings": 5,
+   "cadastre": 3,
+   "status": "anomalie",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/935473873"
+    },
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "way/935473873"
+    },
+    {
+     "kind": "visible sans géométrie",
+     "id": "vis-R2"
+    }
+   ]
+  },
+  {
+   "key": "758240_6822880",
+   "buildings": 2,
+   "cadastre": 1,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:34631971"
+    }
+   ]
+  },
+  {
+   "key": "759200_6823680",
+   "buildings": 3,
+   "cadastre": 4,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "756160_6822400",
+   "buildings": 1,
+   "cadastre": 1,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759040_6823680",
+   "buildings": 1,
+   "cadastre": 0,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "760160_6822560",
+   "buildings": 7,
+   "cadastre": 0,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789294"
+    }
+   ]
+  },
+  {
+   "key": "760160_6822720",
+   "buildings": 3,
+   "cadastre": 0,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "758240_6823840",
+   "buildings": 1,
+   "cadastre": 0,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "757440_6823680",
+   "buildings": 1,
+   "cadastre": 0,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "760320_6822400",
+   "buildings": 3,
+   "cadastre": 0,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "760320_6822560",
+   "buildings": 6,
+   "cadastre": 0,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/549958870"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789257"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789271"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789298"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789271"
+    }
+   ]
+  },
+  {
+   "key": "760160_6822400",
+   "buildings": 3,
+   "cadastre": 0,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789260"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789260"
+    }
+   ]
+  },
+  {
+   "key": "760320_6822720",
+   "buildings": 1,
+   "cadastre": 0,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "760000_6822720",
+   "buildings": 6,
+   "cadastre": 0,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789312"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789343"
+    }
+   ]
+  },
+  {
+   "key": "760000_6822560",
+   "buildings": 7,
+   "cadastre": 0,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789378"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789411"
+    },
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789411"
+    }
+   ]
+  },
+  {
+   "key": "760000_6822400",
+   "buildings": 3,
+   "cadastre": 0,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759520_6822720",
+   "buildings": 2,
+   "cadastre": 0,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789479"
+    }
+   ]
+  },
+  {
+   "key": "759520_6822560",
+   "buildings": 2,
+   "cadastre": 0,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759840_6822720",
+   "buildings": 3,
+   "cadastre": 0,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789352"
+    }
+   ]
+  },
+  {
+   "key": "759840_6822560",
+   "buildings": 8,
+   "cadastre": 0,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759680_6822720",
+   "buildings": 4,
+   "cadastre": 0,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759680_6822560",
+   "buildings": 8,
+   "cadastre": 0,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588789488"
+    }
+   ]
+  },
+  {
+   "key": "759680_6822400",
+   "buildings": 1,
+   "cadastre": 0,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "759840_6822400",
+   "buildings": 3,
+   "cadastre": 0,
+   "status": "correcte",
+   "findings": []
+  },
+  {
+   "key": "756160_6821600",
+   "buildings": 1,
+   "cadastre": 1,
+   "status": "incertaine",
+   "findings": [
+    {
+     "kind": "douteux V2.0.1",
+     "id": "way/588792172"
+    }
+   ]
+  },
+  {
+   "key": "758400_6822560",
+   "buildings": 1,
+   "cadastre": 2,
+   "status": "correcte",
+   "findings": [
+    {
+     "kind": "réintégré V2.0.1",
+     "id": "cadastre:39696822"
+    }
+   ]
+  }
+ ]
+}

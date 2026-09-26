@@ -1,3 +1,10 @@
+# Notes V2.1 — audit géographique final, 26 septembre 2026
+
+- **Un comptage ne suffit pas.** La rupture de la rivière à Poussey ne venait d’aucune donnée manquante. Les haies ripisylves, qui suivent le cours d’eau dans l’inventaire DSB, étaient peintes par-dessus l’eau dans la texture du sol. Elles étaient en plus surmontées de murs 3D.
+- **La correction touche seulement l’ordre de dessin et le placement des murs** (`src/hydro-display.js`). Les données ne sont pas modifiées.
+- **Tout constat est classé dans un `review.json` avant d’être accepté.** `check:geographic-integrity` échoue si une extrémité ou un écart n’est pas classé.
+- **SANDRE est injoignable depuis le conteneur.** La BD TOPO hydrographique (BD TOPAGE) porte les codes du référentiel SANDRE.
+
 # Notes V2.0.1 — maisons manquantes, 25 septembre 2026
 
 - **Deux causes distinctes.**

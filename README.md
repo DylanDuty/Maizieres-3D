@@ -2,6 +2,13 @@
 
 Prototype local Three.js de la commune de l’Aube, code INSEE **10220**. Empreintes, voirie, voies ferrées et occupation du sol proviennent d’OpenStreetMap. Le contour communal provient de l’API Découpage administratif française.
 
+**Version 2.1** : audit géographique final, non encore validé. La validation visuelle par l’utilisateur, notamment à Poussey, reste nécessaire.
+
+- **Rupture de rivière à Poussey** : la rivière semblait s’arrêter puis reprendre. C’était un défaut de rendu : les haies de berge (DSB) étaient peintes par-dessus le Ruisseau des Moulins de Poussey, et des murs de haie 3D étaient posés sur son lit. L’eau est maintenant dessinée en dernier, et aucune haie 3D n’est élevée sur un cours d’eau.
+- **Audit des autres couches** : bâti, voirie, rail, occupation du sol et toponymie ont été audités, sans autre correction.
+- **Outils** : `npm run check:geographic-integrity`, diagnostic `?diagnostic=hydro-audit`.
+- **Rapport** : `docs/audit/V2.1_FINAL_GEOGRAPHIC_AUDIT.md`.
+
 **Version 2.0.1** : audit visuel des maisons manquantes, sur toute la zone bâtie comparée à l’orthophoto IGN 2025, au cadastre, à la BD TOPO, au RNB et à OSM.
 
 - **Rendu** : les 2 494 bâtiments étaient bien présents dans la scène, mais 124 étaient en partie enterrés par le relief affiché. Leur socle suit maintenant ce relief.

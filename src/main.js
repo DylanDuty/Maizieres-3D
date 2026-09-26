@@ -4,6 +4,7 @@ import {projection,polygons,bounds,insidePoly} from './geo.js';
 import {buildLandscape} from './landscape.js';
 import {buildBuildings,PROVENANCE_COLORS,VALIDATION_COLORS,AUDIT_COLORS,diagnosticKey} from './buildings.js';
 import {displayBase} from './building-elevation.js';
+import {buildHydroAudit} from './hydro-audit-diagnostic.js';
 import './style.css';
 import {benchmark} from './benchmark.js';
 import {qualitySettings,QUALITY_LABELS,QUALITY_ORDER} from './quality.js';
@@ -43,7 +44,7 @@ async function start(){
   const expectedIds=[...buildingReference.features,...(additions?.features||[])].map(f=>f.properties.id);if(additions)buildingReference.features.push(...additions.features);
   const reference=buildingItems(buildingReference,project,extent),diagnostic=['provenance','validation','terrain','roads','rail','landcover','poi'].find(m=>m===params.get('diagnostic'))||null;
   // V2.0: without a V1 diagnostic the normal view is the assembled scene on the real relief; ?diagnostic=v2 or ?perf adds the technical layer (sources, HUD).
-  const v2Mode=!diagnostic,technical=params.get('diagnostic')==='v2'||auditMode||params.has('perf');
+  const v2Mode=!diagnostic,hydroMode=params.get('diagnostic')==='hydro-audit',technical=params.get('diagnostic')==='v2'||auditMode||hydroMode||params.has('perf');
   // V1.7 ?diagnostic=terrain: real LiDAR HD relief; the flat stylised landscape is hidden, buildings sit on their base altitude.
   const relief=diagnostic==='terrain'||v2Mode?await loadTerrain(import.meta.env.BASE_URL,v2Mode?'v2-terrain':'terrain-threejs'):null,flatLayers=new Set(scene.children);
   if(relief&&additionsElevation)Object.assign(relief.elevation.buildings,additionsElevation.buildings);
@@ -77,6 +78,7 @@ async function start(){
    const entries=diagnostic==='validation'?{A:'A · IGN confirmé par le cadastre',B:'B · source officielle unique','B-contour':'B · contour différent du cadastre actuel',C:'C · OSM seul non confirmé',cadastre:'Ajouté depuis le cadastre actuel (B ou C)'}:{'ign+osm':'IGN et OSM','ign+osm-partiel':'IGN, OSM partiel','ign':'IGN seul','osm':'OSM seul','cadastre':'Cadastre'};
    const colors=diagnostic==='validation'?VALIDATION_COLORS:PROVENANCE_COLORS;
    legend.innerHTML=Object.entries(entries).map(([k,v])=>`<span><i style="background:${colors[k]}"></i>${v} · ${reference.items.filter(i=>diagnosticKey(i,diagnostic)===k).length}</span>`).join('');document.body.appendChild(legend);}
+  const hydroAudit=hydroMode?buildHydroAudit(scene,v2,project,await fetch(`${import.meta.env.BASE_URL}data/hydro-audit-v2.1.json`).then(r=>r.json())):null;
   if(auditMode){// Markers: visible constructions without any public footprint (magenta), doubtful cases (orange); no geometry is invented.
    const pin=(list,color,h)=>{if(!list.length)return;const geo=new THREE.ConeGeometry(2.2,h,8),mesh=new THREE.InstancedMesh(geo,new THREE.MeshBasicMaterial({color}),list.length),m=new THREE.Matrix4();list.forEach((q,i)=>{const [x,z]=project(q.lonlat);m.makeRotationX(Math.PI);m.setPosition(x,v2.heightAt(x,z)+h/2+1,z);mesh.setMatrixAt(i,m);});mesh.name='audit-'+color;scene.add(mesh);};
    pin(auditPoints.withoutGeometry,AUDIT_COLORS['sans-empreinte'],14);pin(auditPoints.uncertain,AUDIT_COLORS.incertain,8);
@@ -141,7 +143,7 @@ async function start(){
    const railCentre=service.length?[(Math.min(...service.map(p=>p[0]))+Math.max(...service.map(p=>p[0])))/2,(Math.min(...service.map(p=>p[1]))+Math.max(...service.map(p=>p[1])))/2]:null;
    const views=[{name:'Vue générale',reset:true},{name:'Centre-bourg',p:at('poi:eglise-saint-denis'),d:620},{name:'Poussey',p:at('poi:poussey'),d:900},{name:'Les Granges',p:at('poi:les-granges'),d:900},{name:'Ferroviaire',p:railCentre,d:1300},{name:'Parc de l’Aérodrome',p:at('poi:parc-aerodrome'),d:1000}].filter(v=>v.reset||v.p);
    installViews(views,v=>v.reset?reset():flyTo(v.p[0],v.p[1],v.d));installLegend();
-   if(technical&&!auditMode)installPerfHud(renderer,`Bâtiments ${buildings.count} · routes ${v2.stats.roads.count} · voies ${v2.stats.rail.tracks}\nParcelles ${v2.stats.agriculture} · bois ${v2.stats.woodland} · haies ${v2.stats.hedges.count} · POI ${v2Records.pois}\nTexture ${v2.texture.width}×${v2.texture.height} (${v2.texture.metresPerPixel} m/px)`,draw);
+   if(technical&&!auditMode&&!hydroMode)installPerfHud(renderer,`Bâtiments ${buildings.count} · routes ${v2.stats.roads.count} · voies ${v2.stats.rail.tracks}\nParcelles ${v2.stats.agriculture} · bois ${v2.stats.woodland} · haies ${v2.stats.hedges.count} · POI ${v2Records.pois}\nTexture ${v2.texture.width}×${v2.texture.height} (${v2.texture.metresPerPixel} m/px)`,draw);
    Object.assign(window.__MAIZIERES__,{v2:{stats:v2.stats,records:v2Records,views:views.map(v=>v.name),searchIndex:search.index,heightAt:v2.heightAt},search:q=>search.search(q),focus:name=>{const r=catalogue.records.find(r=>r.name===name&&r.poi)||catalogue.records.find(r=>r.name===name&&r.searchable!==false);if(r)focus(r);return !!r;},selectId:id=>{const r=catalogue.byId.get(id);selection.select(r);return !!r;},quick:name=>{const v=views.find(v=>v.name===name);if(v)v.reset?reset():flyTo(v.p[0],v.p[1],v.d);return !!v;}});
   }
   const gl=renderer.getContext(),debug=gl.getExtension('WEBGL_debug_renderer_info');

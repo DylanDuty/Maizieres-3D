@@ -1,3 +1,22 @@
+# Vérification V2.1 — audit géographique final, 26 septembre 2026
+
+Branche `opus/v2.1-final-geographic-audit`, à partir de `d34d69d`. Rapport : `docs/audit/V2.1_FINAL_GEOGRAPHIC_AUDIT.md`. Captures : `docs/qa/v2.1/`.
+
+- **Points examinés un à un** : 195.
+- **Hydrographie** :
+  - 66 extrémités libres, toutes classées ;
+  - 0 écart suspect ;
+  - linéaire masqué à l’écran par les haies : 3,28 km en V2.0.1, 0 km en V2.1.
+- **Bâti** :
+  - 146 cellules de 160 m et 40 cellules de 120 m à Poussey contrôlées ;
+  - 0 maison manquante de plus, 0 déplacement ;
+  - total inchangé : 2 584, dont 2 350 dans la commune.
+- **Contrôles** : `npm run check:all`, **14 contrôles OK**, dont `check:geographic-integrity` (9 vérifications) ; `pnpm build` réussi.
+- **Chromium** (SwiftShader) :
+  - 17 vues en vue normale, plus `?diagnostic=hydro-audit` et `?diagnostic=buildings-audit` ;
+  - console vide ;
+  - 2 584 / 2 584 identifiants dans la scène, 0 enfoui.
+
 # Vérification V2.0.1 — audit visuel des maisons manquantes, 25 septembre 2026
 
 Branche `opus/v2.0.1-missing-buildings`, à partir de `e18a491`. Détail : `docs/audit-maisons-manquantes-v2.0.1.md`. Captures : `docs/qa/v2.0.1/`.

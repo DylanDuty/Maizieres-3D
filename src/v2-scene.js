@@ -20,6 +20,7 @@ export const LANDUSE_LABELS={terre_arable:'Terre arable',prairie_permanente:'Pra
  peupleraie:'Peupleraie',foret_fermee_feuillus:'Forêt fermée de feuillus',foret_ouverte:'Forêt ouverte',bois:'Petit bois',lande_ligneuse:'Lande ligneuse'};
 export const TEXTURE_SIZE={'very-fluid':2048,fluid:3072,high:4096};
 
+import {waterProximity,HEDGE_WATER_MARGIN} from './hydro-display.js';
 export async function buildV2Scene(scene,{relief,base,quality}){
  const [d,poi]=await Promise.all([fetch(`${base}data/v2-scene.json`).then(r=>r.json()),fetch(`${base}data/poi.json`).then(r=>r.json())]);
  const {meta}=relief,{cols,rows,step,x0,z0}=meta,W=(cols-1)*step,D=(rows-1)*step;
@@ -67,9 +68,10 @@ export async function buildV2Scene(scene,{relief,base,quality}){
   for(const a of d.woodland)fill(a,V2_COLORS[a.t]||V2_COLORS.bois);
   for(const a of d.woodland)outline(a,'#4c7a3f',1.2,.5);
   for(const a of d.hedgePolygons)fill(a,V2_COLORS.hedge);
+  for(const hd of d.hedges)line3(hd.p,V2_COLORS.hedge,hd.w||2.5);
+  // V2.1: water last, so that riparian hedges (DSB bands up to 98 m wide) never paint over a watercourse.
   for(const a of d.water)fill(a,V2_COLORS.water);
   for(const l of d.waterLines)line(l.p,l.perm?V2_COLORS.waterLine:V2_COLORS.waterIntermittent,l.w,l.perm?null:[6,4]);
-  for(const hd of d.hedges)line3(hd.p,V2_COLORS.hedge,hd.w||2.5);
   texture.needsUpdate=true;return {width:w,height:h,metresPerPixel:+(W/w).toFixed(2)};
  }
  let textureInfo=drawTexture(TEXTURE_SIZE[quality.mode]||3072);
@@ -105,11 +107,13 @@ export async function buildV2Scene(scene,{relief,base,quality}){
 
  // ---------- Hedges: low walls (skipped in "very fluid"; the texture keeps them) ----------
  const hedgeBatch=new Batch(new THREE.MeshLambertMaterial({vertexColors:true,side:THREE.DoubleSide}));let hedgeKm=0;
+ // V2.1: no 3D hedge wall over a watercourse or a water surface (see hydro-display.js).
+ const nearWater=waterProximity(d.waterLines,d.water),hedgeCuts=[];let hedgeCut=0;
  for(const h of d.hedges){const p=h.p,H=Math.min(5,h.h||2.2),w=Math.min(6,h.w||2.4);
   const pts=[];for(let i=0;i<p.length;i+=3){const q=[p[i],p[i+1]];if(pts.length){const a=pts.at(-1),len=Math.hypot(q[0]-a[0],q[1]-a[1]),k=Math.ceil(len/10);for(let j=1;j<k;j++)pts.push([a[0]+(q[0]-a[0])*j/k,a[1]+(q[1]-a[1])*j/k]);hedgeKm+=len/1000;}pts.push(q);}
   const on=pts.filter(q=>onGrid(q[0],q[1]));if(on.length<pts.length){pts.length=0;pts.push(...on);}if(pts.length<2)continue;
   const edges=pts.map((q,i)=>{const a=pts[Math.max(0,i-1)],b=pts[Math.min(pts.length-1,i+1)];let dx=b[0]-a[0],dz=b[1]-a[1];const L=Math.hypot(dx,dz)||1;dx/=L;dz/=L;const g=heightAt(q[0],q[1]);return [-1,1].map(s=>[q[0]-dz*s*w/2,g,q[1]+dx*s*w/2]);});
-  for(let i=1;i<edges.length;i++){const [a0,a1]=edges[i-1],[b0,b1]=edges[i],top=v=>[v[0],v[1]+H,v[2]];
+  for(let i=1;i<edges.length;i++){const m=[(pts[i-1][0]+pts[i][0])/2,(pts[i-1][1]+pts[i][1])/2];if(nearWater(m[0],m[1],w/2+HEDGE_WATER_MARGIN)){hedgeCut+=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);hedgeCuts.push([pts[i-1][0],pts[i-1][1],pts[i][0],pts[i][1]]);continue;}const [a0,a1]=edges[i-1],[b0,b1]=edges[i],top=v=>[v[0],v[1]+H,v[2]];
    hedgeBatch.quad(top(a0),top(a1),top(b1),top(b0),V2_COLORS.hedge);hedgeBatch.quad(a0,b0,top(b0),top(a0),V2_COLORS.hedgeSide);hedgeBatch.quad(a1,b1,top(b1),top(a1),V2_COLORS.hedgeSide);}}
  const hedgeMesh=hedgeBatch.mesh(group,false);if(hedgeMesh)hedgeMesh.name='v2-hedges';
 
@@ -121,7 +125,7 @@ export async function buildV2Scene(scene,{relief,base,quality}){
  // ---------- POI: landmarks, sectors and click records ----------
  const pois=poi.pois,byId=new Map(pois.map(p=>[p.id,p]));
  const stats={terrain:{vertices:cols*rows,triangles:index.length/3,step,texture:textureInfo},roads:{count:d.roads.length,km:+roadKm.toFixed(1),byCategoryKm:Object.fromEntries(Object.entries(roadStats).map(([k,v])=>[k,+v.toFixed(1)]))},
-  rail:{tracks:d.rail.length,km:+railKm.toFixed(1),levelCrossings:d.levelCrossings.length,bridges:d.railBridges.length},agriculture:d.agriculture.length,woodland:d.woodland.length,hedges:{count:d.hedges.length,km:+hedgeKm.toFixed(1),polygons:d.hedgePolygons.length},
+  rail:{tracks:d.rail.length,km:+railKm.toFixed(1),levelCrossings:d.levelCrossings.length,bridges:d.railBridges.length},agriculture:d.agriculture.length,woodland:d.woodland.length,hedges:{count:d.hedges.length,km:+hedgeKm.toFixed(1),wallsCutOverWaterM:Math.round(hedgeCut),polygons:d.hedgePolygons.length},
   water:{polygons:d.water.length,lines:d.waterLines.length},artificial:d.artificial.length,poi:{records:pois.length,landmarks:pois.filter(p=>p.landmark).length}};
- return {group,data:d,poi:pois,poiById:byId,heightAt,terrainMesh,stats,setQuality,get texture(){return textureInfo;},bounds:{x0,z0,W,D}};
+ return {group,data:d,hedgeCuts,poi:pois,poiById:byId,heightAt,terrainMesh,stats,setQuality,get texture(){return textureInfo;},bounds:{x0,z0,W,D}};
 }

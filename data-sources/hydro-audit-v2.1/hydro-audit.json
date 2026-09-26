@@ -1,0 +1,3295 @@
+{
+ "metadata": {
+  "version": "2.1",
+  "generatedBy": "scripts/audit-hydro.mjs",
+  "reference": "unreal/landcover/water-lines.json + water-polygons.json (V1.10, gelés)",
+  "sources": {
+   "bdtopoNodes": "data-sources/hydro-audit-v2.1/bdtopo-v3-noeud-hydrographique.geojson",
+   "bdtopoTroncons": "data-sources/hydro-audit-v2.1/bdtopo-v3-troncon-hydrographique.geojson",
+   "bdcarto": "data-sources/hydro-audit-v2.1/bdcarto-v5-troncon-hydrographique.geojson",
+   "bcae": "data-sources/landcover/bcae-cours-eau.geojson",
+   "osm": "public/data/maizieres.geojson"
+  },
+  "sandre": "services SANDRE injoignables depuis le conteneur (proxy) ; la BD TOPO hydrographique est la BD TOPAGE co-produite IGN/OFB : ses codes hydrographiques et code_du_cours_d_eau_bdcarthage tiennent lieu de référentiel SANDRE",
+  "thresholds": {
+   "connectM": 1.5,
+   "surfaceM": 8,
+   "edgeM": 25,
+   "gapM": 50,
+   "nodeM": 3
+  }
+ },
+ "counts": {
+  "lines": 228,
+  "km": 64.72,
+  "surfaces": 85,
+  "components": 15,
+  "ends": 456,
+  "terminals": 66,
+  "suspects": 0,
+  "byClass": {
+   "limite de l’emprise": 37,
+   "source (BD TOPO)": 24,
+   "exutoire (BD TOPO)": 1,
+   "surface en eau": 4
+  },
+  "reviewed": 29,
+  "crossings": 80
+ },
+ "components": [
+  {
+   "lines": 189,
+   "km": 54.32,
+   "names": [
+    "Noue des Barces",
+    "Bras de la Seine",
+    "Noue de Ferloup",
+    "Bras de la Noue de Ferloup",
+    "la Seine",
+    "Ruisseau des Moulins de Poussey",
+    "Bras des Moulins de Poussey",
+    "Fossé 01 du Rondeau",
+    "Bras des Moulins de Sauvage",
+    "Fossé 01 du Gobyat",
+    "Fossé 01 du Clos Baillot",
+    "Canal des Moulins de Sauvage",
+    "Bras 02 des Menus Prés",
+    "Bras 01 des Menus Prés",
+    "Fossé 02 du Gobyat",
+    "Cours d'Eau 01 des Menus Prés",
+    "Canal 01 des Penouilles",
+    "Canal des Moulins",
+    "Noue des Fourchus"
+   ],
+   "touchesEdge": true,
+   "touchesSurface": true
+  },
+  {
+   "lines": 20,
+   "km": 7.14,
+   "names": [
+    "Fossé 03 des Epinettes",
+    "Cours d'Eau 01 du Gué de Vailly"
+   ],
+   "touchesEdge": true,
+   "touchesSurface": false
+  },
+  {
+   "lines": 3,
+   "km": 1.35,
+   "names": [],
+   "touchesEdge": false,
+   "touchesSurface": false
+  },
+  {
+   "lines": 3,
+   "km": 0.53,
+   "names": [],
+   "touchesEdge": true,
+   "touchesSurface": true
+  },
+  {
+   "lines": 3,
+   "km": 0.28,
+   "names": [],
+   "touchesEdge": true,
+   "touchesSurface": true
+  },
+  {
+   "lines": 1,
+   "km": 0.27,
+   "names": [
+    "Canal des Moulins"
+   ],
+   "touchesEdge": true,
+   "touchesSurface": true
+  },
+  {
+   "lines": 1,
+   "km": 0.21,
+   "names": [],
+   "touchesEdge": true,
+   "touchesSurface": false
+  },
+  {
+   "lines": 1,
+   "km": 0.16,
+   "names": [],
+   "touchesEdge": false,
+   "touchesSurface": true
+  },
+  {
+   "lines": 1,
+   "km": 0.13,
+   "names": [],
+   "touchesEdge": true,
+   "touchesSurface": false
+  },
+  {
+   "lines": 1,
+   "km": 0.11,
+   "names": [
+    "Canal des Moulins de Sauvage"
+   ],
+   "touchesEdge": true,
+   "touchesSurface": true
+  },
+  {
+   "lines": 1,
+   "km": 0.08,
+   "names": [],
+   "touchesEdge": true,
+   "touchesSurface": false
+  },
+  {
+   "lines": 1,
+   "km": 0.08,
+   "names": [
+    "Canal 01 du Haut Buon"
+   ],
+   "touchesEdge": true,
+   "touchesSurface": false
+  },
+  {
+   "lines": 1,
+   "km": 0.07,
+   "names": [],
+   "touchesEdge": true,
+   "touchesSurface": false
+  },
+  {
+   "lines": 1,
+   "km": 0.01,
+   "names": [],
+   "touchesEdge": true,
+   "touchesSurface": true
+  },
+  {
+   "lines": 1,
+   "km": 0,
+   "names": [],
+   "touchesEdge": true,
+   "touchesSurface": false
+  }
+ ],
+ "terminals": [
+  {
+   "key": "TRON_EAU0000000009312446:aval",
+   "line": "TRON_EAU0000000009312446",
+   "name": "Bras de la Seine",
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    755390.9,
+    6826204.3
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.8,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000009312704:amont",
+   "line": "TRON_EAU0000000009312704",
+   "name": "Noue de Ferloup",
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    761485.8,
+    6824371.6
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.3,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000009312708:amont",
+   "line": "TRON_EAU0000000009312708",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    761422.6,
+    6824579.7
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002484989604",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 63.4,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009312708:aval",
+   "line": "TRON_EAU0000000009312708",
+   "name": null,
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    761486,
+    6824545.7
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000009312711:amont",
+   "line": "TRON_EAU0000000009312711",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    760678.8,
+    6824278.5
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485965648",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 807.2,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009312715:amont",
+   "line": "TRON_EAU0000000009312715",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    759805.7,
+    6824524.6
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485317547",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 1680.3,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009312716:amont",
+   "line": "TRON_EAU0000000009312716",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    759690,
+    6824556.5
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002484404407",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 1796,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009312746:amont",
+   "line": "TRON_EAU0000000009312746",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    757807.6,
+    6824534.7
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485252781",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 1837.3,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009312756:amont",
+   "line": "TRON_EAU0000000009312756",
+   "name": "Fossé 03 des Epinettes",
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    757339,
+    6825097
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002487423074",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 1275,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009312757:amont",
+   "line": "TRON_EAU0000000009312757",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    758698.7,
+    6825007.1
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002484300550",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": {
+    "to": "TRON_EAU0000002245355337",
+    "toName": null,
+    "d": 38.2
+   },
+   "edgeM": 1364.9,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009312766:amont",
+   "line": "TRON_EAU0000000009312766",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    756187.3,
+    6825057.6
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485140102",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 797.3,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009312774:aval",
+   "line": "TRON_EAU0000000009312774",
+   "name": "la Seine",
+   "perm": true,
+   "end": "aval",
+   "L93": [
+    755390.4,
+    6825977.6
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": {
+    "id": "SURF_EAU0000000357770418",
+    "type": "Ecoulement naturel",
+    "d": 0
+   },
+   "gap": null,
+   "edgeM": 0.3,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000009312785:aval",
+   "line": "TRON_EAU0000000009312785",
+   "name": "Cours d'Eau 01 du Gué de Vailly",
+   "perm": true,
+   "end": "aval",
+   "L93": [
+    755390.2,
+    6824448.7
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.2,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000009312791:amont",
+   "line": "TRON_EAU0000000009312791",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    755414.7,
+    6824111.3
+   ],
+   "cls": "limite de l’emprise",
+   "node": {
+    "id": "NOEUDHYD0000002485248106",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 24.7,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000009312795:amont",
+   "line": "TRON_EAU0000000009312795",
+   "name": "Cours d'Eau 01 du Gué de Vailly",
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    756439.3,
+    6824576
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002487418353",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 1049.3,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009312820:aval",
+   "line": "TRON_EAU0000000009312820",
+   "name": null,
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    755390.3,
+    6824273
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.3,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000009312835:aval",
+   "line": "TRON_EAU0000000009312835",
+   "name": null,
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    755390.7,
+    6824178.3
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": {
+    "to": "TRON_EAU0000000009312813",
+    "toName": null,
+    "d": 49.7
+   },
+   "edgeM": 0.7,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000009313256:amont",
+   "line": "TRON_EAU0000000009313256",
+   "name": "Ruisseau des Moulins de Poussey",
+   "perm": true,
+   "end": "amont",
+   "L93": [
+    761485.9,
+    6823286
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": {
+    "id": "SURF_EAU0000000009321487",
+    "type": "Ecoulement naturel",
+    "d": 0
+   },
+   "gap": null,
+   "edgeM": 0.1,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000009313260:amont",
+   "line": "TRON_EAU0000000009313260",
+   "name": "Fossé 01 du Rondeau",
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    761485.2,
+    6823760
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.8,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000009313269:aval",
+   "line": "TRON_EAU0000000009313269",
+   "name": null,
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    758450,
+    6823845
+   ],
+   "cls": "exutoire (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485524791",
+    "cat": "Exutoire"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 2527,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "exutoire BD TOPO au bord de la rue, dans le bâti : le fossé intermittent se perd (busage ou infiltration non documentés) ; rien de visible au-delà sur l’orthophoto",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009313270:amont",
+   "line": "TRON_EAU0000000009313270",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    757514.8,
+    6822690.8
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485674216",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 2124.8,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "tête de fossé intermittent au fond des jardins, en limite du bâti (probable sortie busée non documentée)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009313271:amont",
+   "line": "TRON_EAU0000000009313271",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    757566.5,
+    6824405.2
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002484243290",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 1966.8,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009313275:amont",
+   "line": "TRON_EAU0000000009313275",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    758364.9,
+    6823848.6
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485097504",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": {
+    "to": "TRON_EAU0000000009313269",
+    "toName": null,
+    "d": 16.7
+   },
+   "edgeM": 2523.4,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009313276:amont",
+   "line": "TRON_EAU0000000009313276",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    757239.1,
+    6822804.5
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485898151",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 1849.1,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "tête de fossé intermittent au carrefour du chemin, le long de la voie",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009313277:amont",
+   "line": "TRON_EAU0000000009313277",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    757007.5,
+    6823063.8
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485704887",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 1617.5,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009313281:amont",
+   "line": "TRON_EAU0000000009313281",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    755574.4,
+    6823848.7
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485678738",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 184.4,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000009313281:aval",
+   "line": "TRON_EAU0000000009313281",
+   "name": null,
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    755390.1,
+    6823895.4
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.1,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119311:amont",
+   "line": "TRON_EAU0000000065119311",
+   "name": "Bras des Moulins de Sauvage",
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    758523.6,
+    6826371.9
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.1,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119320:amont",
+   "line": "TRON_EAU0000000065119320",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    759941.1,
+    6826290.3
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485282660",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 81.7,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "tête de fossé au chemin de la peupleraie (buse possible sous le chemin, non documentée)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000065119323:amont",
+   "line": "TRON_EAU0000000065119323",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    759830.1,
+    6826314.9
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485285085",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 57.1,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "tête de fossé au chemin de la peupleraie (buse possible sous le chemin, non documentée)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000065119323:aval",
+   "line": "TRON_EAU0000000065119323",
+   "name": null,
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    759871.9,
+    6826371.3
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.7,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119324:amont",
+   "line": "TRON_EAU0000000065119324",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    758716.4,
+    6826362
+   ],
+   "cls": "limite de l’emprise",
+   "node": {
+    "id": "NOEUDHYD0000002484315829",
+    "cat": "Source"
+   },
+   "surface": {
+    "id": "SURF_EAU0000000065126198",
+    "type": "Retenue",
+    "d": 0
+   },
+   "gap": null,
+   "edgeM": 10,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119324:aval",
+   "line": "TRON_EAU0000000065119324",
+   "name": null,
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    758716.7,
+    6826371.4
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": {
+    "id": "SURF_EAU0000000065126198",
+    "type": "Retenue",
+    "d": 7.4
+   },
+   "gap": null,
+   "edgeM": 0.7,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119329:amont",
+   "line": "TRON_EAU0000000065119329",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    760173,
+    6826031.7
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002484457737",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 340.3,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000065119332:aval",
+   "line": "TRON_EAU0000000065119332",
+   "name": "Bras des Moulins de Sauvage",
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    759971.7,
+    6826371.4
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.6,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119336:aval",
+   "line": "TRON_EAU0000000065119336",
+   "name": "Canal des Moulins de Sauvage",
+   "perm": true,
+   "end": "aval",
+   "L93": [
+    758004.9,
+    6826372
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": {
+    "id": "SURF_EAU0000000065126276",
+    "type": "Ecoulement naturel",
+    "d": 0
+   },
+   "gap": {
+    "to": "TRON_EAU0000000065119336#2",
+    "toName": "Canal des Moulins de Sauvage",
+    "d": 38
+   },
+   "edgeM": 0,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119336#2:amont",
+   "line": "TRON_EAU0000000065119336#2",
+   "name": "Canal des Moulins de Sauvage",
+   "perm": true,
+   "end": "amont",
+   "L93": [
+    757966.9,
+    6826371.5
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": {
+    "id": "SURF_EAU0000000065126276",
+    "type": "Ecoulement naturel",
+    "d": 0
+   },
+   "gap": {
+    "to": "TRON_EAU0000000065119336",
+    "toName": "Canal des Moulins de Sauvage",
+    "d": 38
+   },
+   "edgeM": 0.5,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119336#2:aval",
+   "line": "TRON_EAU0000000065119336#2",
+   "name": "Canal des Moulins de Sauvage",
+   "perm": true,
+   "end": "aval",
+   "L93": [
+    757876,
+    6826371.4
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": {
+    "id": "SURF_EAU0000000065126276",
+    "type": "Ecoulement naturel",
+    "d": 0
+   },
+   "gap": null,
+   "edgeM": 0.6,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119341:aval",
+   "line": "TRON_EAU0000000065119341",
+   "name": null,
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    757645.7,
+    6826371.5
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.5,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119344:aval",
+   "line": "TRON_EAU0000000065119344",
+   "name": null,
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    757565.2,
+    6826371.1
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.9,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119346:amont",
+   "line": "TRON_EAU0000000065119346",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    757062.2,
+    6826370.3
+   ],
+   "cls": "limite de l’emprise",
+   "node": {
+    "id": "NOEUDHYD0000002485897558",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 1.7,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119346:aval",
+   "line": "TRON_EAU0000000065119346",
+   "name": null,
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    757059.8,
+    6826371.9
+   ],
+   "cls": "limite de l’emprise",
+   "node": {
+    "id": "NOEUDHYD0000002485897558",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.1,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119364:aval",
+   "line": "TRON_EAU0000000065119364",
+   "name": "Bras 01 des Menus Prés",
+   "perm": true,
+   "end": "aval",
+   "L93": [
+    757291.1,
+    6826371.3
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.7,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119499:amont",
+   "line": "TRON_EAU0000000065119499",
+   "name": "la Seine",
+   "perm": true,
+   "end": "amont",
+   "L93": [
+    761485.9,
+    6824790.1
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": {
+    "id": "SURF_EAU0000000357770418",
+    "type": "Ecoulement naturel",
+    "d": 0
+   },
+   "gap": {
+    "to": "TRON_EAU0000002222628170",
+    "toName": "la Seine",
+    "d": 36.6
+   },
+   "edgeM": 0.1,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119511:amont",
+   "line": "TRON_EAU0000000065119511",
+   "name": "Fossé 02 du Gobyat",
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    761485.6,
+    6825577
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": {
+    "to": "TRON_EAU0000000065119509",
+    "toName": "Fossé 01 du Gobyat",
+    "d": 35.4
+   },
+   "edgeM": 0.4,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000000065119540:amont",
+   "line": "TRON_EAU0000000065119540",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    760969.3,
+    6825327.7
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485799262",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 516.7,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000129491640:amont",
+   "line": "TRON_EAU0000000129491640",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    756722.5,
+    6823026.3
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485262569",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 1332.5,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "tête de fossé le long de la zone d’activité (fossé de bord de voie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000000129491640:aval",
+   "line": "TRON_EAU0000000129491640",
+   "name": null,
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    756682.6,
+    6823157.2
+   ],
+   "cls": "surface en eau",
+   "node": {
+    "id": "NOEUDHYD0000002486037102",
+    "cat": "Exutoire"
+   },
+   "surface": {
+    "id": "SURF_EAU0000000129491614",
+    "type": "Réservoir-bassin",
+    "d": 0
+   },
+   "gap": null,
+   "edgeM": 1292.6,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "fossé rejoignant le canal le long du parking (surface en eau)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000002005083541:amont",
+   "line": "TRON_EAU0000002005083541",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    758331,
+    6826269.2
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002484494351",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 102.8,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000002005083541:aval",
+   "line": "TRON_EAU0000002005083541",
+   "name": null,
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    758408.6,
+    6826371.9
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.1,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000002005083547:amont",
+   "line": "TRON_EAU0000002005083547",
+   "name": "Canal 01 du Haut Buon",
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    755914.8,
+    6826350.8
+   ],
+   "cls": "limite de l’emprise",
+   "node": {
+    "id": "NOEUDHYD0000002487423809",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 21.2,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000002005083547:aval",
+   "line": "TRON_EAU0000002005083547",
+   "name": "Canal 01 du Haut Buon",
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    755838.3,
+    6826371.9
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.1,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000002005083587:amont",
+   "line": "TRON_EAU0000002005083587",
+   "name": "Fossé 01 du Clos Baillot",
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    760075.9,
+    6826371.8
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.2,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000002005083639:aval",
+   "line": "TRON_EAU0000002005083639",
+   "name": "Canal 01 des Penouilles",
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    756557.5,
+    6826371.3
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.7,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000002005083972:aval",
+   "line": "TRON_EAU0000002005083972",
+   "name": "Fossé 01 du Clos Baillot",
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    760162,
+    6826372
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000002005084343:aval",
+   "line": "TRON_EAU0000002005084343",
+   "name": "Noue des Barces",
+   "perm": false,
+   "end": "aval",
+   "L93": [
+    755669.4,
+    6826371.8
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": null,
+   "gap": null,
+   "edgeM": 0.2,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000002005319386:amont",
+   "line": "TRON_EAU0000002005319386",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    757675.3,
+    6826318.5
+   ],
+   "cls": "surface en eau",
+   "node": {
+    "id": "NOEUDHYD0000002484574140",
+    "cat": "Source"
+   },
+   "surface": {
+    "id": "SURF_EAU0000000065126221",
+    "type": "Plan d'eau de gravière",
+    "d": 0
+   },
+   "gap": {
+    "to": "TRON_EAU0000002005319390",
+    "toName": null,
+    "d": 20.8
+   },
+   "edgeM": 53.5,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "arrivée dans une surface en eau (étang, gravière, canal)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000002005319387:amont",
+   "line": "TRON_EAU0000002005319387",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    757571.7,
+    6826314.6
+   ],
+   "cls": "surface en eau",
+   "node": {
+    "id": "NOEUDHYD0000002484445507",
+    "cat": "Source"
+   },
+   "surface": {
+    "id": "SURF_EAU0000000065126221",
+    "type": "Plan d'eau de gravière",
+    "d": 0
+   },
+   "gap": {
+    "to": "TRON_EAU0000000065119344",
+    "toName": null,
+    "d": 10.3
+   },
+   "edgeM": 57.4,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "arrivée dans une surface en eau (étang, gravière, canal)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000002005319389:amont",
+   "line": "TRON_EAU0000002005319389",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    757569.6,
+    6826154.5
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002486096929",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 217.5,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000002005319390:amont",
+   "line": "TRON_EAU0000002005319390",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    757907.5,
+    6825995.6
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002485583937",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 376.4,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000002245355332:amont",
+   "line": "TRON_EAU0000002245355332",
+   "name": "Cours d'Eau 01 des Menus Prés",
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    759231.8,
+    6825552.4
+   ],
+   "cls": "source (BD TOPO)",
+   "node": {
+    "id": "NOEUDHYD0000002487420308",
+    "cat": "Source"
+   },
+   "surface": null,
+   "gap": null,
+   "edgeM": 819.6,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "source réelle : tête de fossé ou de ruisseau intermittent, nœud « Source » BD TOPO, visible sur l’orthophoto (fossé, haie ou peupleraie)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000002287744609:amont",
+   "line": "TRON_EAU0000002287744609",
+   "name": null,
+   "perm": false,
+   "end": "amont",
+   "L93": [
+    756604.1,
+    6825515.6
+   ],
+   "cls": "surface en eau",
+   "node": {
+    "id": "NOEUDHYD0000002485851898",
+    "cat": "Source"
+   },
+   "surface": {
+    "id": "SURF_EAU0000000357770418",
+    "type": "Ecoulement naturel",
+    "d": 4.3
+   },
+   "gap": {
+    "to": "TRON_EAU0000002287744608",
+    "toName": null,
+    "d": 4.4
+   },
+   "edgeM": 856.4,
+   "suspect": false,
+   "review": {
+    "verdict": "expliqué",
+    "observation": "arrivée dans une surface en eau (étang, gravière, canal)",
+    "orthophoto": "BD ORTHO IGN 20 cm, avril 2025"
+   }
+  },
+  {
+   "key": "TRON_EAU0000002287746900:aval",
+   "line": "TRON_EAU0000002287746900",
+   "name": "Canal des Moulins",
+   "perm": true,
+   "end": "aval",
+   "L93": [
+    755390.1,
+    6824976.8
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": {
+    "id": "SURF_EAU0000000009321207",
+    "type": "Ecoulement naturel",
+    "d": 0
+   },
+   "gap": null,
+   "edgeM": 0.1,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000002287746900#2:amont",
+   "line": "TRON_EAU0000002287746900#2",
+   "name": "Canal des Moulins",
+   "perm": true,
+   "end": "amont",
+   "L93": [
+    755390.6,
+    6824872.9
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": {
+    "id": "SURF_EAU0000000009321207",
+    "type": "Ecoulement naturel",
+    "d": 0
+   },
+   "gap": null,
+   "edgeM": 0.6,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000002287746900#2:aval",
+   "line": "TRON_EAU0000002287746900#2",
+   "name": "Canal des Moulins",
+   "perm": true,
+   "end": "aval",
+   "L93": [
+    755390.7,
+    6824681.4
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": {
+    "id": "SURF_EAU0000000009321207",
+    "type": "Ecoulement naturel",
+    "d": 0
+   },
+   "gap": null,
+   "edgeM": 0.7,
+   "suspect": false,
+   "review": null
+  },
+  {
+   "key": "TRON_EAU0000002287806118:amont",
+   "line": "TRON_EAU0000002287806118",
+   "name": "Canal des Moulins de Sauvage",
+   "perm": true,
+   "end": "amont",
+   "L93": [
+    761485.8,
+    6825027.8
+   ],
+   "cls": "limite de l’emprise",
+   "node": null,
+   "surface": {
+    "id": "SURF_EAU0000000065126276",
+    "type": "Ecoulement naturel",
+    "d": 0
+   },
+   "gap": null,
+   "edgeM": 0.2,
+   "suspect": false,
+   "review": null
+  }
+ ],
+ "linesInSurfaces": [
+  {
+   "id": "TRON_EAU0000000009312718",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312719",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312720",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312722",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312723",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312724",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312725",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312726",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312728",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312729",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312731",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312734",
+   "name": "Ruisseau des Moulins de Poussey",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312736",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312739",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312745",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312751",
+   "name": null,
+   "share": 0.06
+  },
+  {
+   "id": "TRON_EAU0000000009312753",
+   "name": null,
+   "share": 0.67
+  },
+  {
+   "id": "TRON_EAU0000000009312754",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312760",
+   "name": "Bras de la Noue de Ferloup",
+   "share": 0.93
+  },
+  {
+   "id": "TRON_EAU0000000009312763",
+   "name": null,
+   "share": 0.75
+  },
+  {
+   "id": "TRON_EAU0000000009312764",
+   "name": null,
+   "share": 0.75
+  },
+  {
+   "id": "TRON_EAU0000000009312767",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009312774",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009313255",
+   "name": "Ruisseau des Moulins de Poussey",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009313256",
+   "name": "Ruisseau des Moulins de Poussey",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009313258",
+   "name": "Ruisseau des Moulins de Poussey",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009313259",
+   "name": "Ruisseau des Moulins de Poussey",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000009313263",
+   "name": "Noue de Ferloup",
+   "share": 0.01
+  },
+  {
+   "id": "TRON_EAU0000000009313268",
+   "name": "Ruisseau des Moulins de Poussey",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000065119325",
+   "name": "Bras des Moulins de Sauvage",
+   "share": 0.75
+  },
+  {
+   "id": "TRON_EAU0000000065119336",
+   "name": "Canal des Moulins de Sauvage",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000065119336#2",
+   "name": "Canal des Moulins de Sauvage",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000065119499",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000065119508",
+   "name": null,
+   "share": 0.05
+  },
+  {
+   "id": "TRON_EAU0000000065119514",
+   "name": "la Seine",
+   "share": 0.02
+  },
+  {
+   "id": "TRON_EAU0000000065119519",
+   "name": "Canal des Moulins de Sauvage",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000065119522",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000065119524",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000065119531",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000065119534",
+   "name": "Canal des Moulins de Sauvage",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000065119545",
+   "name": "Canal des Moulins de Sauvage",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000065119547",
+   "name": "Canal des Moulins de Sauvage",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000065119550",
+   "name": null,
+   "share": 0.04
+  },
+  {
+   "id": "TRON_EAU0000000065119553",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000065119554",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000065119555",
+   "name": "Canal des Moulins de Sauvage",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000000065119566",
+   "name": "Noue des Barces",
+   "share": 0.02
+  },
+  {
+   "id": "TRON_EAU0000000351916707",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002005083334",
+   "name": null,
+   "share": 0.05
+  },
+  {
+   "id": "TRON_EAU0000002005083410",
+   "name": "la Seine",
+   "share": 0.14
+  },
+  {
+   "id": "TRON_EAU0000002005083414",
+   "name": null,
+   "share": 0.89
+  },
+  {
+   "id": "TRON_EAU0000002005083526",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002005083544",
+   "name": "la Seine",
+   "share": 0.97
+  },
+  {
+   "id": "TRON_EAU0000002005083995",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002005084019",
+   "name": null,
+   "share": 0.99
+  },
+  {
+   "id": "TRON_EAU0000002005084268",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002005084496",
+   "name": "la Seine",
+   "share": 0.67
+  },
+  {
+   "id": "TRON_EAU0000002005319387",
+   "name": null,
+   "share": 0.25
+  },
+  {
+   "id": "TRON_EAU0000002222611044",
+   "name": null,
+   "share": 0.5
+  },
+  {
+   "id": "TRON_EAU0000002222628170",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002222642711",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002222649222",
+   "name": "Bras des Moulins de Sauvage",
+   "share": 0.83
+  },
+  {
+   "id": "TRON_EAU0000002222678702",
+   "name": "Noue des Barces",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002222694514",
+   "name": "Noue de Ferloup",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002222705152",
+   "name": null,
+   "share": 0.83
+  },
+  {
+   "id": "TRON_EAU0000002222705153",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002222737447",
+   "name": "Fossé 01 du Rondeau",
+   "share": 0.5
+  },
+  {
+   "id": "TRON_EAU0000002222743132",
+   "name": "Bras des Moulins de Poussey",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002222750183",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002222773374",
+   "name": "Bras des Moulins de Poussey",
+   "share": 0.67
+  },
+  {
+   "id": "TRON_EAU0000002222778939",
+   "name": null,
+   "share": 0.83
+  },
+  {
+   "id": "TRON_EAU0000002222787286",
+   "name": null,
+   "share": 0.8
+  },
+  {
+   "id": "TRON_EAU0000002222791160",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002245355325",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002245355337",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002245355338",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002245355339",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002245357305",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002275258413",
+   "name": null,
+   "share": 0.97
+  },
+  {
+   "id": "TRON_EAU0000002287743431",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287743432",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287744608",
+   "name": null,
+   "share": 0.94
+  },
+  {
+   "id": "TRON_EAU0000002287746900",
+   "name": "Canal des Moulins",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287746900#2",
+   "name": "Canal des Moulins",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287746901",
+   "name": "Canal des Moulins",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287776979",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287787460",
+   "name": "Canal des Moulins de Sauvage",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287787461",
+   "name": "Canal des Moulins de Sauvage",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287787462",
+   "name": "Canal des Moulins de Sauvage",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287793398",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287793400",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287799185",
+   "name": "Ruisseau des Moulins de Poussey",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287799186",
+   "name": "Ruisseau des Moulins de Poussey",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287801908",
+   "name": "Noue des Fourchus",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287801909",
+   "name": "Noue des Fourchus",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287803533",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287803534",
+   "name": "la Seine",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287805124",
+   "name": "Noue des Fourchus",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287805125",
+   "name": "Noue des Fourchus",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287806118",
+   "name": "Canal des Moulins de Sauvage",
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287823110",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287823120",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287826728",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287826737",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287830556",
+   "name": null,
+   "share": 1
+  },
+  {
+   "id": "TRON_EAU0000002287830557",
+   "name": null,
+   "share": 1
+  }
+ ],
+ "crossings": [
+  {
+   "water": "TRON_EAU0000000009312432",
+   "name": "Noue des Barces",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    756059,
+    6826022.4
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312704",
+   "name": "Noue de Ferloup",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    761346.4,
+    6824353.3
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312712",
+   "name": "Bras de la Noue de Ferloup",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    759946.9,
+    6824714.3
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312715",
+   "name": null,
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    759884.6,
+    6824689
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312716",
+   "name": null,
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    759745.6,
+    6824661.3
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312717",
+   "name": "Bras de la Noue de Ferloup",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    760701.6,
+    6824382.7
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312717",
+   "name": "Bras de la Noue de Ferloup",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    760936.1,
+    6824217.5
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312725",
+   "name": "la Seine",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    756205.4,
+    6825546.9
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000000009312734",
+   "name": "Ruisseau des Moulins de Poussey",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    758114.7,
+    6824860.8
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000000009312744",
+   "name": "Bras de la Noue de Ferloup",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    759694.6,
+    6824850.8
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312744",
+   "name": "Bras de la Noue de Ferloup",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    759468.8,
+    6824847.4
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312744",
+   "name": "Bras de la Noue de Ferloup",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    758999.6,
+    6825007.6
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312745",
+   "name": "la Seine",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    756211.5,
+    6825569.1
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000000009312746",
+   "name": null,
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    758023.1,
+    6824468.5
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312751",
+   "name": null,
+   "with": "road",
+   "kind": "ouvrage non documenté sur un cours d’eau permanent",
+   "L93": [
+    758108.2,
+    6824831.5
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000000009312755",
+   "name": "Bras des Moulins de Poussey",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    758425.6,
+    6825022.2
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312756",
+   "name": "Fossé 03 des Epinettes",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    756870.6,
+    6824918.5
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312790",
+   "name": "Fossé 03 des Epinettes",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    755957.3,
+    6824700
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312793",
+   "name": "Cours d'Eau 01 du Gué de Vailly",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    755748.8,
+    6824175.3
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000000009312795",
+   "name": "Cours d'Eau 01 du Gué de Vailly",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    756159.2,
+    6824504.7
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312820",
+   "name": null,
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    755469.6,
+    6824243.6
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009312835",
+   "name": null,
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    755432.6,
+    6824159.4
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009313260",
+   "name": "Fossé 01 du Rondeau",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    761286.8,
+    6823628.1
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009313262",
+   "name": "Bras des Moulins de Poussey",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    759935.6,
+    6824080.9
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009313262",
+   "name": "Bras des Moulins de Poussey",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    759343.1,
+    6824381.7
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009313267",
+   "name": null,
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    760662.4,
+    6824114.4
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009313268",
+   "name": "Ruisseau des Moulins de Poussey",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    759154.2,
+    6824099.4
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000000009313270",
+   "name": null,
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    757234.2,
+    6822910.2
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009313271",
+   "name": null,
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    757999.6,
+    6824151.8
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009313271",
+   "name": null,
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    758251.7,
+    6823863.4
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009313274",
+   "name": null,
+   "with": "rail",
+   "kind": "pont ferroviaire (V1.9 TRONFERR0000000009310482)",
+   "L93": [
+    757026.8,
+    6823152.4
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009313274",
+   "name": null,
+   "with": "rail",
+   "kind": "pont ferroviaire (V1.9 TRONFERR0000000009310482)",
+   "L93": [
+    757028.7,
+    6823148.2
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009313281",
+   "name": null,
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    755442.7,
+    6823847.1
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000009313282",
+   "name": null,
+   "with": "road",
+   "kind": "ouvrage non documenté sur un cours d’eau permanent",
+   "L93": [
+    755964.6,
+    6824099.1
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000000009313282",
+   "name": null,
+   "with": "road",
+   "kind": "ouvrage non documenté sur un cours d’eau permanent",
+   "L93": [
+    756240.4,
+    6823848
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000000009313282",
+   "name": null,
+   "with": "road",
+   "kind": "ouvrage non documenté sur un cours d’eau permanent",
+   "L93": [
+    756300.6,
+    6823826.6
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000000065119302",
+   "name": "Bras des Moulins de Sauvage",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    760341.6,
+    6826185.7
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119304",
+   "name": "Fossé 01 du Gobyat",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    760627.2,
+    6826013.9
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119305",
+   "name": null,
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    760846.2,
+    6826087.1
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119307",
+   "name": "Fossé 01 du Clos Baillot",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    760683.3,
+    6826114.3
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119307",
+   "name": "Fossé 01 du Clos Baillot",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    760432.2,
+    6826270.9
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119321",
+   "name": "Fossé 01 du Clos Baillot",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    760789,
+    6826327
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119323",
+   "name": null,
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    759830.1,
+    6826314.9
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119329",
+   "name": null,
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    760173,
+    6826031.7
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119333",
+   "name": "Bras des Moulins de Sauvage",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    760237.7,
+    6826111.9
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119349",
+   "name": "Bras 02 des Menus Prés",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    756495.7,
+    6826159
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119349",
+   "name": "Bras 02 des Menus Prés",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    757186.9,
+    6826123.9
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119364",
+   "name": "Bras 01 des Menus Prés",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    757242,
+    6826237.8
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000000065119364",
+   "name": "Bras 01 des Menus Prés",
+   "with": "road",
+   "kind": "ouvrage non documenté sur un cours d’eau permanent",
+   "L93": [
+    757204.8,
+    6826137.4
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000000065119364",
+   "name": "Bras 01 des Menus Prés",
+   "with": "road",
+   "kind": "ouvrage non documenté sur un cours d’eau permanent",
+   "L93": [
+    757206.8,
+    6826142.7
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000000065119508",
+   "name": null,
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    761352.4,
+    6825033.6
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119511",
+   "name": "Fossé 02 du Gobyat",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    761458.3,
+    6825593
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119515",
+   "name": null,
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    761421.8,
+    6825536.1
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119519",
+   "name": "Canal des Moulins de Sauvage",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    759838.1,
+    6825656
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000000065119528",
+   "name": "Fossé 01 du Gobyat",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    760857,
+    6825853
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119529",
+   "name": "Fossé 01 du Clos Baillot",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    761063,
+    6826178.8
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119529",
+   "name": "Fossé 01 du Clos Baillot",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    761237,
+    6825897.8
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119529",
+   "name": "Fossé 01 du Clos Baillot",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    761147.8,
+    6825986.5
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119529",
+   "name": "Fossé 01 du Clos Baillot",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    761147.5,
+    6825978.1
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119539",
+   "name": "Cours d'Eau 01 des Menus Prés",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    757958.5,
+    6825496.2
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119539",
+   "name": "Cours d'Eau 01 des Menus Prés",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    757958.5,
+    6825496.2
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119540",
+   "name": null,
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    761011.1,
+    6825314.4
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119540",
+   "name": null,
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    761313.7,
+    6825385.2
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119542",
+   "name": "Fossé 01 du Gobyat",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    761315.3,
+    6825601.8
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119543",
+   "name": "Bras des Moulins de Sauvage",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    760485.5,
+    6825795.3
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000000065119545",
+   "name": "Canal des Moulins de Sauvage",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    761176.4,
+    6825063.1
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000000065119550",
+   "name": null,
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    761249.2,
+    6825036.1
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000002005083345",
+   "name": "Noue des Barces",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    756368,
+    6825812
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000002005083345",
+   "name": "Noue des Barces",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    756416.7,
+    6825787.9
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000002005083446",
+   "name": "Bras des Moulins de Sauvage",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    760485.5,
+    6825795.3
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000002005083446",
+   "name": "Bras des Moulins de Sauvage",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    760480.8,
+    6825703.4
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000002005083446",
+   "name": "Bras des Moulins de Sauvage",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    760573.2,
+    6825547.4
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000002005083465",
+   "name": "Canal 01 des Penouilles",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    756356.9,
+    6825828.6
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000002005083586",
+   "name": "Fossé 01 du Clos Baillot",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    760683.3,
+    6826114.3
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000002005083586",
+   "name": "Fossé 01 du Clos Baillot",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    760772.1,
+    6826293.4
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000002005084427",
+   "name": "Bras des Moulins de Sauvage",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    760026,
+    6826283.4
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000002005084435",
+   "name": "Bras 02 des Menus Prés",
+   "with": "road",
+   "kind": "buse / ponceau probable (non documenté)",
+   "L93": [
+    756084,
+    6826114.5
+   ],
+   "perm": "Intermittent"
+  },
+  {
+   "water": "TRON_EAU0000002287776979",
+   "name": "la Seine",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    758167.3,
+    6825146.8
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000002287787461",
+   "name": "Canal des Moulins de Sauvage",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    760337.5,
+    6825559
+   ],
+   "perm": "Permanent"
+  },
+  {
+   "water": "TRON_EAU0000002287805124",
+   "name": "Noue des Fourchus",
+   "with": "road",
+   "kind": "pont routier (V1.8)",
+   "L93": [
+    760838.8,
+    6824996.8
+   ],
+   "perm": "Permanent"
+  }
+ ],
+ "xcheck": {
+  "bcae": {
+   "km": 68.42,
+   "offKm": 2.73,
+   "tolM": 5,
+   "pieces": [
+    {
+     "id": "bcae_cours_eau.177983",
+     "name": null,
+     "offM": 55
+    },
+    {
+     "id": "bcae_cours_eau.177984",
+     "name": null,
+     "offM": 115
+    },
+    {
+     "id": "bcae_cours_eau.178006",
+     "name": null,
+     "offM": 125
+    },
+    {
+     "id": "bcae_cours_eau.178007",
+     "name": null,
+     "offM": 90
+    },
+    {
+     "id": "bcae_cours_eau.178154",
+     "name": null,
+     "offM": 50
+    },
+    {
+     "id": "bcae_cours_eau.178223",
+     "name": null,
+     "offM": 65
+    },
+    {
+     "id": "bcae_cours_eau.178226",
+     "name": null,
+     "offM": 335
+    },
+    {
+     "id": "bcae_cours_eau.178229",
+     "name": null,
+     "offM": 100
+    },
+    {
+     "id": "bcae_cours_eau.178230",
+     "name": null,
+     "offM": 65
+    },
+    {
+     "id": "bcae_cours_eau.178233",
+     "name": null,
+     "offM": 80
+    },
+    {
+     "id": "bcae_cours_eau.181630",
+     "name": null,
+     "offM": 50
+    },
+    {
+     "id": "bcae_cours_eau.184777",
+     "name": null,
+     "offM": 90
+    },
+    {
+     "id": "bcae_cours_eau.185346",
+     "name": null,
+     "offM": 85
+    },
+    {
+     "id": "bcae_cours_eau.185730",
+     "name": null,
+     "offM": 75
+    },
+    {
+     "id": "bcae_cours_eau.960243",
+     "name": null,
+     "offM": 275
+    },
+    {
+     "id": "bcae_cours_eau.960435",
+     "name": null,
+     "offM": 195
+    },
+    {
+     "id": "bcae_cours_eau.960579",
+     "name": null,
+     "offM": 130
+    },
+    {
+     "id": "bcae_cours_eau.967313",
+     "name": null,
+     "offM": 435
+    }
+   ]
+  },
+  "bdcarto": {
+   "km": 55.02,
+   "offKm": 0,
+   "tolM": 40,
+   "pieces": []
+  },
+  "osm": {
+   "km": 36.77,
+   "offKm": 0.72,
+   "tolM": 15,
+   "pieces": [
+    {
+     "id": "relation/962076",
+     "name": "La Seine",
+     "offM": 100
+    },
+    {
+     "id": "way/132357193",
+     "name": null,
+     "offM": 65
+    },
+    {
+     "id": "way/150927778",
+     "name": "Rivière du Moulin",
+     "offM": 55
+    },
+    {
+     "id": "way/396444077",
+     "name": null,
+     "offM": 350
+    },
+    {
+     "id": "way/132084086",
+     "name": "Canal des Moulins de Sauvage",
+     "offM": 100
+    }
+   ]
+  }
+ },
+ "display": {
+  "linesInScene": 228,
+  "linesInReference": 228,
+  "underground": 0,
+  "surfacesInScene": 85,
+  "surfacesInReference": 85,
+  "verticesOffTerrain": 103,
+  "hiddenKm": {
+   "total": 67.71,
+   "byHedgeTextureV201": 3.28,
+   "by3DHedgeWallsV201": 1.42,
+   "byHedgeTextureV21": 0,
+   "by3DHedgeWallsV21": 0.01
+  },
+  "hiddenByNameV201M": {
+   "(sans nom)": 798,
+   "Ruisseau des Moulins de Poussey": 598,
+   "Bras 02 des Menus Prés": 498,
+   "Cours d'Eau 01 des Menus Prés": 276,
+   "Noue des Barces": 166,
+   "Fossé 01 du Clos Baillot": 154,
+   "Bras de la Seine": 138,
+   "Fossé 03 des Epinettes": 132,
+   "Canal 01 des Penouilles": 130,
+   "la Seine": 98,
+   "Bras 01 des Menus Prés": 74,
+   "Noue de Ferloup": 72,
+   "Bras des Moulins de Poussey": 70,
+   "Canal des Moulins de Sauvage": 58,
+   "Fossé 01 du Gobyat": 14
+  },
+  "rule": "V2.1 : eau dessinée après les haies dans la texture ; aucun mur de haie 3D à moins de (demi-largeur du cours d’eau + demi-largeur du mur + 1 m) d’un axe ou dans une surface en eau"
+ },
+ "poussey": [
+  {
+   "name": "Ruisseau des Moulins de Poussey",
+   "tronçons": 8,
+   "km": 4.7,
+   "permanence": [
+    "Permanent"
+   ],
+   "components": 1
+  },
+  {
+   "name": "Bras des Moulins de Poussey",
+   "tronçons": 4,
+   "km": 2.81,
+   "permanence": [
+    "Intermittent"
+   ],
+   "components": 1
+  }
+ ],
+ "freshService": {
+  "note": "BD TOPO tronçons hydrographiques relus au service le 26/09/2026 : 234 objets dans la boîte de l’emprise, dont les 226 du référentiel ; les 8 autres sont entièrement hors de l’emprise du terrain",
+  "count": 234
+ }
+}

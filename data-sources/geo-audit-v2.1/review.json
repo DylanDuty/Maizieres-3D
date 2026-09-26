@@ -1,0 +1,348 @@
+{
+ "metadata": {
+  "version": "2.1",
+  "note": "Classement humain des constats de scripts/audit-geography.mjs (orthophoto IGN avril 2025, revues V1.8 / V1.9 / V1.10 / V2.0.1). Aucun constat n’est corrigé automatiquement."
+ },
+ "buildingOffsets": {
+  "checked": 62,
+  "moved": 0,
+  "verdict": "62 bâtiments de la commune dont l’empreinte s’écarte de plus de 2,5 m de son homologue cadastral : sur l’orthophoto, l’empreinte du référentiel (BD TOPO) est posée sur la toiture dans tous les cas ; l’écart vient du dessin cadastral (décalage connu du PCI) ou d’un homologue qui est en fait un bâtiment voisin. Aucun déplacement."
+ },
+ "poussey": {
+  "cells": 40,
+  "cellM": 120,
+  "extentL93": [
+   758640,
+   6823560,
+   760200,
+   6824280
+  ],
+  "streets": [
+   "D20 (axe principal)",
+   "rue Joliot-Curie",
+   "rue Basse de Poussey",
+   "rue des Lombards",
+   "rue des Billouts",
+   "rue du Lavoir",
+   "rue du Château",
+   "rue des Bédouins",
+   "rue des Prés de Poussey",
+   "Pont de Clairvaux"
+  ],
+  "result": "40 cellules de 120 m contrôlées une à une (référentiel en rouge, réintégrations V2.0.1 en vert, cadastre en jaune sur l’orthophoto 2025) : chaque maison visible a son empreinte, bien placée et orientée ; aucune maison manquante, aucun doublon, aucun décalage notable. Restent visibles sans empreinte quelques abris de jardin de moins de 15 m² (non inventoriés) et vis-A (bâtiment au sud-est du château d’eau, déjà listé).",
+  "newMissing": 0,
+  "moved": 0
+ },
+ "withoutGeometry": {
+  "vis-A": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  },
+  "vis-D1": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  },
+  "vis-D2": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 1,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 1,
+     "nonCouvertsParLeReferentiel": 1
+    },
+    "RNB": {
+     "aMoinsDe3m": 1,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   },
+   "note": "l’empreinte cadastrale à 1 m (cadastre:39808459, 429 m²) est le bâtiment voisin, déjà couvert à 97 % par le référentiel ; l’annexe elle-même n’a pas d’empreinte"
+  },
+  "vis-F": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  },
+  "vis-H1": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  },
+  "vis-H2": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  },
+  "vis-I": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  },
+  "vis-K": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  },
+  "vis-P1": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  },
+  "vis-P2": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 1,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 1,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 1,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  },
+  "vis-Q": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  },
+  "vis-R1": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  },
+  "vis-R2": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  },
+  "vis-T": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  },
+  "vis-U2": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  },
+  "vis-U3": {
+   "date": "2026-09-26",
+   "result": "toujours sans géométrie publique",
+   "detail": {
+    "BDTOPO": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "CADAST": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    },
+    "RNB": {
+     "aMoinsDe3m": 0,
+     "nonCouvertsParLeReferentiel": 0
+    }
+   }
+  }
+ },
+ "roads": {
+  "gaps1to5m": "11 extrémités à 2–5 m d’une autre voie, toutes dans les allées de parking et dessertes OSM des zones commerciales ouest (La Belle Idée), dont 3 dans la commune : écarts de tracé OSM entre allées, recouverts à l’écran par la largeur des rubans (≥ 3 m) ; aucune rupture visible, aucune correction (référentiel V1.8 gelé).",
+  "orphan": "boucle de parking d’un restaurant de La Belle Idée (hors commune, 346 m) : raccord réel visible sur l’orthophoto mais absent d’OSM et de la BD TOPO (revue V1.8, ouvert)",
+  "freeEnds": "les autres extrémités libres sont des impasses (164, BD TOPO) et des fins de sentier ou de chemin ; 109 sont des sorties de l’emprise",
+  "anomalies": "creux sous le chemin de la Croix des Fourches (revue V1.8, ouvert : fossé, tranchée ou buse ?)"
+ },
+ "rail": {
+  "orphan": "embranchements way/174931208 et way/174931209 (830 m, zone floutée de l’orthophoto, diffusion restreinte) : aucune connexion dans OSM ; extrémité à 2,95 m de way/174931210",
+  "crossings": "3 croisements sans nœud commun (faisceau ouest ×2, communication J1357) : aiguillages ou traversées probables non cartographiés (revue V1.9, ouverts)",
+  "bridge": "pont ferroviaire de la rue de l’Orme : profil conservé, rue passant dessous (V1.8 / V1.9)",
+  "interruptions": "aucun rail interrompu hors butoirs (16), sorties d’emprise (4) et l’embranchement isolé ci-dessus"
+ },
+ "landcover": {
+  "riverInParcels": "705 m de cours d’eau permanents tombent dans 4 parcelles RPG 2024 (limites déclarées qui englobent berges et fossés) : depuis V2.1 l’eau est dessinée après la végétation et les parcelles, le cours d’eau reste visible",
+  "mud": "la « zone boueuse » de Poussey était le vert foncé des haies ripisylves (bandes DSB jusqu’à 98 m) peint par-dessus la rivière, avec leurs murs 3D bruns-verts : corrigé (voir hydrographie)",
+  "gaps": "trous et chevauchements > 1 ha de la revue V1.10 : inchangés, classés en V1.10"
+ },
+ "toponymy": {
+  "labels": "les 15 étiquettes permanentes (bourg, Poussey, Les Granges, Parc de l’Aérodrome, La Glacière, le Craon, landmarks P1/P2) portent un statut actuel et une confiance A ou B ; aucune position incertaine affichée comme certaine",
+  "names": "rivière du Moulin (BIBLE_01, OSM) = Ruisseau des Moulins de Poussey (BD TOPO) : nom BD TOPO conservé ; « canal de Poussey » (bulletin municipal) sans correspondance établie : non affiché"
+ }
+}
