@@ -1,0 +1,447 @@
+{
+ "metadata": {
+  "version": "2.2",
+  "note": "Arbitrage final des 16 constructions visibles sans géométrie publique (V2.0.1). Couche manuelle séparée, explicitement non officielle, désactivable : elle ne modifie ni le référentiel V1.6.2 ni les réintégrations V2.0.1. Relevés sur la BD ORTHO IGN d’avril 2025, uniquement pour les toitures délimitables sans ambiguïté.",
+  "orthophoto": {
+   "name": "BD ORTHO IGN 20 cm",
+   "service": "https://data.geopf.fr/wms-r",
+   "layer": "ORTHOIMAGERY.ORTHOPHOTOS",
+   "dateVol": "28–29 avril 2025"
+  },
+  "crs": "EPSG:2154 (Lambert-93), polygones en mètres"
+ },
+ "cases": [
+  {
+   "id": "vis-U2",
+   "decision": "ajout_manuel",
+   "poly": [
+    [
+     758116.75,
+     6823172.8
+    ],
+    [
+     758121.38,
+     6823175.75
+    ],
+    [
+     758118.65,
+     6823180.7
+    ],
+    [
+     758115.05,
+     6823180.1
+    ],
+    [
+     758114.65,
+     6823177.75
+    ],
+    [
+     758115.2,
+     6823175.2
+    ]
+   ],
+   "confidence": "B",
+   "category": "habitation",
+   "categoryNote": "maison selon l’observation (toiture brune à deux pans, attenante à une terrasse) ; usage résidentiel non établi par une source",
+   "observation": "maison à toiture brune, rue du Maréchal-de-Lattre-de-Tassigny ; seule la toiture brune est relevée, la surface claire voisine (terrasse) ne l’est pas",
+   "uncertainty": "limite ouest sous la végétation, ± 1 m",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : toiture nettement visible et délimitable (maison à toiture brune, rue du Maréchal-de-Lattre-de-Tassigny ; seule la toiture brune est relevée, la surface claire voisine (terrasse) ne l’est pas)",
+    "recontrôle du 26/09/2026 : aucune empreinte BD TOPO (2 489 objets au service), Parcellaire Express (2 258), forme RNB ni OSM à cet endroit (data-sources/geo-audit-v2.1/recheck-16-sans-geometrie.json)"
+   ],
+   "geometryMethod": "relevé manuel des angles de toiture sur l’orthophoto IGN (WMS-R ORTHOIMAGERY.ORTHOPHOTOS, 40 px/m, quadrillage de 1 m), polygone minimal ; précision estimée ± 0,5 à 1 m"
+  },
+  {
+   "id": "vis-A",
+   "decision": "ajout_manuel",
+   "poly": [
+    [
+     759623.45,
+     6823804.8
+    ],
+    [
+     759648.2,
+     6823801.62
+    ],
+    [
+     759647.05,
+     6823794.8
+    ],
+    [
+     759622.7,
+     6823798.7
+    ]
+   ],
+   "confidence": "A",
+   "category": "usage_non_etabli",
+   "categoryNote": "bâtiment à toit-terrasse accolé au nord du grand bâtiment voisin, face au château d’eau ; usage non établi",
+   "observation": "bâtiment à toit-terrasse brun-rose (≈ 25 × 6,5 m) sur la D20 à Poussey, au sud-est du château d’eau",
+   "uncertainty": "arêtes nettes, ± 0,5 m",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : toiture nettement visible et délimitable (bâtiment à toit-terrasse brun-rose (≈ 25 × 6,5 m) sur la D20 à Poussey, au sud-est du château d’eau)",
+    "recontrôle du 26/09/2026 : aucune empreinte BD TOPO (2 489 objets au service), Parcellaire Express (2 258), forme RNB ni OSM à cet endroit (data-sources/geo-audit-v2.1/recheck-16-sans-geometrie.json)"
+   ],
+   "geometryMethod": "relevé manuel des angles de toiture sur l’orthophoto IGN (WMS-R ORTHOIMAGERY.ORTHOPHOTOS, 40 px/m, quadrillage de 1 m), polygone minimal ; précision estimée ± 0,5 à 1 m"
+  },
+  {
+   "id": "vis-F",
+   "decision": "ajout_manuel",
+   "poly": [
+    [
+     758205.93,
+     6823066.0
+    ],
+    [
+     758226.6,
+     6823079.12
+    ],
+    [
+     758229.0,
+     6823075.0
+    ],
+    [
+     758206.05,
+     6823059.4
+    ]
+   ],
+   "confidence": "A",
+   "category": "usage_non_etabli",
+   "categoryNote": "long bâtiment à toiture bleu-gris, grange ou hangar probable ; usage non établi",
+   "observation": "long bâtiment (≈ 27 × 6 m) à toiture bleu-gris, rue Maurice-Renault",
+   "uncertainty": "extrémité ouest au ras d’une haie, ± 1 m",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : toiture nettement visible et délimitable (long bâtiment (≈ 27 × 6 m) à toiture bleu-gris, rue Maurice-Renault)",
+    "recontrôle du 26/09/2026 : aucune empreinte BD TOPO (2 489 objets au service), Parcellaire Express (2 258), forme RNB ni OSM à cet endroit (data-sources/geo-audit-v2.1/recheck-16-sans-geometrie.json)"
+   ],
+   "geometryMethod": "relevé manuel des angles de toiture sur l’orthophoto IGN (WMS-R ORTHOIMAGERY.ORTHOPHOTOS, 40 px/m, quadrillage de 1 m), polygone minimal ; précision estimée ± 0,5 à 1 m"
+  },
+  {
+   "id": "vis-D1",
+   "decision": "ajout_manuel",
+   "poly": [
+    [
+     757976.0,
+     6823389.47
+    ],
+    [
+     757988.27,
+     6823388.67
+    ],
+    [
+     757987.67,
+     6823381.67
+    ],
+    [
+     757975.77,
+     6823382.4
+    ]
+   ],
+   "confidence": "A",
+   "category": "serre",
+   "categoryNote": "serre vitrée",
+   "observation": "serre (≈ 12 × 7 m) entre la cour et le grand bâtiment, rue du Général-Leclerc",
+   "uncertainty": "± 0,5 m",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : toiture nettement visible et délimitable (serre (≈ 12 × 7 m) entre la cour et le grand bâtiment, rue du Général-Leclerc)",
+    "recontrôle du 26/09/2026 : aucune empreinte BD TOPO (2 489 objets au service), Parcellaire Express (2 258), forme RNB ni OSM à cet endroit (data-sources/geo-audit-v2.1/recheck-16-sans-geometrie.json)"
+   ],
+   "geometryMethod": "relevé manuel des angles de toiture sur l’orthophoto IGN (WMS-R ORTHOIMAGERY.ORTHOPHOTOS, 40 px/m, quadrillage de 1 m), polygone minimal ; précision estimée ± 0,5 à 1 m"
+  },
+  {
+   "id": "vis-D2",
+   "decision": "deja_au_referentiel",
+   "observation": "la « toiture brune » est celle du grand bâtiment BATIMENT0000000301149158, déjà au référentiel : son contour BD TOPO est seulement décalé de 1 à 2 m vers l’est ; ce n’est pas une construction distincte",
+   "reason": "pas de construction manquante"
+  },
+  {
+   "id": "vis-H1",
+   "decision": "ajout_manuel",
+   "poly": [
+    [
+     756742.32,
+     6823038.9
+    ],
+    [
+     756751.05,
+     6823036.45
+    ],
+    [
+     756747.18,
+     6823024.45
+    ],
+    [
+     756739.32,
+     6823026.9
+    ]
+   ],
+   "confidence": "A",
+   "category": "usage_non_etabli",
+   "categoryNote": "bâtiment à toit plat blanc ; usage non établi",
+   "observation": "bâtiment à toit plat blanc (≈ 12,5 × 8,5 m), rue du Pot-Bancelin",
+   "uncertainty": "± 0,5 m",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : toiture nettement visible et délimitable (bâtiment à toit plat blanc (≈ 12,5 × 8,5 m), rue du Pot-Bancelin)",
+    "recontrôle du 26/09/2026 : aucune empreinte BD TOPO (2 489 objets au service), Parcellaire Express (2 258), forme RNB ni OSM à cet endroit (data-sources/geo-audit-v2.1/recheck-16-sans-geometrie.json)"
+   ],
+   "geometryMethod": "relevé manuel des angles de toiture sur l’orthophoto IGN (WMS-R ORTHOIMAGERY.ORTHOPHOTOS, 40 px/m, quadrillage de 1 m), polygone minimal ; précision estimée ± 0,5 à 1 m"
+  },
+  {
+   "id": "vis-H2",
+   "decision": "ajout_manuel",
+   "poly": [
+    [
+     756763.43,
+     6823038.67
+    ],
+    [
+     756773.57,
+     6823036.22
+    ],
+    [
+     756770.65,
+     6823022.55
+    ],
+    [
+     756759.53,
+     6823024.12
+    ]
+   ],
+   "confidence": "A",
+   "category": "usage_non_etabli",
+   "categoryNote": "bâtiment à grande toiture grise ; usage non établi",
+   "observation": "bâtiment à toiture grise (≈ 14,5 × 11 m), rue du Pot-Bancelin",
+   "uncertainty": "± 0,5 m",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : toiture nettement visible et délimitable (bâtiment à toiture grise (≈ 14,5 × 11 m), rue du Pot-Bancelin)",
+    "recontrôle du 26/09/2026 : aucune empreinte BD TOPO (2 489 objets au service), Parcellaire Express (2 258), forme RNB ni OSM à cet endroit (data-sources/geo-audit-v2.1/recheck-16-sans-geometrie.json)"
+   ],
+   "geometryMethod": "relevé manuel des angles de toiture sur l’orthophoto IGN (WMS-R ORTHOIMAGERY.ORTHOPHOTOS, 40 px/m, quadrillage de 1 m), polygone minimal ; précision estimée ± 0,5 à 1 m"
+  },
+  {
+   "id": "vis-I",
+   "decision": "ajout_manuel",
+   "poly": [
+    [
+     756742.82,
+     6823131.67
+    ],
+    [
+     756757.57,
+     6823125.0
+    ],
+    [
+     756756.68,
+     6823121.83
+    ],
+    [
+     756741.5,
+     6823128.33
+    ]
+   ],
+   "confidence": "B",
+   "category": "annexe",
+   "categoryNote": "dépendance allongée à toiture brune",
+   "observation": "dépendance allongée (≈ 16 × 3,5 m) à toiture brune, chemin de la Guide",
+   "uncertainty": "bord sud dans l’ombre des arbres, ± 1 m",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : toiture nettement visible et délimitable (dépendance allongée (≈ 16 × 3,5 m) à toiture brune, chemin de la Guide)",
+    "recontrôle du 26/09/2026 : aucune empreinte BD TOPO (2 489 objets au service), Parcellaire Express (2 258), forme RNB ni OSM à cet endroit (data-sources/geo-audit-v2.1/recheck-16-sans-geometrie.json)"
+   ],
+   "geometryMethod": "relevé manuel des angles de toiture sur l’orthophoto IGN (WMS-R ORTHOIMAGERY.ORTHOPHOTOS, 40 px/m, quadrillage de 1 m), polygone minimal ; précision estimée ± 0,5 à 1 m"
+  },
+  {
+   "id": "vis-K",
+   "decision": "non_modelise",
+   "observation": "cadre blanc autour d’un rectangle gris sombre, accolé à la maison : piscine couverte ou terrasse avec pergola probable, pas une toiture identifiable",
+   "reason": "forme ambiguë (piscine / terrasse)"
+  },
+  {
+   "id": "vis-P1",
+   "decision": "ajout_manuel",
+   "poly": [
+    [
+     758490.07,
+     6822399.5
+    ],
+    [
+     758504.0,
+     6822398.88
+    ],
+    [
+     758503.6,
+     6822393.33
+    ],
+    [
+     758490.07,
+     6822393.92
+    ]
+   ],
+   "confidence": "A",
+   "category": "annexe",
+   "categoryNote": "dépendance accolée au long bâtiment",
+   "observation": "bâtiment à toiture sombre (≈ 14 × 5,5 m) accolé à l’est du long bâtiment, rue de la Chefferie",
+   "uncertainty": "± 0,5 m",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : toiture nettement visible et délimitable (bâtiment à toiture sombre (≈ 14 × 5,5 m) accolé à l’est du long bâtiment, rue de la Chefferie)",
+    "recontrôle du 26/09/2026 : aucune empreinte BD TOPO (2 489 objets au service), Parcellaire Express (2 258), forme RNB ni OSM à cet endroit (data-sources/geo-audit-v2.1/recheck-16-sans-geometrie.json)"
+   ],
+   "geometryMethod": "relevé manuel des angles de toiture sur l’orthophoto IGN (WMS-R ORTHOIMAGERY.ORTHOPHOTOS, 40 px/m, quadrillage de 1 m), polygone minimal ; précision estimée ± 0,5 à 1 m"
+  },
+  {
+   "id": "vis-P2",
+   "decision": "deja_au_referentiel",
+   "observation": "l’annexe à toiture grise est BATIMENT0000000301149097, déjà au référentiel ; le point V2.0.1 était posé à 1,8 m dans l’herbe voisine",
+   "reason": "pas de construction manquante"
+  },
+  {
+   "id": "vis-Q",
+   "decision": "ajout_manuel",
+   "poly": [
+    [
+     757232.62,
+     6822789.0
+    ],
+    [
+     757236.62,
+     6822789.0
+    ],
+    [
+     757236.5,
+     6822781.5
+    ],
+    [
+     757232.62,
+     6822781.5
+    ]
+   ],
+   "confidence": "C",
+   "category": "abri",
+   "categoryNote": "abri de jardin à toiture sombre",
+   "observation": "abri à toiture gris sombre (≈ 7,5 × 4 m) dans les jardins à l’ouest de l’avenue du Général-de-Gaulle",
+   "uncertainty": "bout nord sous un arbre ; seule la partie de toiture nette est relevée, ± 1 m",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : toiture nettement visible et délimitable (abri à toiture gris sombre (≈ 7,5 × 4 m) dans les jardins à l’ouest de l’avenue du Général-de-Gaulle)",
+    "recontrôle du 26/09/2026 : aucune empreinte BD TOPO (2 489 objets au service), Parcellaire Express (2 258), forme RNB ni OSM à cet endroit (data-sources/geo-audit-v2.1/recheck-16-sans-geometrie.json)"
+   ],
+   "geometryMethod": "relevé manuel des angles de toiture sur l’orthophoto IGN (WMS-R ORTHOIMAGERY.ORTHOPHOTOS, 40 px/m, quadrillage de 1 m), polygone minimal ; précision estimée ± 0,5 à 1 m"
+  },
+  {
+   "id": "vis-R1",
+   "decision": "ajout_manuel",
+   "poly": [
+    [
+     756959.62,
+     6822649.9
+    ],
+    [
+     756964.8,
+     6822649.62
+    ],
+    [
+     756964.35,
+     6822641.65
+    ],
+    [
+     756963.53,
+     6822634.97
+    ],
+    [
+     756958.53,
+     6822635.15
+    ],
+    [
+     756959.3,
+     6822641.8
+    ]
+   ],
+   "confidence": "B",
+   "category": "hangar",
+   "categoryNote": "hangar léger (deux travées claires)",
+   "observation": "hangar léger (≈ 15 × 5 m) à toiture grise et blanche, à l’ouest de l’avenue du Général-de-Gaulle",
+   "uncertainty": "± 0,5 m",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : toiture nettement visible et délimitable (hangar léger (≈ 15 × 5 m) à toiture grise et blanche, à l’ouest de l’avenue du Général-de-Gaulle)",
+    "recontrôle du 26/09/2026 : aucune empreinte BD TOPO (2 489 objets au service), Parcellaire Express (2 258), forme RNB ni OSM à cet endroit (data-sources/geo-audit-v2.1/recheck-16-sans-geometrie.json)"
+   ],
+   "geometryMethod": "relevé manuel des angles de toiture sur l’orthophoto IGN (WMS-R ORTHOIMAGERY.ORTHOPHOTOS, 40 px/m, quadrillage de 1 m), polygone minimal ; précision estimée ± 0,5 à 1 m"
+  },
+  {
+   "id": "vis-R2",
+   "decision": "non_modelise",
+   "observation": "objet blanc translucide (≈ 6 × 4 m) posé sur la cour : bâche, remorque ou abri démontable",
+   "reason": "objet possiblement mobile, forme ambiguë"
+  },
+  {
+   "id": "vis-T",
+   "decision": "non_modelise",
+   "observation": "petite forme blanche en L (≈ 4 × 6 m) dans un verger : bâche ou petit abri",
+   "reason": "petit abri à forme ambiguë"
+  },
+  {
+   "id": "vis-U3",
+   "decision": "ajout_manuel",
+   "poly": [
+    [
+     758147.0,
+     6823165.17
+    ],
+    [
+     758150.75,
+     6823165.17
+    ],
+    [
+     758150.75,
+     6823159.22
+    ],
+    [
+     758147.0,
+     6823159.22
+    ]
+   ],
+   "confidence": "B",
+   "category": "garage",
+   "categoryNote": "garage à toiture grise",
+   "observation": "garage (≈ 6 × 3,75 m) à toiture grise, rue Albert-Benoist",
+   "uncertainty": "± 0,5 m",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : toiture nettement visible et délimitable (garage (≈ 6 × 3,75 m) à toiture grise, rue Albert-Benoist)",
+    "recontrôle du 26/09/2026 : aucune empreinte BD TOPO (2 489 objets au service), Parcellaire Express (2 258), forme RNB ni OSM à cet endroit (data-sources/geo-audit-v2.1/recheck-16-sans-geometrie.json)"
+   ],
+   "geometryMethod": "relevé manuel des angles de toiture sur l’orthophoto IGN (WMS-R ORTHOIMAGERY.ORTHOPHOTOS, 40 px/m, quadrillage de 1 m), polygone minimal ; précision estimée ± 0,5 à 1 m"
+  }
+ ],
+ "newFindings": [
+  {
+   "id": "v2.2-new-01",
+   "decision": "ajout_manuel",
+   "poly": [
+    [
+     757223.5,
+     6822798.2
+    ],
+    [
+     757234.8,
+     6822797.7
+    ],
+    [
+     757234.8,
+     6822794.9
+    ],
+    [
+     757223.5,
+     6822794.3
+    ]
+   ],
+   "confidence": "B",
+   "category": "abri",
+   "categoryNote": "deux abris de jardin accolés (toitures rouge et grise)",
+   "observation": "deux abris accolés (≈ 11 × 3,5 m), toitures rouge et grise, 10 m au nord de vis-Q ; constaté pendant le contrôle de vis-Q, absent de toutes les sources et non inventorié en V2.0.1",
+   "uncertainty": "± 0,5 m",
+   "evidence": [
+    "BD ORTHO IGN 20 cm (vol des 28–29 avril 2025) : toiture nettement visible et délimitable (deux abris accolés (≈ 11 × 3,5 m), toitures rouge et grise, 10 m au nord de vis-Q ; constaté pendant le contrôle de vis-Q, absent de toutes les sources et non inventorié en V2.0.1)",
+    "aucune empreinte BD TOPO, Parcellaire Express ni forme RNB à moins de 2 m (instantanés du dépôt, identiques au service le 26/09/2026)"
+   ],
+   "geometryMethod": "relevé manuel des angles de toiture sur l’orthophoto IGN (WMS-R ORTHOIMAGERY.ORTHOPHOTOS, 40 px/m, quadrillage de 1 m), polygone minimal ; précision estimée ± 0,5 à 1 m"
+  }
+ ]
+}

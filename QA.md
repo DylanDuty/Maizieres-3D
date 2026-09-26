@@ -1,3 +1,20 @@
+# Vérification V2.2 — corrections finales du bâti avant gel Unreal, 26 septembre 2026
+
+Branche `opus/v2.2-final-building-freeze`, à partir de `c87ea11`. Rapport : `docs/audit/V2.2_FINAL_BUILDING_FREEZE.md`. Captures : `docs/qa/v2.2/`.
+
+- **Les 16 cas** :
+  - 11 ajouts manuels ;
+  - 2 déjà au référentiel ;
+  - 3 non modélisés (ambigus).
+- **Nouveau constat** : 1, ajouté.
+- **Total** : 2 596 empreintes, dont 2 362 dans la commune (2 584 / 2 350 avant).
+- **Contrôles** : `npm run check:all`, **15 contrôles OK**, dont `check:final-building-freeze` (8 vérifications) ; `pnpm build` réussi.
+- **Chromium** (SwiftShader) :
+  - 2 596 / 2 596 identifiants dans la scène, et 2 584 avec `?manual=0` ;
+  - 0 enfoui ;
+  - console vide dans 8 modes ;
+  - le clic sur un relevé manuel affiche sa fiche.
+
 # Vérification V2.1 — audit géographique final, 26 septembre 2026
 
 Branche `opus/v2.1-final-geographic-audit`, à partir de `d34d69d`. Rapport : `docs/audit/V2.1_FINAL_GEOGRAPHIC_AUDIT.md`. Captures : `docs/qa/v2.1/`.

@@ -19,7 +19,9 @@ export function describe(r){
  if(b.typeText)facts.push(`${clean(b.typeText)} · confiance ${clean(b.confidence)} (Bible 01 §16)`);
  for(const n of b.notes||[])quotes.push({text:clean(n.quote),cite:cite(n)});
  if(r.generic){const i=r.info;
-  if(!i.knownUsage&&!i.light)facts.push(`Type estimé d’après l’empreinte : ${KIND_LABELS[i.kind]?.toLowerCase()||'bâtiment'}`);
+  // V2.2: buildings surveyed by hand on the orthophoto say so, with their observed category (never a sourced usage).
+  if(i.manual)facts.push(`Relevé manuel sur orthophoto IGN 2025 (V2.2, non officiel) : ${i.manual.category}`,`Précision : ${i.manual.uncertainty}`);
+  else if(!i.knownUsage&&!i.light)facts.push(`Type estimé d’après l’empreinte : ${KIND_LABELS[i.kind]?.toLowerCase()||'bâtiment'}`);
   if(i.usage)facts.push(`Usage : ${i.usage.toLowerCase()} (IGN BD TOPO)`);
   if(i.light)facts.push('Construction légère (cadastre / IGN)');
   if(i.floors)facts.push(`${i.floors} niveau${i.floors>1?'x':''} (IGN BD TOPO)`);

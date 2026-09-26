@@ -1,3 +1,10 @@
+# Notes V2.2 — corrections finales du bâti, 26 septembre 2026
+
+- **Aucune source publique ne couvrait les 16 cas**, même relue le 26/09 (BD TOPO, cadastre, RNB, OSM). Les ajouts sont donc des relevés manuels sur l’orthophoto.
+- **La couche manuelle reste séparée et désactivable.** Chaque objet porte ses preuves, sa précision et une hauteur « unknown ».
+- **Chaque catégorie est une observation**, jamais un usage établi.
+- **Trois conflits bâtiment / route** viennent des données (empreinte cadastrale seule, décalage OSM ou BD TOPO, largeur estimée d’un chemin), pas du rendu. Rien n’est déplacé.
+
 # Notes V2.1 — audit géographique final, 26 septembre 2026
 
 - **Un comptage ne suffit pas.** La rupture de la rivière à Poussey ne venait d’aucune donnée manquante. Les haies ripisylves, qui suivent le cours d’eau dans l’inventaire DSB, étaient peintes par-dessus l’eau dans la texture du sol. Elles étaient en plus surmontées de murs 3D.

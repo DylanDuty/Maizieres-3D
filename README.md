@@ -2,6 +2,19 @@
 
 Prototype local Three.js de la commune de l’Aube, code INSEE **10220**. Empreintes, voirie, voies ferrées et occupation du sol proviennent d’OpenStreetMap. Le contour communal provient de l’API Découpage administratif française.
 
+**Version 2.2** : corrections finales du bâti avant le gel pour Unreal (`READY_FOR_UNREAL_GEOGRAPHIC_FREEZE = true`).
+
+- **Les 16 constructions sans géométrie publique sont arbitrées** :
+  - 11 sont relevées à la main sur l’orthophoto IGN 2025, dont la maison vis-U2, le bâtiment vis-A à Poussey et le long bâtiment vis-F ;
+  - 2 étaient déjà au référentiel ;
+  - 3 restent non modélisées, car ambiguës.
+- **Un abri double** a été trouvé en contrôlant l’un de ces cas, et ajouté.
+- **Couche manuelle** : ces 12 objets sont dans une couche séparée et non officielle, `public/data/buildings-manual-v2.2.geojson`. On la désactive avec `?manual=0`.
+- **Total** : 2 596 empreintes, dont 2 362 dans la commune.
+- **Unreal** : `unreal/buildings/buildings-provenance-v2.2.json` distingue les empreintes officielles, les réintégrations V2.0.1 et les relevés manuels V2.2.
+- **Contrôle** : `npm run check:final-building-freeze`.
+- **Rapport** : `docs/audit/V2.2_FINAL_BUILDING_FREEZE.md`.
+
 **Version 2.1** : audit géographique final, non encore validé. La validation visuelle par l’utilisateur, notamment à Poussey, reste nécessaire.
 
 - **Rupture de rivière à Poussey** : la rivière semblait s’arrêter puis reprendre. C’était un défaut de rendu : les haies de berge (DSB) étaient peintes par-dessus le Ruisseau des Moulins de Poussey, et des murs de haie 3D étaient posés sur son lit. L’eau est maintenant dessinée en dernier, et aucune haie 3D n’est élevée sur un cours d’eau.

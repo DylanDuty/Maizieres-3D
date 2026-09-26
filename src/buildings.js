@@ -10,7 +10,7 @@ export const PROVENANCE_COLORS={'ign+osm':'#b9bfc6','ign+osm-partiel':'#e9a23b',
 // ?diagnostic=validation: V1.6 confidence levels and unresolved contours.
 export const VALIDATION_COLORS={A:'#b9bfc6',B:'#e9a23b','B-contour':'#9b4fd1',C:'#2f6fe0',cadastre:'#1f9e5a'};
 // V2.0.1 ?diagnostic=buildings-audit: reference building, reintegrated footprint, display base corrected; markers for the rest.
-export const AUDIT_COLORS={normal:'#c9c4b8',reintegre:'#2f9e5a','rendu-corrige':'#2f6fe0',incertain:'#e9a23b','sans-empreinte':'#c0359b'};
+export const AUDIT_COLORS={normal:'#c9c4b8',reintegre:'#2f9e5a','manuel-v2.2':'#e8132b','rendu-corrige':'#2f6fe0',incertain:'#e9a23b','sans-empreinte':'#c0359b'};
 export const diagnosticKey=(item,mode)=>mode==='buildings-audit'?item.auditStatus||'normal':mode==='validation'?(item.provenance==='cadastre'?'cadastre':item.validation?.confidence==='B'&&/contour divergent|contour différent|extension cadastrale/.test(item.validation.status)?'B-contour':item.validation?.confidence||'C'):item.provenance;
 export function buildBuildings(scene,items,enrichment={buildings:{}},options={}){
  const walls=new Batch(material()),roofs=new Batch(material()),windows=new Batch(material({roughness:.65})),details=new Batch(material());
@@ -49,7 +49,7 @@ export function buildBuildings(scene,items,enrichment={buildings:{}},options={})
   batches.forEach((b,i)=>{const end=b.p.length/9;if(end>starts[i])ranges[i].push({start:starts[i],end,id});});
   // V1.7 ?diagnostic=terrain: the whole building is lifted to its terrain base altitude (footprint unchanged).
   const dy=options.elevation?.(item)||0;if(dy)lifts.push({starts,ends:batches.map(b=>b.p.length/9),dy});
-  info.set(id,{validation:item.validation||null,source:item.source||'OpenStreetMap',provenance:item.provenance||null,rnb:item.rnb||null,osmIds:t['@osm']||[id],kind:p.kind,knownUsage:p.knownUsage,usage:extra.usage&&extra.usage!=='Indifférencié'?extra.usage:null,floors:extra.floors||Number.parseInt(t['building:levels'])||null,wallHeight:p.wallHeight,heightSource:p.heightSource,maxHeight,light:t.wall==='no'||extra.lightConstruction===true,ign:!!extra.ignId,poly});
+  info.set(id,{manual:item.provenance==='orthophoto_manual_v2.2'?item.manualInfo||{}:null,validation:item.validation||null,source:item.source||'OpenStreetMap',provenance:item.provenance||null,rnb:item.rnb||null,osmIds:t['@osm']||[id],kind:p.kind,knownUsage:p.knownUsage,usage:extra.usage&&extra.usage!=='Indifférencié'?extra.usage:null,floors:extra.floors||Number.parseInt(t['building:levels'])||null,wallHeight:p.wallHeight,heightSource:p.heightSource,maxHeight,light:t.wall==='no'||extra.lightConstruction===true,ign:!!extra.ignId,poly});
   if(p.kind==='church'||p.kind==='public'){const name=extra.landmark?.name||t.name||(t.amenity==='townhall'?'Mairie':t.amenity==='school'?'École primaire':null);if(name)landmarks.push({name,position:[(bb.minX+bb.maxX)/2,maxHeight+4+dy,(bb.minZ+bb.maxZ)/2],id});}
   if(p.heightSource==='IGN BD TOPO')stats.ignWallHeights++;if(p.roofHeightSource==='IGN statistical roof maximum')stats.ignRoofHeights++;if(p.roofHeightClamped)stats.roofHeightClamps++;if(extra.floors)stats.knownFloors++;if(p.materialSource==='IGN cadastral declaration')stats.knownRoofMaterials++;stats.categories[p.kind]=(stats.categories[p.kind]||0)+1;count++;
  }

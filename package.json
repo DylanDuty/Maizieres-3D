@@ -1,6 +1,6 @@
 {
   "name": "maizieres-3d",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -18,7 +18,7 @@
     "check:interaction": "node scripts/check-interaction.mjs",
     "data:bible": "node scripts/prepare-bible.mjs",
     "check:bible": "node scripts/check-bible.mjs",
-    "check:all": "npm run check && npm run check:enrichment && npm run check:presentation && npm run check:interaction && npm run check:bible && npm run check:buildings && npm run check:terrain && npm run check:roads && npm run check:rail && npm run check:landcover && npm run check:poi && npm run check:v2 && npm run check:building-visibility && npm run check:geographic-integrity",
+    "check:all": "npm run check && npm run check:enrichment && npm run check:presentation && npm run check:interaction && npm run check:bible && npm run check:buildings && npm run check:terrain && npm run check:roads && npm run check:rail && npm run check:landcover && npm run check:poi && npm run check:v2 && npm run check:building-visibility && npm run check:geographic-integrity && npm run check:final-building-freeze",
     "data:buildings": "node scripts/build-buildings.mjs && node scripts/validate-buildings.mjs",
     "audit:buildings": "node scripts/audit-buildings.mjs",
     "check:buildings": "node scripts/check-buildings.mjs",
@@ -49,6 +49,8 @@
     "audit:hydro": "node scripts/audit-hydro.mjs",
     "audit:geography": "node --max-old-space-size=4096 scripts/audit-geography.mjs",
     "check:geographic-integrity": "node --max-old-space-size=4096 scripts/check-geographic-integrity.mjs",
+    "data:manual-buildings": "node --max-old-space-size=6144 scripts/build-manual-buildings.mjs",
+    "check:final-building-freeze": "node --max-old-space-size=4096 scripts/check-final-building-freeze.mjs",
     "data:recent-buildings-fetch": "NODE_USE_ENV_PROXY=1 node scripts/fetch-recent-buildings-audit.mjs",
     "audit:recent-buildings": "node scripts/audit-recent-buildings.mjs"
   },
