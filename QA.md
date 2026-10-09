@@ -1,3 +1,12 @@
+# Vérification V2.6 — Poussey en diorama illustré, 9 octobre 2026
+
+Branche `opus/v2.6-poussey-diorama`, à partir de `7c8d3a6` (V2.5). Direction : `docs/audit/V2.6_POUSSEY_DIORAMA_DIRECTION.md`. Rapport : `docs/audit/V2.6_POUSSEY_DIORAMA.md`. Captures comparées V2.5 / V2.6 : `docs/qa/v2.6-poussey/`.
+
+- **Géographie** : aucun fichier de `public/`, `unreal/`, `data-sources/` modifié ; 42 fichiers gelés identiques à `309e65e`.
+- **Mode isolé** `?visual=poussey-v26` : 2 596 bâtiments rendus (384 par le diorama dans la boîte Poussey), 0 enfoui, console vide, aux trois presets ; `?visual=poussey-v25` et la vue par défaut inchangés.
+- **Contrôles** : `check:all` PASS ; `check:architecture-stats` 10, `check:architecture` 8, `check:final-building-freeze` 8, `check:building-visibility` 8, `check:geographic-integrity` 9, `check:v2` 12 ; `pnpm build` OK.
+- **Chromium** : dix cadrages identiques V2.5 / V2.6 (BEAUTÉ), deux cadrages smartphone (PERFORMANCE), mesures des trois presets (rastérisation logicielle).
+
 # Vérification V2.5 — prototype artistique Poussey, 9 octobre 2026
 
 Branche `opus/v2.5-poussey-art-prototype`, à partir de `7000653`. Rapport : `docs/audit/V2.5_POUSSEY_ART_PROTOTYPE.md`. Captures comparées : `docs/qa/v2.5-poussey/`.

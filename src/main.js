@@ -21,6 +21,7 @@ import {buildPoiDiagnostic,POI_COLORS} from './poi-diagnostic.js';
 import {buildV2Scene} from './v2-scene.js';
 import {buildVegetation} from './vegetation.js';
 import {buildVisualV25,inV25Box,V25_QUALITY,v25CameraFor} from './v25/visual-v25.js';
+import {buildVisualV26,V26_QUALITY} from './v26/visual-v26.js';
 import {extendCatalogue,v2Labels,groundPicker,installSearch,installViews,installLegend,installPerfHud} from './v2-ui.js';
 const loading=document.querySelector('#loading');
 async function start(){
@@ -35,9 +36,10 @@ async function start(){
   // V2.4 lighting presets: DAY_CLEAR by default (late morning), GOLDEN_HOUR with ?light=golden or the « Lumière » button.
   let lightName=params.get('light')==='golden'?'GOLDEN_HOUR':'DAY_CLEAR';const light=()=>LIGHT_PRESETS[lightName];
   // V2.5: ?visual=poussey-v25 switches the Poussey box to the procedural art prototype (own sky, PBR, post-processing).
-  const v25Mode=params.get('visual')==='poussey-v25'&&!params.get('diagnostic'),v25Quality=V25_QUALITY[params.get('v25quality')]?params.get('v25quality'):'beauty';
+  // V2.6: ?visual=poussey-v26 is the illustrated diorama variant (same box, same plumbing, its own presets).
+  const visualName=params.get('visual'),v25Mode=['poussey-v25','poussey-v26'].includes(visualName)&&!params.get('diagnostic'),VQ=visualName==='poussey-v26'?V26_QUALITY:V25_QUALITY,v25Quality=VQ[params.get('v25quality')]?params.get('v25quality'):'beauty';
   const scene=new THREE.Scene();scene.fog=new THREE.Fog(light().fog,light().fogNear,light().fogFar);
-  const renderer=new THREE.WebGLRenderer({antialias:false,alpha:!v25Mode,logarithmicDepthBuffer:!v25Mode,powerPreference:'high-performance'});renderer.setClearColor(0x000000,0);renderer.setPixelRatio(v25Mode?Math.min(devicePixelRatio,V25_QUALITY[v25Quality].dpr):quality.pixelRatio);renderer.setSize(innerWidth,innerHeight);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=light().exposure;
+  const renderer=new THREE.WebGLRenderer({antialias:false,alpha:!v25Mode,logarithmicDepthBuffer:!v25Mode,powerPreference:'high-performance'});renderer.setClearColor(0x000000,0);renderer.setPixelRatio(v25Mode?Math.min(devicePixelRatio,VQ[v25Quality].dpr):quality.pixelRatio);renderer.setSize(innerWidth,innerHeight);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=light().exposure;
   renderer.domElement.setAttribute('aria-label','Vue 3D navigable : flèches pour déplacer, + et − pour zoomer, R pour recentrer.');renderer.domElement.tabIndex=0;document.querySelector('#map').appendChild(renderer.domElement);
   const camera=new THREE.PerspectiveCamera(43,innerWidth/innerHeight,v25Mode?2:1,20000);
   const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.11;controls.rotateSpeed=.7;controls.maxPolarAngle=Math.PI*.47;controls.minDistance=40;controls.maxDistance=10500;controls.screenSpacePanning=false;controls.zoomSpeed=.85;controls.zoomToCursor=true;controls.target.set(200,0,150);
@@ -80,7 +82,7 @@ async function start(){
   // V2.4: instanced trees in the woods and the built-up zone, rounded hedges (decorative, off every footprint and road).
   const vegetation=v2?buildVegetation(v2.group,{v2,buildings:reference.items,quality,exclude:v25Mode?inV25Box:null}):null;
   // V2.5 prototype: procedural houses, composed trees, local ground, textured roads and living water inside the Poussey box.
-  const v25=v25Mode?await buildVisualV25({scene,renderer,camera,sun,hemisphere,v2,items:reference.items,enrichment,architecture:archById,elevation:item=>display.get(item.id).base-.45,quality:v25Quality}):null;
+  const v25=v25Mode?await (visualName==='poussey-v26'?buildVisualV26:buildVisualV25)({scene,renderer,camera,sun,hemisphere,v2,items:reference.items,enrichment,architecture:archById,elevation:item=>display.get(item.id).base-.45,quality:v25Quality}):null;
   const pickMeshes=[...buildings.pickMeshes,...(v25?.pickMeshes||[])];
   // V2.0.1 visibility audit: every expected id has walls or roof in the scene graph, stands in the terrain range and is not buried.
   const renderedIds=new Set();for(const m of pickMeshes)for(const r of m.userData.featureRanges||[])if(r.end>r.start)renderedIds.add(r.id.split('#')[0]);
@@ -155,8 +157,8 @@ async function start(){
   }
   const qualityButton=document.querySelector('#quality');
   // V2.4: static shadows in Fluide (hard, one tap: cheap on the whole terrain) and Élevée (soft PCF); none in Très fluide.
-  function applyQuality(mode){if(v25){qualityButton.textContent=`Rendu : ${V25_QUALITY[v25Quality].label}`;qualityButton.setAttribute('aria-pressed','true');renderer.domElement.dataset.quality='v25-'+v25Quality;return;}quality=qualitySettings(mode,device);renderer.setPixelRatio(quality.pixelRatio);renderer.setSize(innerWidth,innerHeight);const shadows=!v2||mode!=='very-fluid';renderer.shadowMap.enabled=shadows;sun.castShadow=shadows;v2?.setQuality(mode);vegetation?.setQuality(mode);renderer.shadowMap.type=mode==='high'?THREE.PCFSoftShadowMap:THREE.BasicShadowMap;scene.traverse(o=>{if(o.material){for(const m of Array.isArray(o.material)?o.material:[o.material])m.needsUpdate=true;}});sun.shadow.mapSize.set(quality.shadowSize,quality.shadowSize);sun.shadow.map?.dispose();sun.shadow.map=null;shadowKey='';renderer.shadowMap.needsUpdate=true;qualityButton.textContent=`Qualité : ${QUALITY_LABELS[mode]}`;qualityButton.setAttribute('aria-pressed',String(mode==='high'));renderer.domElement.dataset.quality=mode;invalidate();}
-  qualityButton.addEventListener('click',()=>v25?location.assign(`?visual=poussey-v25&v25quality=${['beauty','balanced','performance'][(['beauty','balanced','performance'].indexOf(v25Quality)+1)%3]}`):applyQuality(v2?QUALITY_ORDER[(QUALITY_ORDER.indexOf(quality.mode)+1)%QUALITY_ORDER.length]:quality.mode==='fluid'?'high':'fluid'));
+  function applyQuality(mode){if(v25){qualityButton.textContent=`Rendu : ${VQ[v25Quality].label}`;qualityButton.setAttribute('aria-pressed','true');renderer.domElement.dataset.quality='v25-'+v25Quality;return;}quality=qualitySettings(mode,device);renderer.setPixelRatio(quality.pixelRatio);renderer.setSize(innerWidth,innerHeight);const shadows=!v2||mode!=='very-fluid';renderer.shadowMap.enabled=shadows;sun.castShadow=shadows;v2?.setQuality(mode);vegetation?.setQuality(mode);renderer.shadowMap.type=mode==='high'?THREE.PCFSoftShadowMap:THREE.BasicShadowMap;scene.traverse(o=>{if(o.material){for(const m of Array.isArray(o.material)?o.material:[o.material])m.needsUpdate=true;}});sun.shadow.mapSize.set(quality.shadowSize,quality.shadowSize);sun.shadow.map?.dispose();sun.shadow.map=null;shadowKey='';renderer.shadowMap.needsUpdate=true;qualityButton.textContent=`Qualité : ${QUALITY_LABELS[mode]}`;qualityButton.setAttribute('aria-pressed',String(mode==='high'));renderer.domElement.dataset.quality=mode;invalidate();}
+  qualityButton.addEventListener('click',()=>v25?location.assign(`?visual=${visualName}&v25quality=${['beauty','balanced','performance'][(['beauty','balanced','performance'].indexOf(v25Quality)+1)%3]}`):applyQuality(v2?QUALITY_ORDER[(QUALITY_ORDER.indexOf(quality.mode)+1)%QUALITY_ORDER.length]:quality.mode==='fluid'?'high':'fluid'));
   const lightButton=document.querySelector('#light');
   const showLight=()=>{lightButton.textContent=lightName==='GOLDEN_HOUR'?'Fin de journée':'Jour clair';lightButton.setAttribute('aria-pressed',String(lightName==='GOLDEN_HOUR'));};
   lightButton.addEventListener('click',()=>{applyLight(lightName==='GOLDEN_HOUR'?'DAY_CLEAR':'GOLDEN_HOUR');showLight();invalidate();});showLight();if(v25)lightButton.hidden=true;
@@ -176,7 +178,7 @@ async function start(){
    const search=installSearch(catalogue,focus);
    const at=id=>{const p=v2.poiById.get(id);return p?project(p.lonlat):null;},service=v2.data.rail.filter(t=>t.k==='service').flatMap(t=>{const o=[];for(let i=0;i<t.p.length;i+=3)o.push([t.p[i],t.p[i+1]]);return o;});
    const railCentre=service.length?[(Math.min(...service.map(p=>p[0]))+Math.max(...service.map(p=>p[0])))/2,(Math.min(...service.map(p=>p[1]))+Math.max(...service.map(p=>p[1])))/2]:null;
-   const views=v25?v25.views.map(v=>({name:v[0].replace('V25_Poussey_',''),v25:v})):[{name:'Vue générale',reset:true},{name:'Centre-bourg',p:at('poi:eglise-saint-denis'),d:620},{name:'Poussey',p:at('poi:poussey'),d:900},{name:'Les Granges',p:at('poi:les-granges'),d:900},{name:'Ferroviaire',p:railCentre,d:1300},{name:'Parc de l’Aérodrome',p:at('poi:parc-aerodrome'),d:1000}].filter(v=>v.reset||v.p);
+   const views=v25?v25.views.map(v=>({name:v[0].replace(/^V2\d_Poussey_/,''),v25:v})):[{name:'Vue générale',reset:true},{name:'Centre-bourg',p:at('poi:eglise-saint-denis'),d:620},{name:'Poussey',p:at('poi:poussey'),d:900},{name:'Les Granges',p:at('poi:les-granges'),d:900},{name:'Ferroviaire',p:railCentre,d:1300},{name:'Parc de l’Aérodrome',p:at('poi:parc-aerodrome'),d:1000}].filter(v=>v.reset||v.p);
    const goV25=v=>{const c=v25CameraFor(v);controls.enableDamping=false;controls.target.set(...c.target);camera.position.set(...c.position);controls.update();controls.enableDamping=true;};
    installViews(views,v=>v.v25?goV25(v.v25):v.reset?reset():flyTo(v.p[0],v.p[1],v.d));installLegend();
    if(technical&&!auditMode&&!hydroMode)installPerfHud(renderer,`Bâtiments ${buildings.count} · routes ${v2.stats.roads.count} · voies ${v2.stats.rail.tracks}\nParcelles ${v2.stats.agriculture} · bois ${v2.stats.woodland} · haies ${v2.stats.hedges.count} · arbres ${vegetation.stats.trees} · POI ${v2Records.pois}\nTexture ${v2.texture.width}×${v2.texture.height} (${v2.texture.metresPerPixel} m/px)`,draw);

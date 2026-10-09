@@ -1,3 +1,12 @@
+# Notes V2.6 — Poussey en diorama illustré, 9 octobre 2026
+
+- **Simplifier a plus payé qu'ajouter.** Enlever les textures, le PBR et le tone mapping, remplacer les fenêtres instanciées par des panneaux plats et passer en rampe toon a fait plus pour la beauté que tout le détail V2.5.
+- **La rampe toon se greffe sur Lambert.** `lights_lambert_pars_fragment` est remplacé par une rampe à trois bandes alimentée par la lumière clé (facteur d'ombre compris) ; ombres, brouillard, instancing, couleurs de sommet et cartes restent ceux de Three.js. Les matériaux V2.4 hors de la boîte ne sont pas touchés.
+- **L'encrage lit la profondeur d'une cible privée.** Lire la profondeur du tampon dans lequel la passe écrit crée une boucle de rétroaction WebGL (image vide) : la scène est rendue dans sa propre cible couleur + profondeur puis copiée dans le composer.
+- **Les bois se placent au hasard, pas en grille.** Une grille jitterée se voit de haut ; un semis aléatoire à densité égale avec une teinte partagée par amas de 45 m donne des masses.
+- **Le tilt-shift est le signal « miniature ».** Un flou de bande douce (BEAUTÉ seulement) suffit à faire lire un diorama ; trop fort il nuit à la lecture, il reste à 1,9 px.
+- **L'eau n'est pas éclairée.** Un ruban non éclairé, turquoise clair, avec traits de lumière lents et écume aux berges, lit mieux que n'importe quel matériau réfléchissant à cette échelle.
+
 # Notes V2.5 — prototype artistique Poussey, 9 octobre 2026
 
 - **Le saut vient des maisons.** Dès que la toiture a une épaisseur, un débord et un bandeau, et que les ouvertures sont des objets (cadre, vitrage, volets), l'extrusion disparaît. Les textures restent des gris procéduraux teintés par bâtiment : aucune image externe.

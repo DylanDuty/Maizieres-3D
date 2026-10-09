@@ -128,3 +128,6 @@ function waterTower(poly,base,totalH,t,C){const bb=bounds(poly[0]),cx=(bb.minX+b
  const shaft=base+totalH*.7,tankTop=base+totalH*.92,tip=base+totalH;
  seg(r*.98,base,r*.9,shaft,concrete);seg(r*.9,shaft,r*1.75,shaft+1.2,tank);seg(r*1.75,shaft+1.2,r*1.75,tankTop,tank);seg(r*1.75,tankTop,r*1.6,tankTop+.3,cap);
  const top=ring(r*1.6,tankTop+.3);for(let i=0;i<n;i++)t.tri(top[i],[cx,tip,cz],top[(i+1)%n],cap,null,UP);}
+
+// V2.6 reuses the geometry helpers (no behaviour change for the V2.5 mode).
+export {fnv,mulberry,RES,outward,range,offsetRing,roofFn,Tri,groupedMesh,box,isLongest,UP,DOWN};
