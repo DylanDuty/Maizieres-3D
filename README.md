@@ -2,6 +2,17 @@
 
 Prototype local Three.js de la commune de l’Aube, code INSEE **10220**. Empreintes, voirie, voies ferrées et occupation du sol proviennent d’OpenStreetMap. Le contour communal provient de l’API Découpage administratif française.
 
+**Version 2.4 — refonte visuelle du plan 3D** : design, lisibilité et ambiance « film d'animation », sans toucher à la géographie (42 fichiers gelés identiques, 2 596 bâtiments à leur place).
+
+- **Bâtiments** : les profils V2.3.1 (type de toit, faîtage, hauteurs, famille de couleur) pilotent désormais la vue par défaut ; `?architecture=0` restaure le rendu plat V2.2. Façades dégradées vers le sol, arête d'égout et ligne de faîtage, cheminées sur les maisons à pans.
+- **Sol** : parcelles nuancées selon la culture déclarée (RPG), sillons discrets, bois en frondaison, prairies douces, village pointillé de jardins ; relief souligné par un ombrage peint (jamais exagéré).
+- **Végétation 3D** : arbres instanciés dans les bois et le village, haies arrondies (budget selon la qualité).
+- **Eau** : surfaces et cours d'eau en relief, berges lisibles, reflet discret ; la correction V2.1 (eau visible au nord de Poussey) est conservée.
+- **Routes et rail** : hiérarchie visuelle (D619 plus large, ligne axiale, bordures), chemins terreux, ponts avec parapets, ballast et traverses en shader.
+- **Lumière** : fin de matinée par défaut (`Jour clair`), préréglage `Fin de journée` (`?light=golden`) ; ombres statiques dès le mode Fluide, brume atmosphérique.
+- **Étiquettes par niveau** selon le zoom, interface allégée, fiche au clic structurée, caméra qui ne passe jamais sous le relief, réactif du 1920 × 1080 au smartphone.
+- **Rapport** : `docs/audit/V2.4_VISUAL_DESIGN_POLISH.md` (audit préalable : `docs/audit/V2.4_VISUAL_AUDIT.md`). Avant / après : `docs/qa/v2.4/`.
+
 **Version 2.3.1 — Unreal Freeze V1** : consolidation et gel de la géographie V2.2 et de l'architecture V2.3, sans nouvel enrichissement.
 
 - **Point d'entrée Unreal** : `unreal/freeze-v1/README.md`.

@@ -3,8 +3,9 @@ import {toon} from './art.js';
 export function shapeRings(poly){return poly.map(r=>{const points=r.map(p=>new THREE.Vector2(...p));if(points.length>1&&points[0].equals(points.at(-1)))points.pop();return points;});}
 export class Batch {
   constructor(material){this.material=material;this.p=[];this.c=[];this.uv=[];}
-  tri(a,b,c,color,uvs){const col=new THREE.Color(color);for(const [i,v] of [a,b,c].entries()){this.p.push(...v);this.c.push(col.r,col.g,col.b);this.uv.push(...(uvs?.[i]||[v[0]/10,v[2]/10]));}}
-  quad(a,b,c,d,color){this.tri(a,b,c,color);this.tri(a,c,d,color);}
+  // `color` is one colour for the triangle, or an array of three per-vertex colours (V2.4: facade gradients).
+  tri(a,b,c,color,uvs){const cols=Array.isArray(color)?color.map(v=>new THREE.Color(v)):null,col=cols?null:new THREE.Color(color);for(const [i,v] of [a,b,c].entries()){const k=cols?cols[i]:col;this.p.push(...v);this.c.push(k.r,k.g,k.b);this.uv.push(...(uvs?.[i]||[v[0]/10,v[2]/10]));}}
+  quad(a,b,c,d,color,uvs){const cs=Array.isArray(color);this.tri(a,b,c,cs?[color[0],color[1],color[2]]:color,uvs&&[uvs[0],uvs[1],uvs[2]]);this.tri(a,c,d,cs?[color[0],color[2],color[3]]:color,uvs&&[uvs[0],uvs[2],uvs[3]]);}
   polygon(poly,y,color){const rings=shapeRings(poly);const flat=rings.flat();for(const t of THREE.ShapeUtils.triangulateShape(rings[0],rings.slice(1)))this.tri(...t.map(i=>[flat[i].x,y,flat[i].y]),color);}
   mesh(parent,shadow=false){if(!this.p.length)return null;const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(this.p,3));g.setAttribute('color',new THREE.Float32BufferAttribute(this.c,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(this.uv,2));g.computeVertexNormals();g.computeBoundingSphere();const m=new THREE.Mesh(g,this.material);m.castShadow=shadow;m.receiveShadow=true;parent.add(m);return m;}
 }

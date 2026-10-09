@@ -65,8 +65,8 @@ export function installViews(views,onView){
 }
 
 export function installLegend(){
- const items=[['Bâti','#d9cbb4'],['Route','#8f9398'],['Chemin empierré','#cdbd97'],['Chemin de terre / sentier','#b89e74'],['Voie ferrée','#4f4a45'],['Terre arable','#eadba0'],['Prairie','#a8cb7a'],['Jachère','#d3c68f'],
-  ['Bois','#5d8e4d'],['Peupleraie','#93bb6c'],['Haie','#557f43'],['Eau','#7fb9d5'],['Zone d’activité','#e3d9c3'],['Photovoltaïque','#a3afbd']];
+ const items=[['Bâti','#d9cbb4'],['Route principale','#6d7177'],['Rue','#8f928f'],['Chemin empierré','#c1ae89'],['Chemin de terre / sentier','#b49a75'],['Voie ferrée','#4a4d52'],['Terre arable (céréales)','#e2cf92'],['Terre arable (maïs, betterave…)','#c9d088'],['Prairie','#9fc27a'],['Jachère','#d4c994'],
+  ['Bois','#5a8b4b'],['Peupleraie','#86b069'],['Haie','#5f8f4a'],['Eau','#6fa9c4'],['Zone d’activité','#e1dbc8'],['Photovoltaïque','#a3afbd']];
  const box=document.createElement('aside');box.id='legend';box.innerHTML='<button type="button" aria-expanded="false">Légende</button><ul hidden></ul>';
  box.querySelector('ul').replaceChildren(...items.map(([t,c])=>{const li=document.createElement('li');li.innerHTML='<i></i><span></span>';li.querySelector('i').style.background=c;li.querySelector('span').textContent=t;return li;}));
  const button=box.querySelector('button'),list=box.querySelector('ul');button.addEventListener('click',()=>{list.hidden=!list.hidden;button.setAttribute('aria-expanded',String(!list.hidden));button.textContent=list.hidden?'Légende':'Légende ×';});

@@ -92,8 +92,8 @@ ok('10. vues V2 branchées, 7 diagnostics conservés, recherche, 6 vues rapides,
 const {qualitySettings,QUALITY_ORDER}=await import('../src/quality.js');assert.deepEqual(QUALITY_ORDER,['very-fluid','fluid','high']);
 const q=m=>qualitySettings(m,{dpr:2,cores:8,memory:8});
 assert(q('fluid').pixelRatio<=1.25&&q('very-fluid').pixelRatio<=.8&&q('high').pixelRatio<=1.5);
-assert(/const shadows=mode==='high'/.test(v2src),'Ombres réservées au mode Élevée');assert(/'very-fluid':2048,fluid:3072,high:4096/.test(v2src));
-ok('11. modes Très fluide / Fluide / Élevée, DPR ≤ 0,8 / 1,25 / 1,5, ombres uniquement en Élevée');
+assert(/const shadows=mode!=='very-fluid'/.test(v2src),'Ombres statiques en Fluide et Élevée, aucune en Très fluide (V2.4)');assert(/'very-fluid':2048,fluid:3072,high:4096/.test(v2src));
+ok('11. modes Très fluide / Fluide / Élevée, DPR ≤ 0,8 / 1,25 / 1,5, ombres statiques en Fluide et Élevée (aucune en Très fluide)');
 // 12. Performance budget of the normal view (files and geometry).
 const kb=f=>fs.statSync(f).size/1024,tris=(T.cols-1)*(T.rows-1)*2;
 assert(kb('public/data/v2-scene.json')<2048&&kb('public/data/v2-terrain.bin')<1024,'Fichiers V2 trop lourds');assert(tris<900000,'Terrain trop dense');

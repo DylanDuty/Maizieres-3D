@@ -1,7 +1,8 @@
 import * as THREE from 'three';
-// Shared art direction for V1.4: soft toon bands, warm light, cool shade.
+// Shared art direction: soft toon bands, warm light, cool shade. V2.4 widens the ramp (five steps, no hard cut), adds the
+// water, rail and terrain shading used by the assembled V2 view and keeps the painted V1 shaders for the diagnostic views.
 // Everything here is presentation only; no geographic value is computed in these shaders.
-const ramp=new THREE.DataTexture(new Uint8Array([118,176,226,255]),4,1,THREE.RedFormat);
+const ramp=new THREE.DataTexture(new Uint8Array([112,150,188,224,255]),5,1,THREE.RedFormat);
 ramp.minFilter=ramp.magFilter=THREE.NearestFilter;ramp.generateMipmaps=false;ramp.needsUpdate=true;
 export function toon(options={}){return new THREE.MeshToonMaterial({gradientMap:ramp,...options});}
 
@@ -12,17 +13,23 @@ export const palette={
  pitch:'#8fbd75',line:'#f4f1dd',hedge:'#6f9c55',hedgeSide:'#5b8a4c'
 };
 
+// V2.4 lighting presets. DAY_CLEAR is the default (late morning, sun from the south-south-east);
+// GOLDEN_HOUR is an optional warmer, lower light (?light=golden or the « Lumière » button).
+export const LIGHT_PRESETS={
+ DAY_CLEAR:{sun:'#fff3dc',sunIntensity:2.05,direction:[-.42,.80,.43],shadow:.58,sky:'#cfe0f3',ground:'#d8c9a4',hemisphere:.92,exposure:1.04,fog:'#dfe8e3',fogNear:2600,fogFar:15000,apron:'#d9dfcc',css:'day'},
+ GOLDEN_HOUR:{sun:'#ffcf96',sunIntensity:2.2,direction:[-.78,.42,.46],shadow:.68,sky:'#dcd3e6',ground:'#d7b78c',hemisphere:.72,exposure:1.0,fog:'#ead9c6',fogNear:1800,fogFar:11000,apron:'#dfd3bc',css:'golden'}};
+
 const NOISE=`
 float h12(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}
 float vnoise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h12(i),h12(i+vec2(1,0)),f.x),mix(h12(i+vec2(0,1)),h12(i+vec2(1,1)),f.x),f.y);}
 `;
 
 // Adds a world-position varying and a fragment colour chunk to a built-in material.
-function worldShader(material,key,chunk,uniforms={}){
+function worldShader(material,key,chunk,uniforms={},{anchor='#include <color_fragment>'}={}){
  material.onBeforeCompile=shader=>{
   Object.assign(shader.uniforms,uniforms);
   shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vWorld;').replace('#include <project_vertex>','#include <project_vertex>\nvWorld=(modelMatrix*vec4(transformed,1.0)).xyz;');
-  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vWorld;\n'+NOISE).replace('#include <color_fragment>','#include <color_fragment>\n'+chunk);
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vWorld;\n'+NOISE).replace(anchor,anchor+'\n'+chunk);
  };
  material.customProgramCacheKey=()=>key;return material;
 }
@@ -81,6 +88,49 @@ export function canopyGround(){
  diffuseColor.rgb*=mix(vec3(.78,.84,.8),vec3(1.1,1.08,.98),clump);
  diffuseColor.rgb*=.95+.1*vnoise(cp/300.);
  `);
+}
+
+// V2.4 water: matte surface with a static fine ripple, a touch of sky at grazing angles, darker close to the banks
+// (the bank distance comes from the ribbon's own uv.y). No animation: the scene renders on demand only.
+export function waterMaterial(color){
+ const m=new THREE.MeshLambertMaterial({color,vertexColors:true,side:THREE.DoubleSide});
+ m.onBeforeCompile=shader=>{
+  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vWorld;varying vec2 vWuv;').replace('#include <project_vertex>','#include <project_vertex>\nvWorld=(modelMatrix*vec4(transformed,1.0)).xyz;vWuv=uv;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec3 vWorld;varying vec2 vWuv;\n'+NOISE).replace('#include <color_fragment>',`#include <color_fragment>
+  vec2 wp=vWorld.xz;
+  float rip=vnoise(wp/2.3+vec2(vnoise(wp/9.)*1.5))*.5+vnoise(wp/5.1+7.)*.5;
+  float wf=clamp(1.-fwidth(wp.x)*.6,0.,1.);
+  diffuseColor.rgb*=1.+(rip-.5)*.16*wf;
+  float bank=smoothstep(0.,.45,min(vWuv.y,1.-vWuv.y));
+  diffuseColor.rgb*=mix(vec3(.74,.82,.84),vec3(1.),bank);
+  vec3 vd=normalize(cameraPosition-vWorld);
+  float fres=pow(1.-clamp(vd.y,0.,1.),2.5);
+  diffuseColor.rgb=mix(diffuseColor.rgb,vec3(.86,.92,.97),fres*.42);`);
+ };
+ m.customProgramCacheKey=()=>'v24-water';return m;
+}
+
+// V2.4 rail bed: ballast ribbon whose uv.x is the distance along the track; dark cross ties are drawn in the shader
+// (nothing is instanced), and fade out at distance so the line reads as a clean dark band from afar.
+export function ballastMaterial(color){
+ const m=new THREE.MeshLambertMaterial({color,vertexColors:true,side:THREE.DoubleSide});
+ m.onBeforeCompile=shader=>{
+  shader.vertexShader=shader.vertexShader.replace('#include <common>','#include <common>\nvarying vec2 vRuv;').replace('#include <project_vertex>','#include <project_vertex>\nvRuv=uv;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\nvarying vec2 vRuv;\n'+NOISE).replace('#include <color_fragment>',`#include <color_fragment>
+  float t=fract(vRuv.x/.62);
+  float tie=smoothstep(.02,.12,t)*(1.-smoothstep(.34,.44,t));
+  float across=smoothstep(.06,.14,vRuv.y)*(1.-smoothstep(.86,.94,vRuv.y));
+  float fade=clamp(1.-fwidth(vRuv.x)*3.2,0.,1.);
+  diffuseColor.rgb*=.96+.08*vnoise(vRuv*vec2(3.,40.));
+  diffuseColor.rgb=mix(diffuseColor.rgb,diffuseColor.rgb*vec3(.58,.54,.5),tie*across*fade*.9);`);
+ };
+ m.customProgramCacheKey=()=>'v24-ballast';return m;
+}
+
+// V2.4 terrain: the draped land-cover texture, lit by the scene plus a gentle painted hillshade carried by the vertex
+// colours (computed once from the display grid; the relief itself is never exaggerated).
+export function terrainMaterial(texture){
+ return new THREE.MeshLambertMaterial({map:texture,vertexColors:true});
 }
 
 // Shares identical vertices so the crown gets smooth normals (tiny local version of mergeVertices).

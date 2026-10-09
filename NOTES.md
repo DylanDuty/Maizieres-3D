@@ -1,3 +1,11 @@
+# Notes V2.4 — refonte visuelle, 9 octobre 2026
+
+- **Les profils V2.3.1 font la différence.** Dès qu'ils pilotent la vue par défaut, le village cesse d'être un semis de boîtes orange : les toits plats sont plats, les faîtages sont orientés, les couleurs documentées (brun, gris, terre cuite) remplacent la tuile aléatoire. Les 113 toits de couleur inconnue reçoivent un taupe neutre, jamais une teinte « jolie ».
+- **Ombres statiques.** Une carte de profondeur recalculée seulement quand la vue change coûte une passe par déplacement, pas par image : elle est donc activée dès le mode Fluide (ombres dures, un échantillon) ; le mode Élevée adoucit. `check:v2` a été mis à jour en conséquence (règle d'affichage, pas de géographie).
+- **Le goulot inattendu.** La première version de la texture du sol dessinait chaque pointillé de frondaison sous un `clip()` : 60 000 remplissages sous clip faisaient durer le démarrage plus de neuf minutes dans Chromium logiciel. Regroupés en un remplissage par couleur, la même texture se dessine en moins d'une seconde.
+- **Végétation décorative, jamais relevée.** Les arbres sont placés par échantillonnage dans les polygones de boisement gelés, à l'écart des empreintes, routes, rails et eaux par un masque raster. Leur densité suit la distance aux villages et le budget de qualité. Aucun arbre n'est un objet documenté (hors 2 points OSM, non utilisés).
+- **Culture déclarée.** La teinte des terres arables suit la famille de la culture déclarée au RPG 2024, qui figure déjà sur la fiche au clic ; elle change chaque année et n'est pas une texture de la culture réelle.
+
 # Notes V2.3 — enrichissement architectural, 26 septembre 2026
 
 - **Le LiDAR HD 2025 change la nature des données.** L'orientation des faîtages, les pentes et les points hauts sont mesurés, et non plus déduits de la forme de l'empreinte. En V2.2, le faîtage suivait toujours le grand côté du rectangle minimal.

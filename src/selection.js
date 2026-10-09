@@ -60,7 +60,9 @@ export function installSelection({scene,camera,canvas,catalogue,meshes,buildingI
   const d=describe(r);
   // V2.3: named buildings (landmarks, POI) also show their architectural profile in the preview modes.
   if(r.type==='building'&&!r.generic){const e=buildingInfo.get(r.id)?.architecture;if(e)d.facts.push(...architectureFacts(e));}kind.textContent=d.eyebrow;title.textContent=d.title;note.textContent=d.source;note.hidden=!technical;
-  facts.replaceChildren(...d.facts.map(t=>Object.assign(document.createElement('li'),{textContent:t})));facts.hidden=!d.facts.length;
+  // V2.4: the architectural profile is a titled group on the card; unknown values stay written as unknown.
+  const out=[];for(const t of d.facts){if(/^Profil architectural/.test(t)){out.push(Object.assign(document.createElement('li'),{textContent:'Architecture (profil V2.3.1)',className:'sub'}));out.push(Object.assign(document.createElement('li'),{textContent:t.replace(/^Profil architectural V2\.3 : /,''),className:'arch'}));}else out.push(Object.assign(document.createElement('li'),{textContent:t,className:/^(Toiture|Couleur de toit|Hauteur à l’égout|Niveaux|Note|Sources) ?:/.test(t)?'arch':''}));}
+  facts.replaceChildren(...out);facts.hidden=!d.facts.length;
   quotes.replaceChildren(...d.quotes.slice(0,3).map(q=>{const el=document.createElement('blockquote');el.textContent=`« ${q.text} »`;el.append(Object.assign(document.createElement('cite'),{textContent:q.cite}));return el;}));quotes.hidden=!d.quotes.length;
  }
  function select(r){clearHighlight();selected=r||null;panel.hidden=!r;

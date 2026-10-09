@@ -12,13 +12,14 @@ import {qualitySettings,QUALITY_LABELS,QUALITY_ORDER} from './quality.js';
 import {createCatalogue} from './cartography.js';
 import {installSelection} from './selection.js';
 import {buildingItems} from './building-source.js';
-import {palette} from './art.js';
+import {palette,LIGHT_PRESETS} from './art.js';
 import {loadTerrain,buildTerrainDiagnostic} from './terrain.js';
 import {buildRoadsDiagnostic,ROAD_COLORS} from './roads-diagnostic.js';
 import {buildRailDiagnostic,RAIL_COLORS} from './rail-diagnostic.js';
 import {buildLandcoverDiagnostic,LANDCOVER_COLORS} from './landcover-diagnostic.js';
 import {buildPoiDiagnostic,POI_COLORS} from './poi-diagnostic.js';
 import {buildV2Scene} from './v2-scene.js';
+import {buildVegetation} from './vegetation.js';
 import {extendCatalogue,v2Labels,groundPicker,installSearch,installViews,installLegend,installPerfHud} from './v2-ui.js';
 const loading=document.querySelector('#loading');
 async function start(){
@@ -28,14 +29,20 @@ async function start(){
   const [data,boundary,enrichment,ignLandscape,namedZones,bible,buildingReference]=await Promise.all(responses.map(r=>r.json()));
   const project=projection(data.metadata.origin),boundaryPolys=polygons(boundary,project),b=bounds(boundaryPolys.flat(2));
   const extent={minX:b.minX-150,maxX:b.maxX+150,minZ:b.minZ-150,maxZ:b.maxZ+150};
-  const scene=new THREE.Scene();scene.fog=new THREE.Fog(palette.horizon,5600,19000);
   const params=new URLSearchParams(location.search),requestedQuality=QUALITY_ORDER.includes(params.get('quality'))?params.get('quality'):'fluid';
   const device={dpr:devicePixelRatio,cores:navigator.hardwareConcurrency,memory:navigator.deviceMemory};let quality=qualitySettings(requestedQuality,device);
-  const renderer=new THREE.WebGLRenderer({antialias:false,alpha:true,logarithmicDepthBuffer:true,powerPreference:'high-performance'});renderer.setClearColor(0x000000,0);renderer.setPixelRatio(quality.pixelRatio);renderer.setSize(innerWidth,innerHeight);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.BasicShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.02;
+  // V2.4 lighting presets: DAY_CLEAR by default (late morning), GOLDEN_HOUR with ?light=golden or the « Lumière » button.
+  let lightName=params.get('light')==='golden'?'GOLDEN_HOUR':'DAY_CLEAR';const light=()=>LIGHT_PRESETS[lightName];
+  const scene=new THREE.Scene();scene.fog=new THREE.Fog(light().fog,light().fogNear,light().fogFar);
+  const renderer=new THREE.WebGLRenderer({antialias:false,alpha:true,logarithmicDepthBuffer:true,powerPreference:'high-performance'});renderer.setClearColor(0x000000,0);renderer.setPixelRatio(quality.pixelRatio);renderer.setSize(innerWidth,innerHeight);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=light().exposure;
   renderer.domElement.setAttribute('aria-label','Vue 3D navigable : flèches pour déplacer, + et − pour zoomer, R pour recentrer.');renderer.domElement.tabIndex=0;document.querySelector('#map').appendChild(renderer.domElement);
   const camera=new THREE.PerspectiveCamera(43,innerWidth/innerHeight,1,20000);
-  const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.13;controls.rotateSpeed=.75;controls.maxPolarAngle=Math.PI*.475;controls.minDistance=35;controls.maxDistance=10500;controls.screenSpacePanning=false;controls.zoomSpeed=.8;controls.target.set(200,0,150);
-  const sun=new THREE.DirectionalLight(palette.sun,1.95);sun.position.set(-1300,2200,-900);sun.castShadow=true;sun.shadow.mapSize.set(quality.shadowSize,quality.shadowSize);Object.assign(sun.shadow.camera,{left:-2200,right:2200,top:2200,bottom:-2200,near:50,far:6000});sun.shadow.bias=-.00012;sun.shadow.normalBias=1.2;sun.shadow.intensity=.62;scene.add(sun.target);scene.add(sun,new THREE.HemisphereLight(palette.skyLight,palette.groundLight,.95));
+  const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.11;controls.rotateSpeed=.7;controls.maxPolarAngle=Math.PI*.47;controls.minDistance=40;controls.maxDistance=10500;controls.screenSpacePanning=false;controls.zoomSpeed=.85;controls.zoomToCursor=true;controls.target.set(200,0,150);
+  const sunOffset=new THREE.Vector3();let shadowKey='';
+  const sun=new THREE.DirectionalLight(light().sun,light().sunIntensity);sun.castShadow=true;sun.shadow.mapSize.set(quality.shadowSize,quality.shadowSize);Object.assign(sun.shadow.camera,{left:-2200,right:2200,top:2200,bottom:-2200,near:50,far:7000});sun.shadow.bias=-.00012;sun.shadow.normalBias=1.2;sun.shadow.intensity=light().shadow;
+  const hemisphere=new THREE.HemisphereLight(light().sky,light().ground,light().hemisphere);scene.add(sun.target);scene.add(sun,hemisphere);
+  function applyLight(name){lightName=name;const L=light();sunOffset.set(...L.direction).normalize().multiplyScalar(3200);sun.color.set(L.sun);sun.intensity=L.sunIntensity;sun.shadow.intensity=L.shadow;hemisphere.color.set(L.sky);hemisphere.groundColor.set(L.ground);hemisphere.intensity=L.hemisphere;
+   renderer.toneMappingExposure=L.exposure;scene.fog.color.set(L.fog);scene.fog.near=L.fogNear;scene.fog.far=L.fogFar;document.body.dataset.light=L.css;v2?.apron.material.color.set(L.apron);shadowKey='';renderer.shadowMap.needsUpdate=true;}
   // Give the browser a frame to paint loading feedback before building static batches.
   await new Promise(resolve=>requestAnimationFrame(resolve));
   // V1.5: building footprints come from the unified reference (IGN BD TOPO first, OSM complement).
@@ -52,6 +59,7 @@ async function start(){
   const relief=diagnostic==='terrain'||v2Mode?await loadTerrain(import.meta.env.BASE_URL,v2Mode?'v2-terrain':'terrain-threejs'):null,flatLayers=new Set(scene.children);
   if(relief&&additionsElevation)Object.assign(relief.elevation.buildings,additionsElevation.buildings);if(relief&&manualElevation)Object.assign(relief.elevation.buildings,manualElevation.buildings);
   const v2=v2Mode?await buildV2Scene(scene,{relief,base:import.meta.env.BASE_URL,quality}):null;
+  applyLight(lightName);
   // V2.0.1: display base of every building on the displayed relief (see building-elevation.js) and audit status.
   const display=new Map();if(v2)for(const item of reference.items){const d=displayBase(item.poly,relief.elevation.buildings[item.featureId].baseZ-relief.meta.yReference,v2.heightAt);display.set(item.id,d);item.auditStatus=item.audit?.status==='manuel'?'manuel-v2.2':item.audit?.status==='réintégré'?'reintegre':d.corrected?'rendu-corrige':'normal';}
   const terrain=v2?{buildings:reference.items,landmarks:[],stats:{}}:buildLandscape(scene,data,project,extent,ignLandscape,reference.items);
@@ -60,12 +68,14 @@ async function start(){
   const roadsRef=diagnostic==='roads'?await buildRoadsDiagnostic(scene,project,import.meta.env.BASE_URL):null,railRef=diagnostic==='rail'?await buildRailDiagnostic(scene,project,import.meta.env.BASE_URL):null;
   const landcoverRef=diagnostic==='landcover'?await buildLandcoverDiagnostic(scene,project,import.meta.env.BASE_URL):null;
   const poiRef=diagnostic==='poi'?await buildPoiDiagnostic(scene,project,import.meta.env.BASE_URL):null;
-  // V2.3: architectural profiles (roof type, ridge, heights, colour family) previewed with ?architecture=1, coloured by confidence with ?diagnostic=architecture.
-  // The default map keeps the V2.2 rendering until the V2.3 profiles are validated.
-  const archDiagnostic=params.get('diagnostic')==='architecture',archMode=v2Mode&&(archDiagnostic||params.get('architecture')==='1');
+  // V2.3: architectural profiles (roof type, ridge, heights, colour family), coloured by confidence with ?diagnostic=architecture.
+  // V2.4: the profiles drive the default map (?architecture=1 is implied); ?architecture=0 restores the V2.2 flat rendering.
+  const archDiagnostic=params.get('diagnostic')==='architecture',archMode=v2Mode&&(archDiagnostic||params.get('architecture')==='1'||params.get('architecture')!=='0');
   const architecture=archMode?await fetch(`${import.meta.env.BASE_URL}data/building-architecture-v2.3.json`).then(r=>r.json()):null;
   const archById=architecture?new Map(architecture.buildings.map(e=>[e.buildingId,e])):null;
   const buildings=buildBuildings(scene,terrain.buildings,enrichment,{architecture:archById,diagnostic:archDiagnostic&&archMode?'architecture':auditMode?'buildings-audit':relief||roadsRef||railRef||landcoverRef||poiRef?null:diagnostic,elevation:v2?item=>display.get(item.id).base-.45:relief?item=>relief.elevation.buildings[item.featureId].baseZ-relief.meta.yReference:null});
+  // V2.4: instanced trees in the woods and the built-up zone, rounded hedges (decorative, off every footprint and road).
+  const vegetation=v2?buildVegetation(v2.group,{v2,buildings:reference.items,quality}):null;
   // V2.0.1 visibility audit: every expected id has walls or roof in the scene graph, stands in the terrain range and is not buried.
   const renderedIds=new Set();for(const m of buildings.pickMeshes.slice(0,2))for(const r of m.userData.featureRanges)if(r.end>r.start)renderedIds.add(r.id.split('#')[0]);
   const buildingAudit={expected:expectedIds.length,reference:expectedIds.length-(additions?.features.length||0)-(manual?.features.length||0),additions:additions?.features.length||0,manual:manual?.features.length||0,rendered:renderedIds.size,missingIds:expectedIds.filter(id=>!renderedIds.has(id)),
@@ -107,9 +117,11 @@ async function start(){
     if(['hamlet','village'].includes(t.place)||['townhall','school','community_centre'].includes(t.amenity)){const p=project(f.geometry.coordinates);const name=t.name||(t.amenity==='townhall'?'Mairie':t.amenity==='school'?'École':'Salle communale');if(!labelItems.some(l=>l.name===name))labelItems.push({name,position:[p[0],14,p[1]],major:!!t.place});}
   }}
   // Major road and railway names are copied from the local source tags.
-  for(const ref of ['D 619','D 116']){const f=data.features.find(f=>f.properties.ref===ref&&f.geometry.type==='LineString'&&f.geometry.coordinates.length>3);if(f){const p=project(f.geometry.coordinates[Math.floor(f.geometry.coordinates.length/2)]);labelItems.push({id:f.id,name:ref,position:[p[0],3+(v2?v2.heightAt(p[0],p[1]):0),p[1]]});}}
-  const labels=labelItems.map(item=>{const el=document.createElement('button');el.type='button';el.className=`map-label${item.major?' major':''}${item.style?' '+item.style:''}`;el.textContent=item.name;selection.bindLabel(el,item);document.querySelector('#labels-layer').appendChild(el);return {...item,el,vector:new THREE.Vector3(...item.position)};});
-  const sortedLabels=[...labels].sort((a,b)=>Number(!!b.major)-Number(!!a.major));
+  for(const ref of ['D 619','D 116']){const f=data.features.find(f=>f.properties.ref===ref&&f.geometry.type==='LineString'&&f.geometry.coordinates.length>3);if(f){const p=project(f.geometry.coordinates[Math.floor(f.geometry.coordinates.length/2)]);labelItems.push({id:f.id,name:ref,position:[p[0],3+(v2?v2.heightAt(p[0],p[1]):0),p[1]],style:'road',local:true});}}
+  // V2.4 label tiers: 1 = the three places (always), 2 = sectors and major landmarks (under 5 km), 3 = local names (under 1,6 km).
+  const tierOf=item=>item.major?1:item.local||/minor/.test(item.style||'')?3:2,TIER_RANGE=[Infinity,5000,1600];
+  const labels=labelItems.map(item=>{const el=document.createElement('button');el.type='button';const tier=tierOf(item);el.className=`map-label t${tier}${item.major?' major':''}${item.style?' '+item.style:''}`;el.textContent=item.name;selection.bindLabel(el,item);document.querySelector('#labels-layer').appendChild(el);return {...item,tier,el,vector:new THREE.Vector3(...item.position)};});
+  const sortedLabels=[...labels].sort((a,b)=>a.tier-b.tier);
   const labelLayer=document.querySelector('#labels-layer');let namesVisible=true;
   document.querySelector('#labels').addEventListener('click',event=>{namesVisible=!namesVisible;event.currentTarget.setAttribute('aria-pressed',String(namesVisible));labelLayer.hidden=!namesVisible;invalidate();});
   const homeTarget=new THREE.Vector3(200,0,150);
@@ -121,29 +133,35 @@ async function start(){
   const screen=new THREE.Vector3();
   // Static shadows re-fitted to the viewed area only when the view changes noticeably:
   // crisp near the ground, the whole commune from far away, no per-frame shadow pass.
-  let shadowKey='';
   function fitShadow(){const d=camera.position.distanceTo(controls.target),half=THREE.MathUtils.clamp(d*1.7,260,3000),step=half*.3,c=controls.target;
    const key=[Math.round(c.x/step),Math.round(c.z/step),Math.round(Math.log2(half)*2.5)].join();if(key===shadowKey)return;shadowKey=key;
-   const h=Math.pow(2,Math.round(Math.log2(half)*2.5)/2.5);sun.target.position.set(Math.round(c.x/step)*step,0,Math.round(c.z/step)*step);sun.position.copy(sun.target.position).add(new THREE.Vector3(-1300,2200,-900));sun.target.updateMatrixWorld();
+   const h=Math.pow(2,Math.round(Math.log2(half)*2.5)/2.5);sun.target.position.set(Math.round(c.x/step)*step,0,Math.round(c.z/step)*step);sun.position.copy(sun.target.position).add(sunOffset);sun.target.updateMatrixWorld();
    Object.assign(sun.shadow.camera,{left:-h*1.15,right:h*1.15,top:h*1.15,bottom:-h*1.15});sun.shadow.camera.updateProjectionMatrix();sun.shadow.normalBias=Math.max(.15,h*2.3/quality.shadowSize);renderer.shadowMap.needsUpdate=true;}
-  function draw(){queued=false;controls.update();fitShadow();
+  function draw(){queued=false;controls.update();
     const previous=controls.target.clone();controls.target.x=THREE.MathUtils.clamp(controls.target.x,extent.minX,extent.maxX);controls.target.z=THREE.MathUtils.clamp(controls.target.z,extent.minZ,extent.maxZ);controls.target.y=v2?v2.heightAt(controls.target.x,controls.target.z):0;camera.position.add(controls.target.clone().sub(previous));
+    // V2.4: the camera never dives under the displayed relief (a few metres above the ground at the lowest).
+    if(v2){const floor=v2.heightAt(camera.position.x,camera.position.z)+6;if(camera.position.y<floor)camera.position.y=floor;}
+    fitShadow();
     const renderStart=performance.now();renderer.render(scene,camera);renderer.domElement.dataset.render=JSON.stringify({calls:renderer.info.render.calls,triangles:renderer.info.render.triangles,quality:quality.mode,pixelRatio:renderer.getPixelRatio(),shadowSize:quality.shadowSize,submissionMs:Math.round((performance.now()-renderStart)*100)/100,camera:camera.position.toArray(),target:controls.target.toArray()});
-    const placed=[];
-    if(namesVisible)for(const l of sortedLabels){screen.copy(l.vector).project(camera);const x=(screen.x*.5+.5)*innerWidth,y=(-screen.y*.5+.5)*innerHeight;const w=l.name.length*7+20;const visible=(!l.local||camera.position.distanceTo(controls.target)<2200)&&screen.z>-1&&screen.z<1&&x>20&&x<innerWidth-20&&y>135&&y<innerHeight-80&&!placed.some(r=>Math.abs(x-r.x)<(w+r.w)/2&&Math.abs(y-r.y)<30);l.el.style.display=visible?'block':'none';if(visible){l.el.style.left=`${x}px`;l.el.style.top=`${y}px`;placed.push({x,y,w});}}
+    const placed=[],dist=camera.position.distanceTo(controls.target);
+    if(namesVisible)for(const l of sortedLabels){screen.copy(l.vector).project(camera);const x=(screen.x*.5+.5)*innerWidth,y=(-screen.y*.5+.5)*innerHeight;const w=l.name.length*7+20;const visible=dist<TIER_RANGE[l.tier-1]&&screen.z>-1&&screen.z<1&&x>20&&x<innerWidth-20&&y>135&&y<innerHeight-80&&!placed.some(r=>Math.abs(x-r.x)<(w+r.w)/2&&Math.abs(y-r.y)<30);l.el.style.display=visible?'block':'none';if(visible){l.el.style.left=`${x}px`;l.el.style.top=`${y}px`;placed.push({x,y,w});}}
     document.querySelector('#north').style.transform=`rotate(${controls.getAzimuthalAngle()}rad)`;
   }
   const qualityButton=document.querySelector('#quality');
-  function applyQuality(mode){quality=qualitySettings(mode,device);renderer.setPixelRatio(quality.pixelRatio);renderer.setSize(innerWidth,innerHeight);const shadows=!v2||mode==='high';renderer.shadowMap.enabled=shadows;sun.castShadow=shadows;v2?.setQuality(mode);renderer.shadowMap.type=mode==='high'?THREE.PCFSoftShadowMap:THREE.BasicShadowMap;scene.traverse(o=>{if(o.material){for(const m of Array.isArray(o.material)?o.material:[o.material])m.needsUpdate=true;}});sun.shadow.mapSize.set(quality.shadowSize,quality.shadowSize);sun.shadow.map?.dispose();sun.shadow.map=null;renderer.shadowMap.needsUpdate=true;qualityButton.textContent=`Qualité : ${QUALITY_LABELS[mode]}`;qualityButton.setAttribute('aria-pressed',String(mode==='high'));renderer.domElement.dataset.quality=mode;invalidate();}
+  // V2.4: static shadows in Fluide (hard, one tap: cheap on the whole terrain) and Élevée (soft PCF); none in Très fluide.
+  function applyQuality(mode){quality=qualitySettings(mode,device);renderer.setPixelRatio(quality.pixelRatio);renderer.setSize(innerWidth,innerHeight);const shadows=!v2||mode!=='very-fluid';renderer.shadowMap.enabled=shadows;sun.castShadow=shadows;v2?.setQuality(mode);vegetation?.setQuality(mode);renderer.shadowMap.type=mode==='high'?THREE.PCFSoftShadowMap:THREE.BasicShadowMap;scene.traverse(o=>{if(o.material){for(const m of Array.isArray(o.material)?o.material:[o.material])m.needsUpdate=true;}});sun.shadow.mapSize.set(quality.shadowSize,quality.shadowSize);sun.shadow.map?.dispose();sun.shadow.map=null;shadowKey='';renderer.shadowMap.needsUpdate=true;qualityButton.textContent=`Qualité : ${QUALITY_LABELS[mode]}`;qualityButton.setAttribute('aria-pressed',String(mode==='high'));renderer.domElement.dataset.quality=mode;invalidate();}
   qualityButton.addEventListener('click',()=>applyQuality(v2?QUALITY_ORDER[(QUALITY_ORDER.indexOf(quality.mode)+1)%QUALITY_ORDER.length]:quality.mode==='fluid'?'high':'fluid'));
+  const lightButton=document.querySelector('#light');
+  const showLight=()=>{lightButton.textContent=lightName==='GOLDEN_HOUR'?'Fin de journée':'Jour clair';lightButton.setAttribute('aria-pressed',String(lightName==='GOLDEN_HOUR'));};
+  lightButton.addEventListener('click',()=>{applyLight(lightName==='GOLDEN_HOUR'?'DAY_CLEAR':'GOLDEN_HOUR');showLight();invalidate();});showLight();
   controls.addEventListener('change',invalidate);
   addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);invalidate();});
   renderer.domElement.addEventListener('webglcontextlost',event=>{event.preventDefault();loading.hidden=false;loading.style.display='flex';loading.replaceChildren(Object.assign(document.createElement('strong'),{textContent:'Affichage 3D interrompu. Rechargez la page.'}));});
-  renderer.domElement.dataset.stats=JSON.stringify({...terrain.stats,relief:reliefMesh?.stats||null,roads:roadsRef?.stats||null,rail:railRef?.stats||null,landcover:landcoverRef?.stats||null,poi:poiRef?{...poiRef.stats,buildingsLinked:poiBuildings}:null,v2:v2?{...v2.stats,records:v2Records,texture:v2.texture}:null,buildings:buildings.count,enrichment:buildings.stats,clickable:catalogue.stats,loadMs:Math.round(performance.now()-t0)});reset();draw();renderer.shadowMap.autoUpdate=false;loading.remove();
+  renderer.domElement.dataset.stats=JSON.stringify({...terrain.stats,relief:reliefMesh?.stats||null,roads:roadsRef?.stats||null,rail:railRef?.stats||null,landcover:landcoverRef?.stats||null,poi:poiRef?{...poiRef.stats,buildingsLinked:poiBuildings}:null,v2:v2?{...v2.stats,records:v2Records,texture:v2.texture,vegetation:vegetation?.stats}:null,buildings:buildings.count,enrichment:buildings.stats,clickable:catalogue.stats,loadMs:Math.round(performance.now()-t0)});reset();draw();renderer.shadowMap.autoUpdate=false;loading.remove();
   const snapshot=data.metadata.osmTimestamp?.slice(0,10)||data.metadata.retrievedAt.slice(0,10);document.querySelector('#data-date').textContent=`Relevé OSM · ${new Date(snapshot).toLocaleDateString('fr-FR')}`;
   // Read-only diagnostics for reproducible QA, without adding a performance dashboard.
   renderer.domElement.dataset.buildingAudit=JSON.stringify({...buildingAudit,missingIds:buildingAudit.missingIds.slice(0,20),buried:buildingAudit.buried.slice(0,20),outOfRange:buildingAudit.outOfRange.slice(0,20)});
-  window.__MAIZIERES__={buildingAudit,architecture:archById?{profiles:archById.size,applied:[...buildings.info.values()].filter(i=>i.architecture).length}:null,renderedBuildingIds:()=>[...renderedIds],stats:{...terrain.stats,buildings:buildings.count,features:data.features.length,buildingReference:{...reference.stats,rendered:buildings.count,rejected:buildings.rejected},loadMs:Math.round(performance.now()-t0),origin:data.metadata.origin,extent},inspect:()=>({camera:camera.position.toArray(),target:controls.target.toArray(),drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,namesVisible}),breakdown:()=>{const out=[];scene.traverse(o=>{if(!o.isMesh)return;const g=o.geometry,tri=(g.index?g.index.count:g.getAttribute('position').count)/3;out.push({type:o.isInstancedMesh?'instanced':'mesh',instances:o.isInstancedMesh?o.count:1,triangles:tri*(o.isInstancedMesh?o.count:1),shadow:o.castShadow});});return out;},screen:(x,y,z)=>{const v=new THREE.Vector3(x,y,z).project(camera);return [(v.x*.5+.5)*innerWidth,(-v.y*.5+.5)*innerHeight];},view:(position,target)=>{controls.enableDamping=false;controls.target.set(...target);camera.position.set(...position);controls.update();controls.enableDamping=true;draw();}};
+  window.__MAIZIERES__={buildingAudit,architecture:archById?{profiles:archById.size,applied:[...buildings.info.values()].filter(i=>i.architecture).length}:null,renderedBuildingIds:()=>[...renderedIds],stats:{...terrain.stats,buildings:buildings.count,features:data.features.length,buildingReference:{...reference.stats,rendered:buildings.count,rejected:buildings.rejected},vegetation:vegetation?.stats||null,loadMs:Math.round(performance.now()-t0),origin:data.metadata.origin,extent},inspect:()=>({camera:camera.position.toArray(),target:controls.target.toArray(),drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometries:renderer.info.memory.geometries,namesVisible,light:lightName,quality:quality.mode}),breakdown:()=>{const out=[];scene.traverse(o=>{if(!o.isMesh)return;const g=o.geometry,tri=(g.index?g.index.count:g.getAttribute('position').count)/3;out.push({name:o.name,type:o.isInstancedMesh?'instanced':'mesh',instances:o.isInstancedMesh?o.count:1,triangles:tri*(o.isInstancedMesh?o.count:1),shadow:o.castShadow});});return out;},screen:(x,y,z)=>{const v=new THREE.Vector3(x,y,z).project(camera);return [(v.x*.5+.5)*innerWidth,(-v.y*.5+.5)*innerHeight];},view:(position,target)=>{controls.enableDamping=false;controls.target.set(...target);camera.position.set(...position);controls.update();controls.enableDamping=true;draw();},setLight:name=>{applyLight(name);showLight();draw();},setQuality:applyQuality};
   // V2.0 interface: search, quick views, legend and (technical mode) performance HUD.
   if(v2){
    const flyTo=(x,z,distance)=>{const dir=camera.position.clone().sub(controls.target);dir.y=Math.max(dir.y,dir.length()*.55);dir.setLength(distance);controls.enableDamping=false;controls.target.set(x,v2.heightAt(x,z),z);camera.position.copy(controls.target).add(dir);controls.update();controls.enableDamping=true;invalidate();};
@@ -153,15 +171,12 @@ async function start(){
    const railCentre=service.length?[(Math.min(...service.map(p=>p[0]))+Math.max(...service.map(p=>p[0])))/2,(Math.min(...service.map(p=>p[1]))+Math.max(...service.map(p=>p[1])))/2]:null;
    const views=[{name:'Vue générale',reset:true},{name:'Centre-bourg',p:at('poi:eglise-saint-denis'),d:620},{name:'Poussey',p:at('poi:poussey'),d:900},{name:'Les Granges',p:at('poi:les-granges'),d:900},{name:'Ferroviaire',p:railCentre,d:1300},{name:'Parc de l’Aérodrome',p:at('poi:parc-aerodrome'),d:1000}].filter(v=>v.reset||v.p);
    installViews(views,v=>v.reset?reset():flyTo(v.p[0],v.p[1],v.d));installLegend();
-   if(technical&&!auditMode&&!hydroMode)installPerfHud(renderer,`Bâtiments ${buildings.count} · routes ${v2.stats.roads.count} · voies ${v2.stats.rail.tracks}\nParcelles ${v2.stats.agriculture} · bois ${v2.stats.woodland} · haies ${v2.stats.hedges.count} · POI ${v2Records.pois}\nTexture ${v2.texture.width}×${v2.texture.height} (${v2.texture.metresPerPixel} m/px)`,draw);
+   if(technical&&!auditMode&&!hydroMode)installPerfHud(renderer,`Bâtiments ${buildings.count} · routes ${v2.stats.roads.count} · voies ${v2.stats.rail.tracks}\nParcelles ${v2.stats.agriculture} · bois ${v2.stats.woodland} · haies ${v2.stats.hedges.count} · arbres ${vegetation.stats.trees} · POI ${v2Records.pois}\nTexture ${v2.texture.width}×${v2.texture.height} (${v2.texture.metresPerPixel} m/px)`,draw);
    Object.assign(window.__MAIZIERES__,{v2:{stats:v2.stats,records:v2Records,views:views.map(v=>v.name),searchIndex:search.index,heightAt:v2.heightAt},search:q=>search.search(q),focus:name=>{const r=catalogue.records.find(r=>r.name===name&&r.poi)||catalogue.records.find(r=>r.name===name&&r.searchable!==false);if(r)focus(r);return !!r;},selectId:id=>{const r=catalogue.byId.get(id);selection.select(r);return !!r;},quick:name=>{const v=views.find(v=>v.name===name);if(v)v.reset?reset():flyTo(v.p[0],v.p[1],v.d);return !!v;}});
   }
   const gl=renderer.getContext(),debug=gl.getExtension('WEBGL_debug_renderer_info');
-  renderer.domElement.dataset.graphics=JSON.stringify({renderer:debug?gl.getParameter(debug.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER),antialias:gl.getContextAttributes().antialias,device,version:'2.0.0'});
+  renderer.domElement.dataset.graphics=JSON.stringify({renderer:debug?gl.getParameter(debug.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER),antialias:gl.getContextAttributes().antialias,device,version:'2.4.0'});
   applyQuality(quality.mode);
   if(new URLSearchParams(location.search).has('benchmark')){benchmarking=true;await benchmark({camera,controls,draw,canvas:renderer.domElement,reset});benchmarking=false;invalidate();}
 }
 start().catch(error=>{console.error(error);loading.replaceChildren(Object.assign(document.createElement('strong'),{textContent:'La maquette ne peut pas être affichée.'}),Object.assign(document.createElement('span'),{textContent:`${error.message} Vérifiez que WebGL est activé puis rechargez la page.`}));});
-
-
-

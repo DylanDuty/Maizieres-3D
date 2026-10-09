@@ -1,3 +1,12 @@
+# Vérification V2.4 — refonte visuelle du plan 3D, 9 octobre 2026
+
+Branche `opus/v2.4-visual-design-polish`, à partir de `7b07b54`. Rapport : `docs/audit/V2.4_VISUAL_DESIGN_POLISH.md`. Captures : `docs/qa/v2.4/before/`, `docs/qa/v2.4/after/`, `docs/qa/v2.4/compare/`.
+
+- **Géographie** : 42 fichiers gelés identiques au commit V2.2 `309e65e` (SHA-256), 2 596 empreintes et positions inchangées ; aucune donnée modifiée, seuls `src/`, `index.html`, un contrôle (`check-v2`, règle des ombres) et la documentation changent.
+- **Chromium** (SwiftShader) sur le commit final : vue normale 2 596 / 2 596, `?architecture=1&manual=0` 2 584, `?architecture=0`, `?diagnostic=architecture`, `buildings-audit`, `hydro-audit`, `v2`, `provenance`, `validation`, `terrain`, `roads`, `rail`, `landcover`, `poi`, `?quality=very-fluid`, `?quality=high`, `?light=golden` : console vide, aucun asset manquant, 0 enfoui.
+- **Réactif** : 1920 × 1080, 1366 × 768, tablette 1024 × 768, smartphone portrait 390 × 844 et paysage 844 × 390 : aucun chevauchement de commandes, fiche au clic ouverte au toucher.
+- **Contrôles** : `npm run check:all` (17 scripts) ; `check:architecture-stats` 10, `check:architecture` 8, `check:final-building-freeze` 8, `check:building-visibility` 8, `check:geographic-integrity` 9, `check:v2` 12 ; `pnpm build`.
+
 # Vérification V2.3 — enrichissement architectural pour Unreal, 26 septembre 2026
 
 Branche `opus/v2.3-architectural-enrichment`, à partir de `309e65e`. Rapport : `docs/audit/V2.3_ARCHITECTURAL_ENRICHMENT.md`. Captures : `docs/qa/v2.3/`.
