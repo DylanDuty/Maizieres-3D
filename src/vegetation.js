@@ -11,7 +11,7 @@ const inRing=(x,z,r)=>{let c=false;for(let i=0,j=r.length-2;i<r.length;j=i,i+=2)
 const inPoly=(x,z,p)=>inRing(x,z,p[0])&&!p.slice(1).some(h=>inRing(x,z,h));
 const CENTRES=[[0,0],[1150,-300],[-300,850]];const nearVillage=(x,z)=>Math.min(...CENTRES.map(([a,b])=>Math.hypot(x-a,z-b)));
 
-export function buildVegetation(parent,{v2,buildings=[],quality}){
+export function buildVegetation(parent,{v2,buildings=[],quality,exclude=null}){
  const {data:d,heightAt,onGrid,bounds:{x0,z0,W,D}}=v2,rng=random(10220);
  // Exclusion mask over the display terrain (≈ 4 m per pixel): built footprints, roads, rail, water, artificial surfaces.
  const MW=1536,MH=Math.round(MW*D/W),mask=document.createElement('canvas');mask.width=MW;mask.height=MH;const ctx=mask.getContext('2d',{willReadFrequently:true}),sx=MW/W;
@@ -27,7 +27,7 @@ export function buildVegetation(parent,{v2,buildings=[],quality}){
  const blocked=(x,z)=>{const i=Math.floor(X(x)),j=Math.floor(Z(z));return i<0||j<0||i>=MW||j>=MH||px[(j*MW+i)*4+3]>0;};
  const box=p=>{let b=[Infinity,Infinity,-Infinity,-Infinity];for(const r of p)for(let i=0;i<r.length;i+=2)b=[Math.min(b[0],r[i]),Math.min(b[1],r[i+1]),Math.max(b[2],r[i]),Math.max(b[3],r[i+1])];return b;};
  const trees=[];
- const add=(x,z,h,type,priority)=>{if(!onGrid(x,z)||blocked(x,z))return;trees.push({x,z,h,type,priority});};
+ const add=(x,z,h,type,priority)=>{if(!onGrid(x,z)||blocked(x,z)||(exclude&&exclude(x,z)))return;trees.push({x,z,h,type,priority});};
  // Garden trees in the built-up zone (BD TOPO zone bâtie): few, rounder, close to the eye.
  for(const v of d.village)for(const p of v.r){const b=box(p),s=30;for(let x=b[0];x<b[2];x+=s)for(let z=b[1];z<b[3];z+=s){const qx=x+rng()*s,qz=z+rng()*s;if(rng()>.42||!inPoly(qx,qz,p))continue;add(qx,qz,5+rng()*4.5,rng()<.1?'poplar':'garden',0);}}
  // Woodland: step grows with the distance to the villages; crowns grow with the step so the mass stays closed.

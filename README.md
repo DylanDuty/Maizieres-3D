@@ -2,6 +2,8 @@
 
 Prototype local Three.js de la commune de l’Aube, code INSEE **10220**. Empreintes, voirie, voies ferrées et occupation du sol proviennent d’OpenStreetMap. Le contour communal provient de l’API Découpage administratif française.
 
+**Version 2.5 — prototype artistique Poussey** (`?visual=poussey-v25`) : rendu PBR procédural de Poussey seul (maisons avec débords, tuiles, volets, arbres composés, sol et route texturés, eau vivante, GTAO, SMAA), sans toucher à la géographie ; la carte V2.4 reste la vue par défaut. Presets `v25quality=beauty|balanced|performance`. Direction : `docs/audit/V2.5_POUSSEY_ART_DIRECTION.md`, rapport : `docs/audit/V2.5_POUSSEY_ART_PROTOTYPE.md`, comparaisons : `docs/qa/v2.5-poussey/`. `HUMAN_ART_DIRECTION_APPROVED = false`.
+
 **Version 2.4 — refonte visuelle du plan 3D** : design, lisibilité et ambiance « film d'animation », sans toucher à la géographie (42 fichiers gelés identiques, 2 596 bâtiments à leur place).
 
 - **Bâtiments** : les profils V2.3.1 (type de toit, faîtage, hauteurs, famille de couleur) pilotent désormais la vue par défaut ; `?architecture=0` restaure le rendu plat V2.2. Façades dégradées vers le sol, arête d'égout et ligne de faîtage, cheminées sur les maisons à pans.

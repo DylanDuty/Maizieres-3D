@@ -22,6 +22,8 @@ export function buildBuildings(scene,items,enrichment={buildings:{}},options={})
   // V2.3 / V2.4: documented elevation (roof type, ridge, heights, colour family) on the unchanged footprint.
   const arch=options.architecture?.get(item.featureId||id.split('#')[0])||null;if(arch)p=applyArchitecture(p,arch,poly);
   if(options.diagnostic){p.wallColor=options.diagnostic==='architecture'?ARCH_COLORS[arch?.confidenceOverall||'unknown']:(options.diagnostic==='buildings-audit'?AUDIT_COLORS:options.diagnostic==='validation'?VALIDATION_COLORS:PROVENANCE_COLORS)[diagnosticKey(item,options.diagnostic)]||'#999';p.roofColor=new THREE.Color(p.wallColor).multiplyScalar(.8).getStyle();p.shade=0;}
+  // V2.5: options.render(item) === false keeps the profile and the click record but draws nothing (another renderer takes over).
+  const drawn=options.render?options.render(item)!==false:true;
   const starts=batches.map(b=>b.p.length/9);
   const bb=bounds(poly[0]),base=.35,axis=p.axis,mid=(axis.min+axis.max)/2,half=Math.max(.1,(axis.max-axis.min)/2);
   const top=q=>base+p.wallHeight+p.roofHeight*Math.max(0,1-Math.abs(q[0]*axis.axis[0]+q[1]*axis.axis[1]-mid)/half);
@@ -41,7 +43,8 @@ export function buildBuildings(scene,items,enrichment={buildings:{}},options={})
   const addChimney=(roofTop,across,along)=>{const c=[(bb.minX+bb.maxX)/2,(bb.minZ+bb.maxZ)/2],k=mid-(c[0]*across[0]+c[1]*across[1]),off=((p.seed>>>9)%2?1:-1)*Math.min(3,Math.sqrt(p.size)*.22),q=[c[0]+across[0]*k+along[0]*off,c[1]+across[1]*k+along[1]*off],r=.42;
    const foot=[[-r,-r],[r,-r],[r,r],[-r,r]].map(([i,j])=>[q[0]+across[0]*i+along[0]*j,q[1]+across[1]*i+along[1]*j]);
    if(foot.every(v=>insidePoly(v,poly))){const y0=roofTop(q)-.8,y1=roofTop(q)+1.05;for(let j=0;j<4;j++){const u=foot[j],v=foot[(j+1)%4];details.quad([u[0],y0,u[1]],[v[0],y0,v[1]],[v[0],y1,v[1]],[u[0],y1,u[1]],chimney);}details.quad(...[0,1,2,3].map(j=>[foot[j][0],y1,foot[j][1]]).reverse(),'#5f5a55');}};
-  if(isChurch(item)){maxHeight=saintDenis(poly,p,walls,roofs,details).maxHeight;}
+  if(!drawn){maxHeight=p.wallHeight+p.roofHeight;}
+  else if(isChurch(item)){maxHeight=saintDenis(poly,p,walls,roofs,details).maxHeight;}
   else if(arch){
    // Generic min-of-planes roof: walls follow the roof edge, every surface is split along the creases.
    const model=roofSurface(p),topA=q=>base+p.wallHeight+model.h(q);maxHeight=p.wallHeight+p.roofHeight;

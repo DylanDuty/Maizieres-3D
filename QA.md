@@ -1,3 +1,11 @@
+# Vérification V2.5 — prototype artistique Poussey, 9 octobre 2026
+
+Branche `opus/v2.5-poussey-art-prototype`, à partir de `7000653`. Rapport : `docs/audit/V2.5_POUSSEY_ART_PROTOTYPE.md`. Captures comparées : `docs/qa/v2.5-poussey/`.
+
+- **Géographie** : aucun fichier de `public/`, `unreal/`, `data-sources/` modifié ; 42 fichiers gelés identiques à `309e65e`.
+- **Mode isolé** `?visual=poussey-v25` : 2 596 bâtiments rendus (384 par le prototype dans la boîte Poussey), 0 enfoui, console vide, aux trois presets.
+- **Contrôles** : `check:all` PASS ; `check:architecture-stats` 10 (règle 10 : seuls les fichiers de données sont interdits de changement après le gel), `check:architecture` 8, `check:final-building-freeze` 8, `check:building-visibility` 8, `check:geographic-integrity` 9, `check:v2` 12 ; `pnpm build` OK.
+
 # Vérification V2.4 — refonte visuelle du plan 3D, 9 octobre 2026
 
 Branche `opus/v2.4-visual-design-polish`, à partir de `7b07b54`. Rapport : `docs/audit/V2.4_VISUAL_DESIGN_POLISH.md`. Captures : `docs/qa/v2.4/before/`, `docs/qa/v2.4/after/`, `docs/qa/v2.4/compare/`.

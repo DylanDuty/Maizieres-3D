@@ -1,3 +1,11 @@
+# Notes V2.5 — prototype artistique Poussey, 9 octobre 2026
+
+- **Le saut vient des maisons.** Dès que la toiture a une épaisseur, un débord et un bandeau, et que les ouvertures sont des objets (cadre, vitrage, volets), l'extrusion disparaît. Les textures restent des gris procéduraux teintés par bâtiment : aucune image externe.
+- **Le sens des faces compte.** Avec des matériaux PBR en face avant uniquement, chaque triangle est orienté explicitement (normale demandée) ; le premier jet affichait des maisons sans toit.
+- **L'occlusion ambiante fait le reste.** GTAO sous les débords, entre les maisons et le sol, sous les arbres : c'est elle qui assoit les volumes ; sans elle (preset PERFORMANCE) la scène redevient pâle.
+- **L'environnement ne doit pas toucher le rendu V2.4.** `scene.environment` aurait teinté les matériaux Lambert du reste de la commune ; la carte d'environnement est assignée explicitement aux seuls matériaux V2.5.
+- **Rien n'est généralisé.** Hors de la boîte Poussey, le rendu V2.4 reste tel quel, y compris la bourg de Maizières visible en arrière-plan des vues basses.
+
 # Notes V2.4 — refonte visuelle, 9 octobre 2026
 
 - **Les profils V2.3.1 font la différence.** Dès qu'ils pilotent la vue par défaut, le village cesse d'être un semis de boîtes orange : les toits plats sont plats, les faîtages sont orientés, les couleurs documentées (brun, gris, terre cuite) remplacent la tuile aléatoire. Les 113 toits de couleur inconnue reçoivent un taupe neutre, jamais une teinte « jolie ».

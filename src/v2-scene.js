@@ -32,7 +32,7 @@ const hash=s=>{let h=2166136261;for(const c of String(s))h=Math.imul(h^c.charCod
 const shade=(hex,l,s=0)=>new THREE.Color(hex).offsetHSL(0,s,l).getStyle();
 
 import {waterProximity,HEDGE_WATER_MARGIN} from './hydro-display.js';
-export async function buildV2Scene(scene,{relief,base,quality}){
+export async function buildV2Scene(scene,{relief,base,quality,exclude=null}){
  const [d,poi]=await Promise.all([fetch(`${base}data/v2-scene.json`).then(r=>r.json()),fetch(`${base}data/poi.json`).then(r=>r.json())]);
  const {meta}=relief,{cols,rows,step,x0,z0}=meta,W=(cols-1)*step,D=(rows-1)*step;
  let minY=Infinity;for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){const v=relief.alt(c,r);if(v===v)minY=Math.min(minY,v-meta.yReference);}
@@ -170,7 +170,7 @@ export async function buildV2Scene(scene,{relief,base,quality}){
   const pts=[];for(let i=0;i<p.length;i+=3){const q=[p[i],p[i+1]];if(pts.length){const a=pts.at(-1),len=Math.hypot(q[0]-a[0],q[1]-a[1]);hedgeKm+=len/1000;}pts.push(q);}
   for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i],len=Math.hypot(b[0]-a[0],b[1]-a[1]),k=Math.max(1,Math.round(len/5.5)),ang=Math.atan2(b[0]-a[0],b[1]-a[1]);
    for(let j=0;j<k;j++){const f=(j+.5)/k,x=a[0]+(b[0]-a[0])*f,z=a[1]+(b[1]-a[1])*f;if(!onGrid(x,z))continue;if(nearWater(x,z,w/2+HEDGE_WATER_MARGIN)){hedgeCut+=len/k;hedgeCuts.push([a[0]+(b[0]-a[0])*(j/k),a[1]+(b[1]-a[1])*(j/k),a[0]+(b[0]-a[0])*((j+1)/k),a[1]+(b[1]-a[1])*((j+1)/k)]);continue;}
-    bushes.push({x,z,ang,w,H,len:len/k});}}}
+    if(exclude&&exclude(x,z))continue;bushes.push({x,z,ang,w,H,len:len/k});}}}
  const hedgeMesh=new THREE.InstancedMesh(crownGeometry({lobes:3,flatten:.62,seed:2.1,detail:0}),toon({vertexColors:true}),Math.max(1,bushes.length));
  const o3=new THREE.Object3D(),tint=new THREE.Color(),greens=['#5f8f4a','#6a9a52','#588a45','#71a05a'];
  bushes.forEach((b,i)=>{o3.position.set(b.x,heightAt(b.x,b.z)+b.H*.42,b.z);o3.rotation.set(0,b.ang,0);o3.scale.set(Math.max(1.2,b.w*.55),b.H*.6,b.len*.62+.9);o3.updateMatrix();hedgeMesh.setMatrixAt(i,o3.matrix);hedgeMesh.setColorAt(i,tint.set(greens[(i*7)%greens.length]).offsetHSL(0,0,((i*13)%7-3)*.012));});
