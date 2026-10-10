@@ -1,3 +1,10 @@
+# Notes V2.7.1 — zoom maximal et audit du rendu, 10 octobre 2026
+
+- **Un modèle double face ne se greffe pas en face simple sans règle d'orientation.** L'adaptateur V2.7 orientait toute face inclinée « à l'écart du centroïde du plan » : faux pour les bosses du toit de Saint-Denis (plus de 45°), la flèche et le clocher centrés. Règle par contexte : murs vers l'extérieur de l'emprise, toit vers le haut, détails à l'écart de leur propre centre (centres renvoyés par le modèle).
+- **Un uv implicite est un bug silencieux.** Le soubassement toon lit `uv.y` en mètres au-dessus du pied ; sans uv, `uv.y` vaut z monde et tout le mur devient soubassement.
+- **La limite de zoom se calibre sur une capture.** Même cadrage rendu à 400 / 450 / 500 / 620 m en 390 × 844 : la boucle de route autour de l'église occupe la même part de la largeur (≈ 62 %) vers 420 m. Rappel élastique (16 % de l'écart par image) plutôt que butée sèche.
+- **Un anneau décalé n'a pas le même nombre de points que son contour.** `offsetRing` insère un biseau par sommet ; apparier ses points par indice avec le contour tendait les quads du bandeau à travers tout le toit plat (nappe crème sur La Glacière). Apparier par proximité, ou ne rien dessiner.
+
 # Notes V2.7 — généralisation du diorama dessin animé, 10 octobre 2026
 
 - **Le terrain V2.4 suffit.** Repeindre sa texture et changer son matériau coûte zéro géométrie : la nappe locale à 5 m de Poussey n'avait pas de sens à l'échelle de la commune.

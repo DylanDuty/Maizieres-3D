@@ -1,3 +1,13 @@
+# Vérification V2.7.1 — zoom maximal mobile et audit du rendu, 10 octobre 2026
+
+Branche `opus/v2.7.1-zoom-and-render-audit`, à partir de `48340c9` (V2.7). Rapport : `docs/audit/V2.7.1_ZOOM_ET_AUDIT_RENDU.md`. Captures : `docs/qa/v2.7.1/`.
+
+- **Géographie** : aucun fichier de `public/`, `unreal/`, `data-sources/` modifié ; 42 fichiers gelés identiques à `309e65e` ; 52 hachages Freeze V1 vérifiés.
+- **Caméra** : distance minimale 420 m (zone souple à 302 m, rappel élastique), site minimal 25°, mêmes règles desktop / portrait / paysage ; cadrage de référence = capture mobile de l'utilisateur.
+- **Église Saint-Denis** : murs, toit, clocher, flèche et tourelle lisibles sous six angles en `cartoon-v27` ; V2.4 inchangée.
+- **Chromium** : 17 cadrages BEAUTÉ desktop (secteurs, landmarks, surfaces), 7 cadrages téléphone portrait et 7 paysage avec touchers, test de clic route / bâtiment / Détails / POI / industriel / landmark sur trois gabarits ; 2 596 / 2 596 bâtiments, 0 enfoui, console vide.
+- **Contrôles** : `check:all` PASS ; `npm run build` OK.
+
 # Vérification V2.7 — généralisation du diorama dessin animé à toute Maizières, 10 octobre 2026
 
 Branche `opus/v2.7-maizieres-cartoon-generalization`, à partir de `dba3783` (V2.6.1). Rapport : `docs/audit/V2.7_MAIZIERES_CARTOON_GENERALIZATION.md`. Captures : `docs/qa/v2.7/`.

@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {saintDenis} from '../church.js';
 import {isChurch} from '../building-source.js';
-import {UP,DOWN} from '../v25/procedural-houses.js';
+import {UP,DOWN,outward} from '../v25/procedural-houses.js';
 
 // V2.7 — the four unique models in the diorama language. Water towers are drawn by the houses module (silhouette on the
 // documented total height); the church reuses the documented Saint-Denis model (plan + elevation of the Sauvegarde de
@@ -9,19 +9,26 @@ import {UP,DOWN} from '../v25/procedural-houses.js';
 // the war memorial is a small stone obelisk at its documented position (no footprint in the data). Nothing is surveyed
 // beyond what the sources say: these are recognisable silhouettes, not architectural reproductions.
 const RECOLOUR={'#5d6670':'#7b8ea6','#dfd6c1':'#ece4d1','#555c61':'#55606c'};
-const centroid=poly=>{let x=0,z=0,n=0;for(const q of poly[0]){x+=q[0];z+=q[1];n++;}return [x/n,z/n];};
-// Adapter: Batch-like quad/tri calls (hex colour) → Tri calls (THREE.Color, explicit facing), lifted by dy.
-function adapter(tri,c,dy){const col=new THREE.Color();
- const facing=(a,b,q)=>{const nx=(b[1]-a[1])*(q[2]-a[2])-(b[2]-a[2])*(q[1]-a[1]),ny=(b[2]-a[2])*(q[0]-a[0])-(b[0]-a[0])*(q[2]-a[2]),nz=(b[0]-a[0])*(q[1]-a[1])-(b[1]-a[1])*(q[0]-a[0]),L=Math.hypot(nx,ny,nz)||1;
-  if(Math.abs(ny/L)>.85)return ny>0?UP:DOWN;const mx=(a[0]+b[0]+q[0])/3-c[0],mz=(a[2]+b[2]+q[2])/3-c[1];return [mx,0,mz];};
- const lift=v=>[v[0],v[1]+dy,v[2]];const colour=h=>col.set(RECOLOUR[h]||h).clone();
- return {tri:(a,b,q,color)=>{a=lift(a);b=lift(b);q=lift(q);tri.tri(a,b,q,colour(Array.isArray(color)?color[0]:color),null,facing(a,b,q));},
-  quad:(a,b,q,d,color)=>{a=lift(a);b=lift(b);q=lift(q);d=lift(d);tri.quad(a,b,q,d,colour(Array.isArray(color)?color[0]:color),null,facing(a,b,q));}};}
+const normal=(a,b,q)=>{const nx=(b[1]-a[1])*(q[2]-a[2])-(b[2]-a[2])*(q[1]-a[1]),ny=(b[2]-a[2])*(q[0]-a[0])-(b[0]-a[0])*(q[2]-a[2]),nz=(b[0]-a[0])*(q[1]-a[1])-(b[1]-a[1])*(q[0]-a[0]),L=Math.hypot(nx,ny,nz)||1;return [nx/L,ny/L,nz/L];};
+// Adapter: Batch-like quad/tri calls (hex colour, V2.4 draws them double-sided) → Tri calls (THREE.Color, single-sided)
+// lifted by dy. The V2.4 winding is arbitrary, so every face gets an explicit facing from its context (`facingOf`), and
+// walls get metres-above-base uvs so the toon base band stays at the foot of the wall. V2.7.1: the first version used
+// "away from the plan centroid" for every steep face, which culled half of the roof humps, the spire and the tower.
+function adapter(tri,dy,facingOf,uvOf=null){const col=new THREE.Color();const lift=v=>[v[0],v[1]+dy,v[2]];const colour=h=>col.set(RECOLOUR[Array.isArray(h)?h[0]:h]||(Array.isArray(h)?h[0]:h)).clone();
+ return {tri:(a,b,q,color)=>{a=lift(a);b=lift(b);q=lift(q);tri.tri(a,b,q,colour(color),null,facingOf(a,b,q));},
+  quad:(a,b,q,d,color)=>{a=lift(a);b=lift(b);q=lift(q);d=lift(d);tri.quad(a,b,q,d,colour(color),uvOf?uvOf(a,b,q,d):null,facingOf(a,b,q));}};}
+// Details (tower, belfry, hip, spire, stair turret) are buffered: their centres are only known when the model returns.
+function deferred(){const calls=[];return {api:{tri:(...a)=>calls.push(['tri',a]),quad:(...a)=>calls.push(['quad',a])},
+ flush(tri,dy,centres){const cs=centres.filter(Boolean);const ad=adapter(tri,dy,(a,b,q)=>{const n=normal(a,b,q);if(Math.abs(n[1])>.85)return UP;const mx=(a[0]+b[0]+q[0])/3,mz=(a[2]+b[2]+q[2])/3;let best=null,bd=Infinity;for(const c of cs){const d=Math.hypot(mx-c[0],mz-c[1]);if(d<bd){bd=d;best=c;}}return best?[mx-best[0],0,mz-best[1]]:[n[0],0,n[2]];});for(const [k,a] of calls)ad[k](...a);return calls.length;}};}
 
 // Hook for buildHousesV26: returns true when it drew the building itself.
 export function specialBuildingsV27(elevation){
- return ({item,p,walls,roofs,details})=>{if(!isChurch(item))return false;const dy=elevation(item)||0,c=centroid(item.poly);
-  saintDenis(item.poly,p,adapter(walls,c,dy),adapter(roofs,c,dy),adapter(details,c,dy));return true;};
+ return ({item,p,walls,roofs,details})=>{if(!isChurch(item))return false;const dy=elevation(item)||0,poly=item.poly;
+  // Walls: quads whose first edge runs along the OSM outline → face away from the outline, uv.y = metres above the foot.
+  const wallAd=adapter(walls,dy,(a,b)=>outward([a[0],a[2]],[b[0],b[2]],poly),(a,b,q,d)=>{const L=Math.hypot(b[0]-a[0],b[2]-a[2]);return [[0,0],[L,0],[L,q[1]-a[1]],[0,d[1]-a[1]]];});
+  // Roof: a height field over the plan, every triangle faces up (the nave humps are steeper than 45°).
+  const roofAd=adapter(roofs,dy,()=>UP);
+  const det=deferred();const r=saintDenis(poly,p,wallAd,roofAd,det.api);det.flush(details,dy,[r.towerCentre,r.turretAnchor]);return true;};
 }
 
 // War memorial: square base, tapered shaft, pyramidion. Position from the landmark list (documented POI), height 6 m.

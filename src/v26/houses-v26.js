@@ -20,12 +20,12 @@ const clamp=THREE.MathUtils.clamp;
 // high window band or a sign band. Footprint, height, roof type and documented colour family are untouched; a grey
 // documented roof is only nudged toward the variant's tint.
 export const BIG={
- HANGAR:{walls:['#d2bf9a','#c6b494','#b6c0b8','#cbb192'],roofs:['#b9c3c9','#c9b9a6','#aab6a8','#c88a72'],panels:true,sheet:true,skylight:true,band:false},
- FARM:{walls:['#d9c6a3','#cdb99a','#cfbc9e'],roofs:['#c88a72','#bb7560','#c9b9a6'],panels:true,sheet:true,skylight:false,band:false},
- INDUSTRIAL:{walls:['#bcc7cf','#c5cdd2','#b4bfc6','#cdc4b1','#c0cac0','#d3c7ae'],roofs:['#9ea9b1','#a6b0b6','#b3a996','#9fb0a4','#a8b4bd'],panels:true,sheet:true,skylight:true,band:true},
- COMMERCIAL:{walls:['#e6d5bb','#eadfc7','#e2d3b9','#d9d6c6','#e8dcc9'],roofs:['#aba397','#b3ab9e','#9fa7ab'],panels:false,sheet:false,skylight:false,band:true,sign:'#c96b5b'},
- SILO_TANK:{walls:['#d8dbd9','#d2d9dc'],roofs:['#a2abb0'],panels:true,sheet:true,skylight:false,band:false},
- FLAT:{walls:['#dcd6c9','#d5d2c7','#e2d8c8'],roofs:['#b8b2a5'],panels:true,sheet:false,skylight:false,band:true}};
+ HANGAR:{walls:['#d2bf9a','#c6b494','#b6c0b8','#cbb192'],roofs:['#a4afb7','#b5a48c','#95a294','#bb7b62'],panels:true,sheet:true,skylight:true,band:false},
+ FARM:{walls:['#d9c6a3','#cdb99a','#cfbc9e'],roofs:['#bb7b62','#ad6852','#b5a48c'],panels:true,sheet:true,skylight:false,band:false},
+ INDUSTRIAL:{walls:['#bcc7cf','#c5cdd2','#b4bfc6','#cdc4b1','#c0cac0','#d3c7ae'],roofs:['#8a969f','#929da5','#9f9683','#8b9d90','#94a1aa'],panels:true,sheet:true,skylight:true,band:true},
+ COMMERCIAL:{walls:['#e6d5bb','#eadfc7','#e2d3b9','#d9d6c6','#e8dcc9'],roofs:['#998f82','#a1988a','#8c9498'],panels:false,sheet:false,skylight:false,band:true,sign:'#c96b5b'},
+ SILO_TANK:{walls:['#d8dbd9','#d2d9dc'],roofs:['#8f989e'],panels:true,sheet:true,skylight:false,band:false},
+ FLAT:{walls:['#dcd6c9','#d5d2c7','#e2d8c8'],roofs:['#a7a194'],panels:true,sheet:false,skylight:false,band:true}};
 // Harmonised family of a documented colour: hue kept, saturation and lightness brought into the diorama range.
 // V2.6.1: a documented grey family becomes a soft blue-slate grey (still grey, no longer dull); other hues keep their tint.
 export function harmonise(hex,{sMin=.46,sMax=.66,lMin=.4,lMax=.52}={}){const c=new THREE.Color(hex),h={};c.getHSL(h);if(h.s<.12)return c.setHSL(.58,.14,clamp(h.l*1.1,Math.max(lMin,.46),Math.max(lMax,.58)));return c.setHSL(h.h,clamp(h.s*1.15,sMin,sMax),clamp(h.l*1.06,lMin,lMax));}
@@ -68,7 +68,7 @@ export function buildHousesV26({items,enrichment={buildings:{}},architecture,ele
    const uvOf=q=>[dot(q,p.arch.along),dot(q,p.arch.across)];
    for(const tri of THREE.ShapeUtils.triangulateShape(rings[0],rings.slice(1))){const pts=tri.map(i=>[flat[i].x,flat[i].y]);for(const piece of splitByLines(pts,lines))for(let i=1;i<piece.length-1;i++){const v=[piece[0],piece[i],piece[i+1]];roofs[roofPart].tri(...v.map(q=>[q[0],top(q),q[1]]),roofCol,v.map(uvOf),UP);}}
    if(p.arch.shape==='flat'){for(const r of poly)for(let i=0;i<r.length;i++){const a=r[i],b=r[(i+1)%r.length];details.quad([a[0],eaveY-.02,a[1]],[b[0],eaveY-.02,b[1]],[b[0],eaveY+.4,b[1]],[a[0],eaveY+.4,a[1]],wallCol.clone().multiplyScalar(.94),null,outward(a,b,poly));}
-    const inner=poly.map((r,k)=>offsetRing(r,-.25,k>0));for(const [k,r] of poly.entries())for(let i=0;i<r.length;i++){const a=r[i],b=r[(i+1)%r.length],c=inner[k][(i+1)%r.length],d=inner[k][i];if(!c||!d)continue;details.quad([a[0],eaveY+.4,a[1]],[b[0],eaveY+.4,b[1]],[c[0],eaveY+.4,c[1]],[d[0],eaveY+.4,d[1]],fasciaCol,null,UP);}}
+    const inner=poly.map((r,k)=>alignedInset(r,.25,k>0));for(const [k,r] of poly.entries())for(let i=0;i<r.length;i++){const a=r[i],b=r[(i+1)%r.length],c=inner[k][(i+1)%r.length],d=inner[k][i];if(!c||!d)continue;details.quad([a[0],eaveY+.4,a[1]],[b[0],eaveY+.4,b[1]],[c[0],eaveY+.4,c[1]],[d[0],eaveY+.4,d[1]],fasciaCol,null,UP);}}
    else for(const [k,r] of outer.entries()){const orig=poly[k];for(let i=0;i<r.length;i++){const a=r[i],b=r[(i+1)%r.length],pts=[a,...edgeCuts(a,b,lines).map(f=>[a[0]+f*(b[0]-a[0]),a[1]+f*(b[1]-a[1])]),b];
      const fo=outward(a,b,outer);for(let j=1;j<pts.length;j++){const c=pts[j-1],d=pts[j];details.quad([c[0],top(c)-thk,c[1]],[d[0],top(d)-thk,d[1]],[d[0],top(d),d[1]],[c[0],top(c),c[1]],fasciaCol,null,fo);}
      if(r.length===orig.length){const oa=orig[i],ob=orig[(i+1)%orig.length];details.quad([a[0],top(a)-thk,a[1]],[b[0],top(b)-thk,b[1]],[ob[0],top(ob)-thk,ob[1]],[oa[0],top(oa)-thk,oa[1]],soffitCol,null,DOWN);}}}
@@ -90,6 +90,10 @@ export function buildHousesV26({items,enrichment={buildings:{}},architecture,ele
  return {group,pickMeshes:[wallMesh,roofMesh,detailMesh].filter(Boolean),stats};
 }
 const dot=(q,v)=>q[0]*v[0]+q[1]*v[1];
+// V2.7.1: inner ring of a flat roof's fascia, one point per outline vertex. offsetRing inserts bevel points at clamped
+// mitres, so its output cannot be paired by index with the outline (the fascia quads then crossed the whole roof of
+// the large flat buildings of La Glacière); each vertex takes its nearest inset point, within a metre, or none.
+function alignedInset(r,d,hole){const o=offsetRing(r,-d,hole);if(o.length===r.length)return o;return r.map(p=>{let best=null,bd=1;for(const q of o){const e=Math.hypot(q[0]-p[0],q[1]-p[1]);if(e<bd){bd=e;best=q;}}return best;});}
 
 // Openings as flat painted panels on the facade: a pale frame, a sky-coloured pane, shutters, a door with its frame.
 function panels(a,b,poly,p,o){const dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz);if(len<3.4||p.kind==='canopy')return;
