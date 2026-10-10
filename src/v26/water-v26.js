@@ -4,10 +4,10 @@ import {flat} from './toon-materials.js';
 // V2.6 Poussey diorama — poetic water: an unlit, clear turquoise ribbon (no mud, no plastic), slow drifting light
 // strokes along the flow (ribbon uv.x = metres along, uv.y = side), a pale foam edge against the banks. Applied to the
 // V2.4 water mesh (same geometry).
-export function waterMaterialV26(){
- const uniforms={uTime:{value:0}};
- const m=flat(new THREE.MeshBasicMaterial({color:'#ffffff',transparent:true,opacity:.95,side:THREE.DoubleSide}),'water',`
-  float t=uTime;vec3 deep=vec3(.3,.6,.73),light=vec3(.47,.74,.83),foam=vec3(.86,.94,.94),stroke=vec3(.8,.93,.95);
+export function waterMaterialV26({style='v26'}={}){
+ const uniforms={uTime:{value:0}};const v29=style==='v29';
+ const m=flat(new THREE.MeshBasicMaterial({color:'#ffffff',transparent:true,opacity:.95,side:THREE.DoubleSide}),v29?'water-v29':'water',`
+  float t=uTime;vec3 deep=${v29?'vec3(.31,.57,.66)':'vec3(.3,.6,.73)'},light=${v29?'vec3(.5,.75,.79)':'vec3(.47,.74,.83)'},foam=vec3(.88,.94,.93),stroke=${v29?'vec3(.78,.91,.92)':'vec3(.8,.93,.95)'};
   float body=vnoise(vWorld.xz*.12+vec2(t*.04,-t*.02));vec3 col=mix(deep,light,body);
   float s=vnoise(vec2(vUvM.x*.55-t*1.1,vUvM.y*2.6+vWorld.x*.03));float s2=vnoise(vec2(vUvM.x*.9-t*.7+7.,vUvM.y*3.1));
   col=mix(col,stroke,smoothstep(.62,.72,s)*.55+smoothstep(.68,.76,s2)*.4);

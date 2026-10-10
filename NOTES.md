@@ -1,3 +1,11 @@
+# Notes V2.9 — art pass JRPG, continuité hydro et fiches immersives, 10 octobre 2026
+
+- **Un ruisseau qui « s'arrête » est presque toujours un ruisseau caché.** Les 57 vraies extrémités du réseau sont des sources, des fossés ou des limites de données ; près du Craon, ce sont les masses de canopée V2.7 qui recouvraient le ruisseau et le bras des Moulins de Poussey. Un corridor dans le raster de canopée (vertices traités comme hors du bois) suffit, sans ajouter un seul point à la donnée.
+- **Effiler, pas prolonger.** Une vraie extrémité (aucune autre ligne à 1,6 m, hors surface d'eau) reçoit un effilement sur 14 m jusqu'à 35 % de sa largeur et un bout rond : elle se lit comme voulue. Une jonction garde sa largeur pleine, sinon elle semblerait coupée.
+- **La fiche montre ce qu'un visiteur veut lire ; le reste attend le mode technique.** Statut, fiabilité, codes de Bible, identifiants OSM / RNB restent dans `describe(r).tech` et ne s'affichent qu'en diagnostic ; `facts` reste un alias de « À retenir » pour les vérifications automatiques.
+- **Un contenu déterministe se relit.** Les 18 fiches enrichies vivent dans un fichier de données (`src/content/place-stories-v29.js`) avec leurs sources (Bibles et extraits web datés) : pas de génération à l'exécution, pas d'adresse inventée (absente quand inconnue).
+- **La rampe toon douce coûte zéro géométrie.** Lumière chaude, ombres bleutées, quatre niveaux adoucis, sillons dans la texture du sol et étalonnage dans la passe finale : le nombre de triangles reste celui de la V2.8 (quelques milliers de plus pour les rubans d'eau et leurs bouts ronds).
+
 # Notes V2.8 — landmarks par références web, 10 octobre 2026
 
 - **Une référence écrite vaut mieux qu'une photo imaginée.** L'environnement n'atteint pas les sites d'images ; les descriptions de la Sauvegarde de l'Art Français et de la Fondation du patrimoine (tuiles sur la nef romane, ardoises sur le gothique, flèche courte, tourelle à poivrière, chevet à cinq pans) suffisent à fixer une silhouette juste ; ce qu'elles ne disent pas reste stylisé et dit comme tel.

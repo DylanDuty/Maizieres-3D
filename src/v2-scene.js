@@ -160,8 +160,11 @@ export async function buildV2Scene(scene,{relief,base,quality,exclude=null}){
  for(const a of d.water){for(const p of a.r){const rings=p.map(r=>{const out=[];for(let i=0;i<r.length;i+=2)out.push([r[i],r[i+1]]);return out;}).filter(r=>r.length>=3);if(!rings.length)continue;
   let lvl=Infinity;for(const r of rings)for(const q of r)if(onGrid(q[0],q[1]))lvl=Math.min(lvl,heightAt(q[0],q[1]));if(!Number.isFinite(lvl))continue;
   const sh=rings.map(r=>r.map(q=>new THREE.Vector2(q[0],q[1])));for(const t of THREE.ShapeUtils.triangulateShape(sh[0],sh.slice(1))){const v=t.map(i=>sh.flat()[i]);waterBatch.tri(...v.map(q=>[q.x,lvl+.3,q.y]),V2_COLORS.water,v.map(()=>[0,.5]));}}}
- for(const l of d.waterLines){const p=[];for(let i=0;i<l.p.length;i+=2)p.push(l.p[i],l.p[i+1],-1e9);ribbon(waterBatch,p,Math.max(1.4,l.w||3),.2,l.perm?V2_COLORS.water:V2_COLORS.waterIntermittent,{maxStep:6});}
  const waterMesh=waterBatch.mesh(group,false);if(waterMesh){waterMesh.name='v2-water';waterMesh.receiveShadow=true;}
+ // V2.9: the watercourses get their own mesh so a stylised mode can replace them (tapered ends, round caps) while the ponds stay.
+ const waterLineBatch=new Batch(waterMaterial(V2_COLORS.water));
+ for(const l of d.waterLines){const p=[];for(let i=0;i<l.p.length;i+=2)p.push(l.p[i],l.p[i+1],-1e9);ribbon(waterLineBatch,p,Math.max(1.4,l.w||3),.2,l.perm?V2_COLORS.water:V2_COLORS.waterIntermittent,{maxStep:6});}
+ const waterLineMesh=waterLineBatch.mesh(group,false);if(waterLineMesh){waterLineMesh.name='v2-water-lines';waterLineMesh.receiveShadow=true;}
 
  // ---------- Hedges: rounded instanced bushes along the DSB lines (skipped in "very fluid"; the texture keeps them) ----------
  // V2.1: no 3D hedge over a watercourse or a water surface (see hydro-display.js).

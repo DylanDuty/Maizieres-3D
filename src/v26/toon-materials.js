@@ -10,7 +10,7 @@ float vnoise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h
 `;
 const RAMP=`
 uniform vec3 uSun;uniform float uSunMax,uRim,uBands;uniform vec3 uRimColor,uShadowTint;float gLit=1.;
-float toonRamp(float v){float banded=smoothstep(.06,.2,v)*.5+smoothstep(.4,.6,v)*.5;return mix(clamp(v*1.4,0.,1.),banded,uBands);}
+float toonRamp(float v){float banded=smoothstep(.06,.2,v)*.5+smoothstep(.4,.6,v)*.5;float soft=smoothstep(.03,.13,v)*.26+smoothstep(.2,.36,v)*.3+smoothstep(.46,.7,v)*.44;return uBands>1.5?soft:mix(clamp(v*1.4,0.,1.),banded,uBands);}
 `;
 const LAMBERT=`
 varying vec3 vViewPosition;
@@ -47,13 +47,16 @@ export function flat(material,key,chunk='',uniforms={}){
   shader.fragmentShader=shader.fragmentShader.replace('#include <common>','#include <common>\n'+VARYINGS+NOISE+decl).replace('#include <color_fragment>','#include <color_fragment>\n'+chunk);};
  material.customProgramCacheKey=()=>'v26-'+key;return material;}
 
-export function makeMaterialsV26(){
+// V2.9 (`style:'v29'`): softer tile rows a little stronger, asphalt with a wider soft edge, warmer shoulders — the JRPG
+// pass changes shaders and palettes, never geometry.
+export function makeMaterialsV26({style='v26'}={}){const v29=style==='v29';
  const lam=o=>new THREE.MeshLambertMaterial({vertexColors:true,side:THREE.FrontSide,...o});
  const M={};
  // Walls: flat pastel, a soft darker base band, a whisper of hand-painted unevenness.
  M.wall=toon(lam({}),'wall',`diffuseColor.rgb*=mix(.84,1.,smoothstep(0.,1.2,vUvM.y));diffuseColor.rgb*=.985+.03*vnoise(vWorld.xz*.4+vWorld.y*.3);`);
  // Tiled roofs: faint rows across the slope (uv.y = metres across), plain roofs: flat with a soft variation.
- M.roofTile=toon(lam({}),'roof-tile',`float row=fract(vUvM.y/.46);diffuseColor.rgb*=1.-.08*smoothstep(.74,.9,row);diffuseColor.rgb*=.975+.05*vnoise(vWorld.xz*.5);`);
+ M.roofTile=v29?toon(lam({}),'roof-tile-v29',`float row=fract(vUvM.y/.46);diffuseColor.rgb*=1.-.11*smoothstep(.7,.9,row);float col=fract(vUvM.x/.32+step(.5,fract(vUvM.y/.92))*.5);diffuseColor.rgb*=1.-.035*smoothstep(.8,.95,col);diffuseColor.rgb*=.97+.06*vnoise(vWorld.xz*.5);`)
+  :toon(lam({}),'roof-tile',`float row=fract(vUvM.y/.46);diffuseColor.rgb*=1.-.08*smoothstep(.74,.9,row);diffuseColor.rgb*=.975+.05*vnoise(vWorld.xz*.5);`);
  M.roofPlain=toon(lam({}),'roof-plain',`diffuseColor.rgb*=.975+.05*vnoise(vWorld.xz*.5);`);
  // V2.6.1 big buildings: wall panels with a joint every 2,4 m and a darker base band; sheet roofs with ribs down the slope.
  M.wallPanels=toon(lam({}),'wall-panels',`float j=smoothstep(.0,.07,abs(fract(vUvM.x/2.4+.5)-.5)*2.4);diffuseColor.rgb*=mix(.84,1.,j);diffuseColor.rgb*=mix(.78,1.,smoothstep(1.05,1.2,vUvM.y));diffuseColor.rgb*=mix(1.,1.06,smoothstep(2.6,2.8,vUvM.y)*(1.-smoothstep(3.2,3.4,vUvM.y)));diffuseColor.rgb*=.985+.03*vnoise(vWorld.xz*.4+vWorld.y*.3);`);
@@ -64,8 +67,9 @@ export function makeMaterialsV26(){
  M.leaf.onBeforeCompile=(f=>s=>{f(s);s.uniforms.uRim={value:.26};})(M.leaf.onBeforeCompile);M.leaf.customProgramCacheKey=()=>'v26-leaf';
  M.trunk=toon(lam({}),'trunk');
  // Roads: warm grey asphalt with a pale edge, sand paths, cream shoulders (vertex colour of the V2.5 strips ignored).
- M.shoulder=toon(lam({vertexColors:false,color:'#d6ccab'}),'shoulder',`diffuseColor.rgb*=.96+.08*vnoise(vWorld.xz*.6);`);
- M.asphalt=toon(lam({vertexColors:false,color:'#9598a0'}),'asphalt',`float e=smoothstep(.0,.09,min(vUvM.y,1.-vUvM.y));diffuseColor.rgb*=mix(1.18,1.,e);diffuseColor.rgb*=.97+.06*vnoise(vWorld.xz*.08);`);
+ M.shoulder=toon(lam({vertexColors:false,color:v29?'#dbd1b3':'#d6ccab'}),v29?'shoulder-v29':'shoulder',`diffuseColor.rgb*=.96+.08*vnoise(vWorld.xz*.6);`);
+ M.asphalt=v29?toon(lam({vertexColors:false,color:'#9c9ea3'}),'asphalt-v29',`float e=smoothstep(.0,.17,min(vUvM.y,1.-vUvM.y));diffuseColor.rgb*=mix(1.14,1.,e);diffuseColor.rgb*=.95+.09*vnoise(vWorld.xz*.07)+.03*vnoise(vWorld.xz*.9);`)
+  :toon(lam({vertexColors:false,color:'#9598a0'}),'asphalt',`float e=smoothstep(.0,.09,min(vUvM.y,1.-vUvM.y));diffuseColor.rgb*=mix(1.18,1.,e);diffuseColor.rgb*=.97+.06*vnoise(vWorld.xz*.08);`);
  M.earth=toon(lam({vertexColors:false,color:'#d9c49c'}),'earth',`diffuseColor.rgb*=.96+.08*vnoise(vWorld.xz*.5);`);
  M.dash=flat(new THREE.MeshBasicMaterial({color:'#f4efdf',transparent:true,depthWrite:false}),'dash',`float d=step(.55,fract(vUvM.x/9.));diffuseColor.a*=d*.85;`);
  return M;

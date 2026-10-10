@@ -8,6 +8,7 @@ import {createPostV26} from '../v26/post-v26.js';
 import {V26_LIGHT} from '../v26/visual-v26.js';
 import {buildGroundV27} from './ground-v27.js';
 import {buildVegetationV27} from './vegetation-v27.js';
+import {buildHydroV29} from '../v29/hydro-v29.js';
 import {specialBuildingsV28,warMemorialV28,landmarkIndex} from '../v28/landmarks-v28.js';
 import {Tri} from '../v25/procedural-houses.js';
 
@@ -21,6 +22,9 @@ export const V27_QUALITY={
  balanced:{label:'Équilibré',dpr:1.5,shadow:2048,soft:true,ao:true,smaa:true,outline:true,tilt:false,texture:4096,veg:{lod:1,edgeStep:40,emergentStep:70,poplarStep:28,gardenCell:20,hedgeStep:4.5,houseShrubs:true,riparianStep:16}},
  performance:{label:'Performance',dpr:1,shadow:1024,soft:false,ao:false,smaa:false,outline:true,tilt:false,texture:2048,veg:{lod:0,edgeStep:40,emergentStep:0,poplarStep:30,gardenCell:26,hedgeStep:5,houseShrubs:false,riparianStep:24}}};
 export const V27_LIGHT={...V26_LIGHT,fogNear:2400,fogFar:9800};
+// V2.9 — JRPG light: a warm golden key, a softer and slightly cooler sky fill, cooler blue-green shade, a lighter haze
+// that starts nearer so the distance desaturates gently, a paler horizon.
+export const V29_LIGHT={...V26_LIGHT,sun:'#ffe3b6',sunIntensity:2.0,direction:[-.42,.72,.55],shadow:.88,sky:'#d4e5f4',ground:'#eadfbd',hemisphere:1.06,fog:'#e7edef',fogNear:1700,fogFar:7400,zenith:'#86bce6',horizon:'#eff3f2',below:'#e3e7dc'};
 const SUN_DISTANCE=2600;
 
 function skyDome(L){const geo=new THREE.SphereGeometry(16000,32,16);const mat=new THREE.ShaderMaterial({side:THREE.BackSide,depthWrite:false,fog:false,uniforms:{zenith:{value:new THREE.Color(L.zenith)},horizon:{value:new THREE.Color(L.horizon)},below:{value:new THREE.Color(L.below)}},
@@ -33,17 +37,17 @@ function restyleRail(v2,M){const names={'v2-ballast':toon(new THREE.MeshLambertM
  'v2-rail':toon(new THREE.MeshLambertMaterial({color:'#737a84'}),'rails'),'v2-level-planks':toon(new THREE.MeshLambertMaterial({color:'#cdb995'}),'planks')};
  let n=0;for(const [name,mat] of Object.entries(names)){const o=v2.group.getObjectByName(name);if(o&&o.isMesh){o.material=mat;n++;}}return n;}
 
-export async function buildVisualV27({scene,renderer,camera,sun,hemisphere,v2,items,enrichment,architecture,elevation,quality='beauty',diorama=false,poiAt=null}){
- const Q=V27_QUALITY[quality]||V27_QUALITY.beauty,L=V27_LIGHT,heightAt=v2.heightAt;
+export async function buildVisualV27({scene,renderer,camera,sun,hemisphere,v2,items,enrichment,architecture,elevation,quality='beauty',diorama=false,poiAt=null,style='v28'}){
+ const v29=style==='v29';const Q=V27_QUALITY[quality]||V27_QUALITY.beauty,L=v29?V29_LIGHT:V27_LIGHT,heightAt=v2.heightAt;
  scene.add(skyDome(L));
  scene.fog=new THREE.Fog(L.fog,L.fogNear,L.fogFar);renderer.setClearColor(L.horizon,1);renderer.toneMapping=THREE.NoToneMapping;renderer.toneMappingExposure=1;
  sun.color.set(L.sun);sun.intensity=L.sunIntensity;sun.shadow.intensity=L.shadow;hemisphere.color.set(L.sky);hemisphere.groundColor.set(L.ground);hemisphere.intensity=L.hemisphere;setKeyLight(sun.color,sun.intensity);
  const dir=new THREE.Vector3(...L.direction).normalize(),sunOffset=dir.clone().multiplyScalar(SUN_DISTANCE);
  Object.assign(sun.shadow.camera,{near:50,far:7000});sun.shadow.mapSize.set(Q.shadow,Q.shadow);sun.shadow.bias=-.00025;sun.shadow.map?.dispose();sun.shadow.map=null;
  renderer.shadowMap.type=Q.soft?THREE.PCFSoftShadowMap:THREE.PCFShadowMap;renderer.shadowMap.enabled=true;
- const M=makeMaterialsV26();SHADING.uBands.value=1;
+ const M=makeMaterialsV26({style:v29?'v29':'v26'});SHADING.uBands.value=v29?2:1;SHADING.uShadowTint.value.set(v29?'#8ea9b6':'#8f9ac6');SHADING.uRim.value=v29?.15:.12;
  const group=new THREE.Group();group.name='v27';scene.add(group);
- const ground=buildGroundV27(v2,{size:Q.texture}),box=ground.box;
+ const ground=buildGroundV27(v2,{size:Q.texture,style:v29?'v29':'v26'}),box=ground.box;
  for(const name of ['v2-roads','v2-road-marks']){const o=v2.group.getObjectByName(name);if(o)o.visible=false;}
  const railMeshes=restyleRail(v2,M);
  // V2.8: landmarks from documented references (church, water towers, memorial, mairie and fire-station accents).
@@ -52,14 +56,17 @@ export async function buildVisualV27({scene,renderer,camera,sun,hemisphere,v2,it
  const extras=new Tri();const memorial=warMemorialV28(extras,poiAt,heightAt);
  if(extras.n){const g=extras.geometry(),m=new THREE.Mesh(g,M.detail);m.name='v27-landmarks';m.castShadow=true;m.receiveShadow=true;group.add(m);}
  const roads=buildRoadsV25(group,{v2,box,heightAt,materials:M});
- const vegetation=buildVegetationV27(group,{v2,box,buildings:items,heightAt,materials:M,q:Q.veg});
- const water=waterMaterialV26();const waterMesh=v2.group.getObjectByName('v2-water');if(waterMesh){waterMesh.material=water.material;waterMesh.renderOrder=1;}
+ const vegetation=buildVegetationV27(group,{v2,box,buildings:items,heightAt,materials:M,q:v29?{...Q.veg,riparianCorridor:11}:Q.veg});
+ const water=waterMaterialV26({style:v29?'v29':'v26'});const waterMesh=v2.group.getObjectByName('v2-water');if(waterMesh){waterMesh.material=water.material;waterMesh.renderOrder=1;}
+ const waterLines=v2.group.getObjectByName('v2-water-lines');let hydro=null;
+ if(v29){if(waterLines)waterLines.visible=false;hydro=buildHydroV29(group,{v2,heightAt,material:water.material});}
+ else if(waterLines){waterLines.material=water.material;waterLines.renderOrder=1;}
  const aoBox=new THREE.Box3(new THREE.Vector3(box.minX-50,-80,box.minZ-50),new THREE.Vector3(box.maxX+50,160,box.maxZ+50));
- const post=createPostV26(renderer,scene,camera,{ao:Q.ao,smaa:Q.smaa,outline:Q.outline,tilt:Q.tilt,tiltAmount:diorama?2.4:.75,tiltBand:diorama?.16:.26,vignette:.14,aoBox});
+ const post=createPostV26(renderer,scene,camera,{ao:Q.ao,smaa:Q.smaa,outline:Q.outline,tilt:Q.tilt,tiltAmount:diorama?2.4:.75,tiltBand:diorama?.16:.26,vignette:v29?.12:.14,aoBox,grade:v29});
  renderer.shadowMap.needsUpdate=true;
  const start=performance.now();
  return {group,pickMeshes:houses.pickMeshes,post,box,views:null,wholeMap:true,dynamicShadow:true,sunOffset:sunOffset.toArray(),quality,cameraFor:v25CameraFor,
   update:now=>{water.update((now-start)/1000);},
   setSize:(w,h)=>post.setSize(w,h),
-  stats:{mode:'cartoon-v28',quality,diorama,landmarks:special.stats,tiltShift:Q.tilt?(diorama?'fort (2,4 px, bande 0,16)':'léger (0,75 px, bande 0,26)'):'aucun',buildings:houses.stats.buildings,byClass:houses.stats.byClass,houseVariants:houses.stats.variants,bigVariants:houses.stats.bigVariants,windows:houses.stats.windows,shutters:houses.stats.shutters,doors:houses.stats.doors,garageDoors:houses.stats.garageDoors,chimneys:houses.stats.chimneys,roads:roads.count,railMeshes,memorial,vegetation:vegetation.stats,ground:{texture:ground.texture,vertices:ground.vertices,box}}};
+  stats:{mode:v29?'cartoon-v29':'cartoon-v28',style,quality,diorama,landmarks:special.stats,hydro:hydro?.stats||null,tiltShift:Q.tilt?(diorama?'fort (2,4 px, bande 0,16)':'léger (0,75 px, bande 0,26)'):'aucun',buildings:houses.stats.buildings,byClass:houses.stats.byClass,houseVariants:houses.stats.variants,bigVariants:houses.stats.bigVariants,windows:houses.stats.windows,shutters:houses.stats.shutters,doors:houses.stats.doors,garageDoors:houses.stats.garageDoors,chimneys:houses.stats.chimneys,roads:roads.count,railMeshes,memorial,vegetation:vegetation.stats,ground:{texture:ground.texture,vertices:ground.vertices,box}}};
 }

@@ -30,10 +30,16 @@ const TILT={uniforms:{tDiffuse:{value:null},res:{value:new THREE.Vector2(1,1)},d
  fragmentShader:`uniform sampler2D tDiffuse;uniform vec2 res,dir;uniform float focus,band,amount;varying vec2 vUv;
  void main(){float r=amount*smoothstep(band,band+.34,abs(vUv.y-focus));vec2 st=dir/res*r;
   vec4 c=texture2D(tDiffuse,vUv)*.2270270270;c+=(texture2D(tDiffuse,vUv+st*1.3846153846)+texture2D(tDiffuse,vUv-st*1.3846153846))*.3162162162;c+=(texture2D(tDiffuse,vUv+st*3.2307692308)+texture2D(tDiffuse,vUv-st*3.2307692308))*.0702702703;gl_FragColor=c;}`};
+// V2.9 colour grade: a gentle S-curve, a warm lift in the lights, a cooler shadow tint and a touch of saturation — the
+// "painted anime" look, applied in sRGB after the output pass. Nothing is blurred or bloomed.
+const GRADE={uniforms:{tDiffuse:{value:null},warmth:{value:.045},contrast:{value:1.07},saturation:{value:1.06},lift:{value:.012}},vertexShader:`varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
+ fragmentShader:`uniform sampler2D tDiffuse;uniform float warmth,contrast,saturation,lift;varying vec2 vUv;
+ void main(){vec4 c=texture2D(tDiffuse,vUv);vec3 x=c.rgb;x=mix(vec3(dot(x,vec3(.299,.587,.114))),x,saturation);x=(x-.5)*contrast+.5+lift;
+ float l=dot(x,vec3(.299,.587,.114));x+=vec3(warmth,warmth*.55,-warmth*.6)*smoothstep(.35,.95,l);x-=vec3(warmth*.5,warmth*.2,-warmth*.4)*(1.-smoothstep(.05,.45,l));gl_FragColor=vec4(clamp(x,0.,1.),c.a);}`};
 const VIGNETTE={uniforms:{tDiffuse:{value:null},strength:{value:.14}},vertexShader:`varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
  fragmentShader:`uniform sampler2D tDiffuse;uniform float strength;varying vec2 vUv;void main(){vec4 c=texture2D(tDiffuse,vUv);float d=distance(vUv,vec2(.5))*1.35;c.rgb*=1.-strength*smoothstep(.6,1.15,d);gl_FragColor=c;}`};
 
-export function createPostV26(renderer,scene,camera,{ao=true,smaa=true,outline=true,tilt=true,tiltAmount=.75,tiltBand=.26,vignette=.14,aoBox=null,outlineStrength=.75}={}){
+export function createPostV26(renderer,scene,camera,{ao=true,smaa=true,outline=true,tilt=true,tiltAmount=.75,tiltBand=.26,vignette=.14,aoBox=null,outlineStrength=.75,grade=false}={}){
  const size=renderer.getDrawingBufferSize(new THREE.Vector2());
  const depthTexture=new THREE.DepthTexture(size.x,size.y);depthTexture.type=THREE.UnsignedIntType;
  const sceneTarget=new THREE.WebGLRenderTarget(size.x,size.y,{type:THREE.HalfFloatType,depthTexture});
@@ -45,6 +51,7 @@ export function createPostV26(renderer,scene,camera,{ao=true,smaa=true,outline=t
   if(aoBox)gtao.setSceneClipBox(aoBox);composer.addPass(gtao);}
  let outlinePass=null;if(outline){outlinePass=new OutlinePass(scenePass,camera);outlinePass.uniforms.strength.value=outlineStrength;composer.addPass(outlinePass);}
  composer.addPass(new OutputPass());
+ if(grade){const g=new ShaderPass(GRADE);if(typeof grade==='object')for(const [k,v] of Object.entries(grade))if(g.uniforms[k])g.uniforms[k].value=v;composer.addPass(g);}
  if(smaa)composer.addPass(new SMAAPass());
  const tilts=[];if(tilt){for(const d of [[1,0],[0,1]]){const p=new ShaderPass(TILT);p.uniforms.dir.value.set(...d);p.uniforms.amount.value=tiltAmount;p.uniforms.band.value=tiltBand;composer.addPass(p);tilts.push(p);}}
  if(vignette>0){const vig=new ShaderPass(VIGNETTE);vig.uniforms.strength.value=vignette;composer.addPass(vig);}

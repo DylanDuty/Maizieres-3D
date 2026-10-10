@@ -133,3 +133,41 @@ footer{background:linear-gradient(transparent,#e8ede4e8);color:#4a5a4f}
 }
 @media(max-width:900px) and (max-height:460px){#quick{bottom:36px;left:14px!important;right:auto;max-width:min(420px,60vw)}#selection{max-height:70vh}}
 @media(prefers-reduced-motion:reduce){#quick,#selection{animation:none}}
+
+/* V2.9 — immersive place cards: a warm travel-journal / JRPG menu look. Cream paper, a fine amber rule, deep green
+   headings, small glyph markers, soft shadow, a light slide-in; on a phone a bottom sheet with a handle (≤ 60 %). */
+#selection{left:24px;bottom:84px;top:auto;max-width:372px;width:calc(100vw - 48px);max-height:min(70vh,640px);overflow:auto;background:linear-gradient(180deg,#fffaf0 0%,#fdf4e3 100%);border:1px solid #e4c98f;border-left:0;border-radius:14px;padding:18px 22px 16px 22px;box-shadow:0 18px 44px #3a2f1a2b,0 0 0 4px #fffaf0cc,0 2px 0 #fff inset;animation:card-in .28s cubic-bezier(.2,.8,.3,1)}
+#selection:before{display:none}
+#selection:after{content:'';position:absolute;left:14px;right:14px;top:9px;height:1px;background:linear-gradient(90deg,transparent,#d9b56a,transparent)}
+@keyframes card-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+#selection .sheet-handle{display:none}
+#selection-close{top:10px;right:10px}
+#selection-kind{margin:4px 0 4px;color:#b07d2e;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+#selection-kind:before{content:'✦ ';color:#d9a24a}
+#selection-title{margin:0;font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:24px;line-height:1.15;color:#1f3d2d}
+#selection-address{margin:6px 0 0;font-size:13px;color:#5f6b52}
+#selection-address:before{content:'◆ ';font-size:9px;color:#9fb279;vertical-align:1px}
+#selection-address[hidden],#selection-summary[hidden],#selection-keep[hidden],#selection-block[hidden],#selection-sources[hidden],#selection-tech[hidden],#selection-note[hidden]{display:none}
+#selection-summary{margin:12px 0 0;padding-top:12px;border-top:1px dashed #e3cf9f;font:15px/1.5 Georgia,'Times New Roman',serif;color:#2f4637}
+#selection-keep,#selection-block{margin:12px 0 0;padding-top:10px;border-top:1px dashed #e3cf9f}
+#selection h3{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#2f4637}
+#selection h3:before{content:'❖ ';color:#d9a24a;font-size:10px}
+#selection-facts{margin:0;padding:0;list-style:none;font-size:13.5px;line-height:1.45;color:#3d5446}
+#selection-facts li{position:relative;padding-left:16px;margin:4px 0}
+#selection-facts li:before{content:'';position:absolute;left:3px;top:.6em;width:6px;height:6px;border-radius:50%;background:#e2b263;box-shadow:0 0 0 2px #fff6e3}
+#selection-block-text{margin:0;font:14px/1.5 Georgia,'Times New Roman',serif;color:#3f4a3c}
+#selection details{margin:12px 0 0;padding-top:8px;border-top:1px dashed #e3cf9f;font-size:12.5px;color:#6a6f5a}
+#selection details summary{cursor:pointer;list-style:none;font-weight:650;color:#8c6a2d;letter-spacing:.04em}
+#selection details summary::-webkit-details-marker{display:none}
+#selection details summary:before{content:'▸ ';transition:transform .2s;display:inline-block}
+#selection details[open] summary:before{transform:rotate(90deg)}
+#selection details ul{margin:6px 0 0;padding-left:16px}
+#selection details li{margin:3px 0;line-height:1.4}
+#selection details a{color:#2f4637}
+#selection-note{margin:10px 0 0;font-size:11px;color:#9a9a86}
+@media(max-width:850px){#selection{left:12px;right:12px;width:auto;max-width:none;bottom:0;border-radius:18px 18px 0 0;max-height:60vh;padding:22px 18px 18px;box-shadow:0 -10px 36px #3a2f1a2e}
+ #selection .sheet-handle{display:block;position:absolute;top:8px;left:50%;width:42px;height:4px;margin-left:-21px;border-radius:2px;background:#d9b56a99}
+ #selection:after{display:none}#selection-title{font-size:21px}#selection-summary{font-size:14px}}
+@media(max-width:900px) and (max-height:460px){#selection{bottom:0;max-height:60vh}}
+#quick-address{margin:2px 0 0;font-size:11px;color:#4f6350;text-shadow:0 1px 0 rgba(255,255,255,.7)}#quick-address[hidden]{display:none}
+#selection details li.quote{font:italic 12px/1.4 Georgia,serif;color:#5d5a48;list-style:none;margin-left:-16px;padding:6px 8px;background:#f6edd8;border-radius:8px}

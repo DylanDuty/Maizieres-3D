@@ -26,6 +26,12 @@ export function buildVegetationV27(parent,{v2,box,buildings,heightAt,materials:M
  for(const r of d.roads)line(r.p,3,(r.w||3)+4.5);for(const t of d.rail)line(t.p,3,9);for(const l of d.waterLines)line(l.p,2,(l.w||3)+3);
  for(const a of [...d.water,...d.artificial.filter(a=>a.kind==='surface')])for(const p of a.r)fillRings(p);
  const px=ctx.getImageData(0,0,MW,MH).data,blocked=(x,z)=>{const i=Math.floor(X(x)),j=Math.floor(Z(z));return i<0||j<0||i>=MW||j>=MH||px[(j*MW+i)*4+3]>0;};
+ // V2.9: riparian corridor raster. Grid vertices of a canopy mass that lie within the corridor of a watercourse are
+ // treated as outside the wood, so the stream stays visible under a soft-edged gap instead of vanishing under the mass.
+ const corridorW=q?.riparianCorridor??0;let inCorridor=()=>false;
+ if(corridorW>0){const cv=document.createElement('canvas');cv.width=MW;cv.height=MH;const cx2=cv.getContext('2d',{willReadFrequently:true});cx2.strokeStyle='#000';cx2.lineCap='round';cx2.lineJoin='round';
+  for(const l of d.waterLines){cx2.lineWidth=Math.max(2,((l.w||3)+corridorW)*sx);cx2.beginPath();for(let i=0;i<l.p.length;i+=2)i?cx2.lineTo(X(l.p[i]),Z(l.p[i+1])):cx2.moveTo(X(l.p[i]),Z(l.p[i+1]));cx2.stroke();}
+  const cpx=cx2.getImageData(0,0,MW,MH).data;inCorridor=(x,z)=>{const i=Math.floor(X(x)),j=Math.floor(Z(z));return i>=0&&j>=0&&i<MW&&j<MH&&cpx[(j*MW+i)*4+3]>0;};}
  const bbox=p=>{let b=[Infinity,Infinity,-Infinity,-Infinity];for(const r of p)for(let i=0;i<r.length;i+=2)b=[Math.min(b[0],r[i]),Math.min(b[1],r[i+1]),Math.max(b[2],r[i]),Math.max(b[3],r[i+1])];return b;};
  const list=[],add=(x,z,type,h,lod,hue=null,wide=1)=>{if(!inBox(x,z)||blocked(x,z))return;list.push({x,z,type,h,lod,hue,wide});};
  const choose=w=>{let t=rng()*w.reduce((a,[,v])=>a+v,0);for(const [k,v] of w){t-=v;if(t<=0)return k;}return w[0][0];};
@@ -37,7 +43,7 @@ export function buildVegetationV27(parent,{v2,box,buildings,heightAt,materials:M
  const canopy=new Map();let canopyCells=0;
  const addCanopy=(poly,type,hueSeed)=>{const b=bbox(poly),step=8,H=(type==='peupleraie'?11:type==='lande_ligneuse'?3:type==='foret_ouverte'?7:11.5)*(.88+.24*h12(b[0],b[1])),x0=Math.floor(b[0]/step)*step,z0=Math.floor(b[1]/step)*step,cols=Math.ceil((b[2]-x0)/step)+2,rows=Math.ceil((b[3]-z0)/step)+2;
   if(cols*rows>400000)return;const inside=new Uint8Array(cols*rows);
-  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++)inside[r*cols+c]=inPoly(x0+c*step,z0+r*step,poly)?1:0;
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){const x=x0+c*step,z=z0+r*step;inside[r*cols+c]=inPoly(x,z,poly)&&!inCorridor(x,z)?1:0;}
   const nb=(c,r)=>{let n=0,t=0;for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++){if(!dr&&!dc)continue;const cc=c+dc,rr=r+dr;if(cc<0||rr<0||cc>=cols||rr>=rows)continue;t++;n+=inside[rr*cols+cc];}return [n,t];};
   const key=`${Math.floor((b[0]+b[2])/2/TILE)},${Math.floor((b[1]+b[3])/2/TILE)}`;if(!canopy.has(key))canopy.set(key,{p:[],c:[],i:[]});const t=canopy.get(key),base=t.p.length/3,used=new Int32Array(cols*rows).fill(-1);
   // Profile folded inside the polygon: boundary ring 35 %, second ring 75 %, interior 100 %; nothing outside (the

@@ -18,7 +18,7 @@ const SPRING=[[/colza|moutarde/i,['#e4dc7e','#e9e18a']],[/bl[ée]|avoine|seigle|
 const springTint=(a,k)=>{if(a.t==='terre_arable'&&a.crop){const hit=SPRING.find(([re])=>re.test(a.crop));if(hit)return hit[1][Math.floor(k*hit[1].length)%hit[1].length];}return {jachere:'#d7d2a3',autre_surface_agricole:'#cdd7a0',culture_permanente:'#cbb9a4'}[a.t]||cropTint(a);};
 
 // Paints the illustrated land cover of `box` into a w × h canvas context (x → u, z → v). Shared by V2.6 and V2.7.
-export function paintGround(ctx,{d,box,w,h,seed=2026}){
+export function paintGround(ctx,{d,box,w,h,seed=2026,style='v26'}){
  const W=box.maxX-box.minX,D=box.maxZ-box.minZ,sx=w/W,sz=h/D,rng=random(seed);
  const X=x=>(x-box.minX)*sx,Z=z=>(z-box.minZ)*sz;
  const path=rings=>{ctx.beginPath();for(const r of rings){for(let i=0;i<r.length;i+=2)i?ctx.lineTo(X(r[i]),Z(r[i+1])):ctx.moveTo(X(r[i]),Z(r[i+1]));ctx.closePath();}};
@@ -39,6 +39,15 @@ export function paintGround(ctx,{d,box,w,h,seed=2026}){
  for(const a of d.agriculture.filter(near)){const k=hash(a.id),meadow=['prairie_permanente','prairie_temporaire'].includes(a.t);const tint=meadow?pastel('#a7cf82',.3,.45,.66,.72,(k-.5)*.05):pastel(springTint(a,k),.28,.5,.68,.8,(k-.5)*.04);fill(a,tint);
   if(meadow)speckle(a,['#c3e09b','#99c278'],70,2,.4);else{stripes(a,shade(tint,-.09),2.2+k*1.1,.14,.5);speckle(a,[shade(tint,.05),shade(tint,-.04)],25,1.6,.3);}}
  for(const a of d.agriculture.filter(near))outline(a,'#9cbd72',1.1,.75);
+ // V2.9: the fields become a graphic surface. Arable parcels get faint furrows along their longest edge (a cultivation
+ // direction, not a declared crop), meadows a soft speckle; both low-contrast so the parcels keep their pastel reading.
+ if(style==='v29'){for(const a of d.agriculture.filter(near)){const ring=a.r[0]?.[0];if(!ring||ring.length<8)continue;let best=0,ux=1,uz=0;for(let i=2;i<ring.length;i+=2){const dx=ring[i]-ring[i-2],dz=ring[i+1]-ring[i-1],L=Math.hypot(dx,dz);if(L>best){best=L;ux=dx/L;uz=dz/L;}}
+   const meadow=['prairie_permanente','prairie_temporaire'].includes(a.t);ctx.save();ctx.beginPath();for(const p of a.r){path(p);}ctx.clip('evenodd');
+   let bx0=Infinity,bx1=-Infinity,bz0=Infinity,bz1=-Infinity;for(let i=0;i<ring.length;i+=2){bx0=Math.min(bx0,ring[i]);bx1=Math.max(bx1,ring[i]);bz0=Math.min(bz0,ring[i+1]);bz1=Math.max(bz1,ring[i+1]);}
+   const cx=(bx0+bx1)/2,cz=(bz0+bz1)/2,R=Math.hypot(bx1-bx0,bz1-bz0)/2,k=hash(a.id+'f');
+   if(meadow){ctx.fillStyle='#8fb86a';ctx.globalAlpha=.16;const n=Math.min(400,Math.round((bx1-bx0)*(bz1-bz0)/900));for(let i=0;i<n;i++){const x=bx0+hash(a.id+i)*(bx1-bx0),z=bz0+hash(a.id+'z'+i)*(bz1-bz0);ctx.beginPath();ctx.arc(X(x),Z(z),Math.max(.6,1.4*sx),0,6.283);ctx.fill();}}
+   else{ctx.strokeStyle=k<.5?'#8fa65c':'#b9b47a';ctx.globalAlpha=.13;ctx.lineWidth=Math.max(.8,1.3*sx);const gap=6.5+k*3;for(let t=-R;t<=R;t+=gap){const px=cx-uz*t,pz=cz+ux*t;ctx.beginPath();ctx.moveTo(X(px-ux*R),Z(pz-uz*R));ctx.lineTo(X(px+ux*R),Z(pz+uz*R));ctx.stroke();}}
+   ctx.restore();ctx.globalAlpha=1;}}
  for(const a of d.artificial.filter(a=>a.kind==='surface'&&near(a)))fill(a,a.t==='parking'?'#c3c0b8':a.t==='terrain_de_sport'?'#a5d08a':'#cec9bd');
  for(const a of d.woodland.filter(near)){const base=a.t==='peupleraie'?'#8fb56a':'#73a35e';fill(a,base);speckle(a,[shade(base,.06),shade(base,-.07)],90,1.8,.45);}
  for(const a of d.hedgePolygons.filter(near))fill(a,'#6ea35b');

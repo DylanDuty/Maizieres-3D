@@ -1,3 +1,13 @@
+# Vérification V2.9 — art pass JRPG, continuité hydro et fiches immersives, 10 octobre 2026
+
+Branche `opus/v2.9-jrpg-hydro-immersive-ui`, à partir de `5b0ad49` (V2.8). Rapport : `docs/audit/V2.9_JRPG_HYDRO_IMMERSIVE_UI.md`. Captures : `docs/qa/v2.9/` (art, hydro, cards, mobile).
+
+- **Géographie** : aucun fichier de `public/`, `unreal/`, `data-sources/` modifié ; 42 fichiers gelés identiques à `309e65e` ; 52 hachages Freeze V1 vérifiés ; aucune ligne d'eau ajoutée ni prolongée (228 lignes, 85 surfaces lues telles quelles).
+- **Hydro** : rubans drapés à joints ronds, bouts arrondis à chaque extrémité, effilement sur 14 m aux 57 vraies extrémités, corridor de 11 m dans la canopée des bois ; le ruisseau et le bras des Moulins de Poussey restent lisibles sous la peupleraie du Craon.
+- **Fiches** : niveau rapide (nom, catégorie, adresse, Détails, ×) puis fiche complète (résumé, « À retenir », bloc, sources repliées) ; 18 fiches enrichies, POI standard, routes et bâtiments ordinaires minimalistes ; statut / fiabilité / identifiants réservés au mode technique.
+- **Chromium** : 14 cadrages art V2.8 / V2.9 comparables, 13 cadrages hydro avant / après (Craon, Poussey, centre, cinq extrémités, ponts), fiches église / monument / mairie / route / bâtiment / hameau sur trois gabarits, mobile portrait et paysage ; 2 596 / 2 596 bâtiments, `manual=0` → 2 584 / 2 584, 0 enfoui, console vide, zoom maximal 420 m conservé.
+- **Contrôles** : `check:all` PASS (60) ; `npm run build` OK.
+
 # Vérification V2.8 — landmarks par références web, 10 octobre 2026
 
 Branche `opus/v2.8-landmarks-web-references`, à partir de `4d47e00` (V2.7.1). Rapport : `docs/audit/V2.8_LANDMARKS_WEB_REFERENCES_ART_DIRECTION.md`. Captures : `docs/qa/v2.8/`.

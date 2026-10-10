@@ -16,7 +16,7 @@
     <button id="labels" aria-pressed="true">Noms des lieux</button>
     <button id="reset" title="Revenir à la vue initiale">⌖ <span>Recentrer la vue</span></button>
   </nav>
-  <aside id="selection" aria-label="Lieu sélectionné" aria-live="polite" hidden><button id="selection-close" aria-label="Fermer la sélection">×</button><p id="selection-kind"></p><h2 id="selection-title"></h2><ul id="selection-facts"></ul><div id="selection-quotes"></div><p id="selection-note"></p></aside>
+  <aside id="selection" aria-label="Lieu sélectionné" aria-live="polite" hidden><span class="sheet-handle" aria-hidden="true"></span><button id="selection-close" aria-label="Fermer la fiche">×</button><p id="selection-kind"></p><h2 id="selection-title"></h2><p id="selection-address" hidden></p><p id="selection-summary" hidden></p><section id="selection-keep" hidden><h3>À retenir</h3><ul id="selection-facts"></ul></section><section id="selection-block" hidden><h3 id="selection-block-title"></h3><p id="selection-block-text"></p></section><details id="selection-sources" hidden><summary>Sources et références</summary><ul id="selection-sources-list"></ul></details><details id="selection-tech" hidden><summary>Données techniques</summary><ul id="selection-tech-list"></ul></details><p id="selection-note" hidden></p></aside>
   <div id="labels-layer"></div>
   <div id="loading" role="status"><div class="spinner"></div><strong>Le village prend forme</strong><span>Chargement de la maquette locale…</span></div>
   <div class="compass" title="Orientation du nord"><span>N</span><div id="north">↑</div></div>

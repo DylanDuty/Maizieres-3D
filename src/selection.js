@@ -3,6 +3,7 @@ import {Batch,strip} from './geometry.js';
 import {insidePoly,area,bounds} from './geo.js';
 import {segmentDistance,featureAtFace} from './cartography.js';
 import {architectureFacts} from './architecture.js';
+import {storyFor,categoryLabel} from './content/place-stories-v29.js';
 
 // Visible labels for the building families used by the renderer. They describe a type, never a name.
 export const KIND_LABELS={house:'Maison',light:'Construction légère',hangar:'Hangar / grand abri',annex:'Dépendance',garage:'Garage',agricultural:'Bâtiment agricole',farm:'Ferme',industrial:'Bâtiment industriel',commercial:'Commerce / activité',large:'Grand bâtiment',public:'Équipement public',canopy:'Abri ouvert',silo:'Silo',greenhouse:'Serre',church:'Église'};
@@ -10,30 +11,29 @@ const clean=s=>s.replace(/\*\*|`/g,'').replace(/\s*[;:]\s*$/,'').replace(/\.$/,'
 const cite=n=>`Bible ${n.bible} §${n.section}`;
 const metres=v=>v.toLocaleString('fr-FR',{maximumFractionDigits:1})+' m';
 
-// Card content: short facts first, then Bible excerpts, then provenance. Pure data → text, no DOM.
+// V2.9 — card content as a discovery card, not a database record. Level A (enriched) comes from the editorial file,
+// level B (standard) from the POI layer (name, category, address, sourced notes), level C (minimal) from the record
+// itself (roads, ordinary buildings). Status, confidence, provenance, identifiers and audit codes never reach the
+// normal card; they are listed under « Données techniques » only when the technical mode is on.
+const ROAD_KIND=r=>{if(r.refs?.length)return `Route ${r.refs.join(' / ')}`;const n=norm0(r.name);if(/^(chemin|voie|sentier|ruelle)/.test(n))return 'Chemin / voie';if(/^(avenue|boulevard)/.test(n))return 'Avenue';if(/^(place)/.test(n))return 'Place';return 'Rue';};
+const norm0=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 export function describe(r){
- const facts=[],quotes=[],b=r.bible||{};let sources=[r.source];
- if(r.refs?.length)facts.push(`Route ${r.refs.join(' / ')}`);
- if(b.sector)facts.push(`Secteur : ${b.sector.name} (${cite(b.sector)})`);
- if(b.listed)facts.push(`Nom présent dans le référentiel des voies (${cite(b.listed)})`);
- if(b.variant)facts.push(`Graphie de la Bible 01 : « ${clean(b.variant.quote)} » — écart avec OSM non tranché`);
- if(b.typeText)facts.push(`${clean(b.typeText)} · confiance ${clean(b.confidence)} (Bible 01 §16)`);
- for(const n of b.notes||[])quotes.push({text:clean(n.quote),cite:cite(n)});
- if(r.generic){const i=r.info;
-  // V2.2: buildings surveyed by hand on the orthophoto say so, with their observed category (never a sourced usage).
-  if(i.manual)facts.push(`Relevé manuel sur orthophoto IGN 2025 (V2.2, non officiel) : ${i.manual.category}`,`Précision : ${i.manual.uncertainty}`);
-  else if(!i.knownUsage&&!i.light)facts.push(`Type estimé d’après l’empreinte : ${KIND_LABELS[i.kind]?.toLowerCase()||'bâtiment'}`);
-  if(i.usage)facts.push(`Usage : ${i.usage.toLowerCase()} (IGN BD TOPO)`);
-  if(i.light)facts.push('Construction légère (cadastre / IGN)');
-  if(i.floors)facts.push(`${i.floors} niveau${i.floors>1?'x':''} (IGN BD TOPO)`);
-  if(i.validation)facts.push(`Confiance ${i.validation.confidence} : ${i.validation.status}`);
-  if(i.rnb)facts.push(`Identifiant RNB : ${i.rnb}`);
-  if(i.architecture)facts.push(...architectureFacts(i.architecture));
-  else facts.push(`Hauteur des murs : ${metres(i.wallHeight)} (${i.heightSource==='IGN BD TOPO'?'IGN BD TOPO':i.heightSource==='OSM'?'OpenStreetMap':'estimée'})`);
- }
- for(const f of r.facts||[])facts.push(f);
- if(r.bible&&!r.source.startsWith('Bible'))sources.push('Bibles documentaires');
- return {eyebrow:r.kind,title:r.name,facts,quotes,source:sources.join(' · ')+(b.method?'. '+b.method:'')};
+ const story=storyFor(r.id),poi=r.poi||null,b=r.bible||{};const sources=[],tech=[],quotes=[];let keep=[],summary=null,block=null,address=null,eyebrow=r.kind,title=r.name;
+ if(poi){eyebrow=categoryLabel(poi.type,poi.category)||r.kind;address=poi.address||null;}
+ if(story){summary=story.summary;keep=story.facts.slice(0,4);block=story.block||null;for(const src of story.sources)sources.push(src);}
+ else if(poi){for(const n of b.notes||[])quotes.push({text:clean(n.quote),cite:cite(n)});}
+ else if(r.type==='line'){eyebrow=ROAD_KIND(r);if(b.sector)keep.push(`Secteur : ${b.sector.name}`);if(b.variant)keep.push(`Graphie ancienne : « ${clean(b.variant.quote)} »`);for(const n of b.notes||[])quotes.push({text:clean(n.quote),cite:cite(n)});if(b.sector)sources.push({label:cite(b.sector)});if(b.listed)sources.push({label:cite(b.listed)});}
+ else if(r.generic){const i=r.info;eyebrow='Bâtiment';
+  if(i.usage&&i.knownUsage)keep.push(`Usage : ${i.usage.toLowerCase()}`);if(i.floors)keep.push(`${i.floors} niveau${i.floors>1?'x':''}`);
+  if(i.manual)tech.push(`Relevé manuel sur orthophoto IGN 2025 (V2.2) : ${i.manual.category} · ${i.manual.uncertainty}`);if(i.light)tech.push('Construction légère (cadastre / IGN)');if(i.validation)tech.push(`Confiance ${i.validation.confidence} : ${i.validation.status}`);if(i.rnb)tech.push(`Identifiant RNB : ${i.rnb}`);
+  if(i.architecture)tech.push(...architectureFacts(i.architecture));else tech.push(`Hauteur des murs : ${metres(i.wallHeight)} (${i.heightSource==='IGN BD TOPO'?'IGN BD TOPO':i.heightSource==='OSM'?'OpenStreetMap':'estimée'})`);}
+ else{for(const n of b.notes||[])quotes.push({text:clean(n.quote),cite:cite(n)});for(const f of r.facts||[])if(!/^(Statut|Fiabilité|Landmark)/.test(f))keep.push(f.replace(/^Adresse : /,''));}
+ // Standard POIs (no story): their sourced notes become the « À retenir » facts, short and without codes.
+ if(poi&&!story){for(const n of (b.notes||[]).slice(0,3)){const t=clean(n.quote).replace(/^[-•*]\s*/,'');if(t.length>12&&t.length<220&&!/^\|/.test(t))keep.push(t);}quotes.length=0;for(const n of b.notes||[])sources.push({label:cite(n)});}
+ for(const f of r.facts||[])if(/^(Statut|Fiabilité|Landmark)/.test(f))tech.push(f);
+ if(r.source)tech.push(`Source : ${r.source}`);if(b.method)tech.push(b.method);
+ const seen=new Set();const srcs=sources.filter(x=>{const k=x.label+(x.url||'');if(seen.has(k))return false;seen.add(k);return true;});
+ const keepOut=keep.slice(0,4);return {eyebrow,title,address,summary,keep:keepOut,facts:keepOut,block,quotes:quotes.slice(0,3),sources:srcs,tech,level:story?'A':poi?'B':'C'};
 }
 
 // V2.0: heightAt / ground place picking and highlights on the real relief; technical=false hides the source line (visitor view).
@@ -41,13 +41,13 @@ export function describe(r){
 // the full card opens only on « Détails », as a narrow side panel (desktop) or a bottom sheet (phone).
 export function installSelection({scene,camera,canvas,catalogue,meshes,buildingInfo,invalidate,target=()=>new THREE.Vector3(),heightAt=null,ground=null,technical=true}){
  const raycaster=new THREE.Raycaster(),plane=new THREE.Plane(new THREE.Vector3(0,1,0),0),groundPoint=new THREE.Vector3(),projected=new THREE.Vector3(),right=new THREE.Vector3();
- const panel=document.querySelector('#selection'),title=document.querySelector('#selection-title'),kind=document.querySelector('#selection-kind'),facts=document.querySelector('#selection-facts'),quotes=document.querySelector('#selection-quotes'),note=document.querySelector('#selection-note');
+ const panel=document.querySelector('#selection'),title=document.querySelector('#selection-title'),kind=document.querySelector('#selection-kind'),facts=document.querySelector('#selection-facts'),note=document.querySelector('#selection-note'),addressEl=document.querySelector('#selection-address'),summaryEl=document.querySelector('#selection-summary'),keepEl=document.querySelector('#selection-keep'),blockEl=document.querySelector('#selection-block'),blockTitle=document.querySelector('#selection-block-title'),blockText=document.querySelector('#selection-block-text'),sourcesEl=document.querySelector('#selection-sources'),sourcesList=document.querySelector('#selection-sources-list'),techEl=document.querySelector('#selection-tech'),techList=document.querySelector('#selection-tech-list');
  // Quick label and its pointer, created here so index.html stays a plain skeleton.
  const quick=document.createElement('div');quick.id='quick';quick.hidden=true;quick.setAttribute('role','status');
- quick.innerHTML='<p id="quick-kind"></p><p id="quick-title"></p><div class="quick-actions"><button type="button" id="quick-details" aria-expanded="false" aria-controls="selection">Détails</button><button type="button" id="quick-close" aria-label="Fermer la sélection">×</button></div>';
+ quick.innerHTML='<p id="quick-kind"></p><p id="quick-title"></p><p id="quick-address" hidden></p><div class="quick-actions"><button type="button" id="quick-details" aria-expanded="false" aria-controls="selection">Détails</button><button type="button" id="quick-close" aria-label="Fermer la sélection">×</button></div>';
  const link=document.createElementNS('http://www.w3.org/2000/svg','svg');link.id='quick-link';link.setAttribute('aria-hidden','true');link.hidden=true;link.innerHTML='<line x1="0" y1="0" x2="0" y2="0"/><circle cx="0" cy="0" r="3.5"/>';
  document.body.append(link,quick);
- const quickKind=quick.querySelector('#quick-kind'),quickTitle=quick.querySelector('#quick-title'),detailsButton=quick.querySelector('#quick-details'),linkLine=link.querySelector('line'),linkDot=link.querySelector('circle');
+ const quickKind=quick.querySelector('#quick-kind'),quickTitle=quick.querySelector('#quick-title'),quickAddress=quick.querySelector('#quick-address'),detailsButton=quick.querySelector('#quick-details'),linkLine=link.querySelector('line'),linkDot=link.querySelector('circle');
  const phone=matchMedia('(max-width:850px)');
  // Soft, cartoon-friendly highlight: a warm translucent shell on buildings, a pale bright ribbon on roads, a thin cream outline.
  const common={transparent:true,depthWrite:false,side:THREE.DoubleSide,fog:false};
@@ -68,14 +68,19 @@ export function installSelection({scene,camera,canvas,catalogue,meshes,buildingI
  }
  function render(r){
   const d=describe(r);
-  // V2.3: named buildings (landmarks, POI) also show their architectural profile in the preview modes.
-  if(r.type==='building'&&!r.generic){const e=buildingInfo.get(r.id)?.architecture;if(e)d.facts.push(...architectureFacts(e));}kind.textContent=d.eyebrow;title.textContent=d.title;note.textContent=d.source;note.hidden=!technical;
-  // V2.4: the architectural profile is a titled group on the card; unknown values stay written as unknown.
-  const out=[];for(const t of d.facts){if(/^Profil architectural/.test(t)){out.push(Object.assign(document.createElement('li'),{textContent:'Architecture (profil V2.3.1)',className:'sub'}));out.push(Object.assign(document.createElement('li'),{textContent:t.replace(/^Profil architectural V2\.3 : /,''),className:'arch'}));}else out.push(Object.assign(document.createElement('li'),{textContent:t,className:/^(Toiture|Couleur de toit|Hauteur à l’égout|Niveaux|Note|Sources) ?:/.test(t)?'arch':''}));}
-  facts.replaceChildren(...out);facts.hidden=!d.facts.length;
-  quotes.replaceChildren(...d.quotes.slice(0,3).map(q=>{const el=document.createElement('blockquote');el.textContent=`« ${q.text} »`;el.append(Object.assign(document.createElement('cite'),{textContent:q.cite}));return el;}));quotes.hidden=!d.quotes.length;
-  // Quick label: the name, and a short category (a building without a name shows its family only once).
-  quickTitle.textContent=d.title;quickKind.textContent=r.generic?'Bâtiment':d.eyebrow;quickKind.hidden=!quickKind.textContent||quickKind.textContent===d.title;
+  kind.textContent=d.eyebrow;title.textContent=d.title;
+  addressEl.textContent=d.address||'';addressEl.hidden=!d.address;
+  summaryEl.textContent=d.summary||'';summaryEl.hidden=!d.summary;
+  facts.replaceChildren(...d.keep.map(t=>Object.assign(document.createElement('li'),{textContent:t})));keepEl.hidden=!d.keep.length;
+  if(d.block){blockTitle.textContent=d.block.title;blockText.textContent=d.block.text;}blockEl.hidden=!d.block;
+  const srcItems=d.sources.map(x=>{const li=document.createElement('li');if(x.url){const a=document.createElement('a');a.href=x.url;a.target='_blank';a.rel='noreferrer';a.textContent=x.label;li.append(a);}else li.textContent=x.label;return li;});
+  for(const q of d.quotes){const li=document.createElement('li');li.className='quote';li.textContent=`« ${q.text} » — ${q.cite}`;srcItems.push(li);}
+  sourcesList.replaceChildren(...srcItems);sourcesEl.hidden=!srcItems.length;sourcesEl.open=false;
+  techList.replaceChildren(...d.tech.map(t=>Object.assign(document.createElement('li'),{textContent:t})));techEl.hidden=!(technical&&d.tech.length);techEl.open=false;
+  note.hidden=true;note.textContent='';panel.dataset.level=d.level;
+  // Quick label: category, name, address when known.
+  quickTitle.textContent=d.title;quickKind.textContent=d.eyebrow;quickKind.hidden=!quickKind.textContent||quickKind.textContent===d.title;
+  quickAddress.textContent=d.address||'';quickAddress.hidden=!d.address;
  }
  // Default anchor of the label: where the object is, a little above it, on the displayed relief.
  function anchorOf(r){const p=r.position||[0,0,0];
