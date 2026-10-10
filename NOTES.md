@@ -1,3 +1,12 @@
+# Notes V2.6.1 — finalisation artistique Poussey et interface au clic, 10 octobre 2026
+
+- **La fiche ne doit pas gagner sur la carte.** Une étiquette de 110 × 65 px reliée au point cliqué remplace une carte de 360 px : on lit le nom et on voit encore l'objet. La fiche complète reste disponible, mais c'est l'utilisateur qui l'ouvre.
+- **L'ancrage est un point 3D, pas une position d'écran.** Il est reprojeté à chaque image (`hooks.tick`) : l'étiquette suit la caméra, disparaît quand le point passe derrière elle, et se replace au redimensionnement.
+- **Pousser vers l'extérieur suffit.** L'étiquette est déplacée depuis le centre de l'écran vers le bord, à 58 px du point plus sa demi-taille : elle ne couvre ni l'objet ni le centre, sans calcul d'occlusion.
+- **Les animations CSS ne sont pas fiables sans GPU.** En rendu logiciel, une animation de 200 ms peut rester sur sa première image (opacité 0) pendant une seconde : les scripts de QA attendent 2,5 s avant la capture.
+- **Le tilt-shift fort est une option.** 0,75 px par défaut, 2,4 px avec `?diorama=1` : l'effet miniature n'empêche plus de regarder les maisons.
+- **Les grands bâtiments gagnent par le rythme, pas par le volume.** Joints de panneaux, bandeau de base, bac nervuré, bande vitrée, lanterneau : tout est dans les matériaux et quelques panneaux plats, l'empreinte et la hauteur ne bougent pas.
+
 # Notes V2.6 — Poussey en diorama illustré, 9 octobre 2026
 
 - **Simplifier a plus payé qu'ajouter.** Enlever les textures, le PBR et le tone mapping, remplacer les fenêtres instanciées par des panneaux plats et passer en rampe toon a fait plus pour la beauté que tout le détail V2.5.

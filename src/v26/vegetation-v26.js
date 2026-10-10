@@ -52,12 +52,15 @@ export function buildVegetationV26(parent,{v2,box,buildings,heightAt,materials:M
  // Woods: hue shared by 45 m clusters, crowns widened so the canopies merge into masses.
  for(const o of d.woodland)for(const p of o.r){const b=bbox(p);if(b[2]<box.minX||b[0]>box.maxX||b[3]<box.minZ||b[1]>box.maxZ)continue;const poplar=o.t==='peupleraie',s=poplar?10:o.t==='lande_ligneuse'?13:9.5;
   const x0=Math.max(b[0],box.minX),x1=Math.min(b[2],box.maxX),z0=Math.max(b[1],box.minZ),z1=Math.min(b[3],box.maxZ),cells=[];
-  if(poplar)for(let x=x0;x<x1;x+=s)for(let z=z0;z<z1;z+=s)cells.push([x+rng()*s*.5,z+rng()*s*.5]);else for(let k=Math.round((x1-x0)*(z1-z0)/(s*s));k>0;k--)cells.push([x0+rng()*(x1-x0),z0+rng()*(z1-z0)]);
+  if(poplar)for(let x=x0;x<x1;x+=s)for(let z=z0;z<z1;z+=s){if(rng()<.12)continue;cells.push([x+rng()*s*.7,z+rng()*s*.7]);}else for(let k=Math.round((x1-x0)*(z1-z0)/(s*s));k>0;k--)cells.push([x0+rng()*(x1-x0),z0+rng()*(z1-z0)]);
   for(const [qx,qz] of cells){if(!inPoly(qx,qz,p))continue;const hue=h12(Math.floor(qx/45),Math.floor(qz/45));
-   if(poplar)add(qx,qz,'poplar',15+rng()*7,2,hue);else if(o.t==='lande_ligneuse')add(qx,qz,'bush',2.5+rng()*2,2,hue,1.3);else add(qx,qz,choose([['round',4],['broad',3],['tall',2]]),9+rng()*6,2,hue,1.2);}}
+   if(poplar)add(qx,qz,'poplar',13+rng()*10,2,hue,.8+rng()*.5);else if(o.t==='lande_ligneuse')add(qx,qz,'bush',2.5+rng()*2,2,hue,1.3);else add(qx,qz,choose([['round',4],['broad',3],['tall',2]]),9+rng()*6,2,hue,1.2);}}
  // Village gardens: fruit trees, a few blossoms, flower beds.
  for(const v of d.village)for(const p of v.r){const b=bbox(p);for(let x=Math.max(b[0],box.minX);x<Math.min(b[2],box.maxX);x+=17)for(let z=Math.max(b[1],box.minZ);z<Math.min(b[3],box.maxZ);z+=17){const qx=x+rng()*17,qz=z+rng()*17;if(!inPoly(qx,qz,p))continue;const t=rng();
-   if(t<.3)add(qx,qz,choose([['fruit',5],['round',2],['blossom',1.4]]),4.5+rng()*4,0);else if(t<.4)add(qx,qz,'bush',1+rng()*.9,0);else if(t<.48)add(qx,qz,'flowers',.7+rng()*.5,0);}}
+   if(t<.3)add(qx,qz,choose([['fruit',5],['round',2],['blossom',1.4]]),4.5+rng()*4,0);else if(t<.42)add(qx,qz,'bush',1+rng()*.9,0);else if(t<.52)add(qx,qz,'flowers',.7+rng()*.5,0);}}
+ // V2.6.1 gardens: one to three shrubs and a flower touch close to each small building (never on the footprint: mask).
+ for(const b of buildings){const r=b.poly[0];let cx=0,cz=0;for(const q of r){cx+=q[0];cz+=q[1];}cx/=r.length;cz/=r.length;let R=0;for(const q of r)R=Math.max(R,Math.hypot(q[0]-cx,q[1]-cz));if(R>14||rng()<.3)continue;
+  for(let k=0,n=1+Math.floor(rng()*3);k<n;k++){const a=rng()*6.283,dd=R+1.6+rng()*3.2,qx=cx+Math.cos(a)*dd,qz=cz+Math.sin(a)*dd,t=rng();add(qx,qz,t<.55?'bush':t<.85?'flowers':'fruit',t<.55?.9+rng()*.8:t<.85?.6+rng()*.4:3.5+rng()*2,0);}}
  // Stream banks: riparian trees, taller and bluer.
  for(const l of d.waterLines){const p=l.p,w=(l.w||3)/2;let travel=0;for(let i=2;i<p.length;i+=2){const ax=p[i-2],az=p[i-1],bx=p[i],bz=p[i+1],L=Math.hypot(bx-ax,bz-az)||1,ux=(bx-ax)/L,uz=(bz-az)/L;
   for(let s=travel%9;s<L;s+=9){const side=rng()<.5?-1:1,off=w+3+rng()*7,qx=ax+ux*s-uz*side*off,qz=az+uz*s+ux*side*off;if(rng()<.5)add(qx,qz,choose([['tall',5],['broad',3],['round',2]]),7.5+rng()*7,1,.8+rng()*.2);}travel+=L;}}

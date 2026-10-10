@@ -22,7 +22,9 @@ function skyDome(L){const geo=new THREE.SphereGeometry(16000,32,16);const mat=ne
  fragmentShader:`uniform vec3 zenith,horizon,below;varying vec3 vDir;void main(){float y=vDir.y;vec3 c=y>0.?mix(horizon,zenith,pow(clamp(y,0.,1.),.6)):mix(horizon,below,clamp(-y*6.,0.,1.));gl_FragColor=vec4(c,1.);}`});
  const m=new THREE.Mesh(geo,mat);m.name='v26-sky';m.renderOrder=-1;m.frustumCulled=false;return m;}
 
-export async function buildVisualV26({scene,renderer,camera,sun,hemisphere,v2,items,enrichment,architecture,elevation,quality='beauty'}){
+// V2.6.1: diorama=true (?diorama=1) keeps the strong miniature tilt-shift; by default the focus band is wide and soft so
+// the houses stay readable.
+export async function buildVisualV26({scene,renderer,camera,sun,hemisphere,v2,items,enrichment,architecture,elevation,quality='beauty',diorama=false}){
  const Q=V26_QUALITY[quality]||V26_QUALITY.beauty,L=V26_LIGHT,heightAt=v2.heightAt,box=V26_BOX;
  scene.add(skyDome(L));
  scene.fog=new THREE.Fog(L.fog,L.fogNear,L.fogFar);renderer.setClearColor(L.horizon,1);renderer.toneMapping=THREE.NoToneMapping;renderer.toneMappingExposure=1;
@@ -40,11 +42,11 @@ export async function buildVisualV26({scene,renderer,camera,sun,hemisphere,v2,it
  const vegetation=buildVegetationV26(group,{v2,box,buildings:inside,heightAt,materials:M,detail:Q.detail,budget:Q.trees});
  const water=waterMaterialV26();const waterMesh=v2.group.getObjectByName('v2-water');if(waterMesh){waterMesh.material=water.material;waterMesh.renderOrder=1;}
  const aoBox=new THREE.Box3(new THREE.Vector3(box.minX-50,-40,box.minZ-50),new THREE.Vector3(box.maxX+50,120,box.maxZ+50));
- const post=createPostV26(renderer,scene,camera,{ao:Q.ao,smaa:Q.smaa,outline:Q.outline,tilt:Q.tilt,vignette:.14,aoBox});
+ const post=createPostV26(renderer,scene,camera,{ao:Q.ao,smaa:Q.smaa,outline:Q.outline,tilt:Q.tilt,tiltAmount:diorama?2.4:.75,tiltBand:diorama?.16:.26,vignette:.14,aoBox});
  renderer.shadowMap.needsUpdate=true;
  const start=performance.now();
  return {group,pickMeshes:houses.pickMeshes,post,box,views:V26_VIEWS,quality,cameraFor:v25CameraFor,
   update:now=>{water.update((now-start)/1000);},
   setSize:(w,h)=>post.setSize(w,h),
-  stats:{mode:'poussey-v26',quality,buildings:houses.stats.buildings,byClass:houses.stats.byClass,houseVariants:houses.stats.variants,windows:houses.stats.windows,shutters:houses.stats.shutters,doors:houses.stats.doors,garageDoors:houses.stats.garageDoors,chimneys:houses.stats.chimneys,roads:roads.count,vegetation:vegetation.stats,ground}};
+  stats:{mode:'poussey-v26',quality,diorama,tiltShift:Q.tilt?(diorama?'fort (2,4 px, bande 0,16)':'léger (0,75 px, bande 0,26)'):'aucun',buildings:houses.stats.buildings,byClass:houses.stats.byClass,houseVariants:houses.stats.variants,windows:houses.stats.windows,shutters:houses.stats.shutters,doors:houses.stats.doors,garageDoors:houses.stats.garageDoors,chimneys:houses.stats.chimneys,bigVariants:houses.stats.bigVariants,roads:roads.count,vegetation:vegetation.stats,ground}};
 }

@@ -1,3 +1,12 @@
+# Vérification V2.6.1 — finalisation artistique Poussey et interface au clic, 10 octobre 2026
+
+Branche `opus/v2.6.1-poussey-art-ux-polish`, à partir de `9369e66` (V2.6). Rapport : `docs/audit/V2.6.1_POUSSEY_ART_UX_POLISH.md`. Captures : `docs/qa/v2.6.1/`.
+
+- **Géographie** : aucun fichier de `public/`, `unreal/`, `data-sources/` modifié ; 42 fichiers gelés identiques à `309e65e` ; 52 hachages Freeze V1 vérifiés.
+- **Interface au clic** (tous modes) : étiquette rapide flottante près de l'objet, fiche complète seulement sur « Détails » (panneau droit 320 px ; bottom sheet sur smartphone) ; fermeture par croix, Échap, clic dans le vide.
+- **Chromium** : clic route / bâtiment / POI, « Détails », Échap, clic ailleurs, sur desktop et deux gabarits smartphone, en V2.6 et V2.6.1 ; trois presets V2.6.1 mesurés ; 2 596 bâtiments rendus (2 584 avec `manual=0`), 0 enfoui, console vide.
+- **Contrôles** : `check:all` PASS (55) ; `pnpm build` OK.
+
 # Vérification V2.6 — Poussey en diorama illustré, 9 octobre 2026
 
 Branche `opus/v2.6-poussey-diorama`, à partir de `7c8d3a6` (V2.5). Direction : `docs/audit/V2.6_POUSSEY_DIORAMA_DIRECTION.md`. Rapport : `docs/audit/V2.6_POUSSEY_DIORAMA.md`. Captures comparées V2.5 / V2.6 : `docs/qa/v2.6-poussey/`.

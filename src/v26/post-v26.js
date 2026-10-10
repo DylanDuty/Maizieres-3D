@@ -33,7 +33,7 @@ const TILT={uniforms:{tDiffuse:{value:null},res:{value:new THREE.Vector2(1,1)},d
 const VIGNETTE={uniforms:{tDiffuse:{value:null},strength:{value:.14}},vertexShader:`varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
  fragmentShader:`uniform sampler2D tDiffuse;uniform float strength;varying vec2 vUv;void main(){vec4 c=texture2D(tDiffuse,vUv);float d=distance(vUv,vec2(.5))*1.35;c.rgb*=1.-strength*smoothstep(.6,1.15,d);gl_FragColor=c;}`};
 
-export function createPostV26(renderer,scene,camera,{ao=true,smaa=true,outline=true,tilt=true,vignette=.14,aoBox=null,outlineStrength=.75}={}){
+export function createPostV26(renderer,scene,camera,{ao=true,smaa=true,outline=true,tilt=true,tiltAmount=.75,tiltBand=.26,vignette=.14,aoBox=null,outlineStrength=.75}={}){
  const size=renderer.getDrawingBufferSize(new THREE.Vector2());
  const depthTexture=new THREE.DepthTexture(size.x,size.y);depthTexture.type=THREE.UnsignedIntType;
  const sceneTarget=new THREE.WebGLRenderTarget(size.x,size.y,{type:THREE.HalfFloatType,depthTexture});
@@ -46,7 +46,7 @@ export function createPostV26(renderer,scene,camera,{ao=true,smaa=true,outline=t
  let outlinePass=null;if(outline){outlinePass=new OutlinePass(scenePass,camera);outlinePass.uniforms.strength.value=outlineStrength;composer.addPass(outlinePass);}
  composer.addPass(new OutputPass());
  if(smaa)composer.addPass(new SMAAPass());
- const tilts=[];if(tilt){for(const d of [[1,0],[0,1]]){const p=new ShaderPass(TILT);p.uniforms.dir.value.set(...d);composer.addPass(p);tilts.push(p);}}
+ const tilts=[];if(tilt){for(const d of [[1,0],[0,1]]){const p=new ShaderPass(TILT);p.uniforms.dir.value.set(...d);p.uniforms.amount.value=tiltAmount;p.uniforms.band.value=tiltBand;composer.addPass(p);tilts.push(p);}}
  if(vignette>0){const vig=new ShaderPass(VIGNETTE);vig.uniforms.strength.value=vignette;composer.addPass(vig);}
  const setSize=(w,h)=>{composer.setSize(w,h);const s=renderer.getDrawingBufferSize(new THREE.Vector2());for(const p of tilts)p.uniforms.res.value.copy(s);};setSize(size.x,size.y);
  return {composer,gtao,outline:outlinePass,render:()=>composer.render(),setSize,dispose:()=>{composer.dispose();}};

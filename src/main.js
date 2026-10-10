@@ -31,6 +31,7 @@ async function start(){
   const [data,boundary,enrichment,ignLandscape,namedZones,bible,buildingReference]=await Promise.all(responses.map(r=>r.json()));
   const project=projection(data.metadata.origin),boundaryPolys=polygons(boundary,project),b=bounds(boundaryPolys.flat(2));
   const extent={minX:b.minX-150,maxX:b.maxX+150,minZ:b.minZ-150,maxZ:b.maxZ+150};
+  const hooks={tick:null};// V2.6.1: per-frame UI hooks (quick label placement).
   const params=new URLSearchParams(location.search),requestedQuality=QUALITY_ORDER.includes(params.get('quality'))?params.get('quality'):'fluid';
   const device={dpr:devicePixelRatio,cores:navigator.hardwareConcurrency,memory:navigator.deviceMemory};let quality=qualitySettings(requestedQuality,device);
   // V2.4 lighting presets: DAY_CLEAR by default (late morning), GOLDEN_HOUR with ?light=golden or the « Lumière » button.
@@ -82,7 +83,7 @@ async function start(){
   // V2.4: instanced trees in the woods and the built-up zone, rounded hedges (decorative, off every footprint and road).
   const vegetation=v2?buildVegetation(v2.group,{v2,buildings:reference.items,quality,exclude:v25Mode?inV25Box:null}):null;
   // V2.5 prototype: procedural houses, composed trees, local ground, textured roads and living water inside the Poussey box.
-  const v25=v25Mode?await (visualName==='poussey-v26'?buildVisualV26:buildVisualV25)({scene,renderer,camera,sun,hemisphere,v2,items:reference.items,enrichment,architecture:archById,elevation:item=>display.get(item.id).base-.45,quality:v25Quality}):null;
+  const v25=v25Mode?await (visualName==='poussey-v26'?buildVisualV26:buildVisualV25)({scene,renderer,camera,sun,hemisphere,v2,items:reference.items,enrichment,architecture:archById,elevation:item=>display.get(item.id).base-.45,quality:v25Quality,diorama:params.get('diorama')==='1'}):null;
   const pickMeshes=[...buildings.pickMeshes,...(v25?.pickMeshes||[])];
   // V2.0.1 visibility audit: every expected id has walls or roof in the scene graph, stands in the terrain range and is not buried.
   const renderedIds=new Set();for(const m of pickMeshes)for(const r of m.userData.featureRanges||[])if(r.end>r.start)renderedIds.add(r.id.split('#')[0]);
@@ -117,7 +118,7 @@ async function start(){
   const catalogue=createCatalogue(data,enrichment,project,extent,terrain.buildings,namedZones,bible);
   const v2Records=v2?extendCatalogue(catalogue,v2,project,buildings.info,{technical}):null;
   const poiBuildings=poiRef?poiRef.extend(catalogue,buildings.info):null;
-  const selection=installSelection({scene,camera,canvas:renderer.domElement,catalogue,meshes:pickMeshes,buildingInfo:buildings.info,invalidate,target:()=>controls.target,...(v2?{heightAt:v2.heightAt,ground:groundPicker(v2.heightAt),technical}:{})});
+  const selection=installSelection({scene,camera,canvas:renderer.domElement,catalogue,meshes:pickMeshes,buildingInfo:buildings.info,invalidate,target:()=>controls.target,...(v2?{heightAt:v2.heightAt,ground:groundPicker(v2.heightAt),technical}:{})});hooks.tick=selection.tick;
   const labelItems=v2?v2Labels(v2,project):[];if(!v2){for(const l of [...buildings.landmarks,...terrain.landmarks])if(!labelItems.some(o=>o.name===l.name&&Math.hypot(o.position[0]-l.position[0],o.position[2]-l.position[2])<80))labelItems.push(l);
   for(const r of catalogue.records.filter(r=>r.type==='point'&&(r.kind==='Lieu-dit / secteur'||r.id.startsWith('bible'))))if(!labelItems.some(l=>l.name===r.name))labelItems.push({id:r.id,name:r.name,position:r.position,major:r.major,local:!r.major,style:r.id.startsWith('bible')?'heritage':r.major?'':'place'});
   for(const l of enrichment.landmarks){if(!labelItems.some(p=>Math.hypot(p.position[0]-l.position[0],p.position[2]-l.position[2])<45))labelItems.push(l);}
@@ -150,7 +151,7 @@ async function start(){
     // V2.4: the camera never dives under the displayed relief (a few metres above the ground at the lowest).
     if(v2){const floor=v2.heightAt(camera.position.x,camera.position.z)+6;if(camera.position.y<floor)camera.position.y=floor;}
     if(!v25)fitShadow();
-    const renderStart=performance.now();if(v25){renderer.info.autoReset=false;renderer.info.reset();v25.update(performance.now());v25.post.render();}else renderer.render(scene,camera);renderer.domElement.dataset.render=JSON.stringify({calls:renderer.info.render.calls,triangles:renderer.info.render.triangles,quality:quality.mode,pixelRatio:renderer.getPixelRatio(),shadowSize:quality.shadowSize,submissionMs:Math.round((performance.now()-renderStart)*100)/100,camera:camera.position.toArray(),target:controls.target.toArray()});
+    const renderStart=performance.now();if(v25){renderer.info.autoReset=false;renderer.info.reset();v25.update(performance.now());v25.post.render();}else renderer.render(scene,camera);hooks.tick?.();renderer.domElement.dataset.render=JSON.stringify({calls:renderer.info.render.calls,triangles:renderer.info.render.triangles,quality:quality.mode,pixelRatio:renderer.getPixelRatio(),shadowSize:quality.shadowSize,submissionMs:Math.round((performance.now()-renderStart)*100)/100,camera:camera.position.toArray(),target:controls.target.toArray()});
     const placed=[],dist=camera.position.distanceTo(controls.target);
     if(namesVisible)for(const l of sortedLabels){screen.copy(l.vector).project(camera);const x=(screen.x*.5+.5)*innerWidth,y=(-screen.y*.5+.5)*innerHeight;const w=l.name.length*7+20;const visible=dist<TIER_RANGE[l.tier-1]&&screen.z>-1&&screen.z<1&&x>20&&x<innerWidth-20&&y>135&&y<innerHeight-80&&!placed.some(r=>Math.abs(x-r.x)<(w+r.w)/2&&Math.abs(y-r.y)<30);l.el.style.display=visible?'block':'none';if(visible){l.el.style.left=`${x}px`;l.el.style.top=`${y}px`;placed.push({x,y,w});}}
     document.querySelector('#north').style.transform=`rotate(${controls.getAzimuthalAngle()}rad)`;

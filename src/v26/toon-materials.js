@@ -55,6 +55,9 @@ export function makeMaterialsV26(){
  // Tiled roofs: faint rows across the slope (uv.y = metres across), plain roofs: flat with a soft variation.
  M.roofTile=toon(lam({}),'roof-tile',`float row=fract(vUvM.y/.46);diffuseColor.rgb*=1.-.08*smoothstep(.74,.9,row);diffuseColor.rgb*=.975+.05*vnoise(vWorld.xz*.5);`);
  M.roofPlain=toon(lam({}),'roof-plain',`diffuseColor.rgb*=.975+.05*vnoise(vWorld.xz*.5);`);
+ // V2.6.1 big buildings: wall panels with a joint every 2,4 m and a darker base band; sheet roofs with ribs down the slope.
+ M.wallPanels=toon(lam({}),'wall-panels',`float j=smoothstep(.0,.07,abs(fract(vUvM.x/2.4+.5)-.5)*2.4);diffuseColor.rgb*=mix(.84,1.,j);diffuseColor.rgb*=mix(.78,1.,smoothstep(1.05,1.2,vUvM.y));diffuseColor.rgb*=mix(1.,1.06,smoothstep(2.6,2.8,vUvM.y)*(1.-smoothstep(3.2,3.4,vUvM.y)));diffuseColor.rgb*=.985+.03*vnoise(vWorld.xz*.4+vWorld.y*.3);`);
+ M.roofSheet=toon(lam({}),'roof-sheet',`float rib=smoothstep(.0,.1,abs(fract(vUvM.x/.95+.5)-.5)*.95);diffuseColor.rgb*=mix(.9,1.,rib);diffuseColor.rgb*=.975+.05*vnoise(vWorld.xz*.5);`);
  M.detail=toon(lam({}),'detail');
  // Vegetation: double-sided crowns, slightly stronger rim so the masses read as soft volumes.
  M.leaf=toon(lam({side:THREE.DoubleSide}),'leaf',`diffuseColor.rgb*=.97+.06*vnoise(vWorld.xz*.9+vWorld.y*.4);`);
