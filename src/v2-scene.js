@@ -32,6 +32,8 @@ const hash=s=>{let h=2166136261;for(const c of String(s))h=Math.imul(h^c.charCod
 const shade=(hex,l,s=0)=>new THREE.Color(hex).offsetHSL(0,s,l).getStyle();
 
 import {waterProximity,HEDGE_WATER_MARGIN} from './hydro-display.js';
+import {applyLandmarkErrata} from './landmark-errata.js';
+import LANDMARK_AUDIT from './content/landmark-audit-v291.json';
 export async function buildV2Scene(scene,{relief,base,quality,exclude=null}){
  const [d,poi]=await Promise.all([fetch(`${base}data/v2-scene.json`).then(r=>r.json()),fetch(`${base}data/poi.json`).then(r=>r.json())]);
  const {meta}=relief,{cols,rows,step,x0,z0}=meta,W=(cols-1)*step,D=(rows-1)*step;
@@ -186,10 +188,12 @@ export async function buildV2Scene(scene,{relief,base,quality,exclude=null}){
  setQuality(quality.mode);
 
  // ---------- POI: landmarks, sectors and click records ----------
+ // V2.9.1: documented landmark errata (association / anchor) applied to the frozen POI layer in memory.
+ const errata=applyLandmarkErrata(poi.pois,LANDMARK_AUDIT);
  const pois=poi.pois,byId=new Map(pois.map(p=>[p.id,p]));
  const stats={terrain:{vertices:cols*rows,triangles:index.length/3,step,texture:textureInfo},roads:{count:d.roads.length,km:+roadKm.toFixed(1),byCategoryKm:Object.fromEntries(Object.entries(roadStats).map(([k,v])=>[k,+v.toFixed(1)]))},
   rail:{tracks:d.rail.length,km:+railKm.toFixed(1),levelCrossings:d.levelCrossings.length,bridges:d.railBridges.length},agriculture:d.agriculture.length,woodland:d.woodland.length,hedges:{count:d.hedges.length,km:+hedgeKm.toFixed(1),bushes:bushes.length,wallsCutOverWaterM:Math.round(hedgeCut),polygons:d.hedgePolygons.length},
-  water:{polygons:d.water.length,lines:d.waterLines.length},artificial:d.artificial.length,poi:{records:pois.length,landmarks:pois.filter(p=>p.landmark).length}};
+  water:{polygons:d.water.length,lines:d.waterLines.length},artificial:d.artificial.length,poi:{records:pois.length,landmarks:pois.filter(p=>p.landmark).length,errata:errata}};
  return {group,data:d,hedgeCuts,poi:pois,poiById:byId,heightAt,onGrid,terrainMesh,apron,stats,setQuality,get texture(){return textureInfo;},bounds:{x0,z0,W,D}};
 }
 

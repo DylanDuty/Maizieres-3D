@@ -1,3 +1,11 @@
+# Notes V2.9.1 — landmarks audités et passe qualité JRPG, 10 octobre 2026
+
+- **Une adresse n'est pas une position.** Une position BAN de type « segment » est un point interpolé sur l'axe de la rue, parfois partagé par plusieurs numéros. Relier ce point au bâtiment de la parcelle située dessous (BAN PLUS, lien géométrique) peut tomber de l'autre côté de la rue : c'est ce qui a placé la mairie sur une annexe. La zone d'intérêt BD TOPO, le point OSM `townhall`, le RNB et l'orthophoto disent la même chose : on croise plusieurs sources avant de valider un landmark.
+- **Une parcelle communale n'est pas un bâtiment.** L'école héritait des 12 bâtiments de la parcelle D2377 (mairie, écoles, caserne). Comme elle était traitée après la caserne, elle lui volait le clic. Le nouveau contrôle refuse qu'un bâtiment soit revendiqué par deux landmarks.
+- **Corriger sans réécrire le gel.** L'errata (`src/landmark-errata.js`) applique en mémoire les trois corrections documentées, seulement si la donnée gelée contient encore l'ancienne valeur. Les 42 fichiers et les 52 hachages restent intacts. Le jour où la correction est intégrée en amont, l'errata devient sans effet.
+- **Un motif doit s'effacer avec sa taille écran.** Couronnes, sillons, bandes de champs et rangs de tuiles sont calculés en coordonnées monde et s'éteignent par `fwidth` quand ils passent sous quelques pixels : du détail de près, pas de moiré de loin.
+- **La profondeur n'est pas du blanc.** La brume linéaire noyait la vue générale. La perspective aérienne refroidit et désature d'abord le lointain, puis plafonne le voile : le relief de la commune reste lisible jusqu'à l'horizon.
+
 # Notes V2.9 — art pass JRPG, continuité hydro et fiches immersives, 10 octobre 2026
 
 - **Un ruisseau qui « s'arrête » est presque toujours un ruisseau caché.** Les 57 vraies extrémités du réseau sont des sources, des fossés ou des limites de données ; près du Craon, ce sont les masses de canopée V2.7 qui recouvraient le ruisseau et le bras des Moulins de Poussey. Un corridor dans le raster de canopée (vertices traités comme hors du bois) suffit, sans ajouter un seul point à la donnée.

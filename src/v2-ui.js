@@ -35,7 +35,10 @@ export function v2Labels(v2,project){
  const items=[],at=(id,style,{major=false,local=false,lift=22}={})=>{const p=id.startsWith('name:')?v2.poi.find(q=>q.name===id.slice(5)&&['secteur','lieu_dit'].includes(q.category)):v2.poiById.get(id);if(!p)return;const [x,z]=project(p.lonlat);items.push({id,name:p.name.replace(/ de Maizières-la-Grande-Paroisse$/,''),position:[x,v2.heightAt(x,z)+lift,z],major,local,style});};
  at('poi:bourg','',{major:true,lift:40});at('poi:poussey','',{major:true,lift:30});at('poi:les-granges','',{major:true,lift:30});
  at('poi:parc-aerodrome','place',{lift:12});at('poi:glaciere','place',{lift:12});at('name:le Craon','place',{local:true,lift:8});
- for(const p of v2.poi.filter(p=>p.landmark===1))at(p.id,'landmark',{lift:26});
+ // V2.9.1: the church and the town hall win label collisions against the other first-rank landmarks (the corrected mairie
+ // anchor is 30 m from the school entrance; in V2.9 the school label, listed first, hid it).
+ const CIVIC=['poi:eglise-saint-denis','poi:mairie'],rank=p=>{const i=CIVIC.indexOf(p.id);return i<0?CIVIC.length:i;};
+ for(const p of v2.poi.filter(p=>p.landmark===1).sort((a,b)=>rank(a)-rank(b)))at(p.id,'landmark',{lift:26});
  for(const p of v2.poi.filter(p=>p.landmark===2))at(p.id,'landmark minor',{local:true,lift:20});
  return items;
 }

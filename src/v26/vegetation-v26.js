@@ -83,5 +83,22 @@ export function buildVegetationV26(parent,{v2,box,buildings,heightAt,materials:M
  return {group,stats:{trees:trees.length,candidates:list.length,hedgeBushes:hedges.length,archetypes:Object.keys(ARCHETYPES).length,byType:Object.fromEntries(Object.entries(meshes).map(([k,m])=>[k,m.count]))},meshes:{...meshes,trunk,hedges:hedgeMesh}};
 }
 
+// V2.9.1 — richer silhouettes for the JRPG pass: every family is 3–5 overlapping, deliberately asymmetric lobes (the
+// instance rotation then makes each tree a different drawing), a stronger sunlit top and cool underside, distinct
+// families instead of one generic crown: broad oak, round, slender, columnar poplar, low fruit tree, rare blossom,
+// and a grove (several crowns sharing one footprint). Decorative only, like every tree of the map.
+// (A young-tree family was tried and dropped: one more instanced family per tile for little visible gain.)
+const GV=['#86bd62','#7ab25b','#8fc468','#72a95a','#97c86e'],OAK=['#6f9f55','#7aa95a','#668f50','#81ad5e'],SL=['#9cc46a','#a7cc72','#93bd66'];
+const GRAD={top:[1.12,1.06,.8],bottom:[.44,.56,.66]};
+export const ARCHETYPES_V291={
+ oak:{lobes:[[.32,0,.6,0,.72],[.27,.3,.55,.1,.7],[.26,-.27,.58,-.12,.7],[.22,.12,.77,-.18,.72],[.2,-.15,.73,.2,.7]],trunk:.42,palette:OAK,gradient:GRAD},
+ round:{lobes:[[.34,.02,.64,0,.9],[.26,.22,.56,.12,.88],[.25,-.21,.6,-.08,.88],[.22,-.04,.84,.06,.86],[.18,.16,.77,-.16,.86]],trunk:.4,palette:GV,gradient:GRAD},
+ slender:{lobes:[[.22,0,.48,0,1.2],[.21,.06,.66,.04,1.15],[.17,-.05,.84,-.02,1.1],[.13,.02,.97,.02,1.05]],trunk:.3,palette:SL,gradient:GRAD},
+ poplar:{lobes:[[.15,0,.36,0,1.7],[.16,.015,.56,.01,1.7],[.15,-.01,.75,0,1.6],[.11,0,.92,.01,1.5]],trunk:.18,palette:P,gradient:GRAD},
+ fruit:{lobes:[[.3,0,.52,0,.8],[.24,.22,.48,.12,.78],[.24,-.2,.5,-.12,.78],[.18,.05,.67,-.05,.8]],trunk:.36,palette:F,gradient:GRAD},
+ blossom:{lobes:[[.3,0,.52,0,.8],[.24,.22,.48,.12,.78],[.24,-.2,.5,-.12,.78],[.18,.05,.67,-.05,.8]],trunk:.36,palette:['#f6dde4','#fbe9ec','#f4d2da','#fcf2ef'],gradient:{top:[1.02,1,1],bottom:[.78,.72,.8]}},
+ grove:{lobes:[[.26,-.25,.45,-.1,.85],[.3,.15,.55,.1,.85],[.24,.05,.5,-.32,.8],[.2,.33,.4,-.2,.8],[.22,-.1,.72,.12,.85]],trunk:0,palette:OAK,gradient:GRAD},
+ bush:{lobes:[[.42,0,.4,0,.6],[.36,.4,.38,.1,.58],[.36,-.38,.39,-.08,.58],[.3,.08,.5,.3,.6],[.3,-.1,.48,-.3,.6]],trunk:0,palette:B,gradient:GRAD},
+ flowers:{lobes:[[.42,0,.4,0,.55],[.34,.38,.38,.1,.55],[.34,-.36,.39,-.08,.55]],trunk:0,palette:['#f3dca6','#f6c9cb','#ece3ab','#f9e6ec','#d9e3a0'],gradient:{top:[1.04,1.02,1],bottom:[.7,.74,.66]}}};
 // V2.7 reuses the crown builder and the archetypes for the whole commune.
 export {crown,trunkGeo,B as BUSH_PALETTE};

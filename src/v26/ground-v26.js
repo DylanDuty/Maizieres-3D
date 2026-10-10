@@ -34,9 +34,9 @@ export function paintGround(ctx,{d,box,w,h,seed=2026,style='v26'}){
   const ux=Math.cos(a),uz=Math.sin(a),vx=-uz,vz=ux;for(let s=-R;s<=R;s+=spacingM){ctx.moveTo(X(cx+vx*s-ux*R),Z(cz+vz*s-uz*R));ctx.lineTo(X(cx+vx*s+ux*R),Z(cz+vz*s+uz*R));}ctx.stroke();ctx.restore();ctx.globalAlpha=1;};
  ctx.fillStyle='#bcd392';ctx.fillRect(0,0,w,h);
  // Village: soft lawns, lighter mown patches, a few flower dots.
- for(const v of d.village.filter(near)){fill(v,'#a9d07f');speckle(v,['#b4d788','#a0c97a','#bcdb90'],60,3.5,.32);speckle(v,['#f1e3a2','#f3cbd0','#f7f0d8'],5,.9,.75);}
- for(const a of d.artificial.filter(a=>a.kind==='perimetre'&&near(a)&&!/eolien|photovolt/.test(a.t)))fill(a,'#e3dfd0',.55);
- for(const a of d.agriculture.filter(near)){const k=hash(a.id),meadow=['prairie_permanente','prairie_temporaire'].includes(a.t);const tint=meadow?pastel('#a7cf82',.3,.45,.66,.72,(k-.5)*.05):pastel(springTint(a,k),.28,.5,.68,.8,(k-.5)*.04);fill(a,tint);
+ for(const v of d.village.filter(near)){fill(v,style==='v291'?'#a6da7f':'#a9d07f');speckle(v,['#b4d788','#a0c97a','#bcdb90'],60,3.5,.32);speckle(v,['#f1e3a2','#f3cbd0','#f7f0d8'],5,.9,.75);}
+ for(const a of d.artificial.filter(a=>a.kind==='perimetre'&&near(a)&&!/eolien|photovolt/.test(a.t)))fill(a,style==='v291'?'#dcdcd4':'#e3dfd0',style==='v291'?.6:.55);
+ const rich=style==='v291';for(const a of d.agriculture.filter(near)){const k=hash(a.id),meadow=['prairie_permanente','prairie_temporaire'].includes(a.t);const tint=meadow?(rich?pastel('#9fcd78',.4,.56,.6,.68,(k-.5)*.06):pastel('#a7cf82',.3,.45,.66,.72,(k-.5)*.05)):(rich?pastel(springTint(a,k),.38,.64,.62,.77,(k-.5)*.06):pastel(springTint(a,k),.28,.5,.68,.8,(k-.5)*.04));fill(a,tint);
   if(meadow)speckle(a,['#c3e09b','#99c278'],70,2,.4);else{stripes(a,shade(tint,-.09),2.2+k*1.1,.14,.5);speckle(a,[shade(tint,.05),shade(tint,-.04)],25,1.6,.3);}}
  for(const a of d.agriculture.filter(near))outline(a,'#9cbd72',1.1,.75);
  // V2.9: the fields become a graphic surface. Arable parcels get faint furrows along their longest edge (a cultivation
@@ -56,6 +56,31 @@ export function paintGround(ctx,{d,box,w,h,seed=2026,style='v26'}){
  for(const a of d.water.filter(near)){outline(a,'#b9d59a',3,.8);fill(a,'#8fc9d8');}
  for(const l of d.waterLines){line(l.p,2,'#b9d59a',l.w+3.2);line(l.p,2,l.perm?'#8fc9d8':'#a9d2dc',l.w);}
 }
+// V2.9.1 — field data map for the ground shader (no colour): per pixel, the cultivation direction of the parcel
+// (doubled angle, so a direction and its opposite are the same), a per-parcel random in the vector length, and a class
+// in blue: 0 none, 1 arable, 2 meadow, 3 village lawn, 4 wood floor. The shader draws the furrows, bands and grain in
+// world space at full resolution from it; the painted canvas keeps the colours.
+export function paintFieldData(ctx,{d,box,w,h}){
+ const W=box.maxX-box.minX,D=box.maxZ-box.minZ,sx=w/W,sz=h/D,X=x=>(x-box.minX)*sx,Z=z=>(z-box.minZ)*sz;
+ const path=rings=>{ctx.beginPath();for(const r of rings){for(let i=0;i<r.length;i+=2)i?ctx.lineTo(X(r[i]),Z(r[i+1])):ctx.moveTo(X(r[i]),Z(r[i+1]));ctx.closePath();}};
+ const code=(cls,ang,k)=>{const m=.3+.7*k,r=Math.round((Math.cos(2*ang)*m*.5+.5)*255),g=Math.round((Math.sin(2*ang)*m*.5+.5)*255);return `rgb(${r},${g},${Math.round(cls/4*255)})`;};
+ ctx.fillStyle='rgb(128,128,0)';ctx.fillRect(0,0,w,h);
+ const fillAll=(o,c)=>{ctx.fillStyle=c;for(const p of o.r){path(p);ctx.fill('evenodd');}};
+ for(const v of d.village)fillAll(v,code(3,0,hash(v.id||'v')));
+ for(const a of d.agriculture){const ring=a.r[0]?.[0];if(!ring||ring.length<6)continue;let best=0,ang=0;for(let i=2;i<ring.length;i+=2){const dx=ring[i]-ring[i-2],dz=ring[i+1]-ring[i-1],L=Math.hypot(dx,dz);if(L>best){best=L;ang=Math.atan2(dz,dx);}}
+  fillAll(a,code(['prairie_permanente','prairie_temporaire'].includes(a.t)?2:1,ang,hash(a.id+'k')));}
+ for(const a of d.woodland)fillAll(a,code(4,0,hash(a.id||'w')));
+}
+export const FIELD_SHADER=`vec4 fd=texture2D(tField,vUvM);float cls=floor(fd.b*4.+.5);vec2 fv=fd.rg*2.-1.;float fang=atan(fv.y,fv.x)*.5,fk=clamp((length(fv)-.3)/.7,0.,1.);vec2 fdir=vec2(cos(fang),sin(fang));
+ if(cls==1.){float t=dot(vWorld.xz,vec2(-fdir.y,fdir.x)),along=dot(vWorld.xz,fdir);
+  float sb=t/(5.5+fk*3.5);float fb=fwidth(sb);float band=.5+.5*sin(6.2832*sb);diffuseColor.rgb*=1.+.075*(band-.5)*(1.-smoothstep(.25,.6,fb));
+  float sf=t/(1.7+fk*.6);float ff=fwidth(sf);float fur=abs(fract(sf)-.5)*2.;diffuseColor.rgb*=1.-.07*(smoothstep(.5,.95,fur)-.4)*(1.-smoothstep(.2,.5,ff));
+  float tl=t/(24.+fk*4.);float tw=fwidth(tl);float td=abs(fract(tl)-.5)*2.;float lw=max(.035,tw*1.2);diffuseColor.rgb*=1.-.1*(1.-smoothstep(1.-lw*2.,1.-lw,td))*(1.-smoothstep(.12,.35,tw));
+  diffuseColor.rgb*=.95+.09*vnoise(vec2(along*.012,t*.03)+fk*9.)+.035*vnoise(vWorld.xz*.22);
+  diffuseColor.rgb=mix(diffuseColor.rgb,diffuseColor.rgb*vec3(1.06,1.02,.88),.55*smoothstep(.55,.85,vnoise(vWorld.xz*.008+fk*4.)));}
+ else if(cls==2.){diffuseColor.rgb*=.93+.09*vnoise(vWorld.xz*.07+fk*5.)+.06*vnoise(vWorld.xz*.55);diffuseColor.rgb*=1.-.08*smoothstep(.6,.8,vnoise(vWorld.xz*.31+3.));diffuseColor.rgb*=vec3(.98,1.01,.97);}
+ else if(cls==3.){diffuseColor.rgb*=.97+.1*vnoise(vWorld.xz*.04);diffuseColor.rgb*=1.-.07*smoothstep(.66,.84,vnoise(vWorld.xz*.12+5.));diffuseColor.rgb*=.97+.06*vnoise(vWorld.xz*.9);}
+ else if(cls==4.){diffuseColor.rgb*=.88+.14*vnoise(vWorld.xz*.13);}`;
 export const GROUND_GRAIN=`float gr=vnoise(vWorld.xz*.6)*.5+vnoise(vWorld.xz*2.4)*.5;float far=clamp(1.-fwidth(vWorld.x)*.4,0.,1.);diffuseColor.rgb*=1.+(gr-.5)*.09*far;`;
 
 export function buildGroundV26(parent,{v2,box,heightAt,size=2048}){

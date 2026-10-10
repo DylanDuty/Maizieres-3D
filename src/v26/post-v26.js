@@ -32,24 +32,24 @@ const TILT={uniforms:{tDiffuse:{value:null},res:{value:new THREE.Vector2(1,1)},d
   vec4 c=texture2D(tDiffuse,vUv)*.2270270270;c+=(texture2D(tDiffuse,vUv+st*1.3846153846)+texture2D(tDiffuse,vUv-st*1.3846153846))*.3162162162;c+=(texture2D(tDiffuse,vUv+st*3.2307692308)+texture2D(tDiffuse,vUv-st*3.2307692308))*.0702702703;gl_FragColor=c;}`};
 // V2.9 colour grade: a gentle S-curve, a warm lift in the lights, a cooler shadow tint and a touch of saturation — the
 // "painted anime" look, applied in sRGB after the output pass. Nothing is blurred or bloomed.
-const GRADE={uniforms:{tDiffuse:{value:null},warmth:{value:.045},contrast:{value:1.07},saturation:{value:1.06},lift:{value:.012}},vertexShader:`varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
- fragmentShader:`uniform sampler2D tDiffuse;uniform float warmth,contrast,saturation,lift;varying vec2 vUv;
+const GRADE={uniforms:{tDiffuse:{value:null},warmth:{value:.045},contrast:{value:1.07},saturation:{value:1.06},lift:{value:.012},cool:{value:1}},vertexShader:`varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
+ fragmentShader:`uniform sampler2D tDiffuse;uniform float warmth,contrast,saturation,lift,cool;varying vec2 vUv;
  void main(){vec4 c=texture2D(tDiffuse,vUv);vec3 x=c.rgb;x=mix(vec3(dot(x,vec3(.299,.587,.114))),x,saturation);x=(x-.5)*contrast+.5+lift;
- float l=dot(x,vec3(.299,.587,.114));x+=vec3(warmth,warmth*.55,-warmth*.6)*smoothstep(.35,.95,l);x-=vec3(warmth*.5,warmth*.2,-warmth*.4)*(1.-smoothstep(.05,.45,l));gl_FragColor=vec4(clamp(x,0.,1.),c.a);}`};
+ float l=dot(x,vec3(.299,.587,.114));x+=vec3(warmth,warmth*.55,-warmth*.6)*smoothstep(.35,.95,l);x-=vec3(warmth*.5,warmth*.2,-warmth*.4)*cool*(1.-smoothstep(.05,.45,l));gl_FragColor=vec4(clamp(x,0.,1.),c.a);}`};
 const VIGNETTE={uniforms:{tDiffuse:{value:null},strength:{value:.14}},vertexShader:`varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
  fragmentShader:`uniform sampler2D tDiffuse;uniform float strength;varying vec2 vUv;void main(){vec4 c=texture2D(tDiffuse,vUv);float d=distance(vUv,vec2(.5))*1.35;c.rgb*=1.-strength*smoothstep(.6,1.15,d);gl_FragColor=c;}`};
 
-export function createPostV26(renderer,scene,camera,{ao=true,smaa=true,outline=true,tilt=true,tiltAmount=.75,tiltBand=.26,vignette=.14,aoBox=null,outlineStrength=.75,grade=false}={}){
+export function createPostV26(renderer,scene,camera,{ao=true,smaa=true,outline=true,tilt=true,tiltAmount=.75,tiltBand=.26,vignette=.14,aoBox=null,outlineStrength=.75,grade=false,ink=null,aoIntensity=.7}={}){
  const size=renderer.getDrawingBufferSize(new THREE.Vector2());
  const depthTexture=new THREE.DepthTexture(size.x,size.y);depthTexture.type=THREE.UnsignedIntType;
  const sceneTarget=new THREE.WebGLRenderTarget(size.x,size.y,{type:THREE.HalfFloatType,depthTexture});
  const composer=new EffectComposer(renderer);const scenePass=new ScenePass(scene,camera,sceneTarget);composer.addPass(scenePass);
  let gtao=null;
- if(ao){gtao=new GTAOPass(scene,camera,size.x,size.y);gtao.output=GTAOPass.OUTPUT.Default;gtao.blendIntensity=.7;
+ if(ao){gtao=new GTAOPass(scene,camera,size.x,size.y);gtao.output=GTAOPass.OUTPUT.Default;gtao.blendIntensity=aoIntensity;
   gtao.updateGtaoMaterial({radius:2.8,distanceExponent:1.1,thickness:1.4,distanceFallOff:1,scale:1.05,samples:16,screenSpaceRadius:false});
   gtao.updatePdMaterial({lumaPhi:10,depthPhi:2,normalPhi:3,radius:4,radiusExponent:1,rings:2,samples:16});
   if(aoBox)gtao.setSceneClipBox(aoBox);composer.addPass(gtao);}
- let outlinePass=null;if(outline){outlinePass=new OutlinePass(scenePass,camera);outlinePass.uniforms.strength.value=outlineStrength;composer.addPass(outlinePass);}
+ let outlinePass=null;if(outline){outlinePass=new OutlinePass(scenePass,camera);outlinePass.uniforms.strength.value=outlineStrength;if(ink)outlinePass.uniforms.ink.value.set(ink);composer.addPass(outlinePass);}
  composer.addPass(new OutputPass());
  if(grade){const g=new ShaderPass(GRADE);if(typeof grade==='object')for(const [k,v] of Object.entries(grade))if(g.uniforms[k])g.uniforms[k].value=v;composer.addPass(g);}
  if(smaa)composer.addPass(new SMAAPass());

@@ -1,0 +1,884 @@
+{
+ "version": "2.9.1",
+ "date": "2026-10-10",
+ "note": "Référence d’audit des 16 landmarks. Les fichiers gelés (public/data/poi.json, unreal/) ne sont pas modifiés : les trois associations fausses sont corrigées par cet errata, appliqué au chargement par src/landmark-errata.js et vérifié par scripts/check-landmark-positioning.mjs.",
+ "landmarks": [
+  {
+   "id": "poi:ecole-primaire",
+   "name": "École primaire publique",
+   "poiId": "poi:ecole-primaire",
+   "kind": "école",
+   "buildingIds": [
+    "BATIMENT0000000301149527",
+    "BATIMENT0000000301149543",
+    "BATIMENT0000000301149528"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": [
+     3.787325,
+     48.509106
+    ],
+    "source": "IGN Géoplateforme, index POI « École Élémentaire Publique » (zone BD TOPO « Enseignement primaire »), dans BATIMENT0000000301149527 (errata V2.9.1)"
+   },
+   "address": "3 rue Jules-Ferry",
+   "addressNote": null,
+   "sector": "Centre-bourg de Maizières",
+   "status": "corrigé",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (zone d’activité ou d’intérêt)",
+     "ref": "SURFACTI0000000113405956",
+     "info": "zone « Enseignement primaire » (MEN 0100816H), centre dans BATIMENT0000000301149527",
+     "access": "instantané local data-sources/ign (téléchargé V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "IGN — Géoplateforme, service de géocodage (index POI)",
+     "ref": "https://data.geopf.fr/geocodage/search?q=ecole&index=poi&citycode=10220",
+     "info": "« École Élémentaire Publique Maizières-la-Grande-Paroisse » en [3.787325, 48.509106], dans BATIMENT0000000301149527",
+     "access": "2026-10-10",
+     "verified": true
+    },
+    {
+     "organism": "Référentiel National des Bâtiments",
+     "ref": "RNB 8GMRZNV9MCMG / NTQ81P5RZP96 / W7FB66TGWJPF",
+     "info": "= BATIMENT0000000301149527 / …149543 / …149528, adresse 1 rue Jules-Ferry",
+     "access": "instantané local data-sources/rnb",
+     "verified": true
+    },
+    {
+     "organism": "IGN — BAN PLUS (lien adresse ↔ bâtiment)",
+     "ref": "data-sources/poi/banplus-lien-adresse-bati.geojson",
+     "info": "3 rue Jules-Ferry relié aux 12 bâtiments de la parcelle communale D2377 (mairie, écoles, caserne) : cause de l’association trop large",
+     "access": "instantané local (V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "OpenStreetMap",
+     "ref": "node/1638878399",
+     "info": "amenity=school « École primaire », UAI 0100816H, au cœur de l’ensemble",
+     "access": "instantané local public/data/maizieres.geojson",
+     "verified": true
+    },
+    {
+     "organism": "Bible du projet 03",
+     "ref": "docs/bibles §5",
+     "info": "« l’école primaire publique à 3 rue Jules-Ferry »",
+     "access": "dépôt",
+     "verified": true
+    }
+   ],
+   "notes": "Association V2.9 trop large (12 bâtiments) : elle englobait la mairie (…149547), la caserne (…149810) et deux maisons du 16 rue des Écoles ; l’école étant traitée après la caserne, un clic sur la caserne ouvrait la fiche de l’école. L’ancre passe du point BAN « entrée » du 3 rue Jules-Ferry (devant l’ensemble, 30 m au sud de la mairie : son étiquette recouvrait la mairie sur téléphone) au point IGN de l’école, sur son propre bâtiment.",
+   "correction": {
+    "building_ids": {
+     "from": [
+      "BATIMENT0000000301149547",
+      "BATIMENT0000000301149544",
+      "BATIMENT0000000301149527",
+      "BATIMENT0000000301149424",
+      "BATIMENT0000000301149543",
+      "BATIMENT0000000301149803",
+      "BATIMENT0000000301149810",
+      "BATIMENT0000000301149528",
+      "BATIMENT0000000301149545",
+      "BATIMENT0000000301149549",
+      "BATIMENT0000000301149548",
+      "BATIMENT0000000301149546"
+     ],
+     "to": [
+      "BATIMENT0000000301149527",
+      "BATIMENT0000000301149543",
+      "BATIMENT0000000301149528"
+     ]
+    },
+    "lonlat": {
+     "from": [
+      3.786965,
+      48.509132
+     ],
+     "to": [
+      3.787325,
+      48.509106
+     ]
+    },
+    "positionSource": {
+     "from": "adresse BAN 3 Rue Jules Ferry (position entrée)",
+     "to": "IGN Géoplateforme, index POI « École Élémentaire Publique » (zone BD TOPO « Enseignement primaire »), dans BATIMENT0000000301149527 (errata V2.9.1)"
+    }
+   }
+  },
+  {
+   "id": "poi:eglise-saint-denis",
+   "name": "Église Saint-Denis",
+   "poiId": "poi:eglise-saint-denis",
+   "kind": "église",
+   "buildingIds": [
+    "BATIMENT0000000301149566"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": [
+     3.7868185,
+     48.5113319
+    ],
+    "source": "centre de l’empreinte du bâtiment (référentiel V1.6.2)"
+   },
+   "address": "Place Saint-Denis",
+   "addressNote": null,
+   "sector": "Centre-bourg de Maizières",
+   "status": "validé",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (zone d’activité ou d’intérêt)",
+     "ref": "SURFACTI0000000316172819",
+     "info": "zone « Culte chrétien » centrée dans BATIMENT0000000301149566",
+     "access": "instantané local data-sources/ign (téléchargé V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "OpenStreetMap",
+     "ref": "way/588791993",
+     "info": "amenity=place_of_worship « Église Saint-Denis », même empreinte",
+     "access": "instantané local public/data/maizieres.geojson",
+     "verified": true
+    },
+    {
+     "organism": "IGN — BD ORTHO 0,5 m (prise de vue 2025)",
+     "ref": "data-sources/architecture/bdortho-0m50",
+     "info": "nef, transept et clocher lisibles sur l’empreinte",
+     "access": "dalles locales (V2.3)",
+     "verified": true
+    }
+   ],
+   "notes": "Association, ancre et étiquette cohérentes.",
+   "correction": null
+  },
+  {
+   "id": "poi:mairie",
+   "name": "Mairie de Maizières-la-Grande-Paroisse",
+   "poiId": "poi:mairie",
+   "kind": "mairie",
+   "buildingIds": [
+    "BATIMENT0000000301149547"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": [
+     3.7869889,
+     48.5093963
+    ],
+    "source": "OSM amenity=townhall (node/1638872667), dans l’empreinte BATIMENT0000000301149547 ; zone BD TOPO « Mairie » à 9 m (errata V2.9.1)"
+   },
+   "address": "6 rue des Écoles",
+   "addressNote": null,
+   "sector": "Centre-bourg de Maizières",
+   "status": "corrigé",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (zone d’activité ou d’intérêt)",
+     "ref": "SURFACTI0000000009307504",
+     "info": "zone « Mairie » (source DILA, précision 20 m), centre dans l’ensemble mairie-écoles au sud de la rue des Écoles",
+     "access": "instantané local data-sources/ign (téléchargé V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "IGN — Géoplateforme, service de géocodage (index POI)",
+     "ref": "https://data.geopf.fr/geocodage/search?q=mairie&index=poi&citycode=10220",
+     "info": "« Mairie de Maizières-la-Grande-Paroisse » en [3.787067, 48.509372], au sud de la rue des Écoles",
+     "access": "2026-10-10",
+     "verified": true
+    },
+    {
+     "organism": "OpenStreetMap",
+     "ref": "node/1638872667",
+     "info": "amenity=townhall (source : Service-Public.fr 07/2025), dans BATIMENT0000000301149547",
+     "access": "instantané local public/data/maizieres.geojson",
+     "verified": true
+    },
+    {
+     "organism": "Référentiel National des Bâtiments",
+     "ref": "RNB G5TEAF23FNWH",
+     "info": "= BATIMENT0000000301149547, seule adresse : 6 rue des Écoles",
+     "access": "instantané local data-sources/rnb",
+     "verified": true
+    },
+    {
+     "organism": "Référentiel National des Bâtiments",
+     "ref": "RNB MV9NSMXBED79",
+     "info": "= BATIMENT0000000301149537 (association V2.9) : 1 rue de la Libération + 5/6/7 rue des Écoles, liens BDNB multiples",
+     "access": "instantané local data-sources/rnb",
+     "verified": true
+    },
+    {
+     "organism": "Base Adresse Nationale",
+     "ref": "data-sources/poi/ban-adresses.geojson",
+     "info": "6 rue des Écoles : type de position « segment » (interpolée sur l’axe de la rue, même point que les n° 5 et 7 a)",
+     "access": "instantané local (V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "Base Adresse Nationale via Géoplateforme IGN",
+     "ref": "https://data.geopf.fr/geocodage/search?q=6 rue des Ecoles 10510",
+     "info": "confirme l’adresse 6 Rue des Ecoles 10510 et la position « segment » [3.786934, 48.509705]",
+     "access": "2026-10-10",
+     "verified": true
+    },
+    {
+     "organism": "IGN — BAN PLUS (lien adresse ↔ bâtiment)",
+     "ref": "data-sources/poi/banplus-lien-adresse-bati.geojson",
+     "info": "lien GEO de l’adresse vers BATIMENT0000000301149537 par la parcelle D0419 sous le point « segment » : cause de l’erreur",
+     "access": "instantané local (V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "IGN — BD ORTHO 0,5 m (prise de vue 2025)",
+     "ref": "data-sources/architecture/bdortho-0m50",
+     "info": "BATIMENT0000000301149537 = annexe étroite au nord de la rue ; BATIMENT0000000301149547 = grand bâtiment à toit d’ardoise de l’ensemble mairie-écoles, au sud",
+     "access": "dalles locales (V2.3)",
+     "verified": true
+    },
+    {
+     "organism": "Bible du projet 01",
+     "ref": "docs/bibles §11.1",
+     "info": "« Mairie : 6 rue des Écoles »",
+     "access": "dépôt",
+     "verified": true
+    },
+    {
+     "organism": "Bible du projet 03",
+     "ref": "docs/bibles §5",
+     "info": "carte postale « La Mairie — Les Écoles »",
+     "access": "dépôt",
+     "verified": true
+    },
+    {
+     "organism": "Recherche web (extrait de résultat seulement, page non accessible depuis l’environnement)",
+     "ref": "https://www.banatic.interieur.gouv.fr/commune/10220-Maizi%C3%A8res-la-Grande-Paroisse",
+     "info": "extrait : adresse 6 rue des Écoles ; téléphone 03 25 24 83 07",
+     "access": "2026-10-10",
+     "verified": false
+    }
+   ],
+   "notes": "Diagnostic : POI juste (nom, adresse) mais mal ancré et mal associé ; l’adresse BAN est une position interpolée sur la rue, BAN PLUS l’a reliée au bâtiment de la parcelle située sous ce point, de l’autre côté de la rue. BATIMENT0000000301149544 (aile est, RNB « 6 rue des Écoles ») appartient au même ensemble mais son usage actuel n’est pas établi : non associé. La fiche historique cachée « Anciennes écoles de la mairie » garde son point (repère, non affiché).",
+   "correction": {
+    "building_ids": {
+     "from": [
+      "BATIMENT0000000301149537"
+     ],
+     "to": [
+      "BATIMENT0000000301149547"
+     ]
+    },
+    "lonlat": {
+     "from": [
+      3.786934,
+      48.509705
+     ],
+     "to": [
+      3.7869889,
+      48.5093963
+     ]
+    },
+    "positionSource": {
+     "from": "adresse BAN 6 Rue des Ecoles (position segment)",
+     "to": "OSM amenity=townhall (node/1638872667), dans l’empreinte BATIMENT0000000301149547 ; zone BD TOPO « Mairie » à 9 m (errata V2.9.1)"
+    }
+   }
+  },
+  {
+   "id": "poi:chateau-eau-granges",
+   "name": "Château d’eau",
+   "poiId": "poi:chateau-eau-granges",
+   "kind": "château d’eau",
+   "buildingIds": [
+    "way/588791386"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": [
+     3.7874253,
+     48.5045101
+    ],
+    "source": "BD TOPO réservoir (centre de l’emprise)"
+   },
+   "address": null,
+   "addressNote": "aucune adresse documentée",
+   "sector": "Lotissement du Soleil Levant",
+   "status": "validé",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (zone d’activité ou d’intérêt)",
+     "ref": "RESERVOI0000000301149110",
+     "info": "réservoir « château d’eau », 27,6 m ; centre dans l’emprise way/588791386",
+     "access": "instantané local data-sources/ign (téléchargé V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "IGN — BD ORTHO 0,5 m (prise de vue 2025)",
+     "ref": "data-sources/architecture/bdortho-0m50",
+     "info": "cuve circulaire visible sur l’emprise",
+     "access": "dalles locales (V2.3)",
+     "verified": true
+    }
+   ],
+   "notes": "Aucun nom documenté : libellé générique conservé.",
+   "correction": null
+  },
+  {
+   "id": "poi:chateau-eau-poussey",
+   "name": "Château d’eau de Poussey",
+   "poiId": "poi:chateau-eau-poussey",
+   "kind": "château d’eau",
+   "buildingIds": [
+    "way/588791761"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": [
+     3.8069746,
+     48.5116874
+    ],
+    "source": "BD TOPO réservoir (centre de l’emprise)"
+   },
+   "address": null,
+   "addressNote": "aucune adresse documentée",
+   "sector": "Poussey",
+   "status": "validé",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (zone d’activité ou d’intérêt)",
+     "ref": "RESERVOI0000000301151974",
+     "info": "réservoir « château d’eau », 25,3 m ; centre dans l’emprise way/588791761",
+     "access": "instantané local data-sources/ign (téléchargé V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "IGN — BD ORTHO 0,5 m (prise de vue 2025)",
+     "ref": "data-sources/architecture/bdortho-0m50",
+     "info": "cuve circulaire visible sur l’emprise",
+     "access": "dalles locales (V2.3)",
+     "verified": true
+    }
+   ],
+   "notes": "Emprise OSM (way/588791761) retenue au gel V2.2.",
+   "correction": null
+  },
+  {
+   "id": "poi:monument-aux-morts",
+   "name": "Monument aux morts",
+   "poiId": "poi:monument-aux-morts",
+   "kind": "monument",
+   "buildingIds": [],
+   "pointOnly": true,
+   "anchor": {
+    "lonlat": [
+     3.7858431,
+     48.5090842
+    ],
+    "source": "BD TOPO zone d’activité (géométrie fictive : point)"
+   },
+   "address": null,
+   "addressNote": "aucune adresse documentée",
+   "sector": "Centre-bourg de Maizières",
+   "status": "validé (ponctuel)",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (zone d’activité ou d’intérêt)",
+     "ref": "SURFACTI0000000336632116",
+     "info": "zone « Monument », centre à 2,8 m de l’ancre",
+     "access": "instantané local data-sources/ign (téléchargé V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "Bible du projet 03",
+     "ref": "docs/bibles §5",
+     "info": "monument commémoratif, principal élément du patrimoine civique",
+     "access": "dépôt",
+     "verified": true
+    }
+   ],
+   "notes": "Objet ponctuel sans empreinte bâtie : le modèle V2.8 est posé sur l’ancre BD TOPO.",
+   "correction": null
+  },
+  {
+   "id": "poi:salle-polyvalente",
+   "name": "Salle polyvalente",
+   "poiId": "poi:salle-polyvalente",
+   "kind": "salle communale",
+   "buildingIds": [
+    "BATIMENT0000002006956400"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": [
+     3.7868727,
+     48.5087728
+    ],
+    "source": "BD TOPO zone « Salle de spectacle ou conférence », nature détaillée « Salle polyvalente » (orthophotographie, précision 3 m), centre dans BATIMENT0000002006956400 (errata V2.9.1)"
+   },
+   "address": "3 rue des Écoles",
+   "addressNote": "BAN/RNB du bâtiment : 2 rue Jules-Ferry",
+   "sector": "Centre-bourg de Maizières",
+   "status": "corrigé",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (zone d’activité ou d’intérêt)",
+     "ref": "SURFACTI0000002200449264",
+     "info": "nature détaillée « Salle polyvalente », saisie sur orthophotographie, précision 3 m, contient BATIMENT0000002006956400 (431 m²)",
+     "access": "instantané local data-sources/ign (téléchargé V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "Référentiel National des Bâtiments",
+     "ref": "RNB XKAY4VPVWTNZ",
+     "info": "= BATIMENT0000002006956400, adresse 2 rue Jules-Ferry (BAN position « bâtiment »)",
+     "access": "instantané local data-sources/rnb",
+     "verified": true
+    },
+    {
+     "organism": "Base Adresse Nationale",
+     "ref": "data-sources/poi/ban-adresses.geojson",
+     "info": "3 rue des Écoles : position « segment », même point que le n° 21 à l’autre bout de la rue (interpolation défaillante)",
+     "access": "instantané local (V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "OpenStreetMap",
+     "ref": "node/1644001052",
+     "info": "amenity=community_centre « Salle Polyvalente », 95 m à l’ouest, hors de toute empreinte, à côté du 6 rue de la République : non retenu (moins précis que la BD TOPO 2019)",
+     "access": "instantané local public/data/maizieres.geojson",
+     "verified": true
+    },
+    {
+     "organism": "Bible du projet 01",
+     "ref": "docs/bibles §11.1",
+     "info": "« Salle polyvalente : 3 rue des Écoles »",
+     "access": "dépôt",
+     "verified": true
+    }
+   ],
+   "notes": "Association V2.9 (BATIMENT0000000301149656, maison de 78 m² à l’est) issue du même mécanisme que la mairie. Adresse affichée : celle des Bibles (3 rue des Écoles) ; l’adresse BAN du bâtiment est 2 rue Jules-Ferry : écart signalé, à confirmer par la commune.",
+   "correction": {
+    "building_ids": {
+     "from": [
+      "BATIMENT0000000301149656"
+     ],
+     "to": [
+      "BATIMENT0000002006956400"
+     ]
+    },
+    "lonlat": {
+     "from": [
+      3.788979,
+      48.510362
+     ],
+     "to": [
+      3.7868727,
+      48.5087728
+     ]
+    },
+    "positionSource": {
+     "from": "adresse BAN 3 Rue des Ecoles (position segment)",
+     "to": "BD TOPO zone « Salle de spectacle ou conférence », nature détaillée « Salle polyvalente » (orthophotographie, précision 3 m), centre dans BATIMENT0000002006956400 (errata V2.9.1)"
+    }
+   }
+  },
+  {
+   "id": "poi:presbytere-ancien",
+   "name": "Ancien presbytère",
+   "poiId": "poi:presbytere-ancien",
+   "kind": "patrimoine",
+   "buildingIds": [
+    "BATIMENT0000000301149376",
+    "BATIMENT0000000301149375",
+    "BATIMENT0000000301149873"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": [
+     3.7877371,
+     48.511401
+    ],
+    "source": "adresse BAN 15 Rue Pasteur (position entrée)"
+   },
+   "address": "15 rue Pasteur",
+   "addressNote": null,
+   "sector": "Centre-bourg de Maizières",
+   "status": "validé",
+   "sources": [
+    {
+     "organism": "Base Adresse Nationale",
+     "ref": "data-sources/poi/ban-adresses.geojson",
+     "info": "15 rue Pasteur, position « entrée »",
+     "access": "instantané local (V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "Référentiel National des Bâtiments",
+     "ref": "RNB 1NGBNV9GC7J7 / 9B9XK1NPC5NW / 2SGC65E739TA",
+     "info": "les trois bâtiments associés portent l’adresse 15 rue Pasteur",
+     "access": "instantané local data-sources/rnb",
+     "verified": true
+    },
+    {
+     "organism": "Bible du projet 03",
+     "ref": "docs/bibles §3",
+     "info": "« ce presbytère était situé 15 rue Pasteur »",
+     "access": "dépôt",
+     "verified": true
+    }
+   ],
+   "notes": "Cohérent.",
+   "correction": null
+  },
+  {
+   "id": "poi:cpi",
+   "name": "Centre de première intervention (sapeurs-pompiers)",
+   "poiId": "poi:cpi",
+   "kind": "secours",
+   "buildingIds": [
+    "BATIMENT0000000301149810"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": [
+     3.7880286,
+     48.5096473
+    ],
+    "source": "BD TOPO zone d’activité (géométrie fictive : point)"
+   },
+   "address": null,
+   "addressNote": "aucune adresse documentée",
+   "sector": "Centre-bourg de Maizières",
+   "status": "validé",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (zone d’activité ou d’intérêt)",
+     "ref": "SURFACTI0000002222540441",
+     "info": "zone « Caserne de pompiers », centre dans BATIMENT0000000301149810",
+     "access": "instantané local data-sources/ign (téléchargé V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "IGN — BD ORTHO 0,5 m (prise de vue 2025)",
+     "ref": "data-sources/architecture/bdortho-0m50",
+     "info": "bâtiment à deux portes de remise sur rue",
+     "access": "dalles locales (V2.3)",
+     "verified": true
+    }
+   ],
+   "notes": "Association juste ; la fiche était masquée au clic par l’association trop large de l’école (corrigée).",
+   "correction": null
+  },
+  {
+   "id": "poi:seveal",
+   "name": "Dépôt d’hydrocarbures Sévéal",
+   "poiId": "poi:seveal",
+   "kind": "site industriel",
+   "buildingIds": [
+    "BATIMENT0000000301149036",
+    "BATIMENT0000000301149037",
+    "BATIMENT0000000301149035"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": [
+     3.7958715,
+     48.503404
+    ],
+    "source": "BD TOPO zone d’activité (centre du périmètre)"
+   },
+   "address": null,
+   "addressNote": "aucune adresse documentée",
+   "sector": "Zone industrielle La Glacière",
+   "status": "validé",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (zone d’activité ou d’intérêt)",
+     "ref": "SURFACTI0000000117790866",
+     "info": "« Dépôt d’hydrocarbures », contient les trois bâtiments associés",
+     "access": "instantané local data-sources/ign (téléchargé V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "Référentiel National des Bâtiments",
+     "ref": "RNB B2HXD6YNMH72 / 6DPCXZGYW8G4",
+     "info": "adresse 456 Le Tout Grain",
+     "access": "instantané local data-sources/rnb",
+     "verified": true
+    }
+   ],
+   "notes": "Ancre au centre du périmètre (cuves), 37 m des bâtiments : voulu.",
+   "correction": null
+  },
+  {
+   "id": "poi:stade",
+   "name": "Stade de Maizières-la-Grande-Paroisse",
+   "poiId": "poi:stade",
+   "kind": "stade",
+   "buildingIds": [
+    "BATIMENT0000000325110358"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": [
+     3.7915526,
+     48.5056295
+    ],
+    "source": "BD TOPO zone d’activité (centre du périmètre)"
+   },
+   "address": null,
+   "addressNote": "aucune adresse documentée",
+   "sector": "Lotissement du Soleil Levant",
+   "status": "validé",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (zone d’activité ou d’intérêt)",
+     "ref": "SURFACTI0000000358044861",
+     "info": "« Autre équipement sportif », contient les vestiaires BATIMENT0000000325110358",
+     "access": "instantané local data-sources/ign (téléchargé V1.11)",
+     "verified": true
+    },
+    {
+     "organism": "Référentiel National des Bâtiments",
+     "ref": "RNB V68HEYWMFD2M",
+     "info": "vestiaires : 1 rue du Stade",
+     "access": "instantané local data-sources/rnb",
+     "verified": true
+    }
+   ],
+   "notes": "Ancre au centre du terrain, les vestiaires sont le seul bâtiment : voulu.",
+   "correction": null
+  },
+  {
+   "id": "auto:silos-cerealiers",
+   "name": "Complexe de silos (nature BD TOPO « Silo »)",
+   "poiId": null,
+   "kind": "silos",
+   "buildingIds": [
+    "BATIMENT0000000301150834",
+    "BATIMENT0000000301150835",
+    "BATIMENT0000000301150836",
+    "BATIMENT0000000301150837",
+    "BATIMENT0000000301150838",
+    "BATIMENT0000000301150839",
+    "BATIMENT0000000301150840",
+    "BATIMENT0000000301150841",
+    "BATIMENT0000000301150842",
+    "BATIMENT0000000301150843",
+    "BATIMENT0000000301150844",
+    "BATIMENT0000000301150845",
+    "BATIMENT0000000301150846",
+    "BATIMENT0000000301150847",
+    "BATIMENT0000000301150848",
+    "BATIMENT0000000301150849",
+    "BATIMENT0000000301150850",
+    "BATIMENT0000000301150854",
+    "BATIMENT0000000301150855",
+    "BATIMENT0000000301150858",
+    "BATIMENT0000000301150859",
+    "BATIMENT0000000301150860",
+    "BATIMENT0000000301150861",
+    "BATIMENT0000000301150862",
+    "BATIMENT0000000301150863",
+    "BATIMENT0000000301150864",
+    "BATIMENT0000000301150865",
+    "BATIMENT0000000301150866",
+    "BATIMENT0000000301150867",
+    "BATIMENT0000000301150869",
+    "BATIMENT0000000301150870",
+    "BATIMENT0000000301150871",
+    "BATIMENT0000000301150872",
+    "BATIMENT0000000301150873",
+    "BATIMENT0000000301150901",
+    "BATIMENT0000000301150902",
+    "BATIMENT0000000301150903",
+    "BATIMENT0000000301150904",
+    "BATIMENT0000000301150905",
+    "BATIMENT0000000301150906",
+    "BATIMENT0000000301150910",
+    "BATIMENT0000000301150911",
+    "BATIMENT0000000301150912",
+    "BATIMENT0000000301150914",
+    "BATIMENT0000000301150915",
+    "BATIMENT0000000301150916",
+    "BATIMENT0000000301150917",
+    "BATIMENT0000000301150918",
+    "BATIMENT0000000301150919",
+    "BATIMENT0000000301150920"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": null,
+    "source": "centre des empreintes (pas d’étiquette)"
+   },
+   "address": null,
+   "addressNote": "aucune adresse documentée",
+   "sector": "Zone industrielle La Glacière",
+   "status": "validé (automatique)",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (bâti)",
+     "ref": "BATIMENT0000000301150834, BATIMENT0000000301150835, BATIMENT0000000301150836 …",
+     "info": "nature « Silo » pour les 50 empreintes",
+     "access": "référentiel bâti gelé V1.6.2",
+     "verified": true
+    },
+    {
+     "organism": "IGN — BD ORTHO 0,5 m (prise de vue 2025)",
+     "ref": "data-sources/architecture/bdortho-0m50",
+     "info": "volume visible sur l’emprise",
+     "access": "dalles locales (V2.3)",
+     "verified": true
+    }
+   ],
+   "notes": "Landmark automatique (sélection par taille / nature BD TOPO) : pas de fiche POI, pas d’étiquette ; l’association est le bâtiment lui-même.",
+   "correction": null
+  },
+  {
+   "id": "auto:BATIMENT0000000300132072",
+   "name": "Grand bâtiment commercial (22033 m²)",
+   "poiId": null,
+   "kind": "grand bâtiment",
+   "buildingIds": [
+    "BATIMENT0000000300132072"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": null,
+    "source": "centre des empreintes (pas d’étiquette)"
+   },
+   "address": null,
+   "addressNote": "aucune adresse documentée",
+   "sector": "Zone commerciale La Belle Idée",
+   "status": "validé (automatique)",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (bâti)",
+     "ref": "BATIMENT0000000300132072",
+     "info": "nature « Industriel, agricole ou commercial », plus grande emprise du secteur",
+     "access": "référentiel bâti gelé V1.6.2",
+     "verified": true
+    },
+    {
+     "organism": "IGN — BD ORTHO 0,5 m (prise de vue 2025)",
+     "ref": "data-sources/architecture/bdortho-0m50",
+     "info": "volume visible sur l’emprise",
+     "access": "dalles locales (V2.3)",
+     "verified": true
+    }
+   ],
+   "notes": "Landmark automatique (sélection par taille / nature BD TOPO) : pas de fiche POI, pas d’étiquette ; l’association est le bâtiment lui-même.",
+   "correction": null
+  },
+  {
+   "id": "auto:BATIMENT0000000301150899",
+   "name": "Grand bâtiment industriel (6827 m²)",
+   "poiId": null,
+   "kind": "grand bâtiment",
+   "buildingIds": [
+    "BATIMENT0000000301150899"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": null,
+    "source": "centre des empreintes (pas d’étiquette)"
+   },
+   "address": null,
+   "addressNote": "aucune adresse documentée",
+   "sector": "Zone industrielle La Glacière",
+   "status": "validé (automatique)",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (bâti)",
+     "ref": "BATIMENT0000000301150899",
+     "info": "nature « Industriel, agricole ou commercial », plus grande emprise du secteur",
+     "access": "référentiel bâti gelé V1.6.2",
+     "verified": true
+    },
+    {
+     "organism": "IGN — BD ORTHO 0,5 m (prise de vue 2025)",
+     "ref": "data-sources/architecture/bdortho-0m50",
+     "info": "volume visible sur l’emprise",
+     "access": "dalles locales (V2.3)",
+     "verified": true
+    }
+   ],
+   "notes": "Landmark automatique (sélection par taille / nature BD TOPO) : pas de fiche POI, pas d’étiquette ; l’association est le bâtiment lui-même.",
+   "correction": null
+  },
+  {
+   "id": "auto:BATIMENT0000000325110252",
+   "name": "Grand bâtiment commercial (6097 m²)",
+   "poiId": null,
+   "kind": "grand bâtiment",
+   "buildingIds": [
+    "BATIMENT0000000325110252"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": null,
+    "source": "centre des empreintes (pas d’étiquette)"
+   },
+   "address": null,
+   "addressNote": "aucune adresse documentée",
+   "sector": "Aéromia",
+   "status": "validé (automatique)",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (bâti)",
+     "ref": "BATIMENT0000000325110252",
+     "info": "nature « Industriel, agricole ou commercial », plus grande emprise du secteur",
+     "access": "référentiel bâti gelé V1.6.2",
+     "verified": true
+    },
+    {
+     "organism": "IGN — BD ORTHO 0,5 m (prise de vue 2025)",
+     "ref": "data-sources/architecture/bdortho-0m50",
+     "info": "volume visible sur l’emprise",
+     "access": "dalles locales (V2.3)",
+     "verified": true
+    }
+   ],
+   "notes": "Landmark automatique (sélection par taille / nature BD TOPO) : pas de fiche POI, pas d’étiquette ; l’association est le bâtiment lui-même.",
+   "correction": null
+  },
+  {
+   "id": "auto:BATIMENT0000002206127459",
+   "name": "Grand bâtiment industriel (22296 m²)",
+   "poiId": null,
+   "kind": "grand bâtiment",
+   "buildingIds": [
+    "BATIMENT0000002206127459"
+   ],
+   "pointOnly": false,
+   "anchor": {
+    "lonlat": null,
+    "source": "centre des empreintes (pas d’étiquette)"
+   },
+   "address": null,
+   "addressNote": "aucune adresse documentée",
+   "sector": "Aéromia",
+   "status": "validé (automatique)",
+   "sources": [
+    {
+     "organism": "IGN — BD TOPO (bâti)",
+     "ref": "BATIMENT0000002206127459",
+     "info": "nature « Industriel, agricole ou commercial », plus grande emprise du secteur",
+     "access": "référentiel bâti gelé V1.6.2",
+     "verified": true
+    },
+    {
+     "organism": "IGN — BD ORTHO 0,5 m (prise de vue 2025)",
+     "ref": "data-sources/architecture/bdortho-0m50",
+     "info": "volume visible sur l’emprise",
+     "access": "dalles locales (V2.3)",
+     "verified": true
+    }
+   ],
+   "notes": "Landmark automatique (sélection par taille / nature BD TOPO) : pas de fiche POI, pas d’étiquette ; l’association est le bâtiment lui-même.",
+   "correction": null
+  }
+ ]
+}

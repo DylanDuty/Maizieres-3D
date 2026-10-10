@@ -1,3 +1,13 @@
+# Vérification V2.9.1 — landmarks audités et passe qualité JRPG, 10 octobre 2026
+
+Branche `opus/v2.9.1-landmarks-position-jrpg-quality`, à partir de `aca65c3` (V2.9). Rapport : `docs/audit/V2.9.1_LANDMARK_POSITION_AND_JRPG_QUALITY.md`. Captures : `docs/qa/v2.9.1/`. Errata : `docs/freeze/V2.9.1_LANDMARK_CORRECTION_EXCEPTION.md`.
+
+- **Géographie** : aucun fichier de `public/`, `unreal/`, `data-sources/` modifié ; 42 fichiers gelés identiques à `309e65e` ; 52 hachages Freeze V1 vérifiés.
+- **Landmarks** : 16 audités (BD TOPO, BAN, BAN PLUS, RNB, OSM, orthophoto IGN 2025, Géoplateforme). La mairie est rattachée à `BATIMENT0000000301149547` au lieu d'une annexe au nord de la rue ; la salle polyvalente et l'école sont corrigées. Les trois corrections passent par un errata appliqué en mémoire. `check:landmark-positioning` : PASS.
+- **Mairie** : clic sur le vrai bâtiment → fiche Mairie (V2.9 : École) ; clic sur l'annexe → bâtiment ordinaire ; clic sur la caserne → fiche Caserne (V2.9 : École) ; étiquette sur le bâtiment, prioritaire en cas de chevauchement.
+- **Chromium** : 16 cadrages art V2.9 / V2.9.1 en 1280 × 800, 4 en 1920 × 1080, 16 landmarks, mobile portrait et paysage, test de clic et fiches sur trois gabarits, artefact ; 2 596 / 2 596 bâtiments, `manual=0` → 2 584 / 2 584, 0 enfoui, console vide, zoom maximal 420 m conservé.
+- **Contrôles** : `check:all` PASS ; `npm run build` OK.
+
 # Vérification V2.9 — art pass JRPG, continuité hydro et fiches immersives, 10 octobre 2026
 
 Branche `opus/v2.9-jrpg-hydro-immersive-ui`, à partir de `5b0ad49` (V2.8). Rapport : `docs/audit/V2.9_JRPG_HYDRO_IMMERSIVE_UI.md`. Captures : `docs/qa/v2.9/` (art, hydro, cards, mobile).
