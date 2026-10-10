@@ -1,3 +1,13 @@
+# Notes V2.7 — généralisation du diorama dessin animé, 10 octobre 2026
+
+- **Le terrain V2.4 suffit.** Repeindre sa texture et changer son matériau coûte zéro géométrie : la nappe locale à 5 m de Poussey n'avait pas de sens à l'échelle de la commune.
+- **Les bois sont des masses, pas des arbres.** Une surface indexée à 8 m par polygone, lissée, avec une lisière arrondie (60 % puis 20 %), coûte 0,46 M triangles pour 1 127 ha ; les arbres individuels ne servent qu'à la silhouette (lisière, émergents, rangs de peupliers).
+- **Le budget se règle par pas, pas par pourcentage.** Pas de lisière, d'émergents, de peupliers, de haies et taille des cellules de jardin par preset : c'est lisible et prévisible.
+- **Les tuiles de 1,5 km rendent le frustum culling utile.** Un seul `InstancedMesh` par archétype aurait toujours été dessiné entier ; 150 maillages tuilés laissent Three.js en écarter la plupart dans les vues rapprochées.
+- **Une façade mitoyenne n'a pas d'ouverture.** L'index des empreintes (cellules de 25 m) évite les panneaux qui traversent le toit du voisin dans le centre dense.
+- **Le modèle documenté de Saint-Denis se greffe par adaptateur.** Même géométrie que la V2.4 (plan + élévation), faces orientées explicitement pour les matériaux à face avant, palette V2.6.
+- **L'ombre suit la caméra.** La logique V2.4 `fitShadow` est réactivée pour le mode commune entière : un cadre fixe de 1,5 km ne couvrirait pas 6 km.
+
 # Notes V2.6.1 — finalisation artistique Poussey et interface au clic, 10 octobre 2026
 
 - **La fiche ne doit pas gagner sur la carte.** Une étiquette de 110 × 65 px reliée au point cliqué remplace une carte de 360 px : on lit le nom et on voit encore l'objet. La fiche complète reste disponible, mais c'est l'utilisateur qui l'ouvre.

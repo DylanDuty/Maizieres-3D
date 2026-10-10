@@ -1,3 +1,12 @@
+# Vérification V2.7 — généralisation du diorama dessin animé à toute Maizières, 10 octobre 2026
+
+Branche `opus/v2.7-maizieres-cartoon-generalization`, à partir de `dba3783` (V2.6.1). Rapport : `docs/audit/V2.7_MAIZIERES_CARTOON_GENERALIZATION.md`. Captures : `docs/qa/v2.7/`.
+
+- **Géographie** : aucun fichier de `public/`, `unreal/`, `data-sources/` modifié ; 42 fichiers gelés identiques à `309e65e` ; 52 hachages Freeze V1 vérifiés.
+- **Mode** `?visual=cartoon-v27` sur la commune entière : 2 596 bâtiments rendus par le langage V2.6.1 (2 584 avec `manual=0`), 0 enfoui, console vide, aux trois presets ; V2.4, V2.5, V2.6 / V2.6.1 inchangés.
+- **Chromium** : vue générale, oblique, centre-bourg, Poussey, Les Granges, La Glacière, rail, champs, bois, ruisseau, rue ; 16 landmarks ; clic route / bâtiment résidentiel / industriel / POI / landmark, Détails, Échap, clic vide ; smartphone portrait et paysage ; mesures des trois presets et de `diorama=1`.
+- **Contrôles** : `check:all` PASS (55) ; `pnpm build` OK.
+
 # Vérification V2.6.1 — finalisation artistique Poussey et interface au clic, 10 octobre 2026
 
 Branche `opus/v2.6.1-poussey-art-ux-polish`, à partir de `9369e66` (V2.6). Rapport : `docs/audit/V2.6.1_POUSSEY_ART_UX_POLISH.md`. Captures : `docs/qa/v2.6.1/`.

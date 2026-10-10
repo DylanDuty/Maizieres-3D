@@ -82,3 +82,6 @@ export function buildVegetationV26(parent,{v2,box,buildings,heightAt,materials:M
  group.add(hedgeMesh);parent.add(group);
  return {group,stats:{trees:trees.length,candidates:list.length,hedgeBushes:hedges.length,archetypes:Object.keys(ARCHETYPES).length,byType:Object.fromEntries(Object.entries(meshes).map(([k,m])=>[k,m.count]))},meshes:{...meshes,trunk,hedges:hedgeMesh}};
 }
+
+// V2.7 reuses the crown builder and the archetypes for the whole commune.
+export {crown,trunkGeo,B as BUSH_PALETTE};
