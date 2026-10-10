@@ -8,10 +8,11 @@ import {createPostV26} from '../v26/post-v26.js';
 import {V26_LIGHT} from '../v26/visual-v26.js';
 import {buildGroundV27} from './ground-v27.js';
 import {buildVegetationV27} from './vegetation-v27.js';
-import {specialBuildingsV27,warMemorial} from './landmarks-v27.js';
+import {specialBuildingsV28,warMemorialV28,landmarkIndex} from '../v28/landmarks-v28.js';
 import {Tri} from '../v25/procedural-houses.js';
 
-// V2.7 — the V2.6.1 diorama language generalised to the whole commune (?visual=cartoon-v27). Same light, palette,
+// V2.7 — the V2.6.1 diorama language generalised to the whole commune (?visual=cartoon-v27, alias cartoon-v28 since the
+// V2.8 landmarks). Same light, palette,
 // materials, houses, water, post-processing and click UX as Poussey; the ground is the V2.4 terrain repainted, the
 // vegetation is budgeted (canopy masses for the woods, tiled instances), the rail and the roads take the cartoon
 // materials, the four unique models get their own silhouettes. The frozen geography is read, never written.
@@ -45,8 +46,10 @@ export async function buildVisualV27({scene,renderer,camera,sun,hemisphere,v2,it
  const ground=buildGroundV27(v2,{size:Q.texture}),box=ground.box;
  for(const name of ['v2-roads','v2-road-marks']){const o=v2.group.getObjectByName(name);if(o)o.visible=false;}
  const railMeshes=restyleRail(v2,M);
- const houses=buildHousesV26({items,enrichment,architecture,elevation,materials:M,special:specialBuildingsV27(elevation),occupied:footprintIndex(items)});group.add(houses.group);
- const extras=new Tri();const memorial=warMemorial(extras,poiAt,heightAt);
+ // V2.8: landmarks from documented references (church, water towers, memorial, mairie and fire-station accents).
+ const special=specialBuildingsV28(elevation,landmarkIndex([...(v2.poiById?v2.poiById.values():[])]));
+ const houses=buildHousesV26({items,enrichment,architecture,elevation,materials:M,special,occupied:footprintIndex(items)});group.add(houses.group);
+ const extras=new Tri();const memorial=warMemorialV28(extras,poiAt,heightAt);
  if(extras.n){const g=extras.geometry(),m=new THREE.Mesh(g,M.detail);m.name='v27-landmarks';m.castShadow=true;m.receiveShadow=true;group.add(m);}
  const roads=buildRoadsV25(group,{v2,box,heightAt,materials:M});
  const vegetation=buildVegetationV27(group,{v2,box,buildings:items,heightAt,materials:M,q:Q.veg});
@@ -58,5 +61,5 @@ export async function buildVisualV27({scene,renderer,camera,sun,hemisphere,v2,it
  return {group,pickMeshes:houses.pickMeshes,post,box,views:null,wholeMap:true,dynamicShadow:true,sunOffset:sunOffset.toArray(),quality,cameraFor:v25CameraFor,
   update:now=>{water.update((now-start)/1000);},
   setSize:(w,h)=>post.setSize(w,h),
-  stats:{mode:'cartoon-v27',quality,diorama,tiltShift:Q.tilt?(diorama?'fort (2,4 px, bande 0,16)':'léger (0,75 px, bande 0,26)'):'aucun',buildings:houses.stats.buildings,byClass:houses.stats.byClass,houseVariants:houses.stats.variants,bigVariants:houses.stats.bigVariants,windows:houses.stats.windows,shutters:houses.stats.shutters,doors:houses.stats.doors,garageDoors:houses.stats.garageDoors,chimneys:houses.stats.chimneys,roads:roads.count,railMeshes,memorial,vegetation:vegetation.stats,ground:{texture:ground.texture,vertices:ground.vertices,box}}};
+  stats:{mode:'cartoon-v28',quality,diorama,landmarks:special.stats,tiltShift:Q.tilt?(diorama?'fort (2,4 px, bande 0,16)':'léger (0,75 px, bande 0,26)'):'aucun',buildings:houses.stats.buildings,byClass:houses.stats.byClass,houseVariants:houses.stats.variants,bigVariants:houses.stats.bigVariants,windows:houses.stats.windows,shutters:houses.stats.shutters,doors:houses.stats.doors,garageDoors:houses.stats.garageDoors,chimneys:houses.stats.chimneys,roads:roads.count,railMeshes,memorial,vegetation:vegetation.stats,ground:{texture:ground.texture,vertices:ground.vertices,box}}};
 }

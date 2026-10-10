@@ -1,3 +1,12 @@
+# Vérification V2.8 — landmarks par références web, 10 octobre 2026
+
+Branche `opus/v2.8-landmarks-web-references`, à partir de `4d47e00` (V2.7.1). Rapport : `docs/audit/V2.8_LANDMARKS_WEB_REFERENCES_ART_DIRECTION.md`. Captures : `docs/qa/v2.8/`.
+
+- **Géographie** : aucun fichier de `public/`, `unreal/`, `data-sources/` modifié ; 42 fichiers gelés identiques à `309e65e` ; 52 hachages Freeze V1 vérifiés.
+- **Landmarks** : église, deux châteaux d'eau, monument aux morts, mairie, centre de secours redessinés d'après les références écrites (Sauvegarde de l'Art Français, Fondation du patrimoine, base des monuments aux morts, carte postale ancienne via la Bible patrimoine) ; aucune texture photo, aucune enseigne.
+- **Chromium** : 16 landmarks avant / après, église sous six angles, secteurs, mobile portrait et paysage, test de clic sur trois gabarits ; 2 596 / 2 596 bâtiments, 0 enfoui, console vide, zoom maximal 420 m conservé.
+- **Contrôles** : `check:all` PASS ; `npm run build` OK.
+
 # Vérification V2.7.1 — zoom maximal mobile et audit du rendu, 10 octobre 2026
 
 Branche `opus/v2.7.1-zoom-and-render-audit`, à partir de `48340c9` (V2.7). Rapport : `docs/audit/V2.7.1_ZOOM_ET_AUDIT_RENDU.md`. Captures : `docs/qa/v2.7.1/`.

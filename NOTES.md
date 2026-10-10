@@ -1,3 +1,10 @@
+# Notes V2.8 — landmarks par références web, 10 octobre 2026
+
+- **Une référence écrite vaut mieux qu'une photo imaginée.** L'environnement n'atteint pas les sites d'images ; les descriptions de la Sauvegarde de l'Art Français et de la Fondation du patrimoine (tuiles sur la nef romane, ardoises sur le gothique, flèche courte, tourelle à poivrière, chevet à cinq pans) suffisent à fixer une silhouette juste ; ce qu'elles ne disent pas reste stylisé et dit comme tel.
+- **Le hook `special` passe avant tout.** Il peut dessiner le bâtiment (église, château d'eau) ou renvoyer des accents (arcs, balcon, portes) appliqués par le dessin standard : un seul point d'entrée pour les landmarks, aucune classe spéciale.
+- **Les plages de picking suivent tous les tampons.** Une église mélange tuile et ardoise : enregistrer les plages par famille de matériau garde le clic exact.
+- **Lumière et ardoise.** À l'ombre toon, une ardoise foncée devient une masse noire : l'ardoise claire (#7d8da3) garde le volume lisible.
+
 # Notes V2.7.1 — zoom maximal et audit du rendu, 10 octobre 2026
 
 - **Un modèle double face ne se greffe pas en face simple sans règle d'orientation.** L'adaptateur V2.7 orientait toute face inclinée « à l'écart du centroïde du plan » : faux pour les bosses du toit de Saint-Denis (plus de 45°), la flèche et le clocher centrés. Règle par contexte : murs vers l'extérieur de l'emprise, toit vers le haut, détails à l'écart de leur propre centre (centres renvoyés par le modèle).

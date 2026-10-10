@@ -57,13 +57,15 @@ export function buildHousesV26({items,enrichment={buildings:{}},architecture,ele
   if(big){const h={};roofCol.getHSL(h);const tint=new THREE.Color(pick(big.roofs));roofCol=h.s<.12||p.arch.shape==='flat'?tint.lerp(roofCol,.35):roofCol.lerp(tint,.25);}
   const fasciaCol=new THREE.Color(PALETTE.fascia),soffitCol=fasciaCol.clone().multiplyScalar(.86);
   const h=roofFn(p),model=roofSurface(p),lines=model.lines,top=q=>eaveY+h(q);
-  const w0=walls[wallPart].n,r0=roofs[roofPart].n,d0=details.n;
-  if(cls==='WATER_TOWER'){waterTowerV26(poly,base,arch?.totalHeightM||p.wallHeight,details,C);}
-  else if(special&&special({item,p,cls,base,eaveY,walls:walls[wallPart],roofs:roofs[roofPart],details,wallCol,roofCol})){}
+  const w0s=walls.map(t=>t.n),r0s=roofs.map(t=>t.n),d0=details.n;
+  // V2.8: the hook runs first for every building; `true` = drawn by the hook, an object = accents on the standard drawing.
+  const sp=special?special({item,p,cls,base,eaveY,walls:walls[wallPart],roofs:roofs[roofPart],details,wallCol,roofCol,totalHeight:arch?.totalHeightM}):false;const acc=sp&&sp!==true?sp:null;const storeyV=acc?.storey||storey;
+  if(sp===true){}
+  else if(cls==='WATER_TOWER'){waterTowerV26(poly,base,arch?.totalHeightM||p.wallHeight,details,C);}
   else{
    for(const [ri,r] of poly.entries())for(let i=0;i<r.length;i++){const a=r[i],b=r[(i+1)%r.length],pts=[a,...edgeCuts(a,b,lines).map(f=>[a[0]+f*(b[0]-a[0]),a[1]+f*(b[1]-a[1])]),b];let u=0;
     for(let j=1;j<pts.length;j++){const c=pts[j-1],d=pts[j],L=Math.hypot(d[0]-c[0],d[1]-c[1]),tc=top(c)-thk+.06,td=top(d)-thk+.06;if(p.kind!=='canopy')walls[wallPart].quad([c[0],base,c[1]],[d[0],base,d[1]],[d[0],td,d[1]],[c[0],tc,c[1]],wallCol,[[u,0],[u+L,0],[u+L,td-base],[u,tc-base]],outward(a,b,poly));u+=L;}
-    if(ri===0)panels(a,b,poly,p,{res,garage,hall,big,civic,r2,id,occupied,base,eaveY,thk,wW,wH,spacing,storey,shutters,doorCol,rng,details,stats,top,glass,frame,wallCol});}
+    if(ri===0)panels(a,b,poly,p,{res,garage,hall,big,civic,r2,id,occupied,base,eaveY,thk,wW,wH,spacing,storey:storeyV,shutters,doorCol,rng,details,stats,top,glass,frame:acc?.windowFrame||frame,wallCol,arched:!!acc?.arched,balcony:!!acc?.balcony,skipGroundLongest:!!acc?.skipGroundLongest});}
    const outer=poly.map((r,k)=>overhang?offsetRing(r,overhang,k>0):r),rings=shapeRings(outer),flat=rings.flat();
    const uvOf=q=>[dot(q,p.arch.along),dot(q,p.arch.across)];
    for(const tri of THREE.ShapeUtils.triangulateShape(rings[0],rings.slice(1))){const pts=tri.map(i=>[flat[i].x,flat[i].y]);for(const piece of splitByLines(pts,lines))for(let i=1;i<piece.length-1;i++){const v=[piece[0],piece[i],piece[i+1]];roofs[roofPart].tri(...v.map(q=>[q[0],top(q),q[1]]),roofCol,v.map(uvOf),UP);}}
@@ -80,7 +82,7 @@ export function buildHousesV26({items,enrichment={buildings:{}},architecture,ele
     if(big?.skylight&&p.size>120){const sky=new THREE.Color('#dfeef3');for(const r of runs)for(let k=1;k<r.length;k++){const a=r[k-1],b=r[k],o=[along[0]*.7,along[1]*.7],ya=top(a)+.16,yb=top(b)+.16;details.quad([a[0]-o[1],ya,a[1]+o[0]],[b[0]-o[1],yb,b[1]+o[0]],[b[0]+o[1],yb,b[1]-o[0]],[a[0]+o[1],ya,a[1]-o[0]],sky,null,UP);}}
     if(res&&['gable','hip'].includes(p.arch.type)&&p.size>55&&rng()<.7){const q=at(s0+(s1-s0)*(.3+rng()*.4)),o=[p.arch.across[0]*.9,p.arch.across[1]*.9],c=[q[0]+o[0]*(rng()<.5?1:-1),q[1]+o[1]*(rng()<.5?1:-1)];if(insidePoly(c,poly)){box(details,c,.62,.62,top(c)-.6,top(c)+1.25,wallCol.clone().multiplyScalar(.9),p.arch.along);box(details,c,.76,.76,top(c)+1.25,top(c)+1.42,capCol,p.arch.along);stats.chimneys++;}}}
   }
-  if(walls[wallPart].n>w0)wallRanges.push({part:wallPart,start:w0,end:walls[wallPart].n,id});if(roofs[roofPart].n>r0)roofRanges.push({part:roofPart,start:r0,end:roofs[roofPart].n,id});if(details.n>d0)detailRanges.push({part:0,start:d0,end:details.n,id});
+  walls.forEach((t,k)=>{if(t.n>w0s[k])wallRanges.push({part:k,start:w0s[k],end:t.n,id});});roofs.forEach((t,k)=>{if(t.n>r0s[k])roofRanges.push({part:k,start:r0s[k],end:t.n,id});});if(details.n>d0)detailRanges.push({part:0,start:d0,end:details.n,id});
   stats.buildings++;stats.byClass[cls]=(stats.byClass[cls]||0)+1;
  }
  const group=new THREE.Group();group.name='v26-houses';
@@ -101,6 +103,8 @@ function panels(a,b,poly,p,o){const dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,
  if(o.occupied&&o.occupied((a[0]+b[0])/2+nx*.5,(a[1]+b[1])/2+nz*.5,o.id))return;
  const panel=(u,y,w,h,depth,col)=>{const x0=a[0]+ux*(u-w/2)+nx*depth,z0=a[1]+uz*(u-w/2)+nz*depth,x1=a[0]+ux*(u+w/2)+nx*depth,z1=a[1]+uz*(u+w/2)+nz*depth;o.details.quad([x0,y-h/2,z0],[x1,y-h/2,z1],[x1,y+h/2,z1],[x0,y+h/2,z0],col,null,N);};
  const eave=Math.min(o.top(a),o.top(b))-o.thk,longest=isLongest(a,b,poly);
+ // V2.8 accents: round arch over a bay (fan in the facade plane), balcony slab with a rail on the main facade.
+ const arch=(u,yTop,r,depth,col,k=6)=>{const P=(kx,ky)=>[a[0]+ux*(u+kx)+nx*depth,yTop+ky,a[1]+uz*(u+kx)+nz*depth],c=P(0,0);for(let i=0;i<k;i++){const a0=Math.PI*i/k,a1=Math.PI*(i+1)/k;o.details.tri(c,P(Math.cos(a0)*r,Math.sin(a0)*r),P(Math.cos(a1)*r,Math.sin(a1)*r),col,null,N);}};
  if(o.garage){if(longest&&len>=3.6&&o.eaveY-o.base>=2.2){panel(len/2,o.base+1.1,Math.min(2.6,len-.9)+.16,2.2,.02,o.frame);panel(len/2,o.base+1.08,Math.min(2.6,len-.9),2.05,.04,new THREE.Color('#e2ded3'));o.stats.garageDoors++;}return;}
  if(o.hall||o.big){const B=o.big||{};if(longest&&len>=6){const w=Math.min(4.2,len*.4),h=Math.min(3.4,o.eaveY-o.base-.6);panel(len/2,o.base+h/2+.1,w+.16,h+.12,.02,o.frame);panel(len/2,o.base+h/2+.1,w,h,.04,new THREE.Color('#cdd2cf'));o.stats.garageDoors++;
    if(B.sign)panel(len/2,Math.min(eave-.75,o.base+h+1.1),Math.min(len*.6,9),.55,.03,new THREE.Color(B.sign));}
@@ -109,10 +113,14 @@ function panels(a,b,poly,p,o){const dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,
  if(!o.res)return;
  const floors=Math.max(1,Math.min(o.r2?3:2,Math.floor((eave-o.base-.9)/o.storey)));
  let doorU=-1;if(longest&&len>=5.5&&eave-o.base>=2.5){doorU=1.4+o.rng()*(len-2.8);panel(doorU,o.base+1.12,1.16,2.24,.02,o.frame);panel(doorU,o.base+1.1,1,2.1,.04,o.doorCol);o.stats.doors++;}
- for(let f=0;f<floors;f++){const y=o.base+1.05+f*o.storey+o.wH/2;if(y+o.wH/2>eave-.3)continue;let count=0;
+ for(let f=0;f<floors;f++){if(f===0&&o.skipGroundLongest&&longest)continue;const y=o.base+1.05+f*o.storey+o.wH/2;if(y+o.wH/2>eave-.3)continue;let count=0;
   for(let u=1.6+o.rng()*.5;u<len-1.5&&count<4;u+=o.spacing){if(doorU>=0&&f===0&&Math.abs(u-doorU)<o.wW/2+1)continue;
-   panel(u,y,o.wW+.18,o.wH+.18,.02,o.frame);panel(u,y,o.wW,o.wH,.04,o.glass);panel(u,y+o.wH*.02,o.wW*.08,o.wH*.9,.05,o.frame);o.stats.windows++;count++;
-   if(o.shutters){const s=new THREE.Color(o.shutters);panel(u-o.wW/2-.33,y,.46,o.wH+.08,.03,s);panel(u+o.wW/2+.33,y,.46,o.wH+.08,.03,s);o.stats.shutters+=2;}}}}
+   panel(u,y,o.wW+.18,o.wH+.18,.02,o.frame);panel(u,y,o.wW,o.wH,.04,o.glass);panel(u,y+o.wH*.02,o.wW*.08,o.wH*.9,.05,o.frame);o.stats.windows++;count++;if(f===0&&o.arched){arch(u,y+o.wH/2,o.wW/2+.09,.02,o.frame);arch(u,y+o.wH/2,o.wW/2,.04,o.glass);}
+   if(o.shutters){const s=new THREE.Color(o.shutters);panel(u-o.wW/2-.33,y,.46,o.wH+.08,.03,s);panel(u+o.wW/2+.33,y,.46,o.wH+.08,.03,s);o.stats.shutters+=2;}}}
+ if(o.balcony&&longest&&floors>=2){const yb=o.base+1.05+o.storey,along=[ux,uz],cx=a[0]+ux*len/2,cz=a[1]+uz*len/2;
+  box(o.details,[cx+nx*.42,cz+nz*.42],.84,2.6,yb-.16,yb,o.wallCol.clone().multiplyScalar(1.12),along);
+  for(const k of [-1.15,0,1.15])box(o.details,[cx+ux*k+nx*.78,cz+uz*k+nz*.78],.08,.08,yb,yb+.95,o.frame,along);
+  box(o.details,[cx+nx*.78,cz+nz*.78],.07,2.4,yb+.9,yb+.98,o.frame,along);}}
 
 // Water tower: shaft, widened tank and conical cap on the documented total height (a silhouette, not a survey).
 function waterTowerV26(poly,base,totalH,t,C){const bb=bounds(poly[0]),cx=(bb.minX+bb.maxX)/2,cz=(bb.minZ+bb.maxZ)/2,r=Math.sqrt(area(poly[0])/Math.PI),n=28,ring=(rad,y)=>Array.from({length:n},(_,i)=>[cx+Math.cos(i/n*6.2832)*rad,y,cz+Math.sin(i/n*6.2832)*rad]);
