@@ -1,3 +1,18 @@
+# Vérification V3.0 — passe artistique premium de l'environnement, 11 octobre 2026
+
+Branche `opus/v3.0-premium-environment-art-pass`, à partir de `d8f5b15` (V2.9.2). Mode `?visual=premium-v30`.
+
+- **Documents** : rapport `docs/audit/V3.0_PREMIUM_ENVIRONMENT_ART_PASS.md` (24 sections, grilles anti-pixelisation et anti-cheap).
+- **Captures** : `docs/qa/v3.0/` — `compare/` (12 cadrages V2.9.2 / V3.0, BEAUTÉ, 1280 × 800), `environment-edges/` (19 limites, agrandissements en pixels réels), `mobile/` (390 × 844 et 844 × 390), `hd/` (1920 × 1080), `interface/` (clics, fiches, recherche, vues rapides, zoom).
+
+- **Géographie** : aucun fichier de `public/`, `unreal/` ni `data-sources/` modifié ; 42 fichiers gelés identiques à `309e65e` ; 52 hachages Freeze V1 vérifiés.
+- **Sémantique** : code du gel sémantique V1 inchangé ; `check:landmark-positioning`, `check:places-canonical`, `check:road-names`, `check:poi-building-links`, `check:semantic-freeze`, `check:search-targets` PASS.
+- **Contours** : 19 limites (5 lisières, 5 bords de champs, 3 prairie / culture, 3 rivière / végétation, 3 franges village) : plus de marche ni de crénelage en V3.0, PASS dans les 8 catégories, mobile compris.
+- **Performance** (SwiftShader, médianes de 3 passages alternés) : BEAUTÉ 285 appels / 10,24 M triangles, + 2,0 % de temps d'image ; ÉQUILIBRÉ 283 / 8,52 M, + 1,5 % ; PERFORMANCE 127 / 3,48 M, + 16,6 % (FXAA ajouté ; + 5 % sans).
+- **Chromium, sonde** (vue normale, `manual=0`, `premium-v30` sur les trois presets, portrait, paysage, diorama, `?diagnostic=v2`, `?diagnostic=poi`) : 2 596 / 2 596 bâtiments, 2 584 / 2 584 avec `manual=0`, 0 enfoui, console vide.
+- **Chromium, interface** : clics, fiches, recherche, vues rapides sur trois gabarits, console vide ; zoom maximal 420 m (limite souple) conservé. Défaut ancien corrigé : la touche Entrée de la recherche n'ouvrait aucune fiche.
+- **Contrôles** : `check:all` PASS ; `npm run build` OK.
+
 # Vérification V2.9.2 — audit géographique et sémantique, 11 octobre 2026
 
 Branche `opus/v2.9.2-geographic-semantic-audit`, à partir de `9ab6d20` (V2.9.1).
