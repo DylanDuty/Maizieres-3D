@@ -56,7 +56,7 @@ export async function buildVisualV27({scene,renderer,camera,sun,hemisphere,v2,it
  renderer.shadowMap.type=Q.soft?THREE.PCFSoftShadowMap:THREE.PCFShadowMap;renderer.shadowMap.enabled=true;
  const M=makeMaterialsV26({style:mat});SHADING.uBands.value=v30?4:v291?3:v29?2:1;SHADING.uShadowTint.value.set(v30?'#8597ac':v291?'#7f9eb8':v29?'#8ea9b6':'#8f9ac6');SHADING.uRim.value=v30?.1:v291?.14:v29?.15:.12;SHADING.uWarm.value.set(v30?'#fff2e2':v291?'#fff4e4':'#ffffff');SHADING.uAerial.value=L.aerial||0;
  const group=new THREE.Group();group.name='v27';scene.add(group);
- const ground=v30?buildGroundV30(v2,{size:Q.texture,detailM:V30_DETAIL[quality]?.[0]||1100,detail:V30_DETAIL[quality]?.[1]||2048}):buildGroundV27(v2,{size:Q.texture,style:mat}),box=ground.box;
+ const ground=v30?buildGroundV30(v2,{size:Q.texture,detailM:V30_DETAIL[quality]?.[0]||1100,detail:V30_DETAIL[quality]?.[1]||2048,lite:quality==='performance'}):buildGroundV27(v2,{size:Q.texture,style:mat}),box=ground.box;
  for(const name of ['v2-roads','v2-road-marks']){const o=v2.group.getObjectByName(name);if(o)o.visible=false;}
  const railMeshes=restyleRail(v2,M);
  // V2.8: landmarks from documented references (church, water towers, memorial, mairie and fire-station accents).

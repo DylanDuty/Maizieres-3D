@@ -83,27 +83,29 @@ const GROUND_V30_DECL=`uniform sampler2D tGlobal,tGlobalFieldA,tGlobalFieldB,tDe
 struct FieldS{vec4 w;vec2 dir;float k;};
 FieldS sampleField(sampler2D ta,sampler2D tb,vec2 uv){FieldS s;vec3 a=texture2D(ta,uv).rgb,b=texture2D(tb,uv).rgb;s.w=vec4(a,b.b);
  vec2 fv=b.rg*2.-1.;float lv=length(fv);float an=atan(fv.y,fv.x)*.5;s.dir=vec2(cos(an),sin(an));s.k=clamp((lv/max(a.r,.05)-.3)/.7,0.,1.);return s;}`;
-const GROUND_V30_CHUNK=`vec2 wp=vWorld.xz;
+// lite (PERFORMANCE): same colours, limits and furrows; no secondary noise (meadow, lawn and wood-floor variation, grain
+// octave, large-scale tint), about V2.9.1's per-pixel cost.
+const groundChunk=lite=>`vec2 wp=vWorld.xz;
  vec2 ug=(wp-uBox.xy)/uBox.zw;vec2 ud=(wp-uDet.xy)/uDet.z;float edgeD=max(abs(ud.x-.5),abs(ud.y-.5));float inD=uDet.w*(1.-smoothstep(.41,.49,edgeD));
  vec3 cg=texture2D(tGlobal,ug).rgb;vec3 cd=texture2D(tDetail,clamp(ud,0.,1.)).rgb;diffuseColor.rgb*=mix(cg,cd,inD);
  FieldS fs;if(inD>.5)fs=sampleField(tDetailFieldA,tDetailFieldB,clamp(ud,0.,1.));else fs=sampleField(tGlobalFieldA,tGlobalFieldB,ug);
  float fw=fwidth(wp.x)+fwidth(wp.y);float near=1.-smoothstep(.35,1.6,fw);float mult=1.;
  if(fs.w.x>.01){vec2 fdir=fs.dir;float t=dot(wp,vec2(-fdir.y,fdir.x)),along=dot(wp,fdir),fk=fs.k;
-  float sb=t/(5.5+fk*3.5);float band=.5+.5*sin(6.2832*sb+vnoise(vec2(along*.004,fk*7.))*2.);float pb=1.+.07*(band-.5)*(1.-smoothstep(.25,.6,fwidth(sb)));
+  float sb=t/(5.5+fk*3.5);float band=.5+.5*sin(6.2832*sb${lite?'':'+vnoise(vec2(along*.004,fk*7.))*2.'});float pb=1.+.07*(band-.5)*(1.-smoothstep(.25,.6,fwidth(sb)));
   float sf=t/(1.7+fk*.6);float fur=abs(fract(sf)-.5)*2.;pb*=1.-.075*(smoothstep(.55,.95,fur)-.4)*(1.-smoothstep(.2,.5,fwidth(sf)))*mix(.45,1.,near);
-  float tl=t/(24.+fk*4.);float td=abs(fract(tl)-.5)*2.;float lw=max(.035,fwidth(tl)*1.2);pb*=1.-.07*(1.-smoothstep(1.-lw*2.,1.-lw,td))*(1.-smoothstep(.12,.35,fwidth(tl)))*(.6+.4*vnoise(vec2(along*.01,fk*3.)));
-  pb*=.965+.06*vnoise(vec2(along*.012,t*.03)+fk*9.)+.025*vnoise(wp*.22);
-  mult=mix(mult,pb,fs.w.x);}
+  float tl=t/(24.+fk*4.);float td=abs(fract(tl)-.5)*2.;float lw=max(.035,fwidth(tl)*1.2);pb*=1.-.07*(1.-smoothstep(1.-lw*2.,1.-lw,td))*(1.-smoothstep(.12,.35,fwidth(tl)))${lite?'*.8':'*(.6+.4*vnoise(vec2(along*.01,fk*3.)))'};
+  pb*=.965+.06*vnoise(vec2(along*.012,t*.03)+fk*9.)${lite?'':'+.025*vnoise(wp*.22)'};
+  mult=mix(mult,pb,fs.w.x);}${lite?'':`
  if(fs.w.y>.01){float pm=.95+.09*vnoise(wp*.07+3.);pm*=1.-.05*smoothstep(.62,.82,vnoise(wp*.31+3.))*(.4+.6*near);mult=mix(mult,pm,fs.w.y);}
  if(fs.w.z>.01){float pl=.975+.07*vnoise(wp*.045);pl*=1.-.04*smoothstep(.66,.84,vnoise(wp*.12+5.));mult=mix(mult,pl,fs.w.z);}
- if(fs.w.w>.01){float pw=.9+.12*vnoise(wp*.13);mult=mix(mult,pw,fs.w.w);}
- diffuseColor.rgb*=mult;if(near>.01){float gr=vnoise(wp*.6)*.5+vnoise(wp*2.4)*.5;diffuseColor.rgb*=1.+(gr-.5)*.05*near;}
- float big=vnoise(wp*.006+2.);diffuseColor.rgb*=mix(vec3(.985,1.,1.015),vec3(1.02,1.005,.975),big);`;
+ if(fs.w.w>.01){float pw=.9+.12*vnoise(wp*.13);mult=mix(mult,pw,fs.w.w);}`}
+ diffuseColor.rgb*=mult;if(near>.01){float gr=${lite?'vnoise(wp*.6)':'vnoise(wp*.6)*.5+vnoise(wp*2.4)*.5'};diffuseColor.rgb*=1.+(gr-.5)*.05*near;}${lite?'':`
+ float big=vnoise(wp*.006+2.);diffuseColor.rgb*=mix(vec3(.985,1.,1.015),vec3(1.02,1.005,.975),big);`}`;
 
 const texOf=(canvas,colour)=>{const t=new THREE.CanvasTexture(canvas);t.flipY=false;t.colorSpace=colour?THREE.SRGBColorSpace:THREE.NoColorSpace;if(colour)t.anisotropy=8;else{t.magFilter=THREE.LinearFilter;t.minFilter=THREE.LinearFilter;t.generateMipmaps=false;}return t;};
 const canvasOf=(w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;return c;};
 
-export function buildGroundV30(v2,{size=4096,fieldSize=2048,detail=2048,detailM=1100}){
+export function buildGroundV30(v2,{size=4096,fieldSize=2048,detail=2048,detailM=1100,lite=false}){
  const mesh=v2.group.getObjectByName('v2-terrain');if(!mesh)return null;
  const g=mesh.geometry,pos=g.getAttribute('position');let minX=Infinity,maxX=-Infinity,minZ=Infinity,maxZ=-Infinity;
  for(let i=0;i<pos.count;i++){const x=pos.getX(i),z=pos.getZ(i);if(x<minX)minX=x;if(x>maxX)maxX=x;if(z<minZ)minZ=z;if(z>maxZ)maxZ=z;}
@@ -113,7 +115,7 @@ export function buildGroundV30(v2,{size=4096,fieldSize=2048,detail=2048,detailM=
  const dc=canvasOf(detail,detail),dfa=canvasOf(detail,detail),dfb=canvasOf(detail,detail);const dctx=dc.getContext('2d'),dfactx=dfa.getContext('2d'),dfbctx=dfb.getContext('2d');dctx.fillStyle=GROUND_V30.base;dctx.fillRect(0,0,detail,detail);
  const tGlobal=texOf(gc,true),tGlobalFieldA=texOf(fa,false),tGlobalFieldB=texOf(fb,false),tDetail=texOf(dc,true),tDetailFieldA=texOf(dfa,false),tDetailFieldB=texOf(dfb,false);
  const U={tGlobal:{value:tGlobal},tGlobalFieldA:{value:tGlobalFieldA},tGlobalFieldB:{value:tGlobalFieldB},tDetail:{value:tDetail},tDetailFieldA:{value:tDetailFieldA},tDetailFieldB:{value:tDetailFieldB},uBox:{value:new THREE.Vector4(minX,minZ,W,D)},uDet:{value:new THREE.Vector4(0,0,detailM,0)}};
- const old=mesh.material;mesh.material=toon(new THREE.MeshLambertMaterial({vertexColors:true}),'ground-v30',GROUND_V30_CHUNK,U,{decl:GROUND_V30_DECL});old.dispose?.();
+ const old=mesh.material;mesh.material=toon(new THREE.MeshLambertMaterial({vertexColors:true}),lite?'ground-v30-lite':'ground-v30',groundChunk(lite),U,{decl:GROUND_V30_DECL});old.dispose?.();
  // Detail window: painted around a centre, uploaded once; the shader fades it in over the inner 82 % of the window.
  let centre=null,paints=0,lastMs=0;
  const paint=c=>{const t0=performance.now(),half=detailM/2,b={minX:c[0]-half,maxX:c[0]+half,minZ:c[1]-half,maxZ:c[1]+half};
