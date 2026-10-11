@@ -33,7 +33,7 @@ export function prepareGroundData(d){const tag=(list,f)=>list.map(o=>({o,b:f(o)}
   hedges:tag(d.hedges,o=>lineBox(o.p,3)),water:tag(d.water,bboxOf),waterLines:tag(d.waterLines,o=>lineBox(o.p,2))};}
 
 // Paints the flat land cover of `box` (any window) into a w × h canvas, with vector soft transitions at the limits.
-export function paintGroundV30(ctx,{P,box,w,h,v31=false}){
+export function paintGroundV30(ctx,{P,box,w,h,v31=false,big=null}){
  const W=box.maxX-box.minX,D=box.maxZ-box.minZ,sx=w/W,sz=h/D,m=1/sx;
  const X=x=>(x-box.minX)*sx,Z=z=>(z-box.minZ)*sz;
  const over=b=>b[2]>=box.minX-20&&b[0]<=box.maxX+20&&b[3]>=box.minZ-20&&b[1]<=box.maxZ+20;
@@ -45,9 +45,9 @@ export function paintGroundV30(ctx,{P,box,w,h,v31=false}){
  const G=GROUND_V30;ctx.globalAlpha=1;ctx.fillStyle=G.base;ctx.fillRect(0,0,w,h);
  const vil=P.village.filter(e=>over(e.b)),agri=P.agriculture.filter(e=>over(e.b)),woods=P.woodland.filter(e=>over(e.b));
  for(const {o} of vil)fill(o,G.lawn);
- // V3.1: industrial and commercial yards in a lighter warm concrete at 55 % (less khaki), joined to the fields by a 4 m verge;
+ // V3.1: industrial and commercial yards in a lighter, more neutral warm concrete at 70 % (less khaki), joined to the fields by a 4 m verge;
  // the shader adds a slow wear. Other perimeters keep the V3.0 yard.
- for(const {o} of P.artificial.filter(e=>over(e.b)&&e.o.kind==='perimetre'&&!/eolien|photovolt/.test(e.o.t))){const ind=v31&&/industri|commerc/.test(o.t);fill(o,ind?'#cdc8bd':G.yard,ind?.55:.62);if(ind)band(o,G.verge,4,.3);}
+ for(const {o} of P.artificial.filter(e=>over(e.b)&&e.o.kind==='perimetre'&&!/eolien|photovolt/.test(e.o.t))){const ind=v31&&/industri|commerc/.test(o.t);fill(o,ind?'#d2cdc1':G.yard,ind?.7:.62);if(ind)band(o,G.verge,4,.3);}
  for(const {o} of agri){const k=hash(o.id),meadow=MEADOW(o),tint=meadow?soft(G.meadow,.28,.44,.53,.63,(k-.5)*.05):soft(cropColor(o,k),.28,.5,.56,.7,(k-.5)*.05);fill(o,tint);}
  // Parcel limits: a pale grass verge, 2,5 m, feathered (field margins), never a dark line.
  for(const {o} of agri)band(o,G.verge,2.6,.5);
@@ -60,6 +60,9 @@ export function paintGroundV30(ctx,{P,box,w,h,v31=false}){
  for(const {o} of woods)band(o,G.fringe,7.5,.42,4);
  for(const {o} of P.hedgePolygons.filter(e=>over(e.b))){fill(o,G.hedge);band(o,G.fringe,4,.3,3);}
  for(const {o} of P.hedges.filter(e=>over(e.b))){line(o.p,3,G.fringe,Math.min(7,(o.w||2.4)+3),.28);line(o.p,3,G.hedge,Math.min(5,o.w||2.4),.9);}
+ // V3.1: soft contact shade at the foot of large volumes (halls, farms, public buildings over 250 m²): 7 m feathered, the
+ // footprint itself covers the inside. A ground occlusion cue, not a surface.
+ if(big){ctx.strokeStyle='#6f6a60';ctx.lineJoin='round';for(const {o} of big.filter(e=>over(e.b)))for(const [wm,al] of [[7,.05],[4.5,.07],[2.4,.09]]){ctx.globalAlpha=al;ctx.lineWidth=Math.max(.6,wm*sx);ctx.beginPath();for(const r of o.poly){r.forEach((q,i)=>i?ctx.lineTo(X(q[0]),Z(q[1])):ctx.moveTo(X(q[0]),Z(q[1])));ctx.closePath();}ctx.stroke();}ctx.globalAlpha=1;}
  // Water last (V2.1 rule): a grassy bank, then a natural blue-green bed under the animated surface.
  for(const {o} of P.water.filter(e=>over(e.b))){band(o,G.bank,5,.75);fill(o,G.bed);}
  for(const {o} of P.waterLines.filter(e=>over(e.b))){line(o.p,2,G.bank,o.w+4.5,.55);line(o.p,2,G.bank,o.w+2.4,.8);line(o.p,2,o.perm?G.bed:G.bedSeasonal,o.w);}
@@ -108,12 +111,14 @@ const groundChunk=(lite,v31=false)=>`vec2 wp=vWorld.xz;
 const texOf=(canvas,colour)=>{const t=new THREE.CanvasTexture(canvas);t.flipY=false;t.colorSpace=colour?THREE.SRGBColorSpace:THREE.NoColorSpace;if(colour)t.anisotropy=8;else{t.magFilter=THREE.LinearFilter;t.minFilter=THREE.LinearFilter;t.generateMipmaps=false;}return t;};
 const canvasOf=(w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;return c;};
 
-export function buildGroundV30(v2,{size=4096,fieldSize=2048,detail=2048,detailM=1100,lite=false,v31=false}){
+export function buildGroundV30(v2,{size=4096,fieldSize=2048,detail=2048,detailM=1100,lite=false,v31=false,buildings=null}){
  const mesh=v2.group.getObjectByName('v2-terrain');if(!mesh)return null;
  const g=mesh.geometry,pos=g.getAttribute('position');let minX=Infinity,maxX=-Infinity,minZ=Infinity,maxZ=-Infinity;
  for(let i=0;i<pos.count;i++){const x=pos.getX(i),z=pos.getZ(i);if(x<minX)minX=x;if(x>maxX)maxX=x;if(z<minZ)minZ=z;if(z>maxZ)maxZ=z;}
  const box={minX,maxX,minZ,maxZ},W=maxX-minX,D=maxZ-minZ,P=prepareGroundData(v2.data);
- const gc=canvasOf(size,Math.round(size*D/W));paintGroundV30(gc.getContext('2d'),{P,box,w:gc.width,h:gc.height,v31});
+ const area=r=>{let A=0;for(let i=0,j=r.length-1;i<r.length;j=i++)A+=(r[j][0]-r[i][0])*(r[j][1]+r[i][1]);return Math.abs(A)/2;};
+ const big=v31&&buildings?buildings.filter(it=>it.poly?.[0]?.length>2&&area(it.poly[0])>250).map(o=>{let b=[Infinity,Infinity,-Infinity,-Infinity];for(const q of o.poly[0]){b[0]=Math.min(b[0],q[0]);b[1]=Math.min(b[1],q[1]);b[2]=Math.max(b[2],q[0]);b[3]=Math.max(b[3],q[1]);}return {o,b};}):null;
+ const gc=canvasOf(size,Math.round(size*D/W));paintGroundV30(gc.getContext('2d'),{P,box,w:gc.width,h:gc.height,v31,big});
  const fa=canvasOf(fieldSize,Math.round(fieldSize*D/W)),fb=canvasOf(fa.width,fa.height);paintFieldV30(fa.getContext('2d'),fb.getContext('2d'),{P,box,w:fa.width,h:fa.height});
  const dc=canvasOf(detail,detail),dfa=canvasOf(detail,detail),dfb=canvasOf(detail,detail);const dctx=dc.getContext('2d'),dfactx=dfa.getContext('2d'),dfbctx=dfb.getContext('2d');dctx.fillStyle=GROUND_V30.base;dctx.fillRect(0,0,detail,detail);
  const tGlobal=texOf(gc,true),tGlobalFieldA=texOf(fa,false),tGlobalFieldB=texOf(fb,false),tDetail=texOf(dc,true),tDetailFieldA=texOf(dfa,false),tDetailFieldB=texOf(dfb,false);
@@ -122,11 +127,12 @@ export function buildGroundV30(v2,{size=4096,fieldSize=2048,detail=2048,detailM=
  // Detail window: painted around a centre, uploaded once; the shader fades it in over the inner 82 % of the window.
  let centre=null,paints=0,lastMs=0;
  const paint=c=>{const t0=performance.now(),half=detailM/2,b={minX:c[0]-half,maxX:c[0]+half,minZ:c[1]-half,maxZ:c[1]+half};
-  paintGroundV30(dctx,{P,box:b,w:detail,h:detail,v31});paintFieldV30(dfactx,dfbctx,{P,box:b,w:detail,h:detail});tDetail.needsUpdate=true;tDetailFieldA.needsUpdate=true;tDetailFieldB.needsUpdate=true;
+  paintGroundV30(dctx,{P,box:b,w:detail,h:detail,v31,big});paintFieldV30(dfactx,dfbctx,{P,box:b,w:detail,h:detail});tDetail.needsUpdate=true;tDetailFieldA.needsUpdate=true;tDetailFieldB.needsUpdate=true;
   U.uDet.value.set(b.minX,b.minZ,detailM,1);centre=c;paints++;lastMs=Math.round(performance.now()-t0);};
  return {mesh,box,texture:{width:gc.width,height:gc.height,metresPerPixel:+(W/gc.width).toFixed(2)},field:{width:fa.width,height:fa.height},detail:{size:detail,metres:detailM,metresPerPixel:+(detailM/detail).toFixed(2)},vertices:pos.count,
   // Called each frame with the viewed point and camera distance; repaints when the view rests away from the window centre.
   update:(target,distance,resting)=>{if(distance>2600){U.uDet.value.w=0;return false;}if(U.uDet.value.w===0&&centre)U.uDet.value.w=1;
    const far=!centre||Math.hypot(target[0]-centre[0],target[1]-centre[1])>detailM*.2;if(far&&(resting||!centre)){paint(target);return true;}return false;},
+  contactVolumes:big?big.length:0,
   stats:()=>({paints,lastPaintMs:lastMs,centre})};
 }

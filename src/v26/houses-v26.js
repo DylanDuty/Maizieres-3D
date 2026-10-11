@@ -46,7 +46,7 @@ export function footprintIndex(items,cell=25){const grid=new Map(),key=(x,z)=>`$
  return (x,z,selfId)=>{const list=grid.get(key(x,z));if(!list)return false;for(const it of list)if(it.id!==selfId&&insidePoly([x,z],it.poly))return true;return false;};}
 // V2.7: `special(ctx)` may draw a building itself (church); `occupied` filters openings against the neighbours.
 export function buildHousesV26({items,enrichment={buildings:{}},architecture,elevation=()=>0,materials:M,special=null,occupied=null,style='v26'}){
- const v30=style==='v30'||style==='v31',PAL=v30?PALETTE_V30:PALETTE,BIGS=v30?BIG_V30:BIG,roofOpts=v30?{sMin:.28,sMax:.48,lMin:.38,lMax:.5}:{};
+ const v31=style==='v31',v30=style==='v30'||v31,PAL=v30?PALETTE_V30:PALETTE,BIGS=v30?BIG_V30:BIG,roofOpts=v30?{sMin:.28,sMax:.48,lMin:.38,lMax:.5}:{};
  const walls=[new Tri(),new Tri()],roofs=[new Tri(),new Tri(),new Tri()],details=new Tri();const wallRanges=[],roofRanges=[],detailRanges=[];
  const C=new THREE.Color(),stats={buildings:0,variants:new Set(),windows:0,doors:0,garageDoors:0,shutters:0,chimneys:0,byClass:{},bigVariants:new Set()};
  const glass=new THREE.Color(PALETTE.glass),frame=new THREE.Color(PALETTE.frame),capCol=new THREE.Color(PALETTE.cap);
@@ -79,8 +79,10 @@ export function buildHousesV26({items,enrichment={buildings:{}},architecture,ele
    const outer=poly.map((r,k)=>overhang?offsetRing(r,overhang,k>0):r),rings=shapeRings(outer),flat=rings.flat();
    const uvOf=q=>[dot(q,p.arch.along),dot(q,p.arch.across)];
    for(const tri of THREE.ShapeUtils.triangulateShape(rings[0],rings.slice(1))){const pts=tri.map(i=>[flat[i].x,flat[i].y]);for(const piece of splitByLines(pts,lines))for(let i=1;i<piece.length-1;i++){const v=[piece[0],piece[i],piece[i+1]];roofs[roofPart].tri(...v.map(q=>[q[0],top(q),q[1]]),roofCol,v.map(uvOf),UP);}}
+   // V3.1: the 25 cm parapet cap in the wall tone, lightened, not white (a white sub-pixel line read as a dotted outline).
+   const capCol=v31?wallCol.clone().lerp(new THREE.Color('#ece8de'),.3):fasciaCol;
    if(p.arch.shape==='flat'){for(const r of poly)for(let i=0;i<r.length;i++){const a=r[i],b=r[(i+1)%r.length];details.quad([a[0],eaveY-.02,a[1]],[b[0],eaveY-.02,b[1]],[b[0],eaveY+.4,b[1]],[a[0],eaveY+.4,a[1]],wallCol.clone().multiplyScalar(.94),null,outward(a,b,poly));}
-    const inner=poly.map((r,k)=>alignedInset(r,.25,k>0));for(const [k,r] of poly.entries())for(let i=0;i<r.length;i++){const a=r[i],b=r[(i+1)%r.length],c=inner[k][(i+1)%r.length],d=inner[k][i];if(!c||!d)continue;details.quad([a[0],eaveY+.4,a[1]],[b[0],eaveY+.4,b[1]],[c[0],eaveY+.4,c[1]],[d[0],eaveY+.4,d[1]],fasciaCol,null,UP);}}
+    const inner=poly.map((r,k)=>alignedInset(r,.25,k>0));for(const [k,r] of poly.entries())for(let i=0;i<r.length;i++){const a=r[i],b=r[(i+1)%r.length],c=inner[k][(i+1)%r.length],d=inner[k][i];if(!c||!d)continue;details.quad([a[0],eaveY+.4,a[1]],[b[0],eaveY+.4,b[1]],[c[0],eaveY+.4,c[1]],[d[0],eaveY+.4,d[1]],capCol,null,UP);}}
    else for(const [k,r] of outer.entries()){const orig=poly[k];for(let i=0;i<r.length;i++){const a=r[i],b=r[(i+1)%r.length],pts=[a,...edgeCuts(a,b,lines).map(f=>[a[0]+f*(b[0]-a[0]),a[1]+f*(b[1]-a[1])]),b];
      const fo=outward(a,b,outer);for(let j=1;j<pts.length;j++){const c=pts[j-1],d=pts[j];details.quad([c[0],top(c)-thk,c[1]],[d[0],top(d)-thk,d[1]],[d[0],top(d),d[1]],[c[0],top(c),c[1]],fasciaCol,null,fo);}
      if(r.length===orig.length){const oa=orig[i],ob=orig[(i+1)%orig.length];details.quad([a[0],top(a)-thk,a[1]],[b[0],top(b)-thk,b[1]],[ob[0],top(ob)-thk,ob[1]],[oa[0],top(oa)-thk,oa[1]],soffitCol,null,DOWN);}}}
