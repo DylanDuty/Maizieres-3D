@@ -60,7 +60,7 @@ export function installSearch(catalogue,onPick){
  const pick=r=>{input.value=r.name;results=[];show();input.blur();onPick(r);};
  input.addEventListener('input',()=>{const q=norm(input.value);active=-1;if(q.length<2){results=[];show();return;}const words=q.split(' ');
   results=searchIndex(index,input.value);show();});
- input.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){active=Math.min(results.length-1,active+1);show();e.preventDefault();}else if(e.key==='ArrowUp'){active=Math.max(0,active-1);show();e.preventDefault();}else if(e.key==='Enter'&&results.length){pick(results[Math.max(0,active)]);e.preventDefault();}else if(e.key==='Escape'){results=[];show();}});
+ input.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){active=Math.min(results.length-1,active+1);show();e.preventDefault();}else if(e.key==='ArrowUp'){active=Math.max(0,active-1);show();e.preventDefault();}else if(e.key==='Enter'&&results.length){pick(results[Math.max(0,active)].r);e.preventDefault();}else if(e.key==='Escape'){results=[];show();}});
  input.addEventListener('blur',()=>setTimeout(()=>{results=[];show();},150));
  return {index:index.length,search:q=>{input.value=q;input.dispatchEvent(new Event('input'));return results.map(o=>o.r.name);},pick};
 }
