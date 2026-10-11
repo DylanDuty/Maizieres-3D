@@ -1,3 +1,10 @@
+# Notes V2.9.2 — audit géographique et sémantique, 11 octobre 2026
+
+- **Une zone n'est pas un bâtiment.** V2.9.1 avait lu la zone BD TOPO « Salle polyvalente » comme la preuve du bâtiment de la salle. Ce bâtiment de 2015 est la Maison des associations : deux lieux confondus. Une association lieu ↔ bâtiment exige des preuves adaptées (OSM au bon objet, RNB à l'adresse exacte, orthophoto, Bibles) et ne vaut que si aucun autre lieu ne revendique ce bâtiment.
+- **La carte avait deux catalogues.** Le registre POI d'un côté, et de l'autre ce que `src/cartography.js` fabrique au chargement à partir d'OSM et de la BD TOPO (points, zones, bâtiments nommés), sans audit. Le second gardait une « Salle polyvalente » sur la Maison des associations, une « Mairie » sur une annexe de 31 m², une pharmacie fermée, des commerces de Romilly. Désormais tout enregistrement nommé est gouverné par le registre, et un contrôle reconstruit ce catalogue dans Node pour le vérifier.
+- **Nommer ce que l'on dessine.** Les rues cliquables étaient des tracés OSM, les routes dessinées des tronçons BD TOPO. Les rues sont maintenant les voies du registre, posées sur les tronçons dessinés et nommées par leur odonyme BAN : les transitions de nom tombent là où la BAN les place.
+- **Pas d'errata éternel.** Les corrections vivent dans un registre généré à partir de décisions versionnées, avec manifeste de hachages et contrôles. La carte n'en lit qu'une projection. Les fichiers gelés ne bougent pas ; les exports Unreal ont leur fichier de migration.
+
 # Notes V2.9.1 — landmarks audités et passe qualité JRPG, 10 octobre 2026
 
 - **Une adresse n'est pas une position.** Une position BAN de type « segment » est un point interpolé sur l'axe de la rue, parfois partagé par plusieurs numéros. Relier ce point au bâtiment de la parcelle située dessous (BAN PLUS, lien géométrique) peut tomber de l'autre côté de la rue : c'est ce qui a placé la mairie sur une annexe. La zone d'intérêt BD TOPO, le point OSM `townhall`, le RNB et l'orthophoto disent la même chose : on croise plusieurs sources avant de valider un landmark.

@@ -15,14 +15,14 @@ const metres=v=>v.toLocaleString('fr-FR',{maximumFractionDigits:1})+' m';
 // level B (standard) from the POI layer (name, category, address, sourced notes), level C (minimal) from the record
 // itself (roads, ordinary buildings). Status, confidence, provenance, identifiers and audit codes never reach the
 // normal card; they are listed under « Données techniques » only when the technical mode is on.
-const ROAD_KIND=r=>{if(r.refs?.length)return `Route ${r.refs.join(' / ')}`;const n=norm0(r.name);if(/^(chemin|voie|sentier|ruelle)/.test(n))return 'Chemin / voie';if(/^(avenue|boulevard)/.test(n))return 'Avenue';if(/^(place)/.test(n))return 'Place';return 'Rue';};
+const ROAD_KIND=r=>{if(r.kind==='Voie ferrée')return r.railLine?`Voie ferrée · ligne ${r.railLine}`:'Voie ferrée';if(r.refs?.length)return `Route ${r.refs.join(' / ')}`;const n=norm0(r.name);if(/^(chemin|voie|sentier|ruelle)/.test(n))return 'Chemin / voie';if(/^(avenue|boulevard)/.test(n))return 'Avenue';if(/^(place)/.test(n))return 'Place';return 'Rue';};
 const norm0=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 export function describe(r){
  const story=storyFor(r.id),poi=r.poi||null,b=r.bible||{};const sources=[],tech=[],quotes=[];let keep=[],summary=null,block=null,address=null,eyebrow=r.kind,title=r.name;
  if(poi){eyebrow=categoryLabel(poi.type,poi.category)||r.kind;address=poi.address||null;}
  if(story){summary=story.summary;keep=story.facts.slice(0,4);block=story.block||null;for(const src of story.sources)sources.push(src);}
  else if(poi){for(const n of b.notes||[])quotes.push({text:clean(n.quote),cite:cite(n)});}
- else if(r.type==='line'){eyebrow=ROAD_KIND(r);if(b.sector)keep.push(`Secteur : ${b.sector.name}`);if(b.variant)keep.push(`Graphie ancienne : « ${clean(b.variant.quote)} »`);for(const n of b.notes||[])quotes.push({text:clean(n.quote),cite:cite(n)});if(b.sector)sources.push({label:cite(b.sector)});if(b.listed)sources.push({label:cite(b.listed)});}
+ else if(r.type==='line'){eyebrow=ROAD_KIND(r);if(r.commune)keep.push(`Commune : ${r.commune}`);if(b.sector)keep.push(`Secteur : ${b.sector.name}`);if(b.variant)keep.push(`Graphie ancienne : « ${clean(b.variant.quote)} »`);for(const n of b.notes||[])quotes.push({text:clean(n.quote),cite:cite(n)});if(b.sector)sources.push({label:cite(b.sector)});if(b.listed)sources.push({label:cite(b.listed)});}
  else if(r.generic){const i=r.info;eyebrow='Bâtiment';
   if(i.usage&&i.knownUsage)keep.push(`Usage : ${i.usage.toLowerCase()}`);if(i.floors)keep.push(`${i.floors} niveau${i.floors>1?'x':''}`);
   if(i.manual)tech.push(`Relevé manuel sur orthophoto IGN 2025 (V2.2) : ${i.manual.category} · ${i.manual.uncertainty}`);if(i.light)tech.push('Construction légère (cadastre / IGN)');if(i.validation)tech.push(`Confiance ${i.validation.confidence} : ${i.validation.status}`);if(i.rnb)tech.push(`Identifiant RNB : ${i.rnb}`);
@@ -141,7 +141,7 @@ export function installSelection({scene,camera,canvas,catalogue,meshes,buildingI
   const hitGround=ground?(typeof ground==='function'?ground(raycaster.ray):raycaster.intersectObject(ground,false)[0]?.point):null;
   if(hitGround?groundPoint.copy(hitGround):raycaster.ray.intersectPlane(plane,groundPoint)){const candidates=catalogue.records.filter(r=>r.type==='zone'&&r.polys.some(poly=>insidePoly([groundPoint.x,groundPoint.z],poly)));candidates.sort((a,b)=>area(a.polys[0][0])-area(b.polys[0][0]));
    // A click in the open closes an existing selection; from nothing, it names the place (lieu-dit, zone).
-   if(candidates[0]&&(!selected||selected===candidates[0]))return done(candidates[0],[groundPoint.x,groundPoint.y+1.5,groundPoint.z]);}
+   if(candidates[0]&&(!selected||selected===candidates[0]||selected===candidates[0].alias))return done(candidates[0].alias||candidates[0],[groundPoint.x,groundPoint.y+1.5,groundPoint.z]);}
   done(null);
  }
  canvas.addEventListener('pointerdown',e=>{pointers.add(e.pointerId);if(pointers.size>1){start=null;return;}if(e.button===0)start={id:e.pointerId,x:e.clientX,y:e.clientY,moved:false};});

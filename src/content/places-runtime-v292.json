@@ -1,0 +1,947 @@
+{
+ "version": "V2.9.2",
+ "register": "docs/freeze/MLGU_PLACES_CANONICAL_V1.json",
+ "places": {
+  "poi:a-vos-couverts": {
+   "lonlat": [
+    3.7742516,
+    48.5020187
+   ]
+  },
+  "poi:au-point": {
+   "lonlat": [
+    3.7789204,
+    48.5011625
+   ]
+  },
+  "poi:baguette-des-granges": {
+   "building_ids": []
+  },
+  "poi:bdtopo:PAIE_NAT0000000009296251": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009296433": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009296443": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009296444": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009296645": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009296831": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009296833": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009296845": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009297034": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009297036": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009297042": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009297043": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009297044": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009297045": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009297046": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000009297047": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000065101487": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000065101491": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000065101492": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000065101496": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000065101499": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000065101500": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000065101517": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000065101520": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000065101521": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000065101522": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000000065101523": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bdtopo:PAIE_NAT0000002201786405": {
+   "hidden": "HIDDEN_OUT_OF_COMMUNE"
+  },
+  "poi:bible:B05-005": {
+   "lonlat": [
+    3.7618154,
+    48.5035483
+   ]
+  },
+  "poi:bible:B05-069": {
+   "building_ids": [
+    "BATIMENT0000000301148516"
+   ],
+   "lonlat": [
+    3.767595,
+    48.503744
+   ]
+  },
+  "poi:bible:B05-100": {
+   "building_ids": [
+    "BATIMENT0000000301148931"
+   ],
+   "lonlat": [
+    3.7778175,
+    48.5013034
+   ]
+  },
+  "poi:bible:B05-113": {
+   "lonlat": [
+    3.7601555,
+    48.5017943
+   ]
+  },
+  "poi:bible:B05-114": {
+   "building_ids": [
+    "BATIMENT0000000325110252",
+    "BATIMENT0000000325110253"
+   ]
+  },
+  "poi:bible:B05-117": {
+   "lonlat": [
+    3.7603572,
+    48.502331
+   ]
+  },
+  "poi:bible:B05-118": {
+   "lonlat": [
+    3.7610325,
+    48.5022395
+   ]
+  },
+  "poi:cabinet-paramedical": {
+   "building_ids": [
+    "BATIMENT0000000301149479",
+    "BATIMENT0000000301149448"
+   ],
+   "lonlat": [
+    3.7856854,
+    48.5103378
+   ]
+  },
+  "poi:carrosserie-serbource": {
+   "building_ids": [
+    "BATIMENT0000000301150803"
+   ]
+  },
+  "poi:ecole-primaire": {
+   "building_ids": [
+    "BATIMENT0000000301149527",
+    "BATIMENT0000000301149543",
+    "BATIMENT0000000301149528"
+   ],
+   "lonlat": [
+    3.787325,
+    48.509106
+   ]
+  },
+  "poi:galopins": {
+   "lonlat": [
+    3.7866429,
+    48.5093094
+   ]
+  },
+  "poi:ime-verger-fleuri": {
+   "building_ids": []
+  },
+  "poi:mairie": {
+   "building_ids": [
+    "BATIMENT0000000301149547"
+   ],
+   "lonlat": [
+    3.7869889,
+    48.5093963
+   ]
+  },
+  "poi:salle-polyvalente": {
+   "building_ids": [
+    "BATIMENT0000000301149569"
+   ],
+   "lonlat": [
+    3.7861931,
+    48.5096405
+   ]
+  },
+  "poi:tabac-presse": {
+   "building_ids": [
+    "BATIMENT0000000301148770"
+   ],
+   "lonlat": [
+    3.7801566,
+    48.5014096
+   ]
+  }
+ },
+ "catalogue": {
+  "way/499666329": {
+   "a": "hide"
+  },
+  "way/533981309": {
+   "a": "alias",
+   "poi": "poi:aeromia"
+  },
+  "way/588789210": {
+   "a": "alias",
+   "poi": "poi:enceinte-militaire"
+  },
+  "way/935473865": {
+   "a": "alias",
+   "poi": "poi:bdtopo:SURFACTI0000002206094209"
+  },
+  "way/1171254486": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIHABIT0000000009338386"
+  },
+  "node/1347294484": {
+   "a": "alias",
+   "poi": "poi:bourg"
+  },
+  "node/1456146419": {
+   "a": "hide"
+  },
+  "node/1637904805": {
+   "a": "alias",
+   "poi": "poi:poussey"
+  },
+  "node/1638878399": {
+   "a": "alias",
+   "poi": "poi:ecole-primaire"
+  },
+  "node/1639052728": {
+   "a": "alias",
+   "poi": "poi:osm:node/1639052728"
+  },
+  "node/1644001052": {
+   "a": "alias",
+   "poi": "poi:salle-polyvalente"
+  },
+  "node/3986221901": {
+   "a": "hide"
+  },
+  "node/4571982302": {
+   "a": "hide"
+  },
+  "node/4691857609": {
+   "a": "hide"
+  },
+  "node/4691857610": {
+   "a": "hide"
+  },
+  "node/4691857611": {
+   "a": "hide"
+  },
+  "node/4692433871": {
+   "a": "hide"
+  },
+  "node/4692433872": {
+   "a": "hide"
+  },
+  "node/4908996738": {
+   "a": "hide"
+  },
+  "node/4909240436": {
+   "a": "alias",
+   "poi": "poi:bible:B05-118"
+  },
+  "node/4909352908": {
+   "a": "hide"
+  },
+  "node/4909372413": {
+   "a": "hide"
+  },
+  "node/4909372415": {
+   "a": "hide"
+  },
+  "node/5312384930": {
+   "a": "hide"
+  },
+  "node/5312384941": {
+   "a": "hide"
+  },
+  "node/5312384949": {
+   "a": "hide"
+  },
+  "node/5312384953": {
+   "a": "hide"
+  },
+  "node/5312384962": {
+   "a": "hide"
+  },
+  "node/5312384966": {
+   "a": "hide"
+  },
+  "node/5622930404": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIHABIT0000000350300712"
+  },
+  "node/5622931091": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296842"
+  },
+  "node/5622932214": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622932214"
+  },
+  "node/5622932732": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622932732"
+  },
+  "node/5622932760": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622932760"
+  },
+  "node/5622934662": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622934662"
+  },
+  "node/5622936333": {
+   "a": "alias",
+   "poi": "poi:poussey"
+  },
+  "node/5622937178": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIHABIT0000000099287654"
+  },
+  "node/5622937655": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622937655"
+  },
+  "node/5622937799": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622937799"
+  },
+  "node/5622937849": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296643"
+  },
+  "node/5622938259": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622938259"
+  },
+  "node/5622938429": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296643"
+  },
+  "node/5622940013": {
+   "a": "alias",
+   "poi": "poi:les-granges"
+  },
+  "node/5622941855": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622941855"
+  },
+  "node/5622942156": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIHABIT0000000009338424"
+  },
+  "node/5622942314": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296434"
+  },
+  "node/5622942621": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIHABIT0000000099287655"
+  },
+  "node/5622942761": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622942761"
+  },
+  "node/5622944664": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622944664"
+  },
+  "node/5622945783": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296651"
+  },
+  "node/5622946122": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296437"
+  },
+  "node/5622946195": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296836"
+  },
+  "node/5622947346": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622947346"
+  },
+  "node/5622947736": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622947736"
+  },
+  "node/5622948423": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296843"
+  },
+  "node/5622951780": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296646"
+  },
+  "node/5622952528": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622952528"
+  },
+  "node/5622953906": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIHABIT0000000099287657"
+  },
+  "node/5622954637": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622954637"
+  },
+  "node/5622955480": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622955480"
+  },
+  "node/5622955609": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622955609"
+  },
+  "node/5622955688": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622955688"
+  },
+  "node/5622958508": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296435"
+  },
+  "node/5622961732": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622961732"
+  },
+  "node/5622961914": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622961914"
+  },
+  "node/5622963381": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296649"
+  },
+  "node/5622963395": {
+   "a": "alias",
+   "poi": "poi:glaciere"
+  },
+  "node/5622963677": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622963677"
+  },
+  "node/5622965038": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622965038"
+  },
+  "node/5622965432": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622965432"
+  },
+  "node/5622965921": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622965921"
+  },
+  "node/5622966529": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIHABIT0000000099293776"
+  },
+  "node/5622966840": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622966840"
+  },
+  "node/5622966870": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296642"
+  },
+  "node/5622968848": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622968848"
+  },
+  "node/5622970337": {
+   "a": "hide"
+  },
+  "node/5622970727": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622970727"
+  },
+  "node/5622970753": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622970753"
+  },
+  "node/5622971162": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622971162"
+  },
+  "node/5622971672": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622971672"
+  },
+  "node/5622973106": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622973106"
+  },
+  "node/5622973283": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622973283"
+  },
+  "node/5622974139": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296841"
+  },
+  "node/5622974298": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622974298"
+  },
+  "node/5622974408": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622974408"
+  },
+  "node/5622974743": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622974743"
+  },
+  "node/5622975162": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622975162"
+  },
+  "node/5622975887": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622975887"
+  },
+  "node/5622976994": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296650"
+  },
+  "node/5622977216": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622977216"
+  },
+  "node/5622979260": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622979260"
+  },
+  "node/5622979430": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622979430"
+  },
+  "node/5622979979": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622979979"
+  },
+  "node/5622980934": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622980934"
+  },
+  "node/5622983267": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622983267"
+  },
+  "node/5622984105": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIHABIT0000000099287656"
+  },
+  "node/5622984335": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622984335"
+  },
+  "node/5622984686": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622984686"
+  },
+  "node/5622985874": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622985874"
+  },
+  "node/5622986196": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296439"
+  },
+  "node/5622987057": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622987057"
+  },
+  "node/5622987468": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622987468"
+  },
+  "node/5622991112": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296438"
+  },
+  "node/5622991339": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622991339"
+  },
+  "node/5622992125": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296436"
+  },
+  "node/5622992346": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622992346"
+  },
+  "node/5622992354": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622992354"
+  },
+  "node/5622992921": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622992921"
+  },
+  "node/5622998997": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIHABIT0000000099287653"
+  },
+  "node/5622999534": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622999534"
+  },
+  "node/5622999780": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622999780"
+  },
+  "node/5622999789": {
+   "a": "alias",
+   "poi": "poi:osm:node/5622999789"
+  },
+  "node/5623001511": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIHABIT0000000009338387"
+  },
+  "node/5623004007": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296648"
+  },
+  "node/5623005471": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296440"
+  },
+  "node/5623009400": {
+   "a": "alias",
+   "poi": "poi:bdtopo:PAIE_NAT0000000009296442"
+  },
+  "node/8243041061": {
+   "a": "alias",
+   "poi": "poi:tabac-presse"
+  },
+  "node/8912942361": {
+   "a": "hide"
+  },
+  "node/8912942365": {
+   "a": "hide"
+  },
+  "node/8912942368": {
+   "a": "hide"
+  },
+  "node/8912942369": {
+   "a": "hide"
+  },
+  "node/8912942374": {
+   "a": "hide"
+  },
+  "node/8912942375": {
+   "a": "hide"
+  },
+  "node/10736827926": {
+   "a": "alias",
+   "poi": "poi:pharmacie-sasportes"
+  },
+  "node/13358124246": {
+   "a": "hide"
+  },
+  "node/13358124247": {
+   "a": "hide"
+  },
+  "SURFACTI0000000009307504": {
+   "a": "alias",
+   "poi": "poi:mairie"
+  },
+  "SURFACTI0000000117790866": {
+   "a": "alias",
+   "poi": "poi:seveal"
+  },
+  "SURFACTI0000000316172819": {
+   "a": "alias",
+   "poi": "poi:eglise-saint-denis"
+  },
+  "SURFACTI0000000358044861": {
+   "a": "alias",
+   "poi": "poi:stade"
+  },
+  "SURFACTI0000002480229986": {
+   "a": "alias",
+   "poi": "poi:glaciere"
+  },
+  "BATIMENT0000000121067137": {
+   "a": "hide"
+  },
+  "BATIMENT0000000300132071": {
+   "a": "hide"
+  },
+  "BATIMENT0000000300132102": {
+   "a": "hide"
+  },
+  "BATIMENT0000000300132105": {
+   "a": "hide"
+  },
+  "BATIMENT0000000300132108": {
+   "a": "hide"
+  },
+  "BATIMENT0000000300132109": {
+   "a": "hide"
+  },
+  "BATIMENT0000000300132112": {
+   "a": "hide"
+  },
+  "BATIMENT0000000300132115": {
+   "a": "hide"
+  },
+  "BATIMENT0000000301149527": {
+   "a": "alias",
+   "poi": "poi:ecole-primaire"
+  },
+  "BATIMENT0000000301149545": {
+   "a": "unname"
+  },
+  "BATIMENT0000000301149547": {
+   "a": "alias",
+   "poi": "poi:mairie"
+  },
+  "BATIMENT0000000301149566": {
+   "a": "alias",
+   "poi": "poi:eglise-saint-denis"
+  },
+  "BATIMENT0000000301149810": {
+   "a": "alias",
+   "poi": "poi:cpi"
+  },
+  "BATIMENT0000000325110254": {
+   "a": "unname"
+  },
+  "BATIMENT0000002006956400": {
+   "a": "unname"
+  },
+  "BATIMENT0000002206127459": {
+   "a": "hide"
+  },
+  "BATIMENT0000002330331399": {
+   "a": "hide"
+  },
+  "BATIMENT0000000301149603": {
+   "a": "hide"
+  },
+  "BATIMENT0000000325110250": {
+   "a": "alias",
+   "poi": "poi:bible:B05-118"
+  },
+  "BATIMENT0000002006956398": {
+   "a": "hide"
+  },
+  "BATIMENT0000000301148770": {
+   "a": "alias",
+   "poi": "poi:tabac-presse"
+  },
+  "BATIMENT0000002489607884": {
+   "a": "hide"
+  },
+  "BATIMENT0000002321528208": {
+   "a": "hide"
+  },
+  "SURFACTI0000000283182841": {
+   "a": "alias",
+   "poi": "poi:ime-verger-fleuri"
+  },
+  "SURFACTI0000000353495972": {
+   "a": "alias",
+   "poi": "poi:parc-aerodrome"
+  },
+  "SURFACTI0000002330331383": {
+   "a": "alias",
+   "poi": "poi:square-afn"
+  },
+  "bible01:gue-de-la-chapelle": {
+   "a": "alias",
+   "poi": "poi:gue-de-la-chapelle"
+  }
+ },
+ "aliases": {
+  "poi:aeromia": [
+   "Parc d'activités Aeromia"
+  ],
+  "poi:enceinte-militaire": [
+   "ESCAT"
+  ],
+  "poi:bdtopo:SURFACTI0000002206094209": [
+   "Aire de Grand Passage des Gens du Voyage de Mazieres-la-Grande-paroisse"
+  ],
+  "poi:bdtopo:PAIE_NAT0000000009296643": [
+   "Rougemont"
+  ],
+  "poi:bdtopo:PAIE_NAT0000000009296437": [
+   "Le Beaumont"
+  ],
+  "poi:bdtopo:PAIE_NAT0000000009296836": [
+   "Le Croc Aux Laines"
+  ],
+  "poi:glaciere": [
+   "La Glaciere",
+   "La Glacière",
+   "zone industrielle de La Glacière"
+  ],
+  "poi:bdtopo:PAIE_NAT0000000009296436": [
+   "Le Pre Cossat"
+  ],
+  "poi:bdtopo:PAIE_NAT0000000009296442": [
+   "Les Pres Neufs"
+  ],
+  "poi:tabac-presse": [
+   "Point Poste",
+   "Point Poste contemporain",
+   "Point Poste du 32 avenue du Général-de-Gaulle",
+   "Relais La Poste",
+   "Tabac-presse Vinot"
+  ],
+  "poi:seveal": [
+   "Seveal - Maizières-la-Grande-Paroisse"
+  ],
+  "poi:ecole-primaire": [
+   "École communale",
+   "École Élémentaire Publique Maizières-la-Grande-Paroisse"
+  ],
+  "poi:cpi": [
+   "CPI",
+   "Centre de secours"
+  ],
+  "poi:ime-verger-fleuri": [
+   "Institut Médico-Éducatif Verger Fleuri"
+  ],
+  "poi:baguette-des-granges": [
+   "Baguette des Granges"
+  ],
+  "poi:bdtopo:PAIE_NAT0000000009296648": [
+   "Pot Bancelin",
+   "Pot de Banselin"
+  ],
+  "poi:bdtopo:PAIE_NAT0000000009296839": [
+   "Le Croc Tonnerre"
+  ],
+  "poi:bdtopo:PAIHABIT0000000009338386": [
+   "Écart de la Chefferie"
+  ],
+  "poi:bdtopo:PAIHABIT0000000099287653": [
+   "Bois des Granges"
+  ],
+  "poi:belle-idee": [
+   "Centre commercial La Belle Idée"
+  ],
+  "poi:bible:B05-024": [
+   "Café de la Gare"
+  ],
+  "poi:bible:B05-114": [
+   "Entrepot BUT"
+  ],
+  "poi:bible:B05-117": [
+   "Wok Bonheur Maizières",
+   "Wok Grill"
+  ],
+  "poi:bible:B05-118": [
+   "MACADI"
+  ],
+  "poi:cabinet-paramedical": [
+   "Cabinet de santé",
+   "cabinet paramédical du 19 bis rue de la République"
+  ],
+  "poi:carrosserie-serbource": [
+   "CSA Carrosserie Serbource"
+  ],
+  "poi:centre-bourg": [
+   "Maizières"
+  ],
+  "poi:cimetiere": [
+   "Champ de Repos"
+  ],
+  "poi:eglise-saint-denis": [
+   "Clocher"
+  ],
+  "poi:maison-des-associations": [
+   "Dojo Christian Bouzrar",
+   "Dojo Christian-Bouzrar",
+   "Salle Hazouard",
+   "Salle des Associations"
+  ],
+  "poi:osm:node/5622932732": [
+   "Voie de la Garenne"
+  ],
+  "poi:osm:node/5622963677": [
+   "Petites Vaudelées"
+  ],
+  "poi:osm:node/5622985874": [
+   "Gué de Terre Blanche"
+  ],
+  "poi:pharmacie-sasportes": [
+   "Nouvelle pharmacie"
+  ],
+  "poi:place-saint-denis": [
+   "Place de l'église"
+  ],
+  "poi:pn-general-leclerc": [
+   "Passage à niveau de la Rue du Général-Leclerc",
+   "Repère « P.N. Gare SNCF »"
+  ],
+  "poi:poussey": [
+   "Hameau de Poussey"
+  ],
+  "poi:presbytere-ancien": [
+   "Ancien presbytère, 15 rue Pasteur"
+  ],
+  "poi:salle-polyvalente": [
+   "Salle de gymnastique et de patronage de L'Étoile"
+  ],
+  "poi:soleil-levant": [
+   "Lotissement Le Soleil Levant",
+   "Soleil Levant",
+   "rond des tricoteuses"
+  ],
+  "poi:stade": [
+   "Stade et vestiaires",
+   "nouveau terrain de football"
+  ]
+ }
+}

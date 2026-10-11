@@ -1,0 +1,8291 @@
+{
+ "metadata": {
+  "version": "1.0",
+  "release": "V2.9.2",
+  "date": "2026-10-11",
+  "generatedBy": "scripts/build-roads-canonical.mjs",
+  "decisions": {
+   "file": "docs/freeze/roads-decisions-v2.9.2.json",
+   "sha256": "6b3fa99a5e3c53452710e0c44868112efa707c1b83121603983831f3c8ba920e"
+  },
+  "sources": {
+   "roads": {
+    "file": "public/data/roads.geojson",
+    "sha256": "e14c17b94cbe7a126516351add558b5860773c3e2803c04012a0221fe740194e"
+   },
+   "scene": {
+    "file": "public/data/v2-scene.json",
+    "sha256": "d5517d9c10cdba127997285aea05a353bab66b491075eb3d3a4ef00eeff7b0f9"
+   },
+   "bdtopo": "data-sources/roads/bdtopo-troncon-de-route.geojson",
+   "voies": "data-sources/roads/bdtopo-voie-nommee.geojson",
+   "osm": "public/data/maizieres.geojson"
+  },
+  "counts": {
+   "drawnTroncons": 1585,
+   "namedTroncons": 560,
+   "unnamedTroncons": 1024,
+   "roads": 111,
+   "inCommune": 72,
+   "outsideCommune": 39,
+   "PASS": 63,
+   "PASS_WITH_LIMITATION": 48,
+   "routeOnly": 12,
+   "banVoies10220": 71,
+   "banStreets10220Covered": 65,
+   "legacyClickable": 81,
+   "anomalies": 33
+  }
+ },
+ "roads": [
+  {
+   "road_id": "road:avenue-du-general-de-gaulle",
+   "canonical_name": "Avenue du Général de Gaulle",
+   "aliases": [
+    "Avenue du General de Gaulle",
+    "Rue Pierre Sémard"
+   ],
+   "road_type": "avenue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0200"
+    ],
+    "route": [
+     "D 619"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009483696",
+    "TRONROUT0000000009483698",
+    "TRONROUT0000000009483710",
+    "TRONROUT0000000009483718",
+    "TRONROUT0000000009483720",
+    "TRONROUT0000000009483721",
+    "TRONROUT0000000009483722",
+    "TRONROUT0000000009483730",
+    "TRONROUT0000000009483755",
+    "TRONROUT0000000009483756",
+    "TRONROUT0000000009483758",
+    "TRONROUT0000000110062786",
+    "TRONROUT0000000110062787",
+    "TRONROUT0000000110062788",
+    "TRONROUT0000000110062790",
+    "TRONROUT0000000110062791",
+    "TRONROUT0000000110062793",
+    "TRONROUT0000000110062794",
+    "TRONROUT0000000110062795",
+    "TRONROUT0000000110062796",
+    "TRONROUT0000000110062797",
+    "TRONROUT0000000110062798",
+    "TRONROUT0000000110062802",
+    "TRONROUT0000000129491437",
+    "TRONROUT0000002203222905",
+    "TRONROUT0000002203222915",
+    "TRONROUT0000002330331317",
+    "TRONROUT0000002330331318",
+    "TRONROUT0000002330331412",
+    "TRONROUT0000002479805103",
+    "TRONROUT0000002494346379"
+   ],
+   "lengthM": 3135,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 3135
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:avenue-georges-pompidou@10323",
+   "canonical_name": "Avenue Georges Pompidou",
+   "aliases": [],
+   "road_type": "avenue",
+   "official_ref": {
+    "ban_voie": [
+     "10323_0524"
+    ],
+    "route": []
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000322114027",
+    "TRONROUT0000000322114028",
+    "TRONROUT0000000322114029",
+    "TRONROUT0000000322114030",
+    "TRONROUT0000000322114031",
+    "TRONROUT0000000322114032",
+    "TRONROUT0000000322114115",
+    "TRONROUT0000000322114242",
+    "TRONROUT0000000322114257",
+    "TRONROUT0000000322114261",
+    "TRONROUT0000000322114262",
+    "TRONROUT0000000322114301",
+    "TRONROUT0000000322114346",
+    "TRONROUT0000000322114350",
+    "TRONROUT0000000322114351",
+    "TRONROUT0000000322114354",
+    "TRONROUT0000000322114356",
+    "TRONROUT0000000322114357",
+    "TRONROUT0000000336560411",
+    "TRONROUT0000002321528211",
+    "TRONROUT0000002321528218",
+    "TRONROUT0000002321528220"
+   ],
+   "lengthM": 923,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 923
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Romilly-sur-Seine"
+  },
+  {
+   "road_id": "road:avenue-philippe-seguin",
+   "canonical_name": "Avenue Philippe Séguin",
+   "aliases": [
+    "Avenue Philippe Seguin"
+   ],
+   "road_type": "avenue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0354"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000110062783",
+    "TRONROUT0000000110062784",
+    "TRONROUT0000000322114260",
+    "TRONROUT0000000322114303",
+    "TRONROUT0000000322114352",
+    "TRONROUT0000000325186823",
+    "TRONROUT0000002203222898",
+    "TRONROUT0000002203222899",
+    "TRONROUT0000002330331150"
+   ],
+   "lengthM": 770,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 770
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:boulevard-antoine-de-saint-exupery",
+   "canonical_name": "Boulevard Antoine de Saint-Exupéry",
+   "aliases": [
+    "Bd Antoine de Saint Exupery"
+   ],
+   "road_type": "boulevard",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0406"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000110062774",
+    "TRONROUT0000000110062775",
+    "TRONROUT0000000110062776",
+    "TRONROUT0000000110062777",
+    "TRONROUT0000000110062778",
+    "TRONROUT0000000110062781",
+    "TRONROUT0000000110062782",
+    "TRONROUT0000000110062785",
+    "TRONROUT0000000110062803",
+    "TRONROUT0000000110062804",
+    "TRONROUT0000000110062805",
+    "TRONROUT0000000110062806",
+    "TRONROUT0000000110062807",
+    "TRONROUT0000000110062808",
+    "TRONROUT0000000110062809",
+    "TRONROUT0000000322114349",
+    "TRONROUT0000000325186815",
+    "TRONROUT0000000355431392",
+    "TRONROUT0000002203222900",
+    "TRONROUT0000002330331125",
+    "TRONROUT0000002330331175",
+    "TRONROUT0000002330331187",
+    "TRONROUT0000002330331196",
+    "TRONROUT0000002492550968"
+   ],
+   "lengthM": 647,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 637
+    },
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 11
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:chemin-d-outre-seine@10323",
+   "canonical_name": "Chemin d'Outre Seine",
+   "aliases": [],
+   "road_type": "chemin",
+   "official_ref": {
+    "ban_voie": [],
+    "route": []
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009477711",
+    "TRONROUT0000002006424197",
+    "TRONROUT0000002266671242",
+    "way/395351636#1"
+   ],
+   "lengthM": 209,
+   "naming": [
+    {
+     "method": "OSM seul (absent de la BAN)",
+     "lengthM": 209
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "nom OSM seul, absent de la BAN"
+  },
+  {
+   "road_id": "road:chemin-de-la-garenne",
+   "canonical_name": "Chemin de la Garenne",
+   "aliases": [
+    "Chemin La Fin de Maiziere"
+   ],
+   "road_type": "chemin",
+   "official_ref": {
+    "ban_voie": [
+     "10220_rden75"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009481842",
+    "TRONROUT0000002006376459"
+   ],
+   "lengthM": 371,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 371
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:chemin-de-la-garenne-saint-jacques@10323",
+   "canonical_name": "Chemin de la Garenne Saint-Jacques",
+   "aliases": [],
+   "road_type": "chemin",
+   "official_ref": {
+    "ban_voie": [],
+    "route": []
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009481852",
+    "TRONROUT0000000009481853",
+    "TRONROUT0000000009481871"
+   ],
+   "lengthM": 656,
+   "naming": [
+    {
+     "method": "OSM seul (absent de la BAN)",
+     "lengthM": 656
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "nom OSM seul, absent de la BAN"
+  },
+  {
+   "road_id": "road:chemin-de-maurenaud@51155",
+   "canonical_name": "Chemin de Maurenaud",
+   "aliases": [
+    "Chemin de maurenaud"
+   ],
+   "road_type": "chemin",
+   "official_ref": {
+    "ban_voie": [
+     "51155_60rqy3"
+    ],
+    "route": []
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477380"
+   ],
+   "lengthM": 103,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 103
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:chemin-rural-dit-d-outre-seine@10323",
+   "canonical_name": "Chemin rural dit d’Outre Seine",
+   "aliases": [
+    "Chemin Rural Dit d'Outre Seine",
+    "Chemin d'Outre Seine"
+   ],
+   "road_type": "chemin rural",
+   "official_ref": {
+    "ban_voie": [
+     "10323_1154"
+    ],
+    "route": []
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009477695",
+    "TRONROUT0000000009477696",
+    "TRONROUT0000000009477701",
+    "TRONROUT0000000009477709",
+    "TRONROUT0000000009478809",
+    "TRONROUT0000000009478810",
+    "TRONROUT0000000009478819",
+    "TRONROUT0000000129491441",
+    "TRONROUT0000002477105851"
+   ],
+   "lengthM": 1040,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 1040
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Romilly-sur-Seine"
+  },
+  {
+   "road_id": "road:chemin-rural-dit-fin-maizieres@10323",
+   "canonical_name": "Chemin rural dit Fin Maizières",
+   "aliases": [
+    "Chemin La Fin de Maiziere",
+    "Chemin Rural Dit Fin Maizieres",
+    "La Voie de la Garenne"
+   ],
+   "road_type": "chemin rural",
+   "official_ref": {
+    "ban_voie": [
+     "10323_0908"
+    ],
+    "route": []
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009481834",
+    "TRONROUT0000000009481835",
+    "TRONROUT0000000009483789"
+   ],
+   "lengthM": 222,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 222
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Romilly-sur-Seine"
+  },
+  {
+   "road_id": "road:d-116",
+   "canonical_name": "D 116",
+   "aliases": [],
+   "road_type": "route départementale",
+   "official_ref": {
+    "ban_voie": [],
+    "route": [
+     "D 116"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009478793",
+    "TRONROUT0000000009478794",
+    "TRONROUT0000000009478795",
+    "TRONROUT0000000009478796",
+    "TRONROUT0000000009478797",
+    "TRONROUT0000000009478798",
+    "TRONROUT0000000009478799",
+    "TRONROUT0000000009478802",
+    "TRONROUT0000000009479980",
+    "TRONROUT0000000009479981",
+    "TRONROUT0000000009479982",
+    "TRONROUT0000000009479983",
+    "TRONROUT0000000009479988",
+    "TRONROUT0000000009479989",
+    "TRONROUT0000000009481794",
+    "TRONROUT0000000009486568",
+    "TRONROUT0000000009488049",
+    "TRONROUT0000000009488056"
+   ],
+   "lengthM": 3232,
+   "naming": [
+    {
+     "method": "numéro de route BD TOPO (tronçon sans odonyme)",
+     "lengthM": 3232
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": true,
+   "notes": "tronçon sans odonyme : désigné par son numéro de route"
+  },
+  {
+   "road_id": "road:d-116@10271",
+   "canonical_name": "D 116",
+   "aliases": [],
+   "road_type": "route départementale",
+   "official_ref": {
+    "ban_voie": [],
+    "route": [
+     "D 116"
+    ]
+   },
+   "commune": "Origny-le-Sec",
+   "insee": "10271",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009488055",
+    "TRONROUT0000000009489370",
+    "TRONROUT0000000009489372",
+    "TRONROUT0000002223773420"
+   ],
+   "lengthM": 1152,
+   "naming": [
+    {
+     "method": "numéro de route BD TOPO (tronçon sans odonyme)",
+     "lengthM": 1152
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "tronçon sans odonyme : désigné par son numéro de route"
+  },
+  {
+   "road_id": "road:d-116a",
+   "canonical_name": "D 116A",
+   "aliases": [],
+   "road_type": "route départementale",
+   "official_ref": {
+    "ban_voie": [],
+    "route": [
+     "D 116A"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009478791"
+   ],
+   "lengthM": 672,
+   "naming": [
+    {
+     "method": "numéro de route BD TOPO (tronçon sans odonyme)",
+     "lengthM": 672
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": true,
+   "notes": "tronçon sans odonyme : désigné par son numéro de route"
+  },
+  {
+   "road_id": "road:d-160",
+   "canonical_name": "D 160",
+   "aliases": [],
+   "road_type": "route départementale",
+   "official_ref": {
+    "ban_voie": [],
+    "route": [
+     "D 160"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009485299",
+    "TRONROUT0000000009485306",
+    "TRONROUT0000000009485309",
+    "TRONROUT0000000009485311",
+    "TRONROUT0000002203222917",
+    "TRONROUT0000002206956868",
+    "TRONROUT0000002206956881"
+   ],
+   "lengthM": 1581,
+   "naming": [
+    {
+     "method": "numéro de route BD TOPO (tronçon sans odonyme)",
+     "lengthM": 1581
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": true,
+   "notes": "tronçon sans odonyme : désigné par son numéro de route"
+  },
+  {
+   "road_id": "road:d-160@10280",
+   "canonical_name": "D 160",
+   "aliases": [],
+   "road_type": "route départementale",
+   "official_ref": {
+    "ban_voie": [],
+    "route": [
+     "D 160"
+    ]
+   },
+   "commune": "Pars-lès-Romilly",
+   "insee": "10280",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009486576",
+    "TRONROUT0000000009486577",
+    "TRONROUT0000000129491570"
+   ],
+   "lengthM": 1091,
+   "naming": [
+    {
+     "method": "numéro de route BD TOPO (tronçon sans odonyme)",
+     "lengthM": 1091
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "tronçon sans odonyme : désigné par son numéro de route"
+  },
+  {
+   "road_id": "road:d-160@10323",
+   "canonical_name": "D 160",
+   "aliases": [],
+   "road_type": "route départementale",
+   "official_ref": {
+    "ban_voie": [],
+    "route": [
+     "D 160"
+    ]
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009485310"
+   ],
+   "lengthM": 29,
+   "naming": [
+    {
+     "method": "numéro de route BD TOPO (tronçon sans odonyme)",
+     "lengthM": 29
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "tronçon sans odonyme : désigné par son numéro de route"
+  },
+  {
+   "road_id": "road:d-20",
+   "canonical_name": "D 20",
+   "aliases": [],
+   "road_type": "route départementale",
+   "official_ref": {
+    "ban_voie": [],
+    "route": [
+     "D 20"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009481677"
+   ],
+   "lengthM": 435,
+   "naming": [
+    {
+     "method": "numéro de route BD TOPO (tronçon sans odonyme)",
+     "lengthM": 435
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": true,
+   "notes": "tronçon sans odonyme : désigné par son numéro de route"
+  },
+  {
+   "road_id": "road:d-352@51155",
+   "canonical_name": "D 352",
+   "aliases": [],
+   "road_type": "route départementale",
+   "official_ref": {
+    "ban_voie": [],
+    "route": [
+     "D 352"
+    ]
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477218",
+    "TRONROUT0000000065477219",
+    "TRONROUT0000000065477220",
+    "TRONROUT0000000065477221",
+    "TRONROUT0000000065477222",
+    "TRONROUT0000000065477223",
+    "TRONROUT0000000065477224",
+    "TRONROUT0000000065477225",
+    "TRONROUT0000000065477381",
+    "TRONROUT0000000065477382",
+    "TRONROUT0000000065477383",
+    "TRONROUT0000000065477384",
+    "TRONROUT0000000065477385",
+    "TRONROUT0000000065477386",
+    "TRONROUT0000000065477391",
+    "TRONROUT0000000065477392",
+    "TRONROUT0000002223018415"
+   ],
+   "lengthM": 1578,
+   "naming": [
+    {
+     "method": "numéro de route BD TOPO (tronçon sans odonyme)",
+     "lengthM": 1578
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "tronçon sans odonyme : désigné par son numéro de route"
+  },
+  {
+   "road_id": "road:d-619",
+   "canonical_name": "D 619",
+   "aliases": [],
+   "road_type": "route départementale",
+   "official_ref": {
+    "ban_voie": [],
+    "route": [
+     "D 619"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009483633",
+    "TRONROUT0000000009483645",
+    "TRONROUT0000000009483657",
+    "TRONROUT0000000009483659",
+    "TRONROUT0000000009483687",
+    "TRONROUT0000000009483688",
+    "TRONROUT0000002330331089",
+    "TRONROUT0000002330331090",
+    "TRONROUT0000002330331264",
+    "TRONROUT0000002330331319",
+    "TRONROUT0000002330331349",
+    "TRONROUT0000002330331350",
+    "TRONROUT0000002330331351",
+    "TRONROUT0000002330331352",
+    "TRONROUT0000002330331375",
+    "TRONROUT0000002340926077",
+    "TRONROUT0000002340926078"
+   ],
+   "lengthM": 2823,
+   "naming": [
+    {
+     "method": "numéro de route BD TOPO (tronçon sans odonyme)",
+     "lengthM": 2823
+    }
+   ],
+   "addressing_localities": [
+    "Zone Industrielle la Glaciere",
+    "La Glaciere"
+   ],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": true,
+   "notes": "tronçon sans odonyme : désigné par son numéro de route"
+  },
+  {
+   "road_id": "road:d-619@10089",
+   "canonical_name": "D 619",
+   "aliases": [],
+   "road_type": "route départementale",
+   "official_ref": {
+    "ban_voie": [],
+    "route": [
+     "D 619"
+    ]
+   },
+   "commune": "Châtres",
+   "insee": "10089",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009483601",
+    "TRONROUT0000000009483606",
+    "TRONROUT0000000009483632",
+    "TRONROUT0000002221604419",
+    "TRONROUT0000002330331313",
+    "TRONROUT0000002330331314",
+    "TRONROUT0000002330331315"
+   ],
+   "lengthM": 1489,
+   "naming": [
+    {
+     "method": "numéro de route BD TOPO (tronçon sans odonyme)",
+     "lengthM": 1489
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "tronçon sans odonyme : désigné par son numéro de route"
+  },
+  {
+   "road_id": "road:d-82@51492",
+   "canonical_name": "D 82",
+   "aliases": [],
+   "road_type": "route départementale",
+   "official_ref": {
+    "ban_voie": [],
+    "route": [
+     "D 82"
+    ]
+   },
+   "commune": "Saint-Just-Sauvage",
+   "insee": "51492",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477245",
+    "TRONROUT0000000065477252",
+    "TRONROUT0000000099212500"
+   ],
+   "lengthM": 427,
+   "naming": [
+    {
+     "method": "numéro de route BD TOPO (tronçon sans odonyme)",
+     "lengthM": 427
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "tronçon sans odonyme : désigné par son numéro de route"
+  },
+  {
+   "road_id": "road:d-96@10280",
+   "canonical_name": "D 96",
+   "aliases": [],
+   "road_type": "route départementale",
+   "official_ref": {
+    "ban_voie": [],
+    "route": [
+     "D 96"
+    ]
+   },
+   "commune": "Pars-lès-Romilly",
+   "insee": "10280",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009488068",
+    "TRONROUT0000000009489377",
+    "TRONROUT0000000009489384",
+    "TRONROUT0000000009490462",
+    "TRONROUT0000002330331238",
+    "TRONROUT0000002330331239",
+    "TRONROUT0000002330331267",
+    "TRONROUT0000002330331269",
+    "TRONROUT0000002330331285",
+    "TRONROUT0000002330331286",
+    "TRONROUT0000002330331341",
+    "TRONROUT0000002330331443"
+   ],
+   "lengthM": 3790,
+   "naming": [
+    {
+     "method": "numéro de route BD TOPO (tronçon sans odonyme)",
+     "lengthM": 3790
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "tronçon sans odonyme : désigné par son numéro de route"
+  },
+  {
+   "road_id": "road:grande-rue@10089",
+   "canonical_name": "Grande Rue",
+   "aliases": [],
+   "road_type": "grande rue",
+   "official_ref": {
+    "ban_voie": [
+     "10089_0060"
+    ],
+    "route": [
+     "D 20"
+    ]
+   },
+   "commune": "Châtres",
+   "insee": "10089",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000240640856",
+    "TRONROUT0000002479450300"
+   ],
+   "lengthM": 367,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 367
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Châtres"
+  },
+  {
+   "road_id": "road:impasse-de-la-noue",
+   "canonical_name": "Impasse de la Noue",
+   "aliases": [],
+   "road_type": "impasse",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0320"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Les Granges",
+   "segments": [
+    "TRONROUT0000000009483725"
+   ],
+   "lengthM": 66,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 66
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:impasse-des-sages",
+   "canonical_name": "Impasse des Sages",
+   "aliases": [
+    "Impasse des sages"
+   ],
+   "road_type": "impasse",
+   "official_ref": {
+    "ban_voie": [
+     "10220_td3q0b"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000002477593481",
+    "TRONROUT0000002477593483"
+   ],
+   "lengthM": 148,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 148
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:impasse-du-tonkin@10323",
+   "canonical_name": "Impasse du Tonkin",
+   "aliases": [],
+   "road_type": "impasse",
+   "official_ref": {
+    "ban_voie": [
+     "10323_1440"
+    ],
+    "route": []
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009481851"
+   ],
+   "lengthM": 197,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 197
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Romilly-sur-Seine"
+  },
+  {
+   "road_id": "road:la-ruelle-des-bois",
+   "canonical_name": "La Ruelle des Bois",
+   "aliases": [],
+   "road_type": "ruelle",
+   "official_ref": {
+    "ban_voie": [
+     "10220_b087"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481816"
+   ],
+   "lengthM": 77,
+   "naming": [
+    {
+     "method": "BAN (lieu-dit d’adressage portant un nom de voie)",
+     "lengthM": 77
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:le-chemin-de-la-guide",
+   "canonical_name": "Le Chemin de la Guide",
+   "aliases": [],
+   "road_type": "chemin",
+   "official_ref": {
+    "ban_voie": [
+     "10220_b021"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009483734",
+    "TRONROUT0000000009483780"
+   ],
+   "lengthM": 536,
+   "naming": [
+    {
+     "method": "BAN (lieu-dit d’adressage portant un nom de voie)",
+     "lengthM": 536
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:place-adrien-quinet",
+   "canonical_name": "Place Adrien Quinet",
+   "aliases": [],
+   "road_type": "place",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0015"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481705",
+    "TRONROUT0000000009481759"
+   ],
+   "lengthM": 138,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 138
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:place-leopoldine-deschamps",
+   "canonical_name": "Place Léopoldine Deschamps",
+   "aliases": [
+    "Place Leopoldine Deschamps",
+    "Placette Léopoldine Deschamps"
+   ],
+   "road_type": "place",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0265"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481765",
+    "TRONROUT0000000224753415",
+    "TRONROUT0000000224753416",
+    "TRONROUT0000000224753417"
+   ],
+   "lengthM": 188,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 188
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:place-saint-denis",
+   "canonical_name": "Place Saint-Denis",
+   "aliases": [
+    "Place Saint Denis",
+    "Rue Pasteur",
+    "Rue de la République"
+   ],
+   "road_type": "place",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0410"
+    ],
+    "route": [
+     "D 20"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481757",
+    "TRONROUT0000000009481764",
+    "TRONROUT0000000009481767",
+    "TRONROUT0000000009481768",
+    "TRONROUT0000000009481780",
+    "TRONROUT0000000322114341",
+    "TRONROUT0000000322114342"
+   ],
+   "lengthM": 277,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 277
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:residence-la-belle-idee@10323",
+   "canonical_name": "Résidence La Belle Idée",
+   "aliases": [],
+   "road_type": "résidence",
+   "official_ref": {
+    "ban_voie": [],
+    "route": []
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009483799",
+    "TRONROUT0000000009483800",
+    "TRONROUT0000000009483802",
+    "TRONROUT0000000009483803",
+    "TRONROUT0000000009483805",
+    "TRONROUT0000000009483806",
+    "TRONROUT0000000009483815",
+    "TRONROUT0000000009483838",
+    "TRONROUT0000002007078074"
+   ],
+   "lengthM": 404,
+   "naming": [
+    {
+     "method": "OSM seul (absent de la BAN)",
+     "lengthM": 404
+    }
+   ],
+   "addressing_localities": [
+    "La Belle Idee"
+   ],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "nom OSM seul, absent de la BAN"
+  },
+  {
+   "road_id": "road:route-de-maizieres@51492",
+   "canonical_name": "Route de Maizières",
+   "aliases": [],
+   "road_type": "route",
+   "official_ref": {
+    "ban_voie": [],
+    "route": [
+     "D 82"
+    ]
+   },
+   "commune": "Saint-Just-Sauvage",
+   "insee": "51492",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477401",
+    "TRONROUT0000000099212502",
+    "TRONROUT0000000328328299"
+   ],
+   "lengthM": 1018,
+   "naming": [
+    {
+     "method": "OSM seul (absent de la BAN)",
+     "lengthM": 1018
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "nom OSM seul, absent de la BAN"
+  },
+  {
+   "road_id": "road:route-de-saint-just@51155",
+   "canonical_name": "Route de Saint-Just",
+   "aliases": [
+    "Route de Saint Just"
+   ],
+   "road_type": "route",
+   "official_ref": {
+    "ban_voie": [
+     "51155_0240"
+    ],
+    "route": [
+     "D 52"
+    ]
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477101",
+    "TRONROUT0000000065477109",
+    "TRONROUT0000000065477111",
+    "TRONROUT0000000065477112"
+   ],
+   "lengthM": 265,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 265
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:rue-achille-flaubert",
+   "canonical_name": "Rue Achille Flaubert",
+   "aliases": [
+    "Chemin de la Pie"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0010"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Les Granges",
+   "segments": [
+    "TRONROUT0000000009483707",
+    "TRONROUT0000000009483726",
+    "TRONROUT0000000009483727",
+    "TRONROUT0000000009483728",
+    "TRONROUT0000000009483731",
+    "TRONROUT0000000009483733",
+    "TRONROUT0000000009483735",
+    "TRONROUT0000000294661902",
+    "TRONROUT0000002203222893",
+    "TRONROUT0000002203222894"
+   ],
+   "lengthM": 671,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 671
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-albert-benoist",
+   "canonical_name": "Rue Albert Benoist",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0017"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000224713793",
+    "TRONROUT0000000224713794",
+    "TRONROUT0000000224713795",
+    "way/150938010#1",
+    "way/150938019#1"
+   ],
+   "lengthM": 269,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 228
+    },
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 42
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-ambroise-pare",
+   "canonical_name": "Rue Ambroise Paré",
+   "aliases": [
+    "Rue Ambroise Pare"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0020"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Les Granges",
+   "segments": [
+    "TRONROUT0000000009483701",
+    "TRONROUT0000000009483717"
+   ],
+   "lengthM": 664,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 664
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-andre-malraux@10323",
+   "canonical_name": "Rue André Malraux",
+   "aliases": [
+    "Rue Andre Malraux",
+    "Rue Robert Galley"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10323_0045"
+    ],
+    "route": []
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000322114113",
+    "TRONROUT0000000322114114",
+    "TRONROUT0000000322114163",
+    "TRONROUT0000000322114164",
+    "TRONROUT0000000322114165",
+    "TRONROUT0000000322114166",
+    "TRONROUT0000000322114167",
+    "TRONROUT0000000322114229",
+    "TRONROUT0000000322114230",
+    "TRONROUT0000000322114231",
+    "TRONROUT0000000322114232",
+    "TRONROUT0000000336560420",
+    "TRONROUT0000002477105724",
+    "TRONROUT0000002477105725"
+   ],
+   "lengthM": 331,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 331
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Romilly-sur-Seine"
+  },
+  {
+   "road_id": "road:rue-basse-de-poussey",
+   "canonical_name": "Rue Basse de Poussey",
+   "aliases": [
+    "Rue Basse de Poussay"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0040"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009481679"
+   ],
+   "lengthM": 276,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 276
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-basse@51155",
+   "canonical_name": "Rue Basse",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "51155_0020"
+    ],
+    "route": []
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477204",
+    "TRONROUT0000000065477205",
+    "TRONROUT0000000065477206",
+    "TRONROUT0000000065477207",
+    "TRONROUT0000000065477208"
+   ],
+   "lengthM": 525,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 525
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:rue-de-l-essy",
+   "canonical_name": "Rue de l'Essy",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0190"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009483704",
+    "TRONROUT0000000009483711",
+    "TRONROUT0000000322114135"
+   ],
+   "lengthM": 559,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 555
+    },
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 4
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-de-l-orme",
+   "canonical_name": "Rue de l'Orme",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0330"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009481684",
+    "TRONROUT0000000009481689",
+    "TRONROUT0000000009481690",
+    "TRONROUT0000000009481692",
+    "TRONROUT0000000009483634",
+    "TRONROUT0000000009483635",
+    "TRONROUT0000000009483636",
+    "TRONROUT0000000009483637",
+    "TRONROUT0000000009483638",
+    "TRONROUT0000000009483641",
+    "TRONROUT0000000009483644"
+   ],
+   "lengthM": 1317,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 1317
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-de-la-bretauge@51155",
+   "canonical_name": "Rue de la Bretauge",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "51155_0030"
+    ],
+    "route": []
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477129",
+    "TRONROUT0000000065477194",
+    "TRONROUT0000000065477202"
+   ],
+   "lengthM": 152,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 152
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:rue-de-la-chapelle",
+   "canonical_name": "Rue de la Chapelle",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0090"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Les Granges",
+   "segments": [
+    "TRONROUT0000000009483712",
+    "TRONROUT0000000357952328",
+    "TRONROUT0000002330331439",
+    "TRONROUT0000002330331440"
+   ],
+   "lengthM": 192,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 192
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-de-la-chefferie",
+   "canonical_name": "Rue de la Chefferie",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0110"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009485290",
+    "TRONROUT0000000009485295",
+    "TRONROUT0000002330331320"
+   ],
+   "lengthM": 609,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 602
+    },
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 7
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-de-la-contree-du-pont",
+   "canonical_name": "Rue de la Contrée du Pont",
+   "aliases": [
+    "Rue de la Contree du Pont"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0120"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481782",
+    "TRONROUT0000000009481820"
+   ],
+   "lengthM": 520,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 520
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-de-la-croix@51155",
+   "canonical_name": "Rue de la Croix",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "51155_0090"
+    ],
+    "route": []
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477122",
+    "TRONROUT0000000065477148",
+    "TRONROUT0000000065477149",
+    "TRONROUT0000000065477150",
+    "TRONROUT0000000065477151",
+    "TRONROUT0000000065477156"
+   ],
+   "lengthM": 204,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 204
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:rue-de-la-galoche@51155",
+   "canonical_name": "Rue de la Galoche",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "51155_0110"
+    ],
+    "route": []
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477119",
+    "TRONROUT0000002477114462"
+   ],
+   "lengthM": 102,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 102
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:rue-de-la-grimace@51155",
+   "canonical_name": "Rue de la Grimace",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "51155_0140"
+    ],
+    "route": []
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477155",
+    "TRONROUT0000000241770304"
+   ],
+   "lengthM": 126,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 126
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:rue-de-la-guillotiere@51155",
+   "canonical_name": "Rue de la Guillotière",
+   "aliases": [
+    "Rue de la Guillotiere"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "51155_0150"
+    ],
+    "route": []
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477126"
+   ],
+   "lengthM": 152,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 152
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:rue-de-la-liberation",
+   "canonical_name": "Rue de la Libération",
+   "aliases": [
+    "Rue de la Liberation"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0270"
+    ],
+    "route": [
+     "D 160"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481761"
+   ],
+   "lengthM": 152,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 152
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-de-la-paix",
+   "canonical_name": "Rue de la Paix",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0340"
+    ],
+    "route": [
+     "D 116"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481746",
+    "TRONROUT0000000009481748",
+    "TRONROUT0000000009481756"
+   ],
+   "lengthM": 249,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 249
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-de-la-republique",
+   "canonical_name": "Rue de la République",
+   "aliases": [
+    "Rue de la Republique"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0400"
+    ],
+    "route": [
+     "D 116"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481745",
+    "TRONROUT0000000009481752",
+    "TRONROUT0000000009481774"
+   ],
+   "lengthM": 275,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 275
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-de-la-zone-industrielle",
+   "canonical_name": "Rue de la Zone Industrielle",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_beatyf"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "zone industrielle",
+   "segments": [
+    "TRONROUT0000000009483642",
+    "TRONROUT0000000009483660",
+    "TRONROUT0000000009483662",
+    "TRONROUT0000000009483663",
+    "TRONROUT0000000009483666",
+    "TRONROUT0000002340926074"
+   ],
+   "lengthM": 766,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 766
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-des-aulnes",
+   "canonical_name": "Rue des Aulnes",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0030"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Les Granges",
+   "segments": [
+    "TRONROUT0000000009483729",
+    "way/151049935#1"
+   ],
+   "lengthM": 82,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 65
+    },
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 17
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-des-baudets",
+   "canonical_name": "Rue des Baudets",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0050"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Les Granges",
+   "segments": [
+    "TRONROUT0000000009483709"
+   ],
+   "lengthM": 219,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 219
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-des-bedouins",
+   "canonical_name": "Rue des Bédouins",
+   "aliases": [
+    "Rue des Bedouins"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0060"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Poussey",
+   "segments": [
+    "TRONROUT0000000009481725"
+   ],
+   "lengthM": 212,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 212
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-des-billouts",
+   "canonical_name": "Rue des Billouts",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0070"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Poussey",
+   "segments": [
+    "TRONROUT0000000009481720",
+    "TRONROUT0000000009481723"
+   ],
+   "lengthM": 246,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 246
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-des-cailloux@51155",
+   "canonical_name": "Rue des Cailloux",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "51155_0050"
+    ],
+    "route": []
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477170"
+   ],
+   "lengthM": 99,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 99
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:rue-des-carreaux",
+   "canonical_name": "Rue des Carreaux",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0080"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Les Granges",
+   "segments": [
+    "TRONROUT0000000009483732"
+   ],
+   "lengthM": 134,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 134
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-des-cites-bellemere@10323",
+   "canonical_name": "Rue des Cités Bellemere",
+   "aliases": [
+    "Rue des Cites Bellemere"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10323_0090"
+    ],
+    "route": []
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009483809"
+   ],
+   "lengthM": 158,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 158
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Romilly-sur-Seine"
+  },
+  {
+   "road_id": "road:rue-des-consorts@51155",
+   "canonical_name": "Rue des Consorts",
+   "aliases": [
+    "rue des consorts"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "51155_0080"
+    ],
+    "route": []
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477128"
+   ],
+   "lengthM": 78,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 78
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:rue-des-cottrets",
+   "canonical_name": "Rue des Cottrets",
+   "aliases": [
+    "Rue des Cotterets"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0130"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481802",
+    "TRONROUT0000002203222890",
+    "TRONROUT0000002203222891"
+   ],
+   "lengthM": 221,
+   "naming": [
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 143
+    },
+    {
+     "method": "BAN",
+     "lengthM": 77
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-des-ecoles",
+   "canonical_name": "Rue des Écoles",
+   "aliases": [
+    "Rue des Ecoles"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0170"
+    ],
+    "route": [
+     "D 160"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481758",
+    "TRONROUT0000000009481773",
+    "TRONROUT0000000009481778",
+    "TRONROUT0000000009481786",
+    "TRONROUT0000000009481787",
+    "TRONROUT0000000009481791"
+   ],
+   "lengthM": 436,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 436
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-des-filles@51155",
+   "canonical_name": "Rue des Filles",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "51155_0100"
+    ],
+    "route": []
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000114112966"
+   ],
+   "lengthM": 40,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 40
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:rue-des-jacquets",
+   "canonical_name": "Rue des Jacquets",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0230"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Poussey",
+   "segments": [
+    "TRONROUT0000000009481721"
+   ],
+   "lengthM": 91,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 91
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-des-lombards",
+   "canonical_name": "Rue des Lombards",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0280"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Poussey",
+   "segments": [
+    "TRONROUT0000000009479971",
+    "TRONROUT0000000009479972",
+    "TRONROUT0000000009479975",
+    "TRONROUT0000000224713803"
+   ],
+   "lengthM": 418,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 418
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-des-monts@51155",
+   "canonical_name": "Rue des Monts",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "51155_0190"
+    ],
+    "route": []
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477195"
+   ],
+   "lengthM": 52,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 52
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:rue-des-praillons",
+   "canonical_name": "Rue des Praillons",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0380"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481769",
+    "TRONROUT0000000009481772",
+    "TRONROUT0000000009481789",
+    "TRONROUT0000000129491551"
+   ],
+   "lengthM": 347,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 347
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-des-pres-de-poussey",
+   "canonical_name": "Rue des Prés de Poussey",
+   "aliases": [
+    "Rue des Pres de Poussey"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0355"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009481698",
+    "TRONROUT0000000009481699",
+    "TRONROUT0000000009481739"
+   ],
+   "lengthM": 598,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 552
+    },
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 46
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-des-sages",
+   "canonical_name": "Rue des Sages",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0404"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000002007078088",
+    "TRONROUT0000002007078089",
+    "TRONROUT0000002007078090"
+   ],
+   "lengthM": 179,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 179
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-des-tabellions",
+   "canonical_name": "Rue des Tabellions",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0420"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Poussey",
+   "segments": [
+    "TRONROUT0000000009481710"
+   ],
+   "lengthM": 169,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 169
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-du-bout-des-ruelles",
+   "canonical_name": "Rue du Bout des Ruelles",
+   "aliases": [
+    "Rue Du Bout Des Ruelles"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_kx5ava"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481803",
+    "TRONROUT0000000009481809"
+   ],
+   "lengthM": 162,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 162
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-du-calvaire",
+   "canonical_name": "Rue du Calvaire",
+   "aliases": [
+    "Rue Du Calvaire"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0086"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009481694",
+    "TRONROUT0000002477593484",
+    "TRONROUT0000002477593485"
+   ],
+   "lengthM": 168,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 168
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-du-chateau",
+   "canonical_name": "Rue du Château",
+   "aliases": [
+    "Rue du Chateau"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0100"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Poussey",
+   "segments": [
+    "TRONROUT0000000009479976"
+   ],
+   "lengthM": 289,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 289
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-du-chene@51155",
+   "canonical_name": "Rue du Chêne",
+   "aliases": [
+    "Rue du Chene"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "51155_0070"
+    ],
+    "route": []
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477086",
+    "TRONROUT0000000065477127",
+    "TRONROUT0000000065477140",
+    "TRONROUT0000000065477178"
+   ],
+   "lengthM": 166,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 166
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:rue-du-craon",
+   "canonical_name": "Rue du Craon",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0140"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481702",
+    "TRONROUT0000002203222889"
+   ],
+   "lengthM": 348,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 348
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-du-docteur-calmette",
+   "canonical_name": "Rue du Docteur Calmette",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0150"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009479968",
+    "TRONROUT0000000009479974",
+    "TRONROUT0000000009481706",
+    "TRONROUT0000000009481712",
+    "TRONROUT0000000009481714",
+    "TRONROUT0000000009481719",
+    "TRONROUT0000000009481722",
+    "TRONROUT0000000009481781",
+    "TRONROUT0000000009481788",
+    "TRONROUT0000000357952353"
+   ],
+   "lengthM": 795,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 742
+    },
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 53
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-du-docteur-sollier",
+   "canonical_name": "Rue du Docteur Sollier",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0160"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Les Granges",
+   "segments": [
+    "TRONROUT0000000009483695",
+    "TRONROUT0000000009483699",
+    "TRONROUT0000000009483706"
+   ],
+   "lengthM": 533,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 533
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-du-general-leclerc",
+   "canonical_name": "Rue du Général Leclerc",
+   "aliases": [
+    "Rue du General Leclerc"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0210"
+    ],
+    "route": [
+     "D 116"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481751",
+    "TRONROUT0000000009481753",
+    "TRONROUT0000000009483692",
+    "TRONROUT0000000009483694",
+    "TRONROUT0000000009483697",
+    "TRONROUT0000000009483702",
+    "TRONROUT0000000009483703",
+    "TRONROUT0000000322114134",
+    "TRONROUT0000000322114169"
+   ],
+   "lengthM": 871,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 848
+    },
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 23
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-du-lavoir",
+   "canonical_name": "Rue du Lavoir",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0260"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Poussey",
+   "segments": [
+    "TRONROUT0000000009479973",
+    "TRONROUT0000000009481708"
+   ],
+   "lengthM": 276,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 276
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-du-marechal-de-lattre-de-tassigny",
+   "canonical_name": "Rue du Maréchal de Lattre de Tassigny",
+   "aliases": [
+    "Avenue du Maréchal de Lattre de Tassigny",
+    "Rue Maurice Renault",
+    "Rue du Mal de Lattre de Tassigny",
+    "Rue du Stade"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0290"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481701",
+    "TRONROUT0000000009481743",
+    "TRONROUT0000000009481744",
+    "TRONROUT0000000009481747",
+    "TRONROUT0000000009481749",
+    "TRONROUT0000000009481750",
+    "TRONROUT0000000009481760",
+    "TRONROUT0000000009481766",
+    "TRONROUT0000000224713798",
+    "TRONROUT0000000224713863",
+    "TRONROUT0000002477593482"
+   ],
+   "lengthM": 720,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 713
+    },
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 7
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-du-moulin",
+   "canonical_name": "Rue du Moulin",
+   "aliases": [
+    "Rue Basse de Poussay"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0310"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009481680",
+    "TRONROUT0000000009481685",
+    "TRONROUT0000000009481688"
+   ],
+   "lengthM": 280,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 280
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-du-pont-de-clairvaux",
+   "canonical_name": "Rue du Pont de Clairvaux",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0370"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Poussey",
+   "segments": [
+    "TRONROUT0000000009479965",
+    "TRONROUT0000000009479966",
+    "TRONROUT0000000009479969",
+    "TRONROUT0000000009481713"
+   ],
+   "lengthM": 350,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 350
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-du-pot-bancelin",
+   "canonical_name": "Rue du Pot Bancelin",
+   "aliases": [
+    "Rue du Pont Bancelin"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0361"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009483779",
+    "TRONROUT0000000244696585",
+    "TRONROUT0000002266671310"
+   ],
+   "lengthM": 361,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 361
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-du-presbytere",
+   "canonical_name": "Rue du Presbytère",
+   "aliases": [
+    "Rue du Presbytere"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0390"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481777"
+   ],
+   "lengthM": 64,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 64
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-du-stade",
+   "canonical_name": "Rue du Stade",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0415"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481728",
+    "TRONROUT0000000009481795"
+   ],
+   "lengthM": 275,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 275
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-georges-clemenceau",
+   "canonical_name": "Rue Georges Clemenceau",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0220"
+    ],
+    "route": [
+     "D 160"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Les Granges",
+   "segments": [
+    "TRONROUT0000000009483691",
+    "TRONROUT0000000009483700",
+    "TRONROUT0000000009483705",
+    "TRONROUT0000000322114168"
+   ],
+   "lengthM": 528,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 521
+    },
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 7
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-georges-pompidou",
+   "canonical_name": "Rue Georges Pompidou",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0231"
+    ],
+    "route": [
+     "D 116"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Les Granges",
+   "segments": [
+    "TRONROUT0000000009485296"
+   ],
+   "lengthM": 471,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 471
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-jacqueline-auriol@10323",
+   "canonical_name": "Rue Jacqueline Auriol",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [],
+    "route": []
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009483762",
+    "TRONROUT0000000009483772",
+    "TRONROUT0000000009483774",
+    "TRONROUT0000000009483782",
+    "TRONROUT0000000322114036",
+    "TRONROUT0000000322114225",
+    "TRONROUT0000000322114348"
+   ],
+   "lengthM": 240,
+   "naming": [
+    {
+     "method": "OSM seul (absent de la BAN)",
+     "lengthM": 240
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "nom OSM seul, absent de la BAN"
+  },
+  {
+   "road_id": "road:rue-jean-baptiste-de-lesseps",
+   "canonical_name": "Rue Jean-Baptiste de Lesseps",
+   "aliases": [
+    "Rue Jean Baptiste de Lesseps"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0232"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000224713857",
+    "TRONROUT0000000224713858",
+    "TRONROUT0000000224713861",
+    "TRONROUT0000000224713865",
+    "TRONROUT0000000355431550"
+   ],
+   "lengthM": 275,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 266
+    },
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 9
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-jean-kilisky@10323",
+   "canonical_name": "Rue Jean Kilisky",
+   "aliases": [
+    "Avenue Georges Pompidou"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10323_0751"
+    ],
+    "route": []
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000322114353",
+    "TRONROUT0000002292886607",
+    "TRONROUT0000002292886608",
+    "TRONROUT0000002292886610",
+    "TRONROUT0000002292886611",
+    "TRONROUT0000002477105739",
+    "TRONROUT0000002477105743"
+   ],
+   "lengthM": 268,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 268
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Romilly-sur-Seine"
+  },
+  {
+   "road_id": "road:rue-jean-monnet",
+   "canonical_name": "Rue Jean Monnet",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0235"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481763",
+    "TRONROUT0000000009481771",
+    "TRONROUT0000000009481783"
+   ],
+   "lengthM": 316,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 316
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-joliot-curie",
+   "canonical_name": "Rue Joliot-Curie",
+   "aliases": [
+    "Rue Joliot Curie"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0240"
+    ],
+    "route": [
+     "D 20"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009479970",
+    "TRONROUT0000000009481681",
+    "TRONROUT0000000009481682",
+    "TRONROUT0000000009481683",
+    "TRONROUT0000000009481686",
+    "TRONROUT0000000009481691",
+    "TRONROUT0000000009481700",
+    "TRONROUT0000000009481703",
+    "TRONROUT0000000009481704",
+    "TRONROUT0000000009481707",
+    "TRONROUT0000000009481709",
+    "TRONROUT0000000009481711",
+    "TRONROUT0000000009481716",
+    "TRONROUT0000000009481717",
+    "TRONROUT0000000224713804",
+    "TRONROUT0000000224753413",
+    "TRONROUT0000002498256387"
+   ],
+   "lengthM": 1790,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 1790
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-jules-ferry",
+   "canonical_name": "Rue Jules Ferry",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0250"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481779",
+    "TRONROUT0000000357952138",
+    "TRONROUT0000000357952269",
+    "TRONROUT0000002007078086",
+    "TRONROUT0000002007078087"
+   ],
+   "lengthM": 302,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 302
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-louis-joly",
+   "canonical_name": "Rue Louis Joly",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0285"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009481697"
+   ],
+   "lengthM": 105,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 105
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-matteoti@10323",
+   "canonical_name": "Rue Mattéoti",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10323_1020"
+    ],
+    "route": []
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009481847",
+    "TRONROUT0000000009481849",
+    "TRONROUT0000000129491527"
+   ],
+   "lengthM": 224,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 224
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Romilly-sur-Seine"
+  },
+  {
+   "road_id": "road:rue-maurice-renault",
+   "canonical_name": "Rue Maurice Renault",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0300"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009483690",
+    "TRONROUT0000000009483693",
+    "TRONROUT0000000009483708"
+   ],
+   "lengthM": 428,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 428
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-moyenne@51155",
+   "canonical_name": "Rue Moyenne",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "51155_0200"
+    ],
+    "route": []
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477095",
+    "TRONROUT0000000065477113",
+    "TRONROUT0000000065477121",
+    "TRONROUT0000000065477123",
+    "TRONROUT0000000065477125",
+    "TRONROUT0000000065477134",
+    "TRONROUT0000000065477166",
+    "TRONROUT0000000065477171",
+    "TRONROUT0000000065477191",
+    "TRONROUT0000000065477192",
+    "TRONROUT0000000354775254"
+   ],
+   "lengthM": 572,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 572
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:rue-pasteur",
+   "canonical_name": "Rue Pasteur",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0350"
+    ],
+    "route": [
+     "D 20"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481715",
+    "TRONROUT0000000009481718",
+    "TRONROUT0000000009481755",
+    "TRONROUT0000000009481762",
+    "TRONROUT0000000009481770",
+    "TRONROUT0000000009481785",
+    "TRONROUT0000000224753412"
+   ],
+   "lengthM": 587,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 587
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-patris-de-breuil",
+   "canonical_name": "Rue Patris de Breuil",
+   "aliases": [
+    "Rue Patris"
+   ],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0353"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000224713846",
+    "TRONROUT0000000224713852",
+    "TRONROUT0000000224713860",
+    "TRONROUT0000000322114037",
+    "TRONROUT0000000322114038",
+    "TRONROUT0000000322114039",
+    "TRONROUT0000000355431674"
+   ],
+   "lengthM": 304,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 259
+    },
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 44
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-pierre-semard@10323",
+   "canonical_name": "Rue Pierre Sémard",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10323_1240"
+    ],
+    "route": [
+     "D 619"
+    ]
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009483794",
+    "TRONROUT0000000009483804",
+    "TRONROUT0000000009483811",
+    "TRONROUT0000000009483813",
+    "TRONROUT0000000009483816",
+    "TRONROUT0000000110062780",
+    "TRONROUT0000000110062789",
+    "TRONROUT0000000325186477",
+    "TRONROUT0000002477106137",
+    "TRONROUT0000002477106138",
+    "TRONROUT0000002477106139",
+    "TRONROUT0000002477106140"
+   ],
+   "lengthM": 1014,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 1014
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Romilly-sur-Seine"
+  },
+  {
+   "road_id": "road:rue-robert-galley",
+   "canonical_name": "Rue Robert Galley",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10323_1296"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000110062779",
+    "TRONROUT0000002330331200",
+    "TRONROUT0000002330331201"
+   ],
+   "lengthM": 109,
+   "naming": [
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 109
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:rue-robert-galley@10323",
+   "canonical_name": "Rue Robert Galley",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10323_1296"
+    ],
+    "route": []
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000357672491",
+    "TRONROUT0000000357672492",
+    "TRONROUT0000000357672565",
+    "TRONROUT0000002008458268",
+    "TRONROUT0000002008458269",
+    "TRONROUT0000002221604121",
+    "TRONROUT0000002221604122",
+    "TRONROUT0000002221604123",
+    "TRONROUT0000002221604399",
+    "TRONROUT0000002221604400",
+    "TRONROUT0000002330331163",
+    "TRONROUT0000002477105733"
+   ],
+   "lengthM": 567,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 553
+    },
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 14
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Romilly-sur-Seine"
+  },
+  {
+   "road_id": "road:rue-royale@51155",
+   "canonical_name": "Rue Royale",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "51155_0230"
+    ],
+    "route": []
+   },
+   "commune": "Clesles",
+   "insee": "51155",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000065477198"
+   ],
+   "lengthM": 65,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 65
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "voie de Clesles"
+  },
+  {
+   "road_id": "road:rue-thierry-moussin@10323",
+   "canonical_name": "Rue Thierry Moussin",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [],
+    "route": []
+   },
+   "commune": "Romilly-sur-Seine",
+   "insee": "10323",
+   "sector": "hors commune",
+   "segments": [
+    "TRONROUT0000000009483795",
+    "TRONROUT0000000009483798",
+    "TRONROUT0000000009483807",
+    "TRONROUT0000000009483810"
+   ],
+   "lengthM": 332,
+   "naming": [
+    {
+     "method": "OSM seul (absent de la BAN)",
+     "lengthM": 332
+    }
+   ],
+   "addressing_localities": [
+    "La Belle Idee"
+   ],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": false,
+   "notes": "nom OSM seul, absent de la BAN"
+  },
+  {
+   "road_id": "road:rue-victor-hugo",
+   "canonical_name": "Rue Victor Hugo",
+   "aliases": [],
+   "road_type": "rue",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0430"
+    ],
+    "route": [
+     "D 160"
+    ]
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Les Granges",
+   "segments": [
+    "TRONROUT0000000009483724",
+    "TRONROUT0000000009485300"
+   ],
+   "lengthM": 164,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 83
+    },
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 81
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:ruelle-a-rosez",
+   "canonical_name": "Ruelle à Rosez",
+   "aliases": [],
+   "road_type": "ruelle",
+   "official_ref": {
+    "ban_voie": [],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481724"
+   ],
+   "lengthM": 127,
+   "naming": [
+    {
+     "method": "OSM seul (absent de la BAN)",
+     "lengthM": 127
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": true,
+   "notes": "nom OSM seul, absent de la BAN"
+  },
+  {
+   "road_id": "road:ruelle-des-ecoles",
+   "canonical_name": "Ruelle des Écoles",
+   "aliases": [
+    "Ruelle des Ecoles"
+   ],
+   "road_type": "ruelle",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0175"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "centre-bourg",
+   "segments": [
+    "TRONROUT0000000009481800"
+   ],
+   "lengthM": 75,
+   "naming": [
+    {
+     "method": "BAN",
+     "lengthM": 75
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  },
+  {
+   "road_id": "road:ruelle-des-granges",
+   "canonical_name": "Ruelle des Granges",
+   "aliases": [],
+   "road_type": "ruelle",
+   "official_ref": {
+    "ban_voie": [],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "Les Granges",
+   "segments": [
+    "TRONROUT0000000009483742",
+    "TRONROUT0000000009483744",
+    "TRONROUT0000000009483746"
+   ],
+   "lengthM": 306,
+   "naming": [
+    {
+     "method": "OSM seul (absent de la BAN)",
+     "lengthM": 306
+    }
+   ],
+   "addressing_localities": [
+    "Les Granges"
+   ],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS_WITH_LIMITATION",
+   "searchable": true,
+   "notes": "nom OSM seul, absent de la BAN"
+  },
+  {
+   "road_id": "road:voie-aux-vaches",
+   "canonical_name": "Voie aux Vaches",
+   "aliases": [],
+   "road_type": "voie",
+   "official_ref": {
+    "ban_voie": [
+     "10220_0425"
+    ],
+    "route": []
+   },
+   "commune": "Maizières-la-Grande-Paroisse",
+   "insee": "10220",
+   "sector": "reste de la commune",
+   "segments": [
+    "TRONROUT0000000009479985",
+    "TRONROUT0000000009479991",
+    "TRONROUT0000000009479993",
+    "TRONROUT0000000009479996",
+    "TRONROUT0000000009479997",
+    "TRONROUT0000000009479998",
+    "TRONROUT0000000009480002",
+    "TRONROUT0000000009480003",
+    "TRONROUT0000000224713851",
+    "TRONROUT0000000224713853",
+    "TRONROUT0000000224713856",
+    "TRONROUT0000000224713859",
+    "TRONROUT0000000224713862",
+    "TRONROUT0000000224713866",
+    "TRONROUT0000000224713867",
+    "TRONROUT0000000224713868",
+    "TRONROUT0000000224713869",
+    "TRONROUT0000000224713870",
+    "TRONROUT0000000224713871"
+   ],
+   "lengthM": 2271,
+   "naming": [
+    {
+     "method": "OSM = voie BAN (tronçon non relié dans la BD TOPO)",
+     "lengthM": 1840
+    },
+    {
+     "method": "BAN",
+     "lengthM": 431
+    }
+   ],
+   "addressing_localities": [],
+   "valid_from": null,
+   "valid_to": null,
+   "sources": [
+    "IGN BD TOPO tronçons de route (data-sources/roads/bdtopo-troncon-de-route.geojson)",
+    "IGN BD TOPO voies nommées / BAN (data-sources/roads/bdtopo-voie-nommee.geojson)",
+    "OpenStreetMap (public/data/maizieres.geojson)"
+   ],
+   "audit_status": "PASS",
+   "display_status": "PASS",
+   "searchable": true,
+   "notes": null
+  }
+ ],
+ "transitions": {
+  "D 116": [
+   [
+    {
+     "name": "D 116",
+     "lengthM": 1597
+    },
+    {
+     "name": "Rue de la Paix",
+     "lengthM": 249
+    },
+    {
+     "name": "Place Saint-Denis",
+     "lengthM": 36
+    },
+    {
+     "name": "Rue de la République",
+     "lengthM": 275
+    },
+    {
+     "name": "Rue du Général Leclerc",
+     "lengthM": 516
+    },
+    {
+     "name": "Rue Georges Clemenceau",
+     "lengthM": 7
+    },
+    {
+     "name": "Rue du Général Leclerc",
+     "lengthM": 344
+    },
+    {
+     "name": "Rue Georges Pompidou",
+     "lengthM": 471
+    },
+    {
+     "name": "D 116",
+     "lengthM": 1636
+    }
+   ],
+   [
+    {
+     "name": "D 116 (Origny-le-Sec)",
+     "lengthM": 879
+    }
+   ],
+   [
+    {
+     "name": "Rue de l'Essy",
+     "lengthM": 4
+    }
+   ]
+  ],
+  "D 619": [
+   [
+    {
+     "name": "Avenue du Général de Gaulle",
+     "lengthM": 1736
+    }
+   ],
+   [
+    {
+     "name": "D 619 (Châtres)",
+     "lengthM": 1141
+    },
+    {
+     "name": "D 619",
+     "lengthM": 1604
+    }
+   ],
+   [
+    {
+     "name": "Rue Pierre Sémard (Romilly-sur-Seine)",
+     "lengthM": 452
+    }
+   ]
+  ],
+  "D 96": [
+   [
+    {
+     "name": "D 96 (Pars-lès-Romilly)",
+     "lengthM": 1744
+    }
+   ]
+  ],
+  "D 116A": [
+   [
+    {
+     "name": "D 116A",
+     "lengthM": 672
+    }
+   ]
+  ],
+  "D 160": [
+   [
+    {
+     "name": "Rue Victor Hugo",
+     "lengthM": 81
+    },
+    {
+     "name": "D 160",
+     "lengthM": 1581
+    },
+    {
+     "name": "D 160 (Romilly-sur-Seine)",
+     "lengthM": 29
+    },
+    {
+     "name": "D 160 (Pars-lès-Romilly)",
+     "lengthM": 1091
+    }
+   ],
+   [
+    {
+     "name": "Place Saint-Denis",
+     "lengthM": 55
+    },
+    {
+     "name": "Rue de la Libération",
+     "lengthM": 152
+    },
+    {
+     "name": "Rue des Écoles",
+     "lengthM": 129
+    }
+   ],
+   [
+    {
+     "name": "Rue Georges Clemenceau",
+     "lengthM": 521
+    }
+   ]
+  ],
+  "D 20": [
+   [
+    {
+     "name": "D 20",
+     "lengthM": 435
+    },
+    {
+     "name": "Rue Joliot-Curie",
+     "lengthM": 1791
+    },
+    {
+     "name": "Rue Pasteur",
+     "lengthM": 587
+    },
+    {
+     "name": "Place Saint-Denis",
+     "lengthM": 98
+    }
+   ],
+   [
+    {
+     "name": "Grande Rue (Châtres)",
+     "lengthM": 367
+    }
+   ]
+  ],
+  "D 352": [
+   [
+    {
+     "name": "D 352 (Clesles)",
+     "lengthM": 1578
+    }
+   ]
+  ],
+  "D 440": [],
+  "D 52": [
+   [
+    {
+     "name": "Route de Saint-Just (Clesles)",
+     "lengthM": 265
+    }
+   ]
+  ],
+  "D 82": [
+   [
+    {
+     "name": "D 82 (Saint-Just-Sauvage)",
+     "lengthM": 421
+    },
+    {
+     "name": "Route de Maizières (Saint-Just-Sauvage)",
+     "lengthM": 1018
+    },
+    {
+     "name": "D 82 (Saint-Just-Sauvage)",
+     "lengthM": 6
+    }
+   ]
+  ]
+ },
+ "legacyClickableStreets": [
+  {
+   "id": "road:Rue Pasteur",
+   "name": "Rue Pasteur",
+   "refs": [
+    "D 20"
+   ],
+   "ways": [
+    {
+     "way": "way/93494835",
+     "lengthM": 384,
+     "roads": [
+      [
+       "road:rue-pasteur",
+       272
+      ],
+      [
+       "road:place-saint-denis",
+       104
+      ],
+      [
+       "road:rue-de-la-paix",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/150926968",
+     "lengthM": 320,
+     "roads": [
+      [
+       "road:rue-pasteur",
+       320
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue de la Paix",
+   "name": "Rue de la Paix",
+   "refs": [
+    "D 116"
+   ],
+   "ways": [
+    {
+     "way": "way/93992032",
+     "lengthM": 216,
+     "roads": [
+      [
+       "road:rue-de-la-paix",
+       216
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/1503218257",
+     "lengthM": 56,
+     "roads": [
+      [
+       "road:d-116",
+       32
+      ],
+      [
+       "road:rue-de-la-paix",
+       24
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:D 619",
+   "name": "D 619",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/103925795",
+     "lengthM": 32,
+     "roads": [
+      [
+       "road:avenue-du-general-de-gaulle",
+       32
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/103925812",
+     "lengthM": 40,
+     "roads": [
+      [
+       "road:avenue-du-general-de-gaulle",
+       40
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/103925818",
+     "lengthM": 32,
+     "roads": [
+      [
+       "road:avenue-du-general-de-gaulle",
+       32
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/103925835",
+     "lengthM": 24,
+     "roads": [
+      [
+       "road:avenue-du-general-de-gaulle",
+       24
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/150926796",
+     "lengthM": 208,
+     "roads": [
+      [
+       "road:d-619",
+       160
+      ],
+      [
+       "road:avenue-du-general-de-gaulle",
+       40
+      ],
+      [
+       "road:rue-de-la-chefferie",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/150935891",
+     "lengthM": 616,
+     "roads": [
+      [
+       "road:d-619@10089",
+       616
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/601230669",
+     "lengthM": 96,
+     "roads": [
+      [
+       "road:d-619@10089",
+       96
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/602208314",
+     "lengthM": 704,
+     "roads": [
+      [
+       "road:d-619",
+       384
+      ],
+      [
+       "road:d-619@10089",
+       320
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/602208315",
+     "lengthM": 368,
+     "roads": [
+      [
+       "road:d-619",
+       368
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/602208316",
+     "lengthM": 208,
+     "roads": [
+      [
+       "road:d-619",
+       208
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/602208317",
+     "lengthM": 536,
+     "roads": [
+      [
+       "road:d-619@10089",
+       344
+      ],
+      [
+       "road:d-619",
+       184
+      ]
+     ],
+     "unnamedM": 8
+    },
+    {
+     "way": "way/1442625853",
+     "lengthM": 208,
+     "roads": [
+      [
+       "road:d-619",
+       168
+      ],
+      [
+       "road:avenue-du-general-de-gaulle",
+       32
+      ],
+      [
+       "road:rue-de-la-chefferie",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/1442625855",
+     "lengthM": 488,
+     "roads": [
+      [
+       "road:d-619",
+       480
+      ]
+     ],
+     "unnamedM": 8
+    },
+    {
+     "way": "way/1442625856",
+     "lengthM": 160,
+     "roads": [
+      [
+       "road:d-619",
+       160
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/1442625857",
+     "lengthM": 496,
+     "roads": [
+      [
+       "road:d-619",
+       496
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/1442625860",
+     "lengthM": 184,
+     "roads": [
+      [
+       "road:d-619",
+       184
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/1484546132",
+     "lengthM": 344,
+     "roads": [
+      [
+       "road:avenue-du-general-de-gaulle",
+       344
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Avenue du Général de Gaulle",
+   "name": "Avenue du Général de Gaulle",
+   "refs": [
+    "D 619"
+   ],
+   "ways": [
+    {
+     "way": "way/103925813",
+     "lengthM": 776,
+     "roads": [
+      [
+       "road:avenue-du-general-de-gaulle",
+       768
+      ]
+     ],
+     "unnamedM": 8
+    },
+    {
+     "way": "way/1171252560",
+     "lengthM": 88,
+     "roads": [
+      [
+       "road:avenue-du-general-de-gaulle",
+       88
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/1171252561",
+     "lengthM": 616,
+     "roads": [
+      [
+       "road:avenue-du-general-de-gaulle",
+       608
+      ]
+     ],
+     "unnamedM": 8
+    },
+    {
+     "way": "way/1442625854",
+     "lengthM": 72,
+     "roads": [
+      [
+       "road:avenue-du-general-de-gaulle",
+       72
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/1515283231",
+     "lengthM": 240,
+     "roads": [
+      [
+       "road:avenue-du-general-de-gaulle",
+       232
+      ]
+     ],
+     "unnamedM": 8
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Jacqueline Auriol",
+   "name": "Rue Jacqueline Auriol",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/103925814",
+     "lengthM": 160,
+     "roads": [
+      [
+       "road:rue-jacqueline-auriol@10323",
+       136
+      ]
+     ],
+     "unnamedM": 24
+    },
+    {
+     "way": "way/103925828",
+     "lengthM": 48,
+     "roads": [
+      [
+       "road:rue-jacqueline-auriol@10323",
+       48
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/1442983072",
+     "lengthM": 136,
+     "roads": [
+      [
+       "road:rue-jacqueline-auriol@10323",
+       120
+      ]
+     ],
+     "unnamedM": 16
+    }
+   ]
+  },
+  {
+   "id": "road:D 160",
+   "name": "D 160",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/120079737",
+     "lengthM": 1912,
+     "roads": [
+      [
+       "road:d-160@10280",
+       1112
+      ],
+      [
+       "road:d-160@10323",
+       8
+      ]
+     ],
+     "unnamedM": 792
+    },
+    {
+     "way": "way/1513966432",
+     "lengthM": 1616,
+     "roads": [
+      [
+       "road:d-160",
+       1576
+      ],
+      [
+       "road:rue-victor-hugo",
+       24
+      ]
+     ],
+     "unnamedM": 16
+    }
+   ]
+  },
+  {
+   "id": "road:D 116",
+   "name": "D 116",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/132006394",
+     "lengthM": 400,
+     "roads": [
+      [
+       "road:d-116",
+       400
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/150933048",
+     "lengthM": 848,
+     "roads": [
+      [
+       "road:d-116",
+       840
+      ]
+     ],
+     "unnamedM": 8
+    },
+    {
+     "way": "way/150933051",
+     "lengthM": 40,
+     "roads": [
+      [
+       "road:d-116",
+       40
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/150933052",
+     "lengthM": 16,
+     "roads": [
+      [
+       "road:d-116",
+       16
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/150933053",
+     "lengthM": 248,
+     "roads": [
+      [
+       "road:d-116",
+       248
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/151043638",
+     "lengthM": 512,
+     "roads": [
+      [
+       "road:rue-du-general-leclerc",
+       504
+      ],
+      [
+       "road:rue-de-la-contree-du-pont",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/151054427",
+     "lengthM": 2912,
+     "roads": [
+      [
+       "road:d-116",
+       1608
+      ],
+      [
+       "road:d-116@10271",
+       880
+      ],
+      [
+       "road:rue-georges-pompidou",
+       176
+      ]
+     ],
+     "unnamedM": 248
+    }
+   ]
+  },
+  {
+   "id": "road:D 82",
+   "name": "D 82",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/132006395",
+     "lengthM": 24,
+     "roads": [
+      [
+       "road:d-82@51492",
+       8
+      ],
+      [
+       "road:d-116",
+       8
+      ]
+     ],
+     "unnamedM": 8
+    }
+   ]
+  },
+  {
+   "id": "road:Route de Maizières",
+   "name": "Route de Maizières",
+   "refs": [
+    "D 82"
+   ],
+   "ways": [
+    {
+     "way": "way/132006396",
+     "lengthM": 1016,
+     "roads": [
+      [
+       "road:route-de-maizieres@51492",
+       1016
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:D 116A",
+   "name": "D 116A",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/132360744",
+     "lengthM": 824,
+     "roads": [
+      [
+       "road:d-116a",
+       672
+      ],
+      [
+       "road:d-116",
+       8
+      ]
+     ],
+     "unnamedM": 144
+    }
+   ]
+  },
+  {
+   "id": "road:D 352",
+   "name": "D 352",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/132360748",
+     "lengthM": 1376,
+     "roads": [
+      [
+       "road:d-352@51155",
+       1000
+      ]
+     ],
+     "unnamedM": 376
+    },
+    {
+     "way": "way/132360750",
+     "lengthM": 32,
+     "roads": [
+      [
+       "road:d-352@51155",
+       32
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/150926793",
+     "lengthM": 904,
+     "roads": [
+      [
+       "road:d-352@51155",
+       520
+      ]
+     ],
+     "unnamedM": 384
+    }
+   ]
+  },
+  {
+   "id": "road:D 96",
+   "name": "D 96",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/135330610",
+     "lengthM": 2872,
+     "roads": [
+      [
+       "road:d-96@10280",
+       1760
+      ]
+     ],
+     "unnamedM": 1112
+    }
+   ]
+  },
+  {
+   "id": "road:Boulevard Antoine de Saint-Exupéry",
+   "name": "Boulevard Antoine de Saint-Exupéry",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150926799",
+     "lengthM": 72,
+     "roads": [
+      [
+       "road:boulevard-antoine-de-saint-exupery",
+       72
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/150926822",
+     "lengthM": 24,
+     "roads": [
+      [
+       "road:boulevard-antoine-de-saint-exupery",
+       16
+      ],
+      [
+       "road:avenue-du-general-de-gaulle",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/150926826",
+     "lengthM": 80,
+     "roads": [
+      [
+       "road:boulevard-antoine-de-saint-exupery",
+       64
+      ]
+     ],
+     "unnamedM": 16
+    },
+    {
+     "way": "way/499681316",
+     "lengthM": 32,
+     "roads": [
+      [
+       "road:boulevard-antoine-de-saint-exupery",
+       32
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/533879311",
+     "lengthM": 120,
+     "roads": [
+      [
+       "road:boulevard-antoine-de-saint-exupery",
+       112
+      ]
+     ],
+     "unnamedM": 8
+    },
+    {
+     "way": "way/800026740",
+     "lengthM": 208,
+     "roads": [
+      [
+       "road:boulevard-antoine-de-saint-exupery",
+       176
+      ]
+     ],
+     "unnamedM": 32
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Robert Galley",
+   "name": "Rue Robert Galley",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150926823",
+     "lengthM": 656,
+     "roads": [
+      [
+       "road:rue-robert-galley@10323",
+       536
+      ],
+      [
+       "road:rue-robert-galley",
+       88
+      ],
+      [
+       "road:rue-andre-malraux@10323",
+       8
+      ]
+     ],
+     "unnamedM": 24
+    }
+   ]
+  },
+  {
+   "id": "road:Avenue Philippe Séguin",
+   "name": "Avenue Philippe Séguin",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150926829",
+     "lengthM": 216,
+     "roads": [
+      [
+       "road:avenue-philippe-seguin",
+       184
+      ]
+     ],
+     "unnamedM": 32
+    },
+    {
+     "way": "way/366040733",
+     "lengthM": 72,
+     "roads": [
+      [
+       "road:avenue-philippe-seguin",
+       64
+      ],
+      [
+       "road:boulevard-antoine-de-saint-exupery",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Joliot Curie",
+   "name": "Rue Joliot Curie",
+   "refs": [
+    "D 20"
+   ],
+   "ways": [
+    {
+     "way": "way/150926966",
+     "lengthM": 1344,
+     "roads": [
+      [
+       "road:rue-joliot-curie",
+       1296
+      ],
+      [
+       "road:rue-pasteur",
+       8
+      ],
+      [
+       "road:rue-du-chateau",
+       8
+      ],
+      [
+       "road:rue-du-lavoir",
+       8
+      ],
+      [
+       "road:rue-des-tabellions",
+       8
+      ],
+      [
+       "road:rue-de-l-orme",
+       8
+      ]
+     ],
+     "unnamedM": 8
+    }
+   ]
+  },
+  {
+   "id": "road:Rue du Docteur Calmette",
+   "name": "Rue du Docteur Calmette",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150926969",
+     "lengthM": 536,
+     "roads": [
+      [
+       "road:rue-du-docteur-calmette",
+       512
+      ],
+      [
+       "road:rue-pasteur",
+       8
+      ],
+      [
+       "road:voie-aux-vaches",
+       8
+      ]
+     ],
+     "unnamedM": 8
+    },
+    {
+     "way": "way/150927791",
+     "lengthM": 200,
+     "roads": [
+      [
+       "road:rue-du-docteur-calmette",
+       160
+      ],
+      [
+       "road:voie-aux-vaches",
+       40
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue des Billouts",
+   "name": "Rue des Billouts",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150927781",
+     "lengthM": 240,
+     "roads": [
+      [
+       "road:rue-des-billouts",
+       232
+      ],
+      [
+       "road:rue-des-lombards",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue des Jacquets",
+   "name": "Rue des Jacquets",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150927783",
+     "lengthM": 96,
+     "roads": [
+      [
+       "road:rue-des-jacquets",
+       80
+      ]
+     ],
+     "unnamedM": 16
+    }
+   ]
+  },
+  {
+   "id": "road:Rue des Lombards",
+   "name": "Rue des Lombards",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150927784",
+     "lengthM": 408,
+     "roads": [
+      [
+       "road:rue-des-lombards",
+       400
+      ],
+      [
+       "road:rue-des-bedouins",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue du Château",
+   "name": "Rue du Château",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150927787",
+     "lengthM": 312,
+     "roads": [
+      [
+       "road:rue-du-chateau",
+       312
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue du Craon",
+   "name": "Rue du Craon",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150927789",
+     "lengthM": 120,
+     "roads": [
+      [
+       "road:rue-du-craon",
+       120
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue du Lavoir",
+   "name": "Rue du Lavoir",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150927794",
+     "lengthM": 280,
+     "roads": [
+      [
+       "road:rue-du-lavoir",
+       272
+      ],
+      [
+       "road:rue-des-lombards",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue du Pont de Clairvaux",
+   "name": "Rue du Pont de Clairvaux",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150927795",
+     "lengthM": 16,
+     "roads": [
+      [
+       "road:rue-du-pont-de-clairvaux",
+       16
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/150927797",
+     "lengthM": 144,
+     "roads": [
+      [
+       "road:rue-du-pont-de-clairvaux",
+       128
+      ],
+      [
+       "road:rue-joliot-curie",
+       8
+      ],
+      [
+       "road:rue-des-lombards",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:D 20",
+   "name": "D 20",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150928672",
+     "lengthM": 1944,
+     "roads": [
+      [
+       "road:d-20",
+       424
+      ],
+      [
+       "road:grande-rue@10089",
+       360
+      ],
+      [
+       "road:rue-joliot-curie",
+       216
+      ]
+     ],
+     "unnamedM": 944
+    },
+    {
+     "way": "way/925234604",
+     "lengthM": 64,
+     "roads": [
+      [
+       "road:rue-joliot-curie",
+       64
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/925234605",
+     "lengthM": 64,
+     "roads": [
+      [
+       "road:rue-joliot-curie",
+       64
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/925234606",
+     "lengthM": 48,
+     "roads": [
+      [
+       "road:rue-joliot-curie",
+       48
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/1503218256",
+     "lengthM": 120,
+     "roads": [
+      [
+       "road:rue-joliot-curie",
+       120
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Basse de Poussay",
+   "name": "Rue Basse de Poussay",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150928679",
+     "lengthM": 344,
+     "roads": [
+      [
+       "road:rue-basse-de-poussey",
+       264
+      ],
+      [
+       "road:rue-du-moulin",
+       80
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Louis Joly",
+   "name": "Rue Louis Joly",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150928681",
+     "lengthM": 104,
+     "roads": [
+      [
+       "road:rue-louis-joly",
+       96
+      ],
+      [
+       "road:rue-basse-de-poussey",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue des Bédouins",
+   "name": "Rue des Bédouins",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150928684",
+     "lengthM": 208,
+     "roads": [
+      [
+       "road:rue-des-bedouins",
+       200
+      ],
+      [
+       "road:rue-joliot-curie",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue des Tabellions",
+   "name": "Rue des Tabellions",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150928685",
+     "lengthM": 176,
+     "roads": [
+      [
+       "road:rue-des-tabellions",
+       176
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue du Moulin",
+   "name": "Rue du Moulin",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150928686",
+     "lengthM": 120,
+     "roads": [
+      [
+       "road:rue-du-moulin",
+       112
+      ],
+      [
+       "road:rue-joliot-curie",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/1026708142",
+     "lengthM": 80,
+     "roads": [
+      [
+       "road:rue-du-moulin",
+       72
+      ],
+      [
+       "road:rue-joliot-curie",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Voie aux Vaches",
+   "name": "Voie aux Vaches",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150930756",
+     "lengthM": 1808,
+     "roads": [
+      [
+       "road:voie-aux-vaches",
+       1800
+      ],
+      [
+       "road:d-116",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Avenue du Maréchal de Lattre de Tassigny",
+   "name": "Avenue du Maréchal de Lattre de Tassigny",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150935890",
+     "lengthM": 160,
+     "roads": [
+      [
+       "road:rue-du-marechal-de-lattre-de-tassigny",
+       144
+      ],
+      [
+       "road:rue-du-general-leclerc",
+       8
+      ],
+      [
+       "road:rue-albert-benoist",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue du Maréchal de Lattre de Tassigny",
+   "name": "Rue du Maréchal de Lattre de Tassigny",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150935892",
+     "lengthM": 480,
+     "roads": [
+      [
+       "road:rue-du-marechal-de-lattre-de-tassigny",
+       464
+      ],
+      [
+       "road:rue-jean-monnet",
+       8
+      ]
+     ],
+     "unnamedM": 8
+    }
+   ]
+  },
+  {
+   "id": "road:Place Adrien Quinet",
+   "name": "Place Adrien Quinet",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150936916",
+     "lengthM": 80,
+     "roads": [
+      [
+       "road:place-adrien-quinet",
+       80
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Placette Léopoldine Deschamps",
+   "name": "Placette Léopoldine Deschamps",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150936919",
+     "lengthM": 72,
+     "roads": [
+      [
+       "road:place-leopoldine-deschamps",
+       72
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Jean Monnet",
+   "name": "Rue Jean Monnet",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150936920",
+     "lengthM": 320,
+     "roads": [
+      [
+       "road:rue-jean-monnet",
+       312
+      ]
+     ],
+     "unnamedM": 8
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Jules Ferry",
+   "name": "Rue Jules Ferry",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150936923",
+     "lengthM": 304,
+     "roads": [
+      [
+       "road:rue-jules-ferry",
+       304
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Maurice Renault",
+   "name": "Rue Maurice Renault",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150936925",
+     "lengthM": 512,
+     "roads": [
+      [
+       "road:rue-maurice-renault",
+       512
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/958203195",
+     "lengthM": 48,
+     "roads": [
+      [
+       "road:rue-du-marechal-de-lattre-de-tassigny",
+       48
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue du Stade",
+   "name": "Rue du Stade",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150936928",
+     "lengthM": 352,
+     "roads": [
+      [
+       "road:rue-du-stade",
+       272
+      ],
+      [
+       "road:rue-du-marechal-de-lattre-de-tassigny",
+       80
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Albert Benoist",
+   "name": "Rue Albert Benoist",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150938010",
+     "lengthM": 224,
+     "roads": [
+      [
+       "road:rue-albert-benoist",
+       208
+      ]
+     ],
+     "unnamedM": 16
+    },
+    {
+     "way": "way/150938018",
+     "lengthM": 40,
+     "roads": [
+      [
+       "road:rue-albert-benoist",
+       40
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/150938019",
+     "lengthM": 56,
+     "roads": [
+      [
+       "road:rue-albert-benoist",
+       40
+      ]
+     ],
+     "unnamedM": 16
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Ambroise Paré",
+   "name": "Rue Ambroise Paré",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150938011",
+     "lengthM": 184,
+     "roads": [
+      [
+       "road:rue-ambroise-pare",
+       184
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Jean-Baptiste de Lesseps",
+   "name": "Rue Jean-Baptiste de Lesseps",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150938012",
+     "lengthM": 312,
+     "roads": [
+      [
+       "road:rue-jean-baptiste-de-lesseps",
+       272
+      ],
+      [
+       "road:rue-patris-de-breuil",
+       40
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Patris",
+   "name": "Rue Patris",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150938013",
+     "lengthM": 232,
+     "roads": [
+      [
+       "road:rue-patris-de-breuil",
+       224
+      ],
+      [
+       "road:voie-aux-vaches",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue de l'Essy",
+   "name": "Rue de l'Essy",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/150938014",
+     "lengthM": 568,
+     "roads": [
+      [
+       "road:rue-de-l-essy",
+       560
+      ],
+      [
+       "road:rue-du-general-leclerc",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Place Saint-Denis",
+   "name": "Place Saint-Denis",
+   "refs": [
+    "D 160"
+   ],
+   "ways": [
+    {
+     "way": "way/151043642",
+     "lengthM": 80,
+     "roads": [
+      [
+       "road:place-saint-denis",
+       80
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/362819788",
+     "lengthM": 72,
+     "roads": [
+      [
+       "road:place-saint-denis",
+       64
+      ],
+      [
+       "road:rue-de-la-liberation",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue de la Libération",
+   "name": "Rue de la Libération",
+   "refs": [
+    "D 160"
+   ],
+   "ways": [
+    {
+     "way": "way/151043643",
+     "lengthM": 160,
+     "roads": [
+      [
+       "road:rue-de-la-liberation",
+       152
+      ],
+      [
+       "road:rue-des-ecoles",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue de la République",
+   "name": "Rue de la République",
+   "refs": [
+    "D 116"
+   ],
+   "ways": [
+    {
+     "way": "way/151043645",
+     "lengthM": 320,
+     "roads": [
+      [
+       "road:rue-de-la-republique",
+       272
+      ],
+      [
+       "road:place-saint-denis",
+       32
+      ],
+      [
+       "road:rue-de-la-paix",
+       8
+      ],
+      [
+       "road:rue-des-cottrets",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue des Cotterets",
+   "name": "Rue des Cotterets",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151043646",
+     "lengthM": 192,
+     "roads": [
+      [
+       "road:rue-des-cottrets",
+       184
+      ],
+      [
+       "road:rue-de-la-republique",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/1026708154",
+     "lengthM": 24,
+     "roads": [
+      [
+       "road:rue-des-cottrets",
+       24
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue des Praillons",
+   "name": "Rue des Praillons",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151043648",
+     "lengthM": 400,
+     "roads": [
+      [
+       "road:rue-des-praillons",
+       328
+      ],
+      [
+       "road:la-ruelle-des-bois",
+       8
+      ]
+     ],
+     "unnamedM": 64
+    }
+   ]
+  },
+  {
+   "id": "road:Rue des Écoles",
+   "name": "Rue des Écoles",
+   "refs": [
+    "D 160"
+   ],
+   "ways": [
+    {
+     "way": "way/151043650",
+     "lengthM": 120,
+     "roads": [
+      [
+       "road:rue-des-ecoles",
+       96
+      ],
+      [
+       "road:rue-de-la-contree-du-pont",
+       8
+      ],
+      [
+       "road:rue-de-la-republique",
+       8
+      ],
+      [
+       "road:rue-jules-ferry",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/362819789",
+     "lengthM": 328,
+     "roads": [
+      [
+       "road:rue-des-ecoles",
+       320
+      ]
+     ],
+     "unnamedM": 8
+    }
+   ]
+  },
+  {
+   "id": "road:Rue de la Contrée du Pont",
+   "name": "Rue de la Contrée du Pont",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151044770",
+     "lengthM": 144,
+     "roads": [
+      [
+       "road:rue-de-la-contree-du-pont",
+       144
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue du Presbytère",
+   "name": "Rue du Presbytère",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151044773",
+     "lengthM": 64,
+     "roads": [
+      [
+       "road:rue-du-presbytere",
+       56
+      ],
+      [
+       "road:rue-pasteur",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Ruelle à Rosez",
+   "name": "Ruelle à Rosez",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151044776",
+     "lengthM": 128,
+     "roads": [
+      [
+       "road:ruelle-a-rosez",
+       120
+      ],
+      [
+       "road:rue-pasteur",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Le Chemin de la Guide",
+   "name": "Le Chemin de la Guide",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151048917",
+     "lengthM": 544,
+     "roads": [
+      [
+       "road:le-chemin-de-la-guide",
+       536
+      ],
+      [
+       "road:rue-du-pot-bancelin",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Chemin de la Pie",
+   "name": "Chemin de la Pie",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151049929",
+     "lengthM": 120,
+     "roads": [
+      [
+       "road:rue-achille-flaubert",
+       104
+      ]
+     ],
+     "unnamedM": 16
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Achille Flaubert",
+   "name": "Rue Achille Flaubert",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151049931",
+     "lengthM": 568,
+     "roads": [
+      [
+       "road:rue-achille-flaubert",
+       560
+      ],
+      [
+       "road:rue-du-docteur-sollier",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Georges Clemenceau",
+   "name": "Rue Georges Clemenceau",
+   "refs": [
+    "D 160"
+   ],
+   "ways": [
+    {
+     "way": "way/151049932",
+     "lengthM": 528,
+     "roads": [
+      [
+       "road:rue-georges-clemenceau",
+       512
+      ],
+      [
+       "road:rue-du-general-leclerc",
+       8
+      ],
+      [
+       "road:rue-de-la-chapelle",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue des Aulnes",
+   "name": "Rue des Aulnes",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151049935",
+     "lengthM": 104,
+     "roads": [
+      [
+       "road:rue-des-aulnes",
+       56
+      ],
+      [
+       "road:rue-achille-flaubert",
+       8
+      ]
+     ],
+     "unnamedM": 40
+    }
+   ]
+  },
+  {
+   "id": "road:Ruelle des Granges",
+   "name": "Ruelle des Granges",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151049937",
+     "lengthM": 328,
+     "roads": [
+      [
+       "road:ruelle-des-granges",
+       296
+      ],
+      [
+       "road:le-chemin-de-la-guide",
+       8
+      ]
+     ],
+     "unnamedM": 24
+    }
+   ]
+  },
+  {
+   "id": "road:Impasse de la Noue",
+   "name": "Impasse de la Noue",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151052250",
+     "lengthM": 64,
+     "roads": [
+      [
+       "road:impasse-de-la-noue",
+       56
+      ],
+      [
+       "road:rue-achille-flaubert",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Victor Hugo",
+   "name": "Rue Victor Hugo",
+   "refs": [
+    "D 160"
+   ],
+   "ways": [
+    {
+     "way": "way/151052252",
+     "lengthM": 304,
+     "roads": [
+      [
+       "road:rue-victor-hugo",
+       136
+      ],
+      [
+       "road:avenue-du-general-de-gaulle",
+       8
+      ]
+     ],
+     "unnamedM": 160
+    }
+   ]
+  },
+  {
+   "id": "road:Rue de la Chapelle",
+   "name": "Rue de la Chapelle",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151052253",
+     "lengthM": 184,
+     "roads": [
+      [
+       "road:rue-de-la-chapelle",
+       184
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue des Baudets",
+   "name": "Rue des Baudets",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151052254",
+     "lengthM": 232,
+     "roads": [
+      [
+       "road:rue-des-baudets",
+       216
+      ],
+      [
+       "road:rue-achille-flaubert",
+       8
+      ],
+      [
+       "road:rue-du-docteur-sollier",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue des Carreaux",
+   "name": "Rue des Carreaux",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151052255",
+     "lengthM": 128,
+     "roads": [
+      [
+       "road:rue-des-carreaux",
+       120
+      ]
+     ],
+     "unnamedM": 8
+    }
+   ]
+  },
+  {
+   "id": "road:Rue du Docteur Sollier",
+   "name": "Rue du Docteur Sollier",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151052257",
+     "lengthM": 544,
+     "roads": [
+      [
+       "road:rue-du-docteur-sollier",
+       536
+      ],
+      [
+       "road:rue-georges-clemenceau",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue du Calvaire",
+   "name": "Rue du Calvaire",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151053776",
+     "lengthM": 160,
+     "roads": [
+      [
+       "road:rue-du-calvaire",
+       152
+      ],
+      [
+       "road:rue-de-l-orme",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue de l'Orme",
+   "name": "Rue de l'Orme",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151053778",
+     "lengthM": 240,
+     "roads": [
+      [
+       "road:rue-de-l-orme",
+       240
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue des Prés de Poussey",
+   "name": "Rue des Prés de Poussey",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151053779",
+     "lengthM": 224,
+     "roads": [
+      [
+       "road:rue-des-pres-de-poussey",
+       216
+      ],
+      [
+       "road:rue-de-l-orme",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue du Général Leclerc",
+   "name": "Rue du Général Leclerc",
+   "refs": [
+    "D 116"
+   ],
+   "ways": [
+    {
+     "way": "way/151053780",
+     "lengthM": 352,
+     "roads": [
+      [
+       "road:rue-du-general-leclerc",
+       352
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/1515283232",
+     "lengthM": 16,
+     "roads": [
+      [
+       "road:rue-du-general-leclerc",
+       16
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Georges Pompidou",
+   "name": "Rue Georges Pompidou",
+   "refs": [
+    "D 116"
+   ],
+   "ways": [
+    {
+     "way": "way/151054425",
+     "lengthM": 128,
+     "roads": [
+      [
+       "road:rue-georges-pompidou",
+       120
+      ],
+      [
+       "road:avenue-du-general-de-gaulle",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/1503218255",
+     "lengthM": 184,
+     "roads": [
+      [
+       "road:rue-georges-pompidou",
+       184
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue de la Chefferie",
+   "name": "Rue de la Chefferie",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/151054426",
+     "lengthM": 248,
+     "roads": [
+      [
+       "road:rue-de-la-chefferie",
+       248
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Chemin La Fin de Maiziere",
+   "name": "Chemin La Fin de Maiziere",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/233599031",
+     "lengthM": 328,
+     "roads": [
+      [
+       "road:chemin-rural-dit-fin-maizieres@10323",
+       232
+      ],
+      [
+       "road:chemin-de-la-garenne",
+       88
+      ]
+     ],
+     "unnamedM": 8
+    }
+   ]
+  },
+  {
+   "id": "road:Chemin de la Garenne Saint-Jacques",
+   "name": "Chemin de la Garenne Saint-Jacques",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/233599032",
+     "lengthM": 656,
+     "roads": [
+      [
+       "road:chemin-de-la-garenne-saint-jacques@10323",
+       648
+      ],
+      [
+       "road:rue-matteoti@10323",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Résidence La Belle Idée",
+   "name": "Résidence La Belle Idée",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/234826894",
+     "lengthM": 184,
+     "roads": [
+      [
+       "road:residence-la-belle-idee@10323",
+       184
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/234828083",
+     "lengthM": 56,
+     "roads": [
+      [
+       "road:residence-la-belle-idee@10323",
+       48
+      ]
+     ],
+     "unnamedM": 8
+    },
+    {
+     "way": "way/1427271489",
+     "lengthM": 72,
+     "roads": [
+      [
+       "road:residence-la-belle-idee@10323",
+       72
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/1442983073",
+     "lengthM": 88,
+     "roads": [
+      [
+       "road:residence-la-belle-idee@10323",
+       80
+      ]
+     ],
+     "unnamedM": 8
+    }
+   ]
+  },
+  {
+   "id": "road:Chemin d'Outre Seine",
+   "name": "Chemin d'Outre Seine",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/395351635",
+     "lengthM": 1128,
+     "roads": [
+      [
+       "road:chemin-rural-dit-d-outre-seine@10323",
+       1024
+      ],
+      [
+       "road:chemin-d-outre-seine@10323",
+       88
+      ]
+     ],
+     "unnamedM": 16
+    },
+    {
+     "way": "way/395351636",
+     "lengthM": 128,
+     "roads": [
+      [
+       "road:chemin-rural-dit-d-outre-seine@10323",
+       24
+      ],
+      [
+       "road:chemin-d-outre-seine@10323",
+       24
+      ]
+     ],
+     "unnamedM": 80
+    }
+   ]
+  },
+  {
+   "id": "road:Rue du Pont Bancelin",
+   "name": "Rue du Pont Bancelin",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/395807539",
+     "lengthM": 224,
+     "roads": [
+      [
+       "road:rue-du-pot-bancelin",
+       208
+      ],
+      [
+       "road:avenue-du-general-de-gaulle",
+       8
+      ]
+     ],
+     "unnamedM": 8
+    }
+   ]
+  },
+  {
+   "id": "road:Avenue Georges Pompidou",
+   "name": "Avenue Georges Pompidou",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/499681323",
+     "lengthM": 264,
+     "roads": [
+      [
+       "road:avenue-georges-pompidou@10323",
+       256
+      ]
+     ],
+     "unnamedM": 8
+    },
+    {
+     "way": "way/499681324",
+     "lengthM": 176,
+     "roads": [
+      [
+       "road:avenue-georges-pompidou@10323",
+       176
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/499681325",
+     "lengthM": 88,
+     "roads": [
+      [
+       "road:avenue-georges-pompidou@10323",
+       88
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/800026743",
+     "lengthM": 16,
+     "roads": [
+      [
+       "road:avenue-georges-pompidou@10323",
+       16
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue des Sages",
+   "name": "Rue des Sages",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/588789204",
+     "lengthM": 80,
+     "roads": [
+      [
+       "road:rue-des-sages",
+       64
+      ],
+      [
+       "road:rue-jules-ferry",
+       8
+      ],
+      [
+       "road:impasse-des-sages",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    },
+    {
+     "way": "way/588789207",
+     "lengthM": 112,
+     "roads": [
+      [
+       "road:rue-des-sages",
+       104
+      ],
+      [
+       "road:rue-jules-ferry",
+       8
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Ruelle des Écoles",
+   "name": "Ruelle des Écoles",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/1026708146",
+     "lengthM": 72,
+     "roads": [
+      [
+       "road:ruelle-des-ecoles",
+       72
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Thierry Moussin",
+   "name": "Rue Thierry Moussin",
+   "refs": [],
+   "ways": [
+    {
+     "way": "way/1037082235",
+     "lengthM": 336,
+     "roads": [
+      [
+       "road:rue-thierry-moussin@10323",
+       328
+      ]
+     ],
+     "unnamedM": 8
+    }
+   ]
+  },
+  {
+   "id": "road:Rue Pierre Sémard",
+   "name": "Rue Pierre Sémard",
+   "refs": [
+    "D 619"
+   ],
+   "ways": [
+    {
+     "way": "way/1427271485",
+     "lengthM": 328,
+     "roads": [
+      [
+       "road:rue-pierre-semard@10323",
+       208
+      ]
+     ],
+     "unnamedM": 120
+    },
+    {
+     "way": "way/1502347080",
+     "lengthM": 408,
+     "roads": [
+      [
+       "road:avenue-du-general-de-gaulle",
+       208
+      ],
+      [
+       "road:rue-pierre-semard@10323",
+       200
+      ]
+     ],
+     "unnamedM": 0
+    }
+   ]
+  }
+ ],
+ "rail": {
+  "lines": [
+   {
+    "rail_id": "rail:ligne-1000",
+    "canonical_name": "Ligne de Paris-Est à Mulhouse-Ville",
+    "aliases": [
+     "ligne 1000",
+     "1000"
+    ],
+    "official_ref": "SNCF Réseau, ligne 1000",
+    "osm_ways": [
+     "way/612311100",
+     "way/721610237",
+     "way/721610239"
+    ],
+    "audit_status": "PASS",
+    "notes": "la voie de liaison OSM ref 1000 (crossover) rejoint la ligne ; elle était cliquable et cherchable sous le nom « 1000 »"
+   },
+   {
+    "rail_id": "rail:voies-de-service",
+    "canonical_name": "Voie ferrée de service",
+    "aliases": [
+     "1",
+     "2",
+     "3",
+     "4"
+    ],
+    "official_ref": null,
+    "osm_ways": [
+     "way/174931213",
+     "way/174931214",
+     "way/174931216",
+     "way/174931217",
+     "way/233599049"
+    ],
+    "audit_status": "PASS_WITH_LIMITATION",
+    "notes": "voies d’embranchement et de garage (OSM service=siding/spur, ref = numéro de voie) : elles étaient cliquables et cherchables sous les noms « 1 », « 2 », « 3 », « 4 » ; désormais « Voie ferrée de service », non cherchables"
+   }
+  ],
+  "levelCrossings": [
+   {
+    "id": "PN70",
+    "number": 70,
+    "road_raw": "La Voie de la Garenne / Chemin Rural Dit Fin Maizieres",
+    "road": "La Voie de la Garenne / Chemin rural dit Fin Maizières",
+    "position": [
+     -2101.4,
+     308
+    ],
+    "in_commune": false,
+    "place": null,
+    "interactive": false
+   },
+   {
+    "id": "PN71",
+    "number": 71,
+    "road_raw": "Rue du Pot Bancelin",
+    "road": "Rue du Pot Bancelin",
+    "position": [
+     -1566.1,
+     371.4
+    ],
+    "in_commune": true,
+    "place": {
+     "id": "poi:bdtopo:PT_RESEA0000000354298826",
+     "name": "Passage à niveau numéro 71",
+     "display_status": "PASS",
+     "distanceM": 1
+    },
+    "interactive": true
+   },
+   {
+    "id": "PN73",
+    "number": 73,
+    "road_raw": "Rue du General Leclerc",
+    "road": "Rue du Général Leclerc",
+    "position": [
+     -234.4,
+     528
+    ],
+    "in_commune": true,
+    "place": {
+     "id": "poi:pn-general-leclerc",
+     "name": "Passage à niveau n° 73 (rue du Général-Leclerc)",
+     "display_status": "PASS",
+     "distanceM": 1
+    },
+    "interactive": true
+   },
+   {
+    "id": "PN74",
+    "number": 74,
+    "road_raw": null,
+    "road": null,
+    "position": [
+     239.2,
+     583.8
+    ],
+    "in_commune": true,
+    "place": {
+     "id": "poi:bdtopo:PT_RESEA0000000354298828",
+     "name": "Passage à niveau numéro 74",
+     "display_status": "PASS",
+     "distanceM": 0
+    },
+    "interactive": true
+   }
+  ]
+ },
+ "bridges": {
+  "places": [
+   {
+    "id": "poi:pont-de-clairvaux",
+    "name": "Pont de Clairvaux",
+    "display_status": "PASS",
+    "bridges": [
+     {
+      "troncon": "TRONROUT0000000009479965",
+      "road": "Rue du Pont de Clairvaux",
+      "crosses": [
+       "Rivière du Moulin"
+      ],
+      "ouvrage": "CONSLINE0000000009332950"
+     }
+    ]
+   },
+   {
+    "id": "poi:pont-rue-de-l-orme",
+    "name": "Pont de la rue de l’Orme",
+    "display_status": "PASS",
+    "bridges": [
+     {
+      "troncon": "TRONROUT0000000009483634",
+      "road": "Rue de l'Orme",
+      "crosses": [
+       "voie ferrée"
+      ],
+      "ouvrage": "CONSLINE0000000009333108"
+     }
+    ]
+   },
+   {
+    "id": "poi:pont-seine",
+    "name": "Pont sur la Seine",
+    "display_status": "PASS_WITH_LIMITATION",
+    "bridges": [
+     {
+      "troncon": "TRONROUT0000000009478798",
+      "road": "D 116",
+      "crosses": [
+       "La Seine"
+      ],
+      "ouvrage": "CONSLINE0000000009332895"
+     }
+    ]
+   }
+  ],
+  "structures": [
+   {
+    "troncon": "TRONROUT0000000009478796",
+    "road": "D 116",
+    "ouvrage": "CONSLINE0000000009332894",
+    "crosses": [],
+    "lengthM": 9,
+    "clearanceM": 0.06,
+    "place": null,
+    "position": [
+     -89,
+     -1633
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000009478798",
+    "road": "D 116",
+    "ouvrage": "CONSLINE0000000009332895",
+    "crosses": [
+     "La Seine"
+    ],
+    "lengthM": 42,
+    "clearanceM": 4.02,
+    "place": {
+     "id": "poi:pont-seine",
+     "name": "Pont sur la Seine",
+     "display_status": "PASS_WITH_LIMITATION"
+    },
+    "position": [
+     -96,
+     -1565
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000009478799",
+    "road": "D 116",
+    "ouvrage": "CONSLINE0000000009332893",
+    "crosses": [
+     "Rivière du Moulin"
+    ],
+    "lengthM": 22,
+    "clearanceM": 3.46,
+    "place": null,
+    "position": [
+     -149,
+     -1295
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000009479959",
+    "road": null,
+    "ouvrage": "CONSLINE0000000009332949",
+    "crosses": [],
+    "lengthM": 12,
+    "clearanceM": 1.86,
+    "place": null,
+    "position": [
+     1070,
+     -800
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000009479965",
+    "road": "Rue du Pont de Clairvaux",
+    "ouvrage": "CONSLINE0000000009332950",
+    "crosses": [
+     "Rivière du Moulin"
+    ],
+    "lengthM": 22,
+    "clearanceM": 2.59,
+    "place": {
+     "id": "poi:pont-de-clairvaux",
+     "name": "Pont de Clairvaux",
+     "display_status": "PASS"
+    },
+    "position": [
+     882,
+     -526
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000009479988",
+    "road": "D 116",
+    "ouvrage": "CONSLINE0000000009332951",
+    "crosses": [],
+    "lengthM": 13,
+    "clearanceM": 2.66,
+    "place": null,
+    "position": [
+     -247,
+     -892
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000009479989",
+    "road": "D 116",
+    "ouvrage": "CONSLINE0000000009332952",
+    "crosses": [],
+    "lengthM": 8,
+    "clearanceM": 2.2,
+    "place": null,
+    "position": [
+     -272,
+     -584
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000009480016",
+    "road": null,
+    "ouvrage": "CONSLINE0000000009332954",
+    "crosses": [],
+    "lengthM": 9,
+    "clearanceM": 3.14,
+    "place": null,
+    "position": [
+     -2517,
+     -629
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000009480018",
+    "road": null,
+    "ouvrage": "CONSLINE0000000009332953",
+    "crosses": [],
+    "lengthM": 10,
+    "clearanceM": 2.9,
+    "place": null,
+    "position": [
+     -2302,
+     -1158
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000009481873",
+    "road": null,
+    "ouvrage": "CONSLINE0000000009333031",
+    "crosses": [],
+    "lengthM": 17,
+    "clearanceM": 0.09,
+    "place": null,
+    "position": [
+     -2825,
+     -304
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000009483634",
+    "road": "Rue de l'Orme",
+    "ouvrage": "CONSLINE0000000009333108",
+    "crosses": [
+     "voie ferrée"
+    ],
+    "lengthM": 26,
+    "clearanceM": 5.33,
+    "place": {
+     "id": "poi:pont-rue-de-l-orme",
+     "name": "Pont de la rue de l’Orme",
+     "display_status": "PASS"
+    },
+    "position": [
+     1084,
+     683
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000065477174",
+    "road": null,
+    "ouvrage": "CONSLINE0000000065141844",
+    "crosses": [],
+    "lengthM": 8,
+    "clearanceM": 1.33,
+    "place": null,
+    "position": [
+     2425,
+     -2519
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000065477175",
+    "road": null,
+    "ouvrage": "CONSLINE0000000065141843",
+    "crosses": [],
+    "lengthM": 8,
+    "clearanceM": 0.09,
+    "place": null,
+    "position": [
+     2368,
+     -2420
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000065477220",
+    "road": "D 352",
+    "ouvrage": "CONSLINE0000000065141846",
+    "crosses": [],
+    "lengthM": 17,
+    "clearanceM": 2.5,
+    "place": null,
+    "position": [
+     2176,
+     -2679
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000065477221",
+    "road": "D 352",
+    "ouvrage": "CONSLINE0000000065141845",
+    "crosses": [],
+    "lengthM": 21,
+    "clearanceM": 2.4,
+    "place": null,
+    "position": [
+     1981,
+     -2522
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000065477222",
+    "road": "D 352",
+    "ouvrage": "CONSLINE0000000065141847",
+    "crosses": [],
+    "lengthM": 15,
+    "clearanceM": 2.04,
+    "place": null,
+    "position": [
+     1915,
+     -2442
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000065477245",
+    "road": "D 82",
+    "ouvrage": "CONSLINE0000000065141848",
+    "crosses": [
+     "La Petite Rivière de Sauvage"
+    ],
+    "lengthM": 14,
+    "clearanceM": 2.32,
+    "place": null,
+    "position": [
+     -1007,
+     -2678
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000065477248",
+    "road": null,
+    "ouvrage": "CONSLINE0000000065141849",
+    "crosses": [],
+    "lengthM": 8,
+    "clearanceM": 2.63,
+    "place": null,
+    "position": [
+     -1752,
+     -2606
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000065477372",
+    "road": null,
+    "ouvrage": "CONSLINE0000000065141855",
+    "crosses": [],
+    "lengthM": 13,
+    "clearanceM": 0.07,
+    "place": null,
+    "position": [
+     2225,
+     -2202
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000065477374",
+    "road": null,
+    "ouvrage": "CONSLINE0000000065141857",
+    "crosses": [
+     "La Seine"
+    ],
+    "lengthM": 27,
+    "clearanceM": 1.88,
+    "place": null,
+    "position": [
+     2907,
+     -1474
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000065477379",
+    "road": null,
+    "ouvrage": "CONSLINE0000000065141858",
+    "crosses": [
+     "canal"
+    ],
+    "lengthM": 17,
+    "clearanceM": 0.33,
+    "place": null,
+    "position": [
+     2073,
+     -1966
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000065477386",
+    "road": "D 352",
+    "ouvrage": "CONSLINE0000000065141860",
+    "crosses": [
+     "La Seine"
+    ],
+    "lengthM": 27,
+    "clearanceM": 2.75,
+    "place": null,
+    "position": [
+     1577,
+     -2069
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000065477423",
+    "road": null,
+    "ouvrage": "CONSLINE0000000065141862",
+    "crosses": [
+     "La Noue des Fourches"
+    ],
+    "lengthM": 13,
+    "clearanceM": 1.98,
+    "place": null,
+    "position": [
+     2565,
+     -1402
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000099212500",
+    "road": "D 82",
+    "ouvrage": "CONSLINE0000000099212503",
+    "crosses": [
+     "La Petite Rivière de Sauvage"
+    ],
+    "lengthM": 6,
+    "clearanceM": 2.66,
+    "place": null,
+    "position": [
+     -300,
+     -1929
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000099212501",
+    "road": null,
+    "ouvrage": "CONSLINE0000002203222884",
+    "crosses": [
+     "La Petite Rivière de Sauvage"
+    ],
+    "lengthM": 9,
+    "clearanceM": 2.66,
+    "place": null,
+    "position": [
+     -300,
+     -1929
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000224198285",
+    "road": null,
+    "ouvrage": "CONSLINE0000000258591870",
+    "crosses": [
+     "La Seine",
+     "dam"
+    ],
+    "lengthM": 7,
+    "clearanceM": 3.25,
+    "place": null,
+    "position": [
+     -2043,
+     -2023
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000224198287",
+    "road": null,
+    "ouvrage": "CONSLINE0000000258591871",
+    "crosses": [
+     "dam"
+    ],
+    "lengthM": 11,
+    "clearanceM": 2.1,
+    "place": null,
+    "position": [
+     -2047,
+     -2005
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000000328328305",
+    "road": null,
+    "ouvrage": "CONSLINE0000000328328323",
+    "crosses": [],
+    "lengthM": 25,
+    "clearanceM": 0.45,
+    "place": null,
+    "position": [
+     -307,
+     -2540
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000002203222902",
+    "road": null,
+    "ouvrage": "CONSLINE0000002203222886",
+    "crosses": [],
+    "lengthM": 25,
+    "clearanceM": 1.72,
+    "place": null,
+    "position": [
+     -2009,
+     635
+    ]
+   },
+   {
+    "troncon": "TRONROUT0000002203222909",
+    "road": null,
+    "ouvrage": "CONSLINE0000002203222885",
+    "crosses": [],
+    "lengthM": 25,
+    "clearanceM": 1.1,
+    "place": null,
+    "position": [
+     -1907,
+     694
+    ]
+   }
+  ]
+ },
+ "hydronyms": {
+  "lines": [
+   {
+    "name": "(sans nom)",
+    "lengthM": 14520,
+    "source": null,
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "la Seine",
+    "lengthM": 11802,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Canal des Moulins de Sauvage",
+    "lengthM": 5766,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Ruisseau des Moulins de Poussey",
+    "lengthM": 4689,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Cours d'Eau 01 des Menus Prés",
+    "lengthM": 4494,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Bras des Moulins de Poussey",
+    "lengthM": 2806,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Bras de la Noue de Ferloup",
+    "lengthM": 2533,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Fossé 01 du Clos Baillot",
+    "lengthM": 2339,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Fossé 03 des Epinettes",
+    "lengthM": 2278,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Bras des Moulins de Sauvage",
+    "lengthM": 1985,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Noue des Barces",
+    "lengthM": 1622,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Fossé 01 du Gobyat",
+    "lengthM": 1555,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Cours d'Eau 01 du Gué de Vailly",
+    "lengthM": 1500,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Canal des Moulins",
+    "lengthM": 1461,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Bras 02 des Menus Prés",
+    "lengthM": 1322,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Noue de Ferloup",
+    "lengthM": 988,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Bras 01 des Menus Prés",
+    "lengthM": 824,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Noue des Fourchus",
+    "lengthM": 713,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Canal 01 des Penouilles",
+    "lengthM": 599,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Fossé 01 du Rondeau",
+    "lengthM": 404,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Bras de la Seine",
+    "lengthM": 314,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Canal 01 du Haut Buon",
+    "lengthM": 79,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   },
+   {
+    "name": "Fossé 02 du Gobyat",
+    "lengthM": 35,
+    "source": "BD TOPO tronçon hydrographique (v2-scene waterLines)",
+    "interactive": false,
+    "displayed_as_label": false
+   }
+  ],
+  "notes": [
+   {
+    "name": "Ruisseau des Moulins de Poussey",
+    "note": "nom BD TOPO du cours d’eau principal de Poussey (Bible 01 §13.2, A)"
+   },
+   {
+    "name": "Bras des Moulins de Poussey",
+    "note": "nom BD TOPO d’un bras distinct"
+   },
+   {
+    "name": "Rivière du Moulin",
+    "note": "nom porté par l’ouvrage BD TOPO du pont de Clairvaux (champ « crosses ») et par OSM ; Bible 05 : « rivière du Moulin près du pont de Clairvaux »"
+   },
+   {
+    "name": "canal de Poussey",
+    "note": "employé par un bulletin municipal ; correspondance exacte non établie (Bible 01 §13.2) : n’est affiché nulle part, n’est pas un alias"
+   }
+  ]
+ },
+ "sectorLabels": [
+  {
+   "id": "poi:bourg",
+   "name": "Maizières-la-Grande-Paroisse",
+   "category": "secteur",
+   "display_status": "PASS",
+   "anchor": {
+    "lonlat": [
+     3.7891612,
+     48.5080991
+    ],
+    "method": "BD TOPO zone d’habitation (limite officielle de la zone bâtie)",
+    "confidence": "élevée"
+   },
+   "in_commune": true,
+   "sources": [
+    "BD TOPO zone d’habitation (limite officielle de la zone bâtie)"
+   ]
+  },
+  {
+   "id": "poi:poussey",
+   "name": "Poussey",
+   "category": "secteur",
+   "display_status": "PASS_WITH_LIMITATION",
+   "anchor": {
+    "lonlat": [
+     3.8042127,
+     48.5128558
+    ],
+    "method": "BD TOPO zone d’habitation fictive (point du toponyme ; aucune limite officielle)",
+    "confidence": "limitée"
+   },
+   "in_commune": true,
+   "sources": [
+    "BD TOPO zone d’habitation fictive (point du toponyme ; aucune limite officielle)"
+   ]
+  },
+  {
+   "id": "poi:les-granges",
+   "name": "Les Granges",
+   "category": "secteur",
+   "display_status": "PASS_WITH_LIMITATION",
+   "anchor": {
+    "lonlat": [
+     3.7843549,
+     48.5014661
+    ],
+    "method": "BD TOPO zone d’habitation fictive (point du toponyme ; aucune limite officielle)",
+    "confidence": "limitée"
+   },
+   "in_commune": true,
+   "sources": [
+    "BD TOPO zone d’habitation fictive (point du toponyme ; aucune limite officielle)"
+   ]
+  },
+  {
+   "id": "poi:parc-aerodrome",
+   "name": "Parc de l’Aérodrome",
+   "category": "zone_activite",
+   "display_status": "PASS",
+   "anchor": {
+    "lonlat": [
+     3.7568412,
+     48.4994779
+    ],
+    "method": "BD TOPO zone d’activité (centre du périmètre)",
+    "confidence": "élevée"
+   },
+   "in_commune": true,
+   "sources": [
+    "BD TOPO zone d’activité (centre du périmètre)"
+   ]
+  },
+  {
+   "id": "poi:glaciere",
+   "name": "Zone industrielle La Glacière",
+   "category": "zone_activite",
+   "display_status": "PASS",
+   "anchor": {
+    "lonlat": [
+     3.8005322,
+     48.5022065
+    ],
+    "method": "BD TOPO zone d’activité (centre du périmètre)",
+    "confidence": "élevée"
+   },
+   "in_commune": true,
+   "sources": [
+    "BD TOPO zone d’activité (centre du périmètre)"
+   ]
+  },
+  {
+   "id": "poi:bdtopo:PAIHABIT0000000009338387",
+   "name": "le Craon",
+   "category": "secteur",
+   "display_status": "PASS_WITH_LIMITATION",
+   "anchor": {
+    "lonlat": [
+     3.7965918,
+     48.5132742
+    ],
+    "method": "BD TOPO zone d’habitation fictive (point du toponyme ; aucune limite officielle)",
+    "confidence": "limitée"
+   },
+   "in_commune": true,
+   "sources": [
+    "BD TOPO zone d’habitation fictive (point du toponyme ; aucune limite officielle)"
+   ]
+  }
+ ],
+ "unnamedTroncons": {
+  "count": 1024,
+  "lengthM": 178861,
+  "byCategory": {
+   "chemin_carrossable": 192,
+   "chemin_rural": 269,
+   "sentier": 203,
+   "voie_de_desserte": 220,
+   "voie_locale": 136,
+   "route_secondaire": 1,
+   "voie_pietonne": 3
+  }
+ }
+}

@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {Batch,material,strip} from './geometry.js';
-import {applyLandmarkErrata} from './landmark-errata.js';
-import LANDMARK_AUDIT from './content/landmark-audit-v291.json';
+import {applyPlaceCorrections} from './places-canonical.js';
+import PLACES_RUNTIME from './content/places-runtime-v292.json';
 
 // V1.11 ?diagnostic=poi: the reference of identifiable places drawn for QA only. Colour = temporal status (current shown on the map,
 // current still to confirm, uncertain, historical), height = confidence (A tall, B medium, C short), gold ring = Unreal landmark
@@ -12,7 +12,7 @@ const STATUS_LABELS={actuel:'actuel',ancien:'ancien (fermé / remplacé)',histor
 const cls=p=>p.coh==='historical'?'historical':p.coh==='uncertain'?'uncertain':p.display?'current':'toConfirm';
 export async function buildPoiDiagnostic(scene,project,base){
  const d=await fetch(`${base}data/poi.json`).then(r=>r.json());
- applyLandmarkErrata(d.pois,LANDMARK_AUDIT);// V2.9.1 errata: same associations as the map
+ applyPlaceCorrections(d.pois,PLACES_RUNTIME);// V2.9.2 register: same associations as the map (hidden records stay visible here)
  const group=new THREE.Group();group.name='poi-diagnostic';scene.add(group);
  const stats={pois:d.pois.length,current:0,toConfirm:0,uncertain:0,historical:0,lieux:0,landmarks:{1:0,2:0,3:0},areas:d.areas.length,A:0,B:0,C:0};
  // Instanced markers: one mesh per marker kind, colour and scale per instance.

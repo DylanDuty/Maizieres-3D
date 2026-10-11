@@ -1,5 +1,9 @@
 import * as THREE from 'three';
 import {V2_COLORS,LANDUSE_LABELS} from './v2-scene.js';
+import PLACES_RUNTIME from './content/places-runtime-v292.json';
+import ROADS_RUNTIME from './content/roads-runtime-v292.json';
+import {applyRegisters} from './places-canonical.js';
+import {buildSearchIndex,searchIndex} from './search-index.js';
 
 // V2.0 interface around the assembled scene: click records, discreet landmark labels, search, quick views, legend, performance HUD.
 // Places without geometry are never drawn; a point place stays a point.
@@ -14,9 +18,9 @@ export function extendCatalogue(catalogue,v2,project,buildingInfo,{technical=fal
  const {heightAt}=v2;let pois=0,zones=0,buildingsLinked=0;
  // Lift existing records (OSM streets, named buildings, BD TOPO zones) onto the relief.
  for(const r of catalogue.records)if(r.position&&r.type!=='building')r.position=[r.position[0],r.position[1]+heightAt(r.position[0],r.position[2]),r.position[2]];
- for(const p of v2.poi){if(!technical&&!(p.display||p.landmark||(['secteur','lieu_dit'].includes(p.category)&&p.coh==='current')))continue;
+ for(const p of v2.poi){if(!technical&&(p.hidden||!(p.display||p.landmark||(['secteur','lieu_dit'].includes(p.category)&&p.coh==='current'))))continue;
   const [x,z]=project(p.lonlat),facts=[`Statut : ${STATUS[p.status]||p.status}`,`Fiabilité : ${CONFIDENCE[p.conf]||p.conf}`];if(p.address)facts.push(`Adresse : ${p.address}`);if(p.landmark&&technical)facts.push(`Landmark Unreal priorité ${p.landmark}`);
-  const r={id:p.id,name:p.name,kind:CATEGORY[p.category]||'Lieu',type:'point',position:[x,heightAt(x,z)+(['secteur','lieu_dit'].includes(p.category)?4:12),z],major:false,facts,
+  const r={id:p.id,name:p.name,kind:CATEGORY[p.category]||'Lieu',type:'point',position:[x,heightAt(x,z)+(['secteur','lieu_dit'].includes(p.category)?4:12),z],major:false,facts,searchAliases:PLACES_RUNTIME.aliases?.[p.id],
    source:technical?`Sources : ${p.source}. Position : ${p.positionSource} (${p.geometryKind})`:'',bible:p.refs.length?{notes:p.refs}:undefined,poi:p};
   catalogue.records.push(r);catalogue.byId.set(r.id,r);pois++;
   const polys=p.building_ids.map(id=>buildingInfo.get(id)?.poly).filter(Boolean);
@@ -27,12 +31,13 @@ export function extendCatalogue(catalogue,v2,project,buildingInfo,{technical=fal
  for(const a of v2.data.woodland)add(a,LANDUSE_LABELS[a.t]||'Bois','Boisement',[`Surface : ${a.ha.toLocaleString('fr-FR')} ha`]);
  for(const a of v2.data.water)add(a,a.name||'Surface en eau','Eau',[a.t]);
  for(const a of v2.data.artificial.filter(a=>a.kind==='surface'))add(a,a.name||({parking:'Parking',terrain_de_sport:'Terrain de sport',cimetiere:'Cimetière',reservoir:'Réservoir',emprise_ferroviaire:'Aire de triage'}[a.t]||'Surface aménagée'),'Surface aménagée',[]);
- return {pois,zones,buildingsLinked};
+ return {pois,zones,buildingsLinked,...applyRegisters(catalogue,v2,technical,{places:PLACES_RUNTIME,roads:ROADS_RUNTIME})};
 }
+
 
 // Default labels: sectors and landmarks only (P1 visible from afar, P2 when closer); every other place stays clickable.
 export function v2Labels(v2,project){
- const items=[],at=(id,style,{major=false,local=false,lift=22}={})=>{const p=id.startsWith('name:')?v2.poi.find(q=>q.name===id.slice(5)&&['secteur','lieu_dit'].includes(q.category)):v2.poiById.get(id);if(!p)return;const [x,z]=project(p.lonlat);items.push({id,name:p.name.replace(/ de Maizières-la-Grande-Paroisse$/,''),position:[x,v2.heightAt(x,z)+lift,z],major,local,style});};
+ const items=[],at=(id,style,{major=false,local=false,lift=22}={})=>{const p=id.startsWith('name:')?v2.poi.find(q=>q.name===id.slice(5)&&['secteur','lieu_dit'].includes(q.category)&&!q.hidden):v2.poiById.get(id);if(!p||p.hidden)return;const [x,z]=project(p.lonlat);items.push({id,name:p.name.replace(/ de Maizières-la-Grande-Paroisse$/,''),position:[x,v2.heightAt(x,z)+lift,z],major,local,style});};
  at('poi:bourg','',{major:true,lift:40});at('poi:poussey','',{major:true,lift:30});at('poi:les-granges','',{major:true,lift:30});
  at('poi:parc-aerodrome','place',{lift:12});at('poi:glaciere','place',{lift:12});at('name:le Craon','place',{local:true,lift:8});
  // V2.9.1: the church and the town hall win label collisions against the other first-rank landmarks (the corrected mairie
@@ -49,14 +54,12 @@ export function groundPicker(heightAt){const p=new THREE.Vector3();return ray=>{
 export function installSearch(catalogue,onPick){
  const box=document.createElement('div');box.id='search';box.innerHTML='<input type="search" placeholder="Rechercher une rue, un lieu…" aria-label="Rechercher un lieu documenté" autocomplete="off"><ul role="listbox" hidden></ul>';document.body.appendChild(box);
  const input=box.querySelector('input'),list=box.querySelector('ul');
- const rank=r=>r.poi?(r.poi.landmark?0:['secteur','lieu_dit'].includes(r.poi.category)?1:2):r.type==='line'?1.5:3;
- const seen=new Map();for(const r of catalogue.records){if(r.searchable===false||!r.name||r.generic)continue;const k=norm(r.name);const prev=seen.get(k);if(!prev||rank(r)<rank(prev))seen.set(k,r);}
- const index=[...seen.values()].map(r=>({r,k:norm(r.name)}));
+ const index=buildSearchIndex(catalogue.records);
  let results=[],active=-1;
  const show=()=>{list.replaceChildren(...results.map((o,i)=>{const li=document.createElement('li');li.role='option';li.setAttribute('aria-selected',String(i===active));li.innerHTML='<b></b><span></span>';li.querySelector('b').textContent=o.r.name;li.querySelector('span').textContent=o.r.type==='line'?'Rue / voie':o.r.kind;li.addEventListener('mousedown',e=>{e.preventDefault();pick(o.r);});return li;}));list.hidden=!results.length;};
  const pick=r=>{input.value=r.name;results=[];show();input.blur();onPick(r);};
  input.addEventListener('input',()=>{const q=norm(input.value);active=-1;if(q.length<2){results=[];show();return;}const words=q.split(' ');
-  results=index.filter(o=>words.every(w=>o.k.includes(w))).sort((a,b)=>(a.k.startsWith(q)?0:1)-(b.k.startsWith(q)?0:1)||rank(a.r)-rank(b.r)||a.k.length-b.k.length).slice(0,8);show();});
+  results=searchIndex(index,input.value);show();});
  input.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){active=Math.min(results.length-1,active+1);show();e.preventDefault();}else if(e.key==='ArrowUp'){active=Math.max(0,active-1);show();e.preventDefault();}else if(e.key==='Enter'&&results.length){pick(results[Math.max(0,active)]);e.preventDefault();}else if(e.key==='Escape'){results=[];show();}});
  input.addEventListener('blur',()=>setTimeout(()=>{results=[];show();},150));
  return {index:index.length,search:q=>{input.value=q;input.dispatchEvent(new Event('input'));return results.map(o=>o.r.name);},pick};

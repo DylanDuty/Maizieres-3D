@@ -69,7 +69,7 @@ export const STORIES={
  'poi:poussey':{
   summary:'Hameau historique au nord-est du village, Poussey tire son nom, selon la tradition, des terres basses et humides qui l’entourent ; ce fut aussi le siège d’une baronnie.',
   facts:['La baronnie de Poussey a son historien : l’abbé Defer, en 1889.','Jean-Louis Bayle, propriétaire du domaine, finance la restauration du chœur de l’église en 1817.','Le château de Poussey a disparu entre la fin du XVIIe et le XVIIIe siècle.','Le hameau a été récemment rénové.'],
-  block:{title:'Mémoire locale',text:'La mémoire locale évoque un nom lié à la mare, au marais et aux terrains bas : une lecture cohérente avec le ruisseau des Moulins qui longe le hameau.'},
+  block:{title:'Mémoire locale',text:'La mémoire locale évoque un nom lié à la mare, au marais et aux terrains bas : une lecture cohérente avec le ruisseau des Moulins de Poussey qui longe le hameau.'},
   sources:[B('01','8.3'),B('02','1.2'),B('02','3.4'),B('02','182')]},
  'poi:les-granges':{
   summary:'Au sud-ouest, Les Granges doivent leur nom aux granges dîmières des établissements religieux ; en 1740, le hameau devient Poste aux Chevaux sur la route de Nogent à Troyes.',

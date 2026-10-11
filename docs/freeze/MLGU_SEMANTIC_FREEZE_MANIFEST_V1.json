@@ -1,0 +1,561 @@
+{
+ "name": "MLGU semantic freeze",
+ "version": "V1",
+ "release": "V2.9.2",
+ "date": "2026-10-11",
+ "baseCommit": "9ab6d20",
+ "branch": "opus/v2.9.2-geographic-semantic-audit",
+ "note": "Le commit de livraison est celui qui contient ce fichier. Toute modification d’un registre, d’une décision ou d’une projection passe par un nouveau gel sémantique (V2) : régénérer avec scripts/build-places-canonical.mjs, scripts/build-roads-canonical.mjs et scripts/build-semantic-freeze.mjs, puis npm run check:semantic-freeze.",
+ "registers": {
+  "places": {
+   "file": "docs/freeze/MLGU_PLACES_CANONICAL_V1.json",
+   "sha256": "f8b3b60cc5266a6825fd360485361c25f2f2e667b56c0dcce427fac5c518bbee",
+   "counts": {
+    "total": 367,
+    "inCommune": 222,
+    "outsideCommune": 28,
+    "communeUnknown": 117,
+    "webLayer": 250,
+    "interactive": 185,
+    "displayFlag": 128,
+    "PASS": 36,
+    "PASS_WITH_LIMITATION": 121,
+    "HIDDEN_PENDING_REVIEW": 0,
+    "HIDDEN_OUT_OF_COMMUNE": 28,
+    "NOT_DISPLAYED": 182,
+    "catalogueRecords": 158,
+    "catalogue_alias": 113,
+    "catalogue_hide": 42,
+    "catalogue_unname": 3,
+    "catalogue_review": 0
+   }
+  },
+  "roads": {
+   "file": "docs/freeze/MLGU_ROADS_CANONICAL_V1.json",
+   "sha256": "ebff8eff516ef7a1b565dbcef74597b21ebb8e3ae8b29e6737b713adae664c04",
+   "counts": {
+    "drawnTroncons": 1585,
+    "namedTroncons": 560,
+    "unnamedTroncons": 1024,
+    "roads": 111,
+    "inCommune": 72,
+    "outsideCommune": 39,
+    "PASS": 63,
+    "PASS_WITH_LIMITATION": 48,
+    "routeOnly": 12,
+    "banVoies10220": 71,
+    "banStreets10220Covered": 65,
+    "legacyClickable": 81,
+    "anomalies": 33
+   }
+  }
+ },
+ "files": {
+  "docs/freeze/MLGU_PLACES_CANONICAL_V1.json": "f8b3b60cc5266a6825fd360485361c25f2f2e667b56c0dcce427fac5c518bbee",
+  "docs/freeze/MLGU_ROADS_CANONICAL_V1.json": "ebff8eff516ef7a1b565dbcef74597b21ebb8e3ae8b29e6737b713adae664c04",
+  "docs/freeze/places-decisions-v2.9.2.json": "4cb64db80894877c98cb176044063e0c8a6d0a8f87d2509637c50af602a20043",
+  "docs/freeze/roads-decisions-v2.9.2.json": "6b3fa99a5e3c53452710e0c44868112efa707c1b83121603983831f3c8ba920e",
+  "docs/freeze/catalogue-decisions-v2.9.2.json": "9285018e0e21913152ef7f69102ee76b63165d1a4aa19e3f22957689eb3c16e8",
+  "src/content/places-runtime-v292.json": "13026f99f7a4ec9e75941cb57ea2596fdb20deb20971956f16fff7ca8aefaf6d",
+  "src/content/roads-runtime-v292.json": "203d8c2c26aaf3b31884f6c760f7f3ca6b867d6217f2187149a7048a326e8819",
+  "src/content/landmark-audit-v291.json": "4f5037d097340866ae7271a07f73bbda61e8f3e093bf08f99876b57b78acf249",
+  "docs/audit/V2.9.2_SEMANTIC_ANOMALIES.csv": "f70d488969a858fcfc5c0c5597cb77016b7779b866f97ba658e02e7fc131e1e9",
+  "docs/freeze/unreal-semantic-migration-v2.9.2.json": "778365714ff09d9f403e49b0b63c3dfae87a009db1862edb5ce8580bc5af05eb"
+ },
+ "inputs": {
+  "public/data/poi.json": "02522aa7e0574810057526a2bae2e08f25ad74a2d0704821bec6637357283611",
+  "unreal/poi/poi.json": "a597c022657851698978707bfad95161da5ca2d060ce23207c68f1c53898036f",
+  "public/data/maizieres.geojson": "ddc94faec8033d224ba06ada9d0f5c0802af21327ca4a0a106414355477ea991",
+  "public/data/roads.geojson": "e14c17b94cbe7a126516351add558b5860773c3e2803c04012a0221fe740194e",
+  "public/data/v2-scene.json": "d5517d9c10cdba127997285aea05a353bab66b491075eb3d3a4ef00eeff7b0f9",
+  "public/data/named-zones.geojson": "f5e74a35c654da04a7025132e611a45ef99633a54e6060a961b1b3195955fb72",
+  "public/data/building-enrichment.json": "fd5a3e88aba553dbb38aec1d7eb4cacb3edbf20f07bfaec0f33b80ccb4ddbfd0",
+  "public/data/bible-annotations.json": "e8ce783cc70e1905d9bf12dacbd87eba833a6a8b08f09cdc86be4626af66f765",
+  "public/data/commune.geojson": "bd7d8cc25cb9ac694b2eb930ede0c6a027d0afc2329f22551c4def483a952c6f",
+  "data-sources/roads/bdtopo-troncon-de-route.geojson": "43a0c6d56103ca49afb8a53ee97743ac4a98458d1a3f59de84c3437ea0a47457",
+  "data-sources/roads/bdtopo-voie-nommee.geojson": "6fe4bd1a8d5cde0b233bf990c3692fd1d0f4dc905b5849d173f8b708ba61ef05",
+  "data-sources/poi/ban-adresses.geojson": "8220127207c4ab217b4a3ba64266020f467ece4ff17556c884e18fb96a3873c2"
+ },
+ "code": {
+  "src/places-canonical.js": "33a0c355ab1860eae8d35be9f7e514a7c7c9e40c8dc356eabc4ca18f6678fff7",
+  "src/search-index.js": "ec048cd3121b244896baac5e3b1e9bec4c8ebfc62914769f69cab5b862217a19",
+  "src/cartography.js": "cfcce51ef9afe4271994ffb81bd36b37b5a85ce4bc30e251f6e7a35451810a7d",
+  "scripts/places-screening.mjs": "4dbf9e08f4eb55730e3216e415f78e69db37d36cae270f938ede1820d89bf262",
+  "scripts/base-catalogue.mjs": "1794a3ea600c75f48fa2d503ade6000347bbbd761a74456d887aa343a2e67880",
+  "scripts/roads-screening.mjs": "59781bc6b9787820defc9325170c80b2d80a81c4430345e2d84891d0f4594bf3",
+  "scripts/runtime-catalogue.mjs": "6cfe6fab182afe1b03720171427fae72d75b5356bd34582b8f040911868042e2",
+  "scripts/build-places-canonical.mjs": "4389a15deb5085d32dbb1159801f6ca748d2e2df2aeeda225e0f79ebceb982b7",
+  "scripts/build-roads-canonical.mjs": "45ca70e8b5eb50dc95aec433fe5de3d168d7b701cb92e5f5ce79e60e2c8feab0",
+  "scripts/build-semantic-freeze.mjs": "b48c4560fe709934756abbb0f76d350e4c01f1ec592d2dba9f2f84e695cb6158"
+ },
+ "certifiedCounts": {
+  "placesInRegister": 367,
+  "displayedPASS": 36,
+  "displayedPASS_WITH_LIMITATION": 121,
+  "hiddenPendingReview": 0,
+  "hiddenOutOfCommune": 28,
+  "inheritedRecordsGoverned": 158,
+  "roads": 111,
+  "roadsInCommune": 72,
+  "banTypedStreetsCovered": "62/62",
+  "levelCrossings": 4,
+  "bridgesWithPlace": 3
+ },
+ "anomalies": {
+  "total": 131,
+  "BLOCKER": 3,
+  "MAJOR": 30,
+  "MINOR": 95,
+  "INFO": 3,
+  "CORRIGÉ": 58,
+  "MASQUÉ": 70,
+  "ACCEPTÉ": 3
+ },
+ "acceptedAnomalies": [
+  {
+   "id": "poi:bible:B05-024",
+   "name": "Le Bistrot à Tattoo",
+   "anomaly": "BAN_SEGMENT_BUILDING",
+   "severity": "MAJOR",
+   "comment": "BAN « segment » ; bâtiment confirmé par le RNB"
+  },
+  {
+   "id": "poi:galopins",
+   "name": "Accueil de loisirs Les Galopins",
+   "anomaly": "BAN_SEGMENT_BUILDING",
+   "severity": "MAJOR",
+   "comment": "BAN « segment » ; bâtiment confirmé par le RNB (1 rue Jules-Ferry) et la Bible 01, sans source municipale localisée"
+  },
+  {
+   "id": "poi:stade",
+   "name": "Stade de Maizières-la-Grande-Paroisse",
+   "anomaly": "ANCHOR_FAR",
+   "severity": "MAJOR",
+   "comment": "ancre au centre du terrain ; seul bâtiment : les vestiaires (82 m)"
+  }
+ ],
+ "hidden": {
+  "places": [
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009296251",
+    "name": "l'outre Seine",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009296433",
+    "name": "les Lots",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009296443",
+    "name": "les Épinettes",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009296444",
+    "name": "le Gué de Vailly",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009296645",
+    "name": "le Champ Potet",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009296831",
+    "name": "le Noyer Bourdeau",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009296833",
+    "name": "le Champ Mouton",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009296845",
+    "name": "le Puy",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009297034",
+    "name": "le Terrage",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009297036",
+    "name": "le Champ aux Choux",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009297042",
+    "name": "le Crot d'Origny",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009297043",
+    "name": "la Bretonnière",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009297044",
+    "name": "la Chapelle d'Origny",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009297045",
+    "name": "l'Épinette",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009297046",
+    "name": "les Grandes Pièces",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000009297047",
+    "name": "le Mesnil",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000065101487",
+    "name": "le Champ du Renard",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000065101491",
+    "name": "le Haut du Manche",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000065101492",
+    "name": "Tournay",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000065101496",
+    "name": "le Gobyat",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000065101499",
+    "name": "les Menus Prés",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000065101500",
+    "name": "la Rosière",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000065101517",
+    "name": "les Marais",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000065101520",
+    "name": "les Lignes du Midi",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000065101521",
+    "name": "les Cent Arpents",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000065101522",
+    "name": "Moitié Payen",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000000065101523",
+    "name": "la Folie",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   {
+    "id": "poi:bdtopo:PAIE_NAT0000002201786405",
+    "name": "la Févrose",
+    "status": "HIDDEN_OUT_OF_COMMUNE"
+   }
+  ],
+  "inheritedRecords": [
+   {
+    "id": "way/499666329",
+    "name": "Centrale photovoltaïque de Romilly-sur-Seine",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/1456146419",
+    "name": "Le Moulin",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/3986221901",
+    "name": "Romilly-sur-Seine La Belle Idée",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/4571982302",
+    "name": "Pharmacie Saint-Dennis",
+    "action": "hide",
+    "reason": "lieu ancien ou incertain (registre : « Ancienne pharmacie Saint-Denis », historical)"
+   },
+   {
+    "id": "node/4691857609",
+    "name": "La Voie aux Vaches",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/4691857610",
+    "name": "La Bretonnière",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/4691857611",
+    "name": "La Voie du Grés",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/4692433871",
+    "name": "Le Puy",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/4692433872",
+    "name": "Les Grandes Pièces",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/4908996738",
+    "name": "Le Puy",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/4909352908",
+    "name": "Courtepaille",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/4909372413",
+    "name": "O Corner",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/4909372415",
+    "name": "Crescendo Restaurant",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/5312384930",
+    "name": "La Croix des Fourches",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/5312384941",
+    "name": "La Fevrose",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/5312384949",
+    "name": "Le Champ Aux Choux",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/5312384953",
+    "name": "Le Champ Mouton",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/5312384962",
+    "name": "Le Noyer Bourdault",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/5312384966",
+    "name": "Le Haut des Vignes",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/5622970337",
+    "name": "La Chapelle d'Origny",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/8912942361",
+    "name": "Le Gué de Vailly",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/8912942365",
+    "name": "La Somniotte",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/8912942368",
+    "name": "Champauge",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/8912942369",
+    "name": "La Presle",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/8912942374",
+    "name": "Pont de Seine",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/8912942375",
+    "name": "Outre Seine",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/13358124246",
+    "name": "Le Comptoir du Malt",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "node/13358124247",
+    "name": "Wafu",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "BATIMENT0000000121067137",
+    "name": "Station Service E.Leclerc",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "BATIMENT0000000300132071",
+    "name": "Centre Commercial E.Leclerc",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "BATIMENT0000000300132102",
+    "name": "Sport E. Leclerc",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "BATIMENT0000000300132105",
+    "name": "L'auto E. Leclerc",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "BATIMENT0000000300132108",
+    "name": "Gémo · Gitem",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "BATIMENT0000000300132109",
+    "name": "Bricorama",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "BATIMENT0000000300132112",
+    "name": "Jardiland",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "BATIMENT0000000300132115",
+    "name": "La Grande Récré · GiFi",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "BATIMENT0000000301149545",
+    "name": "Mairie de Maizières-la-Grande-Paroisse",
+    "action": "unname",
+    "reason": "nom hérité (IGN BD TOPO) ; ce bâtiment n’est pas celui du lieu certifié « Mairie de Maizières-la-Grande-Paroisse »"
+   },
+   {
+    "id": "BATIMENT0000000325110254",
+    "name": "Entrepot BUT",
+    "action": "unname",
+    "reason": "nom hérité (OpenStreetMap) ; ce bâtiment n’est pas celui du lieu certifié « BUT »"
+   },
+   {
+    "id": "BATIMENT0000002006956400",
+    "name": "Salle polyvalente",
+    "action": "unname",
+    "reason": "nom hérité (IGN BD TOPO) ; ce bâtiment n’est pas celui du lieu certifié « Salle polyvalente »"
+   },
+   {
+    "id": "BATIMENT0000002206127459",
+    "name": "Technicentre industriel SNCF",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "BATIMENT0000002330331399",
+    "name": "Burger King",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "BATIMENT0000000301149603",
+    "name": "Pharmacie Saint-Dennis",
+    "action": "hide",
+    "reason": "lieu ancien ou incertain (registre : « Ancienne pharmacie Saint-Denis », historical)"
+   },
+   {
+    "id": "BATIMENT0000002006956398",
+    "name": "Courtepaille",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "BATIMENT0000002489607884",
+    "name": "Le Comptoir du Malt",
+    "action": "hide",
+    "reason": "hors de la commune"
+   },
+   {
+    "id": "BATIMENT0000002321528208",
+    "name": "Wafu",
+    "action": "hide",
+    "reason": "hors de la commune"
+   }
+  ]
+ },
+ "checks": [
+  "check:places-canonical",
+  "check:road-names",
+  "check:poi-building-links",
+  "check:search-targets",
+  "check:semantic-freeze",
+  "check:landmark-positioning"
+ ]
+}

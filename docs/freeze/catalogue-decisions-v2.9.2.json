@@ -1,0 +1,8 @@
+{
+ "version": "V2.9.2",
+ "note": "Rattachements manuels des enregistrements nommés construits par la carte (src/cartography.js) que la règle automatique (référence de source identique, ou même nom à moins de 150 m) ne résout pas.",
+ "records": {
+  "bible01:gue-de-la-chapelle": {"poi": "poi:gue-de-la-chapelle", "severity": "MINOR", "comment": "point de carrefour calculé en V1.x sur deux tracés OSM (Bible 01), à 163 m du lieu certifié « Gué de la Chapelle » : deux positions pour un même lieu ; seul le lieu certifié reste affiché"},
+  "way/935473865": {"poi": "poi:bdtopo:SURFACTI0000002206094209", "severity": "INFO", "comment": "polygone OSM « Aire de Grand Passage des Gens du Voyage » superposé (5 m) à la zone BD TOPO « Aire d’accueil des gens du voyage » : même lieu"}
+ }
+}

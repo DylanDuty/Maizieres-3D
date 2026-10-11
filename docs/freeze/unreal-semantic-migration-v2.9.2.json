@@ -1,0 +1,3006 @@
+{
+ "metadata": {
+  "version": "V2.9.2",
+  "date": "2026-10-11",
+  "generatedBy": "scripts/build-semantic-freeze.mjs",
+  "rule": "Les exports Unreal (unreal/) sont gelés et ne sont pas modifiés par la V2.9.2. Ce fichier liste, champ par champ, les valeurs sémantiques à appliquer lors de la prochaine régénération : associations lieu ↔ bâtiment, ancres, statuts d’affichage, noms de voies. Aucune géométrie (empreinte, spline, terrain) ne change.",
+  "origin": {
+   "crs": "EPSG:2154",
+   "E": 758278,
+   "N": 6823571,
+   "units": "Unreal cm : X = (E − 758278) × 100, Y = −(N − 6823571) × 100, Z = altitude × 100 (base du bâtiment d’ancrage, public/data/building-terrain-elevation.json)"
+  },
+  "counts": {
+   "poi": 46,
+   "landmarks": 3,
+   "landmarkArchitecture": 3,
+   "roadSplineNames": 266
+  }
+ },
+ "unreal/poi/poi.json": [
+  {
+   "id": "poi:a-vos-couverts",
+   "name": "À Vos Couverts",
+   "set": {
+    "L93": [
+     757195.36,
+     6822699.06,
+     76.36
+    ],
+    "unreal_position": [
+     -108264,
+     87194,
+     7636
+    ],
+    "display_status_v292": "PASS_WITH_LIMITATION"
+   },
+   "from": {
+    "L93": [
+     757206.64,
+     6822719.55,
+     77.29
+    ],
+    "unreal_position": [
+     -107136,
+     85145,
+     7729
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:au-point",
+   "name": "Au Point",
+   "set": {
+    "L93": [
+     757541.18,
+     6822607.28,
+     76.92
+    ],
+    "unreal_position": [
+     -73682,
+     96372,
+     7692
+    ],
+    "display_status_v292": "PASS_WITH_LIMITATION"
+   },
+   "from": {
+    "L93": [
+     757558.89,
+     6822621.85,
+     77.7
+    ],
+    "unreal_position": [
+     -71911,
+     94915,
+     7770
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:baguette-des-granges",
+   "name": "La Baguette des Granges",
+   "set": {
+    "building_ids": [],
+    "L93": [
+     757780.67,
+     6822614.15,
+     null
+    ],
+    "unreal_position": [
+     -49733,
+     95685,
+     null
+    ],
+    "display_status_v292": "PASS_WITH_LIMITATION"
+   },
+   "from": {
+    "building_ids": [
+     "BATIMENT0000000301148558"
+    ],
+    "L93": [
+     757780.67,
+     6822614.15,
+     78.72
+    ],
+    "unreal_position": [
+     -49733,
+     95685,
+     7872
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009296251",
+   "name": "l'outre Seine",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009296433",
+   "name": "les Lots",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009296443",
+   "name": "les Épinettes",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009296444",
+   "name": "le Gué de Vailly",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009296645",
+   "name": "le Champ Potet",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009296831",
+   "name": "le Noyer Bourdeau",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009296833",
+   "name": "le Champ Mouton",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009296845",
+   "name": "le Puy",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009297034",
+   "name": "le Terrage",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009297036",
+   "name": "le Champ aux Choux",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009297042",
+   "name": "le Crot d'Origny",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009297043",
+   "name": "la Bretonnière",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009297044",
+   "name": "la Chapelle d'Origny",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009297045",
+   "name": "l'Épinette",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009297046",
+   "name": "les Grandes Pièces",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000009297047",
+   "name": "le Mesnil",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000065101487",
+   "name": "le Champ du Renard",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000065101491",
+   "name": "le Haut du Manche",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000065101492",
+   "name": "Tournay",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000065101496",
+   "name": "le Gobyat",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000065101499",
+   "name": "les Menus Prés",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000065101500",
+   "name": "la Rosière",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000065101517",
+   "name": "les Marais",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000065101520",
+   "name": "les Lignes du Midi",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000065101521",
+   "name": "les Cent Arpents",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000065101522",
+   "name": "Moitié Payen",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000000065101523",
+   "name": "la Folie",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bdtopo:PAIE_NAT0000002201786405",
+   "name": "la Févrose",
+   "set": {
+    "display_status_v292": "HIDDEN_OUT_OF_COMMUNE"
+   },
+   "from": {},
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bible:B05-005",
+   "name": "AMITR",
+   "set": {
+    "L93": [
+     756275.07,
+     6822860.15,
+     76.38
+    ],
+    "unreal_position": [
+     -200293,
+     71085,
+     7638
+    ],
+    "display_status_v292": "PASS_WITH_LIMITATION"
+   },
+   "from": {
+    "L93": [
+     756364.47,
+     6822824.85,
+     76.27
+    ],
+    "unreal_position": [
+     -191353,
+     74615,
+     7627
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bible:B05-069",
+   "name": "Nord Poêle du Romillon",
+   "set": {
+    "building_ids": [
+     "BATIMENT0000000301148516"
+    ],
+    "L93": [
+     756701.78,
+     6822886.04,
+     75.6
+    ],
+    "unreal_position": [
+     -157622,
+     68496,
+     7560
+    ],
+    "display_status_v292": "PASS_WITH_LIMITATION"
+   },
+   "from": {
+    "building_ids": [
+     "BATIMENT0000000301148516",
+     "BATIMENT0000000301148524"
+    ],
+    "L93": [
+     756695.47,
+     6822858.63,
+     77.86
+    ],
+    "unreal_position": [
+     -158253,
+     71237,
+     7786
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bible:B05-100",
+   "name": "Brocante Éric Gras",
+   "set": {
+    "building_ids": [
+     "BATIMENT0000000301148931"
+    ],
+    "L93": [
+     757459.56,
+     6822622.14,
+     76.49
+    ],
+    "unreal_position": [
+     -81844,
+     94886,
+     7649
+    ],
+    "display_status_v292": "PASS_WITH_LIMITATION"
+   },
+   "from": {
+    "building_ids": [
+     "BATIMENT0000000301148931",
+     "BATIMENT0000002341955033"
+    ],
+    "L93": [
+     757468.61,
+     6822636.97,
+     77.35
+    ],
+    "unreal_position": [
+     -80939,
+     93403,
+     7735
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bible:B05-113",
+   "name": "Cash Express",
+   "set": {
+    "L93": [
+     756154.33,
+     6822664,
+     76.63
+    ],
+    "unreal_position": [
+     -212367,
+     90700,
+     7663
+    ],
+    "display_status_v292": "PASS_WITH_LIMITATION"
+   },
+   "from": {
+    "L93": [
+     756179.58,
+     6822638.75,
+     77.61
+    ],
+    "unreal_position": [
+     -209842,
+     93225,
+     7761
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bible:B05-114",
+   "name": "BUT",
+   "set": {
+    "building_ids": [
+     "BATIMENT0000000325110252",
+     "BATIMENT0000000325110253"
+    ],
+    "L93": [
+     756119.38,
+     6822768.9,
+     76.74
+    ],
+    "unreal_position": [
+     -215862,
+     80210,
+     7674
+    ],
+    "display_status_v292": "PASS"
+   },
+   "from": {
+    "building_ids": [
+     "BATIMENT0000000325110252",
+     "BATIMENT0000000325110252",
+     "BATIMENT0000000325110252",
+     "BATIMENT0000000325110253"
+    ],
+    "L93": [
+     756119.38,
+     6822768.9,
+     76.91
+    ],
+    "unreal_position": [
+     -215862,
+     80210,
+     7691
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bible:B05-117",
+   "name": "Wok Xu / Wok Grill",
+   "set": {
+    "L93": [
+     756168.66,
+     6822723.8,
+     76.52
+    ],
+    "unreal_position": [
+     -210934,
+     84720,
+     7652
+    ],
+    "display_status_v292": "PASS_WITH_LIMITATION"
+   },
+   "from": {
+    "L93": [
+     756211.59,
+     6822667.63,
+     77.22
+    ],
+    "unreal_position": [
+     -206641,
+     90337,
+     7722
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:bible:B05-118",
+   "name": "McDonald's",
+   "set": {
+    "L93": [
+     756218.64,
+     6822714.11,
+     76.43
+    ],
+    "unreal_position": [
+     -205936,
+     85689,
+     7643
+    ],
+    "display_status_v292": "PASS"
+   },
+   "from": {
+    "L93": [
+     756234.51,
+     6822688.75,
+     77.06
+    ],
+    "unreal_position": [
+     -204349,
+     88225,
+     7706
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:cabinet-paramedical",
+   "name": "Cabinet paramédical",
+   "set": {
+    "building_ids": [
+     "BATIMENT0000000301149479",
+     "BATIMENT0000000301149448"
+    ],
+    "L93": [
+     758030.77,
+     6823632.13,
+     75.95
+    ],
+    "unreal_position": [
+     -24723,
+     -6113,
+     7595
+    ],
+    "display_status_v292": "PASS_WITH_LIMITATION"
+   },
+   "from": {
+    "building_ids": [
+     "BATIMENT0000000301149246",
+     "BATIMENT0000000301149249"
+    ],
+    "L93": [
+     758025.68,
+     6823710.14,
+     75.97
+    ],
+    "unreal_position": [
+     -25232,
+     -13914,
+     7597
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:carrosserie-serbource",
+   "name": "Carrosserie Serbource (CSA)",
+   "set": {
+    "building_ids": [
+     "BATIMENT0000000301150803"
+    ],
+    "L93": [
+     759240.17,
+     6822625.01,
+     82.24
+    ],
+    "unreal_position": [
+     96217,
+     94599,
+     8224
+    ],
+    "display_status_v292": "PASS"
+   },
+   "from": {
+    "building_ids": [
+     "BATIMENT0000000301150794",
+     "BATIMENT0000002206051890",
+     "BATIMENT0000000301150804",
+     "BATIMENT0000000301150800",
+     "BATIMENT0000000301150790",
+     "BATIMENT0000000301150803",
+     "BATIMENT0000000301150802",
+     "BATIMENT0000000301150797",
+     "BATIMENT0000000301150799",
+     "BATIMENT0000000301150792",
+     "BATIMENT0000000301150796",
+     "BATIMENT0000000301150801",
+     "BATIMENT0000000301150827"
+    ],
+    "L93": [
+     759240.17,
+     6822625.01,
+     82.63
+    ],
+    "unreal_position": [
+     96217,
+     94599,
+     8263
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:ecole-primaire",
+   "name": "École primaire publique",
+   "set": {
+    "building_ids": [
+     "BATIMENT0000000301149527",
+     "BATIMENT0000000301149543",
+     "BATIMENT0000000301149528"
+    ],
+    "L93": [
+     758153.23,
+     6823496.41,
+     77.15
+    ],
+    "unreal_position": [
+     -12477,
+     7459,
+     7715
+    ],
+    "display_status_v292": "PASS_WITH_LIMITATION"
+   },
+   "from": {
+    "building_ids": [
+     "BATIMENT0000000301149547",
+     "BATIMENT0000000301149544",
+     "BATIMENT0000000301149527",
+     "BATIMENT0000000301149424",
+     "BATIMENT0000000301149543",
+     "BATIMENT0000000301149803",
+     "BATIMENT0000000301149810",
+     "BATIMENT0000000301149528",
+     "BATIMENT0000000301149545",
+     "BATIMENT0000000301149549",
+     "BATIMENT0000000301149548",
+     "BATIMENT0000000301149546"
+    ],
+    "L93": [
+     758126.61,
+     6823499.03,
+     77.31
+    ],
+    "unreal_position": [
+     -15139,
+     7197,
+     7731
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:galopins",
+   "name": "Accueil de loisirs Les Galopins",
+   "set": {
+    "L93": [
+     758102.63,
+     6823518.52,
+     77.09
+    ],
+    "unreal_position": [
+     -17537,
+     5248,
+     7709
+    ],
+    "display_status_v292": "PASS_WITH_LIMITATION"
+   },
+   "from": {
+    "L93": [
+     758097.6,
+     6823512.64,
+     77.05
+    ],
+    "unreal_position": [
+     -18040,
+     5836,
+     7705
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:ime-verger-fleuri",
+   "name": "IME Le Verger Fleuri",
+   "set": {
+    "building_ids": [],
+    "L93": [
+     757368.99,
+     6822872.55,
+     null
+    ],
+    "unreal_position": [
+     -90901,
+     69845,
+     null
+    ],
+    "display_status_v292": "PASS_WITH_LIMITATION"
+   },
+   "from": {
+    "building_ids": [
+     "BATIMENT0000000301148865"
+    ],
+    "L93": [
+     757368.99,
+     6822872.55,
+     76.05
+    ],
+    "unreal_position": [
+     -90901,
+     69845,
+     7605
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:mairie",
+   "name": "Mairie de Maizières-la-Grande-Paroisse",
+   "set": {
+    "building_ids": [
+     "BATIMENT0000000301149547"
+    ],
+    "L93": [
+     758128.09,
+     6823528.43,
+     77.04
+    ],
+    "unreal_position": [
+     -14991,
+     4257,
+     7704
+    ],
+    "display_status_v292": "PASS"
+   },
+   "from": {
+    "building_ids": [
+     "BATIMENT0000000301149537"
+    ],
+    "L93": [
+     758123.69,
+     6823562.7,
+     77.07
+    ],
+    "unreal_position": [
+     -15431,
+     830,
+     7707
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:salle-polyvalente",
+   "name": "Salle polyvalente",
+   "set": {
+    "building_ids": [
+     "BATIMENT0000000301149569"
+    ],
+    "L93": [
+     758069.04,
+     6823554.99,
+     76.18
+    ],
+    "unreal_position": [
+     -20896,
+     1601,
+     7618
+    ],
+    "display_status_v292": "PASS_WITH_LIMITATION"
+   },
+   "from": {
+    "building_ids": [
+     "BATIMENT0000000301149656"
+    ],
+    "L93": [
+     758274,
+     6823637.24,
+     77.33
+    ],
+    "unreal_position": [
+     -400,
+     -6624,
+     7733
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  },
+  {
+   "id": "poi:tabac-presse",
+   "name": "Tabac-presse – Point Poste",
+   "set": {
+    "building_ids": [
+     "BATIMENT0000000301148770"
+    ],
+    "L93": [
+     757632.23,
+     6822635.65,
+     77.1
+    ],
+    "unreal_position": [
+     -64577,
+     93535,
+     7710
+    ],
+    "display_status_v292": "PASS_WITH_LIMITATION"
+   },
+   "from": {
+    "building_ids": [
+     "BATIMENT0000000301148766",
+     "BATIMENT0000000301148762"
+    ],
+    "L93": [
+     757623.26,
+     6822626.49,
+     77.91
+    ],
+    "unreal_position": [
+     -65474,
+     94451,
+     7791
+    ]
+   },
+   "reason": "registre canonique V2.9.2 (docs/freeze/MLGU_PLACES_CANONICAL_V1.json)"
+  }
+ ],
+ "unreal/poi/landmarks.json": [
+  {
+   "poiId": "poi:ecole-primaire",
+   "name": "École primaire publique",
+   "from": {
+    "building_ids": [
+     "BATIMENT0000000301149547",
+     "BATIMENT0000000301149544",
+     "BATIMENT0000000301149527",
+     "BATIMENT0000000301149424",
+     "BATIMENT0000000301149543",
+     "BATIMENT0000000301149803",
+     "BATIMENT0000000301149810",
+     "BATIMENT0000000301149528",
+     "BATIMENT0000000301149545",
+     "BATIMENT0000000301149549",
+     "BATIMENT0000000301149548",
+     "BATIMENT0000000301149546"
+    ],
+    "unreal_position": [
+     -15139,
+     7197,
+     7731
+    ]
+   },
+   "set": {
+    "building_ids": [
+     "BATIMENT0000000301149527",
+     "BATIMENT0000000301149543",
+     "BATIMENT0000000301149528"
+    ],
+    "L93": [
+     758153.23,
+     6823496.41,
+     77.15
+    ],
+    "unreal_position": [
+     -12477,
+     7459,
+     7715
+    ]
+   }
+  },
+  {
+   "poiId": "poi:mairie",
+   "name": "Mairie de Maizières-la-Grande-Paroisse",
+   "from": {
+    "building_ids": [
+     "BATIMENT0000000301149537"
+    ],
+    "unreal_position": [
+     -15431,
+     830,
+     7707
+    ]
+   },
+   "set": {
+    "building_ids": [
+     "BATIMENT0000000301149547"
+    ],
+    "L93": [
+     758128.09,
+     6823528.43,
+     77.04
+    ],
+    "unreal_position": [
+     -14991,
+     4257,
+     7704
+    ]
+   }
+  },
+  {
+   "poiId": "poi:salle-polyvalente",
+   "name": "Salle polyvalente",
+   "from": {
+    "building_ids": [
+     "BATIMENT0000000301149656"
+    ],
+    "unreal_position": [
+     -400,
+     -6624,
+     7733
+    ]
+   },
+   "set": {
+    "building_ids": [
+     "BATIMENT0000000301149569"
+    ],
+    "L93": [
+     758069.04,
+     6823554.99,
+     76.18
+    ],
+    "unreal_position": [
+     -20896,
+     1601,
+     7618
+    ]
+   }
+  }
+ ],
+ "unreal/architecture/landmark-architecture.json": [
+  {
+   "id": "poi:ecole-primaire",
+   "name": "École primaire publique",
+   "from": {
+    "buildingIds": [
+     "BATIMENT0000000301149547",
+     "BATIMENT0000000301149544",
+     "BATIMENT0000000301149527",
+     "BATIMENT0000000301149424",
+     "BATIMENT0000000301149543",
+     "BATIMENT0000000301149803",
+     "BATIMENT0000000301149810",
+     "BATIMENT0000000301149528",
+     "BATIMENT0000000301149545",
+     "BATIMENT0000000301149549",
+     "BATIMENT0000000301149548",
+     "BATIMENT0000000301149546"
+    ],
+    "unrealPosition": [
+     -15139,
+     7197,
+     7731
+    ],
+    "mainFootprint": {
+     "id": "BATIMENT0000000301149547",
+     "lengthM": 35.8,
+     "widthM": 33.3,
+     "bearingDeg": 148.2,
+     "footprintFamily": "complex"
+    }
+   },
+   "set": {
+    "buildingIds": [
+     "BATIMENT0000000301149527",
+     "BATIMENT0000000301149543",
+     "BATIMENT0000000301149528"
+    ],
+    "unrealPosition": [
+     -12477,
+     7459,
+     7715
+    ],
+    "mainFootprintProfile": {
+     "id": "BATIMENT0000000301149527",
+     "source": "unreal/architecture/building-architecture.json (profil V2.3.1 gelé)"
+    }
+   },
+   "note": "dimensions, hauteurs et silhouette à relire sur le profil V2.3.1 du nouveau bâtiment ; aucune géométrie ne change"
+  },
+  {
+   "id": "poi:mairie",
+   "name": "Mairie de Maizières-la-Grande-Paroisse",
+   "from": {
+    "buildingIds": [
+     "BATIMENT0000000301149537"
+    ],
+    "unrealPosition": [
+     -15431,
+     830,
+     7707
+    ],
+    "mainFootprint": {
+     "id": "BATIMENT0000000301149537",
+     "lengthM": 18.3,
+     "widthM": 6.4,
+     "bearingDeg": 1.8,
+     "footprintFamily": "complex"
+    }
+   },
+   "set": {
+    "buildingIds": [
+     "BATIMENT0000000301149547"
+    ],
+    "unrealPosition": [
+     -14991,
+     4257,
+     7704
+    ],
+    "mainFootprintProfile": {
+     "id": "BATIMENT0000000301149547",
+     "source": "unreal/architecture/building-architecture.json (profil V2.3.1 gelé)"
+    }
+   },
+   "note": "dimensions, hauteurs et silhouette à relire sur le profil V2.3.1 du nouveau bâtiment ; aucune géométrie ne change"
+  },
+  {
+   "id": "poi:salle-polyvalente",
+   "name": "Salle polyvalente",
+   "from": {
+    "buildingIds": [
+     "BATIMENT0000000301149656"
+    ],
+    "unrealPosition": [
+     -400,
+     -6624,
+     7733
+    ],
+    "mainFootprint": {
+     "id": "BATIMENT0000000301149656",
+     "lengthM": 10.7,
+     "widthM": 7.4,
+     "bearingDeg": 89.2,
+     "footprintFamily": "rectangle"
+    }
+   },
+   "set": {
+    "buildingIds": [
+     "BATIMENT0000000301149569"
+    ],
+    "unrealPosition": [
+     -20896,
+     1601,
+     7618
+    ],
+    "mainFootprintProfile": {
+     "id": "BATIMENT0000000301149569",
+     "source": "unreal/architecture/building-architecture.json (profil V2.3.1 gelé)"
+    }
+   },
+   "note": "dimensions, hauteurs et silhouette à relire sur le profil V2.3.1 du nouveau bâtiment ; aucune géométrie ne change"
+  }
+ ],
+ "unreal/roads/road-splines.json": {
+  "note": "champ name de chaque spline : nom canonique du registre des voies (null = tronçon sans nom)",
+  "changes": [
+   {
+    "id": "spline:TRONROUT0000000009477681",
+    "from": "L OUTRE SEINE",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000009477695",
+    "from": "Chemin Rural Dit d'Outre Seine",
+    "to": "Chemin rural dit d’Outre Seine",
+    "road_id": "road:chemin-rural-dit-d-outre-seine@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009477696",
+    "from": "Chemin Rural Dit d'Outre Seine",
+    "to": "Chemin rural dit d’Outre Seine",
+    "road_id": "road:chemin-rural-dit-d-outre-seine@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009477697",
+    "from": "OUTRE SEINE",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000009477701",
+    "from": "Chemin Rural Dit d'Outre Seine",
+    "to": "Chemin rural dit d’Outre Seine",
+    "road_id": "road:chemin-rural-dit-d-outre-seine@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009477709",
+    "from": "Chemin Rural Dit d'Outre Seine",
+    "to": "Chemin rural dit d’Outre Seine",
+    "road_id": "road:chemin-rural-dit-d-outre-seine@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009478791",
+    "from": null,
+    "to": "D 116A",
+    "road_id": "road:d-116a",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009478793",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009478794",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009478795",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009478796",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009478797",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009478798",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009478799",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009478802",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009478809",
+    "from": "Chemin Rural Dit d'Outre Seine",
+    "to": "Chemin rural dit d’Outre Seine",
+    "road_id": "road:chemin-rural-dit-d-outre-seine@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009478810",
+    "from": "Chemin Rural Dit d'Outre Seine",
+    "to": "Chemin rural dit d’Outre Seine",
+    "road_id": "road:chemin-rural-dit-d-outre-seine@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009478819",
+    "from": "Chemin Rural Dit d'Outre Seine",
+    "to": "Chemin rural dit d’Outre Seine",
+    "road_id": "road:chemin-rural-dit-d-outre-seine@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009479970",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009479980",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009479981",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009479982",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009479983",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009479988",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009479989",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481677",
+    "from": null,
+    "to": "D 20",
+    "road_id": "road:d-20",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481681",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481682",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481683",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481686",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481691",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481700",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481701",
+    "from": "Rue du Mal de Lattre de Tassigny",
+    "to": "Rue du Maréchal de Lattre de Tassigny",
+    "road_id": "road:rue-du-marechal-de-lattre-de-tassigny",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481703",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481704",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481707",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481709",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481711",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481716",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481717",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481739",
+    "from": "Rue des Pres de Poussey",
+    "to": "Rue des Prés de Poussey",
+    "road_id": "road:rue-des-pres-de-poussey",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481743",
+    "from": "Rue du Mal de Lattre de Tassigny",
+    "to": "Rue du Maréchal de Lattre de Tassigny",
+    "road_id": "road:rue-du-marechal-de-lattre-de-tassigny",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481744",
+    "from": "Rue du Mal de Lattre de Tassigny",
+    "to": "Rue du Maréchal de Lattre de Tassigny",
+    "road_id": "road:rue-du-marechal-de-lattre-de-tassigny",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481747",
+    "from": "Rue du Mal de Lattre de Tassigny",
+    "to": "Rue du Maréchal de Lattre de Tassigny",
+    "road_id": "road:rue-du-marechal-de-lattre-de-tassigny",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481749",
+    "from": "Rue du Mal de Lattre de Tassigny",
+    "to": "Rue du Maréchal de Lattre de Tassigny",
+    "road_id": "road:rue-du-marechal-de-lattre-de-tassigny",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481750",
+    "from": "Rue du Mal de Lattre de Tassigny",
+    "to": "Rue du Maréchal de Lattre de Tassigny",
+    "road_id": "road:rue-du-marechal-de-lattre-de-tassigny",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481751",
+    "from": "Rue du General Leclerc",
+    "to": "Rue du Général Leclerc",
+    "road_id": "road:rue-du-general-leclerc",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481753",
+    "from": "Rue du General Leclerc",
+    "to": "Rue du Général Leclerc",
+    "road_id": "road:rue-du-general-leclerc",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481760",
+    "from": "Rue du Mal de Lattre de Tassigny",
+    "to": "Rue du Maréchal de Lattre de Tassigny",
+    "road_id": "road:rue-du-marechal-de-lattre-de-tassigny",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481764",
+    "from": "Place Saint Denis",
+    "to": "Place Saint-Denis",
+    "road_id": "road:place-saint-denis",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481765",
+    "from": "Place Leopoldine Deschamps",
+    "to": "Place Léopoldine Deschamps",
+    "road_id": "road:place-leopoldine-deschamps",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481766",
+    "from": "Rue du Mal de Lattre de Tassigny",
+    "to": "Rue du Maréchal de Lattre de Tassigny",
+    "road_id": "road:rue-du-marechal-de-lattre-de-tassigny",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481768",
+    "from": "Place Saint Denis",
+    "to": "Place Saint-Denis",
+    "road_id": "road:place-saint-denis",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481780",
+    "from": "Place Saint Denis",
+    "to": "Place Saint-Denis",
+    "road_id": "road:place-saint-denis",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481794",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481803",
+    "from": "Rue Du Bout Des Ruelles",
+    "to": "Rue du Bout des Ruelles",
+    "road_id": "road:rue-du-bout-des-ruelles",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481809",
+    "from": "Rue Du Bout Des Ruelles",
+    "to": "Rue du Bout des Ruelles",
+    "road_id": "road:rue-du-bout-des-ruelles",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481820",
+    "from": "Rue de la Contree du Pont",
+    "to": "Rue de la Contrée du Pont",
+    "road_id": "road:rue-de-la-contree-du-pont",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481834",
+    "from": "La Voie de la Garenne",
+    "to": "Chemin rural dit Fin Maizières",
+    "road_id": "road:chemin-rural-dit-fin-maizieres@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009481835",
+    "from": "Chemin Rural Dit Fin Maizieres",
+    "to": "Chemin rural dit Fin Maizières",
+    "road_id": "road:chemin-rural-dit-fin-maizieres@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483601",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619@10089",
+    "commune": "Châtres"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483602",
+    "from": "Le Champ Potet",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000009483606",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619@10089",
+    "commune": "Châtres"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483623",
+    "from": "Le Champ Potet",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000009483632",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619@10089",
+    "commune": "Châtres"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483633",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483643",
+    "from": "La Station",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000009483645",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483657",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483659",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483683",
+    "from": "Le Tout Grain",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000009483687",
+    "from": "Zone Industrielle la Glaciere",
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483688",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483694",
+    "from": "Rue du General Leclerc",
+    "to": "Rue du Général Leclerc",
+    "road_id": "road:rue-du-general-leclerc",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483697",
+    "from": "Rue du General Leclerc",
+    "to": "Rue du Général Leclerc",
+    "road_id": "road:rue-du-general-leclerc",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483698",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483703",
+    "from": "Rue du General Leclerc",
+    "to": "Rue du Général Leclerc",
+    "road_id": "road:rue-du-general-leclerc",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483717",
+    "from": "Rue Ambroise Pare",
+    "to": "Rue Ambroise Paré",
+    "road_id": "road:rue-ambroise-pare",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483742",
+    "from": "Les Granges",
+    "to": "Ruelle des Granges",
+    "road_id": "road:ruelle-des-granges",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483746",
+    "from": "Les Granges",
+    "to": "Ruelle des Granges",
+    "road_id": "road:ruelle-des-granges",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483775",
+    "from": "LE PONT BANCELIN",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000009483789",
+    "from": "Chemin Rural Dit Fin Maizieres",
+    "to": "Chemin rural dit Fin Maizières",
+    "road_id": "road:chemin-rural-dit-fin-maizieres@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483797",
+    "from": "La Belle Idee",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000009483798",
+    "from": "La Belle Idee",
+    "to": "Rue Thierry Moussin",
+    "road_id": "road:rue-thierry-moussin@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483799",
+    "from": "La Belle Idee",
+    "to": "Résidence La Belle Idée",
+    "road_id": "road:residence-la-belle-idee@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483800",
+    "from": "La Belle Idee",
+    "to": "Résidence La Belle Idée",
+    "road_id": "road:residence-la-belle-idee@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483802",
+    "from": "La Belle Idee",
+    "to": "Résidence La Belle Idée",
+    "road_id": "road:residence-la-belle-idee@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483803",
+    "from": "La Belle Idee",
+    "to": "Résidence La Belle Idée",
+    "road_id": "road:residence-la-belle-idee@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483805",
+    "from": "La Belle Idee",
+    "to": "Résidence La Belle Idée",
+    "road_id": "road:residence-la-belle-idee@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483806",
+    "from": "La Belle Idee",
+    "to": "Résidence La Belle Idée",
+    "road_id": "road:residence-la-belle-idee@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483807",
+    "from": "La Belle Idee",
+    "to": "Rue Thierry Moussin",
+    "road_id": "road:rue-thierry-moussin@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483809",
+    "from": "Rue des Cites Bellemere",
+    "to": "Rue des Cités Bellemere",
+    "road_id": "road:rue-des-cites-bellemere@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483810",
+    "from": "La Belle Idee",
+    "to": "Rue Thierry Moussin",
+    "road_id": "road:rue-thierry-moussin@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483815",
+    "from": "La Belle Idee",
+    "to": "Résidence La Belle Idée",
+    "road_id": "road:residence-la-belle-idee@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009483822",
+    "from": "La Belle Idee",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000009485286",
+    "from": "Le Haut des Vignes",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000009485289",
+    "from": "Le Haut des Vignes",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000009485299",
+    "from": null,
+    "to": "D 160",
+    "road_id": "road:d-160",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009485306",
+    "from": null,
+    "to": "D 160",
+    "road_id": "road:d-160",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009485309",
+    "from": null,
+    "to": "D 160",
+    "road_id": "road:d-160",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009485310",
+    "from": null,
+    "to": "D 160",
+    "road_id": "road:d-160@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000009485311",
+    "from": null,
+    "to": "D 160",
+    "road_id": "road:d-160",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009486557",
+    "from": "Le Haut des Vignes",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000009486563",
+    "from": "Ferme des Charmes",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000009486568",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009486576",
+    "from": null,
+    "to": "D 160",
+    "road_id": "road:d-160@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000000009486577",
+    "from": null,
+    "to": "D 160",
+    "road_id": "road:d-160@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000000009488049",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009488055",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116@10271",
+    "commune": "Origny-le-Sec"
+   },
+   {
+    "id": "spline:TRONROUT0000000009488056",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000009488068",
+    "from": null,
+    "to": "D 96",
+    "road_id": "road:d-96@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000000009489370",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116@10271",
+    "commune": "Origny-le-Sec"
+   },
+   {
+    "id": "spline:TRONROUT0000000009489372",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116@10271",
+    "commune": "Origny-le-Sec"
+   },
+   {
+    "id": "spline:TRONROUT0000000009489377",
+    "from": null,
+    "to": "D 96",
+    "road_id": "road:d-96@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000000009489384",
+    "from": null,
+    "to": "D 96",
+    "road_id": "road:d-96@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000000009490462",
+    "from": null,
+    "to": "D 96",
+    "road_id": "road:d-96@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477086",
+    "from": "Rue du Chene",
+    "to": "Rue du Chêne",
+    "road_id": "road:rue-du-chene@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477101",
+    "from": "Route de Saint Just",
+    "to": "Route de Saint-Just",
+    "road_id": "road:route-de-saint-just@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477109",
+    "from": "Route de Saint Just",
+    "to": "Route de Saint-Just",
+    "road_id": "road:route-de-saint-just@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477111",
+    "from": "Route de Saint Just",
+    "to": "Route de Saint-Just",
+    "road_id": "road:route-de-saint-just@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477112",
+    "from": "Route de Saint Just",
+    "to": "Route de Saint-Just",
+    "road_id": "road:route-de-saint-just@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477126",
+    "from": "Rue de la Guillotiere",
+    "to": "Rue de la Guillotière",
+    "road_id": "road:rue-de-la-guillotiere@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477127",
+    "from": "Rue du Chene",
+    "to": "Rue du Chêne",
+    "road_id": "road:rue-du-chene@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477128",
+    "from": "rue des consorts",
+    "to": "Rue des Consorts",
+    "road_id": "road:rue-des-consorts@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477140",
+    "from": "Rue du Chene",
+    "to": "Rue du Chêne",
+    "road_id": "road:rue-du-chene@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477168",
+    "from": "R DES GRAVIERS",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000065477178",
+    "from": "Rue du Chene",
+    "to": "Rue du Chêne",
+    "road_id": "road:rue-du-chene@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477218",
+    "from": "RTE DEPARTEMENTALE 352",
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477219",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477220",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477221",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477222",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477223",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477224",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477225",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477245",
+    "from": null,
+    "to": "D 82",
+    "road_id": "road:d-82@51492",
+    "commune": "Saint-Just-Sauvage"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477252",
+    "from": "LA CORNE GROS JEAN",
+    "to": "D 82",
+    "road_id": "road:d-82@51492",
+    "commune": "Saint-Just-Sauvage"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477363",
+    "from": "La Rue aux Vaches",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000065477380",
+    "from": "Chemin de maurenaud",
+    "to": "Chemin de Maurenaud",
+    "road_id": "road:chemin-de-maurenaud@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477381",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477382",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477383",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477384",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477385",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477386",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477391",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000065477392",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000000099212500",
+    "from": null,
+    "to": "D 82",
+    "road_id": "road:d-82@51492",
+    "commune": "Saint-Just-Sauvage"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062774",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062775",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062776",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062777",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062778",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062781",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062782",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062785",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062787",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062788",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062791",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062793",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062794",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062795",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062796",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062797",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062798",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062802",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062803",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062804",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062805",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062806",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062807",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062808",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000110062809",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000117400622",
+    "from": "Le Champ Potet",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000129491441",
+    "from": "Chemin Rural Dit d'Outre Seine",
+    "to": "Chemin rural dit d’Outre Seine",
+    "road_id": "road:chemin-rural-dit-d-outre-seine@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000129491570",
+    "from": null,
+    "to": "D 160",
+    "road_id": "road:d-160@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000000224713798",
+    "from": "Rue du Mal de Lattre de Tassigny",
+    "to": "Rue du Maréchal de Lattre de Tassigny",
+    "road_id": "road:rue-du-marechal-de-lattre-de-tassigny",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000224713804",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000224713844",
+    "from": "R JEAN BAPTISTE PETEL",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000224713845",
+    "from": "R JEAN BAPTISTE PETEL",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000224713846",
+    "from": "Rue Patris",
+    "to": "Rue Patris de Breuil",
+    "road_id": "road:rue-patris-de-breuil",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000224753413",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000224753415",
+    "from": "Place Leopoldine Deschamps",
+    "to": "Place Léopoldine Deschamps",
+    "road_id": "road:place-leopoldine-deschamps",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000224753416",
+    "from": "Place Leopoldine Deschamps",
+    "to": "Place Léopoldine Deschamps",
+    "road_id": "road:place-leopoldine-deschamps",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000224753417",
+    "from": "Place Leopoldine Deschamps",
+    "to": "Place Léopoldine Deschamps",
+    "road_id": "road:place-leopoldine-deschamps",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000322114113",
+    "from": "Rue Andre Malraux",
+    "to": "Rue André Malraux",
+    "road_id": "road:rue-andre-malraux@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000322114114",
+    "from": "Rue Andre Malraux",
+    "to": "Rue André Malraux",
+    "road_id": "road:rue-andre-malraux@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000322114163",
+    "from": "Rue Andre Malraux",
+    "to": "Rue André Malraux",
+    "road_id": "road:rue-andre-malraux@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000322114164",
+    "from": "Rue Andre Malraux",
+    "to": "Rue André Malraux",
+    "road_id": "road:rue-andre-malraux@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000322114165",
+    "from": "Rue Andre Malraux",
+    "to": "Rue André Malraux",
+    "road_id": "road:rue-andre-malraux@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000322114166",
+    "from": "Rue Andre Malraux",
+    "to": "Rue André Malraux",
+    "road_id": "road:rue-andre-malraux@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000322114167",
+    "from": "Rue Andre Malraux",
+    "to": "Rue André Malraux",
+    "road_id": "road:rue-andre-malraux@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000322114229",
+    "from": "Rue Andre Malraux",
+    "to": "Rue André Malraux",
+    "road_id": "road:rue-andre-malraux@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000322114230",
+    "from": "Rue Andre Malraux",
+    "to": "Rue André Malraux",
+    "road_id": "road:rue-andre-malraux@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000322114231",
+    "from": "Rue Andre Malraux",
+    "to": "Rue André Malraux",
+    "road_id": "road:rue-andre-malraux@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000322114232",
+    "from": "Rue Andre Malraux",
+    "to": "Rue André Malraux",
+    "road_id": "road:rue-andre-malraux@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000322114260",
+    "from": "Avenue Philippe Seguin",
+    "to": "Avenue Philippe Séguin",
+    "road_id": "road:avenue-philippe-seguin",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000322114349",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000322114352",
+    "from": "Avenue Philippe Seguin",
+    "to": "Avenue Philippe Séguin",
+    "road_id": "road:avenue-philippe-seguin",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000325186815",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000325186823",
+    "from": "Avenue Philippe Seguin",
+    "to": "Avenue Philippe Séguin",
+    "road_id": "road:avenue-philippe-seguin",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000000336560420",
+    "from": "Rue Andre Malraux",
+    "to": "Rue André Malraux",
+    "road_id": "road:rue-andre-malraux@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000000348956672",
+    "from": "Le Haut des Vignes",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000348956750",
+    "from": "PRES DE LA POMPE",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000348956755",
+    "from": "La Croix des Fourches",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000348956756",
+    "from": "Le Haut des Vignes",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000348956757",
+    "from": "Le Haut des Vignes",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000351456196",
+    "from": "Le Haut des Vignes",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000353496058",
+    "from": "Le Haut des Vignes",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000353496059",
+    "from": "Le Haut des Vignes",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000353496131",
+    "from": "Le Haut des Vignes",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000000355431392",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002477105851",
+    "from": "Chemin Rural Dit d'Outre Seine",
+    "to": "Chemin rural dit d’Outre Seine",
+    "road_id": "road:chemin-rural-dit-d-outre-seine@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000002007078074",
+    "from": "La Belle Idee",
+    "to": "Résidence La Belle Idée",
+    "road_id": "road:residence-la-belle-idee@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000002203222891",
+    "from": "Rue des Cotterets",
+    "to": "Rue des Cottrets",
+    "road_id": "road:rue-des-cottrets",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002203222900",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002203222905",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002203222915",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002203222917",
+    "from": null,
+    "to": "D 160",
+    "road_id": "road:d-160",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002206956868",
+    "from": null,
+    "to": "D 160",
+    "road_id": "road:d-160",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002206956876",
+    "from": "LES CARREAUX",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000002206956879",
+    "from": "LES CARREAUX",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000002206956880",
+    "from": "LES CARREAUX",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000002206956881",
+    "from": null,
+    "to": "D 160",
+    "road_id": "road:d-160",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002206956882",
+    "from": "LES CARREAUX",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000002221604419",
+    "from": "RTE DEPARTEMENTALE 619",
+    "to": "D 619",
+    "road_id": "road:d-619@10089",
+    "commune": "Châtres"
+   },
+   {
+    "id": "spline:TRONROUT0000002223018415",
+    "from": null,
+    "to": "D 352",
+    "road_id": "road:d-352@51155",
+    "commune": "Clesles"
+   },
+   {
+    "id": "spline:TRONROUT0000002223773420",
+    "from": null,
+    "to": "D 116",
+    "road_id": "road:d-116@10271",
+    "commune": "Origny-le-Sec"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331089",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331090",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331125",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331187",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331196",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331238",
+    "from": null,
+    "to": "D 96",
+    "road_id": "road:d-96@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331239",
+    "from": null,
+    "to": "D 96",
+    "road_id": "road:d-96@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331264",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331267",
+    "from": null,
+    "to": "D 96",
+    "road_id": "road:d-96@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331269",
+    "from": null,
+    "to": "D 96",
+    "road_id": "road:d-96@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331285",
+    "from": null,
+    "to": "D 96",
+    "road_id": "road:d-96@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331286",
+    "from": null,
+    "to": "D 96",
+    "road_id": "road:d-96@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331313",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619@10089",
+    "commune": "Châtres"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331314",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619@10089",
+    "commune": "Châtres"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331315",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619@10089",
+    "commune": "Châtres"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331317",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331318",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331319",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331341",
+    "from": null,
+    "to": "D 96",
+    "road_id": "road:d-96@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331349",
+    "from": "Zone Industrielle la Glaciere",
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331350",
+    "from": "Zone Industrielle la Glaciere",
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331351",
+    "from": "Zone Industrielle la Glaciere",
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331352",
+    "from": "La Glaciere",
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331375",
+    "from": "Zone Industrielle la Glaciere",
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331412",
+    "from": "Avenue du General de Gaulle",
+    "to": "Avenue du Général de Gaulle",
+    "road_id": "road:avenue-du-general-de-gaulle",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002330331443",
+    "from": null,
+    "to": "D 96",
+    "road_id": "road:d-96@10280",
+    "commune": "Pars-lès-Romilly"
+   },
+   {
+    "id": "spline:TRONROUT0000002340926077",
+    "from": "Zone Industrielle la Glaciere",
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002340926078",
+    "from": null,
+    "to": "D 619",
+    "road_id": "road:d-619",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002477105724",
+    "from": "Rue Andre Malraux",
+    "to": "Rue André Malraux",
+    "road_id": "road:rue-andre-malraux@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000002477105725",
+    "from": "Rue Andre Malraux",
+    "to": "Rue André Malraux",
+    "road_id": "road:rue-andre-malraux@10323",
+    "commune": "Romilly-sur-Seine"
+   },
+   {
+    "id": "spline:TRONROUT0000002477114930",
+    "from": "R DES GRAVIERS",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000002477115191",
+    "from": "R DES GRAVIERS",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000002477593481",
+    "from": "Impasse des sages",
+    "to": "Impasse des Sages",
+    "road_id": "road:impasse-des-sages",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002477593482",
+    "from": "Rue du Mal de Lattre de Tassigny",
+    "to": "Rue du Maréchal de Lattre de Tassigny",
+    "road_id": "road:rue-du-marechal-de-lattre-de-tassigny",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002477593483",
+    "from": "Impasse des sages",
+    "to": "Impasse des Sages",
+    "road_id": "road:impasse-des-sages",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002479805104",
+    "from": "Les Granges",
+    "to": null,
+    "road_id": null,
+    "commune": null
+   },
+   {
+    "id": "spline:TRONROUT0000002492550968",
+    "from": "Bd Antoine de Saint Exupery",
+    "to": "Boulevard Antoine de Saint-Exupéry",
+    "road_id": "road:boulevard-antoine-de-saint-exupery",
+    "commune": "Maizières-la-Grande-Paroisse"
+   },
+   {
+    "id": "spline:TRONROUT0000002498256387",
+    "from": "Rue Joliot Curie",
+    "to": "Rue Joliot-Curie",
+    "road_id": "road:rue-joliot-curie",
+    "commune": "Maizières-la-Grande-Paroisse"
+   }
+  ]
+ },
+ "unreal/rail/rail-splines.json": {
+  "note": "aucun nom de spline à changer : la ligne 1000 et les voies de service sont déjà décrites par leurs attributs (line, kind)",
+  "changes": []
+ }
+}

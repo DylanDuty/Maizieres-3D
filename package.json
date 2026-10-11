@@ -1,6 +1,6 @@
 {
   "name": "maizieres-3d",
-  "version": "2.9.1",
+  "version": "2.9.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -18,7 +18,7 @@
     "check:interaction": "node scripts/check-interaction.mjs",
     "data:bible": "node scripts/prepare-bible.mjs",
     "check:bible": "node scripts/check-bible.mjs",
-    "check:all": "npm run check && npm run check:enrichment && npm run check:presentation && npm run check:interaction && npm run check:bible && npm run check:buildings && npm run check:terrain && npm run check:roads && npm run check:rail && npm run check:landcover && npm run check:poi && npm run check:v2 && npm run check:building-visibility && npm run check:geographic-integrity && npm run check:final-building-freeze && npm run check:architecture && npm run check:architecture-stats && npm run check:landmark-positioning",
+    "check:all": "npm run check && npm run check:enrichment && npm run check:presentation && npm run check:interaction && npm run check:bible && npm run check:buildings && npm run check:terrain && npm run check:roads && npm run check:rail && npm run check:landcover && npm run check:poi && npm run check:v2 && npm run check:building-visibility && npm run check:geographic-integrity && npm run check:final-building-freeze && npm run check:architecture && npm run check:architecture-stats && npm run check:landmark-positioning && npm run check:places-canonical && npm run check:road-names && npm run check:poi-building-links && npm run check:search-targets && npm run check:semantic-freeze",
     "data:buildings": "node scripts/build-buildings.mjs && node scripts/validate-buildings.mjs",
     "audit:buildings": "node scripts/audit-buildings.mjs",
     "check:buildings": "node scripts/check-buildings.mjs",
@@ -59,7 +59,15 @@
     "check:architecture": "node --max-old-space-size=4096 scripts/check-architecture.mjs",
     "data:freeze": "node scripts/build-freeze.mjs",
     "check:architecture-stats": "node --max-old-space-size=4096 scripts/check-architecture-stats.mjs",
-    "check:landmark-positioning": "node --max-old-space-size=4096 scripts/check-landmark-positioning.mjs"
+    "check:landmark-positioning": "node --max-old-space-size=4096 scripts/check-landmark-positioning.mjs",
+    "data:places-canonical": "node --max-old-space-size=4096 scripts/build-places-canonical.mjs",
+    "data:roads-canonical": "node --max-old-space-size=4096 scripts/build-roads-canonical.mjs",
+    "data:semantic-freeze": "node scripts/build-semantic-freeze.mjs",
+    "check:places-canonical": "node --max-old-space-size=4096 scripts/check-places-canonical.mjs",
+    "check:road-names": "node --max-old-space-size=4096 scripts/check-road-names.mjs",
+    "check:poi-building-links": "node --max-old-space-size=4096 scripts/check-poi-building-links.mjs",
+    "check:search-targets": "node --max-old-space-size=4096 scripts/check-search-targets.mjs",
+    "check:semantic-freeze": "node scripts/check-semantic-freeze.mjs"
   },
   "dependencies": {
     "three": "0.180.0"

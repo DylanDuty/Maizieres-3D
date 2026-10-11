@@ -1,0 +1,739 @@
+{
+ "poi:salle-polyvalente": {
+  "status": "PASS_WITH_LIMITATION",
+  "building_ids": [
+   "BATIMENT0000000301149569"
+  ],
+  "anchor": "building",
+  "address": "3 rue des Écoles",
+  "anomalies": [
+   [
+    "BLOCKER",
+    "association",
+    "BATIMENT0000000301149656 (V1.11 : maison de 78 m² à l’est, BAN « segment » + BAN PLUS) puis BATIMENT0000002006956400 (errata V2.9.1 : la Maison des associations)",
+    "BATIMENT0000000301149569 (grande salle à verrières, parvis sur la rue des Écoles)",
+    "La salle polyvalente était associée en V2.9.1 au bâtiment de la Maison des associations, qui a déjà son propre POI : deux lieux distincts confondus. La zone BD TOPO « Salle polyvalente » désigne en réalité la Maison des associations (salle Pascal-Hazouard)."
+   ]
+  ],
+  "limitation": "adresse documentée 3 rue des Écoles (Bible 01) ; la BAN place le n° 3 par interpolation à l’autre bout de la rue et le RNB du bâtiment porte 6 rue de la République (lien cadastral) : adresse à confirmer par la commune",
+  "sources": [
+   {
+    "organism": "OpenStreetMap",
+    "ref": "node/1644001052",
+    "info": "amenity=community_centre « Salle Polyvalente », devant l’entrée du bâtiment …149569 (15 m)",
+    "access": "public/data/maizieres.geojson",
+    "verified": true
+   },
+   {
+    "organism": "IGN — BD ORTHO 0,5 m (2025)",
+    "ref": "data-sources/architecture/bdortho-0m50",
+    "info": "grande salle à toit d’ardoise et verrières, parvis sur la rue des Écoles près de la rue de la République",
+    "access": "dalles locales (V2.3)",
+    "verified": true
+   },
+   {
+    "organism": "Bible du projet 06",
+    "ref": "docs/bibles §303-305, 330",
+    "info": "ancienne salle de gymnastique et de patronage de L’Étoile, devenue salle polyvalente ; distincte du Local club / Maison des associations",
+    "access": "dépôt",
+    "verified": true
+   },
+   {
+    "organism": "Bible du projet 01",
+    "ref": "docs/bibles §11.1",
+    "info": "« Salle polyvalente : 3 rue des Écoles » ; « Maison / Salle des Associations : 2 rue Jules-Ferry »",
+    "access": "dépôt",
+    "verified": true
+   },
+   {
+    "organism": "Base Adresse Nationale",
+    "ref": "data-sources/poi/ban-adresses.geojson",
+    "info": "3 rue des Écoles : position « segment », au même point que le n° 21 (interpolation inutilisable)",
+    "access": "instantané local",
+    "verified": true
+   },
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "E6Q74JZYQE4W",
+    "info": "= BATIMENT0000000301149569, 603 m², adresse BDNB 6 rue de la République (lien de parcelle)",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   }
+  ]
+ },
+ "poi:maison-des-associations": {
+  "status": "PASS",
+  "address": "2 rue Jules-Ferry",
+  "anomalies": [
+   [
+    "MAJOR",
+    "conflit",
+    "partageait en V2.9.1 son bâtiment avec la salle polyvalente (errata V2.9.1)",
+    "bâtiment propre, salle polyvalente déplacée",
+    "Deux POI sur le même bâtiment : le clic sur le bâtiment ouvrait la fiche de la salle polyvalente."
+   ]
+  ],
+  "sources": [
+   {
+    "organism": "Bible du projet 02",
+    "ref": "docs/bibles §154",
+    "info": "Local club démoli en 2014, bâtiment socio-culturel livré 2015 : Maison des Associations, 2 rue Jules-Ferry, salle Pascal HAZOUARD",
+    "access": "dépôt",
+    "verified": true
+   },
+   {
+    "organism": "Bible du projet 01",
+    "ref": "docs/bibles §11.1",
+    "info": "Maison / Salle des Associations : 2 rue Jules-Ferry ; dojo Christian-Bouzrar",
+    "access": "dépôt",
+    "verified": true
+   },
+   {
+    "organism": "Base Adresse Nationale",
+    "ref": "data-sources/poi/ban-adresses.geojson",
+    "info": "2 rue Jules-Ferry : position « bâtiment », dans BATIMENT0000002006956400",
+    "access": "instantané local",
+    "verified": true
+   },
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "XKAY4VPVWTNZ",
+    "info": "= BATIMENT0000002006956400, adresse 2 rue Jules-Ferry",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   },
+   {
+    "organism": "IGN — BD TOPO",
+    "ref": "SURFACTI0000002200449264",
+    "info": "zone « Salle de spectacle ou conférence », nature détaillée « Salle polyvalente » (orthophotographie, 2019) : désigne ce bâtiment récent",
+    "access": "data-sources/ign",
+    "verified": true
+   },
+   {
+    "organism": "IGN — BD ORTHO 0,5 m (2025)",
+    "ref": "data-sources/architecture/bdortho-0m50",
+    "info": "bâtiment récent à côté des courts de tennis",
+    "access": "dalles locales (V2.3)",
+    "verified": true
+   }
+  ]
+ },
+ "poi:mairie": {
+  "status": "PASS",
+  "building_ids": [
+   "BATIMENT0000000301149547"
+  ],
+  "lonlat": [
+   3.7869889,
+   48.5093963
+  ],
+  "address": "6 rue des Écoles",
+  "anomalies": [
+   [
+    "BLOCKER",
+    "association",
+    "BATIMENT0000000301149537 (annexe au nord de la rue, BAN « segment » + BAN PLUS)",
+    "BATIMENT0000000301149547",
+    "Corrigé en V2.9.1 par errata ; rendu canonique en V2.9.2."
+   ]
+  ],
+  "sources": [
+   {
+    "organism": "IGN — BD TOPO",
+    "ref": "SURFACTI0000000009307504",
+    "info": "zone « Mairie » (DILA)",
+    "access": "data-sources/ign",
+    "verified": true
+   },
+   {
+    "organism": "IGN — Géoplateforme (géocodage)",
+    "ref": "https://data.geopf.fr/geocodage/search?q=mairie&index=poi&citycode=10220",
+    "info": "« Mairie de Maizières-la-Grande-Paroisse » au sud de la rue des Écoles",
+    "access": "consulté le 2026-10-10, réponse complète",
+    "verified": true
+   },
+   {
+    "organism": "OpenStreetMap",
+    "ref": "node/1638872667",
+    "info": "amenity=townhall dans …149547",
+    "access": "public/data/maizieres.geojson",
+    "verified": true
+   },
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "G5TEAF23FNWH",
+    "info": "= …149547, seule adresse 6 rue des Écoles",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   },
+   {
+    "organism": "IGN — BD ORTHO 0,5 m (2025)",
+    "ref": "data-sources/architecture/bdortho-0m50",
+    "info": "grand bâtiment public à toit d’ardoise",
+    "access": "dalles locales (V2.3)",
+    "verified": true
+   }
+  ]
+ },
+ "poi:ecole-primaire": {
+  "status": "PASS_WITH_LIMITATION",
+  "building_ids": [
+   "BATIMENT0000000301149527",
+   "BATIMENT0000000301149543",
+   "BATIMENT0000000301149528"
+  ],
+  "lonlat": [
+   3.787325,
+   48.509106
+  ],
+  "address": "3 rue Jules-Ferry",
+  "limitation": "adresse 3 rue Jules-Ferry (Bibles 03 et 04) ; la BD TOPO donne 8 rue Jules-Ferry et le RNB des bâtiments 1 rue Jules-Ferry",
+  "anomalies": [
+   [
+    "BLOCKER",
+    "association",
+    "12 bâtiments de la parcelle communale D2377 (mairie, caserne compris)",
+    "…149527, …149543, …149528",
+    "Corrigé en V2.9.1 par errata ; rendu canonique en V2.9.2."
+   ]
+  ],
+  "sources": [
+   {
+    "organism": "IGN — BD TOPO",
+    "ref": "SURFACTI0000000113405956",
+    "info": "zone « Enseignement primaire » (MEN 0100816H) centrée dans …149527",
+    "access": "data-sources/ign",
+    "verified": true
+   },
+   {
+    "organism": "IGN — Géoplateforme (géocodage)",
+    "ref": "https://data.geopf.fr/geocodage/search?q=ecole&index=poi&citycode=10220",
+    "info": "« École Élémentaire Publique » en [3.787325, 48.509106]",
+    "access": "consulté le 2026-10-10, réponse complète",
+    "verified": true
+   },
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "8GMRZNV9MCMG / NTQ81P5RZP96 / W7FB66TGWJPF",
+    "info": "1 rue Jules-Ferry",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   },
+   {
+    "organism": "OpenStreetMap",
+    "ref": "node/1638878399",
+    "info": "amenity=school",
+    "access": "public/data/maizieres.geojson",
+    "verified": true
+   }
+  ]
+ },
+ "poi:cpi": {
+  "status": "PASS",
+  "sources": [
+   {
+    "organism": "IGN — BD TOPO",
+    "ref": "SURFACTI0000002222540441",
+    "info": "zone « Caserne de pompiers » dans BATIMENT0000000301149810",
+    "access": "data-sources/ign",
+    "verified": true
+   },
+   {
+    "organism": "IGN — BD ORTHO 0,5 m (2025)",
+    "ref": "data-sources/architecture/bdortho-0m50",
+    "info": "deux portes de remise sur rue",
+    "access": "dalles locales (V2.3)",
+    "verified": true
+   }
+  ],
+  "anomalies": [
+   [
+    "MAJOR",
+    "sélection",
+    "clic capturé par l’école (bâtiment revendiqué par les deux)",
+    "clic propre",
+    "Résolu par la correction de l’école."
+   ]
+  ],
+  "search_aliases": [
+   "CPI"
+  ],
+  "notes": ""
+ },
+ "poi:galopins": {
+  "status": "PASS_WITH_LIMITATION",
+  "anchor": "building",
+  "limitation": "BAN « segment » ; bâtiment confirmé par le RNB (1 rue Jules-Ferry) et la Bible 01, sans source municipale localisée",
+  "sources": [
+   {
+    "organism": "Bible du projet 01",
+    "ref": "docs/bibles §11.1",
+    "info": "Accueil de loisirs Les Galopins : 1 rue Jules-Ferry",
+    "access": "dépôt",
+    "verified": true
+   },
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "JJSXGW9TRTB7",
+    "info": "= BATIMENT0000002006956394 : 1 rue Jules-Ferry, 6 rue des Écoles",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   },
+   {
+    "organism": "IGN — BD ORTHO 0,5 m (2025)",
+    "ref": "data-sources/architecture/bdortho-0m50",
+    "info": "petit bâtiment à l’ouest de la mairie, cour fermée",
+    "access": "dalles locales (V2.3)",
+    "verified": true
+   }
+  ]
+ },
+ "poi:a-vos-couverts": {
+  "status": "PASS_WITH_LIMITATION",
+  "anchor": "building",
+  "limitation": "bâtiment pris par BAN PLUS depuis une position « segment », confirmé par le RNB (83 bis)",
+  "sources": [
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "BATIMENT0000000301148744",
+    "info": "adresse 83bis avenue du Général-de-Gaulle",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   },
+   {
+    "organism": "Bible du projet 05",
+    "ref": "docs/bibles §81",
+    "info": "83 / 83 bis : restaurant depuis 2016",
+    "access": "dépôt",
+    "verified": true
+   }
+  ],
+  "anomalies": [
+   [
+    "MINOR",
+    "ancre",
+    "point BAN sur l’axe de l’avenue",
+    "ancre dans le bâtiment",
+    ""
+   ]
+  ]
+ },
+ "poi:au-point": {
+  "status": "PASS_WITH_LIMITATION",
+  "anchor": "building",
+  "limitation": "BAN « segment » ; bâtiment confirmé par le RNB (47)",
+  "sources": [
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "BATIMENT0000000301148710",
+    "info": "47 avenue du Général-de-Gaulle",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   }
+  ],
+  "anomalies": [
+   [
+    "MINOR",
+    "ancre",
+    "point BAN sur l’axe de l’avenue",
+    "ancre dans le bâtiment",
+    ""
+   ]
+  ]
+ },
+ "poi:baguette-des-granges": {
+  "status": "PASS_WITH_LIMITATION",
+  "building_ids": [],
+  "limitation": "adresse certaine, bâtiment non certifié : BAN « segment » et trois bâtiments RNB portent le n° 25 ; aucun bâtiment n’est associé, le point reste à l’adresse",
+  "anomalies": [
+   [
+    "MAJOR",
+    "association",
+    "BATIMENT0000000301148558 (BAN « segment » + BAN PLUS)",
+    "aucun bâtiment (point d’adresse)",
+    "Le RNB place le n° 25 sur trois autres bâtiments ; aucune source ne désigne la boutique."
+   ]
+  ],
+  "sources": [
+   {
+    "organism": "Base Adresse Nationale",
+    "ref": "data-sources/poi/ban-adresses.geojson",
+    "info": "25 avenue du Général-de-Gaulle : position « segment »",
+    "access": "instantané local",
+    "verified": true
+   },
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "…148562 / …148567 / …148568",
+    "info": "25 avenue du Général-de-Gaulle",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   }
+  ]
+ },
+ "poi:bible:B05-005": {
+  "status": "PASS_WITH_LIMITATION",
+  "anchor": "building",
+  "limitation": "bâtiment confirmé par le RNB (audit V1.11.1) ; ancre BAN « segment » à 88 m déplacée dans le bâtiment",
+  "sources": [
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "C5WQ3RJ4FPEP",
+    "info": "= BATIMENT0000002006956399, 2 avenue Philippe-Séguin",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   }
+  ],
+  "anomalies": [
+   [
+    "MAJOR",
+    "ancre",
+    "point BAN à 88 m, de l’autre côté du boulevard",
+    "ancre dans le bâtiment",
+    ""
+   ]
+  ]
+ },
+ "poi:bible:B05-024": {
+  "status": "PASS_WITH_LIMITATION",
+  "limitation": "BAN « segment » ; bâtiment confirmé par le RNB",
+  "sources": [
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "BATIMENT0000000301149712",
+    "info": "2 rue Ambroise-Paré",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   }
+  ]
+ },
+ "poi:bible:B05-069": {
+  "status": "PASS_WITH_LIMITATION",
+  "building_ids": [
+   "BATIMENT0000000301148516"
+  ],
+  "anchor": "building",
+  "limitation": "BAN « segment » ; bâtiment principal confirmé par le RNB",
+  "sources": [
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "BATIMENT0000000301148516",
+    "info": "102 avenue du Général-de-Gaulle",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   }
+  ],
+  "anomalies": [
+   [
+    "MINOR",
+    "association",
+    "…148516 + …148524 (annexe)",
+    "…148516",
+    ""
+   ]
+  ]
+ },
+ "poi:bible:B05-100": {
+  "status": "PASS_WITH_LIMITATION",
+  "building_ids": [
+   "BATIMENT0000000301148931"
+  ],
+  "anchor": "building",
+  "limitation": "BAN « segment » ; bâtiment confirmé par le RNB",
+  "sources": [
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "BATIMENT0000000301148931",
+    "info": "59 avenue du Général-de-Gaulle",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   }
+  ],
+  "anomalies": [
+   [
+    "MINOR",
+    "association",
+    "…148931 + …2341955033",
+    "…148931",
+    ""
+   ]
+  ]
+ },
+ "poi:bible:B05-113": {
+  "status": "PASS_WITH_LIMITATION",
+  "anchor": "building",
+  "limitation": "BAN « segment » ; bâtiment confirmé par le RNB",
+  "sources": [
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "BATIMENT0000002006956374",
+    "info": "8 boulevard Antoine-de-Saint-Exupéry",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   }
+  ],
+  "anomalies": [
+   [
+    "MINOR",
+    "ancre",
+    "point BAN sur le boulevard",
+    "ancre dans le bâtiment",
+    ""
+   ]
+  ]
+ },
+ "poi:bible:B05-114": {
+  "status": "PASS",
+  "building_ids": [
+   "BATIMENT0000000325110252",
+   "BATIMENT0000000325110253"
+  ],
+  "sources": [
+   {
+    "organism": "Base Adresse Nationale",
+    "ref": "data-sources/poi/ban-adresses.geojson",
+    "info": "6 boulevard Antoine-de-Saint-Exupéry : position « entrée » dans le bâtiment",
+    "access": "instantané local",
+    "verified": true
+   }
+  ],
+  "anomalies": [
+   [
+    "MINOR",
+    "donnée",
+    "identifiant de bâtiment répété trois fois",
+    "liste dédoublonnée",
+    ""
+   ]
+  ]
+ },
+ "poi:bible:B05-117": {
+  "status": "PASS_WITH_LIMITATION",
+  "anchor": "building",
+  "limitation": "BAN « segment » ; bâtiment confirmé par le RNB",
+  "sources": [
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "BATIMENT0000002006956392",
+    "info": "12 boulevard Antoine-de-Saint-Exupéry",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   }
+  ],
+  "anomalies": [
+   [
+    "MINOR",
+    "ancre",
+    "point BAN à 52 m",
+    "ancre dans le bâtiment",
+    ""
+   ]
+  ]
+ },
+ "poi:bible:B05-118": {
+  "status": "PASS",
+  "anchor": "building",
+  "sources": [
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "BATIMENT0000000325110250",
+    "info": "14 boulevard Antoine-de-Saint-Exupéry",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   },
+   {
+    "organism": "OpenStreetMap",
+    "ref": "McDonald’s",
+    "info": "enseigne OSM dans ce bâtiment",
+    "access": "public/data/maizieres.geojson",
+    "verified": true
+   }
+  ],
+  "anomalies": [
+   [
+    "MINOR",
+    "ancre",
+    "point BAN sur le boulevard",
+    "ancre dans le bâtiment",
+    ""
+   ]
+  ]
+ },
+ "poi:cabinet-paramedical": {
+  "status": "PASS_WITH_LIMITATION",
+  "building_ids": [
+   "BATIMENT0000000301149479",
+   "BATIMENT0000000301149448"
+  ],
+  "anchor": "building",
+  "limitation": "adresse 19 bis (Bible 01 : 19 / 19 bis) ; le RNB porte 19 sur ces deux bâtiments, pas 19 bis",
+  "anomalies": [
+   [
+    "MAJOR",
+    "association",
+    "…149246 + …149249 (RNB : 23 rue de la République)",
+    "…149479 + …149448 (RNB : 19 rue de la République)",
+    "BAN « segment » mal interpolée : le bâtiment pris était au n° 23."
+   ]
+  ],
+  "sources": [
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "…149479 / …149448",
+    "info": "19 rue de la République",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   },
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "…149246 / …149249",
+    "info": "23 rue de la République",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   },
+   {
+    "organism": "Bible du projet 01",
+    "ref": "docs/bibles §11.2",
+    "info": "cabinet de santé : 19 / 19 bis rue de la République",
+    "access": "dépôt",
+    "verified": true
+   }
+  ]
+ },
+ "poi:carrosserie-serbource": {
+  "status": "PASS",
+  "building_ids": [
+   "BATIMENT0000000301150803"
+  ],
+  "sources": [
+   {
+    "organism": "Base Adresse Nationale",
+    "ref": "data-sources/poi/ban-adresses.geojson",
+    "info": "18 Zone industrielle la Glacière : position « entrée » dans le bâtiment",
+    "access": "instantané local",
+    "verified": true
+   },
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "BATIMENT0000000301150803",
+    "info": "18 Zone Industrielle la Glacière",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   }
+  ],
+  "anomalies": [
+   [
+    "MAJOR",
+    "association",
+    "13 bâtiments (parcelle)",
+    "…150803",
+    ""
+   ]
+  ]
+ },
+ "poi:ime-verger-fleuri": {
+  "status": "PASS_WITH_LIMITATION",
+  "building_ids": [],
+  "limitation": "entrée certaine (BAN « entrée ») ; le bâtiment de l’établissement n’est pas certifié (RNB 21 bis sur un autre bâtiment, 95 m) : point d’entrée seul",
+  "sources": [
+   {
+    "organism": "Base Adresse Nationale",
+    "ref": "data-sources/poi/ban-adresses.geojson",
+    "info": "21 bis rue Achille-Flaubert : position « entrée »",
+    "access": "instantané local",
+    "verified": true
+   },
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "BATIMENT0000000301148920",
+    "info": "21 bis rue Achille-Flaubert",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   }
+  ],
+  "anomalies": [
+   [
+    "MAJOR",
+    "association",
+    "BATIMENT0000000301148865 (petit bâtiment au point d’entrée)",
+    "aucun bâtiment (point d’entrée)",
+    ""
+   ]
+  ]
+ },
+ "poi:tabac-presse": {
+  "status": "PASS_WITH_LIMITATION",
+  "building_ids": [
+   "BATIMENT0000000301148770"
+  ],
+  "anchor": "building",
+  "limitation": "BAN « segment » ; bâtiment sur rue confirmé par le RNB (32)",
+  "sources": [
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "BATIMENT0000000301148770",
+    "info": "32 avenue du Général-de-Gaulle",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   },
+   {
+    "organism": "IGN — BD ORTHO 0,5 m (2025)",
+    "ref": "data-sources/architecture/bdortho-0m50",
+    "info": "petit bâtiment sur la rue",
+    "access": "dalles locales (V2.3)",
+    "verified": true
+   }
+  ],
+  "anomalies": [
+   [
+    "MAJOR",
+    "association",
+    "…148766 + …148762 (BAN PLUS)",
+    "…148770",
+    ""
+   ]
+  ]
+ },
+ "poi:presbytere-ancien": {
+  "status": "PASS",
+  "sources": [
+   {
+    "organism": "Référentiel National des Bâtiments",
+    "ref": "…149376 / …149375 / …149873",
+    "info": "15 rue Pasteur",
+    "access": "data-sources/rnb (instantané)",
+    "verified": true
+   },
+   {
+    "organism": "Base Adresse Nationale",
+    "ref": "data-sources/poi/ban-adresses.geojson",
+    "info": "15 rue Pasteur : position « entrée »",
+    "access": "instantané local",
+    "verified": true
+   }
+  ],
+  "anomalies": [
+   [
+    "INFO",
+    "temporalité",
+    "fonction historique affichée",
+    "nom « Ancien presbytère » explicite : bâtiment actuel, fonction passée",
+    ""
+   ]
+  ]
+ },
+ "poi:stade": {
+  "status": "PASS_WITH_LIMITATION",
+  "limitation": "ancre au centre du terrain ; seul bâtiment : les vestiaires (82 m)",
+  "sources": [
+   {
+    "organism": "IGN — BD TOPO",
+    "ref": "SURFACTI0000000358044861",
+    "info": "zone sportive contenant les vestiaires",
+    "access": "data-sources/ign",
+    "verified": true
+   }
+  ],
+  "anchor_far_ok": "ancre au centre de l’aire sportive (zone BD TOPO SURFACTI0000000358044861, nature « Autre équipement sportif ») ; le bâtiment associé est le vestiaire, à 83 m de ce centre : l’étiquette désigne le stade, le clic sur le vestiaire ouvre le stade"
+ }
+}

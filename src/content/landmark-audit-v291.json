@@ -1,7 +1,7 @@
 {
- "version": "2.9.1",
- "date": "2026-10-10",
- "note": "Référence d’audit des 16 landmarks. Les fichiers gelés (public/data/poi.json, unreal/) ne sont pas modifiés : les trois associations fausses sont corrigées par cet errata, appliqué au chargement par src/landmark-errata.js et vérifié par scripts/check-landmark-positioning.mjs.",
+ "version": "2.9.2",
+ "date": "2026-10-11",
+ "note": "Référence d’audit des 16 landmarks (V2.9.1, révisée V2.9.2). Les fichiers gelés (public/data/poi.json, unreal/) ne sont pas modifiés. Depuis V2.9.2, les associations et ancres corrigées ne sont plus portées par un errata : elles viennent du registre canonique docs/freeze/MLGU_PLACES_CANONICAL_V1.json (projection src/content/places-runtime-v292.json, appliquée par src/places-canonical.js). Cette référence doit rester identique au registre : scripts/check-landmark-positioning.mjs le vérifie.",
  "landmarks": [
   {
    "id": "poi:ecole-primaire",
@@ -407,65 +407,72 @@
    "poiId": "poi:salle-polyvalente",
    "kind": "salle communale",
    "buildingIds": [
-    "BATIMENT0000002006956400"
+    "BATIMENT0000000301149569"
    ],
    "pointOnly": false,
    "anchor": {
     "lonlat": [
-     3.7868727,
-     48.5087728
+     3.7861931,
+     48.5096405
     ],
-    "source": "BD TOPO zone « Salle de spectacle ou conférence », nature détaillée « Salle polyvalente » (orthophotographie, précision 3 m), centre dans BATIMENT0000002006956400 (errata V2.9.1)"
+    "source": "point intérieur de BATIMENT0000000301149569 (registre canonique V2.9.2) ; l’entrée est marquée par OSM node/1644001052 (amenity=community_centre), 15 m au nord-ouest"
    },
    "address": "3 rue des Écoles",
-   "addressNote": "BAN/RNB du bâtiment : 2 rue Jules-Ferry",
+   "addressNote": "BAN : n° 3 en position « segment » (interpolation) ; RNB/BDNB du bâtiment : 6 rue de la République (lien de parcelle). Adresse à confirmer par la commune.",
    "sector": "Centre-bourg de Maizières",
-   "status": "corrigé",
+   "status": "corrigé (V2.9.2)",
    "sources": [
-    {
-     "organism": "IGN — BD TOPO (zone d’activité ou d’intérêt)",
-     "ref": "SURFACTI0000002200449264",
-     "info": "nature détaillée « Salle polyvalente », saisie sur orthophotographie, précision 3 m, contient BATIMENT0000002006956400 (431 m²)",
-     "access": "instantané local data-sources/ign (téléchargé V1.11)",
-     "verified": true
-    },
-    {
-     "organism": "Référentiel National des Bâtiments",
-     "ref": "RNB XKAY4VPVWTNZ",
-     "info": "= BATIMENT0000002006956400, adresse 2 rue Jules-Ferry (BAN position « bâtiment »)",
-     "access": "instantané local data-sources/rnb",
-     "verified": true
-    },
-    {
-     "organism": "Base Adresse Nationale",
-     "ref": "data-sources/poi/ban-adresses.geojson",
-     "info": "3 rue des Écoles : position « segment », même point que le n° 21 à l’autre bout de la rue (interpolation défaillante)",
-     "access": "instantané local (V1.11)",
-     "verified": true
-    },
     {
      "organism": "OpenStreetMap",
      "ref": "node/1644001052",
-     "info": "amenity=community_centre « Salle Polyvalente », 95 m à l’ouest, hors de toute empreinte, à côté du 6 rue de la République : non retenu (moins précis que la BD TOPO 2019)",
-     "access": "instantané local public/data/maizieres.geojson",
+     "info": "amenity=community_centre « Salle Polyvalente », devant l’entrée du bâtiment …149569 (15 m)",
+     "access": "public/data/maizieres.geojson",
+     "verified": true
+    },
+    {
+     "organism": "IGN — BD ORTHO 0,5 m (2025)",
+     "ref": "data-sources/architecture/bdortho-0m50",
+     "info": "grande salle à toit d’ardoise et verrières, parvis sur la rue des Écoles près de la rue de la République",
+     "access": "dalles locales (V2.3)",
+     "verified": true
+    },
+    {
+     "organism": "Bible du projet 06",
+     "ref": "docs/bibles §303-305, 330",
+     "info": "ancienne salle de gymnastique et de patronage de L’Étoile, devenue salle polyvalente ; distincte du Local club / Maison des associations",
+     "access": "dépôt",
      "verified": true
     },
     {
      "organism": "Bible du projet 01",
      "ref": "docs/bibles §11.1",
-     "info": "« Salle polyvalente : 3 rue des Écoles »",
+     "info": "« Salle polyvalente : 3 rue des Écoles » ; « Maison / Salle des Associations : 2 rue Jules-Ferry »",
      "access": "dépôt",
+     "verified": true
+    },
+    {
+     "organism": "Base Adresse Nationale",
+     "ref": "data-sources/poi/ban-adresses.geojson",
+     "info": "3 rue des Écoles : position « segment », au même point que le n° 21 (interpolation inutilisable)",
+     "access": "instantané local",
+     "verified": true
+    },
+    {
+     "organism": "Référentiel National des Bâtiments",
+     "ref": "E6Q74JZYQE4W",
+     "info": "= BATIMENT0000000301149569, 603 m², adresse BDNB 6 rue de la République (lien de parcelle)",
+     "access": "data-sources/rnb (instantané)",
      "verified": true
     }
    ],
-   "notes": "Association V2.9 (BATIMENT0000000301149656, maison de 78 m² à l’est) issue du même mécanisme que la mairie. Adresse affichée : celle des Bibles (3 rue des Écoles) ; l’adresse BAN du bâtiment est 2 rue Jules-Ferry : écart signalé, à confirmer par la commune.",
+   "notes": "V1.11 : BATIMENT0000000301149656 (maison de 78 m² à l’est, BAN « segment » + BAN PLUS). V2.9.1 : BATIMENT0000002006956400, lu à tort dans la zone BD TOPO « Salle polyvalente » — ce bâtiment récent (2015) est la Maison des associations, qui a son propre POI : un clic sur lui ouvrait la salle polyvalente. V2.9.2 : la salle polyvalente est la grande salle à verrières …149569 (ancienne salle de gymnastique et de patronage), parvis sur la rue des Écoles.",
    "correction": {
     "building_ids": {
      "from": [
       "BATIMENT0000000301149656"
      ],
      "to": [
-      "BATIMENT0000002006956400"
+      "BATIMENT0000000301149569"
      ]
     },
     "lonlat": {
@@ -474,13 +481,13 @@
       48.510362
      ],
      "to": [
-      3.7868727,
-      48.5087728
+      3.7861931,
+      48.5096405
      ]
     },
     "positionSource": {
      "from": "adresse BAN 3 Rue des Ecoles (position segment)",
-     "to": "BD TOPO zone « Salle de spectacle ou conférence », nature détaillée « Salle polyvalente » (orthophotographie, précision 3 m), centre dans BATIMENT0000002006956400 (errata V2.9.1)"
+     "to": "point intérieur de BATIMENT0000000301149569 (registre canonique V2.9.2) ; l’entrée est marquée par OSM node/1644001052 (amenity=community_centre), 15 m au nord-ouest"
     }
    }
   },
@@ -879,6 +886,16 @@
    ],
    "notes": "Landmark automatique (sélection par taille / nature BD TOPO) : pas de fiche POI, pas d’étiquette ; l’association est le bâtiment lui-même.",
    "correction": null
+  }
+ ],
+ "history": [
+  {
+   "version": "2.9.1",
+   "change": "errata : école (12 → 3 bâtiments), mairie (…149537 → …149547), salle polyvalente (…149656 → …2006956400)"
+  },
+  {
+   "version": "2.9.2",
+   "change": "salle polyvalente : …2006956400 était le bâtiment de la Maison des associations (deux lieux confondus, erreur V2.9.1) ; association certifiée …149569 (OSM community_centre devant l’entrée, orthophoto, Bibles 01 et 06). Errata remplacé par le registre canonique."
   }
  ]
 }
