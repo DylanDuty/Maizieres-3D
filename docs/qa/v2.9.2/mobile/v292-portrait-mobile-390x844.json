@@ -1,0 +1,88 @@
+{
+ "tag": "v292-portrait",
+ "port": "4199",
+ "scen": "mobile",
+ "query": "?visual=cartoon-v291&v25quality=performance",
+ "device": [
+  390,
+  844,
+  true
+ ],
+ "salle": {
+  "found": true,
+  "quick": "Salle polyvalente",
+  "kind": null,
+  "address": "3 rue des Écoles",
+  "id": "poi:salle-polyvalente"
+ },
+ "mda": {
+  "found": true,
+  "quick": "Maison des Associations (salle Hazouard, dojo Christian-Bouzrar)",
+  "kind": null,
+  "address": "2 rue Jules-Ferry",
+  "id": "poi:maison-des-associations"
+ },
+ "mairie": {
+  "found": true,
+  "quick": "Mairie de Maizières-la-Grande-Paroisse",
+  "kind": null,
+  "address": "6 rue des Écoles",
+  "id": "poi:mairie"
+ },
+ "ecole": {
+  "found": true,
+  "quick": "École primaire publique",
+  "kind": null,
+  "address": "3 rue Jules-Ferry",
+  "id": "poi:ecole-primaire"
+ },
+ "cpi": {
+  "found": true,
+  "quick": "Centre de première intervention (sapeurs-pompiers)",
+  "kind": null,
+  "address": null,
+  "id": "poi:cpi"
+ },
+ "poussey": {
+  "found": true,
+  "quick": "Poussey",
+  "kind": null,
+  "address": null,
+  "id": "poi:poussey"
+ },
+ "granges": {
+  "found": true,
+  "quick": "Les Granges",
+  "kind": null,
+  "address": null,
+  "id": "poi:les-granges"
+ },
+ "rue": {
+  "found": true,
+  "quick": "Rue Pasteur",
+  "kind": null,
+  "address": null,
+  "id": "road:rue-pasteur"
+ },
+ "list": [
+  "Salle polyvalente — Équipement public",
+  "Maison des Associations (salle Hazouard, dojo Christian-Bouzrar) — Équipement public"
+ ],
+ "tapSalle": {
+  "quick": "Salle polyvalente",
+  "kind": null,
+  "address": "3 rue des Écoles",
+  "id": "BATIMENT0000000301149569"
+ },
+ "tapMda": {
+  "quick": "Maison des Associations (salle Hazouard, dojo Christian-Bouzrar)",
+  "kind": null,
+  "address": "2 rue Jules-Ferry",
+  "id": "BATIMENT0000002006956400"
+ },
+ "buildingAudit": {
+  "rendered": 2596,
+  "expected": 2596
+ },
+ "logs": []
+}

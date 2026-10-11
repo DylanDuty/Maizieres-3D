@@ -1,0 +1,77 @@
+{
+ "tag": "v292",
+ "port": "4199",
+ "scen": "search",
+ "query": "?visual=cartoon-v291&v25quality=performance",
+ "device": [
+  1280,
+  800,
+  false
+ ],
+ "lists": {
+  "1000": [],
+  "Salle polyvalente": [
+   "Salle polyvalente — Équipement public"
+  ],
+  "Maison des associations": [
+   "Maison des Associations (salle Hazouard, dojo Christian-Bouzrar) — Équipement public"
+  ],
+  "Mairie": [
+   "Mairie de Maizières-la-Grande-Paroisse — Équipement public"
+  ],
+  "École": [
+   "École primaire publique — Équipement public",
+   "Rue des Écoles — Rue / voie",
+   "Ruelle des Écoles — Rue / voie"
+  ],
+  "CPI": [
+   "Centre de première intervention (sapeurs-pompiers) — Équipement public"
+  ],
+  "Stade": [
+   "Stade de Maizières-la-Grande-Paroisse — Équipement sportif",
+   "Rue du Stade — Rue / voie"
+  ],
+  "Poussey": [
+   "Poussey — Secteur",
+   "Château d’eau de Poussey — Infrastructure",
+   "Pres de Poussey — Lieu-dit",
+   "Les Bois de Poussey — Lieu-dit",
+   "Les Pres de Poussey Est — Lieu-dit",
+   "Les Bois de Poussey Ouest — Lieu-dit",
+   "Les Pres de Poussey Ouest — Lieu-dit",
+   "Rue Basse de Poussey — Rue / voie"
+  ],
+  "Les Granges": [
+   "Les Granges — Secteur",
+   "Les Granges Hautes — Repère"
+  ],
+  "Le Craon": [
+   "le Craon — Secteur"
+  ],
+  "Rue Pasteur": [
+   "Rue Pasteur — Rue / voie",
+   "Ancien presbytère — Patrimoine"
+  ],
+  "Joliot": [
+   "Rue Joliot-Curie — Rue / voie"
+  ],
+  "Avenue du Général": [
+   "Avenue du Général de Gaulle — Rue / voie",
+   "Tabac-presse – Point Poste — Commerce / entreprise"
+  ],
+  "Pharmacie": [
+   "Pharmacie Sasportès — Santé"
+  ],
+  "Leclerc": [
+   "Passage à niveau n° 73 (rue du Général-Leclerc) — Repère",
+   "Rue du Général Leclerc — Rue / voie"
+  ],
+  "Poussay": [],
+  "Le Puy": []
+ },
+ "buildingAudit": {
+  "rendered": 2596,
+  "expected": 2596
+ },
+ "logs": []
+}
