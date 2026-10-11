@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {random} from '../geo.js';
 import {waterProximity,HEDGE_WATER_MARGIN} from '../hydro-display.js';
-import {ARCHETYPES as A26,ARCHETYPES_V291,crown,trunkGeo,BUSH_PALETTE} from '../v26/vegetation-v26.js';
+import {ARCHETYPES as A26,ARCHETYPES_V291,ARCHETYPES_V30,crown,trunkGeo,BUSH_PALETTE,BUSH_PALETTE_V30} from '../v26/vegetation-v26.js';
 
 // V2.7 — vegetation for the whole commune in the V2.6 language, with a budget. Woods are a canopy mass (an 8 m lumpy
 // surface per frozen polygon, cluster hues, a skirt down to the wood floor) plus a few edge and emergent trees for the
@@ -15,13 +15,19 @@ const vnoise=(x,y)=>{const ix=Math.floor(x),iy=Math.floor(y),fx=x-ix,fy=y-iy,sx=
 const CANOPY=['#86bb62','#79b25a','#6daa58','#93c46a','#63a060','#80b566'];
 // V2.9.1 wood palette: deep oak green, fresh beech green, a warm light patch and a cool blue-green patch (species mosaic).
 const CANOPY_V291=['#6fa553','#5f9a55','#8cbf5e','#5a8f62'];
+// V3.0 wood palette: oak and beech greens matured, a warm sunlit patch and a cool blue-green patch, less saturation.
+const CANOPY_V30=['#678f4f','#5a8551','#7fa45a','#557f5d'];
+// V3.0 lisière helpers. First crossing of the segment a→b with the polygon boundary (marching-squares edge point), or null.
+const crossPoly=(ax,az,bx,bz,p)=>{let best=2;const ex=bx-ax,ez=bz-az;for(const r of p)for(let i=2;i<r.length;i+=2){const cx=r[i-2],cz=r[i-1],dx=r[i]-cx,dz=r[i+1]-cz,den=ex*dz-ez*dx;if(Math.abs(den)<1e-9)continue;const t=((cx-ax)*dz-(cz-az)*dx)/den,u=((cx-ax)*ez-(cz-az)*ex)/den;if(t>=0&&t<=1&&u>=0&&u<=1&&t<best)best=t;}return best<=1?[ax+ex*best,az+ez*best]:null;};
+// Nearest point of the polygon boundary (all rings), fallback when no crossing is found.
+const nearestOnPoly=(x,z,p)=>{let bd=Infinity,bx=x,bz=z;for(const r of p)for(let i=2;i<r.length;i+=2){const ax=r[i-2],az=r[i-1],dx=r[i]-ax,dz=r[i+1]-az,L=dx*dx+dz*dz||1,t=Math.max(0,Math.min(1,((x-ax)*dx+(z-az)*dz)/L)),qx=ax+t*dx,qz=az+t*dz,d=(qx-x)**2+(qz-z)**2;if(d<bd){bd=d;bx=qx;bz=qz;}}return [bx,bz];};
 const smoothstep=(a,b,x)=>{const t=Math.min(1,Math.max(0,(x-a)/(b-a)));return t*t*(3-2*t);};
 const TILE=1500;
 
 export function buildVegetationV27(parent,{v2,box,buildings,heightAt,materials:M,q}){
  const {data:d}=v2,rng=random(10227),inBox=(x,z)=>x>=box.minX&&x<=box.maxX&&z>=box.minZ&&z<=box.maxZ;
  // V2.9.1 (q.v291): tree families, crown canopy material, taller and more varied wood masses.
- const v291=!!q?.v291,ARCHETYPES=v291?ARCHETYPES_V291:A26,T=v291?{edge:[['oak',3],['round',3],['slender',2],['grove',1.6]],emergent:[['oak',2.5],['slender',2],['round',2]],garden:[['fruit',6.5],['round',2],['slender',1.4],['blossom',.45]],riparian:[['slender',4],['round',2.4],['oak',1.4]]}:{edge:[['round',4],['broad',3],['tall',2]],emergent:[['round',3],['tall',3],['broad',2]],garden:[['fruit',5],['round',2],['blossom',1.4]],riparian:[['tall',5],['broad',3],['round',2]]};
+ const v30=!!q?.v30,v291=!!q?.v291||v30,ARCHETYPES=v30?ARCHETYPES_V30:v291?ARCHETYPES_V291:A26,T=v30?{edge:[['oak',3],['round',3],['slender',2],['grove',1.6]],emergent:[['oak',2.5],['slender',2],['round',2]],garden:[['fruit',6.5],['round',2.4],['slender',1.6],['blossom',.12]],riparian:[['slender',4],['round',2.4],['oak',1.4]]}:v291?{edge:[['oak',3],['round',3],['slender',2],['grove',1.6]],emergent:[['oak',2.5],['slender',2],['round',2]],garden:[['fruit',6.5],['round',2],['slender',1.4],['blossom',.45]],riparian:[['slender',4],['round',2.4],['oak',1.4]]}:{edge:[['round',4],['broad',3],['tall',2]],emergent:[['round',3],['tall',3],['broad',2]],garden:[['fruit',5],['round',2],['blossom',1.4]],riparian:[['tall',5],['broad',3],['round',2]]};
  // Raster mask (about 2 m/px over the commune): footprints, roads, rail, water surfaces and lines are off-limits.
  const W=box.maxX-box.minX,D=box.maxZ-box.minZ,MW=3072,MH=Math.round(MW*D/W),mask=document.createElement('canvas');mask.width=MW;mask.height=MH;const ctx=mask.getContext('2d',{willReadFrequently:true}),sx=MW/W,sz=MH/D;
  const X=x=>(x-box.minX)*sx,Z=z=>(z-box.minZ)*sz;ctx.fillStyle='#000';ctx.strokeStyle='#000';ctx.lineCap='round';ctx.lineJoin='round';
@@ -53,11 +59,17 @@ export function buildVegetationV27(parent,{v2,box,buildings,heightAt,materials:M
   const key=`${Math.floor((b[0]+b[2])/2/TILE)},${Math.floor((b[1]+b[3])/2/TILE)}`;if(!canopy.has(key))canopy.set(key,{p:[],c:[],i:[]});const t=canopy.get(key),base=t.p.length/3,used=new Int32Array(cols*rows).fill(-1);
   // Profile folded inside the polygon: boundary ring 35 %, second ring 75 %, interior 100 %; nothing outside (the
   // painted wood floor shows around the mass instead of a skirt over the fields).
-  const factor=new Float32Array(cols*rows);for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){const k=r*cols+c;if(!inside[k])continue;const [n,tot]=nb(c,r);factor[k]=n===tot?1:.35;}
-  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){const k=r*cols+c;if(factor[k]!==1)continue;let edge=false;for(let dr=-1;dr<=1&&!edge;dr++)for(let dc=-1;dc<=1;dc++){const cc=c+dc,rr=r+dr;if(cc<0||rr<0||cc>=cols||rr>=rows)continue;if(factor[rr*cols+cc]===.35){edge=true;break;}}if(edge)factor[k]=.75;}
-  const vertex=k=>{if(used[k]>=0)return used[k];const c=k%cols,r=Math.floor(k/cols),x=x0+c*step,z=z0+r*step,g=heightAt(x,z),fct=factor[k];
-   const y=g+(fct>0?H*fct*(v291?.66+.36*vnoise(x/34+hueSeed,z/34)+.16*vnoise(x/11,z/11)+.08*vnoise(x/5,z/5):.78+.28*vnoise(x/21+hueSeed,z/21)+.1*vnoise(x/6,z/6)):.1);t.p.push(x,y,z);
-   const n1=vnoise(x/70+5,z/70),n2=vnoise(x/160+9,z/160),col=v291?new THREE.Color(CANOPY_V291[0]).lerp(new THREE.Color(CANOPY_V291[1]),n2).lerp(new THREE.Color(CANOPY_V291[2]),smoothstep(.45,.75,n1)).lerp(new THREE.Color(CANOPY_V291[3]),smoothstep(.62,.85,vnoise(x/55+2,z/55))*.7).multiplyScalar((fct>=1?.92+.16*vnoise(x/9,z/9):fct>=.75?.86:.7)*(type==='peupleraie'?1.05:1)):new THREE.Color(CANOPY[0]).lerp(new THREE.Color(CANOPY[4]),n2).lerp(new THREE.Color(CANOPY[3]),n1*.6).multiplyScalar((fct>=1?.9+.2*vnoise(x/9,z/9):fct>=.75?.84:.66)*(type==='peupleraie'?1.06:1));t.c.push(col.r,col.g,col.b);used[k]=base+(t.p.length/3-1-base);return used[k];};
+  const factor=new Float32Array(cols*rows);for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){const k=r*cols+c;if(!inside[k])continue;const [n,tot]=nb(c,r);factor[k]=n===tot?1:v30?.26+.2*vnoise((x0+c*step)/23,(z0+r*step)/23):.35;}
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){const k=r*cols+c;if(factor[k]!==1)continue;let edge=false;for(let dr=-1;dr<=1&&!edge;dr++)for(let dc=-1;dc<=1;dc++){const cc=c+dc,rr=r+dr;if(cc<0||rr<0||cc>=cols||rr>=rows)continue;const fr=factor[rr*cols+cc];if(fr>0&&fr<.5){edge=true;break;}}if(edge)factor[k]=.75;}
+  const vertex=k=>{if(used[k]>=0)return used[k];const c=k%cols,r=Math.floor(k/cols),fct=factor[k];let x=x0+c*step,z=z0+r*step;
+   // V3.0 lisière: a vertex outside the polygon is moved onto its boundary (never beyond it), so the mass ends on the true
+   // limit instead of an 8 m staircase; vertices left out by the riparian corridor keep their place.
+   let snapped=false;if(v30&&fct===0&&!inPoly(x,z,poly)){
+    // average of the boundary crossings toward the mass neighbours (4-neighbourhood first, then diagonals)
+    let sx_=0,sz_=0,n_=0;for(const ring of [[[1,0],[-1,0],[0,1],[0,-1]],[[1,1],[-1,1],[1,-1],[-1,-1]]]){for(const [dc,dr] of ring){const cc=c+dc,rr=r+dr;if(cc<0||rr<0||cc>=cols||rr>=rows||!factor[rr*cols+cc])continue;const q_=crossPoly(x0+cc*step,z0+rr*step,x,z,poly);if(q_){sx_+=q_[0];sz_+=q_[1];n_++;}}if(n_)break;}
+    if(n_){x=sx_/n_;z=sz_/n_;}else [x,z]=nearestOnPoly(x,z,poly);snapped=true;}const g=heightAt(x,z);
+   const y=g+(fct>0?H*fct*(v291?.66+.36*vnoise(x/34+hueSeed,z/34)+.16*vnoise(x/11,z/11)+.08*vnoise(x/5,z/5):.78+.28*vnoise(x/21+hueSeed,z/21)+.1*vnoise(x/6,z/6)):snapped?H*(.07+.06*vnoise(x/9,z/9)):.1);t.p.push(x,y,z);
+   const n1=vnoise(x/70+5,z/70),n2=vnoise(x/160+9,z/160),col=v30?new THREE.Color(CANOPY_V30[0]).lerp(new THREE.Color(CANOPY_V30[1]),n2).lerp(new THREE.Color(CANOPY_V30[2]),smoothstep(.5,.78,n1)*.85).lerp(new THREE.Color(CANOPY_V30[3]),smoothstep(.62,.85,vnoise(x/55+2,z/55))*.7).multiplyScalar((fct>=1?.9+.12*vnoise(x/9,z/9):fct>=.75?.97:fct>0?1.05:1.08)*(type==='peupleraie'?1.05:1)):v291?new THREE.Color(CANOPY_V291[0]).lerp(new THREE.Color(CANOPY_V291[1]),n2).lerp(new THREE.Color(CANOPY_V291[2]),smoothstep(.45,.75,n1)).lerp(new THREE.Color(CANOPY_V291[3]),smoothstep(.62,.85,vnoise(x/55+2,z/55))*.7).multiplyScalar((fct>=1?.92+.16*vnoise(x/9,z/9):fct>=.75?.86:.7)*(type==='peupleraie'?1.05:1)):new THREE.Color(CANOPY[0]).lerp(new THREE.Color(CANOPY[4]),n2).lerp(new THREE.Color(CANOPY[3]),n1*.6).multiplyScalar((fct>=1?.9+.2*vnoise(x/9,z/9):fct>=.75?.84:.66)*(type==='peupleraie'?1.06:1));t.c.push(col.r,col.g,col.b);used[k]=base+(t.p.length/3-1-base);return used[k];};
   for(let r=0;r<rows-1;r++)for(let c=0;c<cols-1;c++){const a=r*cols+c,bq=a+1,e=a+cols,f=e+1;if(!(factor[a]||factor[bq]||factor[e]||factor[f]))continue;canopyCells++;t.i.push(vertex(a),vertex(e),vertex(bq),vertex(bq),vertex(e),vertex(f));}};
  for(const o of d.woodland)for(const p of o.r){const b=bbox(p);if(b[2]<box.minX||b[0]>box.maxX||b[3]<box.minZ||b[1]>box.maxZ)continue;addCanopy(p,o.t,b[0]*.01);
   const poplar=o.t==='peupleraie',area=(b[2]-b[0])*(b[3]-b[1]);
@@ -78,7 +90,7 @@ export function buildVegetationV27(parent,{v2,box,buildings,heightAt,materials:M
  // ---- Hedges ----
  const nearWater=waterProximity(d.waterLines,d.water),hedges=[];
  for(const hd of d.hedges){const p=hd.p,H=Math.min(4.5,hd.h||2.2),w=Math.min(5,hd.w||2.2);for(let i=3;i<p.length;i+=3){const ax=p[i-3],az=p[i-2],bx=p[i],bz=p[i+1],L=Math.hypot(bx-ax,bz-az),ux=(bx-ax)/(L||1),uz=(bz-az)/(L||1),ang=Math.atan2(ux,uz);
-  for(let s=1.2;s<L;s+=q.hedgeStep){const j=(rng()-.5)*.5,qx=ax+ux*s-uz*j,qz=az+uz*s+ux*j;if(!inBox(qx,qz)||nearWater(qx,qz,w/2+HEDGE_WATER_MARGIN))continue;if(blocked(qx,qz)&&rng()<.7)continue;hedges.push({x:qx,z:qz,ang:ang+(rng()-.5)*.3,sx:w*(.85+rng()*.4)+.9+q.hedgeStep*.2,sy:H*(.85+rng()*.35),sz:3.8+rng()*1.4+q.hedgeStep*.3});}}}
+  for(let s=1.2;s<L;s+=q.hedgeStep){const j=(rng()-.5)*.5,qx=ax+ux*s-uz*j,qz=az+uz*s+ux*j;if(!inBox(qx,qz)||nearWater(qx,qz,w/2+HEDGE_WATER_MARGIN))continue;if(blocked(qx,qz)&&rng()<.7)continue;hedges.push({x:qx,z:qz,ang:ang+(rng()-.5)*.3,sx:w*(.85+rng()*.4)+.9+q.hedgeStep*.2,sy:H*(v30?.62+.5*vnoise(qx/26,qz/26)+rng()*.22:.85+rng()*.35),sz:3.8+rng()*1.4+q.hedgeStep*.3});}}}
  // ---- Build: canopy meshes per tile, instanced crowns per (type, lod, tile) ----
  let canopyTris=0;for(const [key,t] of canopy){const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(t.p,3));g.setAttribute('color',new THREE.Float32BufferAttribute(t.c,3));g.setIndex(t.i);g.computeVertexNormals();const m=new THREE.Mesh(g,M.canopy||M.leaf);m.name='v27-canopy-'+key;m.castShadow=true;m.receiveShadow=true;group.add(m);canopyTris+=t.i.length/3;}
  const geos=new Map(),geo=(type,lod)=>{const k=type+lod;if(!geos.has(k)){const A=ARCHETYPES[type];geos.set(k,crown(A.lobes,type.length*2.3,lod,A.gradient));}return geos.get(k);};
@@ -92,7 +104,7 @@ export function buildVegetationV27(parent,{v2,box,buildings,heightAt,materials:M
  const trunkTiles=new Map();for(const t of trunks){if(!trunkTiles.has(t.tile))trunkTiles.set(t.tile,[]);trunkTiles.get(t.tile).push(t);}
  const trunkG=trunkGeo();for(const [tile,mine] of trunkTiles){const m=new THREE.InstancedMesh(trunkG,M.trunk,mine.length);m.castShadow=true;m.name='v27-trunks-'+tile;mine.forEach((t,i)=>{o3.position.set(t.x,t.g,t.z);o3.rotation.set(0,rng()*6.28,0);o3.scale.set(t.s*.12,t.s*t.f*1.1,t.s*.12);o3.updateMatrix();m.setMatrixAt(i,o3.matrix);m.setColorAt(i,col.set('#8a7059').offsetHSL(0,0,(rng()-.5)*.08));});group.add(m);meshes++;}
  const hedgeTiles=new Map();for(const h of hedges){const k=`${Math.floor(h.x/TILE)},${Math.floor(h.z/TILE)}`;if(!hedgeTiles.has(k))hedgeTiles.set(k,[]);hedgeTiles.get(k).push(h);}
- const hedgeG=crown(ARCHETYPES.bush.lobes,4.2,0);for(const [tile,mine] of hedgeTiles){const m=new THREE.InstancedMesh(hedgeG,M.leaf,mine.length);m.castShadow=true;m.receiveShadow=true;m.name='v27-hedges-'+tile;mine.forEach((h,i)=>{o3.position.set(h.x,heightAt(h.x,h.z)-.1,h.z);o3.rotation.set(0,h.ang,0);o3.scale.set(h.sx,h.sy,h.sz);o3.updateMatrix();m.setMatrixAt(i,o3.matrix);m.setColorAt(i,col.set(BUSH_PALETTE[i%4]).offsetHSL(0,0,(rng()-.5)*.05));});group.add(m);meshes++;}
+ const hedgeG=crown(ARCHETYPES.bush.lobes,4.2,0);for(const [tile,mine] of hedgeTiles){const m=new THREE.InstancedMesh(hedgeG,M.leaf,mine.length);m.castShadow=true;m.receiveShadow=true;m.name='v27-hedges-'+tile;mine.forEach((h,i)=>{o3.position.set(h.x,heightAt(h.x,h.z)-.1,h.z);o3.rotation.set(0,h.ang,0);o3.scale.set(h.sx,h.sy,h.sz);o3.updateMatrix();m.setMatrixAt(i,o3.matrix);m.setColorAt(i,col.set((v30?BUSH_PALETTE_V30:BUSH_PALETTE)[i%4]).offsetHSL(0,0,(rng()-.5)*.05));});group.add(m);meshes++;}
  parent.add(group);
  return {group,stats:{trees:list.length,byType,hedgeBushes:hedges.length,canopyCells,canopyTriangles:canopyTris,canopyTiles:canopy.size,meshes,families:Object.keys(ARCHETYPES).length,tile:TILE}};
 }

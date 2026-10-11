@@ -12,7 +12,8 @@ const RAMP=`
 uniform vec3 uSun;uniform float uSunMax,uRim,uBands,uAerial;uniform vec3 uRimColor,uShadowTint,uWarm;float gLit=1.;
 float toonRamp(float v){float banded=smoothstep(.06,.2,v)*.5+smoothstep(.4,.6,v)*.5;float soft=smoothstep(.03,.13,v)*.26+smoothstep(.2,.36,v)*.3+smoothstep(.46,.7,v)*.44;
  float paint=smoothstep(.02,.1,v)*.22+smoothstep(.14,.26,v)*.2+smoothstep(.3,.44,v)*.2+smoothstep(.5,.64,v)*.2+smoothstep(.7,.86,v)*.18;
- return uBands>2.5?paint:uBands>1.5?soft:mix(clamp(v*1.4,0.,1.),banded,uBands);}
+ float premium=smoothstep(.0,.1,v)*.2+smoothstep(.1,.27,v)*.22+smoothstep(.27,.47,v)*.22+smoothstep(.47,.7,v)*.2+smoothstep(.7,.95,v)*.16;
+ return uBands>3.5?premium:uBands>2.5?paint:uBands>1.5?soft:mix(clamp(v*1.4,0.,1.),banded,uBands);}
 `;
 // V2.9.1 aerial perspective: the distance first cools and desaturates the colour, then a capped veil of the fog colour
 // (never more than uAerial): depth without the white wash of the linear fog.
@@ -67,7 +68,7 @@ export function flat(material,key,chunk='',uniforms={}){
 
 // V2.9 (`style:'v29'`): softer tile rows a little stronger, asphalt with a wider soft edge, warmer shoulders — the JRPG
 // pass changes shaders and palettes, never geometry.
-export function makeMaterialsV26({style='v26'}={}){const v291=style==='v291',v29=style==='v29'||v291;
+export function makeMaterialsV26({style='v26'}={}){const v30=style==='v30',v291=style==='v291'||v30,v29=style==='v29'||v291;
  const lam=o=>new THREE.MeshLambertMaterial({vertexColors:true,side:THREE.FrontSide,...o});
  const M={};
  // Walls: flat pastel, a soft darker base band, a whisper of hand-painted unevenness.
@@ -122,5 +123,38 @@ export function makeMaterialsV26({style='v26'}={}){const v291=style==='v291',v29
   :toon(lam({vertexColors:false,color:'#9598a0'}),'asphalt',`float e=smoothstep(.0,.09,min(vUvM.y,1.-vUvM.y));diffuseColor.rgb*=mix(1.18,1.,e);diffuseColor.rgb*=.97+.06*vnoise(vWorld.xz*.08);`);
  M.earth=toon(lam({vertexColors:false,color:'#d9c49c'}),'earth',`diffuseColor.rgb*=.96+.08*vnoise(vWorld.xz*.5);`);
  M.dash=flat(new THREE.MeshBasicMaterial({color:'#f4efdf',transparent:true,depthWrite:false}),'dash',`float d=step(.55,fract(vUvM.x/9.));diffuseColor.a*=d*.85;`);
+ if(v30)premiumV30(M,lam);
  return M;
+}
+
+// V3.0 premium overrides (style 'v30'): the V2.9.1 shaders, calmer. Roof mottle and tile rows halved (tone first, a
+// texture only up close), canopy crowns with softer gaps and smaller hue jumps, leaves less saturated with a cool shade,
+// warm-grey asphalt with a shoulder that melts into the verge, earth paths in pale ochre, warmer wall panels.
+function premiumV30(M,lam){
+ M.roofTile=toon(lam({}),'roof-tile-v30',`float fw=fwidth(vUvM.y);float near=1.-smoothstep(.06,.2,fw);float row=fract(vUvM.y/.46);diffuseColor.rgb*=1.-.07*near*smoothstep(.72,.92,row);
+  float col=fract(vUvM.x/.32+step(.5,fract(vUvM.y/.92))*.5);diffuseColor.rgb*=1.-.025*near*smoothstep(.8,.95,col);
+  float mot=vnoise(vWorld.xz*.5+3.1)*.6+vnoise(vWorld.xz*.19)*.4;diffuseColor.rgb*=.95+.09*mot;diffuseColor.rgb=mix(diffuseColor.rgb,diffuseColor.rgb*vec3(.9,.95,.88),smoothstep(.74,.95,vnoise(vWorld.xz*.31+7.))*.25);
+  diffuseColor.rgb*=1.+.035*smoothstep(.6,1.,fract(vUvM.y/2.1));`);
+ M.roofPlain=toon(lam({}),'roof-plain-v30',`float fw=fwidth(vUvM.y);float near=1.-smoothstep(.05,.18,fw);float row=fract(vUvM.y/.32);diffuseColor.rgb*=1.-.06*near*smoothstep(.76,.93,row);
+  float mot=vnoise(vWorld.xz*.42)*.6+vnoise(vWorld.xz*.16+2.)*.4;diffuseColor.rgb*=.95+.08*mot;diffuseColor.rgb+=vec3(.01,.014,.024)*smoothstep(.62,.9,vnoise(vWorld.xz*.8));`);
+ M.roofSheet=toon(lam({}),'roof-sheet-v30',`float fw=fwidth(vUvM.x);float rib=smoothstep(.0,.1,abs(fract(vUvM.x/.95+.5)-.5)*.95);diffuseColor.rgb*=mix(1.,mix(.92,1.,rib),1.-smoothstep(.12,.4,fw));diffuseColor.rgb*=.95+.08*vnoise(vWorld.xz*.11)+.03*vnoise(vWorld.xz*.7);`);
+ M.wall=toon(lam({}),'wall-v30',`diffuseColor.rgb*=mix(.86,1.,smoothstep(0.,1.1,vUvM.y));diffuseColor.rgb*=.985+.025*vnoise(vWorld.xz*.35+vWorld.y*.25);`);
+ M.wallPanels=toon(lam({}),'wall-panels-v30',`float j=smoothstep(.0,.07,abs(fract(vUvM.x/2.4+.5)-.5)*2.4);diffuseColor.rgb*=mix(.9,1.,j);diffuseColor.rgb*=mix(.82,1.,smoothstep(1.05,1.2,vUvM.y));diffuseColor.rgb*=.975+.045*vnoise(vWorld.xz*.18+vWorld.y*.2);`);
+ const canopy=M.canopy;M.canopy=toon(lam({side:THREE.FrontSide}),'canopy-v30',`
+  vec2 cw=(vec2(vnoise(vWorld.xz*.11),vnoise(vWorld.xz*.11+9.2))-.5)*1.1;vec2 cp=vWorld.xz/6.2+cw;vec4 cr=crownCell(cp);float cfw=fwidth(cp.x)+fwidth(cp.y);gCrownK=1.-smoothstep(.12,.45,cfw);
+  float cd=length(cr.xy),ch=sqrt(max(0.,1.-cd*cd/.72));gCrown=vec3(-cr.xy,ch);
+  vec2 cq=vWorld.xz/19.+cw*.4;vec4 cg=crownCell(cq+7.3);float gk=(1.-smoothstep(.1,.42,fwidth(cq.x)+fwidth(cq.y)))*(1.-gCrownK*.6);float gh=sqrt(max(0.,1.-dot(cg.xy,cg.xy)/.78));
+  gCrown=mix(gCrown,vec3(-cg.xy*.7,gh),gk*(1.-gCrownK));gCrownK=max(gCrownK,gk*.65);
+  diffuseColor.rgb*=mix(1.,mix(.8,1.05,smoothstep(.0,.85,gh)),gk);diffuseColor.rgb*=mix(vec3(1.),vec3(1.+(cg.z-.5)*.06,1.+(cg.z-.5)*.03,1.-(cg.z-.5)*.04),gk);
+  diffuseColor.rgb*=mix(1.,mix(.82,1.05,smoothstep(.0,.7,ch)),1.-smoothstep(.12,.45,cfw));
+  diffuseColor.rgb*=mix(vec3(1.),vec3(1.+(cr.z-.5)*.09,1.+(cr.z-.5)*.04,1.-(cr.z-.5)*.06),1.-smoothstep(.12,.45,cfw));
+  diffuseColor.rgb*=.96+.08*vnoise(vWorld.xz*.035+3.);`,{},{decl:`float gCrownK=0.;vec3 gCrown=vec3(0.,0.,1.);
+  vec4 crownCell(vec2 p){vec2 i=floor(p),f=fract(p);float d1=9.;vec2 b=vec2(0.);float id=0.;for(int y=-1;y<=1;y++)for(int x=-1;x<=1;x++){vec2 g=vec2(float(x),float(y));vec2 o=vec2(h12(i+g),h12(i+g+17.3));vec2 r=g+.12+o*.76-f;float d=dot(r,r);if(d<d1){d1=d;b=r;id=h12(i+g+3.7);}}return vec4(b,id,d1);}`,
+  normal:`if(gCrownK>0.){vec3 nW=normalize(vec3(gCrown.x*1.,max(gCrown.z,.12)*1.1+.25,gCrown.y*1.));vec3 nV=normalize((viewMatrix*vec4(nW,0.)).xyz);normal=normalize(mix(normal,nV,.58*gCrownK));}`});canopy?.dispose?.();
+ M.leaf=toon(lam({side:THREE.DoubleSide}),'leaf-v30',`diffuseColor.rgb*=.96+.08*vnoise(vWorld.xz*.9+vWorld.y*.4);diffuseColor.rgb*=mix(vec3(.95,.99,1.03),vec3(1.03,1.015,.95),smoothstep(-.4,.6,vnoise(vWorld.xz*.05+1.)-.3));`);
+ M.leaf.onBeforeCompile=(f=>s=>{f(s);s.uniforms.uRim={value:.18};})(M.leaf.onBeforeCompile);M.leaf.customProgramCacheKey=()=>'v26-leaf-v30';
+ M.asphalt=toon(lam({vertexColors:false,color:'#a4a199'}),'asphalt-v30',`float m=min(vUvM.y,1.-vUvM.y);diffuseColor.rgb*=mix(.9,1.,smoothstep(.0,.06,m));diffuseColor.rgb*=mix(1.06,1.,smoothstep(.05,.2,m));
+  float wheel=smoothstep(.12,.0,abs(m-.27))+smoothstep(.1,.0,abs(m-.42))*.6;diffuseColor.rgb*=1.+.025*wheel;diffuseColor.rgb*=.955+.06*vnoise(vWorld.xz*.05)+.03*vnoise(vWorld.xz*.8)+.015*vnoise(vWorld.xz*3.1);`);
+ M.shoulder=toon(lam({vertexColors:false,color:'#c8c7a5'}),'shoulder-v30',`float m=min(vUvM.y,1.-vUvM.y);diffuseColor.rgb=mix(diffuseColor.rgb,diffuseColor.rgb*vec3(.93,1.,.86),.5*(1.-smoothstep(.0,.35,m)));diffuseColor.rgb*=.94+.08*vnoise(vWorld.xz*.5)+.03*vnoise(vWorld.xz*2.3);`);
+ M.earth=toon(lam({vertexColors:false,color:'#cdbc98'}),'earth-v30',`diffuseColor.rgb*=.95+.07*vnoise(vWorld.xz*.45)+.03*vnoise(vWorld.xz*2.);`);
 }

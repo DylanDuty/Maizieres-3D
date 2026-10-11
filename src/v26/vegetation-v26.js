@@ -101,4 +101,11 @@ export const ARCHETYPES_V291={
  bush:{lobes:[[.42,0,.4,0,.6],[.36,.4,.38,.1,.58],[.36,-.38,.39,-.08,.58],[.3,.08,.5,.3,.6],[.3,-.1,.48,-.3,.6]],trunk:0,palette:B,gradient:GRAD},
  flowers:{lobes:[[.42,0,.4,0,.55],[.34,.38,.38,.1,.55],[.34,-.36,.39,-.08,.55]],trunk:0,palette:['#f3dca6','#f6c9cb','#ece3ab','#f9e6ec','#d9e3a0'],gradient:{top:[1.04,1.02,1],bottom:[.7,.74,.66]}}};
 // V2.7 reuses the crown builder and the archetypes for the whole commune.
+// V3.0 — same silhouettes as V2.9.1, matured palettes: natural greens with a slight blue in the shade side, a subtle
+// yellow-green light on top, no apple green; the blossom stays a rare, pale accent (never candy pink); bed flowers muted.
+const GV30=['#7fa35c','#76a05a','#86a862','#6e9757','#8bac65'],OAK30=['#6a9150','#729856','#62874f','#799d59'],SL30=['#8aab62','#93b268','#85a65f'],P30=['#98ae5e','#a2b664','#8ca859'],F30=['#86a963','#91b069','#7da15f'],B30=['#6a9459','#739b5f','#648c57','#7ba265'];
+const GRAD30={top:[1.09,1.05,.86],bottom:[.5,.6,.7]};
+export const ARCHETYPES_V30=Object.fromEntries(Object.entries(ARCHETYPES_V291).map(([k,A])=>[k,{...A,gradient:k==='blossom'?{top:[1.02,1,.98],bottom:[.74,.72,.76]}:k==='flowers'?{top:[1.03,1.02,1],bottom:[.72,.74,.68]}:GRAD30,
+ palette:{oak:OAK30,round:GV30,slender:SL30,poplar:P30,fruit:F30,blossom:['#e9dfd8','#eee6de','#e4d8d2'],grove:OAK30,bush:B30,flowers:['#e2d9b2','#e3d6cf','#d9dbb3','#cfd8a9']}[k]||A.palette}]));
+export const BUSH_PALETTE_V30=B30;
 export {crown,trunkGeo,B as BUSH_PALETTE};

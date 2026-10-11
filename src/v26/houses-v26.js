@@ -26,6 +26,15 @@ export const BIG={
  COMMERCIAL:{walls:['#e6d5bb','#eadfc7','#e2d3b9','#d9d6c6','#e8dcc9'],roofs:['#998f82','#a1988a','#8c9498'],panels:false,sheet:false,skylight:false,band:true,sign:'#c96b5b'},
  SILO_TANK:{walls:['#d8dbd9','#d2d9dc'],roofs:['#8f989e'],panels:true,sheet:true,skylight:false,band:false},
  FLAT:{walls:['#dcd6c9','#d5d2c7','#e2d8c8'],roofs:['#a7a194'],panels:true,sheet:false,skylight:false,band:true}};
+// V3.0 palettes: cream, warm stone, soft grey and pale ochre walls; civic stone; industrial halls in warm greige and
+// blue-grey (functional, not neutral grey), roofs nudged toward natural terracotta, slate blue-grey and weathered steel.
+export const PALETTE_V30={...PALETTE,wall:['#efe7d6','#ebe1cd','#e7dac4','#eadcc8','#e5dccc','#e3ddca','#e1e0d0','#ece6d8','#e9dccb','#e6d7cd','#e2dfcc'],
+ annex:['#e2dccb','#ddd6c6','#e6dfcf','#d8d2c3'],civic:['#e6dcc6','#e1d6bf','#e9e0cf','#ddd2bc'],shutter:['#6f8c9e','#7d9578','#a3b2b2','#a7695c','#c7b48f','#5e7b8a','#e2dcca','#869b82']};
+export const BIG_V30={HANGAR:{...BIG.HANGAR,walls:['#cdbd9e','#c3b598','#b5bdb5','#c8b296'],roofs:['#9fa8ad','#ad9f8a','#929d91','#b07a63']},
+ FARM:{...BIG.FARM,walls:['#d3c2a3','#c9b79a','#cbba9e'],roofs:['#b07a63','#a56b56','#ad9f8a']},
+ INDUSTRIAL:{...BIG.INDUSTRIAL,walls:['#c6c6bd','#cbc6b8','#bcc1bd','#cfc4ae','#c3c8bd','#d0c4ab'],roofs:['#8e979b','#979b9c','#9c9585','#8b998f','#949ca2']},
+ COMMERCIAL:{...BIG.COMMERCIAL,walls:['#e0d2ba','#e3d8c3','#dccfb7','#d6d2c4','#e1d6c4'],roofs:['#968e83','#9d968b','#8d9396'],sign:'#b5705f'},
+ SILO_TANK:{...BIG.SILO_TANK,walls:['#d6d6d0','#d0d4d2']},FLAT:{...BIG.FLAT,walls:['#d7d1c4','#d1cec4','#dcd3c4'],roofs:['#a49e92']}};
 // Harmonised family of a documented colour: hue kept, saturation and lightness brought into the diorama range.
 // V2.6.1: a documented grey family becomes a soft blue-slate grey (still grey, no longer dull); other hues keep their tint.
 export function harmonise(hex,{sMin=.46,sMax=.66,lMin=.4,lMax=.52}={}){const c=new THREE.Color(hex),h={};c.getHSL(h);if(h.s<.12)return c.setHSL(.58,.14,clamp(h.l*1.1,Math.max(lMin,.46),Math.max(lMax,.58)));return c.setHSL(h.h,clamp(h.s*1.15,sMin,sMax),clamp(h.l*1.06,lMin,lMax));}
@@ -36,7 +45,8 @@ export function footprintIndex(items,cell=25){const grid=new Map(),key=(x,z)=>`$
  for(const it of items){const b=bounds(it.poly[0]);for(let x=Math.floor(b.minX/cell);x<=Math.floor(b.maxX/cell);x++)for(let z=Math.floor(b.minZ/cell);z<=Math.floor(b.maxZ/cell);z++){const k=`${x},${z}`;if(!grid.has(k))grid.set(k,[]);grid.get(k).push(it);}}
  return (x,z,selfId)=>{const list=grid.get(key(x,z));if(!list)return false;for(const it of list)if(it.id!==selfId&&insidePoly([x,z],it.poly))return true;return false;};}
 // V2.7: `special(ctx)` may draw a building itself (church); `occupied` filters openings against the neighbours.
-export function buildHousesV26({items,enrichment={buildings:{}},architecture,elevation=()=>0,materials:M,special=null,occupied=null}){
+export function buildHousesV26({items,enrichment={buildings:{}},architecture,elevation=()=>0,materials:M,special=null,occupied=null,style='v26'}){
+ const v30=style==='v30',PAL=v30?PALETTE_V30:PALETTE,BIGS=v30?BIG_V30:BIG,roofOpts=v30?{sMin:.28,sMax:.48,lMin:.38,lMax:.5}:{};
  const walls=[new Tri(),new Tri()],roofs=[new Tri(),new Tri(),new Tri()],details=new Tri();const wallRanges=[],roofRanges=[],detailRanges=[];
  const C=new THREE.Color(),stats={buildings:0,variants:new Set(),windows:0,doors:0,garageDoors:0,shutters:0,chimneys:0,byClass:{},bigVariants:new Set()};
  const glass=new THREE.Color(PALETTE.glass),frame=new THREE.Color(PALETTE.frame),capCol=new THREE.Color(PALETTE.cap);
@@ -46,14 +56,14 @@ export function buildHousesV26({items,enrichment={buildings:{}},architecture,ele
   const cls=arch?.buildingClass||'UNKNOWN',rng=mulberry(fnv(id)),pick=l=>l[Math.floor(rng()*l.length)];
   const dy=elevation(item)||0,base=dy+.35,eaveY=base+p.wallHeight;
   const res=RES(cls),garage=cls==='GARAGE',annex=['ANNEX','UNKNOWN','OTHER'].includes(cls),shed=cls==='SHED',green=cls==='GREENHOUSE',hall=['HANGAR','FARM','INDUSTRIAL','COMMERCIAL','SILO_TANK'].includes(cls),civic=['PUBLIC','HERITAGE','RELIGIOUS'].includes(cls),r2=cls==='RES_R2_PLUS';
-  const big=BIG[cls]||(p.arch.shape==='flat'&&p.size>200&&!res&&!garage&&!shed?BIG.FLAT:null);if(big)stats.bigVariants.add(BIG[cls]?cls:'FLAT');
-  const facade=big?pick(big.walls):civic?pick(PALETTE.civic):green?'#dcebe6':res?pick(PALETTE.wall):garage||annex?pick(PALETTE.annex):shed?pick(PALETTE.wood):hall?pick(PALETTE.steel):'#e4ded2';
-  const shutters=res&&!civic&&rng()<.7?pick(PALETTE.shutter):null,doorCol=new THREE.Color(pick(PALETTE.door)),variant=`${facade}-${shutters||'n'}-${Math.round(rng()*2)}`;stats.variants.add(variant);
+  const big=BIGS[cls]||(p.arch.shape==='flat'&&p.size>200&&!res&&!garage&&!shed?BIGS.FLAT:null);if(big)stats.bigVariants.add(BIGS[cls]?cls:'FLAT');
+  const facade=big?pick(big.walls):civic?pick(PAL.civic):green?'#dcebe6':res?pick(PAL.wall):garage||annex?pick(PAL.annex):shed?pick(PAL.wood):hall?pick(PAL.steel):'#e4ded2';
+  const shutters=res&&!civic&&rng()<.7?pick(PAL.shutter):null,doorCol=new THREE.Color(pick(PAL.door)),variant=`${facade}-${shutters||'n'}-${Math.round(rng()*2)}`;stats.variants.add(variant);
   const wW=civic?1.3:1.35+rng()*.25,wH=civic?1.95:1.45+rng()*.2,spacing=civic?3.6:4+rng()*1.1,storey=civic?3.4:2.8;
   const overhang=p.arch.shape==='flat'?0:res?(p.size<30?.3:.5):hall?.4:shed||green?.22:.32,thk=res?.24:.18;
   const tiled=p.arch.shape!=='flat'&&!(arch?.roof.material==='slate_like'||arch?.roof.material==='metal'||shed||hall);const roofPart=tiled?0:big?.sheet&&p.arch.shape!=='flat'?2:1,wallPart=big?.panels?1:0;
   const wallCol=C.set(facade).clone().offsetHSL(0,0,(rng()-.5)*.03);
-  let roofCol=green?new THREE.Color('#dfeef0'):p.arch.shape==='flat'?new THREE.Color('#b9b3a6'):harmonise(p.roofColor,shed||hall?{sMin:.1,sMax:.3,lMin:.5,lMax:.66}:{});
+  let roofCol=green?new THREE.Color('#dfeef0'):p.arch.shape==='flat'?new THREE.Color(v30?'#b3ada1':'#b9b3a6'):harmonise(p.roofColor,shed||hall?{sMin:.1,sMax:.3,lMin:.5,lMax:.66}:roofOpts);
   if(big){const h={};roofCol.getHSL(h);const tint=new THREE.Color(pick(big.roofs));roofCol=h.s<.12||p.arch.shape==='flat'?tint.lerp(roofCol,.35):roofCol.lerp(tint,.25);}
   const fasciaCol=new THREE.Color(PALETTE.fascia),soffitCol=fasciaCol.clone().multiplyScalar(.86);
   const h=roofFn(p),model=roofSurface(p),lines=model.lines,top=q=>eaveY+h(q);
