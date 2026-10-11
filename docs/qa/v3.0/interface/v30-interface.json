@@ -1,0 +1,632 @@
+{
+ "desktop": {
+  "road": {
+   "click": [
+    579.5469510100567,
+    434.2612702363987
+   ],
+   "sel": "{\"id\":\"road:rue-joliot-curie\",\"name\":\"Rue Joliot-Curie\",\"type\":\"line\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "Route D 20Rue Joliot-CurieDétails×",
+    "rect": [
+     403,
+     446,
+     130,
+     75
+    ]
+   },
+   "panel": null,
+   "title": "Rue Joliot-Curie"
+  },
+  "building": {
+   "click": [
+    700,
+    460
+   ],
+   "sel": "{\"id\":\"BATIMENT0000000301151866\",\"name\":\"Maison\",\"type\":\"building\",\"generic\":true,\"source\":\"Empreinte IGN BD TOPO · sémantique OpenStreetMap\",\"bible\":false}",
+   "details": "",
+   "quick": {
+    "text": "BâtimentMaisonDétails×",
+    "rect": [
+     728,
+     493,
+     107,
+     75
+    ]
+   },
+   "panel": null,
+   "title": "Maison"
+  },
+  "details": {
+   "sel": "{\"id\":\"BATIMENT0000000301151866\",\"name\":\"Maison\",\"type\":\"building\",\"generic\":true,\"source\":\"Empreinte IGN BD TOPO · sémantique OpenStreetMap\",\"bible\":false}",
+   "details": "1",
+   "quick": {
+    "text": "BâtimentMaisonDétails×",
+    "rect": [
+     726,
+     488,
+     112,
+     78
+    ]
+   },
+   "panel": {
+    "title": "Maison",
+    "rect": [
+     24,
+     553,
+     372,
+     173
+    ]
+   },
+   "title": "Maison"
+  },
+  "afterEsc1": {
+   "sel": "{\"id\":\"BATIMENT0000000301151866\",\"name\":\"Maison\",\"type\":\"building\",\"generic\":true,\"source\":\"Empreinte IGN BD TOPO · sémantique OpenStreetMap\",\"bible\":false}",
+   "details": "",
+   "quick": {
+    "text": "BâtimentMaisonDétails×",
+    "rect": [
+     726,
+     488,
+     112,
+     78
+    ]
+   },
+   "panel": null,
+   "title": "Maison"
+  },
+  "afterEsc2": {
+   "sel": "",
+   "details": "",
+   "quick": null,
+   "panel": null,
+   "title": "Maison"
+  },
+  "poi": {
+   "sel": "{\"id\":\"poi:chateau-eau-poussey\",\"name\":\"Château d’eau de Poussey\",\"type\":\"point\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "Château d’eauChâteau d’eau de PousseyDétails×",
+    "rect": [
+     267,
+     427,
+     193,
+     75
+    ]
+   },
+   "panel": null,
+   "title": "Château d’eau de Poussey"
+  },
+  "afterVoid": {
+   "sel": "",
+   "details": "",
+   "quick": null,
+   "panel": null,
+   "title": "Château d’eau de Poussey"
+  },
+  "roadDetails": {
+   "sel": "{\"id\":\"road:rue-joliot-curie\",\"name\":\"Rue Joliot-Curie\",\"type\":\"line\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "1",
+   "quick": {
+    "text": "Route D 20Rue Joliot-CurieDétails×",
+    "rect": [
+     401,
+     440,
+     136,
+     78
+    ]
+   },
+   "panel": {
+    "title": "Rue Joliot-Curie",
+    "rect": [
+     24,
+     545,
+     372,
+     181
+    ]
+   },
+   "title": "Rue Joliot-Curie"
+  },
+  "industrial": {
+   "click": [
+    520,
+    440
+   ],
+   "sel": "{\"id\":\"BATIMENT0000000301150763\",\"name\":\"Bâtiment industriel\",\"type\":\"building\",\"generic\":true,\"source\":\"Empreinte IGN BD TOPO · sémantique OpenStreetMap\",\"bible\":false}",
+   "details": "",
+   "quick": {
+    "text": "BâtimentBâtiment industrielDétails×",
+    "rect": [
+     318,
+     436,
+     148,
+     75
+    ]
+   },
+   "panel": null,
+   "title": "Bâtiment industriel"
+  },
+  "landmark": {
+   "sel": "{\"id\":\"poi:eglise-saint-denis\",\"name\":\"Église Saint-Denis\",\"type\":\"point\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "ÉgliseÉglise Saint-DenisPlace Saint-DenisDétails×",
+    "rect": [
+     661,
+     274,
+     150,
+     92
+    ]
+   },
+   "panel": null,
+   "title": "Église Saint-Denis"
+  },
+  "landmarkDetails": {
+   "sel": "{\"id\":\"poi:eglise-saint-denis\",\"name\":\"Église Saint-Denis\",\"type\":\"point\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "1",
+   "quick": {
+    "text": "ÉgliseÉglise Saint-DenisPlace Saint-DenisDétails×",
+    "rect": [
+     661,
+     274,
+     150,
+     92
+    ]
+   },
+   "panel": {
+    "title": "Église Saint-Denis",
+    "rect": [
+     24,
+     166,
+     372,
+     560
+    ]
+   },
+   "title": "Église Saint-Denis"
+  },
+  "searchList1": [
+   "Salle polyvalente"
+  ],
+  "search1": {
+   "sel": "{\"id\":\"poi:salle-polyvalente\",\"name\":\"Salle polyvalente\",\"type\":\"point\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "Salle communaleSalle polyvalente3 rue des ÉcolesDétails×",
+    "rect": [
+     662,
+     274,
+     141,
+     92
+    ]
+   },
+   "panel": null,
+   "title": "Salle polyvalente"
+  },
+  "searchList2": [
+   "Rue Pasteur",
+   "Ancien presbytère"
+  ],
+  "search2": {
+   "sel": "{\"id\":\"road:rue-pasteur\",\"name\":\"Rue Pasteur\",\"type\":\"line\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "Route D 20Rue PasteurDétails×",
+    "rect": [
+     666,
+     292,
+     112,
+     78
+    ]
+   },
+   "panel": null,
+   "title": "Rue Pasteur"
+  },
+  "zoomMax": 337,
+  "logs": []
+ },
+ "phone-portrait": {
+  "road": {
+   "click": [
+    131.22203331560974,
+    458.14564009940057
+   ],
+   "sel": "{\"id\":\"road:rue-joliot-curie\",\"name\":\"Rue Joliot-Curie\",\"type\":\"line\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "Route D 20Rue Joliot-CurieDétails×",
+    "rect": [
+     17,
+     581,
+     263,
+     40
+    ]
+   },
+   "panel": null,
+   "title": "Rue Joliot-Curie"
+  },
+  "building": {
+   "click": [
+    255,
+    482
+   ],
+   "sel": "{\"id\":\"BATIMENT0000000301151866\",\"name\":\"Maison\",\"type\":\"building\",\"generic\":true,\"source\":\"Empreinte IGN BD TOPO · sémantique OpenStreetMap\",\"bible\":false}",
+   "details": "",
+   "quick": {
+    "text": "BâtimentMaisonDétails×",
+    "rect": [
+     17,
+     581,
+     263,
+     40
+    ]
+   },
+   "panel": null,
+   "title": "Maison"
+  },
+  "details": {
+   "sel": "{\"id\":\"BATIMENT0000000301151866\",\"name\":\"Maison\",\"type\":\"building\",\"generic\":true,\"source\":\"Empreinte IGN BD TOPO · sémantique OpenStreetMap\",\"bible\":false}",
+   "details": "1",
+   "quick": null,
+   "panel": {
+    "title": "Maison",
+    "rect": [
+     12,
+     679,
+     366,
+     175
+    ]
+   },
+   "title": "Maison"
+  },
+  "afterEsc1": {
+   "sel": "{\"id\":\"BATIMENT0000000301151866\",\"name\":\"Maison\",\"type\":\"building\",\"generic\":true,\"source\":\"Empreinte IGN BD TOPO · sémantique OpenStreetMap\",\"bible\":false}",
+   "details": "",
+   "quick": {
+    "text": "BâtimentMaisonDétails×",
+    "rect": [
+     17,
+     581,
+     263,
+     40
+    ]
+   },
+   "panel": null,
+   "title": "Maison"
+  },
+  "afterEsc2": {
+   "sel": "",
+   "details": "",
+   "quick": null,
+   "panel": null,
+   "title": "Maison"
+  },
+  "poi": {
+   "sel": "{\"id\":\"poi:chateau-eau-poussey\",\"name\":\"Château d’eau de Poussey\",\"type\":\"point\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "Château d’eauChâteau d’eau de PousseyDétails×",
+    "rect": [
+     17,
+     581,
+     263,
+     40
+    ]
+   },
+   "panel": null,
+   "title": "Château d’eau de Poussey"
+  },
+  "afterVoid": {
+   "sel": "",
+   "details": "",
+   "quick": null,
+   "panel": null,
+   "title": "Château d’eau de Poussey"
+  },
+  "roadDetails": {
+   "sel": "{\"id\":\"road:rue-joliot-curie\",\"name\":\"Rue Joliot-Curie\",\"type\":\"line\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "1",
+   "quick": null,
+   "panel": {
+    "title": "Rue Joliot-Curie",
+    "rect": [
+     12,
+     670,
+     366,
+     184
+    ]
+   },
+   "title": "Rue Joliot-Curie"
+  },
+  "industrial": {
+   "click": [
+    75,
+    462
+   ],
+   "sel": "{\"id\":\"BATIMENT0000000301150763\",\"name\":\"Bâtiment industriel\",\"type\":\"building\",\"generic\":true,\"source\":\"Empreinte IGN BD TOPO · sémantique OpenStreetMap\",\"bible\":false}",
+   "details": "",
+   "quick": {
+    "text": "BâtimentBâtiment industrielDétails×",
+    "rect": [
+     17,
+     581,
+     263,
+     40
+    ]
+   },
+   "panel": null,
+   "title": "Bâtiment industriel"
+  },
+  "landmark": {
+   "sel": "{\"id\":\"poi:eglise-saint-denis\",\"name\":\"Église Saint-Denis\",\"type\":\"point\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "ÉgliseÉglise Saint-DenisPlace Saint-DenisDétails×",
+    "rect": [
+     12,
+     576,
+     274,
+     42
+    ]
+   },
+   "panel": null,
+   "title": "Église Saint-Denis"
+  },
+  "landmarkDetails": {
+   "sel": "{\"id\":\"poi:eglise-saint-denis\",\"name\":\"Église Saint-Denis\",\"type\":\"point\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "1",
+   "quick": null,
+   "panel": {
+    "title": "Église Saint-Denis",
+    "rect": [
+     12,
+     348,
+     366,
+     506
+    ]
+   },
+   "title": "Église Saint-Denis"
+  },
+  "searchList1": [
+   "Salle polyvalente"
+  ],
+  "search1": {
+   "sel": "{\"id\":\"poi:salle-polyvalente\",\"name\":\"Salle polyvalente\",\"type\":\"point\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "Salle communaleSalle polyvalente3 rue des ÉcolesDétails×",
+    "rect": [
+     12,
+     576,
+     274,
+     42
+    ]
+   },
+   "panel": null,
+   "title": "Salle polyvalente"
+  },
+  "searchList2": [
+   "Rue Pasteur",
+   "Ancien presbytère"
+  ],
+  "search2": {
+   "sel": "{\"id\":\"road:rue-pasteur\",\"name\":\"Rue Pasteur\",\"type\":\"line\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "Route D 20Rue PasteurDétails×",
+    "rect": [
+     12,
+     576,
+     274,
+     42
+    ]
+   },
+   "panel": null,
+   "title": "Rue Pasteur"
+  },
+  "zoomMax": 361,
+  "logs": []
+ },
+ "phone-landscape": {
+  "road": {
+   "click": [
+    392.52913861740257,
+    211.70236924024434
+   ],
+   "sel": "{\"id\":\"road:rue-joliot-curie\",\"name\":\"Rue Joliot-Curie\",\"type\":\"line\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "Route D 20Rue Joliot-CurieDétails×",
+    "rect": [
+     19,
+     317,
+     220,
+     40
+    ]
+   },
+   "panel": null,
+   "title": "Rue Joliot-Curie"
+  },
+  "building": {
+   "click": [
+    542,
+    215
+   ],
+   "sel": "{\"id\":\"BATIMENT0000000301151922\",\"name\":\"Maison\",\"type\":\"building\",\"generic\":true,\"source\":\"Empreinte IGN BD TOPO · sémantique OpenStreetMap\",\"bible\":false}",
+   "details": "",
+   "quick": {
+    "text": "BâtimentMaisonDétails×",
+    "rect": [
+     17,
+     317,
+     164,
+     40
+    ]
+   },
+   "panel": null,
+   "title": "Maison"
+  },
+  "details": {
+   "sel": "{\"id\":\"BATIMENT0000000301151922\",\"name\":\"Maison\",\"type\":\"building\",\"generic\":true,\"source\":\"Empreinte IGN BD TOPO · sémantique OpenStreetMap\",\"bible\":false}",
+   "details": "1",
+   "quick": null,
+   "panel": {
+    "title": "Maison",
+    "rect": [
+     12,
+     225,
+     820,
+     175
+    ]
+   },
+   "title": "Maison"
+  },
+  "afterEsc1": {
+   "sel": "{\"id\":\"BATIMENT0000000301151922\",\"name\":\"Maison\",\"type\":\"building\",\"generic\":true,\"source\":\"Empreinte IGN BD TOPO · sémantique OpenStreetMap\",\"bible\":false}",
+   "details": "",
+   "quick": {
+    "text": "BâtimentMaisonDétails×",
+    "rect": [
+     17,
+     317,
+     164,
+     40
+    ]
+   },
+   "panel": null,
+   "title": "Maison"
+  },
+  "afterEsc2": {
+   "sel": "",
+   "details": "",
+   "quick": null,
+   "panel": null,
+   "title": "Maison"
+  },
+  "poi": {
+   "sel": "{\"id\":\"poi:chateau-eau-poussey\",\"name\":\"Château d’eau de Poussey\",\"type\":\"point\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "Château d’eauChâteau d’eau de PousseyDétails×",
+    "rect": [
+     20,
+     317,
+     279,
+     40
+    ]
+   },
+   "panel": null,
+   "title": "Château d’eau de Poussey"
+  },
+  "afterVoid": {
+   "sel": "",
+   "details": "",
+   "quick": null,
+   "panel": null,
+   "title": "Château d’eau de Poussey"
+  },
+  "roadDetails": {
+   "sel": "{\"id\":\"road:rue-joliot-curie\",\"name\":\"Rue Joliot-Curie\",\"type\":\"line\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "1",
+   "quick": null,
+   "panel": {
+    "title": "Rue Joliot-Curie",
+    "rect": [
+     12,
+     216,
+     820,
+     184
+    ]
+   },
+   "title": "Rue Joliot-Curie"
+  },
+  "industrial": {
+   "click": [
+    482,
+    235
+   ],
+   "sel": "{\"id\":\"BATIMENT0000002206051890\",\"name\":\"Bâtiment industriel\",\"type\":\"building\",\"generic\":true,\"source\":\"Empreinte IGN BD TOPO · sémantique OpenStreetMap\",\"bible\":false}",
+   "details": "",
+   "quick": {
+    "text": "BâtimentBâtiment industrielDétails×",
+    "rect": [
+     19,
+     317,
+     236,
+     40
+    ]
+   },
+   "panel": null,
+   "title": "Bâtiment industriel"
+  },
+  "landmark": {
+   "sel": "{\"id\":\"poi:eglise-saint-denis\",\"name\":\"Église Saint-Denis\",\"type\":\"point\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "ÉgliseÉglise Saint-DenisPlace Saint-DenisDétails×",
+    "rect": [
+     14,
+     312,
+     340,
+     42
+    ]
+   },
+   "panel": null,
+   "title": "Église Saint-Denis"
+  },
+  "landmarkDetails": {
+   "sel": "{\"id\":\"poi:eglise-saint-denis\",\"name\":\"Église Saint-Denis\",\"type\":\"point\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "1",
+   "quick": null,
+   "panel": {
+    "title": "Église Saint-Denis",
+    "rect": [
+     12,
+     166,
+     820,
+     234
+    ]
+   },
+   "title": "Église Saint-Denis"
+  },
+  "searchList1": [
+   "Salle polyvalente"
+  ],
+  "search1": {
+   "sel": "{\"id\":\"poi:salle-polyvalente\",\"name\":\"Salle polyvalente\",\"type\":\"point\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "Salle communaleSalle polyvalente3 rue des ÉcolesDétails×",
+    "rect": [
+     14,
+     312,
+     325,
+     42
+    ]
+   },
+   "panel": null,
+   "title": "Salle polyvalente"
+  },
+  "searchList2": [
+   "Rue Pasteur",
+   "Ancien presbytère"
+  ],
+  "search2": {
+   "sel": "{\"id\":\"road:rue-pasteur\",\"name\":\"Rue Pasteur\",\"type\":\"line\",\"generic\":false,\"source\":\"\",\"bible\":true}",
+   "details": "",
+   "quick": {
+    "text": "Route D 20Rue PasteurDétails×",
+    "rect": [
+     14,
+     312,
+     200,
+     42
+    ]
+   },
+   "panel": null,
+   "title": "Rue Pasteur"
+  },
+  "zoomMax": 350,
+  "logs": []
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "Salle polyvalente": {
+  "list": [
+   "Salle polyvalente"
+  ],
+  "after": {
+   "sel": "{\"generic\":false,\"bible\":false}",
+   "title": "",
+   "quick": "Détails×"
+  },
+  "errors": [
+   "pageerror: Cannot read properties of undefined (reading '0') | TypeError: Cannot read properties of undefined (reading '0') /     at Object.xe [as select] (http://127.0.0.1:4292/assets/index-D0AijRd5.js:72:67839) /     at K (http://127.0.0.1:4292/assets/index-D0AijRd5.js:1038:22670) /     at c (http://127.0.0.1:4292/assets/index-D0AijRd5.js:1034:72401)"
+  ]
+ },
+ "Rue Pasteur": {
+  "list": [
+   "Rue Pasteur",
+   "Ancien presbytère"
+  ],
+  "after": {
+   "sel": "{\"generic\":false,\"bible\":false}",
+   "title": "",
+   "quick": "Détails×"
+  },
+  "errors": [
+   "pageerror: Cannot read properties of undefined (reading '0') | TypeError: Cannot read properties of undefined (reading '0') /     at Object.xe [as select] (http://127.0.0.1:4292/assets/index-D0AijRd5.js:72:67839) /     at K (http://127.0.0.1:4292/assets/index-D0AijRd5.js:1038:22670) /     at c (http://127.0.0.1:4292/assets/index-D0AijRd5.js:1034:72401)"
+  ]
+ },
+ "Poussey": {
+  "list": [
+   "Poussey",
+   "Château d’eau de Poussey",
+   "Pres de Poussey",
+   "Les Bois de Poussey",
+   "Les Pres de Poussey Est",
+   "Les Bois de Poussey Ouest",
+   "Les Pres de Poussey Ouest",
+   "Rue Basse de Poussey"
+  ],
+  "after": {
+   "sel": "{\"generic\":false,\"bible\":false}",
+   "title": "",
+   "quick": "Détails×"
+  },
+  "errors": [
+   "pageerror: Cannot read properties of undefined (reading '0') | TypeError: Cannot read properties of undefined (reading '0') /     at Object.xe [as select] (http://127.0.0.1:4292/assets/index-D0AijRd5.js:72:67839) /     at K (http://127.0.0.1:4292/assets/index-D0AijRd5.js:1038:22670) /     at c (http://127.0.0.1:4292/assets/index-D0AijRd5.js:1034:72401)"
+  ]
+ },
+ "zoom": {
+  "t2s": 321,
+  "t30s": 405,
+  "t60s": 418
+ },
+ "logs": [
+  "pageerror: Cannot read properties of undefined (reading '0') | TypeError: Cannot read properties of undefined (reading '0') /     at Object.xe [as select] (http://127.0.0.1:4292/assets/index-D0AijRd5.js:72:67839) /     at K (http://127.0.0.1:4292/assets/index-D0AijRd5.js:1038:22670) /     at c (http://127.0.0.1:4292/assets/index-D0AijRd5.js:1034:72401)",
+  "pageerror: Cannot read properties of undefined (reading '0') | TypeError: Cannot read properties of undefined (reading '0') /     at Object.xe [as select] (http://127.0.0.1:4292/assets/index-D0AijRd5.js:72:67839) /     at K (http://127.0.0.1:4292/assets/index-D0AijRd5.js:1038:22670) /     at c (http://127.0.0.1:4292/assets/index-D0AijRd5.js:1034:72401)",
+  "pageerror: Cannot read properties of undefined (reading '0') | TypeError: Cannot read properties of undefined (reading '0') /     at Object.xe [as select] (http://127.0.0.1:4292/assets/index-D0AijRd5.js:72:67839) /     at K (http://127.0.0.1:4292/assets/index-D0AijRd5.js:1038:22670) /     at c (http://127.0.0.1:4292/assets/index-D0AijRd5.js:1034:72401)"
+ ]
+}
