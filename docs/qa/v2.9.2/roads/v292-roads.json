@@ -1,0 +1,92 @@
+{
+ "tag": "v292",
+ "port": "4199",
+ "scen": "roads",
+ "device": [
+  1280,
+  800,
+  false
+ ],
+ "d20-joliot": {
+  "quick": "Rue Joliot-Curie",
+  "kind": "Route D 20",
+  "address": null,
+  "id": "road:rue-joliot-curie"
+ },
+ "pasteur-place": {
+  "quick": "Église Saint-Denis",
+  "kind": "Église",
+  "address": "Place Saint-Denis",
+  "id": "BATIMENT0000000301149566"
+ },
+ "pasteur": {
+  "quick": "Rue Pasteur",
+  "kind": "Route D 20",
+  "address": null,
+  "id": "road:rue-pasteur"
+ },
+ "basse-poussey": {
+  "quick": "Rue Basse de Poussey",
+  "kind": "Rue",
+  "address": null,
+  "id": "road:rue-basse-de-poussey"
+ },
+ "d619-gaulle": {
+  "quick": "Avenue du Général de Gaulle",
+  "kind": "Route D 619",
+  "address": null,
+  "id": "road:avenue-du-general-de-gaulle"
+ },
+ "semard-gaulle": {
+  "quick": "Avenue du Général de Gaulle",
+  "kind": "Route D 619",
+  "address": null,
+  "id": "road:avenue-du-general-de-gaulle"
+ },
+ "semard-romilly": {
+  "quick": "Rue Pierre Sémard",
+  "kind": "Route D 619",
+  "address": null,
+  "id": "road:rue-pierre-semard@10323"
+ },
+ "chemin-pie": {
+  "quick": "Rue Achille Flaubert",
+  "kind": "Rue",
+  "address": null,
+  "id": "road:rue-achille-flaubert"
+ },
+ "pont-bancelin": {
+  "quick": "Rue du Pot Bancelin",
+  "kind": "Rue",
+  "address": null,
+  "id": "road:rue-du-pot-bancelin"
+ },
+ "rail": {
+  "quick": "Ligne de Paris-Est à Mulhouse-Ville",
+  "kind": "Voie ferrée · ligne 1000",
+  "address": null,
+  "id": "rail:Ligne de Paris-Est à Mulhouse-Ville"
+ },
+ "ecoles": {
+  "quick": "Rue des Écoles",
+  "kind": "Route D 160",
+  "address": null,
+  "id": "road:rue-des-ecoles"
+ },
+ "listJoliot": [
+  "Rue Joliot-Curie — Rue / voie"
+ ],
+ "listPoussey": [
+  "Rue Basse de Poussey — Rue / voie"
+ ],
+ "listLeclerc": [
+  "Passage à niveau n° 73 (rue du Général-Leclerc) — Repère",
+  "Rue du Général Leclerc — Rue / voie"
+ ],
+ "list1000": [],
+ "buildingAudit": {
+  "rendered": 2596,
+  "expected": 2596
+ },
+ "logs": []
+}

@@ -1,0 +1,54 @@
+{
+ "tag": "v291",
+ "port": "4291",
+ "scen": "salle",
+ "device": [
+  1280,
+  800,
+  false
+ ],
+ "click149569": {
+  "quick": "Bâtiment",
+  "kind": null,
+  "address": null,
+  "id": "BATIMENT0000000301149569"
+ },
+ "click2006956400": {
+  "quick": "Salle polyvalente",
+  "kind": "Salle communale",
+  "address": "3 rue des Écoles",
+  "id": "BATIMENT0000002006956400"
+ },
+ "click149656": {
+  "quick": "Maison",
+  "kind": "Bâtiment",
+  "address": null,
+  "id": "BATIMENT0000000301149656"
+ },
+ "focusSalle": {
+  "found": true,
+  "quick": "Salle polyvalente",
+  "kind": "Salle communale",
+  "address": "3 rue des Écoles",
+  "id": "poi:salle-polyvalente"
+ },
+ "focusMda": {
+  "found": true,
+  "quick": "Maison des Associations (salle Hazouard, dojo Christian-Bouzrar)",
+  "kind": "Salle communale",
+  "address": "2 rue Jules-Ferry",
+  "id": "poi:maison-des-associations"
+ },
+ "listSalle": [
+  "Salle polyvalente — Équipement public",
+  "Maison des Associations (salle Hazouard, dojo Christian-Bouzrar) — Équipement public"
+ ],
+ "listAsso": [
+  "Maison des Associations (salle Hazouard, dojo Christian-Bouzrar) — Équipement public"
+ ],
+ "buildingAudit": {
+  "rendered": 2596,
+  "expected": 2596
+ },
+ "logs": []
+}

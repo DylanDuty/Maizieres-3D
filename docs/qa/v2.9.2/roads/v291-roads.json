@@ -1,0 +1,98 @@
+{
+ "tag": "v291",
+ "port": "4291",
+ "scen": "roads",
+ "device": [
+  1280,
+  800,
+  false
+ ],
+ "d20-joliot": {
+  "quick": "D 20",
+  "kind": "Rue",
+  "address": null,
+  "id": "road:D 20"
+ },
+ "pasteur-place": {
+  "quick": "Église Saint-Denis",
+  "kind": "Église",
+  "address": "Place Saint-Denis",
+  "id": "BATIMENT0000000301149566"
+ },
+ "pasteur": {
+  "quick": "Rue Pasteur",
+  "kind": "Route D 20",
+  "address": null,
+  "id": "road:Rue Pasteur"
+ },
+ "basse-poussey": {
+  "quick": "Rue Basse de Poussay",
+  "kind": "Rue",
+  "address": null,
+  "id": "road:Rue Basse de Poussay"
+ },
+ "d619-gaulle": {
+  "quick": "D 619",
+  "kind": "Rue",
+  "address": null,
+  "id": "road:D 619"
+ },
+ "semard-gaulle": {
+  "quick": "Rue Pierre Sémard",
+  "kind": "Route D 619",
+  "address": null,
+  "id": "road:Rue Pierre Sémard"
+ },
+ "semard-romilly": {
+  "quick": null,
+  "kind": null,
+  "address": null,
+  "id": null
+ },
+ "chemin-pie": {
+  "quick": "Chemin de la Pie",
+  "kind": "Chemin / voie",
+  "address": null,
+  "id": "road:Chemin de la Pie"
+ },
+ "pont-bancelin": {
+  "quick": "Rue du Pont Bancelin",
+  "kind": "Rue",
+  "address": null,
+  "id": "road:Rue du Pont Bancelin"
+ },
+ "rail": {
+  "quick": "Ligne de Paris-Est à Mulhouse-Ville",
+  "kind": "Route 1000",
+  "address": null,
+  "id": "rail:Ligne de Paris-Est à Mulhouse-Ville"
+ },
+ "ecoles": {
+  "quick": "Rue des Écoles",
+  "kind": "Route D 160",
+  "address": null,
+  "id": "road:Rue des Écoles"
+ },
+ "listJoliot": [
+  "Rue Joliot Curie — Rue / voie"
+ ],
+ "listPoussey": [
+  "Rue Basse de Poussay — Rue / voie"
+ ],
+ "listLeclerc": [
+  "Passage à niveau n° 73 (rue du Général-Leclerc) — Repère",
+  "Rue du Général Leclerc — Rue / voie",
+  "Sport E. Leclerc — Bâtiment / équipement",
+  "L'auto E. Leclerc — Bâtiment / équipement",
+  "Station Service E.Leclerc — Bâtiment / équipement",
+  "Centre Commercial E.Leclerc — Bâtiment / équipement"
+ ],
+ "list1000": [
+  "1000 — Rue / voie"
+ ],
+ "buildingAudit": {
+  "rendered": 2596,
+  "expected": 2596
+ },
+ "logs": []
+}

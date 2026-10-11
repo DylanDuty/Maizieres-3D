@@ -1,0 +1,47 @@
+{
+ "tag": "v291",
+ "port": "4291",
+ "scen": "toponymy",
+ "device": [
+  1280,
+  800,
+  false
+ ],
+ "labelsAll": [
+  "Maizières-la-Grande-Paroisse",
+  "Poussey",
+  "Les Granges",
+  "Zone industrielle La Glacière",
+  "Église Saint-Denis",
+  "Mairie"
+ ],
+ "listPoussey": [
+  "Poussey — Secteur",
+  "Château d’eau de Poussey — Infrastructure",
+  "Pres de Poussey — Lieu-dit",
+  "Les Bois de Poussey — Lieu-dit",
+  "Les Pres de Poussey Est — Lieu-dit",
+  "Les Bois de Poussey Ouest — Lieu-dit",
+  "Les Pres de Poussey Ouest — Lieu-dit",
+  "Rue des Prés de Poussey — Rue / voie"
+ ],
+ "listGranges": [
+  "Les Granges — Secteur",
+  "le Bois des Granges — Lieu-dit",
+  "Ruelle des Granges — Rue / voie",
+  "Les Granges Hautes — Repère",
+  "La Baguette des Granges — Commerce / entreprise"
+ ],
+ "listCraon": [
+  "le Craon — Secteur",
+  "Rue du Craon — Rue / voie"
+ ],
+ "listPuy": [
+  "le Puy — Lieu-dit"
+ ],
+ "buildingAudit": {
+  "rendered": 2596,
+  "expected": 2596
+ },
+ "logs": []
+}

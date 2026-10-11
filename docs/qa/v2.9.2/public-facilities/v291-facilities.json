@@ -1,0 +1,78 @@
+{
+ "tag": "v291",
+ "port": "4291",
+ "scen": "facilities",
+ "device": [
+  1280,
+  800,
+  false
+ ],
+ "mairie": {
+  "quick": "Mairie de Maizières-la-Grande-Paroisse",
+  "kind": "Mairie",
+  "address": "6 rue des Écoles",
+  "id": "BATIMENT0000000301149547"
+ },
+ "annexe": {
+  "quick": "Mairie de Maizières-la-Grande-Paroisse",
+  "kind": "Bâtiment / équipement",
+  "address": null,
+  "id": "BATIMENT0000000301149545"
+ },
+ "ancienne": {
+  "quick": "Bâtiment",
+  "kind": null,
+  "address": null,
+  "id": "BATIMENT0000000301149537"
+ },
+ "ecole": {
+  "quick": "École primaire publique",
+  "kind": "École",
+  "address": "3 rue Jules-Ferry",
+  "id": "BATIMENT0000000301149527"
+ },
+ "cpi": {
+  "quick": "Centre de première intervention (sapeurs-pompiers)",
+  "kind": "Sapeurs-pompiers",
+  "address": null,
+  "id": "BATIMENT0000000301149810"
+ },
+ "eglise": {
+  "quick": "Église Saint-Denis",
+  "kind": "Église",
+  "address": "Place Saint-Denis",
+  "id": "BATIMENT0000000301149566"
+ },
+ "stade": {
+  "quick": "Stade de Maizières-la-Grande-Paroisse",
+  "kind": "Stade",
+  "address": null,
+  "id": "BATIMENT0000000325110358"
+ },
+ "pharmacieAncienne": {
+  "quick": "Pharmacie Saint-Dennis",
+  "kind": "Bâtiment / équipement",
+  "address": null,
+  "id": "BATIMENT0000000301149603"
+ },
+ "leclerc": {
+  "quick": "Centre Commercial E.Leclerc",
+  "kind": "Bâtiment / équipement",
+  "address": null,
+  "id": "BATIMENT0000000300132071"
+ },
+ "listMairie": [
+  "Mairie de Maizières-la-Grande-Paroisse — Équipement public",
+  "Mairie — Bâtiment / équipement"
+ ],
+ "listCPI": [],
+ "listPharma": [
+  "Pharmacie Sasportès — Santé",
+  "Pharmacie Saint-Dennis — Lieu / équipement"
+ ],
+ "buildingAudit": {
+  "rendered": 2596,
+  "expected": 2596
+ },
+ "logs": []
+}
