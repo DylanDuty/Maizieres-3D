@@ -1,3 +1,23 @@
+# Vérification V2.9.2 — audit géographique et sémantique, 11 octobre 2026
+
+Branche `opus/v2.9.2-geographic-semantic-audit`, à partir de `9ab6d20` (V2.9.1).
+
+- **Documents** : rapport `docs/audit/V2.9.2_GEOGRAPHIC_SEMANTIC_CERTIFICATION.md` ; anomalies `docs/audit/V2.9.2_SEMANTIC_ANOMALIES.csv` ; gel `docs/freeze/MLGU_SEMANTIC_FREEZE_V1.md`.
+- **Captures** : `docs/qa/v2.9.2/` (index : `README.md`).
+
+- **Géographie** : aucun fichier de `public/`, `unreal/` ni `data-sources/` n'est modifié. Les 42 fichiers gelés sont identiques à `309e65e`, et les 52 hachages Freeze V1 sont vérifiés (`check:semantic-freeze`, `check:architecture-stats`).
+- **Salle polyvalente / Maison des associations** :
+  - V2.9.1 : clic sur …2006956400 → « Salle polyvalente », et la vraie salle …149569 est un « Bâtiment ».
+  - V2.9.2 : …149569 → Salle polyvalente, …2006956400 → Maison des Associations, au bureau comme sur téléphone.
+- **Registres** :
+  - lieux : 367, dont 157 affichés (36 PASS, 121 PASS_WITH_LIMITATION) et 28 masqués hors commune ;
+  - enregistrements hérités : 158 gouvernés (113 alias, 42 masqués, 3 dénommés) ;
+  - voies : 111, dont les 62 voies BAN typées de la commune ;
+  - anomalies : 131 (3 BLOCKER, 30 MAJOR, 95 MINOR, 3 INFO).
+- **Chromium, scénarios V2.9.1 / V2.9.2** (salle et associations, équipements, voies, toponymie, recherche, clic, mobile 390 × 844 et 844 × 390) : résultats attendus, console vide.
+- **Chromium, sonde** (vue normale, `manual=0`, JRPG équilibré, portrait, paysage, `?diagnostic=v2`, `?diagnostic=poi`) : 2 596 / 2 596 bâtiments, 2 584 / 2 584 avec `manual=0`, 0 enfoui, console vide.
+- **Contrôles** : `check:places-canonical`, `check:road-names`, `check:poi-building-links`, `check:search-targets`, `check:semantic-freeze` et `check:landmark-positioning` PASS ; `check:all` PASS ; `npm run build` OK.
+
 # Vérification V2.9.1 — landmarks audités et passe qualité JRPG, 10 octobre 2026
 
 Branche `opus/v2.9.1-landmarks-position-jrpg-quality`, à partir de `aca65c3` (V2.9). Rapport : `docs/audit/V2.9.1_LANDMARK_POSITION_AND_JRPG_QUALITY.md`. Captures : `docs/qa/v2.9.1/`. Errata : `docs/freeze/V2.9.1_LANDMARK_CORRECTION_EXCEPTION.md`.

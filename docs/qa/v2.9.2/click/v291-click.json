@@ -1,0 +1,58 @@
+{
+ "tag": "v291",
+ "port": "4291",
+ "scen": "click",
+ "query": "?visual=cartoon-v291&v25quality=performance",
+ "device": [
+  1280,
+  800,
+  false
+ ],
+ "label": {
+  "quick": "Prairie temporaire",
+  "kind": "Parcelle agricole (RPG)",
+  "address": null,
+  "id": "lc:rpg2024:9366510"
+ },
+ "batiment": {
+  "quick": "Bâtiment",
+  "kind": null,
+  "address": null,
+  "id": "BATIMENT0000000301149569"
+ },
+ "zoneEglise": {
+  "quick": "Rue Pasteur",
+  "kind": "Route D 20",
+  "address": null,
+  "id": "road:Rue Pasteur"
+ },
+ "zoneStade": {
+  "quick": "Terrain de sport",
+  "kind": "Surface aménagée",
+  "address": null,
+  "id": "lc:TERRSPOR0000000325186237"
+ },
+ "champ": {
+  "quick": "Terre arable",
+  "kind": "Parcelle agricole (RPG)",
+  "address": null,
+  "id": "lc:rpg2024:10002095"
+ },
+ "rue": {
+  "quick": "Rue des Écoles",
+  "kind": "Route D 160",
+  "address": null,
+  "id": "road:Rue des Écoles"
+ },
+ "ligne": {
+  "quick": "Ligne de Paris-Est à Mulhouse-Ville",
+  "kind": "Route 1000",
+  "address": null,
+  "id": "rail:Ligne de Paris-Est à Mulhouse-Ville"
+ },
+ "buildingAudit": {
+  "rendered": 2596,
+  "expected": 2596
+ },
+ "logs": []
+}

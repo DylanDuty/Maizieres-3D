@@ -1,0 +1,87 @@
+{
+ "tag": "v291",
+ "port": "4291",
+ "scen": "search",
+ "query": "?visual=cartoon-v291&v25quality=performance",
+ "device": [
+  1280,
+  800,
+  false
+ ],
+ "lists": {
+  "1000": [
+   "1000 — Rue / voie"
+  ],
+  "Salle polyvalente": [
+   "Salle polyvalente — Équipement public"
+  ],
+  "Maison des associations": [
+   "Maison des Associations (salle Hazouard, dojo Christian-Bouzrar) — Équipement public"
+  ],
+  "Mairie": [
+   "Mairie de Maizières-la-Grande-Paroisse — Équipement public",
+   "Mairie — Bâtiment / équipement"
+  ],
+  "École": [
+   "École primaire publique — Équipement public",
+   "École primaire — Lieu / équipement",
+   "École Élémentaire Publique Maizières-la-Grande-Paroisse — Bâtiment / équipement",
+   "Rue des Écoles — Rue / voie",
+   "Ruelle des Écoles — Rue / voie"
+  ],
+  "CPI": [],
+  "Stade": [
+   "Stade de Maizières-la-Grande-Paroisse — Équipement sportif",
+   "Rue du Stade — Rue / voie"
+  ],
+  "Poussey": [
+   "Poussey — Secteur",
+   "Château d’eau de Poussey — Infrastructure",
+   "Pres de Poussey — Lieu-dit",
+   "Les Bois de Poussey — Lieu-dit",
+   "Les Pres de Poussey Est — Lieu-dit",
+   "Les Bois de Poussey Ouest — Lieu-dit",
+   "Les Pres de Poussey Ouest — Lieu-dit",
+   "Rue des Prés de Poussey — Rue / voie"
+  ],
+  "Les Granges": [
+   "Les Granges — Secteur",
+   "Les Granges Hautes — Repère"
+  ],
+  "Le Craon": [
+   "le Craon — Secteur"
+  ],
+  "Rue Pasteur": [
+   "Rue Pasteur — Rue / voie"
+  ],
+  "Joliot": [
+   "Rue Joliot Curie — Rue / voie"
+  ],
+  "Avenue du Général": [
+   "Avenue du Général de Gaulle — Rue / voie"
+  ],
+  "Pharmacie": [
+   "Pharmacie Sasportès — Santé",
+   "Pharmacie Saint-Dennis — Lieu / équipement"
+  ],
+  "Leclerc": [
+   "Passage à niveau n° 73 (rue du Général-Leclerc) — Repère",
+   "Rue du Général Leclerc — Rue / voie",
+   "Sport E. Leclerc — Bâtiment / équipement",
+   "L'auto E. Leclerc — Bâtiment / équipement",
+   "Station Service E.Leclerc — Bâtiment / équipement",
+   "Centre Commercial E.Leclerc — Bâtiment / équipement"
+  ],
+  "Poussay": [
+   "Rue Basse de Poussay — Rue / voie"
+  ],
+  "Le Puy": [
+   "le Puy — Lieu-dit"
+  ]
+ },
+ "buildingAudit": {
+  "rendered": 2596,
+  "expected": 2596
+ },
+ "logs": []
+}
