@@ -58,9 +58,10 @@ export function buildVegetationV27(parent,{v2,box,buildings,heightAt,materials:M
   const nb=(c,r)=>{let n=0,t=0;for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++){if(!dr&&!dc)continue;const cc=c+dc,rr=r+dr;if(cc<0||rr<0||cc>=cols||rr>=rows)continue;t++;n+=inside[rr*cols+cc];}return [n,t];};
   const key=`${Math.floor((b[0]+b[2])/2/TILE)},${Math.floor((b[1]+b[3])/2/TILE)}`;if(!canopy.has(key))canopy.set(key,{p:[],c:[],i:[]});const t=canopy.get(key),base=t.p.length/3,used=new Int32Array(cols*rows).fill(-1);
   // Profile folded inside the polygon: boundary ring 35 %, second ring 75 %, interior 100 %; nothing outside (the
-  // painted wood floor shows around the mass instead of a skirt over the fields).
+  // painted wood floor shows around the mass instead of a skirt over the fields). The V2.7–V2.9.2 test `=== .35` on a
+  // Float32Array never matched, so those modes have no 75 % ring: kept as is for them; V3.0 tests the boundary range.
   const factor=new Float32Array(cols*rows);for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){const k=r*cols+c;if(!inside[k])continue;const [n,tot]=nb(c,r);factor[k]=n===tot?1:v30?.26+.2*vnoise((x0+c*step)/23,(z0+r*step)/23):.35;}
-  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){const k=r*cols+c;if(factor[k]!==1)continue;let edge=false;for(let dr=-1;dr<=1&&!edge;dr++)for(let dc=-1;dc<=1;dc++){const cc=c+dc,rr=r+dr;if(cc<0||rr<0||cc>=cols||rr>=rows)continue;const fr=factor[rr*cols+cc];if(fr>0&&fr<.5){edge=true;break;}}if(edge)factor[k]=.75;}
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){const k=r*cols+c;if(factor[k]!==1)continue;let edge=false;for(let dr=-1;dr<=1&&!edge;dr++)for(let dc=-1;dc<=1;dc++){const cc=c+dc,rr=r+dr;if(cc<0||rr<0||cc>=cols||rr>=rows)continue;const fr=factor[rr*cols+cc];if(v30?fr>0&&fr<.5:fr===.35){edge=true;break;}}if(edge)factor[k]=.75;}
   const vertex=k=>{if(used[k]>=0)return used[k];const c=k%cols,r=Math.floor(k/cols),fct=factor[k];let x=x0+c*step,z=z0+r*step;
    // V3.0 lisière: a vertex outside the polygon is moved onto its boundary (never beyond it), so the mass ends on the true
    // limit instead of an 8 m staircase; vertices left out by the riparian corridor keep their place.
