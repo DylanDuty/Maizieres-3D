@@ -72,8 +72,8 @@ export async function buildVisualV27({scene,renderer,camera,sun,hemisphere,v2,it
  else if(waterLines){waterLines.material=water.material;waterLines.renderOrder=1;}
  const aoBox=new THREE.Box3(new THREE.Vector3(box.minX-50,-80,box.minZ-50),new THREE.Vector3(box.maxX+50,160,box.maxZ+50));
  // V3.0: a sober grade (no added saturation), a faint warm-grey ink only on strong silhouettes, a whisper of vignette, SMAA in
- // every preset (the phone preset included).
- const post=createPostV26(renderer,scene,camera,{ao:Q.ao,smaa:v30?true:Q.smaa,outline:Q.outline,tilt:Q.tilt,tiltAmount:diorama?2.4:v30?.55:.75,tiltBand:diorama?.16:v30?.3:.26,vignette:v30?.05:v29?.12:.14,aoBox,grade:v30?{warmth:.014,contrast:1.07,saturation:1.04,lift:.005,cool:1.1}:v291?{warmth:.022,contrast:1.1,saturation:1.12,lift:.008,cool:1.35}:v29,ink:v30?'#55574d':v291?'#3b3652':null,outlineStrength:v30?.32:v291?.8:.75,aoIntensity:v30?.78:v291?.85:.7});
+ // BEAUTÉ and ÉQUILIBRÉ, FXAA (one pass) in PERFORMANCE, which had no anti-aliasing.
+ const post=createPostV26(renderer,scene,camera,{ao:Q.ao,smaa:v30?(Q.smaa||'fxaa'):Q.smaa,outline:Q.outline,tilt:Q.tilt,tiltAmount:diorama?2.4:v30?.55:.75,tiltBand:diorama?.16:v30?.3:.26,vignette:v30?.05:v29?.12:.14,aoBox,grade:v30?{warmth:.014,contrast:1.07,saturation:1.04,lift:.005,cool:1.1}:v291?{warmth:.022,contrast:1.1,saturation:1.12,lift:.008,cool:1.35}:v29,ink:v30?'#55574d':v291?'#3b3652':null,outlineStrength:v30?.32:v291?.8:.75,aoIntensity:v30?.78:v291?.85:.7});
  renderer.shadowMap.needsUpdate=true;
  const start=performance.now();const lastCam=new THREE.Vector3(1e9,0,0),tv=new THREE.Vector3();let lastT=[1e9,1e9],lastMove=0;
  return {group,pickMeshes:houses.pickMeshes,post,box,views:null,wholeMap:true,dynamicShadow:true,sunOffset:sunOffset.toArray(),quality,cameraFor:v25CameraFor,

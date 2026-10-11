@@ -6,6 +6,7 @@ import {GTAOPass} from 'three/addons/postprocessing/GTAOPass.js';
 import {SMAAPass} from 'three/addons/postprocessing/SMAAPass.js';
 import {ShaderPass} from 'three/addons/postprocessing/ShaderPass.js';
 import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
+import {FXAAShader} from 'three/addons/shaders/FXAAShader.js';
 
 // V2.6 Poussey diorama — post-processing: scene → light ambient occlusion → ink outline from the depth buffer (a thin
 // tinted line on the near side of every silhouette, the "illustrated map" cue) → sRGB output → SMAA → miniature
@@ -52,9 +53,10 @@ export function createPostV26(renderer,scene,camera,{ao=true,smaa=true,outline=t
  let outlinePass=null;if(outline){outlinePass=new OutlinePass(scenePass,camera);outlinePass.uniforms.strength.value=outlineStrength;if(ink)outlinePass.uniforms.ink.value.set(ink);composer.addPass(outlinePass);}
  composer.addPass(new OutputPass());
  if(grade){const g=new ShaderPass(GRADE);if(typeof grade==='object')for(const [k,v] of Object.entries(grade))if(g.uniforms[k])g.uniforms[k].value=v;composer.addPass(g);}
- if(smaa)composer.addPass(new SMAAPass());
+ // smaa: true → SMAA (three passes); 'fxaa' → FXAA (one pass, the V3.0 phone preset); false → none.
+ let fxaa=null;if(smaa==='fxaa'){fxaa=new ShaderPass(FXAAShader);composer.addPass(fxaa);}else if(smaa)composer.addPass(new SMAAPass());
  const tilts=[];if(tilt){for(const d of [[1,0],[0,1]]){const p=new ShaderPass(TILT);p.uniforms.dir.value.set(...d);p.uniforms.amount.value=tiltAmount;p.uniforms.band.value=tiltBand;composer.addPass(p);tilts.push(p);}}
  if(vignette>0){const vig=new ShaderPass(VIGNETTE);vig.uniforms.strength.value=vignette;composer.addPass(vig);}
- const setSize=(w,h)=>{composer.setSize(w,h);const s=renderer.getDrawingBufferSize(new THREE.Vector2());for(const p of tilts)p.uniforms.res.value.copy(s);};setSize(size.x,size.y);
+ const setSize=(w,h)=>{composer.setSize(w,h);const s=renderer.getDrawingBufferSize(new THREE.Vector2());for(const p of tilts)p.uniforms.res.value.copy(s);if(fxaa)fxaa.uniforms.resolution.value.set(1/s.x,1/s.y);};setSize(size.x,size.y);
  return {composer,gtao,outline:outlinePass,render:()=>composer.render(),setSize,dispose:()=>{composer.dispose();}};
 }
