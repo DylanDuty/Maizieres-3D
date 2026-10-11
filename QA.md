@@ -1,3 +1,19 @@
+# Vérification V3.1 — profondeur, contraste et finition industrielle, 11 octobre 2026
+
+Branche `opus/v3.1-depth-contrast-industrial-polish`, à partir de `6df3db7` (V3.0). Mode `?visual=premium-v31` ; `?fxaa=0|1` pour le preset PERFORMANCE.
+
+- **Documents** : rapport `docs/audit/V3.1_DEPTH_CONTRAST_INDUSTRIAL_POLISH.md` (15 sections, grilles contraste et anti-cheap, décision FXAA).
+- **Captures** : `docs/qa/v3.1/` — `compare/` (10 cadrages V3.0 / V3.1), `woods/` (5 bois), `la-glaciere/` (vue large, oblique, halls, toitures, sols), `fxaa/` (A / B), `mobile/` (V3.0, V3.1 avec et sans FXAA, portrait et paysage), `hd/` (1920 × 1080), `interface/`.
+
+- **Géographie** : aucun fichier de `public/`, `unreal/` ni `data-sources/` modifié ; 42 fichiers gelés identiques à `309e65e` ; 52 hachages Freeze V1 vérifiés.
+- **Sémantique** : gel sémantique V1 inchangé ; six contrôles sémantiques PASS.
+- **Géométrie** : appels de dessin et triangles identiques à la V3.0 sur tous les cadrages.
+- **Performance** (SwiftShader, médianes de 3 passages alternés, V3.0 → V3.1) : BEAUTÉ 4 856 → 4 714 ms ; ÉQUILIBRÉ 4 148 → 4 201 ms ; PERFORMANCE 2 088 → 2 062 ms avec FXAA, 1 933 ms sans (V2.9.2 : 1 875 ms).
+- **FXAA** : conservé en PERFORMANCE (+ 6,7 %, différence visuelle évidente sur les lisières et les silhouettes).
+- **Chromium, sonde** : 2 596 / 2 596 bâtiments, 2 584 / 2 584 avec `manual=0`, 0 enfoui, console vide ; `premium-v30` inchangé dans la build V3.1.
+- **Chromium, interface** : clics, fiches, recherche et vues rapides sur trois gabarits, console vide ; zoom maximal 420 m conservé.
+- **Contrôles** : `check:all` PASS ; `npm run build` OK.
+
 # Vérification V3.0 — passe artistique premium de l'environnement, 11 octobre 2026
 
 Branche `opus/v3.0-premium-environment-art-pass`, à partir de `d8f5b15` (V2.9.2). Mode `?visual=premium-v30`.

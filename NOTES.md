@@ -1,3 +1,10 @@
+# Notes V3.1 — profondeur, contraste et finition industrielle, 11 octobre 2026
+
+- **De la profondeur sans triangle.** Un bois paraît plat quand tous ses sommets ont la même hauteur et la même couleur. Moduler la hauteur des sommets existants par bosquets, puis éclaircir les sommets hauts et assombrir les creux, donne plusieurs plans et une occlusion cuite dans la couleur, pour le même maillage.
+- **Une courbe tonale déplace aussi les sombres.** Une courbe en S donne du relief aux tons moyens, mais elle fonce ce qui est déjà sombre : les forêts lointaines s'éteignaient. Courbe adoucie et ombres légèrement relevées.
+- **Le blanc sous-pixel devient un pointillé.** Un liseré clair plus fin qu'un pixel à 420 m ne s'affiche qu'un pixel sur deux : il se lit comme un pointillé. Le ton du mur suffit.
+- **Mesurer avant de couper.** FXAA coûtait cher dans une série et 6,7 % dans la suivante ; sans lui, les lisières que la V3.0 avait lissées repassent en escalier sur téléphone. On le garde, et `?fxaa=0` permet de trancher sur un vrai appareil.
+
 # Notes V3.0 — passe artistique premium de l'environnement, 11 octobre 2026
 
 - **Un bord crénelé vient d'une grille, pas d'un manque de flou.** Les lisières en escalier étaient la grille de 8 m de la canopée ; les bords de champs crénelés, la texture de sol à 1,5 m par texel et la carte des cultures lue au plus proche. Flouter aurait seulement adouci les marches. On a déplacé les sommets de bord sur le polygone et lu les cartes avec des poids bilinéaires.
