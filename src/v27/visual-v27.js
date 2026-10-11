@@ -34,8 +34,9 @@ export const V291_LIGHT={...V26_LIGHT,sun:'#ffe4bd',sunIntensity:2.1,direction:[
 export const V30_LIGHT={...V26_LIGHT,sun:'#fff0d9',sunIntensity:2.0,direction:[-.4,.8,.46],shadow:.84,sky:'#d4e3f1',ground:'#e2d8bf',hemisphere:1.03,fog:'#e1e9ed',fogNear:2600,fogFar:12000,zenith:'#7fb2de',horizon:'#e9efee',below:'#e0e4da',aerial:.3};
 // V3.1 — same late morning, more directional: a slightly stronger, warmer key against a more neutral, weaker sky fill (cleaner
 // separation of volumes, cool shade without darker blacks), a touch more shadow, the aerial perspective a little lighter.
-// V3.1 PERFORMANCE anti-aliasing default (FXAA, one full-screen pass); `?fxaa=1` or `?fxaa=0` overrides it for a field test.
-export const V31_FXAA_DEFAULT=false;
+// V3.1 PERFORMANCE anti-aliasing default (FXAA, one full-screen pass), kept after the A/B test: without it, lisières, roof
+// edges and parapets alias again on phones. `?fxaa=1` or `?fxaa=0` overrides it for a field test on a real device.
+export const V31_FXAA_DEFAULT=true;
 export const V31_LIGHT={...V30_LIGHT,sun:'#ffeed4',sunIntensity:2.15,shadow:.88,sky:'#d6e0e8',ground:'#ddd5c2',hemisphere:.94,aerial:.27};
 // V3.0 detail texture of the ground (metres covered, pixels) per preset.
 const V30_DETAIL={beauty:[1100,2048],balanced:[1100,2048],performance:[1000,1536]};
