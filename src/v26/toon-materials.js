@@ -68,7 +68,7 @@ export function flat(material,key,chunk='',uniforms={}){
 
 // V2.9 (`style:'v29'`): softer tile rows a little stronger, asphalt with a wider soft edge, warmer shoulders — the JRPG
 // pass changes shaders and palettes, never geometry.
-export function makeMaterialsV26({style='v26'}={}){const v30=style==='v30',v291=style==='v291'||v30,v29=style==='v29'||v291;
+export function makeMaterialsV26({style='v26'}={}){const v31=style==='v31',v30=style==='v30'||v31,v291=style==='v291'||v30,v29=style==='v29'||v291;
  const lam=o=>new THREE.MeshLambertMaterial({vertexColors:true,side:THREE.FrontSide,...o});
  const M={};
  // Walls: flat pastel, a soft darker base band, a whisper of hand-painted unevenness.
@@ -124,12 +124,27 @@ export function makeMaterialsV26({style='v26'}={}){const v30=style==='v30',v291=
  M.earth=toon(lam({vertexColors:false,color:'#d9c49c'}),'earth',`diffuseColor.rgb*=.96+.08*vnoise(vWorld.xz*.5);`);
  M.dash=flat(new THREE.MeshBasicMaterial({color:'#f4efdf',transparent:true,depthWrite:false}),'dash',`float d=step(.55,fract(vUvM.x/9.));diffuseColor.a*=d*.85;`);
  if(v30)premiumV30(M,lam);
+ if(v31)premiumV31(M,lam);
  return M;
 }
 
 // V3.0 premium overrides (style 'v30'): the V2.9.1 shaders, calmer. Roof mottle and tile rows halved (tone first, a
 // texture only up close), canopy crowns with softer gaps and smaller hue jumps, leaves less saturated with a cool shade,
 // warm-grey asphalt with a shoulder that melts into the verge, earth paths in pale ochre, warmer wall panels.
+// V3.1 overrides on top of V3.0, roofs only. Large roofs (industrial halls, sheds, flat roofs) were broad uniform slabs at
+// 420 m: a slow weathering (20–40 m) and, on sheet roofs, panels replaced at different times (one random value per 5,7 m
+// strip along the ridge, ±3 %). Documented roof colours stay the base; nothing periodic beyond the real ribs.
+function premiumV31(M,lam){
+ const plain=M.roofPlain,sheet=M.roofSheet;
+ M.roofPlain=toon(lam({}),'roof-plain-v31',`float fw=fwidth(vUvM.y);float near=1.-smoothstep(.05,.18,fw);float row=fract(vUvM.y/.32);diffuseColor.rgb*=1.-.06*near*smoothstep(.76,.93,row);
+  float mot=vnoise(vWorld.xz*.42)*.6+vnoise(vWorld.xz*.16+2.)*.4;diffuseColor.rgb*=.95+.08*mot;diffuseColor.rgb+=vec3(.01,.014,.024)*smoothstep(.62,.9,vnoise(vWorld.xz*.8));
+  float wz=vnoise(vWorld.xz*.035+1.7)*.65+vnoise(vWorld.xz*.09+4.1)*.35;diffuseColor.rgb*=.955+.09*wz;`);
+ M.roofSheet=toon(lam({}),'roof-sheet-v31',`float fw=fwidth(vUvM.x);float rib=smoothstep(.0,.1,abs(fract(vUvM.x/.95+.5)-.5)*.95);diffuseColor.rgb*=mix(1.,mix(.9,1.,rib),1.-smoothstep(.12,.4,fw));
+  float pid=floor(vUvM.x/5.7);float pv=fract(sin(pid*12.9898+floor(vWorld.y*.5)*3.1+floor(vWorld.x*.004)*7.7)*43758.5453);diffuseColor.rgb*=.97+.06*pv*(1.-smoothstep(.3,1.2,fw));
+  float wz=vnoise(vWorld.xz*.035+1.7)*.65+vnoise(vWorld.xz*.09+4.1)*.35;diffuseColor.rgb*=.95+.1*wz+.025*vnoise(vWorld.xz*.7);`);
+ plain?.dispose?.();sheet?.dispose?.();
+}
+
 function premiumV30(M,lam){
  M.roofTile=toon(lam({}),'roof-tile-v30',`float fw=fwidth(vUvM.y);float near=1.-smoothstep(.06,.2,fw);float row=fract(vUvM.y/.46);diffuseColor.rgb*=1.-.07*near*smoothstep(.72,.92,row);
   float col=fract(vUvM.x/.32+step(.5,fract(vUvM.y/.92))*.5);diffuseColor.rgb*=1.-.025*near*smoothstep(.8,.95,col);

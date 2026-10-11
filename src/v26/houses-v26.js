@@ -46,7 +46,7 @@ export function footprintIndex(items,cell=25){const grid=new Map(),key=(x,z)=>`$
  return (x,z,selfId)=>{const list=grid.get(key(x,z));if(!list)return false;for(const it of list)if(it.id!==selfId&&insidePoly([x,z],it.poly))return true;return false;};}
 // V2.7: `special(ctx)` may draw a building itself (church); `occupied` filters openings against the neighbours.
 export function buildHousesV26({items,enrichment={buildings:{}},architecture,elevation=()=>0,materials:M,special=null,occupied=null,style='v26'}){
- const v30=style==='v30',PAL=v30?PALETTE_V30:PALETTE,BIGS=v30?BIG_V30:BIG,roofOpts=v30?{sMin:.28,sMax:.48,lMin:.38,lMax:.5}:{};
+ const v30=style==='v30'||style==='v31',PAL=v30?PALETTE_V30:PALETTE,BIGS=v30?BIG_V30:BIG,roofOpts=v30?{sMin:.28,sMax:.48,lMin:.38,lMax:.5}:{};
  const walls=[new Tri(),new Tri()],roofs=[new Tri(),new Tri(),new Tri()],details=new Tri();const wallRanges=[],roofRanges=[],detailRanges=[];
  const C=new THREE.Color(),stats={buildings:0,variants:new Set(),windows:0,doors:0,garageDoors:0,shutters:0,chimneys:0,byClass:{},bigVariants:new Set()};
  const glass=new THREE.Color(PALETTE.glass),frame=new THREE.Color(PALETTE.frame),capCol=new THREE.Color(PALETTE.cap);
