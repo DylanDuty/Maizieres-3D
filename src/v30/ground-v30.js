@@ -13,7 +13,6 @@ import {toon} from '../v26/toon-materials.js';
 //   global one: at close range the limits are drawn at the precision of the vector data instead of the global texel;
 // - the class maps (class weights, cultivation direction) are read with hardware bilinear filtering: two taps give soft class
 //   transitions instead of 3 m steps;
-// - the texture lookup is displaced by a world-space noise of about ±0,3 m: limits read as drawn, not rasterised.
 // The geometry of the terrain and every frozen polygon are read, never written.
 const hash=s=>{let h=2166136261;for(const c of String(s))h=Math.imul(h^c.charCodeAt(0),16777619);return (h>>>0)/4294967296;};
 const clamp=THREE.MathUtils.clamp;
@@ -84,8 +83,8 @@ const GROUND_V30_DECL=`uniform sampler2D tGlobal,tGlobalFieldA,tGlobalFieldB,tDe
 struct FieldS{vec4 w;vec2 dir;float k;};
 FieldS sampleField(sampler2D ta,sampler2D tb,vec2 uv){FieldS s;vec3 a=texture2D(ta,uv).rgb,b=texture2D(tb,uv).rgb;s.w=vec4(a,b.b);
  vec2 fv=b.rg*2.-1.;float lv=length(fv);float an=atan(fv.y,fv.x)*.5;s.dir=vec2(cos(an),sin(an));s.k=clamp((lv/max(a.r,.05)-.3)/.7,0.,1.);return s;}`;
-const GROUND_V30_CHUNK=`vec2 wp=vWorld.xz;vec2 wq=wp+(vec2(vnoise(wp*.19),vnoise(wp*.19+11.7))-.5)*.6;
- vec2 ug=(wq-uBox.xy)/uBox.zw;vec2 ud=(wq-uDet.xy)/uDet.z;float edgeD=max(abs(ud.x-.5),abs(ud.y-.5));float inD=uDet.w*(1.-smoothstep(.41,.49,edgeD));
+const GROUND_V30_CHUNK=`vec2 wp=vWorld.xz;
+ vec2 ug=(wp-uBox.xy)/uBox.zw;vec2 ud=(wp-uDet.xy)/uDet.z;float edgeD=max(abs(ud.x-.5),abs(ud.y-.5));float inD=uDet.w*(1.-smoothstep(.41,.49,edgeD));
  vec3 cg=texture2D(tGlobal,ug).rgb;vec3 cd=texture2D(tDetail,clamp(ud,0.,1.)).rgb;diffuseColor.rgb*=mix(cg,cd,inD);
  FieldS fs;if(inD>.5)fs=sampleField(tDetailFieldA,tDetailFieldB,clamp(ud,0.,1.));else fs=sampleField(tGlobalFieldA,tGlobalFieldB,ug);
  float fw=fwidth(wp.x)+fwidth(wp.y);float near=1.-smoothstep(.35,1.6,fw);float mult=1.;
@@ -95,8 +94,8 @@ const GROUND_V30_CHUNK=`vec2 wp=vWorld.xz;vec2 wq=wp+(vec2(vnoise(wp*.19),vnoise
   float tl=t/(24.+fk*4.);float td=abs(fract(tl)-.5)*2.;float lw=max(.035,fwidth(tl)*1.2);pb*=1.-.07*(1.-smoothstep(1.-lw*2.,1.-lw,td))*(1.-smoothstep(.12,.35,fwidth(tl)))*(.6+.4*vnoise(vec2(along*.01,fk*3.)));
   pb*=.965+.06*vnoise(vec2(along*.012,t*.03)+fk*9.)+.025*vnoise(wp*.22);
   mult=mix(mult,pb,fs.w.x);}
- if(fs.w.y>.01){float pm=.95+.07*vnoise(wp*.07+3.)+.04*vnoise(wp*.55);pm*=1.-.05*smoothstep(.62,.82,vnoise(wp*.31+3.))*(.4+.6*near);mult=mix(mult,pm,fs.w.y);}
- if(fs.w.z>.01){float pl=.975+.06*vnoise(wp*.045)+.03*vnoise(wp*.9)*near;pl*=1.-.04*smoothstep(.66,.84,vnoise(wp*.12+5.));mult=mix(mult,pl,fs.w.z);}
+ if(fs.w.y>.01){float pm=.95+.09*vnoise(wp*.07+3.);pm*=1.-.05*smoothstep(.62,.82,vnoise(wp*.31+3.))*(.4+.6*near);mult=mix(mult,pm,fs.w.y);}
+ if(fs.w.z>.01){float pl=.975+.07*vnoise(wp*.045);pl*=1.-.04*smoothstep(.66,.84,vnoise(wp*.12+5.));mult=mix(mult,pl,fs.w.z);}
  if(fs.w.w>.01){float pw=.9+.12*vnoise(wp*.13);mult=mix(mult,pw,fs.w.w);}
  diffuseColor.rgb*=mult;if(near>.01){float gr=vnoise(wp*.6)*.5+vnoise(wp*2.4)*.5;diffuseColor.rgb*=1.+(gr-.5)*.05*near;}
  float big=vnoise(wp*.006+2.);diffuseColor.rgb*=mix(vec3(.985,1.,1.015),vec3(1.02,1.005,.975),big);`;
