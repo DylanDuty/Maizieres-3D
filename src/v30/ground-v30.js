@@ -11,7 +11,8 @@ import {toon} from '../v26/toon-materials.js';
 //   feathered lawn fringe around the village, a grassy bank along the water), drawn at the canvas resolution;
 // - a detail canvas (0,5–0,7 m per texel) is repainted around the viewed area when the camera rests, and blended into the
 //   global one: at close range the limits are drawn at the precision of the vector data instead of the global texel;
-// - the class map is read with four taps and bilinear weights (soft class transitions instead of 3 m steps);
+// - the class maps (class weights, cultivation direction) are read with hardware bilinear filtering: two taps give soft class
+//   transitions instead of 3 m steps;
 // - the texture lookup is displaced by a world-space noise of about ±0,3 m: limits read as drawn, not rasterised.
 // The geometry of the terrain and every frozen polygon are read, never written.
 const hash=s=>{let h=2166136261;for(const c of String(s))h=Math.imul(h^c.charCodeAt(0),16777619);return (h>>>0)/4294967296;};
@@ -63,32 +64,30 @@ export function paintGroundV30(ctx,{P,box,w,h}){
  for(const {o} of P.waterLines.filter(e=>over(e.b))){line(o.p,2,G.bank,o.w+4.5,.55);line(o.p,2,G.bank,o.w+2.4,.8);line(o.p,2,o.perm?G.bed:G.bedSeasonal,o.w);}
  return m;
 }
-// Class map (no colour): cultivation direction (doubled angle) and a per-parcel random in RG, class in B
-// (0 none, 1 arable, 2 meadow, 3 lawn, 4 wood floor). Same encoding as V2.9.1.
-export function paintFieldV30(ctx,{P,box,w,h}){
+// Class maps (no colour), read with hardware bilinear filtering (two taps give smooth class weights):
+// A = class weights (R arable, G meadow, B lawn); B = cultivation direction of arable parcels (doubled angle, length
+// .3–1 from a per-parcel random) in RG, zero vector elsewhere, wood floor in B.
+export function paintFieldV30(ctxA,ctxB,{P,box,w,h}){
  const W=box.maxX-box.minX,D=box.maxZ-box.minZ,sx=w/W,sz=h/D,X=x=>(x-box.minX)*sx,Z=z=>(z-box.minZ)*sz;
  const over=b=>b[2]>=box.minX-20&&b[0]<=box.maxX+20&&b[3]>=box.minZ-20&&b[1]<=box.maxZ+20;
- const path=rings=>{ctx.beginPath();for(const r of rings){for(let i=0;i<r.length;i+=2)i?ctx.lineTo(X(r[i]),Z(r[i+1])):ctx.moveTo(X(r[i]),Z(r[i+1]));ctx.closePath();}};
- const code=(cls,ang,k)=>{const mm=.3+.7*k,r=Math.round((Math.cos(2*ang)*mm*.5+.5)*255),g=Math.round((Math.sin(2*ang)*mm*.5+.5)*255);return `rgb(${r},${g},${Math.round(cls/4*255)})`;};
- ctx.globalAlpha=1;ctx.fillStyle='rgb(128,128,0)';ctx.fillRect(0,0,w,h);
- const fillAll=(o,c)=>{ctx.fillStyle=c;for(const p of o.r){path(p);ctx.fill('evenodd');}};
- for(const {o} of P.village.filter(e=>over(e.b)))fillAll(o,code(3,0,hash(o.id||'v')));
+ const path=(ctx,rings)=>{ctx.beginPath();for(const r of rings){for(let i=0;i<r.length;i+=2)i?ctx.lineTo(X(r[i]),Z(r[i+1])):ctx.moveTo(X(r[i]),Z(r[i+1]));ctx.closePath();}};
+ const dir=(ang,k)=>{const mm=.3+.7*k;return `rgb(${Math.round((Math.cos(2*ang)*mm*.5+.5)*255)},${Math.round((Math.sin(2*ang)*mm*.5+.5)*255)},0)`;};
+ ctxA.globalAlpha=ctxB.globalAlpha=1;ctxA.fillStyle='rgb(0,0,0)';ctxA.fillRect(0,0,w,h);ctxB.fillStyle='rgb(128,128,0)';ctxB.fillRect(0,0,w,h);
+ const fillAll=(o,a,b)=>{ctxA.fillStyle=a;ctxB.fillStyle=b;for(const p of o.r){path(ctxA,p);ctxA.fill('evenodd');path(ctxB,p);ctxB.fill('evenodd');}};
+ for(const {o} of P.village.filter(e=>over(e.b)))fillAll(o,'rgb(0,0,255)','rgb(128,128,0)');
  for(const {o} of P.agriculture.filter(e=>over(e.b))){const ring=o.r[0]?.[0];if(!ring||ring.length<6)continue;let best=0,ang=0;for(let i=2;i<ring.length;i+=2){const dx=ring[i]-ring[i-2],dz=ring[i+1]-ring[i-1],L=Math.hypot(dx,dz);if(L>best){best=L;ang=Math.atan2(dz,dx);}}
-  fillAll(o,code(MEADOW(o)?2:1,ang,hash(o.id+'k')));}
- for(const {o} of P.woodland.filter(e=>over(e.b)))fillAll(o,code(4,0,hash(o.id||'w')));
+  if(MEADOW(o))fillAll(o,'rgb(0,255,0)','rgb(128,128,0)');else fillAll(o,'rgb(255,0,0)',dir(ang,hash(o.id+'k')));}
+ for(const {o} of P.woodland.filter(e=>over(e.b)))fillAll(o,'rgb(0,0,0)','rgb(128,128,255)');
 }
-
 // Ground shader (after <color_fragment>): global + detail colour, smooth class weights, world-space patterns.
-const GROUND_V30_DECL=`uniform sampler2D tGlobal,tGlobalField,tDetail,tDetailField;uniform vec4 uBox,uDet;uniform vec2 uGTexel,uDTexel;
+const GROUND_V30_DECL=`uniform sampler2D tGlobal,tGlobalFieldA,tGlobalFieldB,tDetail,tDetailFieldA,tDetailFieldB;uniform vec4 uBox,uDet;
 struct FieldS{vec4 w;vec2 dir;float k;};
-FieldS sampleField(sampler2D t,vec2 uv,vec2 texel){vec2 p=uv/texel-.5;vec2 i=floor(p),f=fract(p);FieldS s;s.w=vec4(0.);vec2 v=vec2(0.);float kk=0.;
- for(int y=0;y<2;y++)for(int x=0;x<2;x++){vec2 o=vec2(float(x),float(y));float wt=(x==0?1.-f.x:f.x)*(y==0?1.-f.y:f.y);vec4 fd=texture2D(t,(i+o+.5)*texel);float cls=floor(fd.b*4.+.5);vec2 fv=fd.rg*2.-1.;
-  s.w+=wt*vec4(cls==1.?1.:0.,cls==2.?1.:0.,cls==3.?1.:0.,cls==4.?1.:0.);float lv=length(fv);v+=wt*(cls==1.?fv/max(lv,1e-3):vec2(0.));kk+=wt*clamp((lv-.3)/.7,0.,1.);}
- float a=atan(v.y,v.x)*.5;s.dir=vec2(cos(a),sin(a));s.k=kk;return s;}`;
-const GROUND_V30_CHUNK=`vec2 wp=vWorld.xz;vec2 warp=(vec2(vnoise(wp*.19),vnoise(wp*.19+11.7))-.5)*.5+(vec2(vnoise(wp*.61+3.),vnoise(wp*.61+8.))-.5)*.16;vec2 wq=wp+warp;
+FieldS sampleField(sampler2D ta,sampler2D tb,vec2 uv){FieldS s;vec3 a=texture2D(ta,uv).rgb,b=texture2D(tb,uv).rgb;s.w=vec4(a,b.b);
+ vec2 fv=b.rg*2.-1.;float lv=length(fv);float an=atan(fv.y,fv.x)*.5;s.dir=vec2(cos(an),sin(an));s.k=clamp((lv/max(a.r,.05)-.3)/.7,0.,1.);return s;}`;
+const GROUND_V30_CHUNK=`vec2 wp=vWorld.xz;vec2 wq=wp+(vec2(vnoise(wp*.19),vnoise(wp*.19+11.7))-.5)*.6;
  vec2 ug=(wq-uBox.xy)/uBox.zw;vec2 ud=(wq-uDet.xy)/uDet.z;float edgeD=max(abs(ud.x-.5),abs(ud.y-.5));float inD=uDet.w*(1.-smoothstep(.41,.49,edgeD));
  vec3 cg=texture2D(tGlobal,ug).rgb;vec3 cd=texture2D(tDetail,clamp(ud,0.,1.)).rgb;diffuseColor.rgb*=mix(cg,cd,inD);
- FieldS fs;if(inD>.5)fs=sampleField(tDetailField,clamp(ud,0.,1.),uDTexel);else fs=sampleField(tGlobalField,ug,uGTexel);
+ FieldS fs;if(inD>.5)fs=sampleField(tDetailFieldA,tDetailFieldB,clamp(ud,0.,1.));else fs=sampleField(tGlobalFieldA,tGlobalFieldB,ug);
  float fw=fwidth(wp.x)+fwidth(wp.y);float near=1.-smoothstep(.35,1.6,fw);float mult=1.;
  if(fs.w.x>.01){vec2 fdir=fs.dir;float t=dot(wp,vec2(-fdir.y,fdir.x)),along=dot(wp,fdir),fk=fs.k;
   float sb=t/(5.5+fk*3.5);float band=.5+.5*sin(6.2832*sb+vnoise(vec2(along*.004,fk*7.))*2.);float pb=1.+.07*(band-.5)*(1.-smoothstep(.25,.6,fwidth(sb)));
@@ -99,10 +98,10 @@ const GROUND_V30_CHUNK=`vec2 wp=vWorld.xz;vec2 warp=(vec2(vnoise(wp*.19),vnoise(
  if(fs.w.y>.01){float pm=.95+.07*vnoise(wp*.07+3.)+.04*vnoise(wp*.55);pm*=1.-.05*smoothstep(.62,.82,vnoise(wp*.31+3.))*(.4+.6*near);mult=mix(mult,pm,fs.w.y);}
  if(fs.w.z>.01){float pl=.975+.06*vnoise(wp*.045)+.03*vnoise(wp*.9)*near;pl*=1.-.04*smoothstep(.66,.84,vnoise(wp*.12+5.));mult=mix(mult,pl,fs.w.z);}
  if(fs.w.w>.01){float pw=.9+.12*vnoise(wp*.13);mult=mix(mult,pw,fs.w.w);}
- diffuseColor.rgb*=mult;float gr=vnoise(wp*.6)*.5+vnoise(wp*2.4)*.5;diffuseColor.rgb*=1.+(gr-.5)*.05*near;
- float big=vnoise(wp*.0045+2.)*.6+vnoise(wp*.013)*.4;diffuseColor.rgb*=mix(vec3(.985,1.,1.015),vec3(1.02,1.005,.975),big);`;
+ diffuseColor.rgb*=mult;if(near>.01){float gr=vnoise(wp*.6)*.5+vnoise(wp*2.4)*.5;diffuseColor.rgb*=1.+(gr-.5)*.05*near;}
+ float big=vnoise(wp*.006+2.);diffuseColor.rgb*=mix(vec3(.985,1.,1.015),vec3(1.02,1.005,.975),big);`;
 
-const texOf=(canvas,colour)=>{const t=new THREE.CanvasTexture(canvas);t.flipY=false;t.colorSpace=colour?THREE.SRGBColorSpace:THREE.NoColorSpace;if(colour)t.anisotropy=8;else{t.magFilter=THREE.NearestFilter;t.minFilter=THREE.NearestFilter;t.generateMipmaps=false;}return t;};
+const texOf=(canvas,colour)=>{const t=new THREE.CanvasTexture(canvas);t.flipY=false;t.colorSpace=colour?THREE.SRGBColorSpace:THREE.NoColorSpace;if(colour)t.anisotropy=8;else{t.magFilter=THREE.LinearFilter;t.minFilter=THREE.LinearFilter;t.generateMipmaps=false;}return t;};
 const canvasOf=(w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;return c;};
 
 export function buildGroundV30(v2,{size=4096,fieldSize=2048,detail=2048,detailM=1100}){
@@ -111,17 +110,17 @@ export function buildGroundV30(v2,{size=4096,fieldSize=2048,detail=2048,detailM=
  for(let i=0;i<pos.count;i++){const x=pos.getX(i),z=pos.getZ(i);if(x<minX)minX=x;if(x>maxX)maxX=x;if(z<minZ)minZ=z;if(z>maxZ)maxZ=z;}
  const box={minX,maxX,minZ,maxZ},W=maxX-minX,D=maxZ-minZ,P=prepareGroundData(v2.data);
  const gc=canvasOf(size,Math.round(size*D/W));paintGroundV30(gc.getContext('2d'),{P,box,w:gc.width,h:gc.height});
- const fc=canvasOf(fieldSize,Math.round(fieldSize*D/W));paintFieldV30(fc.getContext('2d'),{P,box,w:fc.width,h:fc.height});
- const dc=canvasOf(detail,detail),dfc=canvasOf(detail,detail);const dctx=dc.getContext('2d'),dfctx=dfc.getContext('2d');dctx.fillStyle=GROUND_V30.base;dctx.fillRect(0,0,detail,detail);
- const tGlobal=texOf(gc,true),tGlobalField=texOf(fc,false),tDetail=texOf(dc,true),tDetailField=texOf(dfc,false);
- const U={tGlobal:{value:tGlobal},tGlobalField:{value:tGlobalField},tDetail:{value:tDetail},tDetailField:{value:tDetailField},uBox:{value:new THREE.Vector4(minX,minZ,W,D)},uDet:{value:new THREE.Vector4(0,0,detailM,0)},uGTexel:{value:new THREE.Vector2(1/fc.width,1/fc.height)},uDTexel:{value:new THREE.Vector2(1/detail,1/detail)}};
+ const fa=canvasOf(fieldSize,Math.round(fieldSize*D/W)),fb=canvasOf(fa.width,fa.height);paintFieldV30(fa.getContext('2d'),fb.getContext('2d'),{P,box,w:fa.width,h:fa.height});
+ const dc=canvasOf(detail,detail),dfa=canvasOf(detail,detail),dfb=canvasOf(detail,detail);const dctx=dc.getContext('2d'),dfactx=dfa.getContext('2d'),dfbctx=dfb.getContext('2d');dctx.fillStyle=GROUND_V30.base;dctx.fillRect(0,0,detail,detail);
+ const tGlobal=texOf(gc,true),tGlobalFieldA=texOf(fa,false),tGlobalFieldB=texOf(fb,false),tDetail=texOf(dc,true),tDetailFieldA=texOf(dfa,false),tDetailFieldB=texOf(dfb,false);
+ const U={tGlobal:{value:tGlobal},tGlobalFieldA:{value:tGlobalFieldA},tGlobalFieldB:{value:tGlobalFieldB},tDetail:{value:tDetail},tDetailFieldA:{value:tDetailFieldA},tDetailFieldB:{value:tDetailFieldB},uBox:{value:new THREE.Vector4(minX,minZ,W,D)},uDet:{value:new THREE.Vector4(0,0,detailM,0)}};
  const old=mesh.material;mesh.material=toon(new THREE.MeshLambertMaterial({vertexColors:true}),'ground-v30',GROUND_V30_CHUNK,U,{decl:GROUND_V30_DECL});old.dispose?.();
  // Detail window: painted around a centre, uploaded once; the shader fades it in over the inner 82 % of the window.
  let centre=null,paints=0,lastMs=0;
  const paint=c=>{const t0=performance.now(),half=detailM/2,b={minX:c[0]-half,maxX:c[0]+half,minZ:c[1]-half,maxZ:c[1]+half};
-  paintGroundV30(dctx,{P,box:b,w:detail,h:detail});paintFieldV30(dfctx,{P,box:b,w:detail,h:detail});tDetail.needsUpdate=true;tDetailField.needsUpdate=true;
+  paintGroundV30(dctx,{P,box:b,w:detail,h:detail});paintFieldV30(dfactx,dfbctx,{P,box:b,w:detail,h:detail});tDetail.needsUpdate=true;tDetailFieldA.needsUpdate=true;tDetailFieldB.needsUpdate=true;
   U.uDet.value.set(b.minX,b.minZ,detailM,1);centre=c;paints++;lastMs=Math.round(performance.now()-t0);};
- return {mesh,box,texture:{width:gc.width,height:gc.height,metresPerPixel:+(W/gc.width).toFixed(2)},field:{width:fc.width,height:fc.height},detail:{size:detail,metres:detailM,metresPerPixel:+(detailM/detail).toFixed(2)},vertices:pos.count,
+ return {mesh,box,texture:{width:gc.width,height:gc.height,metresPerPixel:+(W/gc.width).toFixed(2)},field:{width:fa.width,height:fa.height},detail:{size:detail,metres:detailM,metresPerPixel:+(detailM/detail).toFixed(2)},vertices:pos.count,
   // Called each frame with the viewed point and camera distance; repaints when the view rests away from the window centre.
   update:(target,distance,resting)=>{if(distance>2600){U.uDet.value.w=0;return false;}if(U.uDet.value.w===0&&centre)U.uDet.value.w=1;
    const far=!centre||Math.hypot(target[0]-centre[0],target[1]-centre[1])>detailM*.2;if(far&&(resting||!centre)){paint(target);return true;}return false;},
