@@ -1,3 +1,10 @@
+# Notes V3.0 — passe artistique premium de l'environnement, 11 octobre 2026
+
+- **Un bord crénelé vient d'une grille, pas d'un manque de flou.** Les lisières en escalier étaient la grille de 8 m de la canopée ; les bords de champs crénelés, la texture de sol à 1,5 m par texel et la carte des cultures lue au plus proche. Flouter aurait seulement adouci les marches. On a déplacé les sommets de bord sur le polygone et lu les cartes avec des poids bilinéaires.
+- **Le canevas porte la couleur, le shader porte le motif.** Un motif peint dans une texture est rastérisé à sa résolution et s'arrête en marches à chaque limite. Calculé en coordonnées monde dans le shader, il est net à toute distance et s'efface avec `fwidth` avant de produire du moiré.
+- **Le détail là où l'on regarde.** Une seconde texture de 2 048 px, repeinte autour du point visé quand la caméra s'arrête, donne 0,5 m par pixel au premier plan pour le prix d'une repeinte. Elle ne change que le rendu : les polygones sont lus, jamais écrits.
+- **Premium, c'est souvent moins.** Saturation, encrage, vignette, contraste des motifs et nombre d'arbres en fleurs ont été réduits. Ce qui fait « cheap » est surtout ce qui crie.
+
 # Notes V2.9.2 — audit géographique et sémantique, 11 octobre 2026
 
 - **Une zone n'est pas un bâtiment.** V2.9.1 avait lu la zone BD TOPO « Salle polyvalente » comme la preuve du bâtiment de la salle. Ce bâtiment de 2015 est la Maison des associations : deux lieux confondus. Une association lieu ↔ bâtiment exige des preuves adaptées (OSM au bon objet, RNB à l'adresse exacte, orthophoto, Bibles) et ne vaut que si aucun autre lieu ne revendique ce bâtiment.
