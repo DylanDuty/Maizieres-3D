@@ -321,17 +321,17 @@ footer{background:linear-gradient(transparent,#e8ede4e8);color:#4a5a4f}
  .ui-v32 header{left:16px;top:12px;max-width:none}.ui-v32 .eyebrow{display:none}.ui-v32 h1{font-size:17px;margin:0}
  .ui-v32 #search{top:44px;bottom:auto;left:12px;right:12px;width:auto;transform:none}
  .ui-v32 #search input{min-height:44px;font-size:16px}
- .ui-v32 #dock{left:12px;right:12px;bottom:30px;transform:none;justify-content:space-between;border-radius:18px}
+ .ui-v32 #dock{left:12px;right:12px;bottom:42px;transform:none;justify-content:space-between;border-radius:18px}
  .ui-v32 #dock button{flex:1;flex-direction:column;justify-content:center;gap:2px;min-height:54px;padding:4px 2px;font-size:11.5px;font-weight:550}
  .ui-v32 #dock button{min-height:58px}.ui-v32 #dock .dock-mode{font-size:10px;line-height:1;margin-top:-1px}.ui-v32 #dock .dock-mode:before{content:none}
- .ui-v32 .pop{left:12px!important;right:12px;bottom:104px!important;width:auto!important;max-height:calc(100vh - 220px)!important;transform-origin:50% 100%}
+ .ui-v32 .pop{left:12px!important;right:12px;bottom:116px!important;width:auto!important;max-height:calc(100vh - 220px)!important;transform-origin:50% 100%}
  .ui-v32 .q-option{min-height:60px}
  .ui-v32 #panel-info{left:0;right:0;top:auto;bottom:0;width:100%;max-height:78vh;border-radius:20px 20px 0 0;padding:24px 20px max(20px,env(safe-area-inset-bottom));transform:translateY(12px)}
  .ui-v32 #panel-info.in{transform:none}
- .ui-v32 footer{padding:6px 14px 7px;flex-direction:row;justify-content:space-between;align-items:center;font-size:10px;gap:8px}
- .ui-v32 #mention{font-size:10px;white-space:nowrap;min-height:24px}.ui-v32 footer .credit{font-size:9px;text-align:right;white-space:nowrap}.ui-v32 footer .credit #data-date,.ui-v32 footer .credit i:last-of-type{display:none}
+ .ui-v32 footer{padding:4px 14px 6px;flex-direction:column;justify-content:flex-end;align-items:flex-start;font-size:10px;gap:0}
+ .ui-v32 #mention{font-size:10px;white-space:nowrap;min-height:24px}.ui-v32 footer .credit{font-size:9.5px;text-align:left;white-space:nowrap}.ui-v32 footer .credit #data-date,.ui-v32 footer .credit i:last-of-type{display:none}
  .ui-v32 .compass{top:104px;right:12px;bottom:auto;width:36px;height:36px}
- .ui-v32 #quick{bottom:104px!important;left:12px!important;right:12px}
+ .ui-v32 #quick{bottom:116px!important;left:12px!important;right:12px}
  .ui-v32 #selection{left:0;right:0;top:auto;bottom:0;width:100%;max-height:62vh;border-radius:20px 20px 0 0;padding:24px 20px 20px;animation:ui-up .24s ease-out;z-index:12}
 }
 @keyframes ui-up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}

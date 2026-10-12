@@ -1,3 +1,19 @@
+# Vérification V3.2 — villages premium et interface, 12 octobre 2026
+
+Branche `opus/v3.2-premium-village-interface`, à partir de `119ada9` (V3.1). Mode `?visual=premium-v32`.
+
+- **Documents** : rapport `docs/audit/V3.2_PREMIUM_VILLAGE_INTERFACE_EXPERIENCE.md` (24 sections, grilles architecture et UI).
+- **Captures** : `docs/qa/v3.2/`. Elles comprennent `compare/` (10 cadrages V3.1 / V3.2), `architecture/` (8 cadrages et 4 détails agrandis), et `poussey/`, `centre/`, `les-granges/` (4 cadrages chacun). S'y ajoutent `interface/` (états V3.2, trois modes actifs, avant / après), `mobile/` (390 × 844, 844 × 390) et `hd/` (1920 × 1080).
+
+- **Géographie** : aucun fichier de `public/`, `unreal/` ni `data-sources/` modifié ; 42 fichiers gelés identiques à `309e65e` ; 52 hachages Freeze V1 vérifiés.
+- **Sémantique** : gel sémantique V2.9.2 inchangé ; six contrôles sémantiques PASS.
+- **Architecture** : 276 toits en ailes (627 ailes), 278 appentis, 8 quatre pans dérivés, 607 cheminées sur règle, 1 721 assises, 248 masses de haies ; aucune empreinte, hauteur, type de toit ni famille de couleur documentés modifiés.
+- **Performance** (SwiftShader, vue oblique, médianes de 3 passages alternés, V3.1 → V3.2) : BEAUTÉ 285 appels, 10,24 → 10,34 M triangles (+ 0,93 %), 5 672 → 5 601 ms. ÉQUILIBRÉ 283 appels, 8,52 → 8,61 M (+ 1,12 %), 5 043 → 5 042 ms. PERFORMANCE 127 appels, 3,48 → 3,53 M (+ 1,37 %), 2 451 → 2 476 ms avec FXAA, 2 312 ms sans. À 420 m : + 0,9 à + 2,55 % de triangles.
+- **Interface** : sélecteur Qualité direct (trois choix visibles, un clic, caméra conservée, retour arrière), barre Explorer · Qualité · Informations, panneau Informations, mention non contractuelle (longue et courte). Tabulation, Échap, « / », rôles ARIA et contrastes (≥ 4,8:1) vérifiés.
+- **Chromium, sonde** : 2 596 / 2 596 bâtiments, 2 584 / 2 584 avec `manual=0`, 0 enfoui, console vide ; `premium-v31` identique dans la build V3.2.
+- **Chromium, interface** : clics, fiches, recherche, vues et zoom maximal 420 m sur trois gabarits, console vide.
+- **Contrôles** : `check:all` PASS ; `npm run build` et `pnpm build` OK.
+
 # Vérification V3.1 — profondeur, contraste et finition industrielle, 11 octobre 2026
 
 Branche `opus/v3.1-depth-contrast-industrial-polish`, à partir de `6df3db7` (V3.0). Mode `?visual=premium-v31` ; `?fxaa=0|1` pour le preset PERFORMANCE.

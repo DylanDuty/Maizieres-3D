@@ -1,3 +1,10 @@
+# Notes V3.2 — villages premium et interface, 12 octobre 2026
+
+- **Lire la forme avant de dessiner le toit.** Un seul pignon sur le rectangle minimal d'une maison en L met le faîtage au-dessus du vide. Découper l'empreinte en rectangles et prendre le maximum de leurs pans donne des ailes et des noues justes, pour quelques triangles, tant que la surface est coupée le long de ses arêtes.
+- **Une couleur fixée en espace linéaire n'est pas celle qu'on lit.** Le gris « foncé » de l'orthophoto, réglé en HSL dans l'espace de travail linéaire, sortait gris-bleu pâle à l'écran : deux familles documentées devenaient une seule. Les teintes V3.2 sont écrites en sRGB.
+- **Une tache sombre sans arbre est une ombre orpheline.** Les polygones de haies n'avaient qu'un aplat vert foncé ; un instancement d'arbustes aurait coûté 500 000 triangles. La canopée des bois sur une grille de 3 m, bosselée, en coûte 31 500.
+- **Une interface premium, c'est surtout moins d'interface.** Quatorze contrôles permanents deviennent trois entrées et des panneaux à la demande. La qualité se choisit en un clic au lieu d'un cycle, et la carte dit ce qu'elle est : une interprétation, non contractuelle.
+
 # Notes V3.1 — profondeur, contraste et finition industrielle, 11 octobre 2026
 
 - **De la profondeur sans triangle.** Un bois paraît plat quand tous ses sommets ont la même hauteur et la même couleur. Moduler la hauteur des sommets existants par bosquets, puis éclaircir les sommets hauts et assombrir les creux, donne plusieurs plans et une occlusion cuite dans la couleur, pour le même maillage.
