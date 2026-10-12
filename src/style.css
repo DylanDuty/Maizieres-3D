@@ -175,8 +175,8 @@ footer{background:linear-gradient(transparent,#e8ede4e8);color:#4a5a4f}
 /* V3.2 — premium interface (?visual=premium-v32, body.ui-v32). The map is the content: a slim brand, one search field,
    a three-entry dock at the bottom, panels on demand, a permanent discreet non-contractual line. System fonts only, a
    light translucent cream with a soft blur, hairline borders, one deep-green accent, short fades and slides. */
-.ui-v32{--ui-font:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;--ui-ink:#1f2f27;--ui-muted:#5f6d64;--ui-faint:#8a968d;
- --ui-paper:rgba(251,250,245,.86);--ui-paper-solid:#fbfaf5;--ui-line:rgba(31,47,39,.1);--ui-accent:#2f5442;--ui-accent-soft:rgba(47,84,66,.09);--ui-warm:#b98a3e;
+.ui-v32{--ui-font:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;--ui-ink:#1f2f27;--ui-muted:#5f6d64;--ui-faint:#66726a;
+ --ui-paper:rgba(251,250,245,.86);--ui-paper-solid:#fbfaf5;--ui-line:rgba(31,47,39,.1);--ui-accent:#2f5442;--ui-accent-soft:rgba(47,84,66,.09);--ui-warm:#8c6526;
  --ui-shadow:0 10px 30px rgba(28,40,32,.13),0 1px 2px rgba(28,40,32,.06);--ui-radius:14px;font-family:var(--ui-font)}
 .ui-v32 button{font-family:var(--ui-font)}
 .ui-v32 nav[hidden],.ui-v32 #views,.ui-v32 #legend{display:none!important}
@@ -329,7 +329,7 @@ footer{background:linear-gradient(transparent,#e8ede4e8);color:#4a5a4f}
  .ui-v32 #panel-info{left:0;right:0;top:auto;bottom:0;width:100%;max-height:78vh;border-radius:20px 20px 0 0;padding:24px 20px max(20px,env(safe-area-inset-bottom));transform:translateY(12px)}
  .ui-v32 #panel-info.in{transform:none}
  .ui-v32 footer{padding:6px 14px 7px;flex-direction:row;justify-content:space-between;align-items:center;font-size:10px;gap:8px}
- .ui-v32 #mention{font-size:10px;white-space:nowrap;min-height:20px}.ui-v32 footer .credit{font-size:9px;text-align:right;white-space:nowrap}.ui-v32 footer .credit #data-date,.ui-v32 footer .credit i:last-of-type{display:none}
+ .ui-v32 #mention{font-size:10px;white-space:nowrap;min-height:24px}.ui-v32 footer .credit{font-size:9px;text-align:right;white-space:nowrap}.ui-v32 footer .credit #data-date,.ui-v32 footer .credit i:last-of-type{display:none}
  .ui-v32 .compass{top:104px;right:12px;bottom:auto;width:36px;height:36px}
  .ui-v32 #quick{bottom:104px!important;left:12px!important;right:12px}
  .ui-v32 #selection{left:0;right:0;top:auto;bottom:0;width:100%;max-height:62vh;border-radius:20px 20px 0 0;padding:24px 20px 20px;animation:ui-up .24s ease-out;z-index:12}
