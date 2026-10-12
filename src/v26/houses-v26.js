@@ -4,6 +4,7 @@ import {shapeRings} from '../geometry.js';
 import {buildingProfile} from '../building-profile.js';
 import {applyArchitecture,roofSurface,splitByLines,edgeCuts} from '../architecture.js';
 import {fnv,mulberry,RES,outward,range,offsetRing,roofFn,Tri,groupedMesh,box,isLongest,UP,DOWN} from '../v25/procedural-houses.js';
+import {wingRoofV32,leanToV32,compactHipV32,roofColorV32,facadeV32,gableVariantV32,chimneyV32,chimneyEndV32,variantV32,EAVE_V32,RIDGE_V32} from '../v32/architecture-v32.js';
 
 // V2.6 Poussey diorama — illustrated houses on the frozen footprints. Same geometry rules as V2.5 (profile-driven roof
 // type, ridge, heights, overhang, fascia, soffit, chimney) but a storybook language: flat pastel walls, roofs in a
@@ -46,35 +47,47 @@ export function footprintIndex(items,cell=25){const grid=new Map(),key=(x,z)=>`$
  return (x,z,selfId)=>{const list=grid.get(key(x,z));if(!list)return false;for(const it of list)if(it.id!==selfId&&insidePoly([x,z],it.poly))return true;return false;};}
 // V2.7: `special(ctx)` may draw a building itself (church); `occupied` filters openings against the neighbours.
 export function buildHousesV26({items,enrichment={buildings:{}},architecture,elevation=()=>0,materials:M,special=null,occupied=null,style='v26'}){
- const v31=style==='v31',v30=style==='v30'||v31,PAL=v30?PALETTE_V30:PALETTE,BIGS=v30?BIG_V30:BIG,roofOpts=v30?{sMin:.28,sMax:.48,lMin:.38,lMax:.5}:{};
- const walls=[new Tri(),new Tri()],roofs=[new Tri(),new Tri(),new Tri()],details=new Tri();const wallRanges=[],roofRanges=[],detailRanges=[];
- const C=new THREE.Color(),stats={buildings:0,variants:new Set(),windows:0,doors:0,garageDoors:0,shutters:0,chimneys:0,byClass:{},bigVariants:new Set()};
+ const v32=style==='v32',v31=style==='v31'||v32,v30=style==='v30'||v31,PAL=v30?PALETTE_V30:PALETTE,BIGS=v30?BIG_V30:BIG,roofOpts=v30?{sMin:.28,sMax:.48,lMin:.38,lMax:.5}:{};
+ const walls=[new Tri(),new Tri()],roofs=[new Tri(),new Tri(),new Tri()],details=new Tri(),chimneys=new Tri();const wallRanges=[],roofRanges=[],detailRanges=[],chimneyRanges=[];
+ const C=new THREE.Color(),stats={buildings:0,variants:new Set(),windows:0,doors:0,garageDoors:0,shutters:0,chimneys:0,byClass:{},bigVariants:new Set(),...(v32?{wingRoofs:0,wings:0,leanTo:0,hipDerived:0,facades:{},families:{}}:{})};
  const glass=new THREE.Color(PALETTE.glass),frame=new THREE.Color(PALETTE.frame),capCol=new THREE.Color(PALETTE.cap);
  for(const item of items){const {poly,t,id}=item,extra=item.extra||enrichment.buildings[id]||{};let p=buildingProfile(t,poly,extra,id);if(!p)continue;
   const arch=architecture?.get(item.featureId||id.split('#')[0])||null;if(arch)p=applyArchitecture(p,arch,poly);
   if(!p.arch){const across=p.axis.axis,along=[-across[1],across[0]];p.arch={across,along,a:{min:p.axis.min,max:p.axis.max},b:range(poly,along),shape:p.roofShape==='flat'?'flat':'gabled'};}
   const cls=arch?.buildingClass||'UNKNOWN',rng=mulberry(fnv(id)),pick=l=>l[Math.floor(rng()*l.length)];
+  // V3.2: an undocumented annex roof glued to a neighbour becomes a lean-to falling away from it; an undocumented compact
+  // house gets four slopes. Documented roof types are never changed.
+  if(v32&&arch?.roof.type==='unknown'){if(['ANNEX','GARAGE','SHED','OTHER'].includes(cls)){const lt=leanToV32(p,poly,id,occupied);if(lt){p={...p,arch:lt.arch,roofHeight:lt.roofHeight};stats.leanTo++;}}
+   else if(RES(cls)&&p.arch.shape==='gabled'&&compactHipV32(arch)){p={...p,arch:{...p.arch,shape:'hip',type:'hip'}};stats.hipDerived++;}}
   const dy=elevation(item)||0,base=dy+.35,eaveY=base+p.wallHeight;
   const res=RES(cls),garage=cls==='GARAGE',annex=['ANNEX','UNKNOWN','OTHER'].includes(cls),shed=cls==='SHED',green=cls==='GREENHOUSE',hall=['HANGAR','FARM','INDUSTRIAL','COMMERCIAL','SILO_TANK'].includes(cls),civic=['PUBLIC','HERITAGE','RELIGIOUS'].includes(cls),r2=cls==='RES_R2_PLUS';
   const big=BIGS[cls]||(p.arch.shape==='flat'&&p.size>200&&!res&&!garage&&!shed?BIGS.FLAT:null);if(big)stats.bigVariants.add(BIGS[cls]?cls:'FLAT');
-  const facade=big?pick(big.walls):civic?pick(PAL.civic):green?'#dcebe6':res?pick(PAL.wall):garage||annex?pick(PAL.annex):shed?pick(PAL.wood):hall?pick(PAL.steel):'#e4ded2';
+  const fv=v32&&(res||civic)&&!big&&!green?facadeV32(cls,extra,id):null;if(fv)stats.facades[fv.family]=(stats.facades[fv.family]||0)+1;
+  const fam32=v32?variantV32(cls,arch,fv?.family):null;if(fam32)stats.families[fam32]=(stats.families[fam32]||0)+1;
+  const facade=big?pick(big.walls):fv?fv.color:civic?pick(PAL.civic):green?'#dcebe6':res?pick(PAL.wall):garage||annex?pick(PAL.annex):shed?pick(PAL.wood):hall?pick(PAL.steel):'#e4ded2';
   const shutters=res&&!civic&&rng()<.7?pick(PAL.shutter):null,doorCol=new THREE.Color(pick(PAL.door)),variant=`${facade}-${shutters||'n'}-${Math.round(rng()*2)}`;stats.variants.add(variant);
   const wW=civic?1.3:1.35+rng()*.25,wH=civic?1.95:1.45+rng()*.2,spacing=civic?3.6:4+rng()*1.1,storey=civic?3.4:2.8;
-  const overhang=p.arch.shape==='flat'?0:res?(p.size<30?.3:.5):hall?.4:shed||green?.22:.32,thk=res?.24:.18;
+  const overhang=p.arch.shape==='flat'?0:v32&&res&&p.size>=30&&EAVE_V32[fam32]!=null?EAVE_V32[fam32]:res?(p.size<30?.3:.5):hall?.4:shed||green?.22:.32,thk=res?.24:.18;
   const tiled=p.arch.shape!=='flat'&&!(arch?.roof.material==='slate_like'||arch?.roof.material==='metal'||shed||hall);const roofPart=tiled?0:big?.sheet&&p.arch.shape!=='flat'?2:1,wallPart=big?.panels?1:0;
   const wallCol=C.set(facade).clone().offsetHSL(0,0,(rng()-.5)*.03);
-  let roofCol=green?new THREE.Color('#dfeef0'):p.arch.shape==='flat'?new THREE.Color(v30?'#b3ada1':'#b9b3a6'):harmonise(p.roofColor,shed||hall?{sMin:.1,sMax:.3,lMin:.5,lMax:.66}:roofOpts);
+  let roofCol=green?new THREE.Color('#dfeef0'):p.arch.shape==='flat'?new THREE.Color(v30?'#b3ada1':'#b9b3a6'):v32&&arch&&!big&&!shed&&!hall?roofColorV32(arch,cls,id):harmonise(p.roofColor,shed||hall?{sMin:.1,sMax:.3,lMin:.5,lMax:.66}:roofOpts);
   if(big){const h={};roofCol.getHSL(h);const tint=new THREE.Color(pick(big.roofs));roofCol=h.s<.12||p.arch.shape==='flat'?tint.lerp(roofCol,.35):roofCol.lerp(tint,.25);}
   const fasciaCol=new THREE.Color(PALETTE.fascia),soffitCol=fasciaCol.clone().multiplyScalar(.86);
-  const h=roofFn(p),model=roofSurface(p),lines=model.lines,top=q=>eaveY+h(q);
-  const w0s=walls.map(t=>t.n),r0s=roofs.map(t=>t.n),d0=details.n;
+  // V3.2: L, T and U footprints get one gabled wing per rectangle (see wingRoofV32); otherwise the V2.3 roof.
+  const wing=v32&&(res||civic||annex||garage||cls==='FARM')&&!big?.sheet?wingRoofV32(p,poly,{arch,overhang}):null;if(wing){stats.wingRoofs++;stats.wings+=wing.wings;}
+  const std=roofSurface(p),h=wing?wing.h:roofFn(p),model=wing?{lines:wing.lines,ridge:null}:std,lines=model.lines,top=q=>eaveY+h(q);
+  const ridges=wing?wing.ridges:std.ridge?[{...std.ridge,height:p.roofHeight,dir:p.arch.along}]:[];
+  // V3.2 walls: u carries the eave height above the wall foot and the gable variant (1000 + 100·variant + metres) for the
+  // wall shader (plinth, shade under the eaves, gable tone); the plain wall material never used u.
+  const enc=v32&&wallPart===0?1000+100*(p.arch.shape==='flat'?2:gableVariantV32(fv?.family))+Math.max(0,p.wallHeight-thk+.06):null;
+  const w0s=walls.map(t=>t.n),r0s=roofs.map(t=>t.n),d0=details.n,c0=chimneys.n;
   // V2.8: the hook runs first for every building; `true` = drawn by the hook, an object = accents on the standard drawing.
   const sp=special?special({item,p,cls,base,eaveY,walls:walls[wallPart],roofs:roofs[roofPart],details,wallCol,roofCol,totalHeight:arch?.totalHeightM}):false;const acc=sp&&sp!==true?sp:null;const storeyV=acc?.storey||storey;
   if(sp===true){}
   else if(cls==='WATER_TOWER'){waterTowerV26(poly,base,arch?.totalHeightM||p.wallHeight,details,C);}
   else{
    for(const [ri,r] of poly.entries())for(let i=0;i<r.length;i++){const a=r[i],b=r[(i+1)%r.length],pts=[a,...edgeCuts(a,b,lines).map(f=>[a[0]+f*(b[0]-a[0]),a[1]+f*(b[1]-a[1])]),b];let u=0;
-    for(let j=1;j<pts.length;j++){const c=pts[j-1],d=pts[j],L=Math.hypot(d[0]-c[0],d[1]-c[1]),tc=top(c)-thk+.06,td=top(d)-thk+.06;if(p.kind!=='canopy')walls[wallPart].quad([c[0],base,c[1]],[d[0],base,d[1]],[d[0],td,d[1]],[c[0],tc,c[1]],wallCol,[[u,0],[u+L,0],[u+L,td-base],[u,tc-base]],outward(a,b,poly));u+=L;}
+    for(let j=1;j<pts.length;j++){const c=pts[j-1],d=pts[j],L=Math.hypot(d[0]-c[0],d[1]-c[1]),tc=top(c)-thk+.06,td=top(d)-thk+.06;if(p.kind!=='canopy')walls[wallPart].quad([c[0],base,c[1]],[d[0],base,d[1]],[d[0],td,d[1]],[c[0],tc,c[1]],wallCol,enc?[[enc,0],[enc,0],[enc,td-base],[enc,tc-base]]:[[u,0],[u+L,0],[u+L,td-base],[u,tc-base]],outward(a,b,poly));u+=L;}
     if(ri===0)panels(a,b,poly,p,{res,garage,hall,big,civic,r2,id,occupied,base,eaveY,thk,wW,wH,spacing,storey:storeyV,shutters,doorCol,rng,details,stats,top,glass,frame:acc?.windowFrame||frame,wallCol,arched:!!acc?.arched,balcony:!!acc?.balcony,skipGroundLongest:!!acc?.skipGroundLongest});}
    const outer=poly.map((r,k)=>overhang?offsetRing(r,overhang,k>0):r),rings=shapeRings(outer),flat=rings.flat();
    const uvOf=q=>[dot(q,p.arch.along),dot(q,p.arch.across)];
@@ -87,21 +100,31 @@ export function buildHousesV26({items,enrichment={buildings:{}},architecture,ele
      const fo=outward(a,b,outer);for(let j=1;j<pts.length;j++){const c=pts[j-1],d=pts[j];details.quad([c[0],top(c)-thk,c[1]],[d[0],top(d)-thk,d[1]],[d[0],top(d),d[1]],[c[0],top(c),c[1]],fasciaCol,null,fo);}
      if(r.length===orig.length){const oa=orig[i],ob=orig[(i+1)%orig.length];details.quad([a[0],top(a)-thk,a[1]],[b[0],top(b)-thk,b[1]],[ob[0],top(ob)-thk,ob[1]],[oa[0],top(oa)-thk,oa[1]],soffitCol,null,DOWN);}}}
    // Ridge cap (lighter, like a painted highlight) and a cosy chimney on the larger pitched houses.
-   if(model.ridge&&p.roofHeight>.4&&p.arch.shape!=='shed'){const {at,s0,s1}=model.ridge,{along}=p.arch,n=Math.max(2,Math.ceil((s1-s0)/1)),runs=[];let run=[];
+   // V3.2: one cap per wing ridge (only where that ridge is the visible top), a chimney decided by a rule, on the ridge.
+   if(v32){if(p.arch.shape!=='shed')for(const [ri,rg] of ridges.entries()){if(rg.height<=.4)continue;const {at,s0,s1}=rg,dir=rg.dir,n=Math.max(2,Math.ceil((s1-s0)/1)),runs=[];let run=[];
+     for(let k=0;k<=n;k++){const q=at(s0+(s1-s0)*k/n);if(insidePoly(q,poly)&&h(q)>=rg.height-.08)run.push(q);else{if(run.length>1)runs.push(run);run=[];}}if(run.length>1)runs.push(run);
+     const cap=roofCol.clone().offsetHSL(0,...RIDGE_V32(fam32));for(const r of runs)for(let k=1;k<r.length;k++){const a=r[k-1],b=r[k],o=[dir[0]*.25,dir[1]*.25],ya=top(a)+.1,yb=top(b)+.1;details.quad([a[0]-o[1],ya,a[1]+o[0]],[b[0]-o[1],yb,b[1]+o[0]],[b[0]+o[1],yb,b[1]-o[0]],[a[0]+o[1],ya,a[1]-o[0]],cap,null,UP);}
+     if(big?.skylight&&p.size>120){const sky=new THREE.Color('#dfeef3');for(const r of runs)for(let k=1;k<r.length;k++){const a=r[k-1],b=r[k],o=[dir[0]*.7,dir[1]*.7],ya=top(a)+.16,yb=top(b)+.16;details.quad([a[0]-o[1],ya,a[1]+o[0]],[b[0]-o[1],yb,b[1]+o[0]],[b[0]+o[1],yb,b[1]-o[0]],[a[0]+o[1],ya,a[1]-o[0]],sky,null,UP);}}
+     if(ri===0&&res&&chimneyV32(cls,p)){const r=runs.reduce((x,y)=>y.length>(x?.length||0)?y:x,null);if(r&&r.length>=4){const q=r[Math.round((r.length-1)*chimneyEndV32(id))];
+      const stone=fv&&['pierre','brique','sombre'].includes(fv.family),col=stone?new THREE.Color('#b08d78'):wallCol.clone().multiplyScalar(.9);
+      box(chimneys,q,.66,.78,top(q)-.55,top(q)+1.05,col,dir);box(chimneys,q,.8,.92,top(q)+1.05,top(q)+1.2,new THREE.Color('#77736c'),dir);stats.chimneys++;}}}}
+   else if(model.ridge&&p.roofHeight>.4&&p.arch.shape!=='shed'){const {at,s0,s1}=model.ridge,{along}=p.arch,n=Math.max(2,Math.ceil((s1-s0)/1)),runs=[];let run=[];
     for(let k=0;k<=n;k++){const q=at(s0+(s1-s0)*k/n);if(insidePoly(q,poly)&&h(q)>=p.roofHeight-.08)run.push(q);else{if(run.length>1)runs.push(run);run=[];}}if(run.length>1)runs.push(run);
     const cap=roofCol.clone().offsetHSL(0,-.05,.1);for(const r of runs)for(let k=1;k<r.length;k++){const a=r[k-1],b=r[k],o=[along[0]*.22,along[1]*.22],ya=top(a)+.1,yb=top(b)+.1;details.quad([a[0]-o[1],ya,a[1]+o[0]],[b[0]-o[1],yb,b[1]+o[0]],[b[0]+o[1],yb,b[1]-o[0]],[a[0]+o[1],ya,a[1]-o[0]],cap,null,UP);}
     // Big buildings: a pale skylight strip along the ridge (a stylised cue, not a surveyed opening).
     if(big?.skylight&&p.size>120){const sky=new THREE.Color('#dfeef3');for(const r of runs)for(let k=1;k<r.length;k++){const a=r[k-1],b=r[k],o=[along[0]*.7,along[1]*.7],ya=top(a)+.16,yb=top(b)+.16;details.quad([a[0]-o[1],ya,a[1]+o[0]],[b[0]-o[1],yb,b[1]+o[0]],[b[0]+o[1],yb,b[1]-o[0]],[a[0]+o[1],ya,a[1]-o[0]],sky,null,UP);}}
     if(res&&['gable','hip'].includes(p.arch.type)&&p.size>55&&rng()<.7){const q=at(s0+(s1-s0)*(.3+rng()*.4)),o=[p.arch.across[0]*.9,p.arch.across[1]*.9],c=[q[0]+o[0]*(rng()<.5?1:-1),q[1]+o[1]*(rng()<.5?1:-1)];if(insidePoly(c,poly)){box(details,c,.62,.62,top(c)-.6,top(c)+1.25,wallCol.clone().multiplyScalar(.9),p.arch.along);box(details,c,.76,.76,top(c)+1.25,top(c)+1.42,capCol,p.arch.along);stats.chimneys++;}}}
   }
-  walls.forEach((t,k)=>{if(t.n>w0s[k])wallRanges.push({part:k,start:w0s[k],end:t.n,id});});roofs.forEach((t,k)=>{if(t.n>r0s[k])roofRanges.push({part:k,start:r0s[k],end:t.n,id});});if(details.n>d0)detailRanges.push({part:0,start:d0,end:details.n,id});
+  walls.forEach((t,k)=>{if(t.n>w0s[k])wallRanges.push({part:k,start:w0s[k],end:t.n,id});});roofs.forEach((t,k)=>{if(t.n>r0s[k])roofRanges.push({part:k,start:r0s[k],end:t.n,id});});if(details.n>d0)detailRanges.push({part:0,start:d0,end:details.n,id});if(chimneys.n>c0)chimneyRanges.push({part:0,start:c0,end:chimneys.n,id});
   stats.buildings++;stats.byClass[cls]=(stats.byClass[cls]||0)+1;
  }
  const group=new THREE.Group();group.name='v26-houses';
  const wallMesh=groupedMesh(walls,[M.wall,M.wallPanels],wallRanges,'v26-walls'),roofMesh=groupedMesh(roofs,[M.roofTile,M.roofPlain,M.roofSheet],roofRanges,'v26-roofs'),detailMesh=groupedMesh([details],[M.detail],detailRanges,'v26-details');
- for(const m of [wallMesh,roofMesh,detailMesh])if(m)group.add(m);
+ // V3.2: chimneys in their own small mesh, hidden from afar by the orchestrator (aggressive LOD).
+ const chimneyMesh=v32?groupedMesh([chimneys],[M.detail],chimneyRanges,'v32-chimneys'):null;
+ for(const m of [wallMesh,roofMesh,detailMesh,chimneyMesh])if(m)group.add(m);
  stats.variants=stats.variants.size;stats.bigVariants=[...stats.bigVariants];
- return {group,pickMeshes:[wallMesh,roofMesh,detailMesh].filter(Boolean),stats};
+ return {group,pickMeshes:[wallMesh,roofMesh,detailMesh,chimneyMesh].filter(Boolean),chimneyMesh,stats};
 }
 const dot=(q,v)=>q[0]*v[0]+q[1]*v[1];
 // V2.7.1: inner ring of a flat roof's fascia, one point per outline vertex. offsetRing inserts bevel points at clamped

@@ -18,7 +18,7 @@ function waterV30(uniforms){return flat(new THREE.MeshBasicMaterial({color:'#fff
   float bank=1.-smoothstep(0.,.16,min(vUvM.y,1.-vUvM.y));col=mix(col,bankC,bank*.55);
   diffuseColor.rgb=col;`,uniforms);}
 export function waterMaterialV26({style='v26'}={}){
- if(style==='v30'||style==='v31'){const uniforms={uTime:{value:0}};const m=waterV30(uniforms);return {material:m,update:t=>{uniforms.uTime.value=t;}};}
+ if(style==='v30'||style==='v31'||style==='v32'){const uniforms={uTime:{value:0}};const m=waterV30(uniforms);return {material:m,update:t=>{uniforms.uTime.value=t;}};}
  const uniforms={uTime:{value:0}};const v291=style==='v291',v29=style==='v29'||v291;
  const m=flat(new THREE.MeshBasicMaterial({color:'#ffffff',transparent:true,opacity:.95,side:THREE.DoubleSide}),v291?'water-v291':v29?'water-v29':'water',`
   float t=uTime;vec3 deep=${v291?'vec3(.25,.55,.65)':v29?'vec3(.31,.57,.66)':'vec3(.3,.6,.73)'},light=${v291?'vec3(.5,.79,.83)':v29?'vec3(.5,.75,.79)':'vec3(.47,.74,.83)'},foam=vec3(.88,.94,.93),stroke=${v29?'vec3(.78,.91,.92)':'vec3(.8,.93,.95)'};

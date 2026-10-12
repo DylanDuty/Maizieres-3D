@@ -68,7 +68,7 @@ export function flat(material,key,chunk='',uniforms={}){
 
 // V2.9 (`style:'v29'`): softer tile rows a little stronger, asphalt with a wider soft edge, warmer shoulders — the JRPG
 // pass changes shaders and palettes, never geometry.
-export function makeMaterialsV26({style='v26'}={}){const v31=style==='v31',v30=style==='v30'||v31,v291=style==='v291'||v30,v29=style==='v29'||v291;
+export function makeMaterialsV26({style='v26'}={}){const v32=style==='v32',v31=style==='v31'||v32,v30=style==='v30'||v31,v291=style==='v291'||v30,v29=style==='v29'||v291;
  const lam=o=>new THREE.MeshLambertMaterial({vertexColors:true,side:THREE.FrontSide,...o});
  const M={};
  // Walls: flat pastel, a soft darker base band, a whisper of hand-painted unevenness.
@@ -125,6 +125,7 @@ export function makeMaterialsV26({style='v26'}={}){const v31=style==='v31',v30=s
  M.dash=flat(new THREE.MeshBasicMaterial({color:'#f4efdf',transparent:true,depthWrite:false}),'dash',`float d=step(.55,fract(vUvM.x/9.));diffuseColor.a*=d*.85;`);
  if(v30)premiumV30(M,lam);
  if(v31)premiumV31(M,lam);
+ if(v32)premiumV32(M,lam);
  return M;
 }
 
@@ -143,6 +144,20 @@ function premiumV31(M,lam){
   float pid=floor(vUvM.x/5.7);float pv=fract(sin(pid*12.9898+floor(vWorld.y*.5)*3.1+floor(vWorld.x*.004)*7.7)*43758.5453);diffuseColor.rgb*=.97+.06*pv*(1.-smoothstep(.3,1.2,fw));
   float wz=vnoise(vWorld.xz*.035+1.7)*.65+vnoise(vWorld.xz*.09+4.1)*.35;diffuseColor.rgb*=.95+.1*wz+.025*vnoise(vWorld.xz*.7);`);
  plain?.dispose?.();sheet?.dispose?.();
+}
+
+// V3.2 overrides on top of V3.1, house walls only. The u coordinate of a plain wall carries its eave height above the foot
+// and a gable variant (houses-v26, style v32): a slightly darker plinth (0,5 m), a soft shade under the eaves (the
+// overhang), and the gable above the eave a shade lighter (rendered) or warmer and darker (stone, brick). Walls without
+// the code (church, accents drawn by a hook) keep the V3.0 shading.
+function premiumV32(M,lam){
+ const wall=M.wall;
+ M.wall=toon(lam({}),'wall-v32',`diffuseColor.rgb*=mix(.86,1.,smoothstep(0.,1.1,vUvM.y));diffuseColor.rgb*=.985+.025*vnoise(vWorld.xz*.35+vWorld.y*.25);
+  if(vUvM.x>999.){float code=vUvM.x-1000.;float gv=floor(code/100.);float eh=code-gv*100.;float y=vUvM.y;
+   diffuseColor.rgb*=mix(vec3(.93,.93,.94),vec3(1.),smoothstep(.4,.56,y));
+   if(gv<1.5){float ue=smoothstep(eh-1.,eh-.05,y)*(1.-smoothstep(eh+.02,eh+.3,y));diffuseColor.rgb*=1.-.12*ue;
+    float gab=smoothstep(eh+.08,eh+.4,y);diffuseColor.rgb*=mix(vec3(1.),gv<.5?vec3(1.03,1.025,1.015):vec3(.955,.935,.9),gab);}}`);
+ wall?.dispose?.();
 }
 
 function premiumV30(M,lam){
