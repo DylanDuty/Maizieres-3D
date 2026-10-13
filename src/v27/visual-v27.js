@@ -9,6 +9,7 @@ import {V26_LIGHT} from '../v26/visual-v26.js';
 import {buildGroundV27} from './ground-v27.js';
 import {buildGroundV30} from '../v30/ground-v30.js';
 import {buildVegetationV27} from './vegetation-v27.js';
+import {buildParcelsV33,buildLimitMeshV33} from '../v33/parcels-v33.js';
 import {buildHydroV29} from '../v29/hydro-v29.js';
 import {specialBuildingsV28,warMemorialV28,landmarkIndex} from '../v28/landmarks-v28.js';
 import {Tri} from '../v25/procedural-houses.js';
@@ -53,7 +54,7 @@ function restyleRail(v2,M){const names={'v2-ballast':toon(new THREE.MeshLambertM
  let n=0;for(const [name,mat] of Object.entries(names)){const o=v2.group.getObjectByName(name);if(o&&o.isMesh){o.material=mat;n++;}}return n;}
 
 export async function buildVisualV27({scene,renderer,camera,sun,hemisphere,v2,items,enrichment,architecture,elevation,quality='beauty',diorama=false,poiAt=null,style='v28',target=null,fxaa=null}){
- const v32=style==='v32',v31=style==='v31'||v32,v30=style==='v30'||v31,v291=style==='v291'||v30,v29=style==='v29'||v291,mat=v32?'v32':v31?'v31':v30?'v30':v291?'v291':v29?'v29':'v26';const Q=V27_QUALITY[quality]||V27_QUALITY.beauty,L=v31?V31_LIGHT:v30?V30_LIGHT:v291?V291_LIGHT:v29?V29_LIGHT:V27_LIGHT,heightAt=v2.heightAt;
+ const v33=style==='v33',v32=style==='v32'||v33,v31=style==='v31'||v32,v30=style==='v30'||v31,v291=style==='v291'||v30,v29=style==='v29'||v291,mat=v32?'v32':v31?'v31':v30?'v30':v291?'v291':v29?'v29':'v26';const Q=V27_QUALITY[quality]||V27_QUALITY.beauty,L=v31?V31_LIGHT:v30?V30_LIGHT:v291?V291_LIGHT:v29?V29_LIGHT:V27_LIGHT,heightAt=v2.heightAt;
  scene.add(skyDome(L));
  scene.fog=new THREE.Fog(L.fog,L.fogNear,L.fogFar);renderer.setClearColor(L.horizon,1);renderer.toneMapping=THREE.NoToneMapping;renderer.toneMappingExposure=1;
  sun.color.set(L.sun);sun.intensity=L.sunIntensity;sun.shadow.intensity=L.shadow;hemisphere.color.set(L.sky);hemisphere.groundColor.set(L.ground);hemisphere.intensity=L.hemisphere;setKeyLight(sun.color,sun.intensity);
@@ -62,16 +63,20 @@ export async function buildVisualV27({scene,renderer,camera,sun,hemisphere,v2,it
  renderer.shadowMap.type=Q.soft?THREE.PCFSoftShadowMap:THREE.PCFShadowMap;renderer.shadowMap.enabled=true;
  const M=makeMaterialsV26({style:mat});SHADING.uBands.value=v30?4:v291?3:v29?2:1;SHADING.uShadowTint.value.set(v31?'#8294aa':v30?'#8597ac':v291?'#7f9eb8':v29?'#8ea9b6':'#8f9ac6');SHADING.uRim.value=v30?.1:v291?.14:v29?.15:.12;SHADING.uWarm.value.set(v31?'#fff0dc':v30?'#fff2e2':v291?'#fff4e4':'#ffffff');SHADING.uAerial.value=L.aerial||0;
  const group=new THREE.Group();group.name='v27';scene.add(group);
- const ground=v30?buildGroundV30(v2,{size:Q.texture,detailM:V30_DETAIL[quality]?.[0]||1100,detail:V30_DETAIL[quality]?.[1]||2048,lite:quality==='performance',v31,v32,buildings:v31?items:null}):buildGroundV27(v2,{size:Q.texture,style:mat}),box=ground.box;
+ // V3.3: interpreted plots, built once from the footprints, the classes, the streets and the land cover (src/v33).
+ const parcels=v33?buildParcelsV33({items,architecture,enrichment,v2,heightAt,poiAt,performance:quality==='performance'}):null;
+ const ground=v30?buildGroundV30(v2,{size:Q.texture,detailM:V30_DETAIL[quality]?.[0]||1100,detail:V30_DETAIL[quality]?.[1]||2048,lite:quality==='performance',v31,v32,v33,parcels,buildings:v31?items:null}):buildGroundV27(v2,{size:Q.texture,style:mat}),box=ground.box;
  for(const name of ['v2-roads','v2-road-marks']){const o=v2.group.getObjectByName(name);if(o)o.visible=false;}
  const railMeshes=restyleRail(v2,M);
  // V2.8: landmarks from documented references (church, water towers, memorial, mairie and fire-station accents).
  const special=specialBuildingsV28(elevation,landmarkIndex([...(v2.poiById?v2.poiById.values():[])]));
- const houses=buildHousesV26({items,enrichment,architecture,elevation,materials:M,special,occupied:footprintIndex(items),style:mat});group.add(houses.group);
+ const occupied=footprintIndex(items);const houses=buildHousesV26({items,enrichment,architecture,elevation,materials:M,special,occupied,style:mat});group.add(houses.group);
+ // V3.3 limits as geometry in BEAUTÉ and ÉQUILIBRÉ (clipped hedges, low walls); PERFORMANCE keeps them painted on the ground.
+ let limits=null;if(parcels&&quality!=='performance'){const lm=buildLimitMeshV33(parcels,{heightAt,occupied});if(lm.tri.n){const m=new THREE.Mesh(lm.tri.geometry(),M.leaf);m.name='v33-limits';m.castShadow=true;m.receiveShadow=true;group.add(m);limits={pieces:lm.pieces,triangles:lm.tri.n};}}
  const extras=new Tri();const memorial=warMemorialV28(extras,poiAt,heightAt);
  if(extras.n){const g=extras.geometry(),m=new THREE.Mesh(g,M.detail);m.name='v27-landmarks';m.castShadow=true;m.receiveShadow=true;group.add(m);}
  const roads=buildRoadsV25(group,{v2,box,heightAt,materials:M});
- const vegetation=buildVegetationV27(group,{v2,box,buildings:items,heightAt,materials:M,q:v30?{...Q.veg,riparianCorridor:11,v30:true,v31,v32}:v291?{...Q.veg,riparianCorridor:11,v291:true}:v29?{...Q.veg,riparianCorridor:11}:Q.veg});
+ const vegetation=buildVegetationV27(group,{v2,box,buildings:items,heightAt,materials:M,q:v30?{...Q.veg,riparianCorridor:11,v30:true,v31,v32,...(parcels?{lotTrees:parcels.lots.flatMap(l=>l.trees),inLot:parcels.inLot}:{})}:v291?{...Q.veg,riparianCorridor:11,v291:true}:v29?{...Q.veg,riparianCorridor:11}:Q.veg});
  const water=waterMaterialV26({style:mat});const waterMesh=v2.group.getObjectByName('v2-water');if(waterMesh){waterMesh.material=water.material;waterMesh.renderOrder=1;}
  const waterLines=v2.group.getObjectByName('v2-water-lines');let hydro=null;
  if(v29){if(waterLines)waterLines.visible=false;hydro=buildHydroV29(group,{v2,heightAt,material:water.material});}
@@ -92,5 +97,5 @@ export async function buildVisualV27({scene,renderer,camera,sun,hemisphere,v2,it
    if(v30&&ground.update&&target){const t=target(),c=camera.position;if(!lastCam.equals(c)||lastT[0]!==t[0]||lastT[1]!==t[1]){lastCam.copy(c);lastT=[t[0],t[1]];lastMove=now;}
     ground.update(t,c.distanceTo(tv.set(t[0],heightAt(t[0],t[1]),t[1])),now-lastMove>220);}},
   setSize:(w,h)=>post.setSize(w,h),
-  stats:{get groundPaint(){return ground.stats?ground.stats():null;},antialias:aa===true?'SMAA':aa||'aucun',mode:v32?'premium-v32':v31?'premium-v31':v30?'premium-v30':v291?'cartoon-v291':v29?'cartoon-v29':'cartoon-v28',style,quality,diorama,landmarks:special.stats,hydro:hydro?.stats||null,tiltShift:Q.tilt?(diorama?'fort (2,4 px, bande 0,16)':v30?'léger (0,55 px, bande 0,30)':'léger (0,75 px, bande 0,26)'):'aucun',buildings:houses.stats.buildings,byClass:houses.stats.byClass,houseVariants:houses.stats.variants,bigVariants:houses.stats.bigVariants,windows:houses.stats.windows,shutters:houses.stats.shutters,doors:houses.stats.doors,garageDoors:houses.stats.garageDoors,chimneys:houses.stats.chimneys,...(v32?{architectureV32:{wingRoofs:houses.stats.wingRoofs,wings:houses.stats.wings,leanTo:houses.stats.leanTo,hipDerived:houses.stats.hipDerived,facades:houses.stats.facades,families:houses.stats.families}}:{}),roads:roads.count,railMeshes,memorial,vegetation:vegetation.stats,ground:{texture:ground.texture,detail:ground.detail||null,contactVolumes:ground.contactVolumes||0,contactHouses:ground.contactHouses||0,vertices:ground.vertices,box}}};
+  stats:{get groundPaint(){return ground.stats?ground.stats():null;},antialias:aa===true?'SMAA':aa||'aucun',mode:v33?'premium-v33':v32?'premium-v32':v31?'premium-v31':v30?'premium-v30':v291?'cartoon-v291':v29?'cartoon-v29':'cartoon-v28',style,quality,diorama,landmarks:special.stats,hydro:hydro?.stats||null,tiltShift:Q.tilt?(diorama?'fort (2,4 px, bande 0,16)':v30?'léger (0,55 px, bande 0,30)':'léger (0,75 px, bande 0,26)'):'aucun',buildings:houses.stats.buildings,byClass:houses.stats.byClass,houseVariants:houses.stats.variants,bigVariants:houses.stats.bigVariants,windows:houses.stats.windows,shutters:houses.stats.shutters,doors:houses.stats.doors,garageDoors:houses.stats.garageDoors,chimneys:houses.stats.chimneys,...(v32?{architectureV32:{wingRoofs:houses.stats.wingRoofs,wings:houses.stats.wings,leanTo:houses.stats.leanTo,hipDerived:houses.stats.hipDerived,facades:houses.stats.facades,families:houses.stats.families}}:{}),...(parcels?{parcelsV33:{...parcels.stats,limits}}:{}),roads:roads.count,railMeshes,memorial,vegetation:vegetation.stats,ground:{texture:ground.texture,detail:ground.detail||null,contactVolumes:ground.contactVolumes||0,contactHouses:ground.contactHouses||0,vertices:ground.vertices,box}}};
 }

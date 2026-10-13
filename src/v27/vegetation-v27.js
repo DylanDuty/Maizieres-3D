@@ -92,7 +92,10 @@ export function buildVegetationV27(parent,{v2,box,buildings,heightAt,materials:M
  // colouring lightens).
  let hedgeMasses=0;if(v32)for(const o of d.hedgePolygons)for(const p of o.r){const b=bbox(p);if(b[2]<box.minX||b[0]>box.maxX||b[3]<box.minZ||b[1]>box.maxZ)continue;addCanopy(p,'haie',b[0]*.013,{step:3,H:6,tone:.76,bumps:true});hedgeMasses++;}
  // ---- Villages: gardens ----
- const cell=q.gardenCell;for(const v of d.village)for(const p of v.r){const b=bbox(p);for(let x=Math.max(b[0],box.minX);x<Math.min(b[2],box.maxX);x+=cell)for(let z=Math.max(b[1],box.minZ);z<Math.min(b[3],box.maxZ);z+=cell){const qx=x+rng()*cell,qz=z+rng()*cell;if(!inPoly(qx,qz,p))continue;const t=rng();
+ // V3.3: trees of the interpreted plots (orchard at the back of deep rural plots, one fruit tree behind a pavilion); the
+ // random garden grid keeps only its points outside the plots (village greens).
+ if(q.lotTrees)for(const t of q.lotTrees)add(t.x,t.z,t.type,t.h,q.lod);
+ const cell=q.gardenCell;for(const v of d.village)for(const p of v.r){const b=bbox(p);for(let x=Math.max(b[0],box.minX);x<Math.min(b[2],box.maxX);x+=cell)for(let z=Math.max(b[1],box.minZ);z<Math.min(b[3],box.maxZ);z+=cell){const qx=x+rng()*cell,qz=z+rng()*cell;if(!inPoly(qx,qz,p))continue;const t=rng();if(q.inLot&&q.inLot(qx,qz))continue;
   if(t<.3)add(qx,qz,choose(T.garden),4.5+rng()*(v291?5:4),q.lod);else if(t<.42)add(qx,qz,'bush',1+rng()*.9,0);else if(t<.52)add(qx,qz,'flowers',.7+rng()*.5,0);}}
  if(q.houseShrubs)for(const b of buildings){const r=b.poly[0];let cx=0,cz=0;for(const pt of r){cx+=pt[0];cz+=pt[1];}cx/=r.length;cz/=r.length;let R=0;for(const pt of r)R=Math.max(R,Math.hypot(pt[0]-cx,pt[1]-cz));if(R>14||rng()<.3)continue;
   for(let k=0,n=1+Math.floor(rng()*3);k<n;k++){const a=rng()*6.283,dd=R+1.6+rng()*3.2,qx=cx+Math.cos(a)*dd,qz=cz+Math.sin(a)*dd,t=rng();add(qx,qz,t<.55?'bush':t<.85?'flowers':'fruit',t<.55?.9+rng()*.8:t<.85?.6+rng()*.4:3.5+rng()*2,0);}}
