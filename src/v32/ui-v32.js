@@ -69,7 +69,7 @@ export function installUiV32({views,onView,quality,go,names,dataDate='',interpre
   <p>Elle ne constitue pas une représentation contractuelle ni un relevé architectural de précision.</p>
   ${interpretation?`<p>${interpretation}</p>`:''}
   <h3>Naviguer</h3>
-  <ul class="info-list"><li><b>Cliquer</b> ou toucher un lieu pour l’identifier</li><li><b>Glisser</b> pour tourner, <b>clic droit</b> ou deux doigts pour déplacer</li><li><b>Molette</b> ou pincement pour zoomer</li><li><b>/</b> pour rechercher, <b>Échap</b> pour fermer</li></ul>
+  <ul class="info-list"><li><b>Cliquer</b> ou toucher un lieu pour l’identifier</li><li><b>Souris</b> : glisser pour tourner, clic droit pour déplacer, molette pour zoomer</li><li><b>Écran tactile</b> : un doigt pour déplacer, deux doigts pour tourner ou incliner, pincement pour zoomer</li><li><b>/</b> pour rechercher, <b>Échap</b> pour fermer</li></ul>
   <details class="info-sources"><summary>Sources et projet</summary><ul class="info-list">
    <li>Fond de carte : contributeurs <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> (ODbL)</li>
    <li>Bâti, relief, occupation du sol : IGN (<a href="https://geoservices.ign.fr/bdtopo" target="_blank" rel="noreferrer">BD TOPO</a>, BD ORTHO, LiDAR HD), RPG, cadastre</li>

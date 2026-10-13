@@ -1,8 +1,23 @@
+# Vérification V3.3.1 — gestes tactiles, 13 octobre 2026
+
+Même branche, après `b2e2727`. Test Chromium, gestes tactiles réels (CDP), 390 × 844, PERFORMANCE, vue de départ à 1 101 m, azimut 28,1°, inclinaison 50,5° :
+
+| Geste | Résultat |
+|---|---|
+| Un doigt glissé de 150 px vers le haut | la carte suit le doigt : cible déplacée de 150 m ; distance, azimut et inclinaison inchangés |
+| Deux doigts tournés de 40° dans le sens horaire | azimut + 40,0° ; l'axe est à l'écran tourne de + 38,9°, dans le sens des doigts ; distance et cible inchangées |
+| Pincement (écart 100 → 220 px) | distance 1 101 → 551 m |
+| Deux doigts glissés de 120 px de côté | azimut − 35,2° |
+| Deux doigts glissés de 120 px vers le haut | inclinaison 50,5° → 64,8° (butée existante) |
+| Toucher simple sur l'église | Église Saint-Denis sélectionnée |
+
+La souris est inchangée. La console reste vide, `check:all` passe, et `npm run build` et `pnpm build` réussissent.
+
 # Vérification V3.3 — parcelles, jardins et micro-paysage, 13 octobre 2026
 
 Branche `opus/v3.3-parcelles-micro-paysage`, à partir de `4428344` (V3.2). Mode `?visual=premium-v33`.
 
-- **Documents** : rapport `docs/audit/V3.3_PARCEL_MICROLANDSCAPE.md`, en 18 sections : diagnostic, règles, grille d'audit, performance, verdict.
+- **Documents** : rapport `docs/audit/V3.3_PARCEL_MICROLANDSCAPE.md`, en 19 sections : diagnostic, règles, grille d'audit, performance, verdict, et le complément sur les gestes tactiles.
 - **Captures** : `docs/qa/v3.3/`.
   - `compare/` : 10 cadrages V3.2 / V3.3, dont vue générale, centre-bourg, Poussey, Les Granges, La Glacière, frange, zoom résidentiel, bâtiment public, zone d'activité et bâti ancien.
   - `details/` : agrandis 2×.

@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {installTouchGestures} from './touch-gestures.js';
 import {projection,polygons,bounds,insidePoly} from './geo.js';
 import {buildLandscape} from './landscape.js';
 import {buildBuildings,PROVENANCE_COLORS,VALIDATION_COLORS,AUDIT_COLORS,diagnosticKey} from './buildings.js';
@@ -52,6 +53,8 @@ async function start(){
   // zone below it and springs back (no hard stop under the finger), and the tilt stays above 25° so the facades are never grazed.
   const ZOOM_MIN=420,ZOOM_SOFT=.72,MAX_POLAR=Math.PI*.36;
   const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.11;controls.rotateSpeed=.7;controls.maxPolarAngle=MAX_POLAR;controls.minDistance=ZOOM_MIN*ZOOM_SOFT;controls.maxDistance=10500;controls.screenSpacePanning=false;controls.zoomSpeed=.85;controls.zoomToCursor=true;controls.target.set(200,0,150);
+  // Touch: one finger moves the map, two fingers turn, tilt and zoom (the mouse bindings are unchanged).
+  installTouchGestures(controls,camera,renderer.domElement);
   const sunOffset=new THREE.Vector3();let shadowKey='';
   const sun=new THREE.DirectionalLight(light().sun,light().sunIntensity);sun.castShadow=true;sun.shadow.mapSize.set(quality.shadowSize,quality.shadowSize);Object.assign(sun.shadow.camera,{left:-2200,right:2200,top:2200,bottom:-2200,near:50,far:7000});sun.shadow.bias=-.00012;sun.shadow.normalBias=1.2;sun.shadow.intensity=light().shadow;
   const hemisphere=new THREE.HemisphereLight(light().sky,light().ground,light().hemisphere);scene.add(sun.target);scene.add(sun,hemisphere);
