@@ -196,7 +196,7 @@ export function paintParcelLimitsV33(ctx,{Pc,X,Z,sx,over}){const C=PARCEL_COLORS
 
 // Activity sites, painted after the data surfaces: parking bays (lines 2,6 m apart along the long side of each car park over
 // 800 m², near the camera only) and an implicit site fence along industrial and commercial perimeters over 5 000 m².
-export function paintActivityV33(ctx,{P,X,Z,sx,over,detail}){const toRing=p=>{const r=[];for(let i=0;i<p.length;i+=2)r.push([p[i],p[i+1]]);return r;};
+export function paintActivityV33(ctx,{P,X,Z,sx,over,detail,fence=true}){const toRing=p=>{const r=[];for(let i=0;i<p.length;i+=2)r.push([p[i],p[i+1]]);return r;};
  const flatArea=r=>{let s=0;for(let i=0,j=r.length-1;i<r.length;j=i++)s+=(r[j][0]-r[i][0])*(r[j][1]+r[i][1]);return Math.abs(s)/2;};
  ctx.lineCap='butt';
  for(const {o,b} of P.artificial){if(!over(b))continue;
@@ -206,7 +206,7 @@ export function paintActivityV33(ctx,{P,X,Z,sx,over,detail}){const toRing=p=>{co
    // rows of bays 5 m deep on both sides of a 6 m aisle, repeated every 16 m across the car park
    for(let w=n0+1;w<n1-1;w+=16)for(const off of [0,11])for(let a=a0+1;a<a1-1;a+=2.6){const p0=[u[0]*a+n[0]*(w+off),u[1]*a+n[1]*(w+off)],p1=[u[0]*a+n[0]*(w+off+5),u[1]*a+n[1]*(w+off+5)];ctx.moveTo(X(p0[0]),Z(p0[1]));ctx.lineTo(X(p1[0]),Z(p1[1]));}
    ctx.stroke();ctx.restore();}
-  if(o.kind==='perimetre'&&/industri|commerc|technique/.test(o.t))for(const p of o.r){const r=toRing(p[0]);if(flatArea(r)<5000)continue;ctx.lineJoin='round';
+  if(fence&&o.kind==='perimetre'&&/industri|commerc|technique/.test(o.t))for(const p of o.r){const r=toRing(p[0]);if(flatArea(r)<5000)continue;ctx.lineJoin='round';
    ctx.globalAlpha=.3;ctx.strokeStyle='#c2c7a6';ctx.lineWidth=Math.max(.6,3*sx);ctx.beginPath();r.forEach((q,i)=>i?ctx.lineTo(X(q[0]),Z(q[1])):ctx.moveTo(X(q[0]),Z(q[1])));ctx.closePath();ctx.stroke();
    ctx.globalAlpha=.5;ctx.strokeStyle='#6f716c';ctx.lineWidth=Math.max(.5,.3*sx);ctx.stroke();}}
  ctx.globalAlpha=1;ctx.lineCap='round';}

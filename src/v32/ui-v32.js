@@ -23,7 +23,7 @@ const el=(tag,props={},html='')=>{const e=Object.assign(document.createElement(t
 
 // views: [{name, …}] with onView(view); quality: current preset key; go(key): applies a preset (reload with the camera kept);
 // names: {get():bool, toggle()}.
-export function installUiV32({views,onView,quality,go,names,dataDate='',interpretation=''}){
+export function installUiV32({views,onView,quality,go,names,dataDate='',interpretation='',sources=''}){
  document.body.classList.add('ui-v32');
  // The old control row (cycling quality button, light, labels, recentre) leaves the page: its functions are in the panels.
  document.querySelector('nav')?.setAttribute('hidden','');document.querySelector('#quality')?.remove();
@@ -74,6 +74,7 @@ export function installUiV32({views,onView,quality,go,names,dataDate='',interpre
    <li>Fond de carte : contributeurs <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> (ODbL)</li>
    <li>Bâti, relief, occupation du sol : IGN (<a href="https://geoservices.ign.fr/bdtopo" target="_blank" rel="noreferrer">BD TOPO</a>, BD ORTHO, LiDAR HD), RPG, cadastre</li>
    <li>Toponymie et lieux : sources publiques et documentation locale</li>
+   ${sources}
    <li>${dataDate||'Données locales'}</li></ul>
    <p class="info-small">Maquette Maizières 3D, projet indépendant ; rendu Three.js.</p></details>`;
  pi.querySelector('.panel-close').addEventListener('click',()=>closeAll(true));

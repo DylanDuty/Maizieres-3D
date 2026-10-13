@@ -1,0 +1,66 @@
+{
+ "name": "MLGU_CADASTRAL_FREEZE_V1",
+ "version": "1.0",
+ "createdFor": "V3.4 — cadastre réel",
+ "doctrine": "Nouvelle couche géographique officielle ajoutée ; les 42 fichiers géographiques gelés (V2.2), les 52 fichiers du Freeze V1 et le gel sémantique V2.9.2 restent inchangés.",
+ "source": {
+  "name": "Parcellaire Express (PCI) — plan cadastral DGFiP diffusé par l’IGN",
+  "layer": "PCI Vecteur : Parcelles",
+  "edition": "2026-06-01",
+  "service": "Géoplateforme WFS CADASTRALPARCELS.PARCELLAIRE_EXPRESS:parcelle",
+  "filter": "code_insee='10220'",
+  "retrievedAt": "2026-10-13T13:32:50.315Z",
+  "license": "Licence Ouverte / Open Licence 2.0 (Etalab)",
+  "attribution": "IGN — Parcellaire Express (PCI), d’après le plan cadastral DGFiP",
+  "etalab": [
+   {
+    "source": "Etalab",
+    "url": "https://cadastre.data.gouv.fr/data/etalab-cadastre/",
+    "result": "échec (index)",
+    "error": "read ECONNRESET"
+   }
+  ]
+ },
+ "counts": {
+  "parcels": 5456,
+  "holes": 13,
+  "sections": 20,
+  "edges": 25695,
+  "vertices": 20314,
+  "buildings": {
+   "unique": 1848,
+   "multiple": 515,
+   "none": 233
+  },
+  "anomalies": 707
+ },
+ "coverage": {
+  "ofCommuneContour": 0.9442029552572455,
+  "notCadastredInsideHa": 113.72767842585668
+ },
+ "files": {
+  "data-sources/cadastre-parcelles-v34/build-report.json": "eb950696f1141d230c91afdaec763631fb7336c79629f240dc6966518b9b9b62",
+  "data-sources/cadastre-parcelles-v34/etalab-2026-09-01-index-10220.html": "2cbf42e0b7f518d79bc8cd972ee9ea62b9158611e968823d22c3533e10b307dd",
+  "data-sources/cadastre-parcelles-v34/etalab-attempt.log": "b58564e424f45df25fb8b0360e40c1587f40abde98f79b448a29067133620438",
+  "data-sources/cadastre-parcelles-v34/pci-express-parcelle-10220-l93-control.json.gz": "64ce61e4da80372cf3815a89d6f3db1005d87f065e12740846d1a5238f3ad381",
+  "data-sources/cadastre-parcelles-v34/pci-express-parcelle-10220-page-00.json.gz": "23ad9fa1d033b9834314a545dc398b84bdbf95be7c2ee67e3624b74df788dd7e",
+  "data-sources/cadastre-parcelles-v34/pci-express-parcelle-10220-page-01.json.gz": "dc52e017056c6c35bc9f07a91a74b33571a3f1db0b71562f201118d3cd21a020",
+  "data-sources/cadastre-parcelles-v34/pci-express-parcelle-10220-page-02.json.gz": "fb3d70d430753a0b26ca8ac65dadbcd2cdad232a5c03714009a2ae9ecc7d94ee",
+  "data-sources/cadastre-parcelles-v34/pci-express-parcelle-10220-page-03.json.gz": "f663bbfd3999f0a50d2295a7b5e49507dace6db5ff4b6f63f1f358095c0958bb",
+  "data-sources/cadastre-parcelles-v34/pci-express-parcelle-10220-page-04.json.gz": "732b73f4812030e1496b6ce95cc857a5b6d5f31212d448ba4113c3a8c8659cbb",
+  "data-sources/cadastre-parcelles-v34/pci-express-parcelle-10220-page-05.json.gz": "74f6e90a0311f4f9e48a729deaedbc8d6b3fe78fb27ad7275287e935eae112fb",
+  "data-sources/cadastre-parcelles-v34/source-manifest.json": "9c6997eb90b8bcad6de3cab737d6c866329b982dfce269598a1dbbdd7f6bc923",
+  "data-sources/cadastre-parcelles-v34/wfs-capabilities-parcelle.xml": "0b19ed9898b64a489435a6db022f00a2ee789625fa5ca793d07a6a5cceef63ef",
+  "public/data/cadastre-parcels-v3.4.json": "27bdf7963b15483c340ebe2f2b985cad77e3722487352f1c532f86ab9f4e7145",
+  "docs/freeze/MLGU_CADASTRAL_PARCELS_V1.json": "83a4126153532d2ec03854fab5cdac95cc6cf7fb13ff2afac1c76f508d83b7a2",
+  "docs/audit/V3.4_CADASTRAL_ANOMALIES.csv": "2a3859539cd50e33063be08f2df565a88ef6cea0077784feb9a26830c45d40c9"
+ },
+ "code": {
+  "scripts/cadastre-v34/fetch-parcels.mjs": "468ffcbc7f1942395817484daacaf3ada0e5bf5d793b8c999446161e20ab758b",
+  "scripts/cadastre-v34/fetch-l93-control.mjs": "48be13f89ba74ab7eeeb1223fe0269eb605b491bfbe342694c6781b7336a8bc9",
+  "scripts/cadastre-v34/build-cadastre.mjs": "5570ffd18dafd575ba01b90a22ad0609e71ce50d536ca200b55d388380b9aa72",
+  "src/geo.js": "3a82f4f0e33e0b449758e373fde7d7e131fa9254f2f6503e5f82bdb38a471d47",
+  "scripts/terrain-frame.mjs": "6fa6d48150fe914e0a57e2cf38b7dc7bd40de84e4943433b9ae0b111acab2f54"
+ },
+ "rebuild": "npm run build:cadastre-v34 (déterministe ; check:cadastre-freeze le vérifie dans un dossier temporaire)"
+}

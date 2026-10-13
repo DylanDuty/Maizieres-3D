@@ -26,6 +26,7 @@ import {buildVisualV26,V26_QUALITY} from './v26/visual-v26.js';
 import {buildVisualV27,V27_QUALITY} from './v27/visual-v27.js';
 import {extendCatalogue,v2Labels,groundPicker,installSearch,installViews,installLegend,installPerfHud} from './v2-ui.js';
 import {installUiV32} from './v32/ui-v32.js';
+import {installCadastreLegendV34} from './v34/cadastre-v34.js';
 const loading=document.querySelector('#loading');
 async function start(){
   const t0=performance.now();
@@ -36,15 +37,17 @@ async function start(){
   const extent={minX:b.minX-150,maxX:b.maxX+150,minZ:b.minZ-150,maxZ:b.maxZ+150};
   const hooks={tick:null};// V2.6.1: per-frame UI hooks (quick label placement).
   const params=new URLSearchParams(location.search),requestedQuality=QUALITY_ORDER.includes(params.get('quality'))?params.get('quality'):'fluid';
+  // V3.4: ?diagnostic=cadastre-v34 is the technical view of the cadastral import, drawn over premium-v34 (&v33=1 adds the V3.3 plots).
+  const cadastreDiag=params.get('diagnostic')==='cadastre-v34',visualParam=cadastreDiag?'premium-v34':params.get('visual');
   // V3.2: the premium interface is tied to its mode; the class is set first so the loading screen already uses it.
-  if(['premium-v32','premium-v33'].includes(params.get('visual')))document.body.classList.add('ui-v32');
+  if(['premium-v32','premium-v33','premium-v34'].includes(visualParam))document.body.classList.add('ui-v32');
   const device={dpr:devicePixelRatio,cores:navigator.hardwareConcurrency,memory:navigator.deviceMemory};let quality=qualitySettings(requestedQuality,device);
   // V2.4 lighting presets: DAY_CLEAR by default (late morning), GOLDEN_HOUR with ?light=golden or the « Lumière » button.
   let lightName=params.get('light')==='golden'?'GOLDEN_HOUR':'DAY_CLEAR';const light=()=>LIGHT_PRESETS[lightName];
   // V2.5: ?visual=poussey-v25 switches the Poussey box to the procedural art prototype (own sky, PBR, post-processing).
   // V2.6: ?visual=poussey-v26 is the illustrated diorama variant (same box, same plumbing, its own presets).
   // V2.7: ?visual=cartoon-v27 generalises the diorama to the whole commune (no box: every V2.4 drawing is replaced).
-  const visualStyle={'cartoon-v29':'v29','cartoon-v291':'v291','premium-v30':'v30','premium-v31':'v31','premium-v32':'v32','premium-v33':'v33'}[params.get('visual')]||'v28',visualName=['cartoon-v28','cartoon-v29','cartoon-v291','premium-v30','premium-v31','premium-v32','premium-v33'].includes(params.get('visual'))?'cartoon-v27':params.get('visual'),v25Mode=['poussey-v25','poussey-v26','cartoon-v27'].includes(visualName)&&!params.get('diagnostic'),VQ=visualName==='cartoon-v27'?V27_QUALITY:visualName==='poussey-v26'?V26_QUALITY:V25_QUALITY,inVisualBox=visualName==='cartoon-v27'?()=>true:inV25Box,v25Quality=VQ[params.get('v25quality')]?params.get('v25quality'):'beauty';
+  const visualStyle={'cartoon-v29':'v29','cartoon-v291':'v291','premium-v30':'v30','premium-v31':'v31','premium-v32':'v32','premium-v33':'v33','premium-v34':'v34'}[visualParam]||'v28',visualName=['cartoon-v28','cartoon-v29','cartoon-v291','premium-v30','premium-v31','premium-v32','premium-v33','premium-v34'].includes(visualParam)?'cartoon-v27':visualParam,v25Mode=['poussey-v25','poussey-v26','cartoon-v27'].includes(visualName)&&(!params.get('diagnostic')||cadastreDiag),VQ=visualName==='cartoon-v27'?V27_QUALITY:visualName==='poussey-v26'?V26_QUALITY:V25_QUALITY,inVisualBox=visualName==='cartoon-v27'?()=>true:inV25Box,v25Quality=VQ[params.get('v25quality')]?params.get('v25quality'):'beauty';
   const scene=new THREE.Scene();scene.fog=new THREE.Fog(light().fog,light().fogNear,light().fogFar);
   const renderer=new THREE.WebGLRenderer({antialias:false,alpha:!v25Mode,logarithmicDepthBuffer:!v25Mode,powerPreference:'high-performance'});renderer.setClearColor(0x000000,0);renderer.setPixelRatio(v25Mode?Math.min(devicePixelRatio,VQ[v25Quality].dpr):quality.pixelRatio);renderer.setSize(innerWidth,innerHeight);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFShadowMap;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=light().exposure;
   renderer.domElement.setAttribute('aria-label','Vue 3D navigable : flèches pour déplacer, + et − pour zoomer, R pour recentrer.');renderer.domElement.tabIndex=0;document.querySelector('#map').appendChild(renderer.domElement);
@@ -94,7 +97,7 @@ async function start(){
   // V2.4: instanced trees in the woods and the built-up zone, rounded hedges (decorative, off every footprint and road).
   const vegetation=v2?buildVegetation(v2.group,{v2,buildings:reference.items,quality,exclude:v25Mode?inVisualBox:null}):null;
   // V2.5 prototype: procedural houses, composed trees, local ground, textured roads and living water inside the Poussey box.
-  const v25=v25Mode?await (visualName==='cartoon-v27'?buildVisualV27:visualName==='poussey-v26'?buildVisualV26:buildVisualV25)({style:visualStyle,scene,renderer,camera,sun,hemisphere,v2,items:reference.items,enrichment,architecture:archById,elevation:item=>display.get(item.id).base-.45,quality:v25Quality,diorama:params.get('diorama')==='1',fxaa:params.get('fxaa'),poiAt:id=>{const q=v2?.poiById.get(id);return q?project(q.lonlat):null;},target:()=>[controls.target.x,controls.target.z]}):null;
+  const v25=v25Mode?await (visualName==='cartoon-v27'?buildVisualV27:visualName==='poussey-v26'?buildVisualV26:buildVisualV25)({style:visualStyle,scene,renderer,camera,sun,hemisphere,v2,items:reference.items,enrichment,architecture:archById,elevation:item=>display.get(item.id).base-.45,quality:v25Quality,diorama:params.get('diorama')==='1',fxaa:params.get('fxaa'),diagnostic:cadastreDiag?{cadastre:true,v33:params.get('v33')==='1'}:null,poiAt:id=>{const q=v2?.poiById.get(id);return q?project(q.lonlat):null;},target:()=>[controls.target.x,controls.target.z]}):null;
   const pickMeshes=[...buildings.pickMeshes,...(v25?.pickMeshes||[])];
   if(v25?.sunOffset){sunOffset.set(...v25.sunOffset);shadowKey='';}
   // V2.0.1 visibility audit: every expected id has walls or roof in the scene graph, stands in the terrain range and is not buried.
@@ -196,11 +199,14 @@ async function start(){
    const onView=v=>v.v25?goV25(v.v25):v.reset?reset():flyTo(v.p[0],v.p[1],v.d);
    // V3.2: dock + panels instead of the control row, the quick-view pills and the legend button; the quality is chosen
    // directly and applied by a reload that keeps the camera (?cam=x,y,z,tx,ty,tz).
-   if((visualStyle==='v32'||visualStyle==='v33')&&v25){const go=key=>{const q=new URLSearchParams(params);q.set('visual',params.get('visual'));q.set('v25quality',key);const c=camera.position,t=controls.target;q.set('cam',[c.x,c.y,c.z,t.x,t.y,t.z].map(v=>Math.round(v)).join(','));const url='?'+q.toString();(window.__MLGU_GO__||(u=>location.assign(u)))(url);};
+   if(['v32','v33','v34'].includes(visualStyle)&&v25){const go=key=>{const q=new URLSearchParams(params);q.set('visual',visualParam);q.set('v25quality',key);const c=camera.position,t=controls.target;q.set('cam',[c.x,c.y,c.z,t.x,t.y,t.z].map(v=>Math.round(v)).join(','));const url='?'+q.toString();(window.__MLGU_GO__||(u=>location.assign(u)))(url);};
     installUiV32({views,onView,quality:v25Quality,go,names:{get:()=>namesVisible,toggle:()=>document.querySelector('#labels').click()},dataDate:document.querySelector('#data-date')?.textContent||'',
-     interpretation:visualStyle==='v33'?'Les terrains, jardins, cours, allées et clôtures des villages sont déduits des bâtiments et des rues : ils ne reproduisent pas le cadastre.':''});}
+     interpretation:visualStyle==='v34'?'Les contours de parcelles de la commune proviennent de données cadastrales publiques. Le rendu des jardins, cours, végétaux, matériaux et aménagements reste stylisé ou interprété. Le plan cadastral ne constitue pas un bornage juridique.'
+      :visualStyle==='v33'?'Les terrains, jardins, cours, allées et clôtures des villages sont déduits des bâtiments et des rues : ils ne reproduisent pas le cadastre.':'',
+     sources:visualStyle==='v34'&&v25.stats.cadastreV34?`<li>Parcelles : plan cadastral DGFiP (PCI Vecteur, édition ${v25.stats.cadastreV34.edition}), diffusé par l’IGN (<a href="https://www.data.gouv.fr/datasets/parcellaire-express-pci" target="_blank" rel="noreferrer">Parcellaire Express</a>), Licence Ouverte 2.0</li>`:''});
+    if(cadastreDiag)installCadastreLegendV34(params.get('v33')==='1');}
    else{installViews(views,onView);installLegend();}
-   const cam=(params.get('cam')||'').split(',').map(Number);if((visualStyle==='v32'||visualStyle==='v33')&&cam.length===6&&cam.every(Number.isFinite))window.__MAIZIERES__.view(cam.slice(0,3),cam.slice(3));
+   const cam=(params.get('cam')||'').split(',').map(Number);if(['v32','v33','v34'].includes(visualStyle)&&cam.length===6&&cam.every(Number.isFinite))window.__MAIZIERES__.view(cam.slice(0,3),cam.slice(3));
    if(technical&&!auditMode&&!hydroMode)installPerfHud(renderer,`Bâtiments ${buildings.count} · routes ${v2.stats.roads.count} · voies ${v2.stats.rail.tracks}\nParcelles ${v2.stats.agriculture} · bois ${v2.stats.woodland} · haies ${v2.stats.hedges.count} · arbres ${vegetation.stats.trees} · POI ${v2Records.pois}\nTexture ${v2.texture.width}×${v2.texture.height} (${v2.texture.metresPerPixel} m/px)`,draw);
    Object.assign(window.__MAIZIERES__,{railCentre,v2:{stats:v2.stats,records:v2Records,views:views.map(v=>v.name),searchIndex:search.index,heightAt:v2.heightAt},search:q=>search.search(q),focus:name=>{const r=catalogue.records.find(r=>r.name===name&&r.poi)||catalogue.records.find(r=>r.name===name&&r.searchable!==false);if(r)focus(r);return !!r;},positionOf:id=>catalogue.byId.get(id)?.position||null,records:()=>catalogue.records.map(r=>({id:r.id,name:r.name,type:r.type,kind:r.kind,source:r.source,position:r.position,searchable:r.searchable!==false&&!r.generic,poi:r.poi?.id||null,members:r.memberIds||null,sourceIds:r.sourceIds||null})),owner:id=>{const r=catalogue.byId.get(id);return r?{id:r.id,name:r.name,type:r.type,poi:r.poi?.id||null}:null;},selectId:id=>{const r=catalogue.byId.get(id);selection.select(r);return !!r;},quick:name=>{const v=views.find(v=>v.name===name);if(v)v.v25?goV25(v.v25):v.reset?reset():flyTo(v.p[0],v.p[1],v.d);return !!v;}});
   }

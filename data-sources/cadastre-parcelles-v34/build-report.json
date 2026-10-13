@@ -1,0 +1,101 @@
+{
+ "parcels": {
+  "raw": 5456,
+  "imported": 5456,
+  "multiPart": 0,
+  "withHoles": 10,
+  "holes": 13,
+  "open": 0,
+  "duplicateVertices": 0,
+  "tooShort": 0,
+  "selfIntersecting": 0,
+  "duplicateIds": 0,
+  "sections": 20,
+  "under5m2": 25,
+  "areaM2": {
+   "total": 19532686,
+   "median": 973,
+   "p10": 154,
+   "p90": 4755,
+   "min": 0,
+   "max": 395634
+  },
+  "byKind": {
+   "res": 849,
+   "civic": 8,
+   "farm": 13,
+   "activity": 87,
+   "annex": 191,
+   "yard": 87,
+   "field": 787,
+   "wood": 2375,
+   "water": 13,
+   "open": 1046
+  },
+  "bySector": {
+   "centre-bourg": 1131,
+   "Poussey": 864,
+   "Les Granges": 1012,
+   "La Glacière": 144,
+   "campagne": 2305
+  }
+ },
+ "overlaps": {
+  "pairs": 140,
+  "areaM2": 8217.64,
+  "maxM2": 608.76,
+  "pairsOver1m2": 110
+ },
+ "coverage": {
+  "communeContour": "public/data/commune.geojson (geo.api.gouv.fr, contour)",
+  "communeAreaHa": 2038.2383861042172,
+  "parcelsUnionHa": 1952.4468436232955,
+  "parcelsInsideContourHa": 1924.5107076783604,
+  "parcelsOutsideContourHa": 27.936135944934936,
+  "notCadastredInsideHa": 113.72767842585668,
+  "coverageOfContour": 0.9442029552572455,
+  "sumGraphicHa": 1953.2686157359385,
+  "sumContenanceHa": 1949.5251
+ },
+ "projection": {
+  "control": "300 parcelles servies en EPSG:2154 par le même WFS",
+  "comparedVertices": 2890,
+  "maxDeviationM": 0.005224964111501912,
+  "meanDeviationM": 0.0046718815475185384
+ },
+ "buildings": {
+  "total": 2596,
+  "inCommune": 2362,
+  "linkThreshold": 0.05,
+  "unique": 1848,
+  "multiple": 515,
+  "multipleOverflow": 320,
+  "multipleStraddle": 195,
+  "none": 233,
+  "noneInCommune": 5,
+  "uniqueInCommune": 1842,
+  "multipleInCommune": 515,
+  "parcelsWithSeveralMainBuildings": 584,
+  "parcelsWithBuildings": 1359
+ },
+ "offset": {
+  "method": "centroïde de l’empreinte BD TOPO (référentiel V1.6.2, ≥ 40 m²) contre le bâtiment cadastral PCI de même producteur que les parcelles, appariés par IoU > 0,6",
+  "pairs": 817,
+  "medianDx": 0,
+  "medianDz": 0.1375227116940323,
+  "p50": 1.0598768923481996,
+  "p90": 2.268625513127231,
+  "p99": 5.246687212200789,
+  "max": 9.605807889592104
+ },
+ "topology": {
+  "edges": 25695,
+  "shared": 16467,
+  "single": 9227,
+  "more": 1,
+  "tJunctionSplits": 63,
+  "vertices": 20314,
+  "roundingMaxM": 0.007071067811865476
+ },
+ "anomalies": 707
+}

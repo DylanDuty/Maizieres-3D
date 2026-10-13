@@ -1,3 +1,10 @@
+# Notes V3.4 — cadastre réel, 13 octobre 2026
+
+- **Une limite réelle n’est pas une clôture.** Le cadastre donne le contour d’une parcelle fiscale, ni un mur, ni une haie, ni un jardin. On le dessine donc en trait fin d’une seule passe, d’un vert éteint, et l’on garde les séparations matérielles aux seules données qui les décrivent.
+- **Une grande parcelle n’est pas un jardin.** Peinte en pelouse, une parcelle de 6 ha portant des halles et un logement de gardien entourait les halles de gazon. La teinte domestique ne vaut que pour une petite parcelle, ou pour une bande autour des maisons. Un site d’activité reste un site.
+- **Le réel paraît d’abord plus pauvre.** Les vrais terrains, sans cours ni allées inventées, ramenaient le village à une prairie. Il a suffi de nuances un peu plus franches entre voisins et d’un trait doublé d’une ombre douce pour lire les lanières de Poussey et les lots du lotissement, sans retomber dans un plan technique.
+- **Quand une source est bloquée, on documente et on prend l’autre voie officielle.** L’export Etalab redirigeait vers un hôte refusé par l’environnement. Le même plan DGFiP, diffusé par l’IGN, a été pris avec son édition déclarée et les octets reçus hachés, et l’essai Etalab reste dans les preuves.
+
 # Notes V3.3 — parcelles, jardins et micro-paysage, 13 octobre 2026
 
 - **Une prairie uniforme vient d'un seul polygone.** La donnée n'a qu'un polygone « village » de 174 ha. Tant qu'il est peint d'une teinte, cent maisons sur une pelouse commune restent une prairie, quel que soit le soin apporté aux toits. Il fallait découper le sol, pas l'enrichir.

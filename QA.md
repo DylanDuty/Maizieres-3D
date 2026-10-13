@@ -1,3 +1,41 @@
+# Vérification V3.4 — cadastre réel, 13 octobre 2026
+
+Branche `opus/v3.4-cadastre-parcelles-reelles`, à partir de `4e6f386` (V3.3.1). Mode `?visual=premium-v34`, diagnostic `?diagnostic=cadastre-v34` (`&v33=1`).
+
+- **Documents** : rapport `docs/audit/V3.4_CADASTRE_REEL_PARCELLES.md`, fiche de données `docs/data/CADASTRE_PARCELLAIRE_V3.4.md`, gel cadastral `docs/freeze/MLGU_CADASTRAL_FREEZE_V1.md` (manifeste JSON à côté), registre `docs/freeze/MLGU_CADASTRAL_PARCELS_V1.json`, anomalies `docs/audit/V3.4_CADASTRAL_ANOMALIES.csv` (707 lignes).
+- **Captures** : `docs/qa/v3.4/` :
+  - `cadastre/` : 13 cas avec référence PCI brute, V3.3.1, diagnostic et V3.4 ;
+  - `compare/` : 10 cadrages ;
+  - `details/` ;
+  - `mobile/` ;
+  - `presets/`.
+
+- **Source** : PCI Vecteur (DGFiP), édition 2026-06-01, diffusé par l’IGN (WFS Parcellaire Express), Licence Ouverte 2.0, 5 456 parcelles, SHA-256 des octets reçus. L’export Etalab 2026-09-01 n’a pas pu être téléchargé : il redirige vers un hôte refusé par la politique réseau de l’environnement (403) ; la tentative est documentée.
+- **SIG** :
+  - 5 456 / 5 456 parcelles, 13 trous conservés, 0 auto-intersection ;
+  - écart de la copie de rendu à la source 7,0 mm (arrondi seul) ; projection contrôlée à 5,2 mm contre le Lambert-93 de l’IGN ;
+  - 25 695 limites uniques ; couverture du contour communal 94,4 % ;
+  - 140 chevauchements source signalés, non corrigés.
+- **Bâtiments** : 1 848 dans une seule parcelle ; 515 sur plusieurs (320 débords < 20 %, 195 à cheval) ; 233 sans parcelle (228 hors commune, 5 dans la commune). Décalage cadastre / BD TOPO : médiane 1,06 m.
+- **Remplacement V3.3** : aucun terrain, limite, haie, muret, clôture, allée, cour ni arbre de lot V3.3 en `premium-v34` ; le générateur V3.3 ne sert plus qu’à la surcouche du diagnostic.
+- **Performance** : SwiftShader, médianes de 3 passages alternés, V3.3.1 → V3.4.
+
+  | Preset | Appels | Triangles | Temps d’image |
+  |---|---|---|---|
+  | BEAUTÉ | 291 → 281 | 10,69 → 10,35 M | 7 316 → 6 996 ms (− 4,4 %) |
+  | ÉQUILIBRÉ | 287 → 283 | 9,08 → 8,67 M | 6 306 → 6 274 ms (− 0,5 %) |
+  | PERFORMANCE | 127 → 126 | 3,54 M | 2 970 → 2 910 ms (− 2,0 %) |
+  | Téléphone portrait | 97 | — | 1 532 → 1 431 ms |
+  | Téléphone paysage | 135 | — | 2 198 → 2 222 ms |
+
+  Aucun maillage par parcelle ; chargement + 0 à 3 s ; repeinte du détail 61 à 127 ms.
+- **Chromium** :
+  - sonde 17 configurations : 2 596 / 2 596 bâtiments, 2 584 / 2 584 avec `manual=0`, 0 enfoui, console vide ;
+  - en V3.4, ni terrains ni limites V3.3 à l’exécution ;
+  - interface V3.2 et gestes tactiles V3.3.1 vérifiés sur trois gabarits (sélecteur Qualité, clics, fiches, recherche, tabulation, contrastes, zoom maximal 420 m à 60 s).
+- **Géographie et sémantique** : aucun des 42 fichiers géographiques gelés, des 52 fichiers du Freeze V1 ni du gel sémantique V2.9.2 modifié. Le cadastre est une couche ajoutée, gelée à part (gel cadastral V1, reconstruction déterministe vérifiée).
+- **Contrôles** : `check:all` PASS, dont les cinq contrôles `check:cadastre-*` ; `npm run build` et `pnpm build` OK.
+
 # Vérification V3.3.1 — gestes tactiles, 13 octobre 2026
 
 Même branche, après `b2e2727`. Test Chromium, gestes tactiles réels (CDP), 390 × 844, PERFORMANCE, vue de départ à 1 101 m, azimut 28,1°, inclinaison 50,5° :
