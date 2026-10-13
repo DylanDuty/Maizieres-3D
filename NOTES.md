@@ -1,3 +1,10 @@
+# Notes V3.3 — parcelles, jardins et micro-paysage, 13 octobre 2026
+
+- **Une prairie uniforme vient d'un seul polygone.** La donnée n'a qu'un polygone « village » de 174 ha. Tant qu'il est peint d'une teinte, cent maisons sur une pelouse commune restent une prairie, quel que soit le soin apporté aux toits. Il fallait découper le sol, pas l'enrichir.
+- **Pas de cadastre, donc des règles et pas un faux plan.** Sans parcelles dans les sources, chaque terrain se déduit de la maison et de la rue : devant sur la voie la plus proche, profondeur selon la famille, partage par diagramme de puissance, arrêt au premier champ. Le résultat est lisible et déterministe, et il reste présenté comme une interprétation.
+- **Une limite se lit par la différence, pas par le trait.** Les premières haies, sombres, épaisses et fermées en rectangle, faisaient patchwork. Deux pelouses de tons voisins, un liseré d'herbe moins tondue, une haie basse avec des trouées, et l'on voit des jardins sans voir de grille.
+- **Une cour doit mener quelque part.** Un anneau d'enrobé autour d'une halle se lit comme une ombre ; une cour qui ne touche pas la voie flotte au milieu du terrain. Seule une surface qui relie la façade à la chaussée se lit comme un accès.
+
 # Notes V3.2 — villages premium et interface, 12 octobre 2026
 
 - **Lire la forme avant de dessiner le toit.** Un seul pignon sur le rectangle minimal d'une maison en L met le faîtage au-dessus du vide. Découper l'empreinte en rectangles et prendre le maximum de leurs pans donne des ailes et des noues justes, pour quelques triangles, tant que la surface est coupée le long de ses arêtes.

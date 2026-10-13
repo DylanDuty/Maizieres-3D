@@ -1,3 +1,30 @@
+# Vérification V3.3 — parcelles, jardins et micro-paysage, 13 octobre 2026
+
+Branche `opus/v3.3-parcelles-micro-paysage`, à partir de `4428344` (V3.2). Mode `?visual=premium-v33`.
+
+- **Documents** : rapport `docs/audit/V3.3_PARCEL_MICROLANDSCAPE.md`, en 18 sections : diagnostic, règles, grille d'audit, performance, verdict.
+- **Captures** : `docs/qa/v3.3/`.
+  - `compare/` : 10 cadrages V3.2 / V3.3, dont vue générale, centre-bourg, Poussey, Les Granges, La Glacière, frange, zoom résidentiel, bâtiment public, zone d'activité et bâti ancien.
+  - `details/` : agrandis 2×.
+  - `mobile/` : 390 × 844 et 844 × 390.
+  - `presets/` : BEAUTÉ, ÉQUILIBRÉ et PERFORMANCE.
+
+- **Géographie** : aucun fichier de `public/`, `unreal/` ni `data-sources/` modifié ; 42 fichiers gelés identiques à `309e65e` ; 52 hachages Freeze V1 vérifiés.
+- **Sémantique** : gel sémantique V2.9.2 inchangé ; six contrôles sémantiques PASS.
+- **Parcelles** : 1 073 terrains interprétés (1 023 habitations, 18 équipements, 32 fermes), dont 1 053 orientés sur une voie. Ils portent 422 cours, 393 allées, 472 terrasses, 331 potagers et 1 063 arbres de parcelle (aucun en PERFORMANCE, qui garde la grille de jardin V3.2 hors sols durs). Limites : 12,7 km de haies, 3,1 km de murets, 35,2 km de clôtures, 40 lisières sur champ. En BEAUTÉ et ÉQUILIBRÉ, 4 375 pièces en volume (28 970 triangles). Zones d'activité : 210 halles, dont 134 avec une cour reliée à leur voie. Trois places pavées et le monument.
+- **Performance** : SwiftShader, vue oblique, médianes de 3 passages alternés, V3.2 → V3.3.
+
+  | Preset | Appels | Triangles | Temps d'image |
+  |---|---|---|---|
+  | BEAUTÉ | 285 → 291 | 10,34 → 10,69 M (+ 3,39 %) | 7 716 → 8 009 ms (+ 3,8 %) |
+  | ÉQUILIBRÉ | 283 → 287 | 8,61 → 9,08 M (+ 5,41 %) | 6 728 → 6 666 ms (− 0,9 %) |
+  | PERFORMANCE | 127 → 127 | 3,53 → 3,54 M (+ 0,30 %) | 3 142 → 3 106 ms (− 1,1 %) ; 2 929 ms sans FXAA |
+
+  Les vergers posés en PERFORMANCE coûtaient + 6 % ; une série d'isolement l'a montré, et ils ont été retirés de ce preset. À 420 m, BEAUTÉ prend + 3,0 à + 4,8 % de triangles.
+- **Chromium, sonde** : 15 configurations. 2 596 / 2 596 bâtiments, 2 584 / 2 584 avec `manual=0`, 0 enfoui, console vide. `premium-v32`, `premium-v31` et `premium-v30` sont servis par la build V3.3.
+- **Chromium, interface** : sélecteur Qualité direct, caméra conservée, Explorer, Informations, tabulation et contrastes, sur trois gabarits. Clics, fiches, recherche et zoom maximal (419 m à 60 s), console vide.
+- **Contrôles** : `check:all` PASS ; `npm run build` et `pnpm build` OK.
+
 # Vérification V3.2 — villages premium et interface, 12 octobre 2026
 
 Branche `opus/v3.2-premium-village-interface`, à partir de `119ada9` (V3.1). Mode `?visual=premium-v32`.

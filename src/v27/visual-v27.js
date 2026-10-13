@@ -76,7 +76,7 @@ export async function buildVisualV27({scene,renderer,camera,sun,hemisphere,v2,it
  const extras=new Tri();const memorial=warMemorialV28(extras,poiAt,heightAt);
  if(extras.n){const g=extras.geometry(),m=new THREE.Mesh(g,M.detail);m.name='v27-landmarks';m.castShadow=true;m.receiveShadow=true;group.add(m);}
  const roads=buildRoadsV25(group,{v2,box,heightAt,materials:M});
- const vegetation=buildVegetationV27(group,{v2,box,buildings:items,heightAt,materials:M,q:v30?{...Q.veg,riparianCorridor:11,v30:true,v31,v32,...(parcels?{lotTrees:parcels.lots.flatMap(l=>l.trees),inLot:parcels.inLot}:{})}:v291?{...Q.veg,riparianCorridor:11,v291:true}:v29?{...Q.veg,riparianCorridor:11}:Q.veg});
+ const vegetation=buildVegetationV27(group,{v2,box,buildings:items,heightAt,materials:M,q:v30?{...Q.veg,riparianCorridor:11,v30:true,v31,v32,...(parcels?quality==='performance'?{skipGarden:parcels.onHard}:{lotTrees:parcels.lots.flatMap(l=>l.trees),skipGarden:parcels.inLot}:{})}:v291?{...Q.veg,riparianCorridor:11,v291:true}:v29?{...Q.veg,riparianCorridor:11}:Q.veg});
  const water=waterMaterialV26({style:mat});const waterMesh=v2.group.getObjectByName('v2-water');if(waterMesh){waterMesh.material=water.material;waterMesh.renderOrder=1;}
  const waterLines=v2.group.getObjectByName('v2-water-lines');let hydro=null;
  if(v29){if(waterLines)waterLines.visible=false;hydro=buildHydroV29(group,{v2,heightAt,material:water.material});}

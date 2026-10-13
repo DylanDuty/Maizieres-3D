@@ -23,7 +23,7 @@ const el=(tag,props={},html='')=>{const e=Object.assign(document.createElement(t
 
 // views: [{name, …}] with onView(view); quality: current preset key; go(key): applies a preset (reload with the camera kept);
 // names: {get():bool, toggle()}.
-export function installUiV32({views,onView,quality,go,names,dataDate=''}){
+export function installUiV32({views,onView,quality,go,names,dataDate='',interpretation=''}){
  document.body.classList.add('ui-v32');
  // The old control row (cycling quality button, light, labels, recentre) leaves the page: its functions are in the panels.
  document.querySelector('nav')?.setAttribute('hidden','');document.querySelector('#quality')?.remove();
@@ -67,6 +67,7 @@ export function installUiV32({views,onView,quality,go,names,dataDate=''}){
   <p>Cette carte est une interprétation 3D stylisée de Maizières-la-Grande-Paroisse, créée à partir de données géographiques et documentaires réelles.</p>
   <p>Certains bâtiments, matériaux, détails paysagers et éléments visuels sont simplifiés ou interprétés pour les besoins de la représentation.</p>
   <p>Elle ne constitue pas une représentation contractuelle ni un relevé architectural de précision.</p>
+  ${interpretation?`<p>${interpretation}</p>`:''}
   <h3>Naviguer</h3>
   <ul class="info-list"><li><b>Cliquer</b> ou toucher un lieu pour l’identifier</li><li><b>Glisser</b> pour tourner, <b>clic droit</b> ou deux doigts pour déplacer</li><li><b>Molette</b> ou pincement pour zoomer</li><li><b>/</b> pour rechercher, <b>Échap</b> pour fermer</li></ul>
   <details class="info-sources"><summary>Sources et projet</summary><ul class="info-list">

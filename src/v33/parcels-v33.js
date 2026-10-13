@@ -11,7 +11,7 @@ import {variantV32,facadeV32} from '../v32/architecture-v32.js';
 // moves toward the smaller one), clipped by fields, woods and water when it is painted. Inside: a court or a drive on the
 // street side, a lawn with mowing bands, a terrace behind pavilions, a vegetable patch at the back of deep rural plots.
 // Limits: a hedge, a low wall or a discreet fence, chosen by the position of the limit and the family of the house.
-// Public buildings get a forecourt, activity buildings a hard apron, farms a gravel yard.
+// Public buildings get a forecourt, activity buildings an asphalt yard toward their road and a hard apron, farms a gravel yard.
 
 const h01=(s)=>fnv(s)/4294967296;
 const CIVIC_CLS=new Set(['PUBLIC','HERITAGE','RELIGIOUS']);
@@ -101,10 +101,11 @@ export function buildParcelsV33({items,architecture,enrichment={buildings:{}},v2
     const stop=td>tmax||td<tmin?fmin+(fmax-fmin)*.35:fmax-.3;z('drive',band(poly,s.c,f,t,stop,F+.8,td-1.5,td+1.5));lot.drive=[td-1.7,td+1.7];stats.drives++;}
    if(['pavillon-compact','pavillon-allonge','maison-etage','grand-residentiel'].includes(fam)&&fmin-B>8){const w=(tmax-tmin)*.6,tc=(tmin+tmax)/2;z('terrace',band(poly,s.c,f,t,fmin-3,fmin+.2,tc-w/2,tc+w/2));stats.terraces++;}
    const depth=fmin-B;if(depth>=15&&(OLD.has(fam)?h('p')<.75:h('p')<.3)){const W=(L1-L0)*.45,left=h('pl')<.5,dp=Math.min(9,depth*.38);z('potager',band(poly,s.c,f,t,B+1.5,B+1.5+dp,left?L0+1:L1-1-W,left?L0+1+W:L1-1));lot.potager=true;stats.potagers++;}}
-  // ---- trees: an orchard at the back of deep rural plots, one fruit tree behind a pavilion ----
-  if(s.kind!=='civic'){const depth=fmin-B;
-   if((OLD.has(fam)||s.kind==='farm')&&depth>=18){const n=Math.min(performance?2:5,Math.floor(depth/7));for(let k=0;k<n;k++){const a=fmin-5-k*(depth-6)/Math.max(1,n),b=(h('t'+k)-.5)*(L1-L0)*.6+(L0+L1)/2;lot.trees.push({x:s.c[0]+f[0]*a+t[0]*b,z:s.c[1]+f[1]*a+t[1]*b,type:'fruit',h:3.8+h('th'+k)*2});}}
-   else if(!performance&&depth>=12&&h('t')<.55){const a=B+3.5,b=h('tb')<.5?L0+3:L1-3;lot.trees.push({x:s.c[0]+f[0]*a+t[0]*b,z:s.c[1]+f[1]*a+t[1]*b,type:h('tt')<.6?'fruit':'round',h:4+h('th')*2.5});}}
+  // ---- trees: an orchard at the back of deep rural plots, one fruit tree behind a pavilion (not in PERFORMANCE, which
+  // keeps the V3.2 garden trees: see onHard) ----
+  if(s.kind!=='civic'&&!performance){const depth=fmin-B;
+   if((OLD.has(fam)||s.kind==='farm')&&depth>=18){const n=Math.min(5,Math.floor(depth/7));for(let k=0;k<n;k++){const a=fmin-5-k*(depth-6)/Math.max(1,n),b=(h('t'+k)-.5)*(L1-L0)*.6+(L0+L1)/2;lot.trees.push({x:s.c[0]+f[0]*a+t[0]*b,z:s.c[1]+f[1]*a+t[1]*b,type:'fruit',h:3.8+h('th'+k)*2});}}
+   else if(depth>=12&&h('t')<.55){const a=B+3.5,b=h('tb')<.5?L0+3:L1-3;lot.trees.push({x:s.c[0]+f[0]*a+t[0]*b,z:s.c[1]+f[1]*a+t[1]*b,type:h('tt')<.6?'fruit':'round',h:4+h('th')*2.5});}}
   lots.push(lot);}
  // ---- limits: classify each edge (front, shared side or back, outer side or back, garden / field edge) ----
  const outside=(lot,a,b,dist)=>{const m=[(a[0]+b[0])/2,(a[1]+b[1])/2],e=[b[0]-a[0],b[1]-a[1]],L=Math.hypot(e[0],e[1])||1;let n=[e[1]/L,-e[0]/L];const ctr=lot.poly.reduce((s,q)=>[s[0]+q[0]/lot.poly.length,s[1]+q[1]/lot.poly.length],[0,0]);if(dot(n,[m[0]-ctr[0],m[1]-ctr[1]])<0)n=[-n[0],-n[1]];return {m,n,p:[m[0]+n[0]*dist,m[1]+n[1]*dist],L};};
@@ -126,13 +127,24 @@ export function buildParcelsV33({items,architecture,enrichment={buildings:{}},v2
  const memorial=poiAt('poi:monument-aux-morts');
  for(const lot of lots){let b=[Infinity,Infinity,-Infinity,-Infinity];for(const q of lot.poly){b[0]=Math.min(b[0],q[0]);b[1]=Math.min(b[1],q[1]);b[2]=Math.max(b[2],q[0]);b[3]=Math.max(b[3],q[1]);}lot.b=b;}
  const bbOf=r=>{let b=[Infinity,Infinity,-Infinity,-Infinity];for(const q of r){b[0]=Math.min(b[0],q[0]);b[1]=Math.min(b[1],q[1]);b[2]=Math.max(b[2],q[0]);b[3]=Math.max(b[3],q[1]);}return b;};
- for(const a of activity)a.b=bbOf(a.ring);for(const a of farmYards)a.b=bbOf(a.ring);
+ // activity yards: an asphalt yard between the hall and its access road (only when the road is at most 45 m away; 4 m wider
+ // than the hall on each side), stopped at the first field or water met on the way (three lines of sight)
+ stats.yards=0;for(const a of activity){const road=R.near(a.c[0],a.c[1],a.A>2000?110:70);if(!road)continue;const t=road.dir;let f=[-t[1],t[0]];if(dot(f,[road.qx-a.c[0],road.qz-a.c[1]])<0)f=[-f[0],-f[1]];
+  let fmax=-Infinity,tmin=Infinity,tmax=-Infinity;for(const q of a.ring){const v=[q[0]-a.c[0],q[1]-a.c[1]];fmax=Math.max(fmax,dot(v,f));tmin=Math.min(tmin,dot(v,t));tmax=Math.max(tmax,dot(v,t));}
+  let F=dot(f,[road.qx-a.c[0],road.qz-a.c[1]])-road.w/2-.5;if(F-fmax>45)continue;
+  for(const tt of [tmin,(tmin+tmax)/2,tmax])for(let k=fmax+1;k<F;k+=1){const x=a.c[0]+f[0]*k+t[0]*tt,zz=a.c[1]+f[1]*k+t[1]*tt;if(field(x,zz)||water(x,zz)){F=Math.min(F,k-.5);break;}}
+  if(F-fmax>=3){a.yard=rectFT(a.c,f,t,fmax-2,F,tmin-4,tmax+4);stats.yards++;}}
+ for(const a of activity)a.b=bbOf(a.yard?[...a.ring,...a.yard]:a.ring);for(const a of farmYards)a.b=bbOf(a.ring);
  stats.activity=activity.length;stats.farmYards=farmYards.length;stats.places=places.length;
  // point-in-plot test (vegetation keeps its free garden trees outside the plots only)
  const LG=50,lgrid=new Map();for(const lot of lots)for(let x=Math.floor(lot.b[0]/LG);x<=Math.floor(lot.b[2]/LG);x++)for(let z=Math.floor(lot.b[1]/LG);z<=Math.floor(lot.b[3]/LG);z++){const k=x+','+z;if(!lgrid.has(k))lgrid.set(k,[]);lgrid.get(k).push(lot);}
  const inPolyXZ=(x,z,p)=>{let c=false;for(let i=0,j=p.length-1;i<p.length;j=i++){const [xi,zi]=p[i],[xj,zj]=p[j];if((zi>z)!==(zj>z)&&x<(xj-xi)*(z-zi)/(zj-zi)+xi)c=!c;}return c;};
- const inLot=(x,z)=>{for(const lot of lgrid.get(Math.floor(x/LG)+','+Math.floor(z/LG))||[])if(x>=lot.b[0]&&x<=lot.b[2]&&z>=lot.b[1]&&z<=lot.b[3]&&inPolyXZ(x,z,lot.poly))return true;return false;};
- return {lots,activity,farmYards,places,memorial,inLot,streets:R.segs.filter(s=>s.street),stats,field,water,roads:R};
+ const lotAt=(x,z)=>{for(const lot of lgrid.get(Math.floor(x/LG)+','+Math.floor(z/LG))||[])if(x>=lot.b[0]&&x<=lot.b[2]&&z>=lot.b[1]&&z<=lot.b[3]&&inPolyXZ(x,z,lot.poly))return lot;return null;};
+ const inLot=(x,z)=>!!lotAt(x,z);
+ // on a hard or worked surface of a plot (court, drive, terrace, forecourt, vegetable patch): PERFORMANCE keeps its free
+ // garden trees everywhere else
+ const onHard=(x,z)=>{const lot=lotAt(x,z);if(!lot)return false;for(const zn of lot.zones)if(zn.kind!=='yard'&&inPolyXZ(x,z,zn.p))return true;return false;};
+ return {lots,activity,farmYards,places,memorial,inLot,onHard,streets:R.segs.filter(s=>s.street),stats,field,water,roads:R};
 }
 
 // ---- painting (ground canvas, V3.0 painter) ----
@@ -140,7 +152,7 @@ export function buildParcelsV33({items,architecture,enrichment={buildings:{}},v2
 // touch drier. Hard surfaces: gravel courts in warm beige, drives in gravel or asphalt, stone forecourts, asphalt aprons.
 const LAWN={pav:['#a3c282','#9fbf7f','#a7c486','#9cbc7c'],old:['#a4c080','#abc285','#a0bd7d','#aec38a'],civic:['#a2c283'],farm:['#b1c38b']};
 export const PARCEL_COLORS={court:'#d2c9b5',court2:'#cdc3ad',drive:'#cfc7b4',drive2:'#bcb8ae',terrace:'#ddd6c8',potager:'#b9a481',potagerRow:'#a48d69',forecourt:'#d9d1c1',place:'#d6cdbc',
- yard:'#cbbf9f',apron:'#a6a49d',apronBand:'#c9c4b9',hedge:'#6a9358',hedgeShade:'#55704a',fence:'#e4dfd2',fenceShade:'#6f7a5d',wall:'#d4cab6',band:'#bec68f',verge:'#bccb96'};
+ yard:'#cbbf9f',apron:'#a09f9b',kerb:'#d2cdc1',apronBand:'#c7c2b6',hedge:'#6a9358',hedgeShade:'#55704a',fence:'#e4dfd2',fenceShade:'#6f7a5d',wall:'#d4cab6',band:'#bec68f',verge:'#bccb96'};
 export function paintParcelsV33(ctx,{Pc,X,Z,sx,over,m,detail}){const C=PARCEL_COLORS;
  const path=pts=>{ctx.beginPath();pts.forEach((q,i)=>i?ctx.lineTo(X(q[0]),Z(q[1])):ctx.moveTo(X(q[0]),Z(q[1])));ctx.closePath();};
  const fill=(pts,col,al=1)=>{ctx.globalAlpha=al;ctx.fillStyle=col;path(pts);ctx.fill();};
@@ -149,8 +161,11 @@ export function paintParcelsV33(ctx,{Pc,X,Z,sx,over,m,detail}){const C=PARCEL_CO
  ctx.lineJoin='round';ctx.lineCap='round';
  // street verges: a slightly fresher grass strip on both sides of the village streets
  for(const s of Pc.streets){if(!over([Math.min(s.ax,s.bx),Math.min(s.az,s.bz),Math.max(s.ax,s.bx),Math.max(s.az,s.bz)]))continue;seg([s.ax,s.az],[s.bx,s.bz],C.verge,s.w+3.4,.5);}
- // activity aprons: an asphalt yard around the halls, a lighter concrete band at the foot of the walls
- for(const a of Pc.activity){if(!over(a.b))continue;ctx.lineJoin='miter';ringStroke(a.ring,C.apron,a.A>2000?20:12,.82);ringStroke(a.ring,C.apronBand,5,.9);ctx.lineJoin='round';}
+ // activity sites: the asphalt yard toward the access road with a light kerb, a narrower asphalt apron all around the hall
+ // (6 m over 2 000 m², 4 m below) and a lighter concrete band at the foot of the walls
+ for(const a of Pc.activity){if(!over(a.b))continue;
+  if(a.yard){fill(a.yard,C.apron,.9);ctx.globalAlpha=.75;ctx.strokeStyle=C.kerb;ctx.lineWidth=Math.max(.6,.6*sx);path(a.yard);ctx.stroke();}
+  ctx.lineJoin='miter';ringStroke(a.ring,C.apron,a.A>2000?12:8,.9);ringStroke(a.ring,C.apronBand,4.5,.92);ctx.lineJoin='round';}
  // farm yards: gravel and beaten earth around farm buildings
  for(const a of Pc.farmYards){if(!over(a.b))continue;ringStroke(a.ring,C.yard,12,.55);ringStroke(a.ring,C.yard,6,.6);}
  // plots

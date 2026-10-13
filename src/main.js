@@ -194,7 +194,8 @@ async function start(){
    // V3.2: dock + panels instead of the control row, the quick-view pills and the legend button; the quality is chosen
    // directly and applied by a reload that keeps the camera (?cam=x,y,z,tx,ty,tz).
    if((visualStyle==='v32'||visualStyle==='v33')&&v25){const go=key=>{const q=new URLSearchParams(params);q.set('visual',params.get('visual'));q.set('v25quality',key);const c=camera.position,t=controls.target;q.set('cam',[c.x,c.y,c.z,t.x,t.y,t.z].map(v=>Math.round(v)).join(','));const url='?'+q.toString();(window.__MLGU_GO__||(u=>location.assign(u)))(url);};
-    installUiV32({views,onView,quality:v25Quality,go,names:{get:()=>namesVisible,toggle:()=>document.querySelector('#labels').click()},dataDate:document.querySelector('#data-date')?.textContent||''});}
+    installUiV32({views,onView,quality:v25Quality,go,names:{get:()=>namesVisible,toggle:()=>document.querySelector('#labels').click()},dataDate:document.querySelector('#data-date')?.textContent||'',
+     interpretation:visualStyle==='v33'?'Les terrains, jardins, cours, allées et clôtures des villages sont déduits des bâtiments et des rues : ils ne reproduisent pas le cadastre.':''});}
    else{installViews(views,onView);installLegend();}
    const cam=(params.get('cam')||'').split(',').map(Number);if((visualStyle==='v32'||visualStyle==='v33')&&cam.length===6&&cam.every(Number.isFinite))window.__MAIZIERES__.view(cam.slice(0,3),cam.slice(3));
    if(technical&&!auditMode&&!hydroMode)installPerfHud(renderer,`Bâtiments ${buildings.count} · routes ${v2.stats.roads.count} · voies ${v2.stats.rail.tracks}\nParcelles ${v2.stats.agriculture} · bois ${v2.stats.woodland} · haies ${v2.stats.hedges.count} · arbres ${vegetation.stats.trees} · POI ${v2Records.pois}\nTexture ${v2.texture.width}×${v2.texture.height} (${v2.texture.metresPerPixel} m/px)`,draw);
