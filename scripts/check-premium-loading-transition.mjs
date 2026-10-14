@@ -9,7 +9,7 @@ const M=await import('../src/ui/loading-transition.js');
 
 // ---- minimal DOM stand-in ----
 class El{constructor(tag,doc){this.tagName=tag.toUpperCase();this.ownerDocument=doc;this.children=[];this.parentElement=null;this.attrs={};this.dataset={};this.style={};this.listeners={};this._text='';this.hidden=false;
-  const set=new Set();this.classList={add:(...c)=>c.forEach(x=>set.add(x)),remove:(...c)=>c.forEach(x=>set.delete(x)),contains:c=>set.has(c),toggle:c=>set.has(c)?(set.delete(c),false):(set.add(c),true),get size(){return set.size;}};this._set=set;}
+  const set=new Set();this.classList={add:(...c)=>c.forEach(x=>set.add(x)),remove:(...c)=>c.forEach(x=>set.delete(x)),contains:c=>set.has(c),toggle:(c,force)=>(force??!set.has(c))?(set.add(c),true):(set.delete(c),false),get size(){return set.size;}};this._set=set;}
  set className(v){this._set.clear();String(v).split(/\s+/).filter(Boolean).forEach(c=>this._set.add(c));}get className(){return [...this._set].join(' ');}
  set id(v){this.attrs.id=v;}get id(){return this.attrs.id||'';}
  setAttribute(k,v){this.attrs[k]=String(v);if(k==='class')this.className=v;}getAttribute(k){return k in this.attrs?this.attrs[k]:null;}removeAttribute(k){delete this.attrs[k];}hasAttribute(k){return k in this.attrs;}
@@ -78,14 +78,14 @@ try{
  assert.ok(r.L.classList.contains('tx-leave'));assert.ok(!doc.documentElement.classList.contains('tx-active'));r.L.dispatch('transitionend');assert.equal(await p,true);assert.equal(T.state,'ready');assert.ok(!r.L.isConnected,'#loading retiré');
  assert.equal(await T.ready(),false,'ready() une seule fois');
  // quality change in the page: the target screen, once
- assert.equal(T.start({kind:'quality',targetQuality:'performance'}),true);assert.ok(r.L.isConnected&&doc.documentElement.classList.contains('tx-active'));assert.equal(r.L.querySelector('.tx-sub').textContent,'Passage en mode Performance');assert.ok(!r.L.classList.contains('tx-slow'),'état lent remis à zéro');
+ assert.equal(T.start({kind:'quality',targetQuality:'performance'}),true);assert.ok(r.L.classList.contains('tx-live'),'carte vivante sous le voile dans la page');assert.ok(r.L.isConnected&&doc.documentElement.classList.contains('tx-active'));assert.equal(r.L.querySelector('.tx-sub').textContent,'Passage en mode Performance');assert.ok(!r.L.classList.contains('tx-slow'),'état lent remis à zéro');
  assert.equal(T.start({kind:'quality',targetQuality:'performance'}),false,'double clic : pas de seconde transition');
  assert.equal(T.handoff({target:'performance',cam:'1,2,3,4,5,6',snapshot:'data:image/jpeg;base64,AA',view:{names:true,sel:null,det:false}}),true);assert.equal(JSON.parse(window.sessionStorage.getItem(M.HANDOFF_KEY)).target,'performance');
  // failure: animation stopped, announced, retry reloads the same preset
  T.fail(Error('ressource manquante'));assert.equal(T.state,'failed');assert.ok(r.L.classList.contains('tx-failed'));const box=r.L.querySelector('.tx-error');assert.equal(box.getAttribute('role'),'alert');assert.equal(r.L.querySelector('.tx-title').textContent,M.TRANSITION_TEXT.error.title);
  const retry=r.L.querySelector('.tx-retry');assert.equal(retry.textContent,'Réessayer');assert.equal(doc.activeElement,retry,'focus sur Réessayer');assert.equal(r.L.querySelectorAll('.tx-retry').length,1);T.fail(Error('encore'));assert.equal(r.L.querySelectorAll('.tx-retry').length,1,'pas de second bouton');
  window.sessionStorage.removeItem(M.HANDOFF_KEY);retry.click();assert.equal(globalThis.location.reloads,1);assert.equal(JSON.parse(window.sessionStorage.getItem(M.HANDOFF_KEY)).target,'performance','réessai du même préset');
- assert.ok(/tx-failed \.tx-line\{display:none\}/.test(html),'ligne arrêtée en échec');
+ assert.ok(/#loading\.tx\.tx-failed \.tx-line,/.test(html),'ligne arrêtée en échec');
  // reset (back-forward cache): nothing left over the map
  T.reset();assert.equal(T.state,'idle');assert.ok(!r.L.isConnected&&!doc.documentElement.classList.contains('tx-active'));
 }finally{globalThis.setTimeout=realSet;globalThis.clearTimeout=realClear;}

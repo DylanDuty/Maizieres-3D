@@ -212,7 +212,8 @@ async function start(){
      // page with the place-name and selection state, then the page reloads (in place change: see the V3.4.1 report).
      tx.start({kind:'quality',targetQuality:key});const view={names:namesVisible,sel:selection.selected?.id||null,det:selection.detailsOpen};
      const leave=snapshot=>{if(!going)return;clearTimeout(late);if(snapshot)tx.setSnapshot(snapshot);tx.handoff({target:key,cam,snapshot,view});requestAnimationFrame(()=>setTimeout(()=>(window.__MLGU_GO__||(u=>location.assign(u)))(url),0));};
-     const late=setTimeout(()=>{captureNext=null;leave(null);},400);captureNext=leave;};
+     // No frame within 2,5 s (stalled GPU, hidden tab): leave without the picture.
+     const late=setTimeout(()=>{captureNext=null;leave(null);},2500);captureNext=leave;};
     const ui=installUiV32({views,onView,quality:v25Quality,go,names:{get:()=>namesVisible,toggle:()=>document.querySelector('#labels').click()},dataDate:document.querySelector('#data-date')?.textContent||'',
      interpretation:visualStyle==='v34'?'Les contours de parcelles de la commune proviennent de données cadastrales publiques. Le rendu des jardins, cours, végétaux, matériaux et aménagements reste stylisé ou interprété. Le plan cadastral ne constitue pas un bornage juridique.'
       :visualStyle==='v33'?'Les terrains, jardins, cours, allées et clôtures des villages sont déduits des bâtiments et des rues : ils ne reproduisent pas le cadastre.':'',

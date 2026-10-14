@@ -34,11 +34,13 @@ export function createLoadingTransition({root=document.querySelector('#loading')
   else{setText('.tx-title',TRANSITION_TEXT.first.title);setText('.tx-sub',TRANSITION_TEXT.first.sub);setText('.tx-note','');}
  }
  function armSlow(since=now()){clearTimeout(slowTimer);slowTimer=setTimeout(()=>{if(state!=='loading')return;root.classList.add('tx-slow');setText('.tx-note',TRANSITION_TEXT.slow);},Math.max(0,SLOW_AFTER-(now()-since)));}
- function show(){clearTimeout(leaveTimer);if(!root.isConnected)body.append(root);root.hidden=false;root.classList.remove('tx-leave','tx-failed','tx-slow');root.removeAttribute('aria-busy');html.classList.add('tx-active');}
+ function show(){clearTimeout(leaveTimer);if(!root.isConnected)body.append(root);root.hidden=false;root.classList.remove('tx-leave','tx-failed','tx-slow','tx-live');root.removeAttribute('aria-busy');html.classList.add('tx-active');}
  // kind: 'first' (opening of the page) or 'quality' (change of preset, targetQuality: beauty | balanced | performance).
  function start({kind:k='first',targetQuality=null}={}){
   if(state==='loading'&&k===kind&&targetQuality===target)return false;// a second click on the same change does nothing
-  kind=k;target=targetQuality;q('.tx-error')?.remove();show();render();root.setAttribute('aria-busy','true');state='loading';armSlow();return true;}
+  kind=k;target=targetQuality;q('.tx-error')?.remove();show();render();root.setAttribute('aria-busy','true');state='loading';armSlow();
+  // In the page, until the picture of the next frame is taken: the live map under the same veil.
+  root.classList.toggle('tx-live',k==='quality');return true;}
  // Steps actually reached (data, scene, render): kept as an attribute for tests, not shown as a fake progress.
  function setPhase(phase){if(state==='loading')root.dataset.phase=phase;}
  // Closes the screen once the frame of the final view has been presented: two animation frames after the call (the render
