@@ -1,0 +1,1578 @@
+{
+ "port": "4352",
+ "viewport": [
+  1280,
+  800
+ ],
+ "mobile": false,
+ "mode": "all",
+ "results": [
+  {
+   "group": "maisons · Poussey",
+   "label": null,
+   "id": "BATIMENT0000000009352513",
+   "status": "UNKNOWN",
+   "expected": "Adresse non renseignée",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse non renseignée",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000009352513",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO",
+     "bible": false
+    },
+    "pickMs": 94.9
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · Poussey",
+   "label": null,
+   "id": "BATIMENT0000000301149904",
+   "status": "VERIFIED",
+   "expected": "7 Rue Joliot-Curie",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "7 Rue Joliot-Curie",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149904",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 77.1
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · Poussey",
+   "label": null,
+   "id": "BATIMENT0000000301151751",
+   "status": "VERIFIED",
+   "expected": "45 Rue Joliot-Curie",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "45 Rue Joliot-Curie",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301151751",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 58.1
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · Poussey",
+   "label": null,
+   "id": "BATIMENT0000000301151839",
+   "status": "VERIFIED",
+   "expected": "5 Rue des Prés de Poussey",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "5 Rue des Prés de Poussey",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301151839",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 58.2
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · Poussey",
+   "label": null,
+   "id": "BATIMENT0000000301151944",
+   "status": "VERIFIED",
+   "expected": "8 Rue Basse de Poussey",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "8 Rue Basse de Poussey",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301151944",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 37.3
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · centre-bourg",
+   "label": null,
+   "id": "BATIMENT0000000009355324",
+   "status": "UNKNOWN",
+   "expected": "Adresse non renseignée",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse non renseignée",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000009355324",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO",
+     "bible": false
+    },
+    "pickMs": 81.9
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · centre-bourg",
+   "label": null,
+   "id": "BATIMENT0000000301149288",
+   "status": "VERIFIED",
+   "expected": "7 Rue de la Libération",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "7 Rue de la Libération",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149288",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 39.1
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · centre-bourg",
+   "label": null,
+   "id": "BATIMENT0000000301149403",
+   "status": "VERIFIED",
+   "expected": "24 Rue Jean Monnet",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "24 Rue Jean Monnet",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149403",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 63.4
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · centre-bourg",
+   "label": null,
+   "id": "BATIMENT0000000301149564",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149564",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 54.8
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · centre-bourg",
+   "label": null,
+   "id": "BATIMENT0000000301149698",
+   "status": "VERIFIED",
+   "expected": "1 Place Adrien Quinet",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "1 Place Adrien Quinet",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149698",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 44.7
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · centre-bourg",
+   "label": null,
+   "id": "BATIMENT0000000325110356",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Maison",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000325110356",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 37.6
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · Les Granges",
+   "label": null,
+   "id": "BATIMENT0000000009355569",
+   "status": "UNKNOWN",
+   "expected": "Adresse non renseignée",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse non renseignée",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000009355569",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO",
+     "bible": false
+    },
+    "pickMs": 57
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · Les Granges",
+   "label": null,
+   "id": "BATIMENT0000000301148607",
+   "status": "VERIFIED",
+   "expected": "15 Rue du Général Leclerc",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "15 Rue du Général Leclerc",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301148607",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 56.8
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · Les Granges",
+   "label": null,
+   "id": "BATIMENT0000000301148776",
+   "status": "VERIFIED",
+   "expected": "83 Avenue du Général de Gaulle",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "83 Avenue du Général de Gaulle",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301148776",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 54.6
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · Les Granges",
+   "label": null,
+   "id": "BATIMENT0000000301148932",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301148932",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 45.9
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · Les Granges",
+   "label": null,
+   "id": "BATIMENT0000000301149714",
+   "status": "VERIFIED",
+   "expected": "33 Rue du Général Leclerc",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "33 Rue du Général Leclerc",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149714",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 64.5
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · campagne",
+   "label": null,
+   "id": "BATIMENT0000000009355577",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000009355577",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO",
+     "bible": false
+    },
+    "pickMs": 36.9
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · campagne",
+   "label": null,
+   "id": "BATIMENT0000000301148839",
+   "status": "MULTIPLE",
+   "expected": "Plusieurs adresses",
+   "expectedList": [
+    "93 Avenue du Général de Gaulle",
+    "93 a Avenue du Général de Gaulle"
+   ],
+   "got": {
+    "visible": true,
+    "kind": "Adresses",
+    "title": "Plusieurs adresses",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [
+     "93 Avenue du Général de Gaulle",
+     "93 a Avenue du Général de Gaulle"
+    ],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301148839",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 74.8
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · lotissement",
+   "label": null,
+   "id": "BATIMENT0000000301149306",
+   "status": "VERIFIED",
+   "expected": "3 Place Léopoldine Deschamps",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "3 Place Léopoldine Deschamps",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149306",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 67.5
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · lotissement",
+   "label": null,
+   "id": "BATIMENT0000000301149366",
+   "status": "VERIFIED",
+   "expected": "1 Place Léopoldine Deschamps",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "1 Place Léopoldine Deschamps",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149366",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 56.1
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "mitoyennes",
+   "label": null,
+   "id": "BATIMENT0000000009352514",
+   "status": "UNKNOWN",
+   "expected": "Adresse non renseignée",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse non renseignée",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000009352514",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 54.1
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "mitoyennes",
+   "label": null,
+   "id": "BATIMENT0000000301148531",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Maison",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301148531",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 42.4
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "mitoyennes",
+   "label": null,
+   "id": "BATIMENT0000000301148538",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301148538",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 35.2
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "mitoyennes",
+   "label": null,
+   "id": "BATIMENT0000000301148539",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301148539",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 41.4
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "mitoyennes",
+   "label": null,
+   "id": "BATIMENT0000000301148545",
+   "status": "VERIFIED",
+   "expected": "13 Rue du Docteur Sollier",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "13 Rue du Docteur Sollier",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301148545",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 35
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "parcelle à plusieurs bâtiments",
+   "label": null,
+   "id": "BATIMENT0000000301148511",
+   "status": "VERIFIED",
+   "expected": "86 Avenue du Général de Gaulle",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "86 Avenue du Général de Gaulle",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301148511",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 59.9
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "parcelle à plusieurs bâtiments",
+   "label": null,
+   "id": "BATIMENT0000000301149516",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149516",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 65.8
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "parcelle à plusieurs bâtiments",
+   "label": null,
+   "id": "BATIMENT0000000301149949",
+   "status": "MULTIPLE",
+   "expected": "Plusieurs adresses",
+   "expectedList": [
+    "3 Rue du Château",
+    "5 Rue du Château",
+    "9 bis Rue du Château"
+   ],
+   "got": {
+    "visible": true,
+    "kind": "Adresses",
+    "title": "Plusieurs adresses",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [
+     "3 Rue du Château",
+     "5 Rue du Château",
+     "9 bis Rue du Château"
+    ],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149949",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 36.4
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "parcelle à plusieurs bâtiments",
+   "label": null,
+   "id": "BATIMENT0000000301151997",
+   "status": "VERIFIED",
+   "expected": "29 bis Rue des Lombards",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "29 bis Rue des Lombards",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301151997",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 36.2
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "parcelle à plusieurs bâtiments",
+   "label": null,
+   "id": "BATIMENT0000000301149082",
+   "status": "VERIFIED",
+   "expected": "18 Rue du Général Leclerc",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "18 Rue du Général Leclerc",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149082",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 42.2
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "bâtiment sur plusieurs parcelles",
+   "label": null,
+   "id": "BATIMENT0000000292129075",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000292129075",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO",
+     "bible": false
+    },
+    "pickMs": 81.8
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "bâtiment sur plusieurs parcelles",
+   "label": null,
+   "id": "BATIMENT0000000301148773",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Maison",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301148773",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 75.7
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "bâtiment sur plusieurs parcelles",
+   "label": null,
+   "id": "BATIMENT0000000301149408",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149408",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 53.2
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "bâtiment sur plusieurs parcelles",
+   "label": null,
+   "id": "BATIMENT0000000301149991",
+   "status": "UNKNOWN",
+   "expected": "Adresse non renseignée",
+   "got": {
+    "visible": true,
+    "kind": "Maison",
+    "title": "Adresse non renseignée",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149991",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO",
+     "bible": false
+    },
+    "pickMs": 33.8
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "sans adresse sûre",
+   "label": null,
+   "id": "BATIMENT0000000301148609",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301148609",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 41.7
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "sans adresse sûre",
+   "label": null,
+   "id": "BATIMENT0000000301148918",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301148918",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 34.2
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "sans adresse sûre",
+   "label": null,
+   "id": "BATIMENT0000000301149245",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Maison",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149245",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 63.4
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "sans adresse sûre",
+   "label": null,
+   "id": "BATIMENT0000000301149964",
+   "status": "UNKNOWN",
+   "expected": "Adresse non renseignée",
+   "got": {
+    "visible": true,
+    "kind": "Maison",
+    "title": "Adresse non renseignée",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149964",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 60.9
+   },
+   "occluded": {
+    "id": "BATIMENT0000000301149963",
+    "title": "5 Rue des Bédouins"
+   },
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "sans adresse sûre",
+   "label": null,
+   "id": "BATIMENT0000000325110372",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000325110372",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 44.9
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "plusieurs adresses",
+   "label": null,
+   "id": "BATIMENT0000000292129104",
+   "status": "MULTIPLE",
+   "expected": "Plusieurs adresses",
+   "expectedList": [
+    "5 Rue Albert Benoist",
+    "7 Rue Albert Benoist"
+   ],
+   "got": {
+    "visible": true,
+    "kind": "Adresses",
+    "title": "Plusieurs adresses",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [
+     "5 Rue Albert Benoist",
+     "7 Rue Albert Benoist"
+    ],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000292129104",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 34.6
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "plusieurs adresses",
+   "label": null,
+   "id": "BATIMENT0000000301149658",
+   "status": "MULTIPLE",
+   "expected": "Plusieurs adresses",
+   "expectedList": [
+    "12 bis Rue du Maréchal de Lattre de Tassigny",
+    "14 Rue du Maréchal de Lattre de Tassigny"
+   ],
+   "got": {
+    "visible": true,
+    "kind": "Adresses",
+    "title": "Plusieurs adresses",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [
+     "12 bis Rue du Maréchal de Lattre de Tassigny",
+     "14 Rue du Maréchal de Lattre de Tassigny"
+    ],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149658",
+     "name": "Commerce / activité",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 39.4
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "lieux",
+   "label": "Mairie",
+   "id": "BATIMENT0000000301149547",
+   "status": "REVIEW",
+   "expected": "fiche du lieu",
+   "got": {
+    "visible": true,
+    "kind": "Mairie",
+    "title": "Mairie de Maizières-la-Grande-Paroisse",
+    "sub": "6 rue des Écoles",
+    "list": [],
+    "details": true,
+    "selection": {
+     "id": "BATIMENT0000000301149547",
+     "name": "Mairie de Maizières-la-Grande-Paroisse",
+     "type": "building",
+     "generic": false,
+     "source": "",
+     "bible": true
+    },
+    "pickMs": 37.3
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "lieux",
+   "label": "École",
+   "id": "BATIMENT0000000301149527",
+   "status": "REVIEW",
+   "expected": "fiche du lieu",
+   "got": {
+    "visible": true,
+    "kind": "École",
+    "title": "École primaire publique",
+    "sub": "3 rue Jules-Ferry",
+    "list": [],
+    "details": true,
+    "selection": {
+     "id": "BATIMENT0000000301149527",
+     "name": "École primaire publique",
+     "type": "building",
+     "generic": false,
+     "source": "",
+     "bible": true
+    },
+    "pickMs": 36.3
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "lieux",
+   "label": "CPI",
+   "id": "BATIMENT0000000301149810",
+   "status": "REVIEW",
+   "expected": "fiche du lieu",
+   "got": {
+    "visible": true,
+    "kind": "Sapeurs-pompiers",
+    "title": "Centre de première intervention (sapeurs-pompiers)",
+    "sub": null,
+    "list": [],
+    "details": true,
+    "selection": {
+     "id": "BATIMENT0000000301149810",
+     "name": "Centre de première intervention (sapeurs-pompiers)",
+     "type": "building",
+     "generic": false,
+     "source": "",
+     "bible": true
+    },
+    "pickMs": 38.9
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "lieux",
+   "label": "Salle polyvalente",
+   "id": "BATIMENT0000000301149569",
+   "status": "UNKNOWN",
+   "expected": "fiche du lieu",
+   "got": {
+    "visible": true,
+    "kind": "Salle communale",
+    "title": "Salle polyvalente",
+    "sub": "3 rue des Écoles",
+    "list": [],
+    "details": true,
+    "selection": {
+     "id": "BATIMENT0000000301149569",
+     "name": "Salle polyvalente",
+     "type": "building",
+     "generic": false,
+     "source": "",
+     "bible": true
+    },
+    "pickMs": 29.1
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "lieux",
+   "label": "Église Saint-Denis",
+   "id": "BATIMENT0000000301149566",
+   "status": "UNKNOWN",
+   "expected": "fiche du lieu",
+   "got": {
+    "visible": true,
+    "kind": "Église",
+    "title": "Église Saint-Denis",
+    "sub": "Place Saint-Denis",
+    "list": [],
+    "details": true,
+    "selection": {
+     "id": "BATIMENT0000000301149566",
+     "name": "Église Saint-Denis",
+     "type": "building",
+     "generic": false,
+     "source": "",
+     "bible": true
+    },
+    "pickMs": 50.1
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "lieux",
+   "label": "commerce : À Vos Couverts",
+   "id": "BATIMENT0000000301148744",
+   "status": "VERIFIED",
+   "expected": "fiche du lieu",
+   "got": {
+    "visible": true,
+    "kind": "Restaurant",
+    "title": "À Vos Couverts",
+    "sub": "83 bis avenue du Général-de-Gaulle",
+    "list": [],
+    "details": true,
+    "selection": {
+     "id": "BATIMENT0000000301148744",
+     "name": "À Vos Couverts",
+     "type": "building",
+     "generic": false,
+     "source": "",
+     "bible": true
+    },
+    "pickMs": 40.4
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "lieux",
+   "label": "Maison des associations",
+   "id": "BATIMENT0000002006956400",
+   "status": "VERIFIED",
+   "expected": "fiche du lieu",
+   "got": {
+    "visible": true,
+    "kind": "Salle communale",
+    "title": "Maison des Associations (salle Hazouard, dojo Christian-Bouzrar)",
+    "sub": "2 rue Jules-Ferry",
+    "list": [],
+    "details": true,
+    "selection": {
+     "id": "BATIMENT0000002006956400",
+     "name": "Maison des Associations (salle Hazouard, dojo Christian-Bouzrar)",
+     "type": "building",
+     "generic": false,
+     "source": "",
+     "bible": true
+    },
+    "pickMs": 49
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "lieux",
+   "label": "lieu historique : Au Franca Bar",
+   "id": "BATIMENT0000000301149712",
+   "status": "VERIFIED",
+   "expected": "fiche du lieu",
+   "got": {
+    "visible": true,
+    "kind": "Commerce",
+    "title": "Le Bistrot à Tattoo",
+    "sub": "2 rue Ambroise-Paré",
+    "list": [],
+    "details": true,
+    "selection": {
+     "id": "BATIMENT0000000301149712",
+     "name": "Le Bistrot à Tattoo",
+     "type": "building",
+     "generic": false,
+     "source": "",
+     "bible": true
+    },
+    "pickMs": 29.6
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "annexes",
+   "label": null,
+   "id": "BATIMENT0000000009355123",
+   "status": "NOT_APPLICABLE",
+   "expected": "Sans adresse propre",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Sans adresse propre",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000009355123",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO",
+     "bible": false
+    },
+    "pickMs": 39
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "annexes",
+   "label": null,
+   "id": "BATIMENT0000000301149818",
+   "status": "NOT_APPLICABLE",
+   "expected": "Sans adresse propre",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Sans adresse propre",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149818",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 41.6
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "agricole / industriel",
+   "label": null,
+   "id": "BATIMENT0000000009355147",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000009355147",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO",
+     "bible": false
+    },
+    "pickMs": 47
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "agricole / industriel",
+   "label": null,
+   "id": "BATIMENT0000000301149166",
+   "status": "UNKNOWN",
+   "expected": "Adresse non renseignée",
+   "got": {
+    "visible": true,
+    "kind": "Construction légère",
+    "title": "Adresse non renseignée",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149166",
+     "name": "Construction légère",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 48.9
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "hors commune",
+   "label": null,
+   "id": "BATIMENT0000000009350368",
+   "status": "UNKNOWN",
+   "expected": "Adresse non renseignée",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse non renseignée",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000009350368",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO",
+     "bible": false
+    },
+    "pickMs": 43.5
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "hors commune",
+   "label": null,
+   "id": "BATIMENT0000000300131921",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Maison",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000300131921",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 65.6
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  }
+ ],
+ "road": {
+  "visible": true,
+  "kind": "Rue",
+  "title": "Rue des Baudets",
+  "sub": null,
+  "list": [],
+  "details": true,
+  "selection": {
+   "id": "road:rue-des-baudets",
+   "name": "Rue des Baudets",
+   "type": "line",
+   "generic": false,
+   "source": "",
+   "bible": true
+  },
+  "pickMs": 84
+ },
+ "escape": {
+  "visible": false,
+  "kind": "Bâtiment",
+  "title": "Adresse non renseignée",
+  "sub": null,
+  "list": [],
+  "details": false,
+  "selection": null,
+  "pickMs": 43.8
+ },
+ "summary": {
+  "clicked": 55,
+  "ok": 55,
+  "byGroup": {
+   "maisons · Poussey": "5/5",
+   "maisons · centre-bourg": "6/6",
+   "maisons · Les Granges": "5/5",
+   "maisons · campagne": "2/2",
+   "maisons · lotissement": "2/2",
+   "mitoyennes": "5/5",
+   "parcelle à plusieurs bâtiments": "5/5",
+   "bâtiment sur plusieurs parcelles": "4/4",
+   "sans adresse sûre": "5/5",
+   "plusieurs adresses": "2/2",
+   "lieux": "8/8",
+   "annexes": "2/2",
+   "agricole / industriel": "2/2",
+   "hors commune": "2/2"
+  },
+  "pickMsMax": 94.9
+ },
+ "logs": []
+}

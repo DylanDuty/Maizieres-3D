@@ -1,0 +1,47 @@
+{
+ "port": "4342",
+ "viewport": [
+  1280,
+  800
+ ],
+ "mobile": false,
+ "mode": "before",
+ "results": [
+  {
+   "group": "maisons · Poussey",
+   "label": null,
+   "id": "BATIMENT0000000301149904",
+   "status": "VERIFIED",
+   "expected": "7 Rue Joliot-Curie",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Maison",
+    "sub": null,
+    "list": [],
+    "details": true,
+    "selection": {
+     "id": "BATIMENT0000000301149904",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 53.4
+   },
+   "occluded": null,
+   "ok": false,
+   "hitOther": null
+  }
+ ],
+ "summary": {
+  "clicked": 1,
+  "ok": 0,
+  "byGroup": {
+   "maisons · Poussey": "0/1"
+  },
+  "pickMsMax": 53.4
+ },
+ "logs": []
+}

@@ -1,0 +1,193 @@
+{
+ "port": "4352",
+ "viewport": [
+  1920,
+  1080
+ ],
+ "mobile": false,
+ "mode": "subset",
+ "results": [
+  {
+   "group": "maisons · Poussey",
+   "label": null,
+   "id": "BATIMENT0000000301149904",
+   "status": "VERIFIED",
+   "expected": "7 Rue Joliot-Curie",
+   "got": {
+    "visible": true,
+    "kind": "Adresse",
+    "title": "7 Rue Joliot-Curie",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149904",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 57.4
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · campagne",
+   "label": null,
+   "id": "BATIMENT0000000301148839",
+   "status": "MULTIPLE",
+   "expected": "Plusieurs adresses",
+   "expectedList": [
+    "93 Avenue du Général de Gaulle",
+    "93 a Avenue du Général de Gaulle"
+   ],
+   "got": {
+    "visible": true,
+    "kind": "Adresses",
+    "title": "Plusieurs adresses",
+    "sub": "Maizières-la-Grande-Paroisse",
+    "list": [
+     "93 Avenue du Général de Gaulle",
+     "93 a Avenue du Général de Gaulle"
+    ],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301148839",
+     "name": "Maison",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 61.6
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · centre-bourg",
+   "label": null,
+   "id": "BATIMENT0000000301149564",
+   "status": "REVIEW",
+   "expected": "Adresse à confirmer",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse à confirmer",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000301149564",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO · sémantique OpenStreetMap",
+     "bible": false
+    },
+    "pickMs": 54.4
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "maisons · Poussey",
+   "label": null,
+   "id": "BATIMENT0000000009352513",
+   "status": "UNKNOWN",
+   "expected": "Adresse non renseignée",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Adresse non renseignée",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000009352513",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO",
+     "bible": false
+    },
+    "pickMs": 43.4
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "annexes",
+   "label": null,
+   "id": "BATIMENT0000000009355123",
+   "status": "NOT_APPLICABLE",
+   "expected": "Sans adresse propre",
+   "got": {
+    "visible": true,
+    "kind": "Bâtiment",
+    "title": "Sans adresse propre",
+    "sub": null,
+    "list": [],
+    "details": false,
+    "selection": {
+     "id": "BATIMENT0000000009355123",
+     "name": "Bâtiment",
+     "type": "building",
+     "generic": true,
+     "source": "Empreinte IGN BD TOPO",
+     "bible": false
+    },
+    "pickMs": 46.3
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  },
+  {
+   "group": "lieux",
+   "label": "Mairie",
+   "id": "BATIMENT0000000301149547",
+   "status": "REVIEW",
+   "expected": "fiche du lieu",
+   "got": {
+    "visible": true,
+    "kind": "Mairie",
+    "title": "Mairie de Maizières-la-Grande-Paroisse",
+    "sub": "6 rue des Écoles",
+    "list": [],
+    "details": true,
+    "selection": {
+     "id": "BATIMENT0000000301149547",
+     "name": "Mairie de Maizières-la-Grande-Paroisse",
+     "type": "building",
+     "generic": false,
+     "source": "",
+     "bible": true
+    },
+    "pickMs": 38.8
+   },
+   "occluded": null,
+   "ok": true,
+   "hitOther": null
+  }
+ ],
+ "summary": {
+  "clicked": 6,
+  "ok": 6,
+  "byGroup": {
+   "maisons · Poussey": "2/2",
+   "maisons · campagne": "1/1",
+   "maisons · centre-bourg": "1/1",
+   "annexes": "1/1",
+   "lieux": "1/1"
+  },
+  "pickMsMax": 61.6
+ },
+ "logs": []
+}
