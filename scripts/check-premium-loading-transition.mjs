@@ -62,7 +62,7 @@ const s2=storage();s2.setItem(M.HANDOFF_KEY,JSON.stringify({kind:'quality',targe
 // the same texts in the bootstrap and in the module
 for(const t of [M.TRANSITION_TEXT.brand,M.TRANSITION_TEXT.first.title,M.TRANSITION_TEXT.first.sub,M.TRANSITION_TEXT.quality.title,M.TRANSITION_TEXT.quality.note,M.TRANSITION_TEXT.error.title,M.TRANSITION_TEXT.error.retry,...Object.values(M.QUALITY_NAMES)])assert.ok(html.includes(t),'texte absent de index.html : '+t);
 const premiumMarkup=html.slice(html.indexOf('class="tx-content"'),html.indexOf('</div></div>',html.indexOf('class="tx-content"')));assert.ok(!/Fluide|spinner/.test(premiumMarkup)&&!/Fluide/.test(JSON.stringify(M.TRANSITION_TEXT))&&!/Fluide/.test(scripts.join('')),'« Fluide » ou spinner dans l’écran premium');
-ok('2. première ouverture « Découvrir Maizières » ; changement « Préparation du rendu · Passage en mode Beauté / Équilibré / Performance » ; transmission consommée une fois, refusée si préset, caméra ou mode diffèrent ou après 60 s ; aucun « Fluide »');
+ok('2. première ouverture « Découvrir Maizières » ; changement « Préparation du rendu · Passage en mode Beauté / Équilibré / Performance » ; transmission consommée une fois, refusée si préset, caméra ou mode diffèrent ou après 5 min ; aucun « Fluide »');
 
 // 3. controller: no double transition, ready after a presented frame, fail with a working retry, reset
 const frames=[];const raf=f=>frames.push(f);const flush=()=>{const f=frames.splice(0);f.forEach(x=>x());return f.length;};

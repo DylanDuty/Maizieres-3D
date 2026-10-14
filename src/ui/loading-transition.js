@@ -12,7 +12,7 @@ export const TRANSITION_TEXT={
  slow:'Le rendu prend un peu plus de temps que prévu…',
  error:{title:'Impossible de préparer la carte.',retry:'Réessayer',details:'Détails techniques'},
  lost:'L’affichage 3D a été interrompu.'};
-export const HANDOFF_KEY='mlgu-transition',SNAPSHOT_KEY='mlgu-transition-snapshot',HANDOFF_TTL=60000,SLOW_AFTER=20000;
+export const HANDOFF_KEY='mlgu-transition',SNAPSHOT_KEY='mlgu-transition-snapshot',HANDOFF_TTL=300000,SLOW_AFTER=20000;
 
 const store=()=>{try{return window.sessionStorage;}catch{return null;}};
 

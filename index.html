@@ -17,12 +17,12 @@
     if(!B.premium)return;
     document.documentElement.classList.add('mlgu-ui','tx-active');
     // Quality change: written by the previous page just before the reload, consumed once, valid only for this very preset and
-    // camera and for one minute (an ordinary visit never shows « Passage en mode … »).
+    // camera and for five minutes (an ordinary visit never shows « Passage en mode … »).
     var s=null;try{s=window.sessionStorage;}catch(e){}
     if(s){var h=null,snap=null;try{h=JSON.parse(s.getItem('mlgu-transition')||'null');snap=s.getItem('mlgu-transition-snapshot');}catch(e){}
      try{s.removeItem('mlgu-transition');s.removeItem('mlgu-transition-snapshot');}catch(e){}
      var vq=p.get('v25quality')||'beauty';
-     if(h&&h.kind==='quality'&&Date.now()-h.t<60000&&h.target===vq&&(h.cam||'')===(p.get('cam')||'')){B.kind='quality';B.target=vq;B.cam=h.cam;B.view=h.view||null;B.snapshot=snap;}}
+     if(h&&h.kind==='quality'&&Date.now()-h.t<300000&&h.target===vq&&(h.cam||'')===(p.get('cam')||'')){B.kind='quality';B.target=vq;B.cam=h.cam;B.view=h.view||null;B.snapshot=snap;}}
     // The application script itself cannot load: say so instead of animating forever.
     document.addEventListener('error',function(e){var t=e.target,L=document.getElementById('loading');if(!t||t.tagName!=='SCRIPT'||window.__MLGU_TX__||!L)return;
      L.classList.add('tx-failed');L.querySelector('.tx-title').textContent='Impossible de préparer la carte.';L.querySelector('.tx-sub').textContent='';L.querySelector('.tx-note').textContent='';
