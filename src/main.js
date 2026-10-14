@@ -28,6 +28,7 @@ import {extendCatalogue,v2Labels,groundPicker,installSearch,installViews,install
 import {installUiV32} from './v32/ui-v32.js';
 import {installCadastreLegendV34} from './v34/cadastre-v34.js';
 import {createLoadingTransition,snapshotOf,TRANSITION_TEXT} from './ui/loading-transition.js';
+import {createAddressIndex} from './addresses-v342.js';
 const loading=document.querySelector('#loading');
 // V3.4.1: premium modes drive the screen drawn by the bootstrap of index.html (null in the historic modes, which keep theirs).
 const boot=window.__MLGU_BOOT__||{},tx=boot.premium?createLoadingTransition({root:loading,boot}):null;window.__MLGU_TX__=tx;
@@ -96,6 +97,8 @@ async function start(){
   // V2.4: the profiles drive the default map (?architecture=1 is implied); ?architecture=0 restores the V2.2 flat rendering.
   const archDiagnostic=params.get('diagnostic')==='architecture',archMode=v2Mode&&(archDiagnostic||params.get('architecture')==='1'||params.get('architecture')!=='0');
   const architecture=archMode?await fetch(`${import.meta.env.BASE_URL}data/building-architecture-v2.3.json`).then(r=>r.json()):null;
+  // V3.4.2: postal addresses of the buildings (frozen registry, loaded once; if it cannot be read, no address is shown at all).
+  const addresses=v2Mode?createAddressIndex(await fetch(`${import.meta.env.BASE_URL}data/building-addresses-v3.4.2.json`).then(r=>r.ok?r.json():null).catch(()=>null)):null;
   const archById=architecture?new Map(architecture.buildings.map(e=>[e.buildingId,e])):null;
   const buildings=buildBuildings(scene,terrain.buildings,enrichment,{architecture:archById,diagnostic:archDiagnostic&&archMode?'architecture':auditMode?'buildings-audit':relief||roadsRef||railRef||landcoverRef||poiRef?null:diagnostic,elevation:v2?item=>display.get(item.id).base-.45:relief?item=>relief.elevation.buildings[item.featureId].baseZ-relief.meta.yReference:null,render:v25Mode?item=>{const b=bounds(item.poly[0]);return !inVisualBox((b.minX+b.maxX)/2,(b.minZ+b.maxZ)/2);}:undefined});
   // V2.4: instanced trees in the woods and the built-up zone, rounded hedges (decorative, off every footprint and road).
@@ -137,7 +140,7 @@ async function start(){
   const catalogue=createCatalogue(data,enrichment,project,extent,terrain.buildings,namedZones,bible);
   const v2Records=v2?extendCatalogue(catalogue,v2,project,buildings.info,{technical}):null;
   const poiBuildings=poiRef?poiRef.extend(catalogue,buildings.info):null;
-  const selection=installSelection({scene,camera,canvas:renderer.domElement,catalogue,meshes:pickMeshes,buildingInfo:buildings.info,invalidate,target:()=>controls.target,...(v2?{heightAt:v2.heightAt,ground:groundPicker(v2.heightAt),technical}:{})});hooks.tick=selection.tick;
+  const selection=installSelection({scene,camera,canvas:renderer.domElement,catalogue,meshes:pickMeshes,buildingInfo:buildings.info,invalidate,target:()=>controls.target,...(v2?{heightAt:v2.heightAt,ground:groundPicker(v2.heightAt),technical,addresses}:{})});hooks.tick=selection.tick;
   const labelItems=v2?v2Labels(v2,project):[];if(!v2){for(const l of [...buildings.landmarks,...terrain.landmarks])if(!labelItems.some(o=>o.name===l.name&&Math.hypot(o.position[0]-l.position[0],o.position[2]-l.position[2])<80))labelItems.push(l);
   for(const r of catalogue.records.filter(r=>r.type==='point'&&(r.kind==='Lieu-dit / secteur'||r.id.startsWith('bible'))))if(!labelItems.some(l=>l.name===r.name))labelItems.push({id:r.id,name:r.name,position:r.position,major:r.major,local:!r.major,style:r.id.startsWith('bible')?'heritage':r.major?'':'place'});
   for(const l of enrichment.landmarks){if(!labelItems.some(p=>Math.hypot(p.position[0]-l.position[0],p.position[2]-l.position[2])<45))labelItems.push(l);}
@@ -223,10 +226,10 @@ async function start(){
     // Back to this page from the back-forward cache after a quality change: no screen left over the map, picker back in sync.
     addEventListener('pageshow',e=>{if(!e.persisted||!going)return;going=false;captureNext=null;tx.reset();ui.setQuality(v25Quality);renderer.setAnimationLoop(loop);});
     // State handed over by the previous page (quality change only): place names, selected place and its sheet.
-    if(handed){const r=handed.sel?catalogue.byId.get(handed.sel):null;if(r){selection.select(r);if(handed.det)selection.openDetails();}}}
+    if(handed?.sel&&selection.selectBuilding(handed.sel)&&handed.det)selection.openDetails();}
    else{installViews(views,onView);installLegend();}
    if(technical&&!auditMode&&!hydroMode)installPerfHud(renderer,`Bâtiments ${buildings.count} · routes ${v2.stats.roads.count} · voies ${v2.stats.rail.tracks}\nParcelles ${v2.stats.agriculture} · bois ${v2.stats.woodland} · haies ${v2.stats.hedges.count} · arbres ${vegetation.stats.trees} · POI ${v2Records.pois}\nTexture ${v2.texture.width}×${v2.texture.height} (${v2.texture.metresPerPixel} m/px)`,draw);
-   Object.assign(window.__MAIZIERES__,{railCentre,v2:{stats:v2.stats,records:v2Records,views:views.map(v=>v.name),searchIndex:search.index,heightAt:v2.heightAt},search:q=>search.search(q),focus:name=>{const r=catalogue.records.find(r=>r.name===name&&r.poi)||catalogue.records.find(r=>r.name===name&&r.searchable!==false);if(r)focus(r);return !!r;},positionOf:id=>catalogue.byId.get(id)?.position||null,records:()=>catalogue.records.map(r=>({id:r.id,name:r.name,type:r.type,kind:r.kind,source:r.source,position:r.position,searchable:r.searchable!==false&&!r.generic,poi:r.poi?.id||null,members:r.memberIds||null,sourceIds:r.sourceIds||null})),owner:id=>{const r=catalogue.byId.get(id);return r?{id:r.id,name:r.name,type:r.type,poi:r.poi?.id||null}:null;},selectId:id=>{const r=catalogue.byId.get(id);selection.select(r);return !!r;},quick:name=>{const v=views.find(v=>v.name===name);if(v)v.v25?goV25(v.v25):v.reset?reset():flyTo(v.p[0],v.p[1],v.d);return !!v;}});
+   Object.assign(window.__MAIZIERES__,{railCentre,v2:{stats:v2.stats,records:v2Records,views:views.map(v=>v.name),searchIndex:search.index,heightAt:v2.heightAt},search:q=>search.search(q),focus:name=>{const r=catalogue.records.find(r=>r.name===name&&r.poi)||catalogue.records.find(r=>r.name===name&&r.searchable!==false);if(r)focus(r);return !!r;},positionOf:id=>catalogue.byId.get(id)?.position||null,records:()=>catalogue.records.map(r=>({id:r.id,name:r.name,type:r.type,kind:r.kind,source:r.source,position:r.position,searchable:r.searchable!==false&&!r.generic,poi:r.poi?.id||null,members:r.memberIds||null,sourceIds:r.sourceIds||null})),owner:id=>{const r=catalogue.byId.get(id);return r?{id:r.id,name:r.name,type:r.type,poi:r.poi?.id||null}:null;},selectId:id=>{const r=catalogue.byId.get(id);selection.select(r);return !!r;},selectBuilding:id=>selection.selectBuilding(id),addressOf:id=>addresses?.get(id)||null,quick:name=>{const v=views.find(v=>v.name===name);if(v)v.v25?goV25(v.v25):v.reset?reset():flyTo(v.p[0],v.p[1],v.d);return !!v;}});
   }
   const gl=renderer.getContext(),debug=gl.getExtension('WEBGL_debug_renderer_info');
   renderer.domElement.dataset.graphics=JSON.stringify({renderer:debug?gl.getParameter(debug.UNMASKED_RENDERER_WEBGL):gl.getParameter(gl.RENDERER),antialias:gl.getContextAttributes().antialias,device,version:'2.4.0'});

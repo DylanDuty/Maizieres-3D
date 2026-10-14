@@ -4,6 +4,7 @@ import {insidePoly,area,bounds} from './geo.js';
 import {segmentDistance,featureAtFace} from './cartography.js';
 import {architectureFacts} from './architecture.js';
 import {storyFor,categoryLabel} from './content/place-stories-v29.js';
+import {addressCard} from './addresses-v342.js';
 
 // Visible labels for the building families used by the renderer. They describe a type, never a name.
 export const KIND_LABELS={house:'Maison',light:'Construction légère',hangar:'Hangar / grand abri',annex:'Dépendance',garage:'Garage',agricultural:'Bâtiment agricole',farm:'Ferme',industrial:'Bâtiment industriel',commercial:'Commerce / activité',large:'Grand bâtiment',public:'Équipement public',canopy:'Abri ouvert',silo:'Silo',greenhouse:'Serre',church:'Église'};
@@ -18,12 +19,15 @@ const metres=v=>v.toLocaleString('fr-FR',{maximumFractionDigits:1})+' m';
 const ROAD_KIND=r=>{if(r.kind==='Voie ferrée')return r.railLine?`Voie ferrée · ligne ${r.railLine}`:'Voie ferrée';if(r.refs?.length)return `Route ${r.refs.join(' / ')}`;const n=norm0(r.name);if(/^(chemin|voie|sentier|ruelle)/.test(n))return 'Chemin / voie';if(/^(avenue|boulevard)/.test(n))return 'Avenue';if(/^(place)/.test(n))return 'Place';return 'Rue';};
 const norm0=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 export function describe(r){
- const story=storyFor(r.id),poi=r.poi||null,b=r.bible||{};const sources=[],tech=[],quotes=[];let keep=[],summary=null,block=null,address=null,eyebrow=r.kind,title=r.name;
- if(poi){eyebrow=categoryLabel(poi.type,poi.category)||r.kind;address=poi.address||null;}
+ const story=storyFor(r.id),poi=r.poi||null,b=r.bible||{};const sources=[],tech=[],quotes=[];let keep=[],summary=null,block=null,address=null,eyebrow=r.kind,title=r.name,list=[];
+ // V3.4.2: a place keeps its own card and address; a verified building address is added only when the place has none (r.buildingAddress).
+ if(poi){eyebrow=categoryLabel(poi.type,poi.category)||r.kind;address=poi.address||r.buildingAddress||null;}
  if(story){summary=story.summary;keep=story.facts.slice(0,4);block=story.block||null;for(const src of story.sources)sources.push(src);}
  else if(poi){for(const n of b.notes||[])quotes.push({text:clean(n.quote),cite:cite(n)});}
  else if(r.type==='line'){eyebrow=ROAD_KIND(r);if(r.commune)keep.push(`Commune : ${r.commune}`);if(b.sector)keep.push(`Secteur : ${b.sector.name}`);if(b.variant)keep.push(`Graphie ancienne : « ${clean(b.variant.quote)} »`);for(const n of b.notes||[])quotes.push({text:clean(n.quote),cite:cite(n)});if(b.sector)sources.push({label:cite(b.sector)});if(b.listed)sources.push({label:cite(b.listed)});}
  else if(r.generic){const i=r.info;eyebrow='Bâtiment';
+  // V3.4.2: an ordinary building is named by its postal address first (or says honestly that none is established).
+  if(r.address){eyebrow=r.address.eyebrow;title=r.address.title;address=r.address.sub;list=r.address.list;}
   if(i.usage&&i.knownUsage)keep.push(`Usage : ${i.usage.toLowerCase()}`);if(i.floors)keep.push(`${i.floors} niveau${i.floors>1?'x':''}`);
   if(i.manual)tech.push(`Relevé manuel sur orthophoto IGN 2025 (V2.2) : ${i.manual.category} · ${i.manual.uncertainty}`);if(i.light)tech.push('Construction légère (cadastre / IGN)');if(i.validation)tech.push(`Confiance ${i.validation.confidence} : ${i.validation.status}`);if(i.rnb)tech.push(`Identifiant RNB : ${i.rnb}`);
   if(i.architecture)tech.push(...architectureFacts(i.architecture));else tech.push(`Hauteur des murs : ${metres(i.wallHeight)} (${i.heightSource==='IGN BD TOPO'?'IGN BD TOPO':i.heightSource==='OSM'?'OpenStreetMap':'estimée'})`);}
@@ -33,21 +37,22 @@ export function describe(r){
  for(const f of r.facts||[])if(/^(Statut|Fiabilité|Landmark)/.test(f))tech.push(f);
  if(r.source)tech.push(`Source : ${r.source}`);if(b.method)tech.push(b.method);
  const seen=new Set();const srcs=sources.filter(x=>{const k=x.label+(x.url||'');if(seen.has(k))return false;seen.add(k);return true;});
- const keepOut=keep.slice(0,4);return {eyebrow,title,address,summary,keep:keepOut,facts:keepOut,block,quotes:quotes.slice(0,3),sources:srcs,tech,level:story?'A':poi?'B':'C'};
+ const keepOut=keep.slice(0,4);return {eyebrow,title,address,list,summary,keep:keepOut,facts:keepOut,block,quotes:quotes.slice(0,3),sources:srcs,tech,level:story?'A':poi?'B':'C'};
 }
 
 // V2.0: heightAt / ground place picking and highlights on the real relief; technical=false hides the source line (visitor view).
 // V2.6.1: two-level card. A click shows a small frosted label floating next to the object (the map stays the subject);
 // the full card opens only on « Détails », as a narrow side panel (desktop) or a bottom sheet (phone).
-export function installSelection({scene,camera,canvas,catalogue,meshes,buildingInfo,invalidate,target=()=>new THREE.Vector3(),heightAt=null,ground=null,technical=true}){
+// V3.4.2: addresses = index of the building address registry (src/addresses-v342.js), or null (no address shown at all).
+export function installSelection({scene,camera,canvas,catalogue,meshes,buildingInfo,invalidate,target=()=>new THREE.Vector3(),heightAt=null,ground=null,technical=true,addresses=null}){
  const raycaster=new THREE.Raycaster(),plane=new THREE.Plane(new THREE.Vector3(0,1,0),0),groundPoint=new THREE.Vector3(),projected=new THREE.Vector3(),right=new THREE.Vector3();
  const panel=document.querySelector('#selection'),title=document.querySelector('#selection-title'),kind=document.querySelector('#selection-kind'),facts=document.querySelector('#selection-facts'),note=document.querySelector('#selection-note'),addressEl=document.querySelector('#selection-address'),summaryEl=document.querySelector('#selection-summary'),keepEl=document.querySelector('#selection-keep'),blockEl=document.querySelector('#selection-block'),blockTitle=document.querySelector('#selection-block-title'),blockText=document.querySelector('#selection-block-text'),sourcesEl=document.querySelector('#selection-sources'),sourcesList=document.querySelector('#selection-sources-list'),techEl=document.querySelector('#selection-tech'),techList=document.querySelector('#selection-tech-list');
  // Quick label and its pointer, created here so index.html stays a plain skeleton.
  const quick=document.createElement('div');quick.id='quick';quick.hidden=true;quick.setAttribute('role','status');
- quick.innerHTML='<p id="quick-kind"></p><p id="quick-title"></p><p id="quick-address" hidden></p><div class="quick-actions"><button type="button" id="quick-details" aria-expanded="false" aria-controls="selection">Détails</button><button type="button" id="quick-close" aria-label="Fermer la sélection">×</button></div>';
+ quick.innerHTML='<p id="quick-kind"></p><p id="quick-title"></p><p id="quick-address" hidden></p><ul id="quick-list" hidden></ul><div class="quick-actions"><button type="button" id="quick-details" aria-expanded="false" aria-controls="selection">Détails</button><button type="button" id="quick-close" aria-label="Fermer la sélection">×</button></div>';
  const link=document.createElementNS('http://www.w3.org/2000/svg','svg');link.id='quick-link';link.setAttribute('aria-hidden','true');link.hidden=true;link.innerHTML='<line x1="0" y1="0" x2="0" y2="0"/><circle cx="0" cy="0" r="3.5"/>';
  document.body.append(link,quick);
- const quickKind=quick.querySelector('#quick-kind'),quickTitle=quick.querySelector('#quick-title'),quickAddress=quick.querySelector('#quick-address'),detailsButton=quick.querySelector('#quick-details'),linkLine=link.querySelector('line'),linkDot=link.querySelector('circle');
+ const quickKind=quick.querySelector('#quick-kind'),quickTitle=quick.querySelector('#quick-title'),quickAddress=quick.querySelector('#quick-address'),quickList=quick.querySelector('#quick-list'),detailsButton=quick.querySelector('#quick-details'),linkLine=link.querySelector('line'),linkDot=link.querySelector('circle');
  const phone=matchMedia('(max-width:850px)');
  // Soft, cartoon-friendly highlight: a warm translucent shell on buildings, a pale bright ribbon on roads, a thin cream outline.
  const common={transparent:true,depthWrite:false,side:THREE.DoubleSide,fog:false};
@@ -81,6 +86,9 @@ export function installSelection({scene,camera,canvas,catalogue,meshes,buildingI
   // Quick label: category, name, address when known.
   quickTitle.textContent=d.title;quickKind.textContent=d.eyebrow;quickKind.hidden=!quickKind.textContent||quickKind.textContent===d.title;
   quickAddress.textContent=d.address||'';quickAddress.hidden=!d.address;
+  quickList.replaceChildren(...d.list.map(t=>Object.assign(document.createElement('li'),{textContent:t})));quickList.hidden=!d.list.length;quick.classList.toggle('has-list',!!d.list.length);
+  // An ordinary building has nothing more to show than its address: no empty « Détails » card (technical mode keeps it).
+  detailsButton.hidden=!!(r.generic&&r.address&&!technical);quick.dataset.address=r.generic&&r.address?r.address.status:'';
  }
  // Default anchor of the label: where the object is, a little above it, on the displayed relief.
  function anchorOf(r){const p=r.position||[0,0,0];
@@ -103,7 +111,7 @@ export function installSelection({scene,camera,canvas,catalogue,meshes,buildingI
  }
  function openDetails(){if(!selected)return;panel.hidden=false;detailsButton.setAttribute('aria-expanded','true');quick.classList.add('with-details');if(phone.matches)quick.hidden=true;canvas.dataset.details='1';}
  function closeDetails(){panel.hidden=true;detailsButton.setAttribute('aria-expanded','false');quick.classList.remove('with-details');if(selected){quick.hidden=false;place();}canvas.dataset.details='';}
- function select(r,at=null){clearHighlight();selected=r||null;anchor=r?(at||anchorOf(r)):null;panel.hidden=true;detailsButton.setAttribute('aria-expanded','false');quick.classList.remove('with-details');canvas.dataset.details='';
+ function select(r,at=null){r=withBuildingAddress(r);clearHighlight();selected=r||null;anchor=r?(at||anchorOf(r)):null;panel.hidden=true;detailsButton.setAttribute('aria-expanded','false');quick.classList.remove('with-details');canvas.dataset.details='';
   canvas.dataset.selection=r?JSON.stringify({id:r.id,name:r.name,type:r.type,generic:!!r.generic,source:r.source,bible:!!r.bible}):'';
   for(const el of document.querySelectorAll('.map-label[aria-pressed]'))el.setAttribute('aria-pressed',String(!!r&&el.dataset.feature===r.id));
   quick.hidden=!r;link.hidden=!r;
@@ -127,6 +135,11 @@ export function installSelection({scene,camera,canvas,catalogue,meshes,buildingI
   return {record:best,distance:bestD,tolerance:Math.max(16,widthPx/2+8),at:[bestPoint[0],yp+.9,bestPoint[1]]};
  }
  function nearestPoint(x,y){let best=null,bestD=Infinity;for(const r of catalogue.records)if(r.type==='point'){const s=toScreen(r.position);if(!s)continue;const d=Math.hypot(s[0]-x,s[1]-y);if(d<bestD){bestD=d;best=r;}}return best&&{record:best,distance:bestD};}
+ // Card of a building that is not a documented place: its family, its footprint, and (V3.4.2) its postal address by its id.
+ function genericRecord(id){const info=buildingInfo.get(id),b=bounds(info.poly[0]);const light=info.light&&info.kind!=='canopy';const name=light?KIND_LABELS.light:info.knownUsage?KIND_LABELS[info.kind]||'Bâtiment':'Bâtiment';
+  return {id,type:'building',generic:true,info,name,kind:'Bâtiment sans nom connu',address:addresses?addressCard(addresses.get(id),name==='Bâtiment'?null:name):null,polys:[info.poly],position:[(b.minX+b.maxX)/2,0,(b.minZ+b.maxZ)/2],source:info.source==='IGN BD TOPO'?'Empreinte IGN BD TOPO'+(info.osmIds.length?' · sémantique OpenStreetMap':''):info.provenance==='cadastre'?'Empreinte du cadastre actuel ('+info.source+')':'Empreinte OpenStreetMap seule (absente de la BD TOPO)'};}
+ // A current place without an address of its own shows the verified address of its building (never for a former or historic use).
+ function withBuildingAddress(r){if(!r||r.type!=='building'||!addresses||!r.poi||r.poi.address||r.poi.status!=='actuel')return r;for(const id of r.memberIds||[r.id]){const e=addresses.get(id);if(e?.status==='VERIFIED'&&e.lines.length===1)return {...r,buildingAddress:e.lines[0].label};}return r;}
  function pick(x,y){const time=performance.now();raycaster.setFromCamera(new THREE.Vector2(x/canvas.clientWidth*2-1,1-y/canvas.clientHeight*2),camera);
   const done=(r,at=null)=>{select(r,at);canvas.dataset.pickMs=(performance.now()-time).toFixed(2);};
   const hit=raycaster.intersectObjects(meshes,false)[0],hitId=hit?featureAtFace(hit.object.userData.featureRanges,hit.faceIndex):null,hitAt=hit?[hit.point.x,hit.point.y+.6,hit.point.z]:null;
@@ -136,8 +149,7 @@ export function installSelection({scene,camera,canvas,catalogue,meshes,buildingI
   if(point&&point.distance<(hitId?8:10))return done(point.record);
   if(road&&road.distance<(hitId?5:road.tolerance))return done(road.record,road.at);
   if(point&&point.distance<(hitId?12:24))return done(point.record);
-  if(hitId&&buildingInfo.has(hitId)){const info=buildingInfo.get(hitId),b=bounds(info.poly[0]);const light=info.light&&info.kind!=='canopy';
-   return done({id:hitId,type:'building',generic:true,info,name:light?KIND_LABELS.light:info.knownUsage?KIND_LABELS[info.kind]||'Bâtiment':'Bâtiment',kind:'Bâtiment sans nom connu',polys:[info.poly],position:[(b.minX+b.maxX)/2,0,(b.minZ+b.maxZ)/2],source:info.source==='IGN BD TOPO'?'Empreinte IGN BD TOPO'+(info.osmIds.length?' · sémantique OpenStreetMap':''):info.provenance==='cadastre'?'Empreinte du cadastre actuel ('+info.source+')':'Empreinte OpenStreetMap seule (absente de la BD TOPO)'},hitAt);}
+  if(hitId&&buildingInfo.has(hitId))return done(genericRecord(hitId),hitAt);
   const hitGround=ground?(typeof ground==='function'?ground(raycaster.ray):raycaster.intersectObject(ground,false)[0]?.point):null;
   if(hitGround?groundPoint.copy(hitGround):raycaster.ray.intersectPlane(plane,groundPoint)){const candidates=catalogue.records.filter(r=>r.type==='zone'&&r.polys.some(poly=>insidePoly([groundPoint.x,groundPoint.z],poly)));candidates.sort((a,b)=>area(a.polys[0][0])-area(b.polys[0][0]));
    // A click in the open closes an existing selection; from nothing, it names the place (lieu-dit, zone).
@@ -157,5 +169,7 @@ export function installSelection({scene,camera,canvas,catalogue,meshes,buildingI
  function bindLabel(el,item){let r=catalogue.byId.get(item.id);if(!r){const candidates=catalogue.records.filter(r=>r.name===item.name);r=candidates.sort((a,b)=>Math.hypot(a.position[0]-item.position[0],a.position[2]-item.position[2])-Math.hypot(b.position[0]-item.position[0],b.position[2]-item.position[2]))[0];}if(!r)return;
   el.dataset.feature=r.id;el.setAttribute('aria-label','Afficher '+r.name);el.setAttribute('aria-pressed','false');el.addEventListener('click',()=>select(r));
  }
- return {select,bindLabel,pick,openDetails,closeDetails,tick:place,get selected(){return selected;},get detailsOpen(){return !panel.hidden;}};
+ // selectBuilding: any building by its id (documented place first, else its address card), e.g. to restore a selection.
+ const selectBuilding=id=>{const r=catalogue.byId.get(id)||(buildingInfo.has(id)?genericRecord(id):null);select(r);return !!r;};
+ return {select,selectBuilding,bindLabel,pick,openDetails,closeDetails,tick:place,get selected(){return selected;},get detailsOpen(){return !panel.hidden;}};
 }

@@ -1,0 +1,81 @@
+{
+ "metadata": {
+  "generatedBy": "scripts/addresses-v342/build-addresses.mjs",
+  "thresholds": {
+   "roadNearM": 60,
+   "positionNearM": 3
+  },
+  "minorClasses": [
+   "SHED",
+   "ANNEX",
+   "GARAGE",
+   "GREENHOUSE",
+   "SILO_TANK",
+   "WATER_TOWER",
+   "OTHER"
+  ]
+ },
+ "sources": {
+  "banAddresses": 1394,
+  "banCommune": 1095,
+  "banByPositionType": {
+   "bâtiment": 6,
+   "entrée": 121,
+   "parcelle": 29,
+   "segment": 939
+  },
+  "banPlusLinks": 2420,
+  "banPlusLinksToOurBuildings": 1972,
+  "rnbBuildings": 1895,
+  "rnbLinkedToOurBuildings": 1812
+ },
+ "buildings": {
+  "total": 2596,
+  "inCommune": 2362,
+  "outside": 234,
+  "byLayer": {
+   "référentiel V1.6.2": 2494,
+   "ajout V2.0.1": 90,
+   "manuel V2.2": 12
+  }
+ },
+ "statuses": {
+  "VERIFIED": 479,
+  "MULTIPLE": 27,
+  "REVIEW": 675,
+  "UNKNOWN": 247,
+  "NOT_APPLICABLE": 1168
+ },
+ "statusesInCommune": {
+  "VERIFIED": 478,
+  "MULTIPLE": 27,
+  "REVIEW": 656,
+  "UNKNOWN": 178,
+  "NOT_APPLICABLE": 1023
+ },
+ "addresses": {
+  "verifiedLinks": 538,
+  "distinctVerifiedAddresses": 538,
+  "commune10220Linked": 538,
+  "byMethod": {
+   "ban-position": 2,
+   "none": 2090,
+   "official-link+position": 7,
+   "official-link+rnb": 306,
+   "official-link+rnb (seul logement des bâtiments liés)": 177,
+   "official-link+rnb (seul logement des bâtiments liés)|official-link+rnb": 1,
+   "official-link+rnb|official-link+rnb (seul logement des bâtiments liés)": 1,
+   "rnb+position": 12
+  }
+ },
+ "rejected": {
+  "rejectedSegmentNearest": 131,
+  "rejectedParcelFanout": 895,
+  "conflicts": 134,
+  "roadFar": 17,
+  "protectedRejected": 5,
+  "singleChannel": 248,
+  "positionContradiction": 4
+ },
+ "anomalies": 292
+}

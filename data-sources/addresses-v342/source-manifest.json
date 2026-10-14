@@ -1,0 +1,267 @@
+{
+ "commune": {
+  "insee": "10220",
+  "name": "Maizières-la-Grande-Paroisse"
+ },
+ "retrievedAt": "2026-10-14T07:30:43.709Z",
+ "personalData": "aucune (adresses publiques, identifiants de bâtiments)",
+ "attempts": [
+  {
+   "source": "BAN (adresse.data.gouv.fr)",
+   "url": "https://adresse.data.gouv.fr/data/ban/adresses/latest/csv/adresses-10.csv.gz",
+   "result": "échec",
+   "error": "Request was cancelled.",
+   "note": "hôte refusé (403 au tunnel) par la politique réseau de l’environnement d’exécution ; non contourné"
+  },
+  {
+   "source": "BAN (adresse.data.gouv.fr)",
+   "url": "https://api-adresse.data.gouv.fr/search/?q=mairie&citycode=10220&limit=1",
+   "result": "échec",
+   "error": "Request was cancelled.",
+   "note": "hôte refusé (403 au tunnel) par la politique réseau de l’environnement d’exécution ; non contourné"
+  }
+ ],
+ "sources": {
+  "banCommune": {
+   "typeName": "BAN.DATA.GOUV:ban",
+   "pages": [
+    {
+     "url": "https://data.geopf.fr/wfs/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=BAN.DATA.GOUV%3Aban&outputFormat=application%2Fjson&srsName=urn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&count=1000&startIndex=0&cql_filter=code_insee%3D%2710220%27&sortBy=id",
+     "file": "data-sources/addresses-v342/ban-10220-page-00.json.gz",
+     "sha256": "785e79f132b6522e72df232a77235dd9751db24388a84a335fd79f1ece4df2ad",
+     "bytes": 698828,
+     "features": 1000,
+     "numberMatched": 1099
+    },
+    {
+     "url": "https://data.geopf.fr/wfs/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=BAN.DATA.GOUV%3Aban&outputFormat=application%2Fjson&srsName=urn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&count=1000&startIndex=1000&cql_filter=code_insee%3D%2710220%27&sortBy=id",
+     "file": "data-sources/addresses-v342/ban-10220-page-01.json.gz",
+     "sha256": "1ed0c7403cffd4ad365e5cae70470dff5ee7d7bba0c24ffc5a0aca76d79b9e96",
+     "bytes": 69384,
+     "features": 99,
+     "numberMatched": 1099
+    }
+   ],
+   "features": 1099,
+   "filter": "code_insee='10220'",
+   "capabilities": {
+    "file": "data-sources/addresses-v342/wfs-capabilities-BAN-DATA-GOUV-ban.xml",
+    "sha256": "da476e336a4849262623ce557d2fb7f1a227c6650663b709353e9e8f18bb5634",
+    "title": "Données Base Adresse Nationale",
+    "abstract": "BAN édition 2026-10-12"
+   }
+  },
+  "banExtent": {
+   "typeName": "BAN.DATA.GOUV:ban",
+   "pages": [
+    {
+     "url": "https://data.geopf.fr/wfs/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=BAN.DATA.GOUV%3Aban&outputFormat=application%2Fjson&srsName=urn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&count=1000&startIndex=0&bbox=755390%2C6819514%2C761486%2C6826372%2CEPSG%3A2154&sortBy=id",
+     "file": "data-sources/addresses-v342/ban-emprise-page-00.json.gz",
+     "sha256": "c4f03b5b18b37bf6fa7d574a29ef44138dc16cc48af022541714f31a436d84c3",
+     "bytes": 698278,
+     "features": 1000,
+     "numberMatched": 1398
+    },
+    {
+     "url": "https://data.geopf.fr/wfs/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=BAN.DATA.GOUV%3Aban&outputFormat=application%2Fjson&srsName=urn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&count=1000&startIndex=1000&bbox=755390%2C6819514%2C761486%2C6826372%2CEPSG%3A2154&sortBy=id",
+     "file": "data-sources/addresses-v342/ban-emprise-page-01.json.gz",
+     "sha256": "9b1726196a96f2e6e65be4ec322d0060f223ed04c49eee8ef5a7a3a83117b194",
+     "bytes": 276714,
+     "features": 398,
+     "numberMatched": 1398
+    }
+   ],
+   "features": 1398,
+   "filter": "BBOX 755390,6819514,761486,6826372,EPSG:2154 (emprise du terrain V1.7)",
+   "capabilities": {
+    "file": "data-sources/addresses-v342/wfs-capabilities-BAN-DATA-GOUV-ban.xml",
+    "sha256": "da476e336a4849262623ce557d2fb7f1a227c6650663b709353e9e8f18bb5634",
+    "title": "Données Base Adresse Nationale",
+    "abstract": "BAN édition 2026-10-12"
+   }
+  },
+  "banPlus": {
+   "typeName": "BAN-PLUS:lien_adresse_bati",
+   "pages": [
+    {
+     "url": "https://data.geopf.fr/wfs/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=BAN-PLUS%3Alien_adresse_bati&outputFormat=application%2Fjson&srsName=urn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&count=1000&startIndex=0&bbox=755390%2C6819514%2C761486%2C6826372%2CEPSG%3A2154&sortBy=id_adr",
+     "file": "data-sources/addresses-v342/banplus-lien-adresse-bati-page-00.json.gz",
+     "sha256": "9d56a51f8201782b6a835bd6a4c1375eacf5eab86a21f2b292fc661fc6e0acf7",
+     "bytes": 316820,
+     "features": 1000,
+     "numberMatched": 2420
+    },
+    {
+     "url": "https://data.geopf.fr/wfs/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=BAN-PLUS%3Alien_adresse_bati&outputFormat=application%2Fjson&srsName=urn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&count=1000&startIndex=1000&bbox=755390%2C6819514%2C761486%2C6826372%2CEPSG%3A2154&sortBy=id_adr",
+     "file": "data-sources/addresses-v342/banplus-lien-adresse-bati-page-01.json.gz",
+     "sha256": "a9ac033694d00088e2af6ad7b825c93776056b562ab76245a77d795fe3cc2df7",
+     "bytes": 317061,
+     "features": 1000,
+     "numberMatched": 2420
+    },
+    {
+     "url": "https://data.geopf.fr/wfs/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=BAN-PLUS%3Alien_adresse_bati&outputFormat=application%2Fjson&srsName=urn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&count=1000&startIndex=2000&bbox=755390%2C6819514%2C761486%2C6826372%2CEPSG%3A2154&sortBy=id_adr",
+     "file": "data-sources/addresses-v342/banplus-lien-adresse-bati-page-02.json.gz",
+     "sha256": "11381093c2bae75c0ec34f59fe3a13e31c726a76faf7a27f52d8e05e05103db2",
+     "bytes": 133695,
+     "features": 420,
+     "numberMatched": 2420
+    }
+   ],
+   "features": 2420,
+   "filter": "BBOX 755390,6819514,761486,6826372,EPSG:2154",
+   "capabilities": {
+    "file": "data-sources/addresses-v342/wfs-capabilities-BAN-PLUS-lien_adresse_bati.xml",
+    "sha256": "a33208850f10f5322b3fd5d7cc8865e41c5ad331481724cf37e8c2b70e705163",
+    "title": "lien adresse batiment",
+    "abstract": "lien adresse batiment ; BAN PLUS édition : 2026-06-15"
+   }
+  },
+  "rnb": {
+   "api": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/",
+   "query": "insee_code=10220",
+   "pages": [
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-00.json.gz",
+     "sha256": "6a8e84b156230383a78096be971c830348a54b41387d8cefa59dced9c605f53f",
+     "bytes": 93735,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD01OTg0Mjc%3D&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-01.json.gz",
+     "sha256": "b79dcdea59ee96ac5f49ac03189c8adb139ef806eab9e1939add734a39ec8a86",
+     "bytes": 97807,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD0xMjYwOTk1&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-02.json.gz",
+     "sha256": "ddb17fe62b4294e1858971e3d2e9d4a64c35a584b1ca4587b20cdc399a477147",
+     "bytes": 98684,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD0xODA0MzY3&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-03.json.gz",
+     "sha256": "04f3cce8b12bbc68264bee2cc15fd4053e10622b3c803f7a07b71378eec0f0ea",
+     "bytes": 97647,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD0yNTIzODc0&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-04.json.gz",
+     "sha256": "6b79928fcc61d047362cef8a02d803bb939385f3028223700eae8ab9d7ba83a5",
+     "bytes": 99255,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD0zMTM5NTMz&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-05.json.gz",
+     "sha256": "3c55a1832b2556aa23df885db82c40e80b033f0e87fb56b7edf4d9c5d161bed0",
+     "bytes": 94771,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD0zNzYyNTY2&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-06.json.gz",
+     "sha256": "368dbd27726cc52edba5f085602bfa920e6176b96655983795a4adcc8df6b25e",
+     "bytes": 99247,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD00NDA0Mjc2&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-07.json.gz",
+     "sha256": "d1d5eb778db9309821e9fa8a4d0c78859e376fbf164e5b5fdde67112dd47bb85",
+     "bytes": 96840,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD01MTIzNzEz&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-08.json.gz",
+     "sha256": "77da474e3764e1ad65d9776dcaa3a89051646589947d77fd6458acd39b153df5",
+     "bytes": 98734,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD01NzE2ODA3&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-09.json.gz",
+     "sha256": "dc0ae7090de68347a13297eb072f334b058d393439f508f05eb18d12589cb68c",
+     "bytes": 94463,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD02NTMwNTkw&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-10.json.gz",
+     "sha256": "35b6599d3fe3813448a29abe6cc1934eb5c92c4a61724fdab809eddf881b5a57",
+     "bytes": 97476,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD03MjgxNDE3&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-11.json.gz",
+     "sha256": "5f8f1bcd6b6f40a81bf60b28383fcff32f4bea3106a024d7d7acab8d95080ca3",
+     "bytes": 95994,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD04MDUyNDY2&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-12.json.gz",
+     "sha256": "1e6e578193e6b1e2ae79e9b611e6e0f96e4aa48c43b3eaccca7c91f9214d1fe6",
+     "bytes": 98584,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD04Njg3MjYw&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-13.json.gz",
+     "sha256": "23657342c2ea3b623ee054ccb2db41267de2078ccf033e24fc705a22cd5329d7",
+     "bytes": 92873,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD05MzI2MjYz&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-14.json.gz",
+     "sha256": "bc086087e7b64d69b6cc459462f21fb6574396b1b7eff0df59fe3658a6a2f22b",
+     "bytes": 98133,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD05ODk1MDAw&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-15.json.gz",
+     "sha256": "0810b57337db62f5335cf2a430b7f07ed0234afaa3dcf752d5fc74652e8df120",
+     "bytes": 96294,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD0xMDY4MTE5NA%3D%3D&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-16.json.gz",
+     "sha256": "f99393897d564ebf7fffe56e73377b2ee2ebfbfd578dacbbfaf6b2d1c52a1377",
+     "bytes": 98238,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD0xMTI5NTI4Nw%3D%3D&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-17.json.gz",
+     "sha256": "09c8b24ed296a229f8f71d79a5a14209a57574476fd29465333e0c2cce98c500",
+     "bytes": 96491,
+     "features": 100
+    },
+    {
+     "url": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/?cursor=cD00NTE0MzUwNg%3D%3D&insee_code=10220&limit=100",
+     "file": "data-sources/addresses-v342/rnb-10220-page-18.json.gz",
+     "sha256": "3eced5dd22fe399fdcc856064dda62513db777aa56c54fdff58acb3296230d03",
+     "bytes": 58541,
+     "features": 95
+    }
+   ],
+   "features": 1895
+  }
+ },
+ "license": "Licence Ouverte / Open Licence 2.0 (Etalab)",
+ "attribution": {
+  "ban": "Base Adresse Nationale — diffusion IGN Géoplateforme (BAN.DATA.GOUV:ban)",
+  "banPlus": "IGN — BAN PLUS, liens adresse – bâtiment BD TOPO",
+  "rnb": "Référentiel national des bâtiments (RNB)"
+ }
+}

@@ -349,3 +349,11 @@ footer{background:linear-gradient(transparent,#e8ede4e8);color:#4a5a4f}
  .ui-v32 #selection .sheet-handle{display:none}
 }
 @media(prefers-reduced-motion:reduce){.ui-v32 .pop,.ui-v32 #panel-info,.ui-v32 #dock button,.ui-v32 .switch-track,.ui-v32 .switch-knob,.ui-v32 .q-check{transition:none}.ui-v32 #selection,.ui-v32 #search ul,.ui-v32 #quick{animation:none}}
+
+/* V3.4.2 — address of an ordinary building in the quick label: the address is the title; several addresses as a short list. */
+#quick-list{margin:4px 0 0;padding:0;list-style:none;font-size:12.5px;line-height:1.45;color:#2f4637}#quick-list[hidden]{display:none}
+#quick-list li{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#quick-details[hidden]{display:none}
+.ui-v32 #quick-list{font-family:var(--ui-font);color:var(--ui-ink)}
+.ui-v32 #quick-address{font-family:var(--ui-font);font-size:12px;color:var(--ui-muted)}
+@media(max-width:850px){#quick.has-list{flex-wrap:wrap;row-gap:2px}#quick.has-list #quick-list{order:3;flex-basis:100%;margin:0}#quick-address{display:none}}
