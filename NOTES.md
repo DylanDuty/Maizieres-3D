@@ -1,3 +1,10 @@
+# Notes V3.4.1 — chargement et changement de qualité, 14 octobre 2026
+
+- **Un flash d’interface vient de l’ordre, pas du style.** L’ancien écran n’était pas seulement laid : la page affichait le document historique tant que le module n’avait pas fini de charger les données. Redessiner le spinner n’y aurait rien changé. Décider du mode dans `<head>`, avant le premier rendu, suffit à faire disparaître l’ancienne barre.
+- **Un clic sans réponse paraît cassé.** En V3.4, rien ne bougeait pendant toute la durée du rechargement, 19 s dans le navigateur de test. Afficher l’écran du préset demandé dans la page même, au clic, compte plus que le soin apporté au loader suivant.
+- **La continuité tient dans une image.** Une copie de 480 px de la dernière vue, floutée sous un voile et transmise à la page suivante, fait du rechargement un simple passage. La première version réutilisait par erreur l’image du changement précédent : seule une image prise à l’instant peut servir de fond.
+- **« Prêt » se mesure à l’écran, pas dans le code.** L’écran ne part qu’après deux images présentées, une fois la caméra restaurée et l’interface en place. Aucun délai esthétique n’est ajouté, aucun pourcentage n’est inventé.
+
 # Notes V3.4 — cadastre réel, 13 octobre 2026
 
 - **Une limite réelle n’est pas une clôture.** Le cadastre donne le contour d’une parcelle fiscale, ni un mur, ni une haie, ni un jardin. On le dessine donc en trait fin d’une seule passe, d’un vert éteint, et l’on garde les séparations matérielles aux seules données qui les décrivent.

@@ -91,8 +91,10 @@ for(const [f,h] of Object.entries(frozen.files)){assert.equal(sha(f),h,'dérive 
  const v22=crypto.createHash('sha256').update(execFileSync('git',['show',`${M.geographicBaseCommit}:${f}`],{maxBuffer:1<<28})).digest('hex');assert.equal(h,v22,'référence ≠ commit V2.2 : '+f);}
 assert.equal(M.geographicBaseCommit,'309e65ed52cfc0947bb8cd66117b7ff84ceb028a');assert.equal(M.buildings,N);assert.equal(M.buildingsInCommune,2362);assert.equal(M.manualBuildingsV22,12);assert.equal(M.architectureProfiles,N);assert.equal(M.geographicFilesFrozen,42);
 for(const f of M.files)assert.equal(sha(f.path),f.sha256,'fichier du manifeste modifié : '+f.path);
-if(M.finalFreezeCommit){const changed=execFileSync('git',['diff','--name-only',M.finalFreezeCommit,'HEAD'],{encoding:'utf8'}).split('\n').filter(Boolean);
+if(M.finalFreezeCommit){const changed=execFileSync('git',['diff','--name-only','--diff-filter=a',M.finalFreezeCommit,'HEAD'],{encoding:'utf8'}).split('\n').filter(Boolean);
  // Later versions may change the rendering code and the documentation, never a frozen data file (public/data, unreal, data-sources).
+ // V3.4.1: new data files may be added beside the frozen ones (V3.4 cadastral layer, with its own freeze); only modified,
+ // deleted or renamed files count (--diff-filter=a leaves the added ones out).
  for(const f of changed)assert(!/^(public\/data|unreal|data-sources)\//.test(f),'fichier de données modifié après le commit de gel : '+f);}
 ok(`10. 42 fichiers géographiques identiques au commit V2.2 (git show 309e65e) ; ${M.files.length} fichiers du manifeste Freeze V1 à jour${M.finalFreezeCommit?` ; commit de gel ${M.finalFreezeCommit.slice(0,7)}`:''}`);
 console.log(`check:architecture-stats — 10 contrôles PASS · ${N} profils`);

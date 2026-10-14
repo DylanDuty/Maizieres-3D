@@ -1,3 +1,18 @@
+# Vérification V3.4.1 — chargement et changement de qualité, 14 octobre 2026
+
+Branche `opus/v3.4.1-premium-loading-transitions`, à partir de `3c5da0c` (V3.4).
+
+- **Documents** : rapport `docs/audit/V3.4.1_PREMIUM_LOADING_TRANSITION.md`, captures `docs/qa/v3.4.1-loading/` (README, mesures JSON).
+- **Nouveau contrôle** : `npm run check:premium-loading-transition`, inclus dans `check:all`. Il vérifie :
+  - l’amorçage avant le premier rendu, sur les seuls modes premium ;
+  - première ouverture et changement de préset ;
+  - la transmission consommée une fois ;
+  - `ready` après deux images ;
+  - l’échec avec Réessayer, et `reset` ;
+  - le câblage de `main.js`, l’accessibilité et le mouvement réduit.
+- **Chromium** : ancienne interface sur 0 image pendant le premier chargement et les trois changements de qualité (V3.4 : 94 / 95 et 311 / 312). Caméra, présets, noms de lieux et sélection sont conservés ; Retour / Avancer, échecs, mouvement réduit, paysage et bureau vérifiés.
+- **Non-régression** : modes historiques intacts ; 2 596 / 2 596 bâtiments, 2 584 / 2 584 sans les bâtiments manuels, aucun enfoui ; gels géographique, sémantique et cadastral inchangés.
+
 # Vérification V3.4 — cadastre réel, 13 octobre 2026
 
 Branche `opus/v3.4-cadastre-parcelles-reelles`, à partir de `4e6f386` (V3.3.1). Mode `?visual=premium-v34`, diagnostic `?diagnostic=cadastre-v34` (`&v33=1`).
