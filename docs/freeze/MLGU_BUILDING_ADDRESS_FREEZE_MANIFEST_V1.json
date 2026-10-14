@@ -1,0 +1,157 @@
+{
+ "name": "MLGU_BUILDING_ADDRESS_FREEZE_V1",
+ "version": "1.0",
+ "createdFor": "V3.4.2 — adresses des bâtiments et contrôle spatial des rues",
+ "doctrine": "Registre d’adresses et audit routier ajoutés à part ; aucune géométrie (bâtiments, routes, parcelles) n’est modifiée ; les gels géographique (42 fichiers V2.2), Freeze V1 (52), sémantique V2.9.2 et cadastral V1 restent inchangés.",
+ "sources": {
+  "ban": {
+   "service": "Géoplateforme WFS BAN.DATA.GOUV:ban",
+   "edition": "2026-10-12",
+   "features": {
+    "commune": 1099,
+    "extent": 1398
+   }
+  },
+  "banPlus": {
+   "service": "Géoplateforme WFS BAN-PLUS:lien_adresse_bati",
+   "edition": "2026-06-15",
+   "features": 2420
+  },
+  "rnb": {
+   "api": "https://rnb-api.beta.gouv.fr/api/alpha/buildings/",
+   "query": "insee_code=10220",
+   "features": 1895
+  },
+  "retrievedAt": "2026-10-14T07:30:43.709Z",
+  "license": "Licence Ouverte / Open Licence 2.0 (Etalab)",
+  "attempts": [
+   {
+    "source": "BAN (adresse.data.gouv.fr)",
+    "url": "https://adresse.data.gouv.fr/data/ban/adresses/latest/csv/adresses-10.csv.gz",
+    "result": "échec",
+    "error": "Request was cancelled.",
+    "note": "hôte refusé (403 au tunnel) par la politique réseau de l’environnement d’exécution ; non contourné"
+   },
+   {
+    "source": "BAN (adresse.data.gouv.fr)",
+    "url": "https://api-adresse.data.gouv.fr/search/?q=mairie&citycode=10220&limit=1",
+    "result": "échec",
+    "error": "Request was cancelled.",
+    "note": "hôte refusé (403 au tunnel) par la politique réseau de l’environnement d’exécution ; non contourné"
+   }
+  ]
+ },
+ "counts": {
+  "buildings": {
+   "total": 2596,
+   "inCommune": 2362,
+   "outside": 234,
+   "byLayer": {
+    "référentiel V1.6.2": 2494,
+    "ajout V2.0.1": 90,
+    "manuel V2.2": 12
+   }
+  },
+  "statuses": {
+   "VERIFIED": 479,
+   "MULTIPLE": 27,
+   "REVIEW": 675,
+   "UNKNOWN": 247,
+   "NOT_APPLICABLE": 1168
+  },
+  "statusesInCommune": {
+   "VERIFIED": 478,
+   "MULTIPLE": 27,
+   "REVIEW": 656,
+   "UNKNOWN": 178,
+   "NOT_APPLICABLE": 1023
+  },
+  "addresses": {
+   "verifiedLinks": 538,
+   "distinctVerifiedAddresses": 538,
+   "commune10220Linked": 538,
+   "byMethod": {
+    "ban-position": 2,
+    "none": 2090,
+    "official-link+position": 7,
+    "official-link+rnb": 306,
+    "official-link+rnb (seul logement des bâtiments liés)": 177,
+    "official-link+rnb (seul logement des bâtiments liés)|official-link+rnb": 1,
+    "official-link+rnb|official-link+rnb (seul logement des bâtiments liés)": 1,
+    "rnb+position": 12
+   }
+  },
+  "rejected": {
+   "rejectedSegmentNearest": 131,
+   "rejectedParcelFanout": 895,
+   "conflicts": 134,
+   "roadFar": 17,
+   "protectedRejected": 5,
+   "singleChannel": 248,
+   "positionContradiction": 4
+  },
+  "anomalies": 292,
+  "roads": {
+   "audited": 111,
+   "inCommune": 72,
+   "statuses": {
+    "PASS": 79,
+    "PASS_WITH_LIMITATION": 31,
+    "REVIEW": 1,
+    "BLOCKER": 0
+   },
+   "statusesInCommune": {
+    "PASS": 57,
+    "PASS_WITH_LIMITATION": 14,
+    "REVIEW": 1,
+    "BLOCKER": 0
+   },
+   "clicks": 1668
+  }
+ },
+ "files": {
+  "data-sources/addresses-v342/ban-10220-page-00.json.gz": "f21cd320d1ea64ffe85f0a4d0ee4009f396e30ab7ae1e5754287ab9c2201d972",
+  "data-sources/addresses-v342/ban-10220-page-01.json.gz": "55e50e12363666ddb36acdf3fa437b6086cca3dc01d2a78569a3816cf7701fa3",
+  "data-sources/addresses-v342/ban-emprise-page-00.json.gz": "7428c13dfc61cab472274db8cb0f86f65b7d0150fd0ee9fd1185916a5cab5810",
+  "data-sources/addresses-v342/ban-emprise-page-01.json.gz": "0965a8d25babe6191244958cf12dcf1e0d3a0ce8e756ca4f3802f797b6f76e5f",
+  "data-sources/addresses-v342/banplus-lien-adresse-bati-page-00.json.gz": "545a359432f2c52a1bdef7819d2acd33842ae049279c26890d6e09428247488a",
+  "data-sources/addresses-v342/banplus-lien-adresse-bati-page-01.json.gz": "d7328699e473344520728eacc3099292c45fe9ea2c0d2fa8d1380ff4fbd84644",
+  "data-sources/addresses-v342/banplus-lien-adresse-bati-page-02.json.gz": "45deae8fc02c49136a6dff72a4e1c551650ea55307e68c535303c6978e647a07",
+  "data-sources/addresses-v342/build-report.json": "1d76a58dc5b9e749dee3ecfd2a0a1af8e3d62e676594507db3973cc1be2aab73",
+  "data-sources/addresses-v342/rnb-10220-page-00.json.gz": "b6db82659181c473e4400ac2d540f9507b1defbdc429e3f8ebf0254d0299a71b",
+  "data-sources/addresses-v342/rnb-10220-page-01.json.gz": "2a783c2508f3dc739794d4c8a4ccf74c302693bdf061979f6e6ae7332ca35b20",
+  "data-sources/addresses-v342/rnb-10220-page-02.json.gz": "46c337fd36f77b0c122ab0155e4457826c3381ed52c29d635c2b41366ec9dab8",
+  "data-sources/addresses-v342/rnb-10220-page-03.json.gz": "00ae4e714b4cf43849b5b5e09c5c3193eadb0849233429c0cb6f124c84e1b254",
+  "data-sources/addresses-v342/rnb-10220-page-04.json.gz": "4390df3553d5bb194162a365eb868fc348162fbd754c37085a71de0adb0455e2",
+  "data-sources/addresses-v342/rnb-10220-page-05.json.gz": "b6813f76f7be16e81c737195450de523dbb445da128de4d6a459b4eda552010a",
+  "data-sources/addresses-v342/rnb-10220-page-06.json.gz": "7e4bfbdd0bac3e247ab7d6890701c16d4d0b9e924e6cebe5a17bade54e6c6c59",
+  "data-sources/addresses-v342/rnb-10220-page-07.json.gz": "04ae0cef6c2a24bb4772dbd0769b6ab2bfec5086a3124143f9a5bff072d24c14",
+  "data-sources/addresses-v342/rnb-10220-page-08.json.gz": "1f895c16ec042198610fac6e261e07fd9f4df71c28c2428fd8916cc5c48f4ee7",
+  "data-sources/addresses-v342/rnb-10220-page-09.json.gz": "1ebe3fa7ad318cd1983e6239017224325e58ac75d1790959539ed0f5f404f9ed",
+  "data-sources/addresses-v342/rnb-10220-page-10.json.gz": "e5c7c87e8add2b88b2fb0e1db44cef4f579e5cc9dbd5fe51b3b08b7edd7f5099",
+  "data-sources/addresses-v342/rnb-10220-page-11.json.gz": "3b44cd1df18f72a46ca3805c8f891ddf9f0ebdbde38e36990cff243d43bcf46b",
+  "data-sources/addresses-v342/rnb-10220-page-12.json.gz": "41950fdf8453f5d43d472dd84a41509d2b55cff2ecaca2c4adcdf30326c73696",
+  "data-sources/addresses-v342/rnb-10220-page-13.json.gz": "e2642e6704c35534a966c5a716aff8316c125f3da5ad24790e8735eefaae22fc",
+  "data-sources/addresses-v342/rnb-10220-page-14.json.gz": "4bec069d57648069127d7a9fb15fef17ee7c5b32d37a5f37482b01aec2e032a4",
+  "data-sources/addresses-v342/rnb-10220-page-15.json.gz": "b2a14a4730b9cc92fd4da88683b1ba7d7f343971f5aab1433ed1cc6eda0e937d",
+  "data-sources/addresses-v342/rnb-10220-page-16.json.gz": "704ef3d82b738c0ee6b640f2c5bb42bb91fe69a9e7ea485908346489cbd4648e",
+  "data-sources/addresses-v342/rnb-10220-page-17.json.gz": "670888b2eb516d66c36dbdf3362c7a3190c49440c40bf0e270c7315649a04ca2",
+  "data-sources/addresses-v342/rnb-10220-page-18.json.gz": "f319c3f1878c32afc69eb4786953ce64c9617a7df1c8b37992ad446260da8078",
+  "data-sources/addresses-v342/roads-audit-report.json": "68592aefe4d9dddb1f44534d3409cc07c3d01914eb56d4c26432527c40b5a185",
+  "data-sources/addresses-v342/source-manifest.json": "bdc3c686edf243af476a5570f2c06af3f12983965d5f994d0236a0c5960f411c",
+  "data-sources/addresses-v342/wfs-capabilities-BAN-DATA-GOUV-ban.xml": "da476e336a4849262623ce557d2fb7f1a227c6650663b709353e9e8f18bb5634",
+  "data-sources/addresses-v342/wfs-capabilities-BAN-PLUS-lien_adresse_bati.xml": "a33208850f10f5322b3fd5d7cc8865e41c5ad331481724cf37e8c2b70e705163",
+  "public/data/building-addresses-v3.4.2.json": "583470aa720d5a085fccfb776a5c8a0daca5ba304be453c592de3cfbf15989f7",
+  "docs/freeze/MLGU_BUILDING_ADDRESSES_V1.json": "f6a02a476900c6628e0816cb5598f8a1dd3a11498dc36c2cac88ace0eb227a8b",
+  "docs/audit/V3.4.2_ADDRESS_LINK_ANOMALIES.csv": "e723b51bbcb82e39d434a09f955b1f58a4b7f815f44f10080b0ffac13b990c29",
+  "docs/audit/V3.4.2_ROADS_SPATIAL_AUDIT.csv": "bf11668b1a9b143e7787ef6b0dd9413680f564aa8079a3923f0f7bc6383df105"
+ },
+ "code": {
+  "scripts/addresses-v342/fetch-addresses.mjs": "57e2bc9d6914d2c67f0fabacd42a5c8c9e0471abd766dde0f57ccc8d7487e895",
+  "scripts/addresses-v342/build-addresses.mjs": "5e43568b98ee32a00a028446fce04c45c972074a32b431b73b47cb6eeca2e8f4",
+  "scripts/roads-v342/audit-roads.mjs": "dd0c4c8713e6ffb35b7ad0ffe2f078c5a4f51359bb3d0aceaf37e73d3a44755f",
+  "src/addresses-v342.js": "f47c1e035a37092dcd501df07c469070f0b6d29c73735f735f77bb66c117b25f",
+  "src/geo.js": "3a82f4f0e33e0b449758e373fde7d7e131fa9254f2f6503e5f82bdb38a471d47"
+ },
+ "rebuild": "npm run build:addresses-v342 (déterministe ; check:building-address-links et check:roads-spatial-v342 le vérifient dans un dossier temporaire)"
+}

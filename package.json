@@ -1,6 +1,6 @@
 {
   "name": "maizieres-3d",
-  "version": "3.4.1",
+  "version": "3.4.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -18,7 +18,7 @@
     "check:interaction": "node scripts/check-interaction.mjs",
     "data:bible": "node scripts/prepare-bible.mjs",
     "check:bible": "node scripts/check-bible.mjs",
-    "check:all": "npm run check && npm run check:enrichment && npm run check:presentation && npm run check:interaction && npm run check:bible && npm run check:buildings && npm run check:terrain && npm run check:roads && npm run check:rail && npm run check:landcover && npm run check:poi && npm run check:v2 && npm run check:building-visibility && npm run check:geographic-integrity && npm run check:final-building-freeze && npm run check:architecture && npm run check:architecture-stats && npm run check:landmark-positioning && npm run check:places-canonical && npm run check:road-names && npm run check:poi-building-links && npm run check:search-targets && npm run check:semantic-freeze && npm run check:cadastre-source && npm run check:cadastre-geometry && npm run check:cadastre-building-links && npm run check:cadastre-v33-replacement && npm run check:cadastre-freeze && npm run check:premium-loading-transition",
+    "check:all": "npm run check && npm run check:enrichment && npm run check:presentation && npm run check:interaction && npm run check:bible && npm run check:buildings && npm run check:terrain && npm run check:roads && npm run check:rail && npm run check:landcover && npm run check:poi && npm run check:v2 && npm run check:building-visibility && npm run check:geographic-integrity && npm run check:final-building-freeze && npm run check:architecture && npm run check:architecture-stats && npm run check:landmark-positioning && npm run check:places-canonical && npm run check:road-names && npm run check:poi-building-links && npm run check:search-targets && npm run check:semantic-freeze && npm run check:cadastre-source && npm run check:cadastre-geometry && npm run check:cadastre-building-links && npm run check:cadastre-v33-replacement && npm run check:cadastre-freeze && npm run check:premium-loading-transition && npm run check:building-address-source && npm run check:building-address-links && npm run check:building-address-ui && npm run check:roads-spatial-v342 && npm run check:building-address-freeze && npm run check:notre-village-handoff",
     "data:buildings": "node scripts/build-buildings.mjs && node scripts/validate-buildings.mjs",
     "audit:buildings": "node scripts/audit-buildings.mjs",
     "check:buildings": "node scripts/check-buildings.mjs",
@@ -75,7 +75,15 @@
     "check:cadastre-building-links": "node --max-old-space-size=4096 scripts/cadastre-v34/check-building-links.mjs",
     "check:cadastre-v33-replacement": "node scripts/cadastre-v34/check-v33-replacement.mjs",
     "check:cadastre-freeze": "node --max-old-space-size=4096 scripts/cadastre-v34/check-freeze.mjs",
-    "check:premium-loading-transition": "node scripts/check-premium-loading-transition.mjs"
+    "check:premium-loading-transition": "node scripts/check-premium-loading-transition.mjs",
+    "fetch:addresses-v342": "NODE_USE_ENV_PROXY=1 node scripts/addresses-v342/fetch-addresses.mjs",
+    "build:addresses-v342": "node scripts/addresses-v342/build-addresses.mjs && node scripts/roads-v342/audit-roads.mjs && node scripts/addresses-v342/build-freeze.mjs",
+    "check:building-address-source": "node scripts/addresses-v342/check-source.mjs",
+    "check:building-address-links": "node scripts/addresses-v342/check-links.mjs",
+    "check:building-address-ui": "node scripts/addresses-v342/check-ui.mjs",
+    "check:roads-spatial-v342": "node scripts/roads-v342/check-roads.mjs",
+    "check:building-address-freeze": "node scripts/addresses-v342/check-freeze.mjs",
+    "check:notre-village-handoff": "node scripts/check-notre-village-handoff.mjs"
   },
   "dependencies": {
     "three": "0.180.0"
