@@ -99,5 +99,6 @@ export function installUiV32({views,onView,quality,go,names,dataDate='',interpre
   if(e.key==='/'&&!/input|textarea/i.test(document.activeElement?.tagName||'')){const i=document.querySelector('#search input');if(i){i.focus();e.preventDefault();}}},true);
  document.addEventListener('pointerdown',e=>{if(!open)return;const [p,b]=panels[open];if(p.contains(e.target)||b.contains(e.target)||mention.contains(e.target))return;closeAll(false);},true);
  addEventListener('resize',()=>{if(open){const [p,b]=panels[open];place(p,b);}});
- return {open:id=>toggle(id),close:()=>closeAll(false),state:()=>open};
+ // setQuality: picker back in sync with the preset actually shown (V3.4.1, page restored from the back-forward cache).
+ return {open:id=>toggle(id),close:()=>closeAll(false),state:()=>open,setQuality:key=>{for(const o of opts){o.setAttribute('aria-checked',String(o.dataset.q===key));o.classList.remove('pending');}}};
 }

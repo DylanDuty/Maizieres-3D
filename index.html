@@ -6,6 +6,65 @@
   <meta name="theme-color" content="#dfe8e3" />
   <meta name="description" content="Maizières-la-Grande-Paroisse en 3D : une maquette navigable issue des empreintes et tracés OpenStreetMap." />
   <title>Maizières-la-Grande-Paroisse · Maquette 3D</title>
+  <!-- V3.4.1: premium modes are recognised before the first paint. The old control row and the old help line are hidden at
+       once, and the transition screen is the first thing drawn (no dependency on the module, the data or Three.js). -->
+  <script>
+  (function(){
+   var B={premium:false,kind:'first',target:null,cam:null,view:null,snapshot:null};window.__MLGU_BOOT__=B;
+   try{
+    var raw=window.__MLGU_QUERY__!=null?String(window.__MLGU_QUERY__):location.search,p=new URLSearchParams(raw.charAt(0)==='?'?raw.slice(1):raw);
+    B.premium=p.get('diagnostic')==='cadastre-v34'||/^premium-v3[234]$/.test(p.get('visual')||'');
+    if(!B.premium)return;
+    document.documentElement.classList.add('mlgu-ui','tx-active');
+    // Quality change: written by the previous page just before the reload, consumed once, valid only for this very preset and
+    // camera and for one minute (an ordinary visit never shows « Passage en mode … »).
+    var s=null;try{s=window.sessionStorage;}catch(e){}
+    if(s){var h=null,snap=null;try{h=JSON.parse(s.getItem('mlgu-transition')||'null');snap=s.getItem('mlgu-transition-snapshot');}catch(e){}
+     try{s.removeItem('mlgu-transition');s.removeItem('mlgu-transition-snapshot');}catch(e){}
+     var vq=p.get('v25quality')||'beauty';
+     if(h&&h.kind==='quality'&&Date.now()-h.t<60000&&h.target===vq&&(h.cam||'')===(p.get('cam')||'')){B.kind='quality';B.target=vq;B.cam=h.cam;B.view=h.view||null;B.snapshot=snap;}}
+    // The application script itself cannot load: say so instead of animating forever.
+    document.addEventListener('error',function(e){var t=e.target,L=document.getElementById('loading');if(!t||t.tagName!=='SCRIPT'||window.__MLGU_TX__||!L)return;
+     L.classList.add('tx-failed');L.querySelector('.tx-title').textContent='Impossible de préparer la carte.';L.querySelector('.tx-sub').textContent='';L.querySelector('.tx-note').textContent='';
+     var box=document.createElement('div'),b=document.createElement('button');box.className='tx-error';box.setAttribute('role','alert');b.type='button';b.className='tx-retry';b.textContent='Réessayer';
+     b.onclick=function(){location.reload();};box.appendChild(b);L.querySelector('.tx-content').appendChild(box);},true);
+   }catch(e){}
+  })();
+  </script>
+  <style>
+  /* V3.4.1 — critical style of the premium transition (inline: drawn at the first paint, before the stylesheet of the bundle). */
+  html.mlgu-ui nav,html.mlgu-ui #quality,html.mlgu-ui footer .help{display:none!important}
+  html.tx-active body>*:not(#loading):not(#map){visibility:hidden!important}
+  #loading:not(.tx) .tx-snap,#loading:not(.tx) .tx-content{display:none}
+  #loading.tx>.spinner,#loading.tx>strong,#loading.tx>span{display:none}
+  html.mlgu-ui #loading.tx{position:fixed;inset:0;left:0;top:0;transform:none;z-index:1000;display:grid;place-items:center;width:auto;max-width:none;margin:0;gap:0;
+   padding:max(24px,env(safe-area-inset-top)) max(24px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(24px,env(safe-area-inset-left));
+   border:0;border-radius:0;box-shadow:none;text-align:left;overflow:hidden;color:#1f2f27;opacity:1;transition:opacity .32s ease;
+   background:radial-gradient(130% 85% at 50% 0%,#fbfaf5 0%,#f2f1e9 52%,#e3e8dc 100%);
+   font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  #loading.tx .tx-snap{position:absolute;inset:-18px;display:none;background:center/cover no-repeat;filter:blur(4px) saturate(.9)}
+  #loading.tx.tx-has-snap .tx-snap{display:block}
+  #loading.tx.tx-has-snap:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(248,247,241,.80),rgba(242,242,234,.72))}
+  #loading.tx .tx-content{position:relative;z-index:1;width:min(100%,26rem);margin-bottom:6vh;animation:tx-in .42s ease-out both}
+  #loading.tx .tx-brand{margin:0;font-size:11.5px;font-weight:650;letter-spacing:.22em;color:#2f5442}
+  #loading.tx .tx-title{margin:12px 0 6px;font-size:clamp(26px,7.2vw,34px);font-weight:600;letter-spacing:-.02em;line-height:1.15;color:#1f2f27}
+  #loading.tx .tx-sub{margin:0;font-size:15.5px;line-height:1.4;color:#4a594f}
+  #loading.tx .tx-line{position:relative;height:2px;margin-top:22px;border-radius:2px;background:rgba(31,47,39,.13);overflow:hidden}
+  #loading.tx .tx-line i{position:absolute;padding:0;opacity:1;left:0;top:0;bottom:0;width:30%;border-radius:2px;background:#2f5442;animation:tx-run 1.9s cubic-bezier(.45,0,.25,1) infinite}
+  #loading.tx .tx-note{margin:14px 0 0;min-height:1.4em;font-size:12.5px;line-height:1.4;color:#5a685f}
+  #loading.tx.tx-slow .tx-note{color:#7a5a22}
+  #loading.tx.tx-failed .tx-line{display:none}
+  #loading.tx .tx-error{margin-top:20px}
+  #loading.tx .tx-retry{min-height:44px;padding:0 20px;border:0;border-radius:12px;background:#2f5442;color:#fff;font:600 15px system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;box-shadow:0 6px 18px rgba(28,40,32,.16);cursor:pointer}
+  #loading.tx .tx-retry:focus-visible{outline:2px solid #2f5442;outline-offset:3px}
+  #loading.tx .tx-error details{margin-top:14px;font-size:12px;color:#5a685f}#loading.tx .tx-error summary{cursor:pointer}#loading.tx .tx-error details p{margin:6px 0 0;word-break:break-word}
+  #loading.tx.tx-leave{opacity:0;pointer-events:none}
+  @keyframes tx-run{from{transform:translateX(-100%)}to{transform:translateX(340%)}}
+  @keyframes tx-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @keyframes tx-pulse{50%{opacity:.75}}
+  @media(min-width:900px){#loading.tx .tx-content{width:30rem}#loading.tx .tx-title{font-size:38px}#loading.tx .tx-sub{font-size:16.5px}}
+  @media(prefers-reduced-motion:reduce){#loading.tx .tx-content{animation:none}#loading.tx .tx-line i{width:100%;opacity:.35;animation:tx-pulse 2.4s ease-in-out infinite}#loading.tx{transition:none}}
+  </style>
 </head>
 <body>
   <main id="map" aria-label="Maquette 3D de Maizières-la-Grande-Paroisse"></main>
@@ -18,7 +77,15 @@
   </nav>
   <aside id="selection" aria-label="Lieu sélectionné" aria-live="polite" hidden><span class="sheet-handle" aria-hidden="true"></span><button id="selection-close" aria-label="Fermer la fiche">×</button><p id="selection-kind"></p><h2 id="selection-title"></h2><p id="selection-address" hidden></p><p id="selection-summary" hidden></p><section id="selection-keep" hidden><h3>À retenir</h3><ul id="selection-facts"></ul></section><section id="selection-block" hidden><h3 id="selection-block-title"></h3><p id="selection-block-text"></p></section><details id="selection-sources" hidden><summary>Sources et références</summary><ul id="selection-sources-list"></ul></details><details id="selection-tech" hidden><summary>Données techniques</summary><ul id="selection-tech-list"></ul></details><p id="selection-note" hidden></p></aside>
   <div id="labels-layer"></div>
-  <div id="loading" role="status"><div class="spinner"></div><strong>Le village prend forme</strong><span>Chargement de la maquette locale…</span></div>
+  <div id="loading" role="status" aria-live="polite"><div class="spinner"></div><strong>Le village prend forme</strong><span>Chargement de la maquette locale…</span><div class="tx-snap" aria-hidden="true"></div><div class="tx-content"><p class="tx-brand">MAIZIÈRES 3D</p><p class="tx-title">Découvrir Maizières</p><p class="tx-sub">Préparation de la carte…</p><div class="tx-line" aria-hidden="true"><i></i></div><p class="tx-note"></p></div></div>
+  <script>
+  (function(){var B=window.__MLGU_BOOT__,L=document.getElementById('loading');if(!B||!B.premium||!L)return;
+   document.body.classList.add('ui-v32');L.classList.add('tx');L.dataset.kind=B.kind;L.setAttribute('aria-busy','true');
+   if(B.kind==='quality'){L.querySelector('.tx-title').textContent='Préparation du rendu';
+    L.querySelector('.tx-sub').textContent='Passage en mode '+({beauty:'Beauté',balanced:'Équilibré',performance:'Performance'}[B.target]||'Équilibré');
+    L.querySelector('.tx-note').textContent='La carte reprend au même endroit.';
+    if(B.snapshot&&/^data:image\/jpeg;base64,[A-Za-z0-9+\/=]+$/.test(B.snapshot)){L.querySelector('.tx-snap').style.backgroundImage='url("'+B.snapshot+'")';L.classList.add('tx-has-snap');}}})();
+  </script>
   <div class="compass" title="Orientation du nord"><span>N</span><div id="north">↑</div></div>
   <footer><span class="help">Cliquer : découvrir <i>·</i> Glisser : tourner <i>·</i> Molette : zoomer</span><span class="credit"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap</a> · <a href="https://geoservices.ign.fr/bdtopo" target="_blank" rel="noreferrer">IGN BD TOPO</a> <i>·</i> <span id="data-date">Données locales</span></span></footer>
   <script type="module" src="/src/main.js"></script>
