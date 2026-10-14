@@ -1,3 +1,10 @@
+# Notes V3.4.2 — adresses et rues, 14 octobre 2026
+
+- **L’adresse la plus proche est souvent celle du voisin.** 86 % des adresses BAN de la commune sont des points interpolés sur l’axe de la rue. Un géocodeur « bâtiment le plus proche » se tromperait sur 131 maisons et placerait l’école et la Salle polyvalente sur d’autres bâtiments. Une adresse ne se rattache que si deux sources indépendantes désignent la même maison.
+- **Une parcelle n’a pas qu’un bâtiment.** L’IGN relie souvent une adresse à la maison, au garage et à l’abri à la fois. Seule l’habitation reçoit l’adresse, et seulement si elle est le seul logement des bâtiments liés et que le RNB dit la même chose.
+- **Dire qu’on ne sait pas est une information.** « Adresse à confirmer » vaut mieux qu’un numéro probable. La moitié des maisons n’ont pas d’adresse établie : c’est la mesure honnête de ce que disent les sources aujourd’hui.
+- **Un nom au bon endroit se prouve par une autre source.** La présence d’un nom dans le registre ne dit pas que la voie est au bon endroit. L’attribution IGN des rues BAN, OSM et les adresses de chaque voie ont été confrontées voie par voie. Elles ont isolé un seul cas réel : un tronçon de la commune nommé d’après une rue de Romilly-sur-Seine.
+
 # Notes V3.4.1 — chargement et changement de qualité, 14 octobre 2026
 
 - **Un flash d’interface vient de l’ordre, pas du style.** L’ancien écran n’était pas seulement laid : la page affichait le document historique tant que le module n’avait pas fini de charger les données. Redessiner le spinner n’y aurait rien changé. Décider du mode dans `<head>`, avant le premier rendu, suffit à faire disparaître l’ancienne barre.

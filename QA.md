@@ -1,3 +1,31 @@
+# Vérification V3.4.2 — adresses au clic et rues, 14 octobre 2026
+
+Branche `opus/v3.4.2-building-addresses-road-spatial-qa`, à partir de `9023012` (V3.4.1).
+
+- **Documents :**
+  - rapport `docs/audit/V3.4.2_ADRESSES_BATIMENTS_ET_RUES.md` ;
+  - sources `docs/data/V3.4.2_BUILDING_ADDRESS_SOURCES.md` ;
+  - gel `docs/freeze/MLGU_BUILDING_ADDRESS_FREEZE_V1.md` et manifeste JSON ;
+  - registre `docs/freeze/MLGU_BUILDING_ADDRESSES_V1.json` ;
+  - anomalies `docs/audit/V3.4.2_ADDRESS_LINK_ANOMALIES.csv` ;
+  - audit routier `docs/audit/V3.4.2_ROADS_SPATIAL_AUDIT.csv` ;
+  - guide `docs/integration/MAIZING_NOTRE_VILLAGE_CARTE_3D_V3.4.2.md`.
+- **Contrôles nouveaux**, tous dans `check:all` :
+  - `check:building-address-source`, `-links`, `-ui`, `-freeze` ;
+  - `check:roads-spatial-v342` ;
+  - `check:notre-village-handoff`.
+
+  Ils incluent des tests négatifs (moteurs naïfs, mutations) qui doivent échouer.
+- **Chromium :**
+  - 55 clics réels sur bureau, comparés au registre ;
+  - cas par statut en 390 × 844, 844 × 390 et 1920 × 1080 ;
+  - restauration après un changement de qualité ;
+  - avant / après V3.4.1.
+- **Non-régression :**
+  - 2 596 / 2 596 bâtiments, 2 584 / 2 584 sans les bâtiments manuels ;
+  - gels géographique, Freeze V1, sémantique et cadastral intacts ;
+  - aucune géométrie modifiée.
+
 # Vérification V3.4.1 — chargement et changement de qualité, 14 octobre 2026
 
 Branche `opus/v3.4.1-premium-loading-transitions`, à partir de `3c5da0c` (V3.4).
