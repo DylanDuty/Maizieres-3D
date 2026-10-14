@@ -38,7 +38,9 @@ export function createLoadingTransition({root=document.querySelector('#loading')
  // kind: 'first' (opening of the page) or 'quality' (change of preset, targetQuality: beauty | balanced | performance).
  function start({kind:k='first',targetQuality=null}={}){
   if(state==='loading'&&k===kind&&targetQuality===target)return false;// a second click on the same change does nothing
-  kind=k;target=targetQuality;q('.tx-error')?.remove();show();render();root.setAttribute('aria-busy','true');state='loading';armSlow();
+  kind=k;target=targetQuality;q('.tx-error')?.remove();show();render();
+  // A picture left from an earlier change is never reused: only the frame taken now may become the background.
+  root.classList.remove('tx-has-snap');const snap=q('.tx-snap');if(snap)snap.style.backgroundImage='';root.setAttribute('aria-busy','true');state='loading';armSlow();
   // In the page, until the picture of the next frame is taken: the live map under the same veil.
   root.classList.toggle('tx-live',k==='quality');return true;}
  // Steps actually reached (data, scene, render): kept as an attribute for tests, not shown as a fake progress.
