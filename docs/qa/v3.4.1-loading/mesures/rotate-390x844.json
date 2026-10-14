@@ -1,0 +1,61 @@
+{
+ "scenario": "rotate",
+ "port": "4341",
+ "viewport": [
+  390,
+  844
+ ],
+ "mobile": true,
+ "rotated": {
+  "t": 1942,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": {
+   "kind": "first",
+   "premium": true,
+   "title": "Découvrir Maizières",
+   "sub": "Préparation de la carte…",
+   "note": "",
+   "snapshot": false,
+   "failed": false,
+   "slow": false,
+   "legacyText": null,
+   "rect": [
+    0,
+    0,
+    844,
+    390
+   ],
+   "line": "tx-run",
+   "retry": false,
+   "phase": "data"
+  },
+  "state": "loading",
+  "ui": true,
+  "dock": false,
+  "q": null,
+  "target": null,
+  "names": null,
+  "selected": null
+ },
+ "after": {
+  "t": 61678,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": null,
+  "state": "ready",
+  "ui": true,
+  "dock": true,
+  "q": "performance",
+  "target": [
+   200,
+   2,
+   150
+  ],
+  "names": "true",
+  "selected": null
+ },
+ "logs": []
+}

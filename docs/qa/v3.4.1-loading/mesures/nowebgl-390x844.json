@@ -1,0 +1,48 @@
+{
+ "scenario": "nowebgl",
+ "port": "4341",
+ "viewport": [
+  390,
+  844
+ ],
+ "mobile": true,
+ "noWebgl": {
+  "t": 887,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": {
+   "kind": "first",
+   "premium": true,
+   "title": "Impossible de préparer la carte.",
+   "sub": "",
+   "note": "",
+   "snapshot": false,
+   "failed": true,
+   "slow": false,
+   "legacyText": null,
+   "rect": [
+    0,
+    0,
+    390,
+    844
+   ],
+   "line": "tx-run",
+   "retry": true,
+   "phase": "data"
+  },
+  "state": "failed",
+  "ui": true,
+  "dock": false,
+  "q": null,
+  "target": null,
+  "names": null,
+  "selected": null
+ },
+ "logs": [
+  "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+  "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+  "THREE.WebGLRenderer: Error creating WebGL context.",
+  "Error: Error creating WebGL context.\n    at new T_ (http://127.0.0.1:4341/assets/three-DqjsnMqs.js:3840:20809)\n    at ku (http://127.0.0.1:4341/assets/index-D7_QL9j3.js:1364:8169)"
+ ]
+}

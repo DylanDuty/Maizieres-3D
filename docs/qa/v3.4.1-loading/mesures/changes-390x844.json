@@ -1,0 +1,316 @@
+{
+ "scenario": "changes",
+ "port": "4342",
+ "viewport": [
+  390,
+  844
+ ],
+ "mobile": true,
+ "selectOk": {
+  "id": "poi:mairie",
+  "name": "Mairie de Maizières-la-Grande-Paroisse",
+  "ok": true
+ },
+ "before": {
+  "t": 67426,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": null,
+  "state": "ready",
+  "ui": true,
+  "dock": true,
+  "q": "performance",
+  "target": [
+   700,
+   -1,
+   -650
+  ],
+  "names": "false",
+  "selected": null,
+  "selectedId": "Mairie de Maizières-la-Grande-Paroisse"
+ },
+ "toBeauty": {
+  "key": "beauty",
+  "feedbackMs": null,
+  "secondChoice": {
+   "other": "balanced",
+   "calls": 1,
+   "url": "?visual=premium-v34&v25quality=beauty&cam=900%2C699%2C-300%2C700%2C-1%2C-650"
+  },
+  "inPage": {
+   "early": {
+    "title": "Préparation du rendu",
+    "sub": "Passage en mode Beauté",
+    "legacy": []
+   },
+   "snapshot": true,
+   "sub": "Passage en mode Beauté",
+   "legacy": []
+  },
+  "newPageMs": 31285,
+  "usableMs": 110364,
+  "early": {
+   "kind": "quality",
+   "title": "Préparation du rendu",
+   "sub": "Passage en mode Beauté",
+   "note": "La carte reprend au même endroit.",
+   "snapshot": true,
+   "legacy": []
+  },
+  "during": {
+   "samples": 296,
+   "legacyFrames": 0,
+   "legacyOnTopFrames": 0,
+   "fluideFrames": 0,
+   "blankFrames": 0,
+   "kinds": [
+    "quality"
+   ],
+   "titles": [
+    "Préparation du rendu"
+   ],
+   "subs": [
+    "Passage en mode Beauté"
+   ],
+   "legacyTexts": []
+  },
+  "after": {
+   "q": "beauty",
+   "url": "?visual=premium-v34&v25quality=beauty&cam=900%2C699%2C-300%2C700%2C-1%2C-650",
+   "target": [
+    700,
+    -1,
+    -650
+   ],
+   "names": "false",
+   "legacy": [],
+   "loading": null,
+   "dock": true
+  },
+  "restored": {
+   "switch": "false",
+   "labelsLayerHidden": true,
+   "labels": "false",
+   "quickTitle": "Mairie de Maizières-la-Grande-Paroisse"
+  }
+ },
+ "toBalanced": {
+  "key": "balanced",
+  "feedbackMs": null,
+  "secondChoice": {
+   "other": "beauty",
+   "calls": 1,
+   "url": "?visual=premium-v34&v25quality=balanced&cam=900%2C699%2C-300%2C700%2C-1%2C-650"
+  },
+  "inPage": {
+   "early": {
+    "title": "Préparation du rendu",
+    "sub": "Passage en mode Équilibré",
+    "legacy": []
+   },
+   "snapshot": false,
+   "sub": "Passage en mode Équilibré",
+   "legacy": []
+  },
+  "newPageMs": 65234,
+  "usableMs": 136081,
+  "early": {
+   "kind": "quality",
+   "title": "Préparation du rendu",
+   "sub": "Passage en mode Équilibré",
+   "note": "La carte reprend au même endroit.",
+   "snapshot": false,
+   "legacy": []
+  },
+  "during": {
+   "samples": 324,
+   "legacyFrames": 0,
+   "legacyOnTopFrames": 0,
+   "fluideFrames": 0,
+   "blankFrames": 0,
+   "kinds": [
+    "quality"
+   ],
+   "titles": [
+    "Préparation du rendu"
+   ],
+   "subs": [
+    "Passage en mode Équilibré"
+   ],
+   "legacyTexts": []
+  },
+  "after": {
+   "q": "balanced",
+   "url": "?visual=premium-v34&v25quality=balanced&cam=900%2C699%2C-300%2C700%2C-1%2C-650",
+   "target": [
+    700,
+    -1,
+    -650
+   ],
+   "names": "false",
+   "legacy": [],
+   "loading": null,
+   "dock": true
+  }
+ },
+ "toPerformance": {
+  "key": "performance",
+  "feedbackMs": null,
+  "secondChoice": {
+   "other": "beauty",
+   "calls": 1,
+   "url": "?visual=premium-v34&v25quality=performance&cam=900%2C699%2C-300%2C700%2C-1%2C-650"
+  },
+  "inPage": {
+   "early": {
+    "title": "Préparation du rendu",
+    "sub": "Passage en mode Performance",
+    "legacy": []
+   },
+   "snapshot": true,
+   "sub": "Passage en mode Performance",
+   "legacy": []
+  },
+  "newPageMs": 49895,
+  "usableMs": 111964,
+  "early": {
+   "kind": "quality",
+   "title": "Préparation du rendu",
+   "sub": "Passage en mode Performance",
+   "note": "La carte reprend au même endroit.",
+   "snapshot": true,
+   "legacy": []
+  },
+  "during": {
+   "samples": 297,
+   "legacyFrames": 0,
+   "legacyOnTopFrames": 0,
+   "fluideFrames": 0,
+   "blankFrames": 0,
+   "kinds": [
+    "quality"
+   ],
+   "titles": [
+    "Préparation du rendu"
+   ],
+   "subs": [
+    "Passage en mode Performance"
+   ],
+   "legacyTexts": []
+  },
+  "after": {
+   "q": "performance",
+   "url": "?visual=premium-v34&v25quality=performance&cam=900%2C699%2C-300%2C700%2C-1%2C-650",
+   "target": [
+    700,
+    -1,
+    -650
+   ],
+   "names": "false",
+   "legacy": [],
+   "loading": null,
+   "dock": true
+  }
+ },
+ "backEarly": {
+  "t": 7408,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": {
+   "kind": "first",
+   "premium": true,
+   "title": "Découvrir Maizières",
+   "sub": "Préparation de la carte…",
+   "note": "",
+   "snapshot": false,
+   "failed": false,
+   "slow": false,
+   "legacyText": null,
+   "rect": [
+    0,
+    0,
+    390,
+    844
+   ],
+   "line": "tx-run",
+   "retry": false,
+   "phase": "data"
+  },
+  "state": "loading",
+  "ui": true,
+  "dock": false,
+  "q": null,
+  "target": null,
+  "names": null,
+  "selected": null
+ },
+ "back": {
+  "t": 73522,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": null,
+  "state": "ready",
+  "ui": true,
+  "dock": true,
+  "q": "balanced",
+  "target": [
+   700,
+   -1,
+   -650
+  ],
+  "names": "true",
+  "selected": null,
+  "url": "?visual=premium-v34&v25quality=balanced&cam=900%2C699%2C-300%2C700%2C-1%2C-650"
+ },
+ "forward": {
+  "t": 64890,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": null,
+  "state": "ready",
+  "ui": true,
+  "dock": true,
+  "q": "performance",
+  "target": [
+   700,
+   -1,
+   -650
+  ],
+  "names": "true",
+  "selected": null,
+  "url": "?visual=premium-v34&v25quality=performance&cam=900%2C699%2C-300%2C700%2C-1%2C-650"
+ },
+ "sameOption": {
+  "url": true,
+  "picker": false,
+  "loading": false,
+  "state": "ready"
+ },
+ "tabBack": {
+  "t": 81294,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": null,
+  "state": "ready",
+  "ui": true,
+  "dock": true,
+  "q": "performance",
+  "target": [
+   700,
+   -1,
+   -650
+  ],
+  "names": "true",
+  "selected": null
+ },
+ "freshVisit": {
+  "kind": "first",
+  "title": "Découvrir Maizières"
+ },
+ "logs": []
+}

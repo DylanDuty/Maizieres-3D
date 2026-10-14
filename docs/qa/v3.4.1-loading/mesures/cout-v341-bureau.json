@@ -1,0 +1,1 @@
+{"port":"4342","q":"?visual=premium-v34&v25quality=balanced&cam=900,700,-300,700,0,-650","readyMs":70695,"html":10024,"snap":{"ms":23117.9,"bytes":32679,"blank":false},"ground":{"paints":1,"lastPaintMs":64,"centre":[700,-650]},"calls":151,"tri":6275321,"target":[700,-1,-650],"audit":{"rendered":2596,"expected":2596},"contexts":1,"loadMs":66977,"logs":[]}

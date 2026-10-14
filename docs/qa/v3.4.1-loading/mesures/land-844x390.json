@@ -1,0 +1,120 @@
+{
+ "scenario": "land",
+ "port": "4342",
+ "viewport": [
+  844,
+  390
+ ],
+ "mobile": true,
+ "loading": {
+  "t": 1622,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": {
+   "kind": "first",
+   "premium": true,
+   "title": "Découvrir Maizières",
+   "sub": "Préparation de la carte…",
+   "note": "",
+   "snapshot": false,
+   "failed": false,
+   "slow": false,
+   "legacyText": null,
+   "rect": [
+    0,
+    0,
+    844,
+    390
+   ],
+   "line": "tx-run",
+   "retry": false,
+   "phase": "data"
+  },
+  "state": "loading",
+  "ui": true,
+  "dock": false,
+  "q": null,
+  "target": null,
+  "names": null,
+  "selected": null
+ },
+ "ready": {
+  "t": 46705,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": null,
+  "state": "ready",
+  "ui": true,
+  "dock": true,
+  "q": "performance",
+  "target": [
+   200,
+   2,
+   150
+  ],
+  "names": "true",
+  "selected": null
+ },
+ "change": {
+  "key": "balanced",
+  "feedbackMs": null,
+  "secondChoice": {
+   "other": "beauty",
+   "calls": 1,
+   "url": "?visual=premium-v34&v25quality=balanced&cam=440%2C1902%2C2500%2C200%2C2%2C150"
+  },
+  "inPage": {
+   "early": {
+    "title": "Préparation du rendu",
+    "sub": "Passage en mode Équilibré",
+    "legacy": []
+   },
+   "snapshot": true,
+   "sub": "Passage en mode Équilibré",
+   "legacy": []
+  },
+  "newPageMs": 78079,
+  "usableMs": 187060,
+  "early": {
+   "kind": "quality",
+   "title": "Préparation du rendu",
+   "sub": "Passage en mode Équilibré",
+   "note": "Le rendu prend un peu plus de temps que prévu…",
+   "snapshot": true,
+   "legacy": []
+  },
+  "during": {
+   "samples": 257,
+   "legacyFrames": 0,
+   "legacyOnTopFrames": 0,
+   "fluideFrames": 0,
+   "blankFrames": 0,
+   "kinds": [
+    "quality"
+   ],
+   "titles": [
+    "Préparation du rendu"
+   ],
+   "subs": [
+    "Passage en mode Équilibré"
+   ],
+   "legacyTexts": []
+  },
+  "after": {
+   "q": "balanced",
+   "url": "?visual=premium-v34&v25quality=balanced&cam=440%2C1902%2C2500%2C200%2C2%2C150",
+   "target": [
+    200,
+    2,
+    150
+   ],
+   "names": "true",
+   "legacy": [],
+   "loading": null,
+   "dock": true
+  }
+ },
+ "logs": []
+}

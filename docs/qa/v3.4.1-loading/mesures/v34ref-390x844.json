@@ -1,0 +1,167 @@
+{
+ "scenario": "v34ref",
+ "port": "4204",
+ "viewport": [
+  390,
+  844
+ ],
+ "mobile": true,
+ "domReady": {
+  "t": 325,
+  "legacy": [
+   "nav",
+   "Qualité : Fluide",
+   "Noms des lieux",
+   "pied de page souris"
+  ],
+  "legacyOnTop": [
+   "nav",
+   "Qualité : Fluide",
+   "Noms des lieux"
+  ],
+  "fluideVisible": true,
+  "loading": {
+   "kind": null,
+   "premium": false,
+   "snapshot": false,
+   "failed": false,
+   "slow": false,
+   "legacyText": "Le village prend forme",
+   "rect": [
+    40,
+    353,
+    310,
+    139
+   ],
+   "line": null,
+   "retry": false,
+   "phase": null
+  },
+  "state": null,
+  "ui": false,
+  "dock": false,
+  "q": null,
+  "target": null,
+  "names": null,
+  "selected": null
+ },
+ "loading": {
+  "t": 2960,
+  "legacy": [
+   "nav",
+   "Qualité : Fluide",
+   "Noms des lieux",
+   "pied de page souris"
+  ],
+  "legacyOnTop": [
+   "nav",
+   "Qualité : Fluide",
+   "Noms des lieux"
+  ],
+  "fluideVisible": true,
+  "loading": {
+   "kind": null,
+   "premium": false,
+   "snapshot": false,
+   "failed": false,
+   "slow": false,
+   "legacyText": "Le village prend forme",
+   "rect": [
+    40,
+    353,
+    310,
+    139
+   ],
+   "line": null,
+   "retry": false,
+   "phase": null
+  },
+  "state": null,
+  "ui": false,
+  "dock": false,
+  "q": null,
+  "target": null,
+  "names": null,
+  "selected": null
+ },
+ "during": {
+  "samples": 95,
+  "legacyFrames": 94,
+  "legacyOnTopFrames": 94,
+  "fluideFrames": 94,
+  "blankFrames": 0,
+  "kinds": [],
+  "titles": [],
+  "subs": [],
+  "legacyTexts": [
+   "Le village prend forme"
+  ]
+ },
+ "change": {
+  "newPageMs": 19016,
+  "early": {
+   "t": 5978,
+   "legacy": [
+    "nav",
+    "Qualité : Fluide",
+    "Noms des lieux",
+    "pied de page souris"
+   ],
+   "legacyOnTop": [
+    "nav",
+    "Qualité : Fluide",
+    "Noms des lieux"
+   ],
+   "fluideVisible": true,
+   "loading": {
+    "kind": null,
+    "premium": false,
+    "snapshot": false,
+    "failed": false,
+    "slow": false,
+    "legacyText": "Le village prend forme",
+    "rect": [
+     40,
+     353,
+     310,
+     139
+    ],
+    "line": null,
+    "retry": false,
+    "phase": null
+   },
+   "state": null,
+   "ui": false,
+   "dock": false,
+   "q": null,
+   "target": null,
+   "names": null,
+   "selected": null
+  },
+  "during": {
+   "samples": 312,
+   "legacyFrames": 311,
+   "legacyOnTopFrames": 311,
+   "fluideFrames": 311,
+   "blankFrames": 0,
+   "kinds": [],
+   "titles": [],
+   "subs": [],
+   "legacyTexts": [
+    "Le village prend forme"
+   ]
+  },
+  "loadingGoneMs": 91437,
+  "targetAtLeave": [
+   700,
+   -1,
+   -650
+  ],
+  "targetLater": [
+   700,
+   -1,
+   -650
+  ]
+ },
+ "logs": []
+}

@@ -1,0 +1,112 @@
+{
+ "scenario": "reduced",
+ "port": "4341",
+ "viewport": [
+  390,
+  844
+ ],
+ "mobile": true,
+ "domReady": {
+  "t": 117,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": {
+   "kind": "first",
+   "premium": true,
+   "title": "Découvrir Maizières",
+   "sub": "Préparation de la carte…",
+   "note": "",
+   "snapshot": false,
+   "failed": false,
+   "slow": false,
+   "legacyText": null,
+   "rect": [
+    0,
+    0,
+    390,
+    844
+   ],
+   "line": "tx-pulse",
+   "retry": false,
+   "phase": "data"
+  },
+  "state": "loading",
+  "ui": true,
+  "dock": false,
+  "q": null,
+  "target": null,
+  "names": null,
+  "selected": null
+ },
+ "loading": {
+  "t": 2173,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": {
+   "kind": "first",
+   "premium": true,
+   "title": "Découvrir Maizières",
+   "sub": "Préparation de la carte…",
+   "note": "",
+   "snapshot": false,
+   "failed": false,
+   "slow": false,
+   "legacyText": null,
+   "rect": [
+    0,
+    0,
+    390,
+    844
+   ],
+   "line": "tx-pulse",
+   "retry": false,
+   "phase": "data"
+  },
+  "state": "loading",
+  "ui": true,
+  "dock": false,
+  "q": null,
+  "target": null,
+  "names": null,
+  "selected": null
+ },
+ "during": {
+  "samples": 113,
+  "legacyFrames": 0,
+  "legacyOnTopFrames": 0,
+  "fluideFrames": 0,
+  "blankFrames": 0,
+  "kinds": [
+   "first"
+  ],
+  "titles": [
+   "Découvrir Maizières"
+  ],
+  "subs": [
+   "Préparation de la carte…"
+  ],
+  "legacyTexts": []
+ },
+ "readyAt": 74612,
+ "after": {
+  "t": 75818,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": null,
+  "state": "ready",
+  "ui": true,
+  "dock": true,
+  "q": "beauty",
+  "target": [
+   200,
+   2,
+   150
+  ],
+  "names": "true",
+  "selected": null
+ },
+ "logs": []
+}

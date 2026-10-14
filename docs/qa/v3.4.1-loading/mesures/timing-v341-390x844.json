@@ -1,0 +1,157 @@
+{
+ "scenario": "v34ref",
+ "port": "4342",
+ "viewport": [
+  390,
+  844
+ ],
+ "mobile": true,
+ "domReady": {
+  "t": 217,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": {
+   "kind": "first",
+   "premium": true,
+   "title": "Découvrir Maizières",
+   "sub": "Préparation de la carte…",
+   "note": "",
+   "snapshot": false,
+   "failed": false,
+   "slow": false,
+   "legacyText": null,
+   "rect": [
+    0,
+    0,
+    390,
+    844
+   ],
+   "line": "tx-run",
+   "retry": false,
+   "phase": "data"
+  },
+  "state": "loading",
+  "ui": true,
+  "dock": false,
+  "q": null,
+  "target": null,
+  "names": null,
+  "selected": null
+ },
+ "loading": {
+  "t": 2805,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": {
+   "kind": "first",
+   "premium": true,
+   "title": "Découvrir Maizières",
+   "sub": "Préparation de la carte…",
+   "note": "",
+   "snapshot": false,
+   "failed": false,
+   "slow": false,
+   "legacyText": null,
+   "rect": [
+    0,
+    0,
+    390,
+    844
+   ],
+   "line": "tx-run",
+   "retry": false,
+   "phase": "data"
+  },
+  "state": "loading",
+  "ui": true,
+  "dock": false,
+  "q": null,
+  "target": null,
+  "names": null,
+  "selected": null
+ },
+ "during": {
+  "samples": 115,
+  "legacyFrames": 0,
+  "legacyOnTopFrames": 0,
+  "fluideFrames": 0,
+  "blankFrames": 0,
+  "kinds": [
+   "first"
+  ],
+  "titles": [
+   "Découvrir Maizières"
+  ],
+  "subs": [
+   "Préparation de la carte…"
+  ],
+  "legacyTexts": []
+ },
+ "change": {
+  "newPageMs": 21423,
+  "early": {
+   "t": 260,
+   "legacy": [],
+   "legacyOnTop": [],
+   "fluideVisible": false,
+   "loading": {
+    "kind": "quality",
+    "premium": true,
+    "title": "Préparation du rendu",
+    "sub": "Passage en mode Équilibré",
+    "note": "La carte reprend au même endroit.",
+    "snapshot": true,
+    "failed": false,
+    "slow": false,
+    "legacyText": null,
+    "rect": [
+     0,
+     0,
+     390,
+     844
+    ],
+    "line": "tx-run",
+    "retry": false,
+    "phase": "data"
+   },
+   "state": "loading",
+   "ui": true,
+   "dock": false,
+   "q": null,
+   "target": null,
+   "names": null,
+   "selected": null
+  },
+  "during": {
+   "samples": 305,
+   "legacyFrames": 0,
+   "legacyOnTopFrames": 0,
+   "fluideFrames": 0,
+   "blankFrames": 0,
+   "kinds": [
+    "quality"
+   ],
+   "titles": [
+    "Préparation du rendu"
+   ],
+   "subs": [
+    "Passage en mode Équilibré"
+   ],
+   "legacyTexts": []
+  },
+  "loadingGoneMs": 93939,
+  "targetAtLeave": [
+   700,
+   -1,
+   -650
+  ],
+  "targetLater": [
+   700,
+   -1,
+   -650
+  ]
+ },
+ "logs": []
+}

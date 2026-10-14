@@ -1,0 +1,43 @@
+{
+ "scenario": "slow",
+ "port": "4341",
+ "viewport": [
+  390,
+  844
+ ],
+ "mobile": true,
+ "slow": {
+  "t": 21615,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": {
+   "kind": "first",
+   "premium": true,
+   "title": "Découvrir Maizières",
+   "sub": "Préparation de la carte…",
+   "note": "Le rendu prend un peu plus de temps que prévu…",
+   "snapshot": false,
+   "failed": false,
+   "slow": true,
+   "legacyText": null,
+   "rect": [
+    0,
+    0,
+    390,
+    844
+   ],
+   "line": "tx-run",
+   "retry": false,
+   "phase": "data"
+  },
+  "state": "loading",
+  "ui": true,
+  "dock": false,
+  "q": null,
+  "target": null,
+  "names": null,
+  "selected": null
+ },
+ "logs": []
+}

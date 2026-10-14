@@ -1,0 +1,217 @@
+{
+ "scenario": "modes",
+ "port": "4341",
+ "viewport": [
+  390,
+  844
+ ],
+ "mobile": true,
+ "modes": [
+  {
+   "q": "?visual=premium-v31&v25quality=performance",
+   "early": {
+    "premium": false,
+    "kind": null,
+    "legacyText": "Le village prend forme",
+    "legacy": [
+     "nav",
+     "Qualité : Fluide",
+     "Noms des lieux",
+     "pied de page souris"
+    ]
+   },
+   "after": {
+    "legacy": [
+     "nav",
+     "Qualité : Fluide",
+     "Noms des lieux",
+     "pied de page souris"
+    ],
+    "dock": false,
+    "ui": false,
+    "q": "performance"
+   },
+   "audit": {
+    "rendered": 2596,
+    "expected": 2596,
+    "buried": 0,
+    "missing": 0
+   }
+  },
+  {
+   "q": "?visual=cartoon-v291&v25quality=performance",
+   "early": {
+    "premium": false,
+    "kind": null,
+    "legacyText": "Le village prend forme",
+    "legacy": [
+     "nav",
+     "Qualité : Fluide",
+     "Noms des lieux",
+     "pied de page souris"
+    ]
+   },
+   "after": {
+    "legacy": [
+     "nav",
+     "Qualité : Fluide",
+     "Noms des lieux",
+     "pied de page souris"
+    ],
+    "dock": false,
+    "ui": false,
+    "q": "performance"
+   },
+   "audit": {
+    "rendered": 2596,
+    "expected": 2596,
+    "buried": 0,
+    "missing": 0
+   }
+  },
+  {
+   "q": "?visual=premium-v33&v25quality=performance",
+   "early": {
+    "premium": true,
+    "kind": "first",
+    "legacyText": null,
+    "legacy": []
+   },
+   "after": {
+    "legacy": [],
+    "dock": true,
+    "ui": true,
+    "q": "performance"
+   },
+   "audit": {
+    "rendered": 2596,
+    "expected": 2596,
+    "buried": 0,
+    "missing": 0
+   }
+  },
+  {
+   "q": "?visual=premium-v34&v25quality=performance&manual=0",
+   "early": {
+    "premium": true,
+    "kind": "first",
+    "legacyText": null,
+    "legacy": []
+   },
+   "after": {
+    "legacy": [],
+    "dock": true,
+    "ui": true,
+    "q": "performance"
+   },
+   "audit": {
+    "rendered": 2584,
+    "expected": 2584,
+    "buried": 0,
+    "missing": 0
+   }
+  },
+  {
+   "q": "?diagnostic=cadastre-v34&v25quality=performance",
+   "early": {
+    "premium": true,
+    "kind": "first",
+    "legacyText": null,
+    "legacy": []
+   },
+   "after": {
+    "legacy": [],
+    "dock": true,
+    "ui": true,
+    "q": "performance"
+   },
+   "audit": {
+    "rendered": 2596,
+    "expected": 2596,
+    "buried": 0,
+    "missing": 0
+   }
+  },
+  {
+   "q": "?visual=premium-v34&v25quality=performance&fxaa=0",
+   "early": {
+    "premium": true,
+    "kind": "first",
+    "legacyText": null,
+    "legacy": []
+   },
+   "after": {
+    "legacy": [],
+    "dock": true,
+    "ui": true,
+    "q": "performance"
+   },
+   "audit": {
+    "rendered": 2596,
+    "expected": 2596,
+    "buried": 0,
+    "missing": 0
+   }
+  }
+ ],
+ "fxaaChange": {
+  "key": "balanced",
+  "feedbackMs": 1577,
+  "secondChoice": {
+   "other": "beauty",
+   "calls": 1,
+   "url": "?visual=premium-v34&v25quality=balanced&fxaa=0&cam=440%2C3102%2C3150%2C200%2C2%2C150"
+  },
+  "inPage": {
+   "early": {
+    "title": "Préparation du rendu",
+    "sub": "Passage en mode Équilibré",
+    "legacy": []
+   },
+   "snapshot": false,
+   "sub": "Passage en mode Équilibré",
+   "legacy": []
+  },
+  "newPageMs": 20702,
+  "usableMs": 85671,
+  "early": {
+   "kind": "quality",
+   "title": "Préparation du rendu",
+   "sub": "Passage en mode Équilibré",
+   "note": "La carte reprend au même endroit.",
+   "snapshot": false,
+   "legacy": []
+  },
+  "during": {
+   "samples": 221,
+   "legacyFrames": 0,
+   "legacyOnTopFrames": 0,
+   "fluideFrames": 0,
+   "blankFrames": 0,
+   "kinds": [
+    "quality"
+   ],
+   "titles": [
+    "Préparation du rendu"
+   ],
+   "subs": [
+    "Passage en mode Équilibré"
+   ],
+   "legacyTexts": []
+  },
+  "after": {
+   "q": "balanced",
+   "url": "?visual=premium-v34&v25quality=balanced&fxaa=0&cam=440%2C3102%2C3150%2C200%2C2%2C150",
+   "target": [
+    200,
+    2,
+    150
+   ],
+   "names": "true",
+   "legacy": [],
+   "loading": null,
+   "dock": true
+  }
+ },
+ "logs": []
+}

@@ -1,0 +1,120 @@
+{
+ "scenario": "desktop",
+ "port": "4342",
+ "viewport": [
+  1920,
+  1080
+ ],
+ "mobile": false,
+ "loading": {
+  "t": 1784,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": {
+   "kind": "first",
+   "premium": true,
+   "title": "Découvrir Maizières",
+   "sub": "Préparation de la carte…",
+   "note": "",
+   "snapshot": false,
+   "failed": false,
+   "slow": false,
+   "legacyText": null,
+   "rect": [
+    0,
+    0,
+    1920,
+    1080
+   ],
+   "line": "tx-run",
+   "retry": false,
+   "phase": "data"
+  },
+  "state": "loading",
+  "ui": true,
+  "dock": false,
+  "q": null,
+  "target": null,
+  "names": null,
+  "selected": null
+ },
+ "ready": {
+  "t": 94810,
+  "legacy": [],
+  "legacyOnTop": [],
+  "fluideVisible": false,
+  "loading": null,
+  "state": "ready",
+  "ui": true,
+  "dock": true,
+  "q": "balanced",
+  "target": [
+   200,
+   2,
+   150
+  ],
+  "names": "true",
+  "selected": null
+ },
+ "change": {
+  "key": "performance",
+  "feedbackMs": null,
+  "secondChoice": {
+   "other": "beauty",
+   "calls": 1,
+   "url": "?visual=premium-v34&v25quality=performance&cam=440%2C1902%2C2500%2C200%2C2%2C150"
+  },
+  "inPage": {
+   "early": {
+    "title": "Préparation du rendu",
+    "sub": "Passage en mode Performance",
+    "legacy": []
+   },
+   "snapshot": false,
+   "sub": "Passage en mode Performance",
+   "legacy": []
+  },
+  "newPageMs": 97484,
+  "usableMs": 150759,
+  "early": {
+   "kind": "quality",
+   "title": "Préparation du rendu",
+   "sub": "Passage en mode Performance",
+   "note": "Le rendu prend un peu plus de temps que prévu…",
+   "snapshot": false,
+   "legacy": []
+  },
+  "during": {
+   "samples": 290,
+   "legacyFrames": 0,
+   "legacyOnTopFrames": 0,
+   "fluideFrames": 0,
+   "blankFrames": 0,
+   "kinds": [
+    "quality"
+   ],
+   "titles": [
+    "Préparation du rendu"
+   ],
+   "subs": [
+    "Passage en mode Performance"
+   ],
+   "legacyTexts": []
+  },
+  "after": {
+   "q": "performance",
+   "url": "?visual=premium-v34&v25quality=performance&cam=440%2C1902%2C2500%2C200%2C2%2C150",
+   "target": [
+    200,
+    2,
+    150
+   ],
+   "names": "true",
+   "legacy": [],
+   "loading": null,
+   "dock": true
+  }
+ },
+ "logs": []
+}
